@@ -1,5 +1,5 @@
 <?php 
-$servidor = $_SERVER['HTTP_HOST'] == 'localhost' ? 'blog23/' : '';
+$servidor = $_SERVER['HTTP_HOST'] == 'localhost' ? 'Gestiopolis/' : '';
 include_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor.'wp-load.php');
 
 $post_ID = ( isset($_POST['postid']) && (int)$_POST['postid'] ) ? $_POST['postid'] : false;
