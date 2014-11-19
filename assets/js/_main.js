@@ -24,12 +24,16 @@ var Gestiopolis = {
     init: function() {
       // JavaScript to be fired on all pages
       //1. Formulario de búsqueda top-nav
-      $('.busca-link').on('click', function(){
+      $('.busca-link').on('click', function(e){
+        e.preventDefault();
         $(this).hide();
+        $('#nav_busca .navbar-search').removeClass('hide');
         $('#nav_busca .navbar-search').show('slow');
       });
-      $('#nav_busca .x-search').on('click', function(){
+      $('#nav_busca .x-search').on('click', function(e){
+        e.preventDefault();
         $('#nav_busca .navbar-search').hide();
+        $('#nav_busca .navbar-search').addClass('hide');
         $('.busca-link').show();
       });
       // 2. Hacer que aparezcan botones sociales conforme pasa el cursor encima de un artículo 

@@ -39,7 +39,7 @@
       <div class="modal-content">
         <div class="modal-body">
           <div class="modal-text center-block text-center"></div>
-          <img src="<?php bloginfo('template_directory'); ?>/images/preloader.gif" alt="Cargando HTML" class="text-center center-block">
+          <img src="<?php bloginfo('template_directory'); ?>/assets/img/preloader.gif" alt="Cargando HTML" class="text-center center-block">
         </div>
       </div>
     </div>
