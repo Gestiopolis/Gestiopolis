@@ -21,7 +21,8 @@
               <?php
               $args = array(
                 'orderby' => 'name',
-                'parent' => 0
+                'parent' => 0,
+                'exclude'=> '1'
                 );
               $categories = get_categories( $args );
               foreach ( $categories as $category ) {
@@ -30,7 +31,7 @@
               ?>
             </ul>
             <ul id="explora_autores">
-              <li><a href="#"><img src="assets/img/autores-destacados-explora.png" width="28" height="28" alt="Autores destacados"/>&nbsp;&nbsp;Autores destacados</a></li>
+              <li><a href="#"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/autores-destacados-explora.png'); ?>" width="28" height="28" alt="Autores destacados"/>&nbsp;&nbsp;Autores destacados</a></li>
               <li><a href="#"><i class="fa fa-tags"></i>&nbsp;&nbsp;Temas tendencia</a></li>
             </ul>
             <span class="nav-header">Más&nbsp;&nbsp;<i class="fa fa-angle-double-down"></i></span>
