@@ -25,6 +25,7 @@ function roots_scripts() {
     $assets = array(
       'css'       => '/assets/css/main.css',
       'fonts'     => 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,200italic,300italic,400italic,600italic|Open+Sans+Condensed:300,700,300italic',
+      'iconfont'     => '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css',
       'pdfcssbase'=> '/pdf2htmlEX/base.css',
       'pdfcssfancy'   => '/pdf2htmlEX/fancy.css',
       'js'        => '/assets/js/scripts.js',
@@ -39,6 +40,7 @@ function roots_scripts() {
     $assets     = array(
       'css'       => '/assets/css/main.min.css?' . $assets['assets/css/main.min.css']['hash'],
       'fonts'       => 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,200italic,300italic,400italic,600italic|Open+Sans+Condensed:300,700,300italic',
+      'iconfont'     => '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css',
       'pdfcssbase'=> '/pdf2htmlEX/base.min.css',
       'pdfcssfancy'   => '/pdf2htmlEX/fancy.min.css',
       'js'        => '/assets/js/scripts.min.js?' . $assets['assets/js/scripts.min.js']['hash'],
@@ -50,6 +52,7 @@ function roots_scripts() {
   }
 
   wp_enqueue_style('google_fonts', $assets['fonts'], false, null);
+  wp_enqueue_style('fontawesome', $assets['iconfont'], false, null);
   wp_enqueue_style('roots_css', get_template_directory_uri() . $assets['css'], false, null);
   if (is_single()){
     if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {
