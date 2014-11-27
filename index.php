@@ -8,6 +8,7 @@
 <?php endif; ?>
 
 <?php while (have_posts()) : the_post(); ?>
+  algo va por aquí
   <?php get_template_part('templates/content', get_post_format()); ?>
 <?php endwhile; ?>
 
