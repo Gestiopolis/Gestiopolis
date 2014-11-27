@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 
   var jsFileList = [
     'assets/vendor/bootstrap/js/transition.js',
-    'assets/vendor/bootstrap/js/alert.js',
+    //'assets/vendor/bootstrap/js/alert.js',
     'assets/vendor/bootstrap/js/button.js',
     'assets/vendor/bootstrap/js/carousel.js',
     'assets/vendor/bootstrap/js/collapse.js',
@@ -63,7 +63,7 @@ module.exports = function(grunt) {
     },
     concat: {
       options: {
-        separator: ';',
+        separator: '',
       },
       dist: {
         src: [jsFileList],

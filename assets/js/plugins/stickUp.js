@@ -13,28 +13,32 @@ function($) {
 		var stickyHeight = 0;
 		var stickyMarginB = 0;
 		var currentMarginT = 0;
+		var vartop = 0;
+		var varscroll = 0;
 		var topMargin = 0;
+		var contentView = 0;
+		var testView = 0;
 		$(window).scroll(function(event){
-   			var st = $(this).scrollTop();
-   			if (st > lastScrollTop){
-       			scrollDir = 'down';
-   			} else {
-      			scrollDir = 'up';
-   			}
-  			lastScrollTop = st;
+				var st = $(this).scrollTop();
+				if (st > lastScrollTop){
+						scrollDir = 'down';
+				} else {
+						scrollDir = 'up';
+				}
+				lastScrollTop = st;
 		});
 		$.fn.stickUp = function( options ) {
 			// adding a class to users div
 			$(this).addClass('stuckMenu');
-        	//getting options
-        	var objn = 0;
-        	if(options != null) {
-	        	for(var o in options.parts) {
-	        		if (options.parts.hasOwnProperty(o)){
-	        			content[objn] = options.parts[objn];
-	        			objn++;
-	        		}
-	        	}
+					//getting options
+					var objn = 0;
+					if(options != null) {
+						for(var o in options.parts) {
+							if (options.parts.hasOwnProperty(o)){
+								content[objn] = options.parts[objn];
+								objn++;
+							}
+						}
 	  			if(objn == 0) {
 	  				console.log('error:needs arguments');
 	  			}
@@ -72,7 +76,7 @@ function($) {
 				{
 					contentTop[i] = $('#'+content[i]+'').offset().top;
 					function bottomView(i) {
-						contentView = $('#'+content[i]+'').height()*.4;
+						contentView = $('#'+content[i]+'').height()*0.4;
 						testView = contentTop[i] - contentView;
 						//console.log(varscroll);
 						if(varscroll > testView){

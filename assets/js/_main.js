@@ -432,46 +432,48 @@ var Gestiopolis = {
         });
       } //If user admin and login
       if (serverval.all2html_htmlcontent != "") {
-        var curpage = 0;
-        $(window).scroll(function(){
-          curpage = this_cur_page_idx;
-          $('input.pagen').val(curpage+1);
-        });
-        $('#toolbar').stickUp();
-        $('#toolbar').width($('#page-container').width());
-        var page = document.getElementsByClassName('pf');
+        $(document).on('ready', function() {
+          var curpage = 0;
+          $(window).scroll(function(){
+            curpage = this_cur_page_idx;
+            $('input.pagen').val(curpage+1);
+          });
+          $('#toolbar').stickUp();
+          $('#toolbar').width($('#page-container').width());
+          var page = document.getElementsByClassName('pf');
 
-        var total_pages = page.length;
-        $('#pages').text(total_pages);
+          var total_pages = page.length;
+          $('#pages').text(total_pages);
 
-        $( "input.pagen" ).keyup(function() {
-          var value = $(this).val()-1;
-          if(value < 0) {return;}
-          var offsettop = $('#'+page[value].id).offset().top;
-          setTimeout(function() {
+          $( "input.pagen" ).keyup(function() {
+            var value = $(this).val()-1;
+            if(value < 0) {return;}
+            var offsettop = $('#'+page[value].id).offset().top;
+            setTimeout(function() {
+              $('html, body').stop().animate({
+                  scrollTop: offsettop
+              }, 1000);
+            },300);
+          }).keyup();
+          $( "#toolbar .prevpage" ).on('click', function(e) {
+            e.preventDefault();
+            var offsettop = $('#'+page[curpage-1].id).offset().top;
             $('html, body').stop().animate({
                 scrollTop: offsettop
             }, 1000);
-          },300);
-        }).keyup();
-        $( "#toolbar .prevpage" ).on('click', function(e) {
-          e.preventDefault();
-          var offsettop = $('#'+page[curpage-1].id).offset().top;
-          $('html, body').stop().animate({
-              scrollTop: offsettop
-          }, 1000);
+          });
+          $( "#toolbar .nextpage" ).on('click', function(e) {
+            e.preventDefault();
+            var offsettop = $('#'+page[curpage+1].id).offset().top;
+            $('html, body').stop().animate({
+                scrollTop: offsettop
+            }, 1000);
+          });
+          setTimeout(function() {
+            a2h.fit_width(); //Escala las páginas para que se ajusten al ancho del contenedor
+          },1000);
         });
-        $( "#toolbar .nextpage" ).on('click', function(e) {
-          e.preventDefault();
-          var offsettop = $('#'+page[curpage+1].id).offset().top;
-          $('html, body').stop().animate({
-              scrollTop: offsettop
-          }, 1000);
-        });
-        setTimeout(function() {
-          fit_width(); //Escala las páginas para que se ajusten al ancho del contenedor
-        },1000);
-      }
+      } //if htmlcontent
     } //init
   } //Fin single
 };
