@@ -41,8 +41,8 @@
           <div id="toolbar">
             <div class="btn-toolbar" role="toolbar">
               <div class="btn-group btn-group-sm pull-left">
-                <a type="button" class="btn btn-default prevpage" href="#" title="Página Anterior"><span class="glyphicon glyphicon-arrow-up"></span></a>
-                <a type="button" class="btn btn-default nextpage" href="#" title="Página Siguiente"><span class="glyphicon glyphicon-arrow-down"></span></a>
+                <a type="button" class="btn btn-default prevpage" href="#" title="Página Anterior"><i class="fa fa-chevron-up"></i></a>
+                <a type="button" class="btn btn-default nextpage" href="#" title="Página Siguiente"><i class="fa fa-chevron-down"></i></a>
               </div>&nbsp;&nbsp;
               Página <input class="pagen" value="0" name="gopage" maxlength="4" size="1"> de <span id="pages"></span>
               <div class="btn-group pull-right">
