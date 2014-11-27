@@ -80,9 +80,9 @@ var Gestiopolis = {
       //1. Grid Ejes temáticos Home
       Grid.init();
       //2. Slider home autores
-      slider(".logged-out .autores-home", ".logged-out .autores-home .carrusel", ".carrusel>.span3", 8);
+      slider(".home .autores-home", ".home .autores-home .carrusel", ".carrusel>.span3", 8);
       //3. Slider home temas
-      slider(".logged-out .temas-home", ".logged-out .temas-home .carrusel", ".carrusel>.span3", 8);
+      slider(".home .temas-home", ".home .temas-home .carrusel", ".carrusel>.span3", 8);
     }
   },
   // About us page, note the change from about-us to about_us.
