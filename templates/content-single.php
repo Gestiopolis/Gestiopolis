@@ -31,7 +31,7 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-sm-17">
+      <div class="col-sm-26">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <?php get_template_part('templates/entry-meta'); ?>
           <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
@@ -113,10 +113,10 @@
             <?php comments_template('/templates/comments.php'); ?>
           </div>
         </article>
-      </div><!--.col-sm-17-->
-      <div class="col-sm-7">
+      </div><!--.col-sm-26-->
+      <div class="col-sm-10">
         <?php get_template_part('templates/sidebar-post'); ?>
-      </div><!--.col-sm-7-->
+      </div><!--.col-sm-10-->
     </div>
   </div>
 <?php endwhile; ?>
