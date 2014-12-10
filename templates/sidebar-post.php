@@ -37,9 +37,9 @@
       $query1 = new WP_Query($args1);
         if( $query1->have_posts() ) { while ($query1->have_posts()) : $query1->the_post(); ?>
     <article id="post-<?php echo $post->ID; ?>" class="post">
-      <img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title(); ?>" class="img-responsive">
+      <img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title_attribute(); ?>" class="img-responsive">
       <div class="overlay"></div>
-      <h3 class="entry-title"><a id="titulo-<?php echo $post->ID; ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><span><?php the_title(); ?></span></a></h3>
+      <h3 class="entry-title"><a id="titulo-<?php echo $post->ID; ?>" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><span><?php the_title_attribute(); ?></span></a></h3>
       <span class="compartir"><i class="fa fa-share"></i></span>
       <div class="destacado-content cat-bg-<?php echo $category_id; ?>">
         <div class="botones-compartir" id="compartir-<?php echo $post->ID; ?>">
@@ -83,9 +83,9 @@
       $query2 = new WP_Query($args2);
         if( $query2->have_posts() ) { while ($query2->have_posts()) : $query2->the_post(); ?>
     <article id="post-<?php echo $post->ID; ?>" class="post">
-      <img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title(); ?>" class="img-responsive">
+      <img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title_attribute(); ?>" class="img-responsive">
       <div class="overlay"></div>
-      <h3 class="entry-title"><a id="titulo-<?php echo $post->ID; ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><span><?php the_title(); ?></span></a></h3>
+      <h3 class="entry-title"><a id="titulo-<?php echo $post->ID; ?>" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><span><?php the_title_attribute(); ?></span></a></h3>
       <span class="compartir"><i class="fa fa-share"></i></span>
       <div class="destacado-content cat-bg-<?php echo $category_id; ?>">
         <div class="botones-compartir" id="compartir-<?php echo $post->ID; ?>">
@@ -109,9 +109,9 @@
       $query3 = new WP_Query($args3);
         if( $query3->have_posts() ) { while ($query3->have_posts()) : $query3->the_post(); ?>
     <article id="post-<?php echo $post->ID; ?>" class="post">
-      <img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title(); ?>" class="img-responsive">
+      <img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title_attribute(); ?>" class="img-responsive">
       <div class="overlay"></div>
-      <h3 class="entry-title"><a id="titulo-<?php echo $post->ID; ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><span><?php the_title(); ?></span></a></h3>
+      <h3 class="entry-title"><a id="titulo-<?php echo $post->ID; ?>" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><span><?php the_title_attribute(); ?></span></a></h3>
       <span class="compartir"><i class="fa fa-share"></i></span>
       <div class="destacado-content cat-bg-<?php echo $category_id; ?>">
         <div class="botones-compartir" id="compartir-<?php echo $post->ID; ?>">
