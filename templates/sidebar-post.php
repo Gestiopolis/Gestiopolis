@@ -1,20 +1,30 @@
+<?php global $post; ?>
 <div class="right-post">
   <div id="top_ejes_side" class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="drop_menu_ejes">Economía <i class="fa fa-sort-desc"></i></a>
+    <?php 
+      $category = get_the_category($post->ID); 
+      $category_id = 0;
+      $category_name = '';
+      if($category[0]){
+        echo '<a class="dropdown-toggle" data-toggle="dropdown" href="'.get_category_link($category[0]->term_id ).'" id="drop_menu_ejes">'.$category[0]->cat_name.' <i class="fa fa-sort-desc"></i></a>';
+        $category_id = $category[0]->term_id;
+        $category_name = $category[0]->cat_name;
+      }
+      ?> 
     <div id="menu_ejes" class="dropdown-menu" role="menu" aria-labelledby="drop_menu_ejes">
       <ul id="menu_ejes_list">
         <li><a class="cat-0 cat-bg-0" href="#"><i class="fa icon-cat-0"></i> Todos los temas</a></li>
-        <li><a class="cat-20 cat-bg-20" href="#"><i class="fa icon-cat-20"></i> Administración</a></li>
-        <li><a class="cat-3 cat-bg-3" href="#"><i class="fa icon-cat-3"></i> Marketing</a></li>
-        <li><a class="cat-15 cat-bg-15" href="#"><i class="fa icon-cat-15"></i> Autoayuda</a></li>
-        <li><a class="cat-23 cat-bg-23" href="#"><i class="fa icon-cat-23"></i> Medio Ambiente</a></li>
-        <li><a class="cat-16 cat-bg-16" href="#"><i class="fa icon-cat-16"></i> Contabilidad</a></li>
-        <li><a class="cat-21 cat-bg-21" href="#"><i class="fa icon-cat-21"></i> Talento</a></li>
-        <li><a class="cat-17 cat-bg-17" href="#"><i class="fa icon-cat-17"></i> Economía</a></li>
-        <li><a class="cat-56 cat-bg-56" href="#"><i class="fa icon-cat-56"></i> Tecnología</a></li>
-        <li><a class="cat-18 cat-bg-18" href="emprendimiento.php"><i class="fa icon-cat-18"></i> Emprendimiento</a></li>
-        <li><a class="cat-24 cat-bg-24" href="#"><i class="fa icon-cat-24"></i> Otros temas</a></li>
-        <li><a class="cat-19 cat-bg-19" href="#"><i class="fa icon-cat-19"></i> Finanzas</a></li>
+        <?php
+        $args = array(
+          'orderby' => 'name',
+          'parent' => 0,
+          'exclude'=> '1,2,97,105,106'
+          );
+        $categories = get_categories( $args );
+        foreach ( $categories as $category ) {
+          echo '<li><a class="cat-' . $category->term_id . ' cat-bg-' . $category->term_id . '" href="' . get_category_link( $category->term_id ) . '"><i class="fa icon-cat-' . $category->term_id . '"></i>' . $category->name . '</a></li>';
+        }
+        ?>
       </ul>
     </div>
   </div>
@@ -23,34 +33,28 @@
     <a href="#" class="popular"><i class="fa fa-thumbs-up"></i> Populares</a>
   </div><!-- eje tabs -->
   <div class="sidebar-post">
-    <article id="post-40" class="post">
-      <img src="http://farm4.staticflickr.com/3821/9077313521_71f78e3c2c_b.jpg" alt="La disciplina como llave del éxito">
+    <?php $args1=array( 'cat' => $category_id, 'posts_per_page'=>2, 'post__not_in'=>array($post->ID));//Empieza query del último post
+      $query1 = new WP_Query($args1);
+        if( $query1->have_posts() ) { while ($query1->have_posts()) : $query1->the_post(); ?>
+    <article id="post-<?php echo $post->ID; ?>" class="post">
+      <img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title(); ?>" class="img-responsive">
       <div class="overlay"></div>
-      <h3 class="entry-title"><a id="titulo-40" href="http://www.gestiopolis.com/organizacion-talento-2/disciplina-como-llave-del-exito.htm" title="La disciplina como llave del éxito" rel="bookmark"><span>La disciplina como llave del éxito</span></a></h3>
+      <h3 class="entry-title"><a id="titulo-<?php echo $post->ID; ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><span><?php the_title(); ?></span></a></h3>
       <span class="compartir"><i class="fa fa-share"></i></span>
-      <div class="destacado-content cat-bg-17">
-        <div class="botones-compartir" id="compartir-40">
-          <div class="platform bc-facebook" id="fb-compartir-40"></div>
-          <div class="platform bc-twitter" id="tweet-compartir-40"></div>
-          <div class="platform bc-linkedin" id="linkedin-compartir-40"></div>
+      <div class="destacado-content cat-bg-<?php echo $category_id; ?>">
+        <div class="botones-compartir" id="compartir-<?php echo $post->ID; ?>">
+          <div class="platform bc-facebook" id="fb-compartir-<?php echo $post->ID; ?>"></div>
+          <div class="platform bc-twitter" id="tweet-compartir-<?php echo $post->ID; ?>"></div>
+          <div class="platform bc-linkedin" id="linkedin-compartir-<?php echo $post->ID; ?>"></div>
         </div>
       </div>
     </article>
-    <article id="post-41" class="post">
-      <img src="http://farm6.staticflickr.com/5495/9077312909_73567d5e2c_b.jpg" alt="Cómo usar benchmarking para mejorar el servicio al cliente">
-      <div class="overlay"></div>
-      <h3 class="entry-title"><a id="titulo-41" href="http://www.gestiopolis.com/marketing-2/como-usar-benchmarking-para-mejorar-servicio-cliente.htm" title="La disciplina como llave del éxito" rel="bookmark"><span>Cómo usar benchmarking para mejorar el servicio al cliente</span></a></h3>
-      <span class="compartir"><i class="fa fa-share"></i></span>
-      <div class="destacado-content cat-bg-17">
-        <div class="botones-compartir" id="compartir-41">
-          <div class="platform bc-facebook" id="fb-compartir-41"></div>
-          <div class="platform bc-twitter" id="tweet-compartir-41"></div>
-          <div class="platform bc-linkedin" id="linkedin-compartir-41"></div>
-        </div>
-      </div>
-    </article>
+    <?php endwhile;?>
+    <?php } 
+    wp_reset_query(); 
+    wp_reset_postdata(); ?>
     <div class="autores-sidebar">
-      <h3>Más autores en Economía</h3>
+      <h3>Más autores en <?php echo $category_name; ?></h3>
       <div class="wrapper-nombre">
         <a href="#"><img src="http://gravatar.com/avatar/e71197281d0838afcc0a1f838e78441f?s=56" class="avatar avatar-56 avatar-default" height="56" width="56" style="width: 56px; height: 56px;" alt="avatar"></a>
         <a href="#"><img src="http://gravatar.com/avatar/e71197281d0838afcc0a1f838e78441f?s=56" class="avatar avatar-56 avatar-default" height="56" width="56" style="width: 56px; height: 56px;" alt="avatar"></a>
@@ -75,102 +79,52 @@
         </div><!-- .span1 -->
       </div>
     </div>
-    <article id="post-42" class="post">
-      <img src="http://farm3.staticflickr.com/2851/9079538940_9bb59aff6e_b.jpg" alt="Los emprendedores tienen miedo a arruinarse">
+    <?php $args2=array( 'cat' => $category_id, 'posts_per_page'=>3, 'post__not_in'=>array($post->ID), 'offset' => 2);//Empieza query del último post
+      $query2 = new WP_Query($args2);
+        if( $query2->have_posts() ) { while ($query2->have_posts()) : $query2->the_post(); ?>
+    <article id="post-<?php echo $post->ID; ?>" class="post">
+      <img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title(); ?>" class="img-responsive">
       <div class="overlay"></div>
-      <h3 class="entry-title"><a id="titulo-42" href="http://www.gestiopolis.com/innovacion-emprendimiento-2/emprendedores-tienen-miedo-arruinarse.htm" title="La disciplina como llave del éxito" rel="bookmark"><span>Los emprendedores tienen miedo a arruinarse</span></a></h3>
+      <h3 class="entry-title"><a id="titulo-<?php echo $post->ID; ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><span><?php the_title(); ?></span></a></h3>
       <span class="compartir"><i class="fa fa-share"></i></span>
-      <div class="destacado-content cat-bg-17">
-        <div class="botones-compartir" id="compartir-42">
-          <div class="platform bc-facebook" id="fb-compartir-42"></div>
-          <div class="platform bc-twitter" id="tweet-compartir-42"></div>
-          <div class="platform bc-linkedin" id="linkedin-compartir-42"></div>
+      <div class="destacado-content cat-bg-<?php echo $category_id; ?>">
+        <div class="botones-compartir" id="compartir-<?php echo $post->ID; ?>">
+          <div class="platform bc-facebook" id="fb-compartir-<?php echo $post->ID; ?>"></div>
+          <div class="platform bc-twitter" id="tweet-compartir-<?php echo $post->ID; ?>"></div>
+          <div class="platform bc-linkedin" id="linkedin-compartir-<?php echo $post->ID; ?>"></div>
         </div>
       </div>
     </article>
-    <article id="post-43" class="post">
-      <img src="http://farm9.staticflickr.com/8034/8070404930_61d3064fdd_b.jpg" alt="Competencias organizacionales y laborales, manual de procedimientos para su planeación e implementación en la Escuela de Hotelería y Turismo Varadero (Cuba)">
-      <div class="overlay"></div>
-      <h3 class="entry-title"><a id="titulo-43" href="http://www.gestiopolis.com/organizacion-talento/competencias-organizacionales-laborales-manual-procedimientos.htm" title="La disciplina como llave del éxito" rel="bookmark"><span>Competencias organizacionales y laborales, manual de procedimientos para su planeación e implementación en la Escuela de Hotelería y Turismo Varadero (Cuba)</span></a></h3>
-      <span class="compartir"><i class="fa fa-share"></i></span>
-      <div class="destacado-content cat-bg-17">
-        <div class="botones-compartir" id="compartir-43">
-          <div class="platform bc-facebook" id="fb-compartir-43"></div>
-          <div class="platform bc-twitter" id="tweet-compartir-43"></div>
-          <div class="platform bc-linkedin" id="linkedin-compartir-43"></div>
-        </div>
-      </div>
-    </article>
-    <article id="post-44" class="post">
-      <img src="http://farm4.staticflickr.com/3728/9079538906_f44d205f94_b.jpg" alt="Mercadeo interno en la motivación y la productividad de los empleados">
-      <h3 class="entry-title"><a id="titulo-44" href="http://www.gestiopolis.com/organizacion-talento-2/mercadeo-interno-en-la-motivacion-y-la-productividad-de-los-empleados.htm" title="La disciplina como llave del éxito" rel="bookmark"><span>Mercadeo interno en la motivación y la productividad de los empleados</span></a></h3>
-      <span class="compartir"><i class="fa fa-share"></i></span>
-      <div class="destacado-content cat-bg-17">
-        <div class="botones-compartir" id="compartir-44">
-          <div class="platform bc-facebook" id="fb-compartir-44"></div>
-          <div class="platform bc-twitter" id="tweet-compartir-44"></div>
-          <div class="platform bc-linkedin" id="linkedin-compartir-44"></div>
-        </div>
-      </div>
-    </article>
+    <?php endwhile;?>
+    <?php } 
+    wp_reset_query(); 
+    wp_reset_postdata(); ?>
     <div class="temas-sidebar">
-      <h3>Temas tendencia en Economía</h3>
+      <h3>Temas tendencia en <?php echo $category_name; ?></h3>
       <div class="wrapper-temas">
         <a href="#"><i class="fa fa-tag"></i> quimbara quimbara</a><a href="#"><i class="fa fa-tag"></i> te voy a enseñar</a><a href="#"><i class="fa fa-tag"></i> mi negrita me espera</a><a href="#"><i class="fa fa-tag"></i> pedro navaja</a><a href="#"><i class="fa fa-tag"></i> dime por qué</a><a href="#"><i class="fa fa-tag"></i> quimbara quimbara</a><a href="#"><i class="fa fa-tag"></i> te voy a enseñar</a><a href="#"><i class="fa fa-tag"></i> mi negrita me espera</a><a href="#"><i class="fa fa-tag"></i> pedro navaja</a><a href="#"><i class="fa fa-tag"></i> dime por qué</a>
       </div>
     </div>
-    <article id="post-45" class="post">
-      <img src="http://farm6.staticflickr.com/5495/9077312909_73567d5e2c_b.jpg" alt="Cómo usar benchmarking para mejorar el servicio al cliente">
+    <?php $args3=array( 'cat' => $category_id, 'posts_per_page'=>4, 'post__not_in'=>array($post->ID), 'offset' => 5);//Empieza query del último post
+      $query3 = new WP_Query($args3);
+        if( $query3->have_posts() ) { while ($query3->have_posts()) : $query3->the_post(); ?>
+    <article id="post-<?php echo $post->ID; ?>" class="post">
+      <img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title(); ?>" class="img-responsive">
       <div class="overlay"></div>
-      <h3 class="entry-title"><a id="titulo-45" href="http://www.gestiopolis.com/marketing-2/como-usar-benchmarking-para-mejorar-servicio-cliente.htm" title="La disciplina como llave del éxito" rel="bookmark"><span>Cómo usar benchmarking para mejorar el servicio al cliente</span></a></h3>
+      <h3 class="entry-title"><a id="titulo-<?php echo $post->ID; ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><span><?php the_title(); ?></span></a></h3>
       <span class="compartir"><i class="fa fa-share"></i></span>
-      <div class="destacado-content cat-bg-17">
-        <div class="botones-compartir" id="compartir-45">
-          <div class="platform bc-facebook" id="fb-compartir-45"></div>
-          <div class="platform bc-twitter" id="tweet-compartir-45"></div>
-          <div class="platform bc-linkedin" id="linkedin-compartir-45"></div>
+      <div class="destacado-content cat-bg-<?php echo $category_id; ?>">
+        <div class="botones-compartir" id="compartir-<?php echo $post->ID; ?>">
+          <div class="platform bc-facebook" id="fb-compartir-<?php echo $post->ID; ?>"></div>
+          <div class="platform bc-twitter" id="tweet-compartir-<?php echo $post->ID; ?>"></div>
+          <div class="platform bc-linkedin" id="linkedin-compartir-<?php echo $post->ID; ?>"></div>
         </div>
       </div>
     </article>
-    <article id="post-46" class="post">
-      <img src="http://farm3.staticflickr.com/2851/9079538940_9bb59aff6e_b.jpg" alt="Los emprendedores tienen miedo a arruinarse">
-      <div class="overlay"></div>
-      <h3 class="entry-title"><a id="titulo-46" href="http://www.gestiopolis.com/innovacion-emprendimiento-2/emprendedores-tienen-miedo-arruinarse.htm" title="La disciplina como llave del éxito" rel="bookmark"><span>Los emprendedores tienen miedo a arruinarse</span></a></h3>
-      <span class="compartir"><i class="fa fa-share"></i></span>
-      <div class="destacado-content cat-bg-17">
-        <div class="botones-compartir" id="compartir-46">
-          <div class="platform bc-facebook" id="fb-compartir-46"></div>
-          <div class="platform bc-twitter" id="tweet-compartir-46"></div>
-          <div class="platform bc-linkedin" id="linkedin-compartir-46"></div>
-        </div>
-      </div>
-    </article>
-    <article id="post-47" class="post">
-      <img src="http://farm9.staticflickr.com/8034/8070404930_61d3064fdd_b.jpg" alt="Competencias organizacionales y laborales, manual de procedimientos para su planeación e implementación en la Escuela de Hotelería y Turismo Varadero (Cuba)">
-      <div class="overlay"></div>
-      <h3 class="entry-title"><a id="titulo-47" href="http://www.gestiopolis.com/organizacion-talento/competencias-organizacionales-laborales-manual-procedimientos.htm" title="La disciplina como llave del éxito" rel="bookmark"><span>Competencias organizacionales y laborales, manual de procedimientos para su planeación e implementación en la Escuela de Hotelería y Turismo Varadero (Cuba)</span></a></h3>
-      <span class="compartir"><i class="fa fa-share"></i></span>
-      <div class="destacado-content cat-bg-17">
-        <div class="botones-compartir" id="compartir-47">
-          <div class="platform bc-facebook" id="fb-compartir-47"></div>
-          <div class="platform bc-twitter" id="tweet-compartir-47"></div>
-          <div class="platform bc-linkedin" id="linkedin-compartir-47"></div>
-        </div>
-      </div>
-    </article>
-    <article id="post-48" class="post">
-      <img src="http://farm4.staticflickr.com/3728/9079538906_f44d205f94_b.jpg" alt="Mercadeo interno en la motivación y la productividad de los empleados">
-      <div class="overlay"></div>                  
-      <h3 class="entry-title"><a id="titulo-48" href="http://www.gestiopolis.com/organizacion-talento-2/mercadeo-interno-en-la-motivacion-y-la-productividad-de-los-empleados.htm" title="La disciplina como llave del éxito" rel="bookmark"><span>Mercadeo interno en la motivación y la productividad de los empleados</span></a></h3>
-      <span class="compartir"><i class="fa fa-share"></i></span>
-      <div class="destacado-content cat-bg-17">
-        <div class="botones-compartir" id="compartir-48">
-          <div class="platform bc-facebook" id="fb-compartir-48"></div>
-          <div class="platform bc-twitter" id="tweet-compartir-48"></div>
-          <div class="platform bc-linkedin" id="linkedin-compartir-48"></div>
-        </div>
-      </div>
-    </article>
-    <a href="#" class="btn btn-cargar btn-block"><i class="fa fa-plus"></i> Cargar más</a>
+    <?php endwhile;?>
+    <?php } 
+    wp_reset_query(); 
+    wp_reset_postdata(); ?>
+    <!--<a href="#" class="btn btn-cargar btn-block"><i class="fa fa-plus"></i> Cargar más</a>-->
   </div><!-- .sidebar-post -->
 </div><!-- .right-post -->

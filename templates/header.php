@@ -22,7 +22,7 @@
               $args = array(
                 'orderby' => 'name',
                 'parent' => 0,
-                'exclude'=> '1'
+                'exclude'=> '1,2,97,105,106'
                 );
               $categories = get_categories( $args );
               foreach ( $categories as $category ) {
