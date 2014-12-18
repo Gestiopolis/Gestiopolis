@@ -23,7 +23,7 @@ get_currentuserinfo();
         <div class="col-sm-24">
           <div class="title-home-loggedin">
             <div class="thl">
-              <a href="#publicaciones" class="active" data-toggle="tab">Publicaciones (12)</a> <span>&bull;</span> <a href="#autores" data-toggle="tab">Autores (11)</a> <span>&bull;</span><!-- <a href="#seguidores" data-toggle="tab">Seguidores (12)</a>-->
+              <a href="#publicaciones" class="active" data-toggle="tab">Publicaciones (<?php echo $term->count; ?>)</a> <span>&bull;</span> <a href="#autores" data-toggle="tab">Autores (11)</a> <span>&bull;</span><!-- <a href="#seguidores" data-toggle="tab">Seguidores (12)</a>-->
             </div>
           </div> 
         </div><!-- .col-sm-24 -->
