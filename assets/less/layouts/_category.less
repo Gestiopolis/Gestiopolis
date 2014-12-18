@@ -1,0 +1,228 @@
+/*==========  3.2. CATEGORÍA Y TAG  ==========*/
+.autores-archive,
+.temas-archive{
+  font-family: @title-font, sans-serif;
+}
+.autores-archive h2,
+.temas-archive h2{
+  background: #9595da;
+  color: #f5f5f5;
+  font-size: 24px;
+  font-weight: 700;
+  padding-left: 24px;
+  position:relative;
+}
+.temas-archive h2{
+  background: #98b4d7;
+}
+.autores-archive h2::after, 
+.temas-archive h2::after {
+  bottom: -4px;
+  border-left: solid transparent;
+  border-right: solid transparent;
+  border-top: solid #9595da;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-width: 4px;
+  left: 14%;
+  margin: -20px 0 0 -15px;
+}
+.temas-archive h2::after{
+  border-top: solid #98b4d7;
+  bottom: -4px;
+  border-width: 5px;
+}
+.autores-archive .wrapper-nombre { margin-bottom:8px}
+.autores-archive .info-autor,
+.autores-archive .btn-seguir {
+  position:absolute;
+  bottom:8px;
+  right:8px;
+}
+.autores-archive .info-autor {
+  color:#222;
+  font-size:15px;
+  font-weight:300;
+}
+.autores-archive .info-autor i {
+  color:#cd6d66;
+}
+.autores-archive .col-md-6:hover .info-autor {
+  display:none;
+}
+.autores-archive .col-md-6 .btn-seguir {
+  display:none;
+}
+.autores-archive .col-md-6:hover .btn-seguir {
+  display:block;
+}
+.temas-archive a,
+.wrapper-temas a {
+  background:#d3dfee;
+  color:#324354;
+  display: inline-block;
+  font-size:18px;
+  font-weight:700;
+  height: 48px;
+  line-height: 44px;
+  margin: 0 8px 8px 0;
+  padding: 0 16px;
+}
+.temas-archive a:hover,
+.wrapper-temas a:hover {
+  background:#e2eaf4;
+}
+.autores-temas {
+  margin: 32px 0 48px;
+}
+.titu-cat{
+  font-family: @text-font, sans-serif;
+  margin: 24px 0;
+}
+.titu-cat  i[class*="icon-cat-"] {
+  box-sizing:border-box;
+  float:left;
+  font-size: 72px;
+  line-height:64px;
+  margin-right:10px;
+  text-align:center;
+  width:72px;
+}
+.titu-cat .eje-nombre {
+  font-size: 40px;
+  font-weight: 300;
+  margin-bottom:4px;
+}
+.titu-cat .eje-tagline {
+  float:left;
+  font-size: 14px;
+  font-weight: 400;
+}
+.titu-cat .btn {
+  color: #f5f5f5;
+  float:left;
+  font-family: @text-font, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 32px;
+  line-height: 20px;
+  margin-right:8px;
+  text-transform: none;
+  width:70px;
+}
+.titu-cat ul {
+  padding: 0;
+  margin:0;
+  list-style: none;
+  font-size:12px;
+}
+.titu-cat li {
+  display: inline-block;
+  font-family: @title-font, sans-serif;
+  margin-right:8px;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  width:70px;
+}
+.titu-cat .btn-seguir {
+  padding: 4px;
+}
+.titu-cat .btn-publ {
+  background: #474747;
+}
+.titu-cat .btn-aut {
+  background: #707070;
+}
+.titu-cat .btn-tem {
+  background: #999;
+}
+.titu-cat .btn-seg {
+  background: #adadad;
+}
+.titu-cat .btn-publ:hover,
+.titu-cat .btn-aut:hover,
+.titu-cat .btn-tem:hover,
+.titu-cat .btn-seg:hover {
+  background: #444;
+}
+
+.titu-tag {
+  background: #d3dfee;
+  box-sizing: border-box;
+  color: #324354;
+  font-family: @title-font, sans-serif;
+  height: 128px;
+  margin: 0 -999px;
+  padding: 24px 999px;
+}
+.titu-tag a:not(.btn) {
+  color: #324354;
+}
+.titu-tag  i[class*="fa-tag"] {
+  background: #324354;
+  border-radius: 100%;
+  color: #f5f5f5;
+  float:left;
+  font-size: 32px;
+  height: 64px;
+  line-height:64px;
+  margin-right:30px;
+  text-align:center;
+  width:64px;
+}
+.titu-tag .tag-nombre {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom:4px;
+}
+.titu-tag .enl-compartir {
+  font-family: @text-font, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin-right:64px;
+}
+.tag .btns-orden {
+  margin-top:8px !important;
+}
+.tag .btn-unete {
+  margin-top: 0 !important;
+  position:relative !important;
+  right: 0 !important;
+}
+.tag .fixed .btn-unete {
+  top: 0 !important;
+}
+.tag #seguidores .btn-seguir {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.tag #seguidores .titular-autor {
+  font-size:16px;
+}
+.tag #seguidores .btn-seguir {
+  background:#f2ac9e;
+}
+.tag #seguidores .col-sm-12:hover .btn-seguir {
+  background:#ff6344;
+}
+.tab-pane .span4 {
+  margin-bottom: 32px;
+  width:392px;
+  float: left;
+  min-height: 1px;
+  margin-left: 32px;
+}
+.tab-pane .span1 {
+  width: 74px; 
+  margin-left: 32px;
+  float:left;
+}
+.tag #seguidores .col-sm-12,
+.tag #autores .col-sm-12 {
+  margin-bottom:32px;
+}

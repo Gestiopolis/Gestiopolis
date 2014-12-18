@@ -74,9 +74,9 @@
         <div class="span1">
           <span class="number">123456</span> lectores
         </div><!-- .span1 -->
-        <div class="span1">
+        <!--<div class="span1">
           <a href="#" class="btn btn-seguir"><i class="fa fa-plus-sign"></i> Seguir</a>
-        </div><!-- .span1 -->
+        </div>--><!-- .span1 -->
       </div>
     </div>
     <?php $args2=array( 'cat' => $category_id, 'posts_per_page'=>3, 'post__not_in'=>array($post->ID), 'offset' => 2);//Empieza query del último post
