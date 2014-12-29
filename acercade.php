@@ -15,7 +15,7 @@ Template Name: Acerca de
         
         <div class="row">
           <div class="col-sm-12">
-            <div class="aboutsidebar hidden-print hidden-xs hidden-sm" data-spy="affix" data-offset-top="150" data-offset-bottom="200">
+            <nav class="aboutsidebar hidden-print hidden-xs hidden-sm" data-spy="affix" data-offset-top="150" data-offset-bottom="200">
               <ul class="nav aboutnav">
                 <li class="active"><a href="#quees"><i class="fa fa-question"></i> Qué es</a></li>
                 <li><a href="#linea"><i class="fa fa-info"></i> Línea de tiempo</a></li>
@@ -24,7 +24,7 @@ Template Name: Acerca de
                 <li><a href="#equipo"><i class="fa fa-group"></i> Equipo</a></li>
                 <li><a href="#cifras"><i class="fa fa-list-ol"></i> En cifras</a></li>
               </ul>
-            </div>
+            </nav>
           </div><!-- imagen tel -->
           <div class="col-sm-24 aboutsections">
             <section id="quees">

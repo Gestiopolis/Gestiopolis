@@ -475,7 +475,12 @@ var Gestiopolis = {
         });
       } //if htmlcontent
     } //init
-  } //Fin single
+  }, //Fin single
+  page_id_2: { //Acerca de
+    init: function() {
+      $('body').scrollspy({ target: '.aboutsidebar' })
+    }
+  } //Fin Acerca de
 };
 
 // The routing fires all common scripts, followed by the page specific scripts.
