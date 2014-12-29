@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     'assets/vendor/bootstrap/js/dropdown.js',
     'assets/vendor/bootstrap/js/modal.js',
     'assets/vendor/bootstrap/js/tooltip.js',
-    'assets/vendor/bootstrap/js/popover.js',
+    //'assets/vendor/bootstrap/js/popover.js',
     'assets/vendor/bootstrap/js/scrollspy.js',
     'assets/vendor/bootstrap/js/tab.js',
     'assets/vendor/bootstrap/js/affix.js',

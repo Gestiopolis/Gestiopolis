@@ -398,7 +398,7 @@ get_currentuserinfo();
               </div>
               <div class="wrapper-post cat-<?php echo $category[0]->term_id; ?>">
                 <div class="cat-bar">
-                    <a href="#" class="hexagon cat-bg-<?php echo $category[0]->term_id; ?>"><i class="fa icon-cat-<?php echo $category[0]->term_id; ?>"></i></a>
+                    <a href="<?php echo get_category_link( $category[0]->term_id ) ?>" class="hexagon cat-bg-<?php echo $category[0]->term_id; ?>" title="Enlace a categoría <?php echo $category[0]->cat_name; ?>"><i class="fa icon-cat-<?php echo $category[0]->term_id; ?>"></i></a>
                   </div>
                 <div class="wrapper-content clearfix">
                   <h2 class="entry-title"><a id="titulo-<?php echo $post->ID; ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
