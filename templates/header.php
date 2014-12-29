@@ -40,7 +40,7 @@
               <li><a href="#">Ayuda</a></li>
               <li><a href="#">Términos legales</a></li>
               <li><a href="#">ABC temático</a></li>
-              <li><a href="#">Contacto</a></li>
+              <li><a href="<?php echo get_page_link(4767); ?>">Contacto</a></li>
               <li><a href="#">Derechos de autor</a></li>
               <li><a href="#">Archivo</a></li>
               <li><a href="#">Publicidad</a></li>
