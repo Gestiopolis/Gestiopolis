@@ -969,6 +969,21 @@ function actual_date(){
 	echo date('j')." de ".$meses[date('n')-1]. " de ".date('Y');
 }
 
+function count_posts($type, $year, $month) {
+	global $wpdb, $wp_locale;
+	switch ($type) {
+		case 'catsarchive':
+			$query = "count(ID) AS posts FROM $wpdb->posts INNER JOIN $wpdb->term_relationships ON $wpdb->posts.ID = $wpdb->term_relationships.object_id INNER JOIN $wpdb->term_taxonomy ON $wpdb->term_relationships.term_taxonomy_id = $wpdb->term_taxonomy.term_taxonomy_id INNER JOIN $wpdb->terms ON $wpdb->term_taxonomy.term_id = $wpdb->terms.term_id WHERE $wpdb->posts.post_type = 'post' AND $wpdb->posts.post_status = 'publish' AND $wpdb->terms.term_id = $catid AND $wpdb->term_taxonomy.taxonomy = 'category' ORDER BY post_date ASC";
+			$results = $wpdb->get_var( $query );
+			return $results;
+		break;
+		
+		default:
+			# code...
+			break;
+	}
+}
+
 //Archivos necesarios para la cabecera en la administración
 require_once ('functions/admin_head.php');
 //Campo personalizado de autor virtual

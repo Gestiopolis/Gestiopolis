@@ -88,7 +88,6 @@ var Gestiopolis = {
   // About us page, note the change from about-us to about_us.
   archive: {
     init: function() {
-      // JavaScript to be fired on the about us page
       //1. Grid archivo
       Boxgrid.init();
     }

@@ -338,7 +338,7 @@ var Grid = (function() {
 
 var Boxgrid = (function() {
 
-  var $items = $( 'td.ejes-table .col-md-6 > a[class*="cat-bg-"]' ),
+  var $items = $( 'td.ejes-table .col-sm-18 > a[class*="cat-bg-"]' ),
     transEndEventNames = {
       'WebkitTransition' : 'webkitTransitionEnd',
       'MozTransition' : 'transitionend',
