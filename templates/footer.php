@@ -1,5 +1,7 @@
-<footer class="content-info" role="contentinfo">
-  <div class="container">
-    <?php dynamic_sidebar('sidebar-footer'); ?>
+<div class="footer">
+  <div class="footer-inner">
+    <footer class="container">
+      footer
+    </footer>
   </div>
-</footer>
+</div>

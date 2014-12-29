@@ -36,7 +36,7 @@
             </ul>
             <span class="nav-header">Más&nbsp;&nbsp;<i class="fa fa-angle-double-down"></i></span>
             <ul id="explora_mas">
-              <li><a href="#">Acerca de</a></li>
+              <li><a href="<?php echo get_page_link(2); ?>">Acerca de</a></li>
               <li><a href="#">Ayuda</a></li>
               <li><a href="#">Términos legales</a></li>
               <li><a href="#">ABC temático</a></li>
