@@ -42,7 +42,7 @@
               <li><a href="#">ABC temático</a></li>
               <li><a href="<?php echo get_page_link(4767); ?>">Contacto</a></li>
               <li><a href="#">Derechos de autor</a></li>
-              <li><a href="#">Archivo</a></li>
+              <li><a href="<?php echo get_page_link(80284); ?>">Archivo</a></li>
               <li><a href="#">Publicidad</a></li>
               <li class="copy">&copy;<?php echo date('Y'); ?> WebProfit Ltda.</li>
             </ul>
@@ -52,12 +52,12 @@
         <li id="nav_publica"><a href="<?php echo get_page_link(264); ?>"><i class="fa fa-cloud-upload"></i> Publica</a></li>
         <li id="nav_busca">
           <a class="busca-link" href="#"><i class="fa fa-search"></i> Busca</a>
-          <form class="navbar-search pull-right hide" id="searchbox_002900072100095058217:mp7ncjp0apo" action="<?php echo home_url( '/resultados-busqueda/' ); ?>" role="search">
+          <form class="navbar-search pull-right hide" id="searchbox_002900072100095058217:mp7ncjp0apo" action="<?php echo home_url( '/' ); ?>" role="search">
             <input type="hidden" name="cx" value="002900072100095058217:mp7ncjp0apo">
             <input type="hidden" name="cof" value="FORID:10">
             <input type="hidden" name="ie" value="UTF-8">
             <i class="icon-search"></i>
-            <input type="text" class="search-query" name="q" placeholder="Escribe aquí el término de búsqueda">
+            <input type="text" class="search-query" name="s" placeholder="Escribe aquí el término de búsqueda">
             <a href="#" id="x-search" class="x-search">✕</a>
           </form>
         </li>

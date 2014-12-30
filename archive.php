@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: Archivo
+*/
+?>
 <div class="container cm8">
   <div class="row rm8 title-archivo">
     <div class="col-sm-30">
@@ -17,30 +22,30 @@
         <thead>
           <tr>
             <th>&nbsp;</th>
-            <th>Diciembre</th>
-            <th>Noviembre</th>
-            <th>Octubre</th>
-            <th>Septiembre</th>
-            <th>Agosto</th>
-            <th>Julio</th>
-            <th>Junio</th>
-            <th>Mayo</th>
-            <th>Abril</th>
-            <th>Marzo</th>
-            <th>Febrero</th>
-            <th>Enero</th>
+            <th id="m12">Diciembre</th>
+            <th id="m11">Noviembre</th>
+            <th id="m10">Octubre</th>
+            <th id="m9">Septiembre</th>
+            <th id="m8">Agosto</th>
+            <th id="m7">Julio</th>
+            <th id="m6">Junio</th>
+            <th id="m5">Mayo</th>
+            <th id="m4">Abril</th>
+            <th id="m3">Marzo</th>
+            <th id="m2">Febrero</th>
+            <th id="m1">Enero</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="actual-year selected">2014</td>
+            <td class="year actual-year selected">2014</td>
             <td rowspan="13" colspan="12" class="ejes-table">
               <div class="row rm8">
                 <div class="col-sm-36">
                   <div class="row rm8">
                     <div class="col-sm-18">
                       <a href="#" class="cat-bg-0">
-                        <span class="eje-meta"><span>435</span> publicaciones</span>
+                        <span class="eje-meta"><span><?php echo count_posts('allarchive', '2014', '05'); ?></span> publicaciones</span>
                         <i class="fa icon-cat-0"></i>
                         <span class="eje-nombre">Todo</span>
                         <div class="rb-overlay">
@@ -60,7 +65,7 @@
                     </div>
                     <div class="col-sm-18">
                       <a href="#" class="cat-bg-20">
-                        <span class="eje-meta"><span>435</span> publicaciones</span>
+                        <span class="eje-meta"><span><?php echo count_posts('catsarchive', '2014', '05', 20); ?></span> publicaciones</span>
                         <i class="fa icon-cat-20"></i>
                         <span class="eje-nombre">Administración</span>
                         <br class="clearfix">
@@ -72,7 +77,7 @@
                   <div class="row rm8">
                     <div class="col-sm-18">
                       <a href="#" class="cat-bg-15">
-                        <span class="eje-meta"><span>435</span> publicaciones</span>
+                        <span class="eje-meta"><span><?php echo count_posts('catsarchive', '2014', '05', 15); ?></span> publicaciones</span>
                         <i class="fa icon-cat-15"></i>
                         <span class="eje-nombre">Autoayuda</span>
                         <br class="clearfix">
@@ -82,7 +87,7 @@
                     </div>
                     <div class="col-sm-18">
                       <a href="#" class="cat-bg-16">
-                        <span class="eje-meta"><span>435</span> publicaciones</span>
+                        <span class="eje-meta"><span><?php echo count_posts('catsarchive', '2014', '05', 16); ?></span> publicaciones</span>
                         <i class="fa icon-cat-16"></i>
                         <span class="eje-nombre">Contabilidad</span>
                         <br class="clearfix">
@@ -93,7 +98,7 @@
                   <div class="row rm8">
                     <div class="col-sm-18">
                       <a href="#" class="cat-bg-17">
-                        <span class="eje-meta"><span>435</span> publicaciones</span>
+                        <span class="eje-meta"><span><?php echo count_posts('catsarchive', '2014', '05', 17); ?></span> publicaciones</span>
                         <i class="fa icon-cat-17"></i>
                         <span class="eje-nombre">Economía</span>
                         <br class="clearfix">
@@ -102,7 +107,7 @@
                     </div>
                     <div class="col-sm-18">
                       <a href="emprendimiento.php" class="cat-bg-18">
-                        <span class="eje-meta"><span>435</span> publicaciones</span>
+                        <span class="eje-meta"><span><?php echo count_posts('catsarchive', '2014', '05', 18); ?></span> publicaciones</span>
                         <i class="fa icon-cat-18"></i>
                         <span class="eje-nombre">Emprendimiento</span>
                         <br class="clearfix">
@@ -113,7 +118,7 @@
                   <div class="row rm8">
                     <div class="col-sm-18">
                       <a href="#" class="cat-bg-19">
-                        <span class="eje-meta"><span>435</span> publicaciones</span>
+                        <span class="eje-meta"><span><?php echo count_posts('catsarchive', '2014', '05', 19); ?></span> publicaciones</span>
                         <i class="fa icon-cat-19"></i>
                         <span class="eje-nombre">Finanzas</span>
                         <br class="clearfix">
@@ -122,7 +127,7 @@
                     </div>
                     <div class="col-sm-18">
                       <a href="#" class="cat-bg-3">
-                        <span class="eje-meta"><span>435</span> publicaciones</span>
+                        <span class="eje-meta"><span><?php echo count_posts('catsarchive', '2014', '05', 13); ?></span> publicaciones</span>
                         <i class="fa icon-cat-3"></i>
                         <span class="eje-nombre">Marketing</span>
                         <br class="clearfix">
@@ -133,7 +138,7 @@
                   <div class="row rm8">
                     <div class="col-sm-18">
                       <a href="#" class="cat-bg-23">
-                        <span class="eje-meta"><span>435</span> publicaciones</span>
+                        <span class="eje-meta"><span><?php echo count_posts('catsarchive', '2014', '05', 23); ?></span> publicaciones</span>
                         <i class="fa icon-cat-23"></i>
                         <span class="eje-nombre">Medio Ambiente</span>
                         <br class="clearfix">
@@ -142,7 +147,7 @@
                     </div>
                     <div class="col-sm-18">
                       <a href="#" class="cat-bg-21">
-                        <span class="eje-meta"><span>435</span> publicaciones</span>
+                        <span class="eje-meta"><span><?php echo count_posts('catsarchive', '2014', '05', 21); ?></span> publicaciones</span>
                         <i class="fa icon-cat-21"></i>
                         <span class="eje-nombre">Talento</span>
                         <br class="clearfix">
@@ -153,7 +158,7 @@
                   <div class="row rm8">
                     <div class="col-sm-18">
                       <a href="#" class="cat-bg-56">
-                        <span class="eje-meta"><span>435</span> publicaciones</span>
+                        <span class="eje-meta"><span><?php echo count_posts('catsarchive', '2014', '05', 56); ?></span> publicaciones</span>
                         <i class="fa icon-cat-56"></i>
                         <span class="eje-nombre">Tecnología</span>
                         <br class="clearfix">
@@ -162,7 +167,7 @@
                     </div>
                     <div class="col-sm-18">
                       <a href="#" class="cat-bg-24">
-                        <span class="eje-meta"><span>435</span> publicaciones</span>
+                        <span class="eje-meta"><span><?php echo count_posts('catsarchive', '2014', '05', 24); ?></span> publicaciones</span>
                         <i class="fa icon-cat-24"></i>
                         <span class="eje-nombre">Otros temas</span>
                         <br class="clearfix">
@@ -175,46 +180,46 @@
             </td>
           </tr>
           <tr>
-            <td>2013</td>
+            <td class="year">2013</td>
           </tr>
           <tr>
-            <td>2012</td>
+            <td class="year">2012</td>
           </tr>
           <tr>
-            <td>2011</td>
+            <td class="year">2011</td>
           </tr>
           <tr>
-            <td>2010</td>
+            <td class="year">2010</td>
           </tr>
           <tr>
-            <td>2009</td>
+            <td class="year">2009</td>
           </tr>
           <tr>
-            <td>2008</td>
+            <td class="year">2008</td>
           </tr>
           <tr>
-            <td>2007</td>
+            <td class="year">2007</td>
           </tr>
           <tr>
-            <td>2006</td>
+            <td class="year">2006</td>
           </tr>
           <tr>
-            <td>2005</td>
+            <td class="year">2005</td>
           </tr>
           <tr>
-            <td>2004</td>
+            <td class="year">2004</td>
           </tr>
           <tr>
-            <td>2003</td>
+            <td class="year">2003</td>
           </tr>
           <tr>
-            <td>2002</td>
+            <td class="year">2002</td>
           </tr>
           <tr>
-            <td>2001</td>
+            <td class="year">2001</td>
           </tr>
           <tr>
-            <td>2000</td>
+            <td class="year">2000</td>
           </tr>
         </tbody>
       </table>
