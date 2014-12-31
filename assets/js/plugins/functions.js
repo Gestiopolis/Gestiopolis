@@ -327,9 +327,9 @@ var Grid = (function() {
     getEl : function() {
       return this.$previewEl;
     }
-  }
+  };
 
-  return { 
+  return {
     init : init,
     addItems : addItems
   };
@@ -358,7 +358,7 @@ var Boxgrid = (function() {
     // window width and height
     winsize = getWindowSize();
 
-  function init( options ) {    
+  function init( options ) {
     // apply fittext plugin
     //$items.find( 'div.rb-week > div span' ).fitText( 0.3 ).end().find( 'span.rb-city' ).fitText( 0.5 );
     initEvents();
@@ -453,7 +453,7 @@ var Boxgrid = (function() {
 
     } );
 
-    $( window ).on( 'debouncedresize', function() { 
+    $( window ).on( 'debouncedresize', function() {
       winsize = getWindowSize();
       // todo : cache the current item
       if( current !== -1 ) {

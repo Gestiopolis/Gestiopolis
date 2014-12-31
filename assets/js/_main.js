@@ -86,13 +86,69 @@ var Gestiopolis = {
     }
   },
   // About us page, note the change from about-us to about_us.
-  archive: {
+  archive: {//page_id_80284: { //Página de Archivo
     init: function() {
       //1. Grid archivo
       Boxgrid.init();
+      //2. Carga último archivo del último mes y año
+      var currentTime = new Date();
+      var month = ("0" + (currentTime.getMonth() + 1)).slice(-2);
+      var year = currentTime.getFullYear();
+
+      $.ajax({
+        url: serverval.template_directory+'/lib/functions/archive_posts.php',
+        type: 'POST',
+        data: { year: year.toString(), month: month.toString() },
+        async: true,
+        cache: false,
+        processData: true,
+        success: function (result) {
+          $( "td.ejes-table" ).html(result);
+        }
+      });
+      //3. Carga archivo del año y 1er mes
+      $("td.year").click(function(e){
+        e.preventDefault();
+        $( "td.ejes-table" ).empty();
+        $("td.year").removeClass('selected');
+        $(this).addClass('selected');
+        $("th#01").addClass('selected');
+        var selectedyear = $(this).text();
+        $.ajax({
+          url: serverval.template_directory+'/lib/functions/archive_posts.php',
+          type: 'POST',
+          data: { year: selectedyear, month: '01' },
+          async: true,
+          cache: false,
+          processData: true,
+          success: function (result) {
+            $( "td.ejes-table" ).html(result);
+          }
+        });
+      });
+      //4. Carga archivo del año y mes seleccionado
+      $("th.month").click(function(e){
+        e.preventDefault();
+        $( "td.ejes-table" ).empty();
+        $("th.month").removeClass('selected');
+        $(this).addClass('selected');
+        var selectedyear = $('td.year.selected').text();
+        var selectedmonth = $(this).attr('id');
+        $.ajax({
+          url: serverval.template_directory+'/lib/functions/archive_posts.php',
+          type: 'POST',
+          data: { year: selectedyear, month: selectedmonth },
+          async: true,
+          cache: false,
+          processData: true,
+          success: function (result) {
+            $( "td.ejes-table" ).html(result);
+          }
+        });
+      });
     }
   },
-  page_id_264: {
+  page_id_264: { //Página de publicar
     init: function() {
       //Funciones javascript de página de publicar
       $("form#upldoc").submit(function(e){
@@ -477,7 +533,7 @@ var Gestiopolis = {
   }, //Fin single
   page_id_2: { //Acerca de
     init: function() {
-      $('body').scrollspy({ target: '.aboutsidebar' })
+      $('body').scrollspy({ target: '.aboutsidebar' });
     }
   } //Fin Acerca de
 };

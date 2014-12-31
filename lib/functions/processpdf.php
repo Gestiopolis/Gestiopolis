@@ -1,5 +1,5 @@
 <?php 
-$servidor = $_SERVER['HTTP_HOST'] == 'localhost' ? 'blog23/' : '';
+$servidor = $_SERVER['HTTP_HOST'] == 'localhost' ? 'Gestiopolis/' : '';
 include_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor.'wp-load.php'); //Cargar el core de WordPress
 require_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor. 'wp-admin/includes/file.php'); //Cargar las funciones de archivos de WordPress
 require_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor. 'wp-admin/includes/media.php'); //Cargar las funciones de medios de WordPress
