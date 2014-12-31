@@ -992,7 +992,7 @@ function count_posts($type, $year, $month, $catid=0) {
 //Limitar tags
 add_filter('term_links-post_tag','limit_tags');
 function limit_tags($terms) {
-return array_slice($terms,0,4,true);
+	return array_slice($terms,0,4,true);
 }
 
 //Archivos necesarios para la cabecera en la administración
