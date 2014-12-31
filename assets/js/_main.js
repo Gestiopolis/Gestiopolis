@@ -86,7 +86,7 @@ var Gestiopolis = {
     }
   },
   // About us page, note the change from about-us to about_us.
-  archive: {//page_id_80284: { //Página de Archivo
+  page_id_80284: { //Página de Archivo
     init: function() {
       //1. Grid archivo
       Boxgrid.init();
