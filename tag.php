@@ -12,7 +12,7 @@ get_currentuserinfo();
       <div class="tag-nombre"><?php single_term_title(); ?></div>
       <!--<br class="clearfix">-->
       <div class="tag-tagline">
-        <a href="#" class="enl-compartir"><i class="icon-share"></i> Compartir</a>
+        <a href="#" class="enl-compartir"><i class="fa fa-share"></i> Compartir</a>
         <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
       </div>
     </div><!-- .col-md-8 -->

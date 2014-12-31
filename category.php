@@ -357,21 +357,6 @@ get_currentuserinfo();
               </ul>
               <!--<a href="#" class="btn btn-orden">Más populares <i class="fa icon-sort"></i></a>-->
             </div>
-            <div id="OrdenEjes" class="btn-group">
-              <a href="#" id="ordenEje" class="btn btn-orden dropdown-toggle" data-toggle="dropdown">Por eje temático <i class="fa fa-sort-desc"></i></a>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="ordenEje">
-                <?php
-                $args = array(
-                  'orderby' => 'name',
-                  'parent' => 0,
-                  'exclude'=> '1,2,97,105,106'
-                  );
-                $categories = get_categories( $args );
-                foreach ( $categories as $category ) { ?>
-                <li><a class="cat-<?php echo $category->term_id; ?>" href="<?php echo get_category_link( $category->term_id ); ?>"><?php echo $category->name; ?></a></li>
-                <?php } ?>
-              </ul>
-            </div>
           </div><!-- .btns-orden -->
         </div><!-- .span4 -->
       </div><!-- .row -->

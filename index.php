@@ -625,14 +625,6 @@
         </div><!-- .span4 -->
         <div class="col-md-12 col-md-offset-9">
           <div class="btns-orden btn-toolbar">
-            <div id="OrdenNuevasPopulares" class="btn-group">
-              <a href="#"  id="ordenNuevas" class="btn btn-orden dropdown-toggle" data-toggle="dropdown">Ordenar por <i class="fa fa-sort-desc"></i></a>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="ordenNuevas">
-                <li><a href="#">Más nuevas</a></li>
-                <li><a href="#">Más populares</a></li>
-              </ul>
-              <!--<a href="#" class="btn btn-orden">Más populares <i class="fa icon-sort"></i></a>-->
-            </div>
             <div id="OrdenEjes" class="btn-group">
               <a href="#" id="ordenEje" class="btn btn-orden dropdown-toggle" data-toggle="dropdown">Por eje temático <i class="fa fa-sort-desc"></i></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="ordenEje">
