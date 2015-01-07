@@ -45,7 +45,7 @@ if($idcat && $type && $type == 'reci'){
 </div><!-- .row -->
 <div class="row rm8">
   <ul class="col-sm-36">
-    <li><i class="fa fa-file-text-o"></i> <?php echo count_posts('catsarchive', '', '', $idcat); ?> publicaciones</li>
+    <li><i class="fa fa-file-text-o"></i> <?php echo count_posts('cats', '2000', '01', $idcat); ?> publicaciones</li>
     <?php 
       $args = array('categories' => $idcat);
       $tags = get_category_tags($args);
