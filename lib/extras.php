@@ -1046,7 +1046,7 @@ function get_category_tags($args) {
 }
 
 //Tiempo estimado de lectura
-function estimate_time_shortcode() {
+function estimate_time() {
 	global $post;
 	$result = "";
 	$wpm = 250; //Palabras por minuto

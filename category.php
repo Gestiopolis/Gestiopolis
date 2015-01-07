@@ -403,7 +403,7 @@ get_currentuserinfo();
               <div class="wrapper-meta clearfix">
                 <?php the_tags('<div class="tags"><i class="fa fa-tags"></i> ',', ','</div>'); ?>
                 <div class="stats"><i class="fa fa-eye"></i> <?php if(function_exists('the_views')) { the_views(); } ?> <i class="fa fa-comments"></i> <?php comments_number('0','1','%'); ?> <i class="fa fa-heart"></i> 21</div>
-                <div class="tiempo"><i class="fa fa-coffee"></i> Leerlo te tomará <?php echo estimate_time_shortcode();?></div>
+                <div class="tiempo"><i class="fa fa-coffee"></i> Leerlo te tomará <?php echo estimate_time();?></div>
               </div>
             </article><!-- .post -->
           </div><!-- .col-md-12 col-sm-18 -->
