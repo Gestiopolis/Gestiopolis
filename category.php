@@ -21,7 +21,7 @@ get_currentuserinfo();
           $args = array('categories' => $term->term_id);
           $tags = get_category_tags($args);
         ?>
-        <li>Temas <a href="#" class="btn btn-tem"><?php echo count(tags); ?></a></li>
+        <li>Temas <a href="#" class="btn btn-tem"><?php echo count($tags); ?></a></li>
         <!--<li>Seguidores <a href="#" class="btn btn-seg">2560</a></li>-->
       </ul>
     </div><!-- .col-sm-15 -->
