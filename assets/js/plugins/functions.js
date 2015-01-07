@@ -10,7 +10,7 @@ function slider(spcon, container, items, margin){
     e.preventDefault();
     if (currentTranslateX - width > -maxWidth + width*3) {
       currentTranslateX -= width;
-      $(container).css("left",currentTranslateX);         
+      $(container).css("left",currentTranslateX);
     }else{
       currentTranslateX = 0;
       $(container).css("left",currentTranslateX);
@@ -21,13 +21,13 @@ function slider(spcon, container, items, margin){
     e.preventDefault();
     if (currentTranslateX + width <= 0) {
       currentTranslateX += width;
-      $(container).css("left",currentTranslateX);         
+      $(container).css("left",currentTranslateX);
     }else{
       currentTranslateX = -width * ($(spcon+' '+items).length - 4 );
       $(container).css("left",currentTranslateX);
     }
   });
-};
+}
 
 var Grid = (function() {
   // list of items
@@ -223,15 +223,15 @@ var Grid = (function() {
       current = this.$item.index();
 
       // update preview's content
-      var $itemEl = this.$item.find( 'i[class*="icon-cat-"]' ),
+      var $itemEl = this.$item.find( 'i[class*="fa icon-cat-"]' ),
         eldata = {
-          idcat : $itemEl.attr( 'class' ).slice(9),
+          idcat : $itemEl.attr( 'class' ).slice(12),
           type : $grid.attr( 'rel' )
         };
       this.$item.find( '.og-expander-inner' ).css('height', 100);
       this.$loading.show();
       var self = this;
-      $.post(functionsUrl+"functions/recientes-eje-home.php", { "idcat": eldata.idcat, "type": eldata.type },
+      $.post(serverval.template_directory+"/lib/functions/recientes-eje-home.php", { "idcat": eldata.idcat, "type": eldata.type },
         function(data){
           self.$item.find( '.og-expander-inner' ).height('100%');
           self.$loading.hide();

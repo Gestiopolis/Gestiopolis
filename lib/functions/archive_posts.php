@@ -39,7 +39,7 @@ if($year && $month){ ?>
 								}
 								echo '</ul>';
 							} else {
-								echo '<h2>No existen artículos paa esta categoría en ésta fecha</h2>';
+								echo '<h2>No existen artículos para esta categoría en ésta fecha</h2>';
 							}
 							/* Restore original Post Data */
 							wp_reset_query();
@@ -81,7 +81,7 @@ if($year && $month){ ?>
 								}
 								echo '</ul>';
 							} else {
-								echo '<h2>No existen artículos paa esta categoría en ésta fecha</h2>';
+								echo '<h2>No existen artículos para esta categoría en ésta fecha</h2>';
 							}
 							/* Restore original Post Data */
 							wp_reset_query();
@@ -125,7 +125,7 @@ if($year && $month){ ?>
 								}
 								echo '</ul>';
 							} else {
-								echo '<h2>No existen artículos paa esta categoría en ésta fecha</h2>';
+								echo '<h2>No existen artículos para esta categoría en ésta fecha</h2>';
 							}
 							/* Restore original Post Data */
 							wp_reset_query();
@@ -167,7 +167,7 @@ if($year && $month){ ?>
 								}
 								echo '</ul>';
 							} else {
-								echo '<h2>No existen artículos paa esta categoría en ésta fecha</h2>';
+								echo '<h2>No existen artículos para esta categoría en ésta fecha</h2>';
 							}
 							/* Restore original Post Data */
 							wp_reset_query();
@@ -211,7 +211,7 @@ if($year && $month){ ?>
 								}
 								echo '</ul>';
 							} else {
-								echo '<h2>No existen artículos paa esta categoría en ésta fecha</h2>';
+								echo '<h2>No existen artículos para esta categoría en ésta fecha</h2>';
 							}
 							/* Restore original Post Data */
 							wp_reset_query();
@@ -253,7 +253,7 @@ if($year && $month){ ?>
 								}
 								echo '</ul>';
 							} else {
-								echo '<h2>No existen artículos paa esta categoría en ésta fecha</h2>';
+								echo '<h2>No existen artículos para esta categoría en ésta fecha</h2>';
 							}
 							/* Restore original Post Data */
 							wp_reset_query();
@@ -297,7 +297,7 @@ if($year && $month){ ?>
 								}
 								echo '</ul>';
 							} else {
-								echo '<h2>No existen artículos paa esta categoría en ésta fecha</h2>';
+								echo '<h2>No existen artículos para esta categoría en ésta fecha</h2>';
 							}
 							/* Restore original Post Data */
 							wp_reset_query();
@@ -339,7 +339,7 @@ if($year && $month){ ?>
 								}
 								echo '</ul>';
 							} else {
-								echo '<h2>No existen artículos paa esta categoría en ésta fecha</h2>';
+								echo '<h2>No existen artículos para esta categoría en ésta fecha</h2>';
 							}
 							/* Restore original Post Data */
 							wp_reset_query();
@@ -383,7 +383,7 @@ if($year && $month){ ?>
 								}
 								echo '</ul>';
 							} else {
-								echo '<h2>No existen artículos paa esta categoría en ésta fecha</h2>';
+								echo '<h2>No existen artículos para esta categoría en ésta fecha</h2>';
 							}
 							/* Restore original Post Data */
 							wp_reset_query();
@@ -425,7 +425,7 @@ if($year && $month){ ?>
 								}
 								echo '</ul>';
 							} else {
-								echo '<h2>No existen artículos paa esta categoría en ésta fecha</h2>';
+								echo '<h2>No existen artículos para esta categoría en ésta fecha</h2>';
 							}
 							/* Restore original Post Data */
 							wp_reset_query();
@@ -469,7 +469,7 @@ if($year && $month){ ?>
 								}
 								echo '</ul>';
 							} else {
-								echo '<h2>No existen artículos paa esta categoría en ésta fecha</h2>';
+								echo '<h2>No existen artículos para esta categoría en ésta fecha</h2>';
 							}
 							/* Restore original Post Data */
 							wp_reset_query();
@@ -511,7 +511,7 @@ if($year && $month){ ?>
 								}
 								echo '</ul>';
 							} else {
-								echo '<h2>No existen artículos paa esta categoría en ésta fecha</h2>';
+								echo '<h2>No existen artículos para esta categoría en ésta fecha</h2>';
 							}
 							/* Restore original Post Data */
 							wp_reset_query();

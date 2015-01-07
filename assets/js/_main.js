@@ -85,6 +85,15 @@ var Gestiopolis = {
       slider(".home .temas-home", ".home .temas-home .carrusel", ".carrusel>.span3", 8);
     }
   },
+  page_id_80309: { //ABC temático
+    init: function() {
+      // JavaScript to be fired on the home page
+      //1. Grid Ejes temáticos Home
+      Grid.init();
+      //2. Scrollbar ABC 404
+      $('.scrollabc').tinyscrollbar();
+    }
+  },
   // About us page, note the change from about-us to about_us.
   page_id_80284: { //Página de Archivo
     init: function() {

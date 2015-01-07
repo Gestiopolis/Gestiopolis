@@ -977,6 +977,14 @@ function count_posts($type, $year, $month, $catid=0) {
 			$result = $wpdb->get_var( $query );
 			return $result;
 		break;
+		case 'cats':
+			$year1= date('Y');
+			$month1= date('m');
+			$day1= date('d');
+			$query = "SELECT count(ID) AS posts FROM $wpdb->posts INNER JOIN $wpdb->term_relationships ON $wpdb->posts.ID = $wpdb->term_relationships.object_id INNER JOIN $wpdb->term_taxonomy ON $wpdb->term_relationships.term_taxonomy_id = $wpdb->term_taxonomy.term_taxonomy_id INNER JOIN $wpdb->terms ON $wpdb->term_taxonomy.term_id = $wpdb->terms.term_id WHERE $wpdb->posts.post_type = 'post' AND $wpdb->posts.post_status = 'publish' AND $wpdb->terms.term_id = $catid AND $wpdb->term_taxonomy.taxonomy = 'category' AND $wpdb->posts.post_date >= '2000-01-01' AND $wpdb->posts.post_date <= '$year1-$month1-$day1' ORDER BY post_date ASC";
+			$result = $wpdb->get_var( $query );
+			return $result;
+		break;
 		case 'allarchive':
 			$query = "SELECT count(ID) AS posts FROM $wpdb->posts WHERE post_type = 'post' AND post_status = 'publish' AND post_date >= '$year-$month-01' AND post_date <= '$year-$month-31' ORDER BY post_date ASC";
 			$result = $wpdb->get_var( $query );
@@ -989,11 +997,84 @@ function count_posts($type, $year, $month, $catid=0) {
 	}
 }
 
+//Número de autores por categoría
+function autcat($catid) {
+	$catauthors = array();
+	$allposts=get_posts("cat=$catid&showposts=-1");
+	if ($allposts) {
+	  foreach($allposts as $authorpost) {
+	    $catauthors[$authorpost->post_author]=1;
+	  }
+	   echo count($catauthors);
+	}
+}
+
 //Limitar tags
 add_filter('term_links-post_tag','limit_tags');
 function limit_tags($terms) {
 	return array_slice($terms,0,4,true);
 }
+
+//Obtener tags de una acategoría específica
+function get_category_tags($args) {
+	global $wpdb;
+	$tags = $wpdb->get_results
+	("
+		SELECT DISTINCT terms2.term_id as tag_id, terms2.name as tag_name, null as tag_link
+		FROM
+			$wpdb->posts as p1
+			LEFT JOIN $wpdb->term_relationships as r1 ON p1.ID = r1.object_ID
+			LEFT JOIN $wpdb->term_taxonomy as t1 ON r1.term_taxonomy_id = t1.term_taxonomy_id
+			LEFT JOIN $wpdb->terms as terms1 ON t1.term_id = terms1.term_id,
+
+			$wpdb->posts as p2
+			LEFT JOIN $wpdb->term_relationships as r2 ON p2.ID = r2.object_ID
+			LEFT JOIN $wpdb->term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id
+			LEFT JOIN $wpdb->terms as terms2 ON t2.term_id = terms2.term_id
+		WHERE
+			t1.taxonomy = 'category' AND p1.post_status = 'publish' AND terms1.term_id = '".$args['categories']."' AND
+			t2.taxonomy = 'post_tag' AND p2.post_status = 'publish'
+			AND p1.ID = p2.ID
+		ORDER by tag_name
+	");
+	$count = 0;
+	foreach ($tags as $tag) {
+		$tags[$count]->tag_link = get_tag_link($tag->tag_id);
+		$count++;
+	}
+	return $tags;
+}
+
+//Tiempo estimado de lectura
+function estimate_time_shortcode() {
+	global $post;
+	$result = "";
+	$wpm = 250; //Palabras por minuto
+	
+	$content = strip_tags($post->post_content);		
+	$content_words = str_word_count($content);
+	$estimated_minutes = floor($content_words / $wpm);
+
+	if ($estimated_minutes < 1) {
+		$result = "menos de un minuto";
+	}
+	else if ($estimated_minutes > 60) {
+		if ($estimated_minutes > 1440){
+			$result = "más de un día";
+		}
+		else {
+			$result = floor($estimated_minutes / 60) . " horas";
+		}
+	}
+	else if ($estimated_minutes == 1) {
+		$result = $estimated_minutes . " minuto";
+	}
+	else {
+		$result = $estimated_minutes . " minutos";
+	}
+	return $result;
+}
+
 
 //Archivos necesarios para la cabecera en la administración
 require_once ('functions/admin_head.php');
