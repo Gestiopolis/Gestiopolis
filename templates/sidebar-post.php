@@ -102,7 +102,7 @@
     <div class="temas-sidebar">
       <h3>Temas tendencia en <?php echo $category_name; ?></h3>
       <div class="wrapper-temas">
-        <a href="#"><i class="fa fa-tag"></i> quimbara quimbara</a><a href="#"><i class="fa fa-tag"></i> te voy a enseñar</a><a href="#"><i class="fa fa-tag"></i> mi negrita me espera</a><a href="#"><i class="fa fa-tag"></i> pedro navaja</a><a href="#"><i class="fa fa-tag"></i> dime por qué</a><a href="#"><i class="fa fa-tag"></i> quimbara quimbara</a><a href="#"><i class="fa fa-tag"></i> te voy a enseñar</a><a href="#"><i class="fa fa-tag"></i> mi negrita me espera</a><a href="#"><i class="fa fa-tag"></i> pedro navaja</a><a href="#"><i class="fa fa-tag"></i> dime por qué</a>
+        <?php popular_tags_from_category($category_id, 1240, 8)?>
       </div>
     </div>
     <?php $args3=array( 'cat' => $category_id, 'posts_per_page'=>4, 'post__not_in'=>array($post->ID), 'offset' => 5);//Empieza query del último post

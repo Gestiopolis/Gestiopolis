@@ -944,19 +944,19 @@ function sharethis_info($url, $provider) {
 	}
 }
 
-/*Función que trae las etiquetas más vistas del último mes de determinada categoría*/
-function popular_tags_from_category($catid){
+/*Función que trae las etiquetas más vistas de determinada categoría*/
+function popular_tags_from_category($catid, $days, $limit=15){
 	global $wpdb;
 	$now = gmdate("Y-m-d H:i:s",time());
-	$datelimit = gmdate("Y-m-d H:i:s",gmmktime(date("H"), date("i"), date("s"), date("m"),date("d")-30,date("Y")));
-	$popterms = "SELECT DISTINCT terms2.*, t2.count as count FROM $wpdb->posts as p1 LEFT JOIN $wpdb->term_relationships as r1 ON p1.ID = r1.object_ID LEFT JOIN $wpdb->term_taxonomy as t1 ON r1.term_taxonomy_id = t1.term_taxonomy_id LEFT JOIN $wpdb->terms as terms1 ON t1.term_id = terms1.term_id, $wpdb->posts as p2 LEFT JOIN $wpdb->term_relationships as r2 ON p2.ID = r2.object_ID LEFT JOIN $wpdb->term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id 	LEFT JOIN $wpdb->terms as terms2 ON t2.term_id = terms2.term_id 	WHERE t1.taxonomy = 'category' AND p1.post_status = 'publish' AND p1.post_date < '$now' AND p1.post_date > '$datelimit' AND terms1.term_id = '$catid' AND t2.taxonomy = 'post_tag' AND p2.post_status = 'publish' AND p2.post_date < '$now' AND 	p2.post_date > '$datelimit' AND 	p1.ID = p2.ID ORDER BY count DESC LIMIT 8";
+	//$datelimit = gmdate("Y-m-d H:i:s",gmmktime(date("H"), date("i"), date("s"), date("m"),date("d")-30,date("Y")));
+	$popterms = "SELECT DISTINCT terms2.*, t2.count as count FROM $wpdb->posts as p1 LEFT JOIN $wpdb->term_relationships as r1 ON p1.ID = r1.object_ID LEFT JOIN $wpdb->term_taxonomy as t1 ON r1.term_taxonomy_id = t1.term_taxonomy_id LEFT JOIN $wpdb->terms as terms1 ON t1.term_id = terms1.term_id, $wpdb->posts as p2 LEFT JOIN $wpdb->term_relationships as r2 ON p2.ID = r2.object_ID LEFT JOIN $wpdb->term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id 	LEFT JOIN $wpdb->terms as terms2 ON t2.term_id = terms2.term_id 	WHERE t1.taxonomy = 'category' AND p1.post_status = 'publish' AND p1.post_date <= '$now' AND p1.post_date > '" . date('Y-m-d H:i:s', strtotime('-'.$days.' days')) . "' AND terms1.term_id = '$catid' AND t2.taxonomy = 'post_tag' AND p2.post_status = 'publish' AND p2.post_date <= '$now' AND 	p2.post_date > '" . date('Y-m-d H:i:s', strtotime('-'.$days.' days')) . "' AND 	p1.ID = p2.ID ORDER BY count DESC LIMIT $limit";
 	$terms = $wpdb->get_results($popterms);
 	if($terms){
 		$args = array(
-		'smallest'  => 14,
-		'largest'   => 14,
+		'smallest'  => 18,
+		'largest'   => 18,
 		'unit'      => 'px',
-		'number'    => 8,
+		'number'    => $limit,
 		'format'    => 'flat',
 		'separator' => "\n",
 		'orderby'   => 'name',
@@ -973,10 +973,13 @@ function popular_tags_from_category($catid){
 		if ( is_wp_error( $link ) )
 			return false;
 
-		$terms[ $key ]->link = $link;
-		$terms[ $key ]->id = $tag->term_id;
+		$tag_link = '#' != $tag->link ? esc_url( $link ) : '#';
+		$tag_id = isset($tag->term_id) ? $tag->term_id : $key;
+		$tag_name = $terms[ $key ]->name;
+
+		echo "<a href='$tag_link' class='tag-link-$tag_id' title='" . esc_attr( $tag->count ) . " temas'><i class='fa fa-tag'></i> $tag_name</a>";
 	}	
-		echo wp_generate_tag_cloud( $terms, $args );
+		//echo wp_generate_tag_cloud( $terms, $args );
 	}
 }
 

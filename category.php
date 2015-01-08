@@ -288,7 +288,7 @@ get_currentuserinfo();
       </div><!-- .row -->
       <div class="row rm8">
         <div class="col-sm-36">
-          <a href="#"><i class="fa fa-tag"></i> quimbara quimbara</a><a href="#"><i class="fa fa-tag"></i> te voy a enseñar</a><a href="#"><i class="fa fa-tag"></i> mi negrita me espera</a><a href="#"><i class="fa fa-tag"></i> pedro navaja</a><a href="#"><i class="fa fa-tag"></i> dime por qué</a><a href="#"><i class="fa fa-tag"></i> quimbara quimbara</a><a href="#"><i class="fa fa-tag"></i> te voy a enseñar</a><a href="#"><i class="fa fa-tag"></i> mi negrita me espera</a><a href="#"><i class="fa fa-tag"></i> pedro navaja</a><a href="#"><i class="fa fa-tag"></i> dime por qué</a><a href="#"><i class="fa fa-tag"></i> quimbara quimbara</a><a href="#"><i class="fa fa-tag"></i> te voy a enseñar</a><a href="#"><i class="fa fa-tag"></i> mi negrita me espera</a><a href="#"><i class="fa fa-tag"></i> pedro navaja</a><a href="#"><i class="fa fa-tag"></i> dime por qué</a><a href="#"><i class="fa fa-tag"></i> mi negrita me espera</a><a href="#"><i class="fa fa-tag"></i> pedro navaja</a><a href="#"><i class="fa fa-tag"></i> dime por qué</a>
+          <?php popular_tags_from_category($term->term_id, 1240)?>
         </div><!-- .col-sm-36 -->
       </div><!-- .row -->
     </div><!-- .col-sm-18 -->
