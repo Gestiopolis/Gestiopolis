@@ -358,6 +358,15 @@ var Boxgrid = (function() {
     // window width and height
     winsize = getWindowSize();
 
+  function getWindowSize() {
+    $body.css( 'overflow-y', 'hidden' );
+    var w = $window.width(), h =  $window.height();
+    if( current === -1 ) {
+      $body.css( 'overflow-y', 'auto' );
+    }
+    return { width : w, height : h };
+  }
+  
   function init( options ) {
     // apply fittext plugin
     //$items.find( 'div.rb-week > div span' ).fitText( 0.3 ).end().find( 'span.rb-city' ).fitText( 0.5 );
@@ -476,15 +485,6 @@ var Boxgrid = (function() {
       height : $item.outerHeight()
     };
 
-  }
-
-  function getWindowSize() {
-    $body.css( 'overflow-y', 'hidden' );
-    var w = $window.width(), h =  $window.height();
-    if( current === -1 ) {
-      $body.css( 'overflow-y', 'auto' );
-    }
-    return { width : w, height : h };
   }
 
   return { init : init };

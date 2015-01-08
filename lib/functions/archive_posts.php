@@ -49,7 +49,7 @@ if($year && $month){ ?>
         </a>
       </div>
       <div class="col-sm-18">
-        <a href="#" class="cat-bg-20">
+        <a href="<?php echo get_category_link( 20 ); ?>" class="cat-bg-20">
           <span class="eje-meta"><span><?php echo count_posts('catsarchive', $year, $month, 20); ?></span> publicaciones</span>
           <i class="fa icon-cat-20"></i>
           <span class="eje-nombre">Administración</span>
@@ -93,7 +93,7 @@ if($year && $month){ ?>
     </div>
     <div class="row rm8">
       <div class="col-sm-18">
-        <a href="#" class="cat-bg-15">
+        <a href="<?php echo get_category_link( 15 ); ?>" class="cat-bg-15">
           <span class="eje-meta"><span><?php echo count_posts('catsarchive', $year, $month, 15); ?></span> publicaciones</span>
           <i class="fa icon-cat-15"></i>
           <span class="eje-nombre">Autoayuda</span>
@@ -135,7 +135,7 @@ if($year && $month){ ?>
         </a>
       </div>
       <div class="col-sm-18">
-        <a href="#" class="cat-bg-16">
+        <a href="<?php echo get_category_link( 16 ); ?>" class="cat-bg-16">
           <span class="eje-meta"><span><?php echo count_posts('catsarchive', $year, $month, 16); ?></span> publicaciones</span>
           <i class="fa icon-cat-16"></i>
           <span class="eje-nombre">Contabilidad</span>
@@ -179,7 +179,7 @@ if($year && $month){ ?>
     </div>
     <div class="row rm8">
       <div class="col-sm-18">
-        <a href="#" class="cat-bg-17">
+        <a href="<?php echo get_category_link( 17 ); ?>" class="cat-bg-17">
           <span class="eje-meta"><span><?php echo count_posts('catsarchive', $year, $month, 17); ?></span> publicaciones</span>
           <i class="fa icon-cat-17"></i>
           <span class="eje-nombre">Economía</span>
@@ -221,7 +221,7 @@ if($year && $month){ ?>
         </a>
       </div>
       <div class="col-sm-18">
-        <a href="emprendimiento.php" class="cat-bg-18">
+        <a href="<?php echo get_category_link( 18 ); ?>" class="cat-bg-18">
           <span class="eje-meta"><span><?php echo count_posts('catsarchive', $year, $month, 18); ?></span> publicaciones</span>
           <i class="fa icon-cat-18"></i>
           <span class="eje-nombre">Emprendimiento</span>
@@ -265,7 +265,7 @@ if($year && $month){ ?>
     </div>
     <div class="row rm8">
       <div class="col-sm-18">
-        <a href="#" class="cat-bg-19">
+        <a href="<?php echo get_category_link( 19 ); ?>" class="cat-bg-19">
           <span class="eje-meta"><span><?php echo count_posts('catsarchive', $year, $month, 19); ?></span> publicaciones</span>
           <i class="fa icon-cat-19"></i>
           <span class="eje-nombre">Finanzas</span>
@@ -307,7 +307,7 @@ if($year && $month){ ?>
         </a>
       </div>
       <div class="col-sm-18">
-        <a href="#" class="cat-bg-3">
+        <a href="<?php echo get_category_link( 3 ); ?>" class="cat-bg-3">
           <span class="eje-meta"><span><?php echo count_posts('catsarchive', $year, $month, 13); ?></span> publicaciones</span>
           <i class="fa icon-cat-3"></i>
           <span class="eje-nombre">Marketing</span>
@@ -351,7 +351,7 @@ if($year && $month){ ?>
     </div>
     <div class="row rm8">
       <div class="col-sm-18">
-        <a href="#" class="cat-bg-23">
+        <a href="<?php echo get_category_link( 23 ); ?>" class="cat-bg-23">
           <span class="eje-meta"><span><?php echo count_posts('catsarchive', $year, $month, 23); ?></span> publicaciones</span>
           <i class="fa icon-cat-23"></i>
           <span class="eje-nombre">Medio Ambiente</span>
@@ -393,7 +393,7 @@ if($year && $month){ ?>
         </a>
       </div>
       <div class="col-sm-18">
-        <a href="#" class="cat-bg-21">
+        <a href="<?php echo get_category_link( 21 ); ?>" class="cat-bg-21">
           <span class="eje-meta"><span><?php echo count_posts('catsarchive', $year, $month, 21); ?></span> publicaciones</span>
           <i class="fa icon-cat-21"></i>
           <span class="eje-nombre">Talento</span>
@@ -437,7 +437,7 @@ if($year && $month){ ?>
     </div>
     <div class="row rm8">
       <div class="col-sm-18">
-        <a href="#" class="cat-bg-56">
+        <a href="<?php echo get_category_link( 56 ); ?>" class="cat-bg-56">
           <span class="eje-meta"><span><?php echo count_posts('catsarchive', $year, $month, 56); ?></span> publicaciones</span>
           <i class="fa icon-cat-56"></i>
           <span class="eje-nombre">Tecnología</span>
@@ -479,7 +479,7 @@ if($year && $month){ ?>
         </a>
       </div>
       <div class="col-sm-18">
-        <a href="#" class="cat-bg-24">
+        <a href="<?php echo get_category_link( 24 ); ?>" class="cat-bg-24">
           <span class="eje-meta"><span><?php echo count_posts('catsarchive', $year, $month, 24); ?></span> publicaciones</span>
           <i class="fa icon-cat-24"></i>
           <span class="eje-nombre">Otros temas</span>
