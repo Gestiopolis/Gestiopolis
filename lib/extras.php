@@ -1021,14 +1021,8 @@ function count_posts($type, $year, $month, $catid=0) {
 
 //Número de autores por categoría
 function autcat($catid) {
-	$catauthors = array();
-	$allposts=get_posts("cat=$catid&showposts=-1");
-	if ($allposts) {
-	  foreach($allposts as $authorpost) {
-	    $catauthors[$authorpost->post_author]=1;
-	  }
-	   echo count($catauthors);
-	}
+	global $wpdb;
+	echo $wpdb->get_var("SELECT COUNT(DISTINCT post_author) AS count FROM $wpdb->posts posts INNER JOIN $wpdb->term_relationships term ON (posts.ID = term.object_id) WHERE posts.post_type = 'post' AND term.term_taxonomy_id= '$catid' AND posts.post_status='publish'");
 }
 
 //Limitar tags
