@@ -118,7 +118,7 @@
           $link = esc_url( $_SERVER['HTTP_HOST']).'/'.$servidor.'wp-login.php?action=logout&redirect_to='.esc_url( $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ); ?>
         <li id="nav_loggedin" class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="drop_loggedin">
-            <?php echo get_avatar( $current_user->ID, 32, '', 'Avatar' ); ?>  <?php echo $current_user->display_name;?>
+            <?php echo get_avatar( $current_user->ID, 32, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>  <?php echo $current_user->display_name;?>
           </a>
           <span><a href="#" class="notifications">12</a></span>
           <ul id="menu_loggedin" class="dropdown-menu" role="menu" aria-labelledby="drop_loggedin">

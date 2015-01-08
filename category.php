@@ -61,7 +61,7 @@ get_currentuserinfo();
                   <div class="meta"><i class="fa fa-eye"></i> <?php echo $post->vistas;?> <i class="fa fa-heart"></i> <?php echo $post->likes;?> <i class="fa fa-comment"></i> <?php echo $post->comment_count;?></div>
                   <div class="excerpt"><a href="<?php echo get_permalink($post->ID); ?>"><?php echo title_trim(150, $post->post_content);?></a></div>
                   <a class="autor" href="<?php echo get_author_posts_url($post->post_author); ?>">
-                    <?php echo get_avatar( $post->post_author, 21, '', 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
+                    <?php echo get_avatar( $post->post_author, 21, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
                   </a>
                   <div class="botones-compartir" id="compartir-<?php echo $post->ID;?>">
                     <div class="platform bc-facebook" id="fb-compartir-<?php echo $post->ID;?>"></div>
@@ -88,7 +88,7 @@ get_currentuserinfo();
                   <div class="meta"><i class="fa fa-eye"></i> <?php echo $post->vistas;?> <i class="fa fa-heart"></i> <?php echo $post->likes;?> <i class="fa fa-comment"></i> <?php echo $post->comment_count;?></div>
                   <div class="excerpt"><a href="<?php echo get_permalink($post->ID); ?>"><?php echo title_trim(150, $post->post_content);?></a></div>
                   <a class="autor" href="<?php echo get_author_posts_url($post->post_author); ?>">
-                    <?php echo get_avatar( $post->post_author, 21, '', 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
+                    <?php echo get_avatar( $post->post_author, 21, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
                   </a>
                   <div class="botones-compartir" id="compartir-<?php echo $post->ID;?>">
                     <div class="platform bc-facebook" id="fb-compartir-<?php echo $post->ID;?>"></div>
@@ -111,7 +111,7 @@ get_currentuserinfo();
                   <div class="meta"><i class="fa fa-eye"></i> <?php echo $post->vistas;?> <i class="fa fa-heart"></i> <?php echo $post->likes;?> <i class="fa fa-comment"></i> <?php echo $post->comment_count;?></div>
                   <div class="excerpt"><a href="<?php echo get_permalink($post->ID); ?>"><?php echo title_trim(150, $post->post_content);?></a></div>
                   <a class="autor" href="<?php echo get_author_posts_url($post->post_author); ?>">
-                    <?php echo get_avatar( $post->post_author, 21, '', 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
+                    <?php echo get_avatar( $post->post_author, 21, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
                   </a>
                   <div class="botones-compartir" id="compartir-<?php echo $post->ID;?>">
                     <div class="platform bc-facebook" id="fb-compartir-<?php echo $post->ID;?>"></div>
@@ -136,7 +136,7 @@ get_currentuserinfo();
                   <div class="meta"><i class="fa fa-eye"></i> <?php echo $post->vistas;?> <i class="fa fa-heart"></i> <?php echo $post->likes;?> <i class="fa fa-comment"></i> <?php echo $post->comment_count;?></div>
                   <div class="excerpt"><a href="<?php echo get_permalink($post->ID); ?>"><?php echo title_trim(150, $post->post_content);?></a></div>
                   <a class="autor" href="<?php echo get_author_posts_url($post->post_author); ?>">
-                    <?php echo get_avatar( $post->post_author, 21, '', 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
+                    <?php echo get_avatar( $post->post_author, 21, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
                   </a>
                   <div class="botones-compartir" id="compartir-<?php echo $post->ID;?>">
                     <div class="platform bc-facebook" id="fb-compartir-<?php echo $post->ID;?>"></div>
@@ -163,7 +163,7 @@ get_currentuserinfo();
                   <div class="meta"><i class="fa fa-eye"></i> <?php echo $post->vistas;?> <i class="fa fa-heart"></i> <?php echo $post->likes;?> <i class="fa fa-comment"></i> <?php echo $post->comment_count;?></div>
                   <div class="excerpt"><a href="<?php echo get_permalink($post->ID); ?>"><?php echo title_trim(150, $post->post_content);?></a></div>
                   <a class="autor" href="<?php echo get_author_posts_url($post->post_author); ?>">
-                    <?php echo get_avatar( $post->post_author, 21, '', 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
+                    <?php echo get_avatar( $post->post_author, 21, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
                   </a>
                   <div class="botones-compartir" id="compartir-<?php echo $post->ID;?>">
                     <div class="platform bc-facebook" id="fb-compartir-<?php echo $post->ID;?>"></div>
@@ -188,7 +188,7 @@ get_currentuserinfo();
                   <div class="meta"><i class="fa fa-eye"></i> <?php echo $post->vistas;?> <i class="fa fa-heart"></i> <?php echo $post->likes;?> <i class="fa fa-comment"></i> <?php echo $post->comment_count;?></div>
                   <div class="excerpt"><a href="<?php echo get_permalink($post->ID); ?>"><?php echo title_trim(150, $post->post_content);?></a></div>
                   <a class="autor" href="<?php echo get_author_posts_url($post->post_author); ?>">
-                    <?php echo get_avatar( $post->post_author, 21, '', 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
+                    <?php echo get_avatar( $post->post_author, 21, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
                   </a>
                   <div class="botones-compartir" id="compartir-<?php echo $post->ID;?>">
                     <div class="platform bc-facebook" id="fb-compartir-<?php echo $post->ID;?>"></div>
@@ -222,7 +222,7 @@ get_currentuserinfo();
       <div class="row rm8">
         <div class="col-sm-18">
           <div class="wrapper-nombre">
-            <?php echo get_avatar( $author->post_author, 56, '', 'Avatar' ); ?>
+            <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
             <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
             <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
@@ -231,7 +231,7 @@ get_currentuserinfo();
         <?php } else if($j == 2){ ?>
         <div class="col-sm-18">
           <div class="wrapper-nombre">
-            <?php echo get_avatar( $author->post_author, 56, '', 'Avatar' ); ?>
+            <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
             <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
             <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
@@ -242,7 +242,7 @@ get_currentuserinfo();
       <div class="row rm8">
         <div class="col-sm-18">
           <div class="wrapper-nombre">
-            <?php echo get_avatar( $author->post_author, 56, '', 'Avatar' ); ?>
+            <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
             <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
             <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
@@ -251,7 +251,7 @@ get_currentuserinfo();
         <?php } else if($j == 4){ ?>
         <div class="col-sm-18">
           <div class="wrapper-nombre">
-            <?php echo get_avatar( $author->post_author, 56, '', 'Avatar' ); ?>
+            <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
             <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
             <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
@@ -262,7 +262,7 @@ get_currentuserinfo();
       <div class="row rm8">
         <div class="col-sm-18">
           <div class="wrapper-nombre">
-            <?php echo get_avatar( $author->post_author, 56, '', 'Avatar' ); ?>
+            <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
             <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
             <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
@@ -271,7 +271,7 @@ get_currentuserinfo();
         <?php } else if($j == 6){ ?>
         <div class="col-sm-18">
           <div class="wrapper-nombre">
-            <?php echo get_avatar( $author->post_author, 56, '', 'Avatar' ); ?>
+            <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
             <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
             <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
@@ -404,7 +404,7 @@ get_currentuserinfo();
                 <div class="wrapper-content clearfix">
                   <h2 class="entry-title"><a id="titulo-<?php echo $post->ID; ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
                   <a class="autor" href="<?php echo get_author_posts_url($post->post_author); ?>">
-                    <?php echo get_avatar( $post->post_author, 32, '', 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
+                    <?php echo get_avatar( $post->post_author, 32, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
                   </a>
                   <div class="fecha"><?php the_time('j.m.Y') ?></div>
                   <div class="post-content">

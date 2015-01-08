@@ -71,7 +71,7 @@ get_currentuserinfo();
                 <div class="wrapper-content clearfix">
                   <h2 class="entry-title"><a id="titulo-<?php echo $post->ID; ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
                   <a class="autor" href="<?php echo get_author_posts_url($post->post_author); ?>">
-                    <?php echo get_avatar( $post->post_author, 32, '', 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
+                    <?php echo get_avatar( $post->post_author, 32, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
                   </a>
                   <div class="fecha"><?php the_time('j.m.Y') ?></div>
                   <div class="post-content">
