@@ -231,9 +231,9 @@ get_currentuserinfo();
         <?php } else if($j == 2){ ?>
         <div class="col-sm-18">
           <div class="wrapper-nombre">
-            <img src="http://gravatar.com/avatar/e71197281d0838afcc0a1f838e78441f?s=56" class="avatar avatar-56 avatar-default" height="56" width="56" style="width: 56px; height: 56px;" alt="avatar">
-            <div class="nombre-autor"><a href="#">Ismael Rivera Rivera</a></div>
-            <div class="info-autor"><i class="fa fa-book"></i> 18 <i class="fa fa-eye"></i> 1234567</div>
+            <?php echo get_avatar( $author->post_author, 56, '', 'Avatar' ); ?>
+            <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
+            <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
           </div>
         </div><!-- .col-sm-18  -->
@@ -242,18 +242,18 @@ get_currentuserinfo();
       <div class="row rm8">
         <div class="col-sm-18">
           <div class="wrapper-nombre">
-            <img src="http://gravatar.com/avatar/e71197281d0838afcc0a1f838e78441f?s=56" class="avatar avatar-56 avatar-default" height="56" width="56" style="width: 56px; height: 56px;" alt="avatar">
-            <div class="nombre-autor"><a href="#">Úrsula Hilaria Celia de la Caridad Cruz Alfonso de la Santísima Trinidad</a></div>
-            <div class="info-autor"><i class="fa fa-book"></i> 18 <i class="fa fa-eye"></i> 1234567</div>
+            <?php echo get_avatar( $author->post_author, 56, '', 'Avatar' ); ?>
+            <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
+            <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
           </div>
         </div><!-- .col-sm-18 -->
         <?php } else if($j == 4){ ?>
         <div class="col-sm-18">
           <div class="wrapper-nombre">
-            <img src="http://gravatar.com/avatar/e71197281d0838afcc0a1f838e78441f?s=56" class="avatar avatar-56 avatar-default" height="56" width="56" style="width: 56px; height: 56px;" alt="avatar">
-            <div class="nombre-autor"><a href="#">Ismael Rivera Rivera</a></div>
-            <div class="info-autor"><i class="fa fa-book"></i> 18 <i class="fa fa-eye"></i> 1234567</div>
+            <?php echo get_avatar( $author->post_author, 56, '', 'Avatar' ); ?>
+            <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
+            <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
           </div>
         </div><!-- .col-sm-18 -->
@@ -262,18 +262,18 @@ get_currentuserinfo();
       <div class="row rm8">
         <div class="col-sm-18">
           <div class="wrapper-nombre">
-            <img src="http://gravatar.com/avatar/e71197281d0838afcc0a1f838e78441f?s=56" class="avatar avatar-56 avatar-default" height="56" width="56" style="width: 56px; height: 56px;" alt="avatar">
-            <div class="nombre-autor"><a href="#">Úrsula Hilaria Celia de la Caridad Cruz Alfonso de la Santísima Trinidad</a></div>
-            <div class="info-autor"><i class="fa fa-book"></i> 18 <i class="fa fa-eye"></i> 1234567</div>
+            <?php echo get_avatar( $author->post_author, 56, '', 'Avatar' ); ?>
+            <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
+            <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
           </div>
         </div><!-- .col-sm-18 -->
         <?php } else if($j == 6){ ?>
         <div class="col-sm-18">
           <div class="wrapper-nombre">
-            <img src="http://gravatar.com/avatar/e71197281d0838afcc0a1f838e78441f?s=56" class="avatar avatar-56 avatar-default" height="56" width="56" style="width: 56px; height: 56px;" alt="avatar">
-            <div class="nombre-autor"><a href="#">Ismael Rivera Rivera</a></div>
-            <div class="info-autor"><i class="fa fa-book"></i> 18 <i class="fa fa-eye"></i> 1234567</div>
+            <?php echo get_avatar( $author->post_author, 56, '', 'Avatar' ); ?>
+            <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
+            <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
           </div>
         </div><!-- .col-sm-18 -->
