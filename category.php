@@ -16,7 +16,7 @@ get_currentuserinfo();
       <ul>
         <!--<li><a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a></li>-->
         <li>Publicaciones <a href="#" class="btn btn-publ"><?php echo $term->count; ?></a></li>
-        <li>Autores <a href="#" class="btn btn-aut"><?php autcat($term->term_id) ?></a></li>
+        <li>Autores <a href="#" class="btn btn-aut"><?php autcat($term->term_id); ?></a></li>
         <?php 
           $args = array('categories' => $term->term_id);
           $tags = get_category_tags($args);

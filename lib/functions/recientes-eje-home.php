@@ -51,7 +51,7 @@ if($idcat && $type && $type == 'reci'){
       $tags = get_category_tags($args);
     ?>
     <li><i class="fa fa-tags"></i> <?php echo count($tags); ?> temas</li>
-    <li><i class="fa fa-group"></i> <?php autcat($idcat) ?> autores</li>
+    <li><i class="fa fa-group"></i> <?php autcat($idcat); ?> autores</li>
     <li class="pull-right"><a href="<?php echo get_category_link( $idcat ); ?>" class="btn cat-bg-<?php echo $idcat; ?>"><i class="fa icon-cat-<?php echo $idcat; ?>"></i> <?php echo get_cat_name($idcat);?></a></li>
   </ul>
 </div><!-- .row -->
