@@ -223,162 +223,40 @@
       </div>
       <div class="wrapper-carrusel">
         <div class="row rm8 carrusel">
+          <?php $authors = get_trending_authors(8, 1240); 
+            foreach ($authors as $author) {
+          ?>
           <div class="span3">
             <div class="wrapper-nombre">
-              <img src="http://gravatar.com/avatar/e71197281d0838afcc0a1f838e78441f?s=56" class="avatar avatar-56 avatar-default" height="56" width="56" style="width: 56px; height: 56px;" alt="avatar">
-              <div class="nombre-autor"><a href="#">Elisabeth Judson Shue Guggenheim</a></div>
-              <div class="titular-autor">Actriz de cine y televisión. Nominada a los Oscar, Golden Globe, BAFTA y SAG</div>
+              <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
+              <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
+              <div class="titular-autor"><?php echo title_trim(125, get_the_author_meta('description', $author->post_author)); ?></div>
             </div>
             <div class="row rm8">
               <div class="wrapper-meta">
                 <div class="span1">
-                  <span class="number">12</span> publicaciones
+                  <span class="number"><?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?></span> publicaciones
                 </div><!-- .span1 -->
                 <div class="span1">
-                  <span class="number">123456</span> lectores
+                  <span class="number"><?php echo number_format_i18n( $author->vcount ); ?></span> lectores
                 </div><!-- .span1 -->
-                <div class="span1">
+                <!--<div class="span1">
                   <span class="number">123</span> seguidores
-                </div><!-- .span1 -->
+                </div>--><!-- .span1 -->
               </div>
             </div><!-- .row -->
             <div class="wrapper-minithumbs">
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm3.staticflickr.com/2808/9205555734_71acc6f431.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <!--<a href="#" class="btn btn-seguir"><i class="fa fa-plus"></i> Seguir</a>-->
+              <?php $argsa=array( 'posts_per_page' => 4, 'author' => $author->post_author);//Empieza query del último post
+            $querya = new WP_Query($argsa);
+              if( $querya->have_posts() ) { while ($querya->have_posts()) : $querya->the_post(); ?>
+              <a href="#" data-toggle="tooltip" title="<?php the_title(); ?>"><img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title(); ?>"></a>
+              <?php endwhile;?>
+              <?php } 
+              wp_reset_query(); 
+              wp_reset_postdata(); ?>
             </div>
           </div><!-- .span3 -->
-          <div class="span3">
-            <div class="wrapper-nombre">
-              <img src="http://gravatar.com/avatar/e71197281d0838afcc0a1f838e78441f?s=56" class="avatar avatar-56 avatar-default" height="56" width="56" style="width: 56px; height: 56px;" alt="avatar">
-              <div class="nombre-autor"><a href="#">Elisabeth Judson Shue Guggenheim</a></div>
-              <div class="titular-autor">Actriz de cine y televisión. Nominada a los Oscar, Golden Globe, BAFTA y SAG</div>
-            </div>
-            <div class="row rm8">
-              <div class="wrapper-meta">
-                <div class="span1">
-                  <span class="number">12</span> publicaciones
-                </div><!-- .span1 -->
-                <div class="span1">
-                  <span class="number">123456</span> lectores
-                </div><!-- .span1 -->
-                <div class="span1">
-                  <span class="number">123</span> seguidores
-                </div><!-- .span1 -->
-              </div>
-            </div><!-- .row -->
-            <div class="wrapper-minithumbs">
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm3.staticflickr.com/2808/9205555734_71acc6f431.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <!--<a href="#" class="btn btn-seguir"><i class="fa fa-plus"></i> Seguir</a>-->
-            </div>
-          </div><!-- .span3 -->
-          <div class="span3">
-            <div class="wrapper-nombre">
-              <img src="http://gravatar.com/avatar/e71197281d0838afcc0a1f838e78441f?s=56" class="avatar avatar-56 avatar-default" height="56" width="56" style="width: 56px; height: 56px;" alt="avatar">
-              <div class="nombre-autor"><a href="#">Elisabeth Judson Shue Guggenheim</a></div>
-              <div class="titular-autor">Actriz de cine y televisión. Nominada a los Oscar, Golden Globe, BAFTA y SAG</div>
-            </div>
-            <div class="row rm8">
-              <div class="wrapper-meta">
-                <div class="span1">
-                  <span class="number">12</span> publicaciones
-                </div><!-- .span1 -->
-                <div class="span1">
-                  <span class="number">123456</span> lectores
-                </div><!-- .span1 -->
-                <div class="span1">
-                  <span class="number">123</span> seguidores
-                </div><!-- .span1 -->
-              </div>
-            </div><!-- .row -->
-            <div class="wrapper-minithumbs">
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm3.staticflickr.com/2808/9205555734_71acc6f431.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <!--<a href="#" class="btn btn-seguir"><i class="fa fa-plus"></i> Seguir</a>-->
-            </div>
-          </div><!-- .span3 -->
-          <div class="span3">
-            <div class="wrapper-nombre">
-              <img src="http://gravatar.com/avatar/e71197281d0838afcc0a1f838e78441f?s=56" class="avatar avatar-56 avatar-default" height="56" width="56" style="width: 56px; height: 56px;" alt="avatar">
-              <div class="nombre-autor"><a href="#">Elisabeth Judson Shue Guggenheim</a></div>
-              <div class="titular-autor">Actriz de cine y televisión. Nominada a los Oscar, Golden Globe, BAFTA y SAG</div>
-            </div>
-            <div class="row rm8">
-              <div class="wrapper-meta">
-                <div class="span1">
-                  <span class="number">12</span> publicaciones
-                </div><!-- .span1 -->
-                <div class="span1">
-                  <span class="number">123456</span> lectores
-                </div><!-- .span1 -->
-                <div class="span1">
-                  <span class="number">123</span> seguidores
-                </div><!-- .span1 -->
-              </div>
-            </div><!-- .row -->
-            <div class="wrapper-minithumbs">
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm3.staticflickr.com/2808/9205555734_71acc6f431.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <!--<a href="#" class="btn btn-seguir"><i class="fa fa-plus"></i> Seguir</a>-->
-            </div>
-          </div><!-- .span3 -->
-          <div class="span3">
-            <div class="wrapper-nombre">
-              <img src="http://gravatar.com/avatar/e71197281d0838afcc0a1f838e78441f?s=56" class="avatar avatar-56 avatar-default" height="56" width="56" style="width: 56px; height: 56px;" alt="avatar">
-              <div class="nombre-autor"><a href="#">Elisabeth Judson Shue Guggenheim</a></div>
-              <div class="titular-autor">Actriz de cine y televisión. Nominada a los Oscar, Golden Globe, BAFTA y SAG</div>
-            </div>
-            <div class="row rm8">
-              <div class="wrapper-meta">
-                <div class="span1">
-                  <span class="number">12</span> publicaciones
-                </div><!-- .span1 -->
-                <div class="span1">
-                  <span class="number">123456</span> lectores
-                </div><!-- .span1 -->
-                <div class="span1">
-                  <span class="number">123</span> seguidores
-                </div><!-- .span1 -->
-              </div>
-            </div><!-- .row -->
-            <div class="wrapper-minithumbs">
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm3.staticflickr.com/2808/9205555734_71acc6f431.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <!--<a href="#" class="btn btn-seguir"><i class="fa fa-plus"></i> Seguir</a>-->
-            </div>
-          </div><!-- .span3 -->
-          <div class="span3">
-            <div class="wrapper-nombre">
-              <img src="http://gravatar.com/avatar/e71197281d0838afcc0a1f838e78441f?s=56" class="avatar avatar-56 avatar-default" height="56" width="56" style="width: 56px; height: 56px;" alt="avatar">
-              <div class="nombre-autor"><a href="#">Elisabeth Judson Shue Guggenheim</a></div>
-              <div class="titular-autor">Actriz de cine y televisión. Nominada a los Oscar, Golden Globe, BAFTA y SAG</div>
-            </div>
-            <div class="row rm8">
-              <div class="wrapper-meta">
-                <div class="span1">
-                  <span class="number">12</span> publicaciones
-                </div><!-- .span1 -->
-                <div class="span1">
-                  <span class="number">123456</span> lectores
-                </div><!-- .span1 -->
-                <div class="span1">
-                  <span class="number">123</span> seguidores
-                </div><!-- .span1 -->
-              </div>
-            </div><!-- .row -->
-            <div class="wrapper-minithumbs">
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm3.staticflickr.com/2808/9205555734_71acc6f431.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <!--<a href="#" class="btn btn-seguir"><i class="fa fa-plus"></i> Seguir</a>-->
-            </div>
-          </div><!-- .span3 -->
+          <?php }  ?>
         </div><!-- .row -->
       </div><!-- .wrapper-carrusel -->
     </div><!-- .span12 -->
