@@ -27,7 +27,7 @@ get_currentuserinfo();
             </div>
           </div> 
         </div><!-- .col-sm-24 -->
-        <div class="col-sm-12">
+        <!--<div class="col-sm-12">
           <div class="btns-orden btn-toolbar">
             <div id="OrdenNuevasPopulares" class="btn-group">
               <a href="#"  id="ordenNuevas" class="btn btn-orden dropdown-toggle" data-toggle="dropdown">Ordenar por <i class="icon-sort-down"></i></a>
@@ -35,13 +35,13 @@ get_currentuserinfo();
                 <li><a href="#">Más nuevas</a></li>
                 <li><a href="#">Más populares</a></li>
               </ul>
-              <!--<a href="#" class="btn btn-orden">Más populares <i class="icon-sort"></i></a>-->
+              <a href="#" class="btn btn-orden">Más populares <i class="icon-sort"></i></a>
             </div>
             <div id="OrdenEjes" class="btn-group">
               <a href="#" class="btn btn-unete">Invita a tus amigos</a>
             </div>
-          </div><!-- .btns-orden -->
-        </div><!-- .col-sm-12 -->
+          </div>
+        </div>--><!-- .col-sm-12 -->
       </div><!-- .row -->
       <div class="row tab-content">
         <div class="tab-pane active" id="publicaciones">
