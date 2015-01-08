@@ -1075,6 +1075,41 @@ function estimate_time() {
 	return $result;
 }
 
+//Arreglar tamaño del elemento figure
+add_filter('img_caption_shortcode','fix_img_caption_shortcode_inline_style',10,3);
+
+function fix_img_caption_shortcode_inline_style($output,$attr,$content) {
+	$atts = shortcode_atts( array(
+		'id'	  => '',
+		'align'	  => 'alignnone',
+		'width'	  => '',
+		'caption' => '',
+		'class'   => '',
+	), $attr, 'caption' );
+
+	$atts['width'] = (int) $atts['width'];
+	if ( $atts['width'] < 1 || empty( $atts['caption'] ) )
+		return $content;
+
+	if ( ! empty( $atts['id'] ) )
+		$atts['id'] = 'id="' . esc_attr( $atts['id'] ) . '" ';
+
+	$class = trim( 'wp-caption ' . $atts['align'] . ' ' . $atts['class'] );
+
+	if ( current_theme_supports( 'html5', 'caption' ) ) {
+		return '<figure ' . $atts['id'] . ' class="' . esc_attr( $class ) . '">'
+		. do_shortcode( $content ) . '<figcaption class="wp-caption-text">' . $atts['caption'] . '</figcaption></figure>';
+	}
+
+	$caption_width = 10 + $atts['width'];
+
+	$caption_width = apply_filters( 'img_caption_shortcode_width', $caption_width, $atts, $content );
+
+	$style = '';
+
+	return '<div ' . $atts['id'] . $style . 'class="' . esc_attr( $class ) . '">'
+		. do_shortcode( $content ) . '<p class="wp-caption-text">' . $atts['caption'] . '</p></div>';
+}
 
 //Archivos necesarios para la cabecera en la administración
 require_once ('functions/admin_head.php');
