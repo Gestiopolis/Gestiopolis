@@ -30,7 +30,7 @@ function roots_scripts() {
       'pdfcssfancy'   => '/pdf2htmlEX/fancy.css',
       'js'        => '/assets/js/scripts.js',
       'modernizr' => '/assets/vendor/modernizr/modernizr.js',
-      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js',
+      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js',
       'pdfcomp'    => '/pdf2htmlEX/compatibility.js',
       'pdfall'    => '/pdf2htmlEX/all2html.js'
     );
@@ -45,7 +45,7 @@ function roots_scripts() {
       'pdfcssfancy'   => '/pdf2htmlEX/fancy.min.css',
       'js'        => '/assets/js/scripts.min.js?' . $assets['assets/js/scripts.min.js']['hash'],
       'modernizr' => '/assets/js/vendor/modernizr.min.js',
-      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
+      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js',
       'pdfcomp'    => '/pdf2htmlEX/compatibility.min.js',
       'pdfall'    => '/pdf2htmlEX/all2html.min.js'
     );
