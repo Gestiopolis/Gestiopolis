@@ -263,9 +263,9 @@
   </div><!-- .row AUTORES POPULARES -->
   <!-- Empieza sección de TEMAS DEL MOMENTO -->
   <div class="row rm8 temas-home">
-    <div class="col-md-36">
+    <div class="col-sm-36">
       <div class="row rm8">
-        <div class="col-md-12">
+        <div class="col-sm-12">
           <div class="title-home"><h2>Temas del momento</h2></div>
         </div><!-- .span4 -->
       </div><!-- .row -->
@@ -275,156 +275,41 @@
       </div>
       <div class="wrapper-carrusel">
         <div class="row rm8 carrusel">
+          <?php $terms = trending_tags(8, 1240 ); 
+            foreach ($terms as $key => $tag) {
+              $link = get_term_link( intval($tag->term_id), 'post_tag' );
+              $tag_link = '#' != $tag->link ? esc_url( $link ) : '#';
+              $tag_id = isset($tag->term_id) ? $tag->term_id : $key;
+              $tag_name = $terms[ $key ]->name;
+          ?>
           <div class="span3">
             <div class="wrapper-titulo">
               <i class="fa fa-tag"></i>
-              <div class="titulo-tema"><a href="tag.php">living las vegas</a></div>
+              <div class="titulo-tema"><a href="<?php echo $tag_link; ?>"><?php echo $tag_name; ?></a></div>
             </div>
             <div class="wrapper-meta">
               <div class="meta">
-                <span class="number">12</span> publicaciones
+                <span class="number"><?php echo esc_attr( $tag->count ); ?></span> publicaciones
               </div><!-- .meta -->
               <div class="meta">
-                <span class="number">123456</span> lectores
+                <span class="number">#</span> lectores
               </div><!-- .meta -->
-              <div class="meta">
+              <!--<div class="meta">
                 <span class="number">123</span> seguidores
-              </div><!-- .meta -->
+              </div>--><!-- .meta -->
             </div>
             <div class="wrapper-minithumbs">
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm3.staticflickr.com/2808/9205555734_71acc6f431.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a  class="no-margin-bt" href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <!--<a href="#" class="btn btn-seguir"><i class="fa fa-plus"></i> Seguir</a>-->
+              <?php $argst=array( 'posts_per_page' => 5, 'tag_id' => $tag_id);
+              $queryt = new WP_Query($argst);
+              if( $queryt->have_posts() ) { while ($queryt->have_posts()) : $queryt->the_post(); ?>
+              <a href="#" data-toggle="tooltip" title="<?php the_title(); ?>"><img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title(); ?>"></a>
+              <?php endwhile;?>
+              <?php } 
+              wp_reset_query(); 
+              wp_reset_postdata(); ?>
             </div>
           </div><!-- .span3 -->
-          <div class="span3">
-            <div class="wrapper-titulo">
-              <i class="fa fa-tag"></i>
-              <div class="titulo-tema"><a href="tag.php">living las vegas</a></div>
-            </div>
-            <div class="wrapper-meta">
-              <div class="meta">
-                <span class="number">12</span> publicaciones
-              </div><!-- .meta -->
-              <div class="meta">
-                <span class="number">123456</span> lectores
-              </div><!-- .meta -->
-              <div class="meta">
-                <span class="number">123</span> seguidores
-              </div><!-- .meta -->
-            </div>
-            <div class="wrapper-minithumbs">
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm3.staticflickr.com/2808/9205555734_71acc6f431.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a  class="no-margin-bt" href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <!--<a href="#" class="btn btn-seguir"><i class="fa fa-plus"></i> Seguir</a>-->
-            </div>
-          </div><!-- .span3 -->
-          <div class="span3">
-            <div class="wrapper-titulo">
-              <i class="fa fa-tag"></i>
-              <div class="titulo-tema"><a href="tag.php">living las vegas</a></div>
-            </div>
-            <div class="wrapper-meta">
-              <div class="meta">
-                <span class="number">12</span> publicaciones
-              </div><!-- .meta -->
-              <div class="meta">
-                <span class="number">123456</span> lectores
-              </div><!-- .meta -->
-              <div class="meta">
-                <span class="number">123</span> seguidores
-              </div><!-- .meta -->
-            </div>
-            <div class="wrapper-minithumbs">
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm3.staticflickr.com/2808/9205555734_71acc6f431.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a  class="no-margin-bt" href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <!--<a href="#" class="btn btn-seguir"><i class="fa fa-plus"></i> Seguir</a>-->
-            </div>
-          </div><!-- .span3 -->
-          <div class="span3">
-            <div class="wrapper-titulo">
-              <i class="fa fa-tag"></i>
-              <div class="titulo-tema"><a href="tag.php">living las vegas</a></div>
-            </div>
-            <div class="wrapper-meta">
-              <div class="meta">
-                <span class="number">12</span> publicaciones
-              </div><!-- .meta -->
-              <div class="meta">
-                <span class="number">123456</span> lectores
-              </div><!-- .meta -->
-              <div class="meta">
-                <span class="number">123</span> seguidores
-              </div><!-- .meta -->
-            </div>
-            <div class="wrapper-minithumbs">
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm3.staticflickr.com/2808/9205555734_71acc6f431.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a  class="no-margin-bt" href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <!--<a href="#" class="btn btn-seguir"><i class="fa fa-plus"></i> Seguir</a>-->
-            </div>
-          </div><!-- .span3 -->
-          <div class="span3">
-            <div class="wrapper-titulo">
-              <i class="fa fa-tag"></i>
-              <div class="titulo-tema"><a href="tag.php">living las vegas</a></div>
-            </div>
-            <div class="wrapper-meta">
-              <div class="meta">
-                <span class="number">12</span> publicaciones
-              </div><!-- .meta -->
-              <div class="meta">
-                <span class="number">123456</span> lectores
-              </div><!-- .meta -->
-              <div class="meta">
-                <span class="number">123</span> seguidores
-              </div><!-- .meta -->
-            </div>
-            <div class="wrapper-minithumbs">
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm3.staticflickr.com/2808/9205555734_71acc6f431.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a  class="no-margin-bt" href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <!--<a href="#" class="btn btn-seguir"><i class="fa fa-plus"></i> Seguir</a>-->
-            </div>
-          </div><!-- .span3 -->
-          <div class="span3">
-            <div class="wrapper-titulo">
-              <i class="fa fa-tag"></i>
-              <div class="titulo-tema"><a href="tag.php">living las vegas</a></div>
-            </div>
-            <div class="wrapper-meta">
-              <div class="meta">
-                <span class="number">12</span> publicaciones
-              </div><!-- .meta -->
-              <div class="meta">
-                <span class="number">123456</span> lectores
-              </div><!-- .meta -->
-              <div class="meta">
-                <span class="number">123</span> seguidores
-              </div><!-- .meta -->
-            </div>
-            <div class="wrapper-minithumbs">
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm3.staticflickr.com/2808/9205555734_71acc6f431.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm8.staticflickr.com/7293/9202770387_08466164ae.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <a  class="no-margin-bt" href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
-              <!--<a href="#" class="btn btn-seguir"><i class="fa fa-plus"></i> Seguir</a>-->
-            </div>
-          </div><!-- .span3 -->
+          <?php }  ?>
         </div><!-- .row -->
       </div><!-- .wrapper-carrusel -->
     </div><!-- .span12 -->

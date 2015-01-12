@@ -983,6 +983,16 @@ function popular_tags_from_category($catid, $days, $limit=15){
 	}
 }
 
+/*Función que trae las etiquetas más vistas de determinada categoría*/
+function trending_tags($limit=10, $days ){
+	global $wpdb;
+	$now = gmdate("Y-m-d H:i:s",time());
+	//$datelimit = gmdate("Y-m-d H:i:s",gmmktime(date("H"), date("i"), date("s"), date("m"),date("d")-30,date("Y")));
+	$popterms = "SELECT DISTINCT terms2.*, t2.count as count FROM $wpdb->posts as p2 LEFT JOIN $wpdb->term_relationships as r2 ON p2.ID = r2.object_ID LEFT JOIN $wpdb->term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id 	LEFT JOIN $wpdb->terms as terms2 ON t2.term_id = terms2.term_id 	WHERE t2.taxonomy = 'post_tag' AND p2.post_status = 'publish' AND p2.post_date <= '$now' AND p2.post_date > '" . date('Y-m-d H:i:s', strtotime('-'.$days.' days')) . "' ORDER BY count DESC LIMIT $limit";
+	$terms = $wpdb->get_results($popterms);
+	return $terms;
+}
+
 //Obtener fecha actual en español
 function actual_date(){
 	$dias = array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");

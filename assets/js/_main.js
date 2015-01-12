@@ -80,9 +80,9 @@ var Gestiopolis = {
       //1. Grid Ejes temáticos Home
       Grid.init();
       //2. Slider home autores
-      slider(".home .autores-home", ".home .autores-home .carrusel", ".carrusel>.span3", 8);
+      slider(".autores-home", ".autores-home .carrusel", ".carrusel>.span3", 8);
       //3. Slider home temas
-      slider(".home .temas-home", ".home .temas-home .carrusel", ".carrusel>.span3", 8);
+      slider(".temas-home", ".temas-home .carrusel", ".carrusel>.span3", 8);
     }
   },
   page_id_80309: { //ABC temático
