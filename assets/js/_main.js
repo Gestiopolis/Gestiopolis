@@ -535,7 +535,10 @@ var Gestiopolis = {
           });
           setTimeout(function() {
             a2h.fit_width(); //Escala las páginas para que se ajusten al ancho del contenedor
-          },1000);
+          },1500);
+          $( window ).on( 'debouncedresize', function() {
+            a2h.fit_width(); //Escala las páginas para que se ajusten al ancho del contenedor si la ventana cambia de tamaño
+          });
         });
       } //if htmlcontent
     } //init
