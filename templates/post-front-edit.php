@@ -4,7 +4,7 @@
   <h3>Edición de Enlace del Post (Slug)</h3>
   <p><b>Slug:</b> <input type="text" name="slugedit" id="slugedit" value="<?php echo $post->post_name; ?>"> <input type="submit" name="editslug" id="editslug" value="Editar"></p>
   <h3>Edición de Yoast SEO</h3>
-  <p><b>Título SEO:</b> <?php echo get_editable_post_meta($post->ID, "_yoast_wpseo_title", "input", true); ?></p>
+  <p><b>Título SEO:</b> <?php echo get_post_meta($post->ID, "_yoast_wpseo_title", "input", true); ?></p>
   <h3>Edición de Imagen Principal</h3>
 <?php if(get_post_meta($post->ID, "image_value", true) != ""){?>
   <p><b><a href="<?php echo home_url('/'); ?>" id="deleteImage">ELIMINAR IMAGEN</a></b></p>
@@ -22,8 +22,8 @@
   <p><b>Autor de la Imagen:</b> </p>              
 <?php } ?>
   <h3>Edición de Embebidos Superiores</h3>
-  <p><b>URL de embebido de Presentaciones:</b> <?php echo get_editable_post_meta($post->ID, "ppts_value", "input", true); ?></p>
-  <p><b>URL de embebido de Documentos complejos:</b> <?php echo get_editable_post_meta($post->ID, "docs_c_value", "input", true); ?></p>
+  <p><b>URL de embebido de Presentaciones:</b> <?php echo get_post_meta($post->ID, "ppts_value", "input", true); ?></p>
+  <p><b>URL de embebido de Documentos complejos:</b> <?php echo get_post_meta($post->ID, "docs_c_value", "input", true); ?></p>
   <?php if ((get_post_meta($post->ID, "all2html_htmlcontent", true) == "") && (get_post_meta($post->ID, "all2html_php", true) == "")) { ?>
   <p>
     <b>Subir documento:</b> 
@@ -71,5 +71,5 @@
   <p><b><a href="<?php echo home_url('/'); ?>" id="deletePdf">ELIMINAR DOCUMENTO</a></b></p>
   <?php }?>
   <h3>Edición de Embebidos Inferiores</h3>
-  <p><b>URL de embebido de Documentos:</b> <?php echo get_editable_post_meta($post->ID, "docs_value", "input", true); ?></p>
+  <p><b>URL de embebido de Documentos:</b> <?php echo get_post_meta($post->ID, "docs_value", "input", true); ?></p>
 </div>

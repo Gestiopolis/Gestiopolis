@@ -428,11 +428,6 @@
       <?php } ?>
       <div class="row tab-content">
         <div class="tab-pane active" id="recientes">
-          <?php /*$args1=array( 'posts_per_page'=>12);//Empieza query del último post
-      $query1 = new WP_Query($args1);
-        if( $query1->have_posts() ) { while ($query1->have_posts()) : $query1->the_post(); 
-          $category = get_the_category($post->ID); */
-           ?>
           <?php
             if ( have_posts() ) :
               // Start the Loop.
@@ -448,16 +443,12 @@
               endwhile;
               ?>
               <div class="pagination">
-            <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
-            <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
+            <div class="nav-previous alignleft"><?php next_posts_link( 'Artículos antiguos' ); ?></div>
+            <div class="nav-next alignright"><?php previous_posts_link( 'Artículos nuevos' ); ?></div>
           </div>
               <?php
             endif;
           ?>
-          <?php //endwhile;?>
-          
-          <?php /*} 
-          wp_reset_postdata();*/ ?>
         </div><!-- #recientes -->
         <?php if (is_user_logged_in()) { ?>
         <div class="tab-pane" id="parati">

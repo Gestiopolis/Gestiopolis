@@ -83,6 +83,34 @@ var Gestiopolis = {
       slider(".autores-home", ".autores-home .carrusel", ".carrusel>.span3", 8);
       //3. Slider home temas
       slider(".temas-home", ".temas-home .carrusel", ".carrusel>.span3", 8);
+      
+      var $container = $('#recientes');
+      // Fire Isotope only when images are loaded
+      $container.imagesLoaded(function(){
+        $container.isotope({
+          itemSelector : '.postw'
+        });
+      });
+      // Infinite Scroll
+      $('#recientes').infinitescroll({
+        navSelector  : 'div.pagination',
+        nextSelector : '.nav-previous a:first',
+        itemSelector : '.postw',
+        bufferPx     : 200,
+        loading: {
+          msgText: '<em>Cargando...</em>',
+          finishedMsg: '<em>We\'re done here.</em>',
+          img: serverval.template_directory+'/assets/img/ajax-loader.gif'
+        }
+      },
+      // Infinite Scroll Callback
+      function( newElements ) {
+        var $newElems = jQuery( newElements ).hide();
+        $newElems.imagesLoaded(function(){
+          $newElems.fadeIn();
+          $container.isotope( 'appended', $newElems );
+        });
+      });
     }
   },
   page_id_80309: { //ABC temático
@@ -284,7 +312,7 @@ var Gestiopolis = {
     init: function() {
       // JavaScript to be fired on a single post
       if (serverval.manage_options == "1" && serverval.userlogin == "1"){
-        $(document).on('edit_started', function(ev) {
+        /*$(document).on('edit_started', function(ev) {
           var el = $(ev.target);
           var longitud = el.text().length;
 
@@ -324,8 +352,8 @@ var Gestiopolis = {
               }
             });
           }
-        });
-        $(document).on('edit_saved', function(ev) {
+        });*/
+        /*$(document).on('edit_saved', function(ev) {
           var el = $(ev.target);
           if(el.data('filter') == 'the_title'){
               $('#titcount').hide();
@@ -334,7 +362,7 @@ var Gestiopolis = {
               $('#descount').hide();
             }
 
-        });
+        });*/
         $("input#editslug").on('click', function(e){
           e.preventDefault();
           var slug = $("input#slugedit").val();

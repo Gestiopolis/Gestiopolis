@@ -32,7 +32,10 @@ function roots_scripts() {
       'modernizr' => '/assets/vendor/modernizr/modernizr.js',
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js',
       'pdfcomp'    => '/pdf2htmlEX/compatibility.js',
-      'pdfall'    => '/pdf2htmlEX/all2html.js'
+      'pdfall'    => '/pdf2htmlEX/all2html.js',
+      'imglo'    => '//cdn.rawgit.com/desandro/imagesloaded/master/imagesloaded.pkgd.js',
+      'iso'    => '//cdn.rawgit.com/metafizzy/isotope/master/dist/isotope.pkgd.js',
+      'infi'    => '//cdn.rawgit.com/paulirish/infinite-scroll/master/wordpress-plugin/js/front-end/jquery.infinitescroll.js'
     );
   } else {
     $get_assets = file_get_contents(get_template_directory() . '/assets/manifest.json');
@@ -47,7 +50,10 @@ function roots_scripts() {
       'modernizr' => '/assets/js/vendor/modernizr.min.js',
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js',
       'pdfcomp'    => '/pdf2htmlEX/compatibility.min.js',
-      'pdfall'    => '/pdf2htmlEX/all2html.min.js'
+      'pdfall'    => '/pdf2htmlEX/all2html.min.js',
+      'imglo'    => '//cdn.rawgit.com/desandro/imagesloaded/master/imagesloaded.pkgd.min.js',
+      'iso'    => '//cdn.rawgit.com/metafizzy/isotope/master/dist/isotope.pkgd.min.js',
+      'infi'    => '//cdn.rawgit.com/paulirish/infinite-scroll/master/wordpress-plugin/js/front-end/jquery.infinitescroll.js'
     );
   }
 
@@ -85,6 +91,11 @@ function roots_scripts() {
       wp_enqueue_script('compatibility', home_url() . $assets['pdfcomp'], array(), null, false);
       wp_enqueue_script('all2html', home_url() . $assets['pdfall'], array(), null, false);
     }
+  }
+  if ((is_home() || is_archive()) && !is_date() && !is_author() ){
+    wp_enqueue_script('isotope', $assets['iso'], array(), array( 'jquery' ), true);
+    wp_enqueue_script('infinitescroll', $assets['infi'], array(), array( 'jquery' ), true);
+    wp_enqueue_script('imagesloaded', $assets['imglo'], array(), array( 'jquery' ), true);
   }
   wp_enqueue_script('roots_js', get_template_directory_uri() . $assets['js'], array(), null, true);
 

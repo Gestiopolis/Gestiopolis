@@ -1035,12 +1035,6 @@ function autcat($catid) {
 	echo $wpdb->get_var("SELECT COUNT(DISTINCT post_author) AS count FROM $wpdb->posts posts INNER JOIN $wpdb->term_relationships term ON (posts.ID = term.object_id) WHERE posts.post_type = 'post' AND term.term_taxonomy_id= '$catid' AND posts.post_status='publish'");
 }
 
-//Limitar tags
-add_filter('term_links-post_tag','limit_tags');
-function limit_tags($terms) {
-	return array_slice($terms,0,4,true);
-}
-
 //Obtener tags de una categoría específica
 function get_category_tags($args) {
 	global $wpdb;
@@ -1137,6 +1131,8 @@ function fix_img_caption_shortcode_inline_style($output,$attr,$content) {
 		. do_shortcode( $content ) . '<p class="wp-caption-text">' . $atts['caption'] . '</p></div>';
 }
 
+//Función de Wp_Imager https://github.com/Jany-M/WP-Imager
+require_once ('functions/wp-imager.php');
 //Archivos necesarios para la cabecera en la administración
 require_once ('functions/admin_head.php');
 //Campo personalizado de autor virtual
