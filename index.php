@@ -252,7 +252,6 @@
               <a href="#" data-toggle="tooltip" title="<?php the_title(); ?>"><img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title(); ?>"></a>
               <?php endwhile;?>
               <?php } 
-              wp_reset_query(); 
               wp_reset_postdata(); ?>
             </div>
           </div><!-- .span3 -->
@@ -305,7 +304,6 @@
               <a href="#" data-toggle="tooltip" title="<?php the_title(); ?>"><img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title(); ?>"></a>
               <?php endwhile;?>
               <?php } 
-              wp_reset_query(); 
               wp_reset_postdata(); ?>
             </div>
           </div><!-- .span3 -->
@@ -430,51 +428,36 @@
       <?php } ?>
       <div class="row tab-content">
         <div class="tab-pane active" id="recientes">
-          <?php $args1=array( 'posts_per_page'=>9, 'post__not_in'=>array($post->ID));//Empieza query del último post
+          <?php /*$args1=array( 'posts_per_page'=>12);//Empieza query del último post
       $query1 = new WP_Query($args1);
         if( $query1->have_posts() ) { while ($query1->have_posts()) : $query1->the_post(); 
-          $category = get_the_category($post->ID); 
+          $category = get_the_category($post->ID); */
+           ?>
+          <?php
+            if ( have_posts() ) :
+              // Start the Loop.
+              while ( have_posts() ) : the_post();
+
+                /*
+                 * Include the post format-specific template for the content. If you want to
+                 * use this in a child theme, then include a file called called content-___.php
+                 * (where ___ is the post format) and that will be used instead.
+                 */
+                get_template_part( 'templates/content', get_post_format() );
+            
+              endwhile;
+              ?>
+              <div class="pagination">
+            <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+            <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
+          </div>
+              <?php
+            endif;
           ?>
-          <div class="col-md-12 col-sm-18">
-            <article id="post-<?php echo $post->ID; ?>" class="post">
-              <div class="wrapper-img">
-                <img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title(); ?>" class="img-responsive">
-                <span class="compartir"><i class="fa fa-share"></i></span>
-                <div class="meta-content">
-                  <div class="botones-compartir" id="compartir-<?php echo $post->ID; ?>">
-                    <div class="platform bc-facebook" id="fb-compartir-<?php echo $post->ID; ?>"></div>
-                    <div class="platform bc-twitter" id="tweet-compartir-<?php echo $post->ID; ?>"></div>
-                    <div class="platform bc-linkedin" id="linkedin-compartir-<?php echo $post->ID; ?>"></div>
-                    <div class="platform bc-gplus" id="gplus-compartir-<?php echo $post->ID; ?>"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="wrapper-post cat-<?php echo $category[0]->term_id; ?>">
-                <div class="cat-bar">
-                    <a href="<?php echo get_category_link( $category[0]->term_id ) ?>" class="hexagon cat-bg-<?php echo $category[0]->term_id; ?>" title="Enlace a categoría <?php echo $category[0]->cat_name; ?>"><i class="fa icon-cat-<?php echo $category[0]->term_id; ?>"></i></a>
-                  </div>
-                <div class="wrapper-content clearfix">
-                  <h2 class="entry-title"><a id="titulo-<?php echo $post->ID; ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-                  <a class="autor" href="<?php echo get_author_posts_url($post->post_author); ?>">
-                    <?php echo get_avatar( $post->post_author, 32, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
-                  </a>
-                  <div class="fecha"><?php the_time('j.m.Y') ?></div>
-                  <div class="post-content">
-                    <p><?php echo title_trim(220, get_the_excerpt()); ?></p>
-                  </div>
-                </div>
-              </div>
-              <div class="wrapper-meta clearfix">
-                <?php the_tags('<div class="tags"><i class="fa fa-tags"></i> ',', ','</div>'); ?>
-                <div class="stats"><i class="fa fa-eye"></i> <?php if(function_exists('the_views')) { the_views(); } ?> <i class="fa fa-comments"></i> <?php comments_number('0','1','%'); ?> <i class="fa fa-heart"></i> 21</div>
-                <div class="tiempo"><i class="fa fa-coffee"></i> Leerlo te tomará <?php echo estimate_time();?></div>
-              </div>
-            </article><!-- .post -->
-          </div><!-- .col-md-12 col-sm-18 -->
-          <?php endwhile;?>
-          <?php } 
-          wp_reset_query(); 
-          wp_reset_postdata(); ?>
+          <?php //endwhile;?>
+          
+          <?php /*} 
+          wp_reset_postdata();*/ ?>
         </div><!-- #recientes -->
         <?php if (is_user_logged_in()) { ?>
         <div class="tab-pane" id="parati">
