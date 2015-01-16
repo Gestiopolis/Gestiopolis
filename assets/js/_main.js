@@ -98,9 +98,9 @@ var Gestiopolis = {
         itemSelector : '.postw',
         bufferPx     : 200,
         loading: {
-          msgText: '<em>Cargando...</em>',
-          finishedMsg: '<em>We\'re done here.</em>',
-          img: serverval.template_directory+'/assets/img/ajax-loader.gif'
+          msgText: '<em>Cargando...<\\\/em>',
+          finishedMsg: '<em>No hay más artículos.<\\\/em>',
+          img: serverval.template_directory+'\\\/assets\\\/img\\\/ajax-loader.gif'
         }
       },
       // Infinite Scroll Callback

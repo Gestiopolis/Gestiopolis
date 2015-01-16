@@ -67,7 +67,7 @@ function wp_imager($width=null, $height=null, $crop=null, $class='', $link=false
 	$attachments = get_children( array('post_parent' => $post->ID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'rand', 'numberposts' => 1) );
 	
 	// Defaults
-	$htaccess = true; // htaccess is getting on my nerves, so I'll disable it by default - switch to true if you want to use a custom htaccess for pretty img urls
+	$htaccess = false; // htaccess is getting on my nerves, so I'll disable it by default - switch to true if you want to use a custom htaccess for pretty img urls
 	if(!isset($width) || is_null($width) || $width == '') $width = '100';
 	if(!isset($height) || is_null($height) || $width == '') $height = '100';
 	if(!isset($crop) || is_null($crop) || $crop == '') $crop = '1';

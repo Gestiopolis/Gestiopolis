@@ -4,7 +4,8 @@
 <div class="postw col-md-12 col-sm-18">
   <article id="post-<?php the_ID(); ?>" class="post">
     <div class="wrapper-img">
-      <img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title_attribute(); ?>" class="img-responsive">
+      <!--<img src="<?php //echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php //the_title_attribute(); ?>" class="img-responsive">-->
+      <?php echo wp_imager(393, 192, '', 'img-responsive'); ?>
       <span class="compartir"><i class="fa fa-share"></i></span>
       <div class="meta-content">
         <div class="botones-compartir" id="compartir-<?php the_ID(); ?>">

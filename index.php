@@ -443,8 +443,7 @@
               endwhile;
               ?>
               <div class="pagination">
-            <div class="nav-previous alignleft"><?php next_posts_link( 'Artículos antiguos' ); ?></div>
-            <div class="nav-next alignright"><?php previous_posts_link( 'Artículos nuevos' ); ?></div>
+                <div class="nav-next alignright"><?php previous_posts_link( 'Artículos nuevos' ); ?></div>
           </div>
               <?php
             endif;
