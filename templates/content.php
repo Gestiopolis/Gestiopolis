@@ -4,7 +4,7 @@
 <div class="postw col-lg-3 col-md-4 col-sm-6">
   <article id="post-<?php the_ID(); ?>" class="post">
     <div class="wrapper-img">
-      <?php echo wp_imager(393, 192, '', 'img-responsive'); ?>
+      <?php echo wp_imager(640, 360, '', 'img-responsive'); ?>
     </div>
     <div class="wrapper-post cat-<?php echo $category[0]->term_id; ?>">
       <div class="cat-bar">
