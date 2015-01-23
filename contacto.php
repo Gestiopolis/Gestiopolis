@@ -6,20 +6,20 @@ Template Name: Contacto
 
 <?php while (have_posts()) : the_post(); ?>
 <div class="bgcon">
-  <div class="container cm8">
-    <div class="row rm8">
-      <div class="col-md-36">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
         <div class="breadcrumb">
           <a href="#">gestiopolis.com</a> <i class="fa fa-angle-right"></i> contacto
         </div><!-- .breadcrumb -->
         <h1 class="title">Nos interesa saber de ti</h1>
         <div class="descrcon">Tus opiniones, sugerencias, dudas y cualquier otra clase de mensajes serán bienvenidos.</div>
 
-        <div class="row rm8">
-          <div class="col-md-12">
+        <div class="row">
+          <div class="col-sm-4">
             <div class="img-tel"></div>
           </div><!-- imagen tel -->
-          <div class="col-md-12">
+          <div class="col-sm-4">
             <div class="form-con">
               <form role="form">
                 <div class="form-group">
@@ -50,7 +50,7 @@ Template Name: Contacto
               </form>
             </div>
           </div>
-          <div class="col-md-12">
+          <div class="col-md-4">
             <ul class="infocon">
               <li class="email"><a href="mailto:info@gestiopolis.com">info@gestiopolis.com <i class="fa fa-envelope"></i></a></li>
               <li class="twitter"><a href="http://www.twitter.com/gestiopoliscom">@gestiopoliscom <i class="fa fa-twitter"></i></a></li>
@@ -61,7 +61,7 @@ Template Name: Contacto
             
           </div>
         </div>
-      </div><!-- .col-md-36 -->
+      </div><!-- .col-md-12 -->
       
     </div>
 

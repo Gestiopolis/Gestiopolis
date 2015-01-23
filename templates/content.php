@@ -1,24 +1,14 @@
 <?php 
 	$category = get_the_category($post->ID);
 ?>
-<div class="postw col-md-12 col-sm-18">
+<div class="postw col-md-3 col-sm-6">
   <article id="post-<?php the_ID(); ?>" class="post">
     <div class="wrapper-img">
-      <!--<img src="<?php //echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php //the_title_attribute(); ?>" class="img-responsive">-->
       <?php echo wp_imager(393, 192, '', 'img-responsive'); ?>
-      <!--<span class="compartir"><i class="fa fa-share"></i></span>-->
-      <!--<div class="meta-content">
-        <div class="botones-compartir" id="compartir-<?php the_ID(); ?>">
-          <div class="platform bc-facebook" id="fb-compartir-<?php the_ID(); ?>"></div>
-          <div class="platform bc-twitter" id="tweet-compartir-<?php the_ID(); ?>"></div>
-          <div class="platform bc-linkedin" id="linkedin-compartir-<?php the_ID(); ?>"></div>
-          <div class="platform bc-gplus" id="gplus-compartir-<?php the_ID(); ?>"></div>
-        </div>
-      </div>-->
     </div>
     <div class="wrapper-post cat-<?php echo $category[0]->term_id; ?>">
       <div class="cat-bar">
-        <a href="<?php echo get_category_link( $category[0]->term_id ) ?>" class="hexagon cat-bg-<?php echo $category[0]->term_id; ?>" title="Enlace a categoría <?php echo $category[0]->cat_name; ?>"><i class="fa icon-cat-<?php echo $category[0]->term_id; ?>"></i></a>
+        <!--<a href="<?php //echo get_category_link( $category[0]->term_id ) ?>" class="hexagon cat-bg-<?php //echo $category[0]->term_id; ?>" title="Enlace a categoría <?php //echo $category[0]->cat_name; ?>"><i class="fa icon-cat-<?php //echo $category[0]->term_id; ?>"></i></a>-->
       </div>
       <div class="wrapper-content clearfix">
         <h2 class="entry-title"><a id="titulo-<?php the_ID(); ?>" href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
@@ -37,4 +27,4 @@
       <div class="tiempo"><i class="fa fa-coffee"></i> Leerlo te tomará <?php echo estimate_time();?></div>
     </div>
   </article><!-- .post -->
-</div><!-- .col-md-12 col-sm-18 -->
+</div><!-- .col-md-3 col-sm-6 -->

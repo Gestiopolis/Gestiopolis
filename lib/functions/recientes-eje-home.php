@@ -6,19 +6,19 @@ $idcat = ( isset($_POST['idcat']) && (int)$_POST['idcat'] ) ? $_POST['idcat'] : 
 $type = ( isset($_POST['type']) && (string)$_POST['type'] ) ? $_POST['type'] : false;
 if($idcat && $type && $type == 'reci'){
 ?>
-<div class="row rm8">
-  <div class="col-md-3">
+<div class="row">
+  <div class="col-sm-3">
     <span class="title cat-col-<?php echo $idcat; ?>">Recientes</span>
     <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
   </div>
 </div><!-- .row -->
-<div class="row rm8 cat-id-<?php echo $idcat; ?>">
+<div class="row cat-id-<?php echo $idcat; ?>">
   <?php $args1=array( 'posts_per_page'=>4, 'cat'=> $idcat);//Empieza query del último post
       $query1 = new WP_Query($args1);
         if( $query1->have_posts() ) { while ($query1->have_posts()) : $query1->the_post(); 
           $category = get_the_category($post->ID); 
           ?>
-  <div class="col-sm-9">
+  <div class="col-sm-3">
     <article id="post-<?php echo $post->ID; ?>" class="post">
       <div class="wrapper-img">
         <img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title(); ?>" class="img-responsive">
@@ -43,8 +43,8 @@ if($idcat && $type && $type == 'reci'){
   wp_reset_query(); 
   wp_reset_postdata(); ?>
 </div><!-- .row -->
-<div class="row rm8">
-  <ul class="col-sm-36">
+<div class="row">
+  <ul class="col-sm-12">
     <li><i class="fa fa-file-text-o"></i> <?php echo count_posts('cats', '2000', '01', $idcat); ?> publicaciones</li>
     <?php 
       $args = array('categories' => $idcat);
@@ -56,13 +56,13 @@ if($idcat && $type && $type == 'reci'){
   </ul>
 </div><!-- .row -->
 <?php } else if($idcat && $type && $type == 'abcg') {?>
-<div class="row rm8">
-  <div class="col-sm-36 letters clearfix">
+<div class="row">
+  <div class="col-sm-12 letters clearfix">
     <a href="#" class="" id="">A</a><a href="#" class="" id="">B</a><a href="#" class="" id="">C</a><a href="#" class="" id="">D</a><a href="#" class="" id="">E</a><a href="#" class="" id="">F</a><a href="#" class="" id="">G</a><a href="#" class="" id="">H</a><a href="#" class="" id="">I</a><a href="#" class="" id="">J</a><a href="#" class="" id="">K</a><a href="#" class="" id="">L</a><a href="#" class="" id="">M</a><a href="#" class="" id="">N</a><a href="#" class="" id="">O</a><a href="#" class="" id="">P</a><a href="#" class="" id="">Q</a><a href="#" class="" id="">R</a><a href="#" class="" id="">S</a><a href="#" class="" id="">T</a><a href="#" class="" id="">U</a><a href="#" class="" id="">V</a><a href="#" class="" id="">W</a><a href="#" class="" id="">X</a><a href="#" class="" id="">Y</a><a href="#" class="" id="">Z</a><a href="#" class="" id="">#</a>
   </div>
 </div><!-- .row -->
-<div class="row rm8 cat-id-<?php echo $idcat; ?>">
-  <div class="col-sm-36">
+<div class="row cat-id-<?php echo $idcat; ?>">
+  <div class="col-sm-12">
     <div class="scrollabc">
     <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
     <div class="viewport">
@@ -147,8 +147,8 @@ if($idcat && $type && $type == 'reci'){
 </div>
   </div>
 </div><!-- .row -->
-<div class="row rm8">
-  <ul class="col-sm-36">
+<div class="row">
+  <ul class="col-sm-12">
     <li class="pull-right"><a href="#" class="btn cat-bg-<?php echo $idcat; ?>"><i class="icon-cat-<?php echo $idcat; ?>"></i> Emprendimiento</a></li>
   </ul>
 </div><!-- .row -->

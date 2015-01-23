@@ -7,7 +7,7 @@ get_currentuserinfo();
 <div class="container">
   <!-- Empieza sección de TÍTULO DE CATEGORÍA -->
   <div class="row titu-tag">
-    <div class="col-sm-24">
+    <div class="col-sm-8">
       <?php echo get_avatar( $curaut->ID, 96, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
       <div class="tag-nombre"><?php echo $curaut->display_name; ?></div>
       <!--<br class="clearfix">-->
@@ -16,19 +16,19 @@ get_currentuserinfo();
         <a href="#" class="enl-compartir"><i class="fa fa-share"></i> Compartir perfil</a>
         <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
       </div>
-    </div><!-- .col-md-8 -->
+    </div><!-- .col-sm-8 -->
   </div><!-- .row TÍTULO DE TAG -->
   <div class="row posts-home">
-    <div class="col-md-36">
+    <div class="col-md-12">
       <div class="row title-loggedin">
-        <div class="col-sm-24">
+        <div class="col-sm-8">
           <div class="title-home-loggedin">
             <div class="thl">
               <a href="#perfil" data-toggle="tab">Perfil</a> <span>&bull;</span> <a href="#publicaciones" class="active" data-toggle="tab">Publicaciones (<?php echo number_format_i18n( count_user_posts( $curaut->ID) ); ?>)</a><!-- <span>&bull;</span> <a href="#autores" data-toggle="tab">Autores (11)</a> <span>&bull;</span>--><!-- <a href="#seguidores" data-toggle="tab">Seguidores (12)</a>-->
             </div>
           </div> 
-        </div><!-- .col-sm-24 -->
-        <!--<div class="col-sm-12">
+        </div><!-- .col-sm-8 -->
+        <!--<div class="col-sm-4">
           <div class="btns-orden btn-toolbar">
             <div id="OrdenNuevasPopulares" class="btn-group">
               <a href="#"  id="ordenNuevas" class="btn btn-orden dropdown-toggle" data-toggle="dropdown">Ordenar por <i class="icon-sort-down"></i></a>
@@ -42,18 +42,18 @@ get_currentuserinfo();
               <a href="#" class="btn btn-unete">Invita a tus amigos</a>
             </div>
           </div>
-        </div>--><!-- .col-sm-12 -->
+        </div>--><!-- .col-sm-4 -->
       </div><!-- .row -->
       <div class="row tab-content">
         <div class="tab-pane" id="perfil">
           <!--<div class="row tab-content">-->
-            <div class="col-md-12 col-sm-18">
+            <div class="col-md-3 col-sm-6">
               <article class="userbox">
                 <div class="box-title">Mini Bio</div>
                 <div class="box-content"><?php echo get_the_author_meta('description', $curaut->ID); ?></div>
               </article>
             </div>
-            <div class="col-md-12 col-sm-18">
+            <div class="col-md-3 col-sm-6">
               <article class="userbox">
                 <div class="box-title">Contacto</div>
                 <div class="box-content">
@@ -67,7 +67,7 @@ get_currentuserinfo();
                 </div>
               </article>
             </div>
-            <div class="col-md-12 col-sm-18">
+            <div class="col-md-3 col-sm-6">
               <article class="userbox">
                 <div class="box-title">Localización</div>
                 <div class="box-content"></div>

@@ -3,9 +3,9 @@
 Template Name: Archivo
 */
 ?>
-<div class="container cm8">
-  <div class="row rm8 title-archivo">
-    <div class="col-sm-30">
+<div class="container">
+  <div class="row title-archivo">
+    <div class="col-sm-10">
       <div class="title-arch"><h3>Archivo</h3></div>
     </div><!-- .col-sm-30 -->
     <!--<div class="col-sm-3 col-sm-offset-3">
@@ -16,8 +16,8 @@ Template Name: Archivo
       </div>
     </div>--><!-- .col-sm-4 -->
   </div><!-- .row -->
-  <div class="row rm8">
-    <div class="col-sm-36">
+  <div class="row">
+    <div class="col-sm-12">
       <table class="table arch-table">
         <thead>
           <tr>

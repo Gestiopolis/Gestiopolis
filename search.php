@@ -1,7 +1,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-sm-36">
+      <div class="col-sm-12">
         <div class="breadcrumb">
           <a href="#">gestiopolis.com</a> <i class="fa fa-angle-right"></i> búsqueda
         </div><!-- .breadcrumb -->
@@ -9,7 +9,7 @@
         
         <?php while (have_posts()) : the_post(); ?>
           <div class="row">
-            <div class="col-sm-36 aboutsections">
+            <div class="col-sm-12 aboutsections">
               <article class="notaPrincipal alinearLeft">
                 <h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title_attribute(); ?></a></h2>
                 <span class="autor">
@@ -25,7 +25,7 @@
             </div>
           </div><!-- .row -->
         <?php endwhile; ?>
-      </div><!-- .col-sm-36 -->
+      </div><!-- .col-sm-12 -->
       
     </div>
 

@@ -3,16 +3,16 @@ $term = get_queried_object();
 global $current_user;
 get_currentuserinfo();
 ?>
-<div class="container cm8">
+<div class="container">
   <!-- Empieza sección de TÍTULO DE CATEGORÍA -->
-  <div class="row rm8 titu-cat">
-    <div class="col-sm-15">
+  <div class="row titu-cat">
+    <div class="col-sm-5">
       <i class="fa icon-cat-<?php echo $term->term_id; ?> cat-col-<?php echo $term->term_id; ?>"></i>
       <span class="eje-nombre"><?php single_term_title(); ?></span>
       <br class="clearfix">
       <span class="eje-tagline"><?php echo $term->description; ?></span>
-    </div><!-- .col-sm-15 -->
-    <div class="col-sm-15">
+    </div><!-- .col-sm-5 -->
+    <div class="col-sm-5">
       <ul>
         <!--<li><a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a></li>-->
         <li>Publicaciones <a href="#" class="btn btn-publ"><?php echo $term->count; ?></a></li>
@@ -24,22 +24,22 @@ get_currentuserinfo();
         <li>Temas <a href="#" class="btn btn-tem"><?php echo count($tags); ?></a></li>
         <!--<li>Seguidores <a href="#" class="btn btn-seg">2560</a></li>-->
       </ul>
-    </div><!-- .col-sm-15 -->
+    </div><!-- .col-sm-5 -->
   </div><!-- .row TÍTULO DE CATEGORÍA -->
-  <div class="row rm8 destacados">
-    <div class="col-sm-36">
-      <div class="row rm8">
-        <div class="col-sm-9">
-          <div class="row rm8">
-            <div class="col-sm-36">
+  <div class="row destacados">
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="row">
+            <div class="col-sm-12">
               <div class="destacan">
                 Populares <i class="fa fa-angle-right"></i>
                 <span><a href="#"><i class="fa fa-plus"></i></a>
               </div>
-            </div><!-- .col-sm-36 -->
+            </div><!-- .col-sm-12 -->
           </div><!-- .row -->
-          <div class="row rm8">
-            <div class="col-sm-36">
+          <div class="row">
+            <div class="col-sm-12">
               <?php $tposts = get_trending_posts(6, 1240, $term->term_id);
               //print_r($postst);
                 $i = 1;
@@ -57,69 +57,69 @@ get_currentuserinfo();
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
               </article>
               <?php } else if($i == 2){ ?>
-            </div><!-- .col-sm-36 -->
+            </div><!-- .col-sm-12 -->
           </div><!-- .row -->
-        </div><!-- .col-sm-9 -->
-        <div class="col-sm-18">
-          <div class="row rm8">
-            <div class="col-sm-18">
+        </div><!-- .col-sm-3 -->
+        <div class="col-sm-6">
+          <div class="row6">
+            <div class="col-sm-6">
               <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $i;?> post">
                 <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
                 <div class="overlay"></div>
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
               </article>
               <?php } else if($i == 3){ ?>
-            </div><!-- .col-sm-18 -->
-            <div class="col-sm-18">
+            </div><!-- .col-sm-6 -->
+            <div class="col-sm-6">
               <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $i;?> post">
                 <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
                 <div class="overlay"></div>
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
               </article>
               <?php } else if($i == 4){ ?>
-            </div><!-- .col-sm-18 -->
+            </div><!-- .col-sm-6 -->
           </div><!-- .row -->
-          <div class="row rm8">
-            <div class="col-sm-36">
+          <div class="row">
+            <div class="col-sm-12">
               <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $i;?> post">
                 <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
                 <div class="overlay"></div>
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
               </article>
               <?php } else if($i == 5){ ?>
-            </div><!-- .col-sm-36 -->
+            </div><!-- .col-sm-12 -->
           </div><!-- .row -->
         </div><!-- .span6 -->
-        <div class="col-sm-9">
-          <div class="row rm8">
-            <div class="col-sm-36">
+        <div class="col-sm-3">
+          <div class="row">
+            <div class="col-sm-1212">
               <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $i;?> post">
                 <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
                 <div class="overlay"></div>
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
               </article>
               <?php } else if($i == 6){ ?>
-            </div><!-- .col-sm-36 -->
+            </div><!-- .col-sm-12 -->
           </div><!-- .row -->
-          <div class="row rm8">
-            <div class="col-sm-36">
+          <div class="row">
+            <div class="col-sm-12">
               <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $i;?> post">
                 <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
                 <div class="overlay"></div>
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
               </article>
               <?php } $i++; } // fin foreach $tposts ?>
-            </div><!-- .col-sm-36 -->
+            </div><!-- .col-sm-12 -->
           </div><!-- .row -->
         </div><!-- .span3 -->
       </div><!-- .row -->
     </div>
   </div><!-- .row DESTACADOS -->
   <!-- Empieza sección de AUTORES TEMAS -->
-  <div class="row rm8 autores-temas">
-    <div class="col-sm-18 autores-archive">
-      <div class="row rm8">
-        <div class="col-sm-36">
+  <div class="row autores-temas">
+    <div class="col-sm-6 autores-archive">
+      <div class="row">
+        <div class="col-sm-12">
           <div class="title-archive"><h2>Autores destacados</h2></div>
         </div><!-- .span6 -->
       </div><!-- .row -->
@@ -129,87 +129,87 @@ get_currentuserinfo();
         foreach ($authors as $author) {
         if($j == 1){
       ?>
-      <div class="row rm8">
-        <div class="col-sm-18">
+      <div class="row">
+        <div class="col-sm-6">
           <div class="wrapper-nombre">
             <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
             <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
             <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
           </div>
-        </div><!-- .col-sm-18 -->
+        </div><!-- .col-sm-6 -->
         <?php } else if($j == 2){ ?>
-        <div class="col-sm-18">
+        <div class="col-sm-6">
           <div class="wrapper-nombre">
             <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
             <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
             <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
           </div>
-        </div><!-- .col-sm-18  -->
+        </div><!-- .col-sm-6  -->
       </div><!-- .row -->
       <?php } else if($j == 3){ ?>
-      <div class="row rm8">
-        <div class="col-sm-18">
+      <div class="row">
+        <div class="col-sm-6">
           <div class="wrapper-nombre">
             <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
             <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
             <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
           </div>
-        </div><!-- .col-sm-18 -->
+        </div><!-- .col-sm-6 -->
         <?php } else if($j == 4){ ?>
-        <div class="col-sm-18">
+        <div class="col-sm-6">
           <div class="wrapper-nombre">
             <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
             <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
             <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
           </div>
-        </div><!-- .col-sm-18 -->
+        </div><!-- .col-sm-6 -->
       </div><!-- .row -->
       <?php } else if($j == 5){ ?>
-      <div class="row rm8">
-        <div class="col-sm-18">
+      <div class="row">
+        <div class="col-sm-6">
           <div class="wrapper-nombre">
             <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
             <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
             <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
           </div>
-        </div><!-- .col-sm-18 -->
+        </div><!-- .col-sm-6 -->
         <?php } else if($j == 6){ ?>
-        <div class="col-sm-18">
+        <div class="col-sm-6">
           <div class="wrapper-nombre">
             <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
             <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
             <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
             <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
           </div>
-        </div><!-- .col-sm-18 -->
+        </div><!-- .col-sm-6 -->
       </div><!-- .row -->
       <?php } $j++; } //end foreach ?>
-    </div><!-- .col-sm-18 -->
-    <div class="col-sm-18 temas-archive">
-      <div class="row rm8">
-        <div class="col-sm-36">
+    </div><!-- .col-sm-6 -->
+    <div class="col-sm-6 temas-archive">
+      <div class="row">
+        <div class="col-sm-12">
           <div class="title-archive"><h2>Temas tendencia</h2></div>
-        </div><!-- .col-sm-36 -->
+        </div><!-- .col-sm-12 -->
       </div><!-- .row -->
-      <div class="row rm8">
-        <div class="col-sm-36">
+      <div class="row">
+        <div class="col-sm-12">
           <?php popular_tags_from_category($term->term_id, 1240)?>
-        </div><!-- .col-sm-36 -->
+        </div><!-- .col-sm-12 -->
       </div><!-- .row -->
-    </div><!-- .col-sm-18 -->
+    </div><!-- .col-sm-3 -->
   </div><!-- .row AUTORES TEMAS -->
 </div><!-- .container.cm8 -->
 <!-- Empieza sección de LISTADO DE POSTS -->
 <div class="container">
   <div class="row posts-home">
-    <div class="col-md-36">
+    <div class="col-md-12">
       <div class="row title-loggedout">
-        <div class="col-md-15">
+        <div class="col-md-5">
           <div class="menuFlotante">
             <div id="dl-menu" class="dl-menuwrapper">
               <button class="dl-trigger">Abrir Menú</button>

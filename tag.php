@@ -7,7 +7,7 @@ get_currentuserinfo();
 <div class="container">
   <!-- Empieza sección de TÍTULO DE CATEGORÍA -->
   <div class="row titu-tag">
-    <div class="col-sm-24">
+    <div class="col-sm-8">
       <i class="fa fa-tag"></i>
       <div class="tag-nombre"><?php single_term_title(); ?></div>
       <!--<br class="clearfix">-->
@@ -15,19 +15,19 @@ get_currentuserinfo();
         <a href="#" class="enl-compartir"><i class="fa fa-share"></i> Compartir</a>
         <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
       </div>
-    </div><!-- .col-md-8 -->
+    </div><!-- .col-sm-8 -->
   </div><!-- .row TÍTULO DE TAG -->
   <div class="row posts-home">
-    <div class="col-md-36">
+    <div class="col-md-12">
       <div class="row title-loggedin">
-        <div class="col-sm-24">
+        <div class="col-sm-8">
           <div class="title-home-loggedin">
             <div class="thl">
               <a href="#publicaciones" class="active" data-toggle="tab">Publicaciones (<?php echo $term->count; ?>)</a> <span>&bull;</span> <a href="#autores" data-toggle="tab">Autores (11)</a> <span>&bull;</span><!-- <a href="#seguidores" data-toggle="tab">Seguidores (12)</a>-->
             </div>
           </div> 
-        </div><!-- .col-sm-24 -->
-        <!--<div class="col-sm-12">
+        </div><!-- .col-sm-8 -->
+        <!--<div class="col-sm-4">
           <div class="btns-orden btn-toolbar">
             <div id="OrdenNuevasPopulares" class="btn-group">
               <a href="#"  id="ordenNuevas" class="btn btn-orden dropdown-toggle" data-toggle="dropdown">Ordenar por <i class="icon-sort-down"></i></a>
@@ -41,7 +41,7 @@ get_currentuserinfo();
               <a href="#" class="btn btn-unete">Invita a tus amigos</a>
             </div>
           </div>
-        </div>--><!-- .col-sm-12 -->
+        </div>--><!-- .col-sm-4 -->
       </div><!-- .row -->
       <div class="row tab-content">
         <div class="tab-pane active" id="publicaciones">
@@ -67,7 +67,7 @@ get_currentuserinfo();
           ?>
         </div><!-- #recientes -->
         <div class="tab-pane autores-home" id="autores">
-          <div class="col-sm-12">
+          <div class="col-sm-4">
             <div class="wrapper-nombre">
               <img src="http://gravatar.com/avatar/e71197281d0838afcc0a1f838e78441f?s=56" class="avatar avatar-56 avatar-default" height="56" width="56" style="width: 56px; height: 56px;" alt="avatar">
               <div class="nombre-autor"><a href="#">Elisabeth Judson Shue Guggenheim</a></div>
@@ -93,8 +93,8 @@ get_currentuserinfo();
               <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
               <!--<a href="#" class="btn btn-seguir"><i class="fa fa-plus"></i> Seguir</a>-->
             </div>
-          </div><!-- .col-sm-12 -->
-          <div class="col-sm-12">
+          </div><!-- .col-sm-4 -->
+          <div class="col-sm-4">
             <div class="wrapper-nombre">
               <img src="http://gravatar.com/avatar/e71197281d0838afcc0a1f838e78441f?s=56" class="avatar avatar-56 avatar-default" height="56" width="56" style="width: 56px; height: 56px;" alt="avatar">
               <div class="nombre-autor"><a href="#">Elisabeth Judson Shue Guggenheim</a></div>
@@ -120,8 +120,8 @@ get_currentuserinfo();
               <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
               <!--<a href="#" class="btn btn-seguir"><i class="fa fa-plus"></i> Seguir</a>-->
             </div>
-          </div><!-- .col-sm-12 -->
-          <div class="col-sm-12">
+          </div><!-- .col-sm-4 -->
+          <div class="col-sm-4">
             <div class="wrapper-nombre">
               <img src="http://gravatar.com/avatar/e71197281d0838afcc0a1f838e78441f?s=56" class="avatar avatar-56 avatar-default" height="56" width="56" style="width: 56px; height: 56px;" alt="avatar">
               <div class="nombre-autor"><a href="#">Elisabeth Judson Shue Guggenheim</a></div>
@@ -147,9 +147,9 @@ get_currentuserinfo();
               <a href="#" data-toggle="tooltip" title="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"><img src="http://farm4.staticflickr.com/3687/9202770347_82d6ffe382.jpg" alt="Plan de negocios para la creación de una empresa productora de granadilla tipo exportación en Zetaquirá, Boyacá, Colombia"></a>
               <!--<a href="#" class="btn btn-seguir"><i class="fa fa-plus"></i> Seguir</a>-->
             </div>
-          </div><!-- .col-sm-12 -->
+          </div><!-- .col-sm-4 -->
         </div><!-- #parati -->
       </div><!-- .row -->
-    </div><!-- .span12 -->
+    </div><!-- .span4 -->
   </div><!-- .row LISTADO DE POSTS -->
 </div><!-- .container -->

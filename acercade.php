@@ -7,14 +7,14 @@ Template Name: Acerca de
 <?php while (have_posts()) : the_post(); ?>
   <div class="container">
     <div class="row">
-      <div class="col-sm-36">
+      <div class="col-sm-12">
         <div class="breadcrumb">
           <a href="#">gestiopolis.com</a> <i class="fa fa-angle-right"></i> acerca de
         </div><!-- .breadcrumb -->
         <h1 class="title">Acerca de gestiopolis</h1>
         
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-sm-4">
             <nav class="aboutsidebar hidden-print hidden-xs hidden-sm" data-spy="affix" data-offset-top="150" data-offset-bottom="200">
               <ul class="nav aboutnav">
                 <li class="active"><a href="#quees"><i class="fa fa-question"></i> Qué es</a></li>
@@ -26,7 +26,7 @@ Template Name: Acerca de
               </ul>
             </nav>
           </div><!-- imagen tel -->
-          <div class="col-sm-24 aboutsections">
+          <div class="col-sm-8 aboutsections">
             <section id="quees">
               <p>La palabra gestiópolis fusiona la raíz latina <em>gestĭo</em> con la raíz griega <em>polis</em> (πόλις). La primera hace referencia a la acción y efecto de gestionar o administrar, sabiendo que administrar etimológicamente significa <strong>servir</strong>. La segunda definía a las ciudades estado griegas que representaban el centro político, cultural y ciudadano de la <strong>sociedad</strong>.</p>
               <p>En tal sentido, gestiopolis.com está para servir a la sociedad a través de un entorno virtual que les posibilita compartir y adquirir conocimientos a las personas que desean desarrollar sus competencias personales y profesionales en los campos vinculados con la administración, la empresa y la economía.</p>

@@ -1,20 +1,20 @@
 <?php if (!is_user_logged_in()) { ?>
   <!-- Empieza sección de DESTACADOS -->
-<div class="container cm8">
-  <div class="row rm8 destacados">
-    <div class="col-sm-36">
+<div class="container">
+  <div class="row destacados">
+    <div class="col-sm-12">
       <div class="row rm8">
-        <div class="col-sm-9">
-          <div class="row rm8">
-            <div class="col-sm-36">
+        <div class="col-sm-3">
+          <div class="row">
+            <div class="col-sm-12">
               <div class="destacan">
                 Se destacan <i class="fa fa-angle-right"></i>
                 <span><a href="#"><i class="fa fa-plus"></i></a>
               </div>
-            </div><!-- .col-sm-36 -->
+            </div><!-- .col-sm-12 -->
           </div><!-- .row -->
-          <div class="row rm8">
-            <div class="col-sm-36">
+          <div class="row">
+            <div class="col-sm-12">
               <?php $tposts = get_trending_posts(6, 1240);
               //print_r($posts);
                 $i = 1;
@@ -32,69 +32,69 @@
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
               </article>
               <?php } else if($i == 2){ ?>
-            </div><!-- .col-sm-36 -->
+            </div><!-- .col-sm-12 -->
           </div><!-- .row -->
         </div><!-- .col-sm-9 -->
-        <div class="col-sm-18">
-          <div class="row rm8">
-            <div class="col-sm-18">
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-6">
               <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $i;?> post">
                 <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
                 <div class="overlay"></div>
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
               </article>
               <?php } else if($i == 3){ ?>
-            </div><!-- .col-sm-18 -->
-            <div class="col-sm-18">
+            </div><!-- .col-sm-6 -->
+            <div class="col-sm-6">
               <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $i;?> post">
                 <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
                 <div class="overlay"></div>
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
               </article>
               <?php } else if($i == 4){ ?>
-            </div><!-- .col-sm-18 -->
+            </div><!-- .col-sm-6 -->
           </div><!-- .row -->
-          <div class="row rm8">
-            <div class="col-sm-36">
+          <div class="row">
+            <div class="col-sm-12">
               <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $i;?> post">
                 <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
                 <div class="overlay"></div>
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
               </article>
               <?php } else if($i == 5){ ?>
-            </div><!-- .col-sm-36 -->
+            </div><!-- .col-sm-12 -->
           </div><!-- .row -->
         </div><!-- .span6 -->
-        <div class="col-sm-9">
-          <div class="row rm8">
-            <div class="col-sm-36">
+        <div class="col-sm-3">
+          <div class="row">
+            <div class="col-sm-12">
               <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $i;?> post">
                 <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
                 <div class="overlay"></div>
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
               </article>
               <?php } else if($i == 6){ ?>
-            </div><!-- .col-sm-36 -->
+            </div><!-- .col-sm-12 -->
           </div><!-- .row -->
-          <div class="row rm8">
-            <div class="col-sm-36">
+          <div class="row">
+            <div class="col-sm-12">
               <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $i;?> post">
                 <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
                 <div class="overlay"></div>
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
               </article>
               <?php } $i++; } // fin foreach $tposts ?>
-            </div><!-- .col-sm-36 -->
+            </div><!-- .col-sm-12 -->
           </div><!-- .row -->
         </div><!-- .span3 -->
       </div><!-- .row -->
     </div>
   </div><!-- .row DESTACADOS -->
   <!-- Empieza sección de EJES TEMÁTICOS -->
-  <div class="row rm8 ejes-home">
-    <div class="col-sm-36">
-      <ul id="og-grid" class="row rm8 og-grid" rel="reci">
-        <li class="col-sm-9">
+  <div class="row ejes-home">
+    <div class="col-sm-12">
+      <ul id="og-grid" class="row og-grid" rel="reci">
+        <li class="col-sm-3">
           <div class="destacan">
             Ejes temáticos <i class="fa fa-angle-right"></i>
           </div>
@@ -107,7 +107,7 @@
           );
         $categories = get_categories( $args );
         foreach ( $categories as $category ) { ?>
-        <li class="col-sm-9">
+        <li class="col-sm-3">
           <a href="<?php echo get_category_link( $category->term_id ); ?>" class="cat-bg-<?php echo $category->term_id; ?>">
             <i class="fa icon-cat-<?php echo $category->term_id; ?>"></i>
             <span class="eje-nombre"><?php echo $category->name; ?></span>
@@ -120,10 +120,10 @@
     </div><!-- .span12 -->
   </div><!-- .row EJES TEMÁTICOS -->
   <!-- Empieza sección de AUTORES POPULARES -->
-  <div class="row rm8 autores-home">
-    <div class="col-sm-36">
-      <div class="row rm8">
-        <div class="col-sm-12">
+  <div class="row autores-home">
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-4">
           <div class="title-home"><h2>Autores Populares</h2></div>
         </div><!-- .span4 -->
       </div><!-- .row -->
@@ -132,7 +132,7 @@
           <a href="#" class="next"><i class="fa fa-angle-right"></i></a>
       </div>
       <div class="wrapper-carrusel">
-        <div class="row rm8 carrusel">
+        <div class="row carrusel">
           <?php $authors = get_trending_authors(8, 1240); 
             foreach ($authors as $author) {
           ?>
@@ -142,7 +142,7 @@
               <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
               <div class="titular-autor"><?php echo title_trim(125, get_the_author_meta('description', $author->post_author)); ?></div>
             </div>
-            <div class="row rm8">
+            <div class="row">
               <div class="wrapper-meta">
                 <div class="span1">
                   <span class="number"><?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?></span> publicaciones
@@ -171,10 +171,10 @@
     </div><!-- .span12 -->
   </div><!-- .row AUTORES POPULARES -->
   <!-- Empieza sección de TEMAS DEL MOMENTO -->
-  <div class="row rm8 temas-home">
-    <div class="col-sm-36">
-      <div class="row rm8">
-        <div class="col-sm-12">
+  <div class="row temas-home">
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-4">
           <div class="title-home"><h2>Temas del momento</h2></div>
         </div><!-- .span4 -->
       </div><!-- .row -->
@@ -183,7 +183,7 @@
         <a href="#" class="next"><i class="fa fa-angle-right"></i></a>
       </div>
       <div class="wrapper-carrusel">
-        <div class="row rm8 carrusel">
+        <div class="row carrusel">
           <?php $terms = trending_tags(8, 1240 ); 
             foreach ($terms as $key => $tag) {
               $link = get_term_link( intval($tag->term_id), 'post_tag' );
@@ -227,10 +227,10 @@
 <!-- Empieza sección de LISTADO DE POSTS -->
 <div class="container">
   <div class="row posts-home">
-    <div class="col-md-36">
+    <div class="col-sm-12">
       <?php if (!is_user_logged_in()) { ?>
       <div class="row title-loggedout">
-        <div class="col-md-15">
+        <div class="col-sm-5">
           <div class="menuFlotante">
             <div id="dl-menu" class="dl-menuwrapper">
               <button class="dl-trigger">Abrir Menú</button>
@@ -294,30 +294,11 @@
             <!--<a href="#" class="btn btn-unete">Únete</a>-->
           </div>
         </div><!-- .span4 -->
-        <div class="col-md-12 col-md-offset-9">
-          <div class="btns-orden btn-toolbar">
-            <div id="OrdenEjes" class="btn-group">
-              <a href="#" id="ordenEje" class="btn btn-orden dropdown-toggle" data-toggle="dropdown">Por eje temático <i class="fa fa-sort-desc"></i></a>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="ordenEje">
-                <?php
-                $args = array(
-                  'orderby' => 'name',
-                  'parent' => 0,
-                  'exclude'=> '1,2,97,105,106'
-                  );
-                $categories = get_categories( $args );
-                foreach ( $categories as $category ) { ?>
-                <li><a class="cat-<?php echo $category->term_id; ?>" href="<?php echo get_category_link( $category->term_id ); ?>"><?php echo $category->name; ?></a></li>
-                <?php } ?>
-              </ul>
-            </div>
-          </div><!-- .btns-orden -->
-        </div><!-- .span4 -->
       </div><!-- .row -->
       <?php } ?>
       <?php if (is_user_logged_in()) { ?>
       <div class="row title-loggedin">
-        <div class="col-md-24">
+        <div class="col-sm-8">
           <div class="title-home-loggedin">
             <div class="thl">
               <a href="#recientes" class="active" data-toggle="tab">Lo más reciente de tu red</a> <span>&bull;</span> <a href="#parati" data-toggle="tab">Para ti</a> <span>&bull;</span> <a href="#destac" data-toggle="tab">Se destacan</a> <span>&bull;</span> <a href="#todo" data-toggle="tab">Todo</a> <span>&bull;</span> <div class="dropdown">
@@ -331,7 +312,7 @@
             </div>
           </div> 
         </div><!-- .col-md-8 -->
-        <div class="col-md-12">
+        <div class="col-sm-4">
           <a href="#" class="btn btn-unete pull-right">Invita a tus amigos</a>
         </div><!-- .col-md-4 -->
       </div><!-- .row -->
@@ -371,7 +352,7 @@
         </div><!-- #todo -->
         <div class="tab-pane autores-home" id="autrec">
           <div>
-            <div class="col-md-36">
+            <div class="col-sm-12">
               <div class="title-home"><h2>Autores Recomendados</h2></div>
             </div><!-- .span4 -->
           </div><!-- .row -->
