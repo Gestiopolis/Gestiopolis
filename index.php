@@ -30,21 +30,6 @@
                 <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
                 <div class="overlay"></div>
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
-                <span class="compartir"><i class="fa fa-share"></i></span>
-                <span class="cat-bg-<?php echo $category_id;?>"><i class="fa icon-cat-<?php echo $category_id;?>"></i></span>
-                <div class="destacado-content cat-bg-<?php echo $category_id;?>">
-                  <div class="meta"><i class="fa fa-eye"></i> <?php echo $tpost->vistas;?> <i class="fa fa-heart"></i> <?php echo $tpost->likes;?> <i class="fa fa-comment"></i> <?php echo $tpost->comment_count;?></div>
-                  <div class="excerpt"><a href="<?php echo get_permalink($tpost->ID); ?>"><?php echo title_trim(150, $tpost->post_content);?></a></div>
-                  <a class="autor" href="<?php echo get_author_posts_url($tpost->post_author); ?>">
-                    <?php echo get_avatar( $tpost->post_author, 21, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $tpost->post_author); ?>
-                  </a>
-                  <div class="botones-compartir" id="compartir-<?php echo $tpost->ID;?>">
-                    <div class="platform bc-facebook" id="fb-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-twitter" id="tweet-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-linkedin" id="linkedin-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-gplus" id="gplus-compartir-<?php echo $tpost->ID;?>"></div>
-                  </div>
-                </div>
               </article>
               <?php } else if($i == 2){ ?>
             </div><!-- .col-sm-36 -->
@@ -57,21 +42,6 @@
                 <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
                 <div class="overlay"></div>
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
-                <span class="compartir"><i class="fa fa-share"></i></span>
-                <span class="cat-bg-<?php echo $category_id;?>"><i class="fa icon-cat-<?php echo $category_id;?>"></i></span>
-                <div class="destacado-content cat-bg-<?php echo $category_id;?>">
-                  <div class="meta"><i class="fa fa-eye"></i> <?php echo $tpost->vistas;?> <i class="fa fa-heart"></i> <?php echo $tpost->likes;?> <i class="fa fa-comment"></i> <?php echo $tpost->comment_count;?></div>
-                  <div class="excerpt"><a href="<?php echo get_permalink($tpost->ID); ?>"><?php echo title_trim(150, $tpost->post_content);?></a></div>
-                  <a class="autor" href="<?php echo get_author_posts_url($tpost->post_author); ?>">
-                    <?php echo get_avatar( $tpost->post_author, 21, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $tpost->post_author); ?>
-                  </a>
-                  <div class="botones-compartir" id="compartir-<?php echo $tpost->ID;?>">
-                    <div class="platform bc-facebook" id="fb-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-twitter" id="tweet-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-linkedin" id="linkedin-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-gplus" id="gplus-compartir-<?php echo $tpost->ID;?>"></div>
-                  </div>
-                </div>
               </article>
               <?php } else if($i == 3){ ?>
             </div><!-- .col-sm-18 -->
@@ -80,21 +50,6 @@
                 <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
                 <div class="overlay"></div>
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
-                <span class="compartir"><i class="fa fa-share"></i></span>
-                <span class="cat-bg-<?php echo $category_id;?>"><i class="fa icon-cat-<?php echo $category_id;?>"></i></span>
-                <div class="destacado-content cat-bg-<?php echo $category_id;?>">
-                  <div class="meta"><i class="fa fa-eye"></i> <?php echo $tpost->vistas;?> <i class="fa fa-heart"></i> <?php echo $tpost->likes;?> <i class="fa fa-comment"></i> <?php echo $tpost->comment_count;?></div>
-                  <div class="excerpt"><a href="<?php echo get_permalink($tpost->ID); ?>"><?php echo title_trim(150, $tpost->post_content);?></a></div>
-                  <a class="autor" href="<?php echo get_author_posts_url($tpost->post_author); ?>">
-                    <?php echo get_avatar( $tpost->post_author, 21, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $tpost->post_author); ?>
-                  </a>
-                  <div class="botones-compartir" id="compartir-<?php echo $tpost->ID;?>">
-                    <div class="platform bc-facebook" id="fb-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-twitter" id="tweet-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-linkedin" id="linkedin-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-gplus" id="gplus-compartir-<?php echo $tpost->ID;?>"></div>
-                  </div>
-                </div>
               </article>
               <?php } else if($i == 4){ ?>
             </div><!-- .col-sm-18 -->
@@ -105,21 +60,6 @@
                 <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
                 <div class="overlay"></div>
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
-                <span class="compartir"><i class="fa fa-share"></i></span>
-                <span class="cat-bg-<?php echo $category_id;?>"><i class="fa icon-cat-<?php echo $category_id;?>"></i></span>
-                <div class="destacado-content cat-bg-<?php echo $category_id;?>">
-                  <div class="meta"><i class="fa fa-eye"></i> <?php echo $tpost->vistas;?> <i class="fa fa-heart"></i> <?php echo $tpost->likes;?> <i class="fa fa-comment"></i> <?php echo $tpost->comment_count;?></div>
-                  <div class="excerpt"><a href="<?php echo get_permalink($tpost->ID); ?>"><?php echo title_trim(150, $tpost->post_content);?></a></div>
-                  <a class="autor" href="<?php echo get_author_posts_url($tpost->post_author); ?>">
-                    <?php echo get_avatar( $tpost->post_author, 21, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $tpost->post_author); ?>
-                  </a>
-                  <div class="botones-compartir" id="compartir-<?php echo $tpost->ID;?>">
-                    <div class="platform bc-facebook" id="fb-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-twitter" id="tweet-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-linkedin" id="linkedin-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-gplus" id="gplus-compartir-<?php echo $tpost->ID;?>"></div>
-                  </div>
-                </div>
               </article>
               <?php } else if($i == 5){ ?>
             </div><!-- .col-sm-36 -->
@@ -132,21 +72,6 @@
                 <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
                 <div class="overlay"></div>
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
-                <span class="compartir"><i class="fa fa-share"></i></span>
-                <span class="cat-bg-<?php echo $category_id;?>"><i class="fa icon-cat-<?php echo $category_id;?>"></i></span>
-                <div class="destacado-content cat-bg-<?php echo $category_id;?>">
-                  <div class="meta"><i class="fa fa-eye"></i> <?php echo $tpost->vistas;?> <i class="fa fa-heart"></i> <?php echo $tpost->likes;?> <i class="fa fa-comment"></i> <?php echo $tpost->comment_count;?></div>
-                  <div class="excerpt"><a href="<?php echo get_permalink($tpost->ID); ?>"><?php echo title_trim(150, $tpost->post_content);?></a></div>
-                  <a class="autor" href="<?php echo get_author_posts_url($tpost->post_author); ?>">
-                    <?php echo get_avatar( $tpost->post_author, 21, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $tpost->post_author); ?>
-                  </a>
-                  <div class="botones-compartir" id="compartir-<?php echo $tpost->ID;?>">
-                    <div class="platform bc-facebook" id="fb-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-twitter" id="tweet-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-linkedin" id="linkedin-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-gplus" id="gplus-compartir-<?php echo $tpost->ID;?>"></div>
-                  </div>
-                </div>
               </article>
               <?php } else if($i == 6){ ?>
             </div><!-- .col-sm-36 -->
@@ -157,23 +82,8 @@
                 <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
                 <div class="overlay"></div>
                 <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
-                <span class="compartir"><i class="fa fa-share"></i></span>
-                <span class="cat-bg-<?php echo $category_id;?>"><i class="fa icon-cat-<?php echo $category_id;?>"></i></span>
-                <div class="destacado-content cat-bg-<?php echo $category_id;?>">
-                  <div class="meta"><i class="fa fa-eye"></i> <?php echo $tpost->vistas;?> <i class="fa fa-heart"></i> <?php echo $tpost->likes;?> <i class="fa fa-comment"></i> <?php echo $tpost->comment_count;?></div>
-                  <div class="excerpt"><a href="<?php echo get_permalink($tpost->ID); ?>"><?php echo title_trim(150, $tpost->post_content);?></a></div>
-                  <a class="autor" href="<?php echo get_author_posts_url($tpost->post_author); ?>">
-                    <?php echo get_avatar( $tpost->post_author, 21, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $tpost->post_author); ?>
-                  </a>
-                  <div class="botones-compartir" id="compartir-<?php echo $tpost->ID;?>">
-                    <div class="platform bc-facebook" id="fb-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-twitter" id="tweet-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-linkedin" id="linkedin-compartir-<?php echo $tpost->ID;?>"></div>
-                    <div class="platform bc-gplus" id="gplus-compartir-<?php echo $tpost->ID;?>"></div>
-                  </div>
-                </div>
               </article>
-              <?php } $i++; } // fin foreach $posts ?>
+              <?php } $i++; } // fin foreach $tposts ?>
             </div><!-- .col-sm-36 -->
           </div><!-- .row -->
         </div><!-- .span3 -->
@@ -249,7 +159,7 @@
               <?php $argsa=array( 'posts_per_page' => 4, 'author' => $author->post_author);//Empieza query del último post
             $querya = new WP_Query($argsa);
               if( $querya->have_posts() ) { while ($querya->have_posts()) : $querya->the_post(); ?>
-              <a href="#" data-toggle="tooltip" title="<?php the_title(); ?>"><img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title(); ?>"></a>
+              <a href="#" data-toggle="tooltip" title="<?php the_title(); ?>"><?php echo wp_imager(64, 32, '', 'img-responsive'); ?></a>
               <?php endwhile;?>
               <?php } 
               wp_reset_postdata(); ?>
@@ -301,7 +211,7 @@
               <?php $argst=array( 'posts_per_page' => 5, 'tag_id' => $tag_id);
               $queryt = new WP_Query($argst);
               if( $queryt->have_posts() ) { while ($queryt->have_posts()) : $queryt->the_post(); ?>
-              <a href="#" data-toggle="tooltip" title="<?php the_title(); ?>"><img src="<?php echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php the_title(); ?>"></a>
+              <a href="#" data-toggle="tooltip" title="<?php the_title(); ?>"><?php echo wp_imager(64, 32, '', 'img-responsive'); ?></a>
               <?php endwhile;?>
               <?php } 
               wp_reset_postdata(); ?>
@@ -443,8 +353,8 @@
               endwhile;
               ?>
               <div class="pagination">
-                <div class="nav-next alignright"><?php previous_posts_link( 'Artículos nuevos' ); ?></div>
-          </div>
+                <div class="nav-previous alignleft"><?php next_posts_link( 'Artículos anteriores' ); ?></div>
+              </div>
               <?php
             endif;
           ?>

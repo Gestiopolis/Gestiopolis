@@ -37,7 +37,7 @@ var Gestiopolis = {
         $('.busca-link').show();
       });
       // 2. Hacer que aparezcan botones sociales conforme pasa el cursor encima de un artículo 
-      $('article.post').on('mouseenter', function (event) {
+      /*$('article.post').on('mouseenter', function (event) {
         $(this).off(event);
         var id = $(this).attr("id").slice(5);
         //$('#social-img-' + id).hide();
@@ -67,7 +67,7 @@ var Gestiopolis = {
         $('#linkedin-compartir-' + id).removeClass('bc-linkedin').html(linkedin_str);
         if (typeof (IN) != 'object'){ jQuery.getScript('http://platform.linkedin.com/in.js');}
         else { IN.parse(document.getElementById('linkedin-compartir-' + id));}
-      });
+      });*/
       //3. Iniciar tooltips
       $("a[data-toggle=tooltip]").tooltip();
 
@@ -98,9 +98,9 @@ var Gestiopolis = {
         itemSelector : '.postw',
         bufferPx     : 200,
         loading: {
-          msgText: '<em>Cargando...<\\\/em>',
-          finishedMsg: '<em>No hay más artículos.<\\\/em>',
-          img: serverval.template_directory+'\\\/assets\\\/img\\\/ajax-loader.gif'
+          msgText: 'Cargando...',
+          finishedMsg: 'We\'re done here.',
+          img: serverval.template_directory+'/assets/img/ajax-loader.gif'
         }
       },
       // Infinite Scroll Callback
@@ -109,6 +109,99 @@ var Gestiopolis = {
         $newElems.imagesLoaded(function(){
           $newElems.fadeIn();
           $container.isotope( 'appended', $newElems );
+        });
+      });
+    }
+  },
+  author: { //Página del autor
+    init: function() {
+      var $conta3 = $('#publicaciones');
+      // Fire Isotope only when images are loaded
+      $conta3.imagesLoaded(function(){
+        $conta3.isotope({
+          itemSelector : '.postw'
+        });
+      });
+      // Infinite Scroll
+      $('#publicaciones').infinitescroll({
+        navSelector  : 'div.pagination',
+        nextSelector : '.nav-previous a:first',
+        itemSelector : '.postw',
+        bufferPx     : 200,
+        loading: {
+          msgText: 'Cargando...',
+          finishedMsg: 'We\'re done here.',
+          img: serverval.template_directory+'/assets/img/ajax-loader.gif'
+        }
+      },
+      // Infinite Scroll Callback
+      function( newElements ) {
+        var $newElems = jQuery( newElements ).hide();
+        $newElems.imagesLoaded(function(){
+          $newElems.fadeIn();
+          $conta3.isotope( 'appended', $newElems );
+        });
+      });
+    }
+  },
+  category: { //Página del autor
+    init: function() {
+      var $conta1 = $('#recientes');
+      // Fire Isotope only when images are loaded
+      $conta1.imagesLoaded(function(){
+        $conta1.isotope({
+          itemSelector : '.postw'
+        });
+      });
+      // Infinite Scroll
+      $('#recientes').infinitescroll({
+        navSelector  : 'div.pagination',
+        nextSelector : '.nav-previous a:first',
+        itemSelector : '.postw',
+        bufferPx     : 200,
+        loading: {
+          msgText: 'Cargando...',
+          finishedMsg: 'We\'re done here.',
+          img: serverval.template_directory+'/assets/img/ajax-loader.gif'
+        }
+      },
+      // Infinite Scroll Callback
+      function( newElements ) {
+        var $newElems = jQuery( newElements ).hide();
+        $newElems.imagesLoaded(function(){
+          $newElems.fadeIn();
+          $conta1.isotope( 'appended', $newElems );
+        });
+      });
+    }
+  },
+  tag: { //Página del autor
+    init: function() {
+      var $conta2 = $('#publicaciones');
+      // Fire Isotope only when images are loaded
+      $conta2.imagesLoaded(function(){
+        $conta2.isotope({
+          itemSelector : '.postw'
+        });
+      });
+      // Infinite Scroll
+      $('#publicaciones').infinitescroll({
+        navSelector  : 'div.pagination',
+        nextSelector : '.nav-previous a:first',
+        itemSelector : '.postw',
+        bufferPx     : 200,
+        loading: {
+          msgText: 'Cargando...',
+          finishedMsg: 'We\'re done here.',
+          img: serverval.template_directory+'/assets/img/ajax-loader.gif'
+        }
+      },
+      // Infinite Scroll Callback
+      function( newElements ) {
+        var $newElems = jQuery( newElements ).hide();
+        $newElems.imagesLoaded(function(){
+          $newElems.fadeIn();
+          $conta2.isotope( 'appended', $newElems );
         });
       });
     }

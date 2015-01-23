@@ -4,17 +4,17 @@
 <div class="postw col-md-12 col-sm-18">
   <article id="post-<?php the_ID(); ?>" class="post">
     <div class="wrapper-img">
-      <!--<img src="<?php //echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php //the_title_attribute(); ?>" class="img-responsive">-->
+      <img src="<?php //echo get_post_meta($post->ID, "Thumbnail", true); ?>" alt="<?php //the_title_attribute(); ?>" class="img-responsive">
       <?php echo wp_imager(393, 192, '', 'img-responsive'); ?>
-      <span class="compartir"><i class="fa fa-share"></i></span>
-      <div class="meta-content">
+      <!--<span class="compartir"><i class="fa fa-share"></i></span>-->
+      <!--<div class="meta-content">
         <div class="botones-compartir" id="compartir-<?php the_ID(); ?>">
           <div class="platform bc-facebook" id="fb-compartir-<?php the_ID(); ?>"></div>
           <div class="platform bc-twitter" id="tweet-compartir-<?php the_ID(); ?>"></div>
           <div class="platform bc-linkedin" id="linkedin-compartir-<?php the_ID(); ?>"></div>
           <div class="platform bc-gplus" id="gplus-compartir-<?php the_ID(); ?>"></div>
         </div>
-      </div>
+      </div>-->
     </div>
     <div class="wrapper-post cat-<?php echo $category[0]->term_id; ?>">
       <div class="cat-bar">
