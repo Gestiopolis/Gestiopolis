@@ -24,7 +24,7 @@ function roots_scripts() {
   if (WP_ENV === 'development') {
     $assets = array(
       'css'       => '/assets/css/main.css',
-      'fonts'     => 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,200italic,300italic,400italic,600italic|Open+Sans+Condensed:300,700,300italic',
+      'fonts'     => '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Montserrat:700',
       'iconfont'     => '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css',
       'pdfcssbase'=> '/pdf2htmlEX/base.css',
       'pdfcssfancy'   => '/pdf2htmlEX/fancy.css',
@@ -42,7 +42,7 @@ function roots_scripts() {
     $assets     = json_decode($get_assets, true);
     $assets     = array(
       'css'       => '/assets/css/main.min.css?' . $assets['assets/css/main.min.css']['hash'],
-      'fonts'       => 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,200italic,300italic,400italic,600italic|Open+Sans+Condensed:300,700,300italic',
+      'fonts'       => '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Montserrat:700',
       'iconfont'     => '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css',
       'pdfcssbase'=> '/pdf2htmlEX/base.min.css',
       'pdfcssfancy'   => '/pdf2htmlEX/fancy.min.css',
