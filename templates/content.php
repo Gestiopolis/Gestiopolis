@@ -1,7 +1,7 @@
 <?php 
 	$category = get_the_category($post->ID);
 ?>
-<div class="postw col-md-3 col-sm-6">
+<div class="postw col-lg-3 col-md-4 col-sm-6">
   <article id="post-<?php the_ID(); ?>" class="post">
     <div class="wrapper-img">
       <?php echo wp_imager(393, 192, '', 'img-responsive'); ?>
