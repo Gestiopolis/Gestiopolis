@@ -40,7 +40,6 @@
       <?php echo wp_imager(640, 360, '', 'img-responsive'); ?>
       <div class="overlay"></div>
       <h3 class="entry-title"><a id="titulo-<?php echo $post->ID; ?>" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><span><?php the_title_attribute(); ?></span></a></h3>
-      <span class="compartir"><i class="fa fa-share"></i></span>
       <div class="destacado-content cat-bg-<?php echo $category_id; ?>">
         <div class="botones-compartir" id="compartir-<?php echo $post->ID; ?>">
           <div class="platform bc-facebook" id="fb-compartir-<?php echo $post->ID; ?>"></div>
@@ -86,7 +85,6 @@
       <?php echo wp_imager(640, 360, '', 'img-responsive'); ?>
       <div class="overlay"></div>
       <h3 class="entry-title"><a id="titulo-<?php echo $post->ID; ?>" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><span><?php the_title_attribute(); ?></span></a></h3>
-      <span class="compartir"><i class="fa fa-share"></i></span>
       <div class="destacado-content cat-bg-<?php echo $category_id; ?>">
         <div class="botones-compartir" id="compartir-<?php echo $post->ID; ?>">
           <div class="platform bc-facebook" id="fb-compartir-<?php echo $post->ID; ?>"></div>
@@ -112,7 +110,6 @@
       <?php echo wp_imager(640, 360, '', 'img-responsive'); ?>
       <div class="overlay"></div>
       <h3 class="entry-title"><a id="titulo-<?php echo $post->ID; ?>" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><span><?php the_title_attribute(); ?></span></a></h3>
-      <span class="compartir"><i class="fa fa-share"></i></span>
       <div class="destacado-content cat-bg-<?php echo $category_id; ?>">
         <div class="botones-compartir" id="compartir-<?php echo $post->ID; ?>">
           <div class="platform bc-facebook" id="fb-compartir-<?php echo $post->ID; ?>"></div>
