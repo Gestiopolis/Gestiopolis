@@ -1,4 +1,10 @@
 /*==========  TOP NAV  ==========*/
+.nav-up {
+  top: -@navbar-height;
+}
+header.banner {
+  transition: top 0.2s ease-in-out;
+}
 .navbar-nav > li > a {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -16,8 +22,14 @@
   box-shadow: none;
 }
 .navbar .navbar-brand {
-  margin-left: 0 !important;
+  margin-left: 16px !important;
   padding: 0;
+}
+@media (min-width: @screen-sm-min) {
+  .navbar .navbar-brand {
+    margin-left: 0 !important;
+    padding: 0;
+  }
 }
 .navbar-inverse .nav>li>a {
   border-left: 1px solid #666;
