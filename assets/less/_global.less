@@ -1,6 +1,26 @@
 /*==========  ESTILOS GLOBALES  ==========*/
 html {
-  font-size: 16px;
+  font-size: 12px;
+}
+@media (min-width: @screen-lg-min) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  html {
+    font-size: 13px;
+  }
+}
+@media (max-width: @screen-xs-max) {
+  html {
+    font-size: 12px;
+  }
 }
 body { 
   font-weight: 400;
