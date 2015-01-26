@@ -129,10 +129,12 @@ var Gestiopolis = {
             if (st > lastScrollTop && st > navbarHeight){
                 // Scroll Down
                 $('header.banner').removeClass('nav-down').addClass('nav-up');
+                $('.single #toolbar').css( "margin-top", "10px" );
             } else {
                 // Scroll Up
                 if(st + $(window).height() < $(document).height()) {
                     $('header.banner').removeClass('nav-up').addClass('nav-down');
+                    $('.single #toolbar').css( "margin-top", "58px" );
                 }
             }
             
