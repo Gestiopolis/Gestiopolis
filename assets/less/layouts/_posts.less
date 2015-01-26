@@ -304,7 +304,6 @@
 }
 .post-content .entry-content p {
   margin: 2rem 0;
-  padding: 0 5rem;
 }
 .post-content .entry-content a {
   color: #0044cc;
@@ -320,7 +319,6 @@
   line-height: 1.5;
   //text-transform: uppercase;
   margin: 2rem 0;
-  padding: 0 5rem;
 }
 .post-content .entry-content h2 {
   font-size: 1.5rem;
@@ -345,7 +343,7 @@
 .post-content .entry-content ul,
 .post-content .entry-content ol {
   margin-left:48px;
-  padding: 0 5rem; 
+   
 }
 .post-content .entry-content ul ul,
 .post-content .entry-content ul ol,
@@ -360,8 +358,44 @@
   margin:0 48px 26px;
   padding: 0;
   position:relative;
-  padding: 0 5rem;
 }
+@media (min-width: @screen-lg-min) {
+  .post-content .entry-content p,
+  .post-content .entry-content h2,
+  .post-content .entry-content h3,
+  .post-content .entry-content h4,
+  .post-content .entry-content h5,
+  .post-content .entry-content blockquote,
+  .post-content .entry-content ul,
+  .post-content .entry-content ol {
+    padding: 0 5rem;
+  }
+}
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  .post-content .entry-content p,
+  .post-content .entry-content h2,
+  .post-content .entry-content h3,
+  .post-content .entry-content h4,
+  .post-content .entry-content h5,
+  .post-content .entry-content blockquote,
+  .post-content .entry-content ul,
+  .post-content .entry-content ol {
+    padding: 0 4rem;
+  }
+}
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  .post-content .entry-content p,
+  .post-content .entry-content h2,
+  .post-content .entry-content h3,
+  .post-content .entry-content h4,
+  .post-content .entry-content h5,
+  .post-content .entry-content blockquote,
+  .post-content .entry-content ul,
+  .post-content .entry-content ol {
+    padding: 0 3rem;
+  }
+}
+
 .post-content .entry-content blockquote:before {
   content:'\f10d';
   font-family: 'FontAwesome';
