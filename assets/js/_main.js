@@ -107,7 +107,7 @@ var Gestiopolis = {
     init: function() {
       // JavaScript to be fired on the home page
       //1. Grid Ejes temáticos Home
-      Grid.init();
+      //Grid.init();
       //2. Slider home autores
       slider(".autores-home", ".autores-home .carrusel", ".carrusel>.span3", 8);
       //3. Slider home temas
