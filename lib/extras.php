@@ -1141,7 +1141,7 @@ function fix_img_caption_shortcode_inline_style($output,$attr,$content) {
 
 function get_author_color_id(){
 	global $post;
-	$firstletter = substr(get_the_author(), 0, 1);
+	$firstletter = mb_substr(get_the_author(), 0, 1);
 	if ($firstletter == 'ñ' || $firstletter == 'Ñ' || $firstletter == 'á' || $firstletter == 'Á' || $firstletter == 'é' || $firstletter == 'É' || $firstletter == 'í' || $firstletter == 'Í' || $firstletter == 'ó' || $firstletter == 'Ó' || $firstletter == 'ú' || $firstletter == 'Á'){
 		return '<span class="author-color author-color-nn">'.$firstletter.'</span>';
 	} else {
