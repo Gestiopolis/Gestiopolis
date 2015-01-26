@@ -1070,8 +1070,16 @@ function estimate_time() {
 	global $post;
 	$result = "";
 	$wpm = 250; //Palabras por minuto
+	$content = '';
+	if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {
+		$servidor = $_SERVER['HTTP_HOST'] == 'localhost' ? '/Gestiopolis' : '';
+    $html_plain = file_get_contents($_SERVER['DOCUMENT_ROOT'].$servidor.get_post_meta($post->ID, "all2html_htmlcontent", true));
+    $content = strip_tags($html_plain);
+    $wpm = 180;
+	}else {
+		$content = strip_tags($post->post_content);
+	}
 	
-	$content = strip_tags($post->post_content);		
 	$content_words = str_word_count($content);
 	$estimated_minutes = floor($content_words / $wpm);
 
@@ -1083,7 +1091,7 @@ function estimate_time() {
 			$result = "más de un día";
 		}
 		else {
-			$result = floor($estimated_minutes / 60) . " horas";
+			$result = (floor($estimated_minutes / 60) == 1) ?  floor($estimated_minutes / 60) . " hora" : floor($estimated_minutes / 60) . " horas";
 		}
 	}
 	else if ($estimated_minutes == 1) {
