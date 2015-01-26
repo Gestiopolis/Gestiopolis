@@ -15,25 +15,12 @@
       </div>        
   </div>
   <div class="breadcredit container">
-    <div class="breadcrumb pull-left">
-      <a href="#"><i class="fa fa-home"></i></a> <i class="fa fa-angle-right"></i>
-      <?php 
-      $category = get_the_category(); 
-      if($category[0]){
-        echo '<a href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a>';
-      }
-      ?> 
-      <i class="fa fa-angle-right"></i>
-    </div>
-    <?php if (get_post_meta($post->ID, "image_url_value", true) != "") { ?>
-    <div class="image-credit pull-right"><a href="<?php echo get_post_meta($post->ID, "image_url_value", $single = true); ?>" target="_blank"><i class="fa fa-camera"></i> <?php echo get_post_meta($post->ID, "image_author_t_value", true); ?></a></div>
-    <?php } ?>
+    <?php get_template_part('templates/entry-meta'); ?>
   </div>
-  <div class="container">
+  <div class="container cposts">
     <div class="row">
       <div class="col-sm-9">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          <?php get_template_part('templates/entry-meta'); ?>
           <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
           <?php get_template_part('templates/post-front-edit'); ?>
           <?php } ?>

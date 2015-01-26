@@ -6,6 +6,9 @@
 
 /*==========  3.3. POST  ==========*/
 
+.cposts {
+  margin-top: 48px;
+}
 /*.breadcrumb {
   background: transparent;
   display:block;
@@ -89,18 +92,33 @@
   filter: none;
 }
 .breadcredit {
-  margin-top: -32px;
+  margin-top: -48px;
   position: relative;
 }
-.breadcredit .image-credit {
+.breadcredit {
   /*bottom: 0;*/
   font: 400 0.875rem @text-font, sans-serif;
   line-height: 1rem;
   height:32px;
+  display:block;
   /*right:0;*/
   padding: 8px;
   /*position: absolute;*/
-  text-shadow: 1px 1px 0 rgba(0,0,0,1);
+  text-shadow: 2px 0px 5px rgba(0,0,0,0.5);
+  color: #fff;
+}
+.breadcredit a {
+  color: #fff;
+}
+
+.breadcredit .author-info {
+  font: 700 0.8125rem @title-font, sans-serif;
+}
+.breadcredit li {
+  display: inline-block;
+  margin-left: 24px;
+  height: 32px;
+  line-height: 32px;
 }
 /*.breadcredit .breadcrumb {
   border-radius: 0;
@@ -286,6 +304,7 @@
 }
 .post-content .entry-content p {
   margin: 2rem 0;
+  padding: 0 5rem;
 }
 .post-content .entry-content a {
   color: #0044cc;
@@ -301,6 +320,7 @@
   line-height: 1.5;
   //text-transform: uppercase;
   margin: 2rem 0;
+  padding: 0 5rem;
 }
 .post-content .entry-content h2 {
   font-size: 1.5rem;
