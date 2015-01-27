@@ -37,37 +37,7 @@ var Gestiopolis = {
         $('.busca-link').show();
       });
       // 2. Hacer que aparezcan botones sociales conforme pasa el cursor encima de un artículo 
-      /*$('article.post').on('mouseenter', function (event) {
-        $(this).off(event);
-        var id = $(this).attr("id").slice(5);
-        //$('#social-img-' + id).hide();
-        $('#compartir-' + id).show();
-        var permalink = $('#titulo-' + id).attr("href");
-        var title = $('#titulo-' + id).attr("title");
-        var fb_str = '<fb:like href="' + permalink + '" layout="button_count" send="false" show_faces="false"></fb:like>';
-        var twitter_str = '<span style="float:left;width:90px;margin-right:5px;margin-bottom: -5px;"><iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?url=' + permalink + '&amp;text=' + title + '&amp;via=gestiopoliscom" style="width:90px; height:20px;" allowTransparency="true" frameborder="0"></iframe></span>';
-        var linkedin_str = '<scr' + 'ipt id="inshare-' + id + '" type="in/share" data-url="' + permalink + '" data-counter="right"></scr' + 'ipt>';
-        $('#compartir-' + id).css('background', 'none');
-        $('#fb-compartir-' + id).removeClass('bc-facebook').css('width', 'auto').html(fb_str);
-        FB.XFBML.parse(document.getElementById('fb-compartir-' + id));
-        $('#tweet-compartir-' + id).css('width', '90px').removeClass('bc-twitter').html(twitter_str);
-        $('#gplus-compartir-' + id).parent().removeClass('bc-gplus');
-        if (typeof (gapi) != 'object'){ jQuery.getScript('http://apis.google.com/js/plusone.js', function () {
-            gapi.plusone.render('gplus-compartir-' + id, {
-                "href": permalink,
-                "size": 'medium'
-            });
-        });
-        }else {
-            gapi.plusone.render('gplus-compartir-' + id, {
-                "href": permalink,
-                "size": 'medium'
-            });
-        }
-        $('#linkedin-compartir-' + id).removeClass('bc-linkedin').html(linkedin_str);
-        if (typeof (IN) != 'object'){ jQuery.getScript('http://platform.linkedin.com/in.js');}
-        else { IN.parse(document.getElementById('linkedin-compartir-' + id));}
-      });*/
+      
       //3. Iniciar tooltips
       $("a[data-toggle=tooltip]").tooltip();
 
