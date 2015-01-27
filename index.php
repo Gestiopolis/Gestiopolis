@@ -124,14 +124,15 @@
     </div><!-- /.col-sm-12-->
   </div><!-- /.destacados -->
   <!-- Empieza sección de EJES TEMÁTICOS -->
+  <div class="row title-section">
+    <div class="col-sm-12">
+      <h2>Materias</h2>
+      <div class="subtitle">Temáticas en las que clasificamos las publicaciones</div>
+    </div>
+  </div>
   <div class="row ejes-home">
     <div class="col-sm-12">
       <ul id="og-grid" class="row og-grid" rel="reci">
-        <li class="col-sm-3">
-          <div class="destacan">
-            Ejes temáticos <i class="fa fa-angle-right"></i>
-          </div>
-        </li><!-- .span3 -->
         <?php
         $args = array(
           'orderby' => 'name',
