@@ -29,7 +29,7 @@ get_currentuserinfo();
   <div class="row title-section">
     <div class="col-sm-12">
       <h2>Se destacan</h2>
-      <div class="subtitle">Estas son las publicaciones preferidas por nuestros lectores hoy</div>
+      <div class="subtitle">Estas son las publicaciones preferidas por nuestros lectores hoy en <?php single_term_title(); ?></div>
     </div>
   </div>
   <div class="row destacados">
