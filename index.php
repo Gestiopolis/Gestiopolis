@@ -1,95 +1,128 @@
 <?php if (!is_user_logged_in()) { ?>
   <!-- Empieza sección de DESTACADOS -->
 <div class="container">
+  <div class="row title-section">
+    <div class="col-sm-12">
+      <h2>Se destacan</h2>
+      <div class="subtitle">Estas son las publicaciones preferidas por nuestros lectores hoy</div>
+    </div>
+  </div>
   <div class="row destacados">
     <div class="col-sm-12">
-      <div class="row rm8">
-        <div class="col-sm-3">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="destacan">
-                Se destacan <i class="fa fa-angle-right"></i>
-                <span><a href="#"><i class="fa fa-plus"></i></a>
-              </div>
-            </div><!-- .col-sm-12 -->
-          </div><!-- .row -->
-          <div class="row">
-            <div class="col-sm-12">
-              <?php $tposts = get_trending_posts(6, 1240);
-              //print_r($posts);
-                $i = 1;
-                foreach ($tposts as $tpost) {
-                  $post_title = stripslashes($tpost->post_title);
-                  $permalink = get_permalink($tpost->ID);
-                  $category = get_the_category($tpost->ID);
-                  $category_id = $category[0]->term_id;
-                  if($i == 1){
+      <div class="row">
+        <?php $tposts = get_trending_posts(10, 1240);
+          $i = 1;
+          foreach ($tposts as $tpost) {
+            $post_title = stripslashes($tpost->post_title);
+            $permalink = get_permalink($tpost->ID);
+            $category = get_the_category($tpost->ID);
+            $category_id = $category[0]->term_id;
+            if($i == 1){
 
-              ?>
-              <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $i;?> post">
-                <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
-                <div class="overlay"></div>
-                <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
-              </article>
-              <?php } else if($i == 2){ ?>
-            </div><!-- .col-sm-12 -->
-          </div><!-- .row -->
-        </div><!-- .col-sm-9 -->
+        ?>
         <div class="col-sm-6">
-          <div class="row">
-            <div class="col-sm-6">
-              <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $i;?> post">
-                <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
-                <div class="overlay"></div>
-                <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
-              </article>
-              <?php } else if($i == 3){ ?>
-            </div><!-- .col-sm-6 -->
-            <div class="col-sm-6">
-              <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $i;?> post">
-                <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
-                <div class="overlay"></div>
-                <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
-              </article>
-              <?php } else if($i == 4){ ?>
-            </div><!-- .col-sm-6 -->
-          </div><!-- .row -->
-          <div class="row">
-            <div class="col-sm-12">
-              <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $i;?> post">
-                <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
-                <div class="overlay"></div>
-                <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
-              </article>
-              <?php } else if($i == 5){ ?>
-            </div><!-- .col-sm-12 -->
-          </div><!-- .row -->
-        </div><!-- .span6 -->
+          <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
+            <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
+              <img src="<?php echo wp_imager(640, 360, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
+              <div class="overlay"></div>
+              <div class="vert-center-wrapper">
+                <div class="vert-centered">
+                  <div class="text-center">
+                    <h2 class="entry-title"><span><?php echo $post_title; ?></span></h2>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div><!-- ./col-sm-6 -->
+        <?php } else if($i == 2 || $i == 3){ ?>
         <div class="col-sm-3">
-          <div class="row">
-            <div class="col-sm-12">
-              <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $i;?> post">
-                <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
-                <div class="overlay"></div>
-                <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
-              </article>
-              <?php } else if($i == 6){ ?>
-            </div><!-- .col-sm-12 -->
-          </div><!-- .row -->
-          <div class="row">
-            <div class="col-sm-12">
-              <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $i;?> post">
-                <img src="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
-                <div class="overlay"></div>
-                <h2 class="entry-title"><a id="titulo-<?php echo $tpost->ID;?>" href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark"><span><?php echo $post_title; ?></span></a></h2>
-              </article>
-              <?php } $i++; } // fin foreach $tposts ?>
-            </div><!-- .col-sm-12 -->
-          </div><!-- .row -->
-        </div><!-- .span3 -->
-      </div><!-- .row -->
-    </div>
-  </div><!-- .row DESTACADOS -->
+          <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
+            <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
+              <img src="<?php echo wp_imager(640, 360, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
+              <div class="overlay"></div>
+              <div class="vert-center-wrapper">
+                <div class="vert-centered">
+                  <div class="text-center">
+                    <h2 class="entry-title"><span><?php echo $post_title; ?></span></h2>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div><!-- ./col-sm-3 -->
+        <?php } else if($i == 4){ ?>
+      </div><!-- /.row -->
+      <div class="row">
+        <div class="col-sm-3">
+          <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
+            <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
+              <img src="<?php echo wp_imager(640, 360, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
+              <div class="overlay"></div>
+              <div class="vert-center-wrapper">
+                <div class="vert-centered">
+                  <div class="text-center">
+                    <h2 class="entry-title"><span><?php echo $post_title; ?></span></h2>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div><!-- ./col-sm-3 -->
+        <?php } else if($i == 5){ ?>
+        <div class="col-sm-3">
+          <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
+            <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
+              <img src="<?php echo wp_imager(640, 360, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
+              <div class="overlay"></div>
+              <div class="vert-center-wrapper">
+                <div class="vert-centered">
+                  <div class="text-center">
+                    <h2 class="entry-title"><span><?php echo $post_title; ?></span></h2>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div><!-- ./col-sm-3 -->
+        <?php } else if($i == 6){ ?>
+        <div class="col-sm-6">
+          <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
+            <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
+              <img src="<?php echo wp_imager(640, 360, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
+              <div class="overlay"></div>
+              <div class="vert-center-wrapper">
+                <div class="vert-centered">
+                  <div class="text-center">
+                    <h2 class="entry-title"><span><?php echo $post_title; ?></span></h2>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div><!-- ./col-sm-6 -->
+      </div><!-- /.row -->
+      <div class="row">
+        <?php } else if($i == 7 || $i == 8 || $i == 9 || $i == 10){ ?>
+        <div class="col-sm-3">
+          <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
+            <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
+              <img src="<?php echo wp_imager(640, 360, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
+              <div class="overlay"></div>
+              <div class="vert-center-wrapper">
+                <div class="vert-centered">
+                  <div class="text-center">
+                    <h2 class="entry-title"><span><?php echo $post_title; ?></span></h2>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div><!-- ./col-sm-3 -->
+        <?php } $i++; } // fin foreach $tposts ?>
+      </div><!-- /.row -->
+    </div><!-- /.col-sm-12-->
+  </div><!-- /.destacados -->
   <!-- Empieza sección de EJES TEMÁTICOS -->
   <div class="row ejes-home">
     <div class="col-sm-12">

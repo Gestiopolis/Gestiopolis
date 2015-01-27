@@ -6,13 +6,13 @@
     <div class="bg-image" style="background: #ccc; height: 448px;"></div>
     <?php } ?>
     <div class="overlay"></div>
-      <div class="vert-center-wrapper">
-        <div class="vert-centered">
-          <div class="center container">
-            <h1 class="title"><?php the_title(); ?></h1>
-          </div>
+    <div class="vert-center-wrapper">
+      <div class="vert-centered">
+        <div class="center container">
+          <h1 class="title"><?php the_title(); ?></h1>
         </div>
-      </div>        
+      </div>
+    </div>        
   </div>
   <div class="breadcredit container">
     <?php get_template_part('templates/entry-meta'); ?>
