@@ -154,54 +154,34 @@
     </div><!-- .span12 -->
   </div><!-- .row EJES TEMÁTICOS -->
   <!-- Empieza sección de AUTORES POPULARES -->
+  <div class="row title-section">
+    <div class="col-sm-12">
+      <h2>Autores Populares</h2>
+      <div class="subtitle">Quienes han querido compartir sus conocimientos con todos nosotros</div>
+    </div>
+  </div>
   <div class="row autores-home">
     <div class="col-sm-12">
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="title-home"><h2>Autores Populares</h2></div>
-        </div><!-- .span4 -->
-      </div><!-- .row -->
-      <div class="navCarrusel">
-          <a href="#" class="prev"><i class="fa fa-angle-left"></i></a>
-          <a href="#" class="next"><i class="fa fa-angle-right"></i></a>
-      </div>
-      <div class="wrapper-carrusel">
-        <div class="row carrusel">
-          <?php $authors = get_trending_authors(8, 1240); 
+      <div class="carousel slide" id="myCarousel">
+        <div class="carousel-inner">
+          <?php $authors = get_trending_authors(12, 1240); 
+            $k = 1;
             foreach ($authors as $author) {
           ?>
-          <div class="span3">
-            <div class="wrapper-nombre">
-              <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
-              <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
-              <div class="titular-autor"><?php echo title_trim(125, get_the_author_meta('description', $author->post_author)); ?></div>
-            </div>
-            <div class="row">
-              <div class="wrapper-meta">
-                <div class="span1">
-                  <span class="number"><?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?></span> publicaciones
-                </div><!-- .span1 -->
-                <div class="span1">
-                  <span class="number"><?php echo number_format_i18n( $author->vcount ); ?></span> lectores
-                </div><!-- .span1 -->
-                <!--<div class="span1">
-                  <span class="number">123</span> seguidores
-                </div>--><!-- .span1 -->
+          <div class="item<?php if ($k==1){ echo ' active';}?>">
+            <div class="col-xs-3">
+              <div class="trending-author">
+                <a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_author_color_id($author->post_author); ?></a>
+                <div class="author-name"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>  
+                <div class="author-posts"><a href="<?php echo get_author_posts_url($author->post_author); ?>" title="<?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> publicaciones de <?php echo get_the_author_meta('display_name', $author->post_author); ?>"><?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> publicaciones <i class="fa fa-angle-double-right"></i></a></div>
               </div>
-            </div><!-- .row -->
-            <div class="wrapper-minithumbs">
-              <?php $argsa=array( 'posts_per_page' => 4, 'author' => $author->post_author);//Empieza query del último post
-            $querya = new WP_Query($argsa);
-              if( $querya->have_posts() ) { while ($querya->have_posts()) : $querya->the_post(); ?>
-              <a href="#" data-toggle="tooltip" title="<?php the_title(); ?>"><?php echo wp_imager(64, 32, '', 'img-responsive'); ?></a>
-              <?php endwhile;?>
-              <?php } 
-              wp_reset_postdata(); ?>
             </div>
-          </div><!-- .span3 -->
-          <?php }  ?>
-        </div><!-- .row -->
-      </div><!-- .wrapper-carrusel -->
+          </div>
+          <?php $k++;} ?>
+          </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+      </div>
     </div><!-- .span12 -->
   </div><!-- .row AUTORES POPULARES -->
   <!-- Empieza sección de TEMAS DEL MOMENTO -->

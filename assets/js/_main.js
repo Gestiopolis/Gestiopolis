@@ -119,9 +119,29 @@ var Gestiopolis = {
       //1. Grid Ejes temáticos Home
       //Grid.init();
       //2. Slider home autores
-      slider(".autores-home", ".autores-home .carrusel", ".carrusel>.span3", 8);
+      //slider(".autores-home", ".autores-home .carrusel", ".carrusel>.span3", 8);
+      $('#myCarousel').carousel({
+        interval: 4000
+      });
+
+      $('.carousel .item').each(function(){
+        var next = $(this).next();
+        if (!next.length) {
+          next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+        
+        for (var i=0;i<2;i++) {
+          next=next.next();
+          if (!next.length) {
+            next = $(this).siblings(':first');
+          }
+          
+          next.children(':first-child').clone().appendTo($(this));
+        }
+      });
       //3. Slider home temas
-      slider(".temas-home", ".temas-home .carrusel", ".carrusel>.span3", 8);
+      //slider(".temas-home", ".temas-home .carrusel", ".carrusel>.span3", 8);
       
       var $container = $('#recientes');
       // Fire Isotope only when images are loaded
@@ -185,6 +205,28 @@ var Gestiopolis = {
   },
   category: { //Página del autor
     init: function() {
+      //1. Slider home autores
+      $('#myCarousel').carousel({
+        interval: 4000
+      });
+
+      $('.carousel .item').each(function(){
+        var next = $(this).next();
+        if (!next.length) {
+          next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+        
+        for (var i=0;i<2;i++) {
+          next=next.next();
+          if (!next.length) {
+            next = $(this).siblings(':first');
+          }
+          
+          next.children(':first-child').clone().appendTo($(this));
+        }
+      });
+
       var $conta1 = $('#recientes');
       // Fire Isotope only when images are loaded
       $conta1.imagesLoaded(function(){

@@ -148,82 +148,39 @@ get_currentuserinfo();
       </div><!-- /.row -->
     </div><!-- /.col-sm-12-->
   </div><!-- /.destacados -->
-  <!-- Empieza sección de AUTORES TEMAS -->
-  <div class="row autores-temas">
-    <div class="col-sm-6 autores-archive">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-archive"><h2>Autores destacados</h2></div>
-        </div><!-- .span6 -->
-      </div><!-- .row -->
-      <?php 
-        $authors = get_trending_authors(6, 1240, $term->term_id);
-        $j = 1;
-        foreach ($authors as $author) {
-        if($j == 1){
-      ?>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="wrapper-nombre">
-            <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
-            <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
-            <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
-            <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
+  <!-- Empieza sección de AUTORES POPULARES -->
+  <div class="row title-section">
+    <div class="col-sm-12">
+      <h2>Autores Populares</h2>
+      <div class="subtitle">Quienes han querido compartir sus conocimientos con todos nosotros</div>
+    </div>
+  </div>
+  <div class="row autores-home">
+    <div class="col-sm-12">
+      <div class="carousel slide" id="myCarousel">
+        <div class="carousel-inner">
+          <?php $authors = get_trending_authors(12, 1240, $term->term_id); 
+            $k = 1;
+            foreach ($authors as $author) {
+          ?>
+          <div class="item<?php if ($k==1){ echo ' active';}?>">
+            <div class="col-xs-3">
+              <div class="trending-author">
+                <a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_author_color_id($author->post_author); ?></a>
+                <div class="author-name"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>  
+                <div class="author-posts"><a href="<?php echo get_author_posts_url($author->post_author); ?>" title="<?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> publicaciones de <?php echo get_the_author_meta('display_name', $author->post_author); ?>"><?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> publicaciones <i class="fa fa-angle-double-right"></i></a></div>
+              </div>
+            </div>
           </div>
-        </div><!-- .col-sm-6 -->
-        <?php } else if($j == 2){ ?>
-        <div class="col-sm-6">
-          <div class="wrapper-nombre">
-            <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
-            <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
-            <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
-            <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
+          <?php $k++;} ?>
           </div>
-        </div><!-- .col-sm-6  -->
-      </div><!-- .row -->
-      <?php } else if($j == 3){ ?>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="wrapper-nombre">
-            <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
-            <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
-            <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
-            <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
-          </div>
-        </div><!-- .col-sm-6 -->
-        <?php } else if($j == 4){ ?>
-        <div class="col-sm-6">
-          <div class="wrapper-nombre">
-            <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
-            <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
-            <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
-            <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
-          </div>
-        </div><!-- .col-sm-6 -->
-      </div><!-- .row -->
-      <?php } else if($j == 5){ ?>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="wrapper-nombre">
-            <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
-            <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
-            <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
-            <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
-          </div>
-        </div><!-- .col-sm-6 -->
-        <?php } else if($j == 6){ ?>
-        <div class="col-sm-6">
-          <div class="wrapper-nombre">
-            <?php echo get_avatar( $author->post_author, 56, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
-            <div class="nombre-autor"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>
-            <div class="info-autor"><i class="fa fa-book"></i> <?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> <i class="fa fa-eye"></i> <?php echo number_format_i18n( $author->vcount ); ?></div>
-            <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
-          </div>
-        </div><!-- .col-sm-6 -->
-      </div><!-- .row -->
-      <?php } $j++; } //end foreach ?>
-    </div><!-- .col-sm-6 -->
-    <div class="col-sm-6 temas-archive">
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </div><!-- .span12 -->
+  </div><!-- .row AUTORES POPULARES -->
+    <div class="row">
+      <div class="col-sm-12 temas-archive">
       <div class="row">
         <div class="col-sm-12">
           <div class="title-archive"><h2>Temas tendencia</h2></div>

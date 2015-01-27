@@ -1139,9 +1139,14 @@ function fix_img_caption_shortcode_inline_style($output,$attr,$content) {
 		. do_shortcode( $content ) . '<p class="wp-caption-text">' . $atts['caption'] . '</p></div>';
 }
 
-function get_author_color_id(){
+function get_author_color_id($author_id=0){
 	global $post;
-	$firstletter = mb_substr(get_the_author(), 0, 1);
+	$firstletter = '';
+	if($author_id == 0){
+		$firstletter = mb_substr(get_the_author(), 0, 1);
+	}else{
+		$firstletter = mb_substr(get_the_author_meta('display_name', $author_id), 0, 1);
+	}
 	if ($firstletter == 'ñ' || $firstletter == 'Ñ' || $firstletter == 'á' || $firstletter == 'Á' || $firstletter == 'é' || $firstletter == 'É' || $firstletter == 'í' || $firstletter == 'Í' || $firstletter == 'ó' || $firstletter == 'Ó' || $firstletter == 'ú' || $firstletter == 'Á'){
 		return '<span class="author-color author-color-nn">'.$firstletter.'</span>';
 	} else {
