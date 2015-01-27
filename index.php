@@ -141,7 +141,7 @@
           );
         $categories = get_categories( $args );
         foreach ( $categories as $category ) { ?>
-        <li class="col-sm-12 col-md-6 col-lg-3">
+        <li class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
           <a href="<?php echo get_category_link( $category->term_id ); ?>" class="cat-bg-<?php echo $category->term_id; ?>">
             <i class="fa icon-cat-<?php echo $category->term_id; ?>"></i>
             <span class="eje-nombre"><?php echo $category->name; ?></span>
