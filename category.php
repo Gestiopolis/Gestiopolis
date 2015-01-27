@@ -48,7 +48,7 @@ get_currentuserinfo();
         <div class="col-sm-6">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
-              <img src="<?php echo wp_imager(640, 360, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
+              <div class="bg-image" style="background-image: url(<?php echo wp_imager(640, 250, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>); height: 250px;"></div>
               <div class="overlay"></div>
               <div class="vert-center-wrapper">
                 <div class="vert-centered">
@@ -64,7 +64,7 @@ get_currentuserinfo();
         <div class="col-sm-3">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
-              <img src="<?php echo wp_imager(640, 360, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
+              <div class="bg-image" style="background-image: url(<?php echo wp_imager(640, 250, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>); height: 250px;"></div>
               <div class="overlay"></div>
               <div class="vert-center-wrapper">
                 <div class="vert-centered">
@@ -82,7 +82,7 @@ get_currentuserinfo();
         <div class="col-sm-3">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
-              <img src="<?php echo wp_imager(640, 360, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
+              <div class="bg-image" style="background-image: url(<?php echo wp_imager(640, 250, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>); height: 250px;"></div>
               <div class="overlay"></div>
               <div class="vert-center-wrapper">
                 <div class="vert-centered">
@@ -98,7 +98,7 @@ get_currentuserinfo();
         <div class="col-sm-3">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
-              <img src="<?php echo wp_imager(640, 360, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
+              <div class="bg-image" style="background-image: url(<?php echo wp_imager(640, 250, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>); height: 250px;"></div>
               <div class="overlay"></div>
               <div class="vert-center-wrapper">
                 <div class="vert-centered">
@@ -114,7 +114,7 @@ get_currentuserinfo();
         <div class="col-sm-6">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
-              <img src="<?php echo wp_imager(640, 360, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
+              <div class="bg-image" style="background-image: url(<?php echo wp_imager(640, 250, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>); height: 250px;"></div>
               <div class="overlay"></div>
               <div class="vert-center-wrapper">
                 <div class="vert-centered">
@@ -132,7 +132,7 @@ get_currentuserinfo();
         <div class="col-sm-3">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
-              <img src="<?php echo wp_imager(640, 360, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>" alt="<?php echo $post_title; ?>" class="img-responsive">
+              <div class="bg-image" style="background-image: url(<?php echo wp_imager(640, 250, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>); height: 250px;"></div>
               <div class="overlay"></div>
               <div class="vert-center-wrapper">
                 <div class="vert-centered">

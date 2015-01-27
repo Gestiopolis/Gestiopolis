@@ -25,6 +25,7 @@
   position:relative;
   overflow:hidden;
   height: 250px;
+  display:block;
 }
 .destacados [class*="destaca"] > a {
   display: block;
@@ -57,7 +58,24 @@
   position: relative;
   //padding-right:8px;
 }
-.destacados [class*="destaca"]>a>img {
+.destacados [class*="destaca"] > a > .bg-image {
+  position: absolute;
+  z-index: -100;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition:all 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.destacados [class*="destaca"] > a:hover > .bg-image {
+  opacity: 0.7;
+  transform: scale3d(2,2,1);
+}
+/*.destacados [class*="destaca"]>a>img {
   max-height: 100%;
   max-width: inherit;
   position: absolute;
@@ -68,7 +86,7 @@
 .destacados [class*="destaca"]>a:hover>img {
   opacity: 0.1;
   transform: scale3d(2,2,1);
-}
+}*/
 .destacados [class*="destaca"]>a:hover h2 {
   text-shadow: 2px 0 5px rgba(0, 0, 0, 1);
 }
