@@ -179,115 +179,47 @@ get_currentuserinfo();
       </div>
     </div><!-- .span12 -->
   </div><!-- .row AUTORES POPULARES -->
-    <div class="row">
-      <div class="col-sm-12 temas-archive">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-archive"><h2>Temas tendencia</h2></div>
-        </div><!-- .col-sm-12 -->
-      </div><!-- .row -->
-      <div class="row">
-        <div class="col-sm-12">
-          <?php popular_tags_from_category($term->term_id, 1240)?>
-        </div><!-- .col-sm-12 -->
-      </div><!-- .row -->
-    </div><!-- .col-sm-3 -->
-  </div><!-- .row AUTORES TEMAS -->
-</div><!-- .container.cm8 -->
+  <div class="row title-section">
+    <div class="col-sm-12">
+      <h2>Temas tendencia</h2>
+      <div class="subtitle">De lo que habla y lo que se publica ahora en <?php single_term_title(); ?></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 temas-archive">
+      <?php popular_tags_from_category($term->term_id, 1240, 30)?>
+    </div><!-- .col-sm-12 -->
+  </div><!-- .row TEMAS -->
+</div><!-- .container -->
 <!-- Empieza sección de LISTADO DE POSTS -->
 <div class="container">
+  <div class="row title-section">
+    <div class="col-sm-12">
+      <h2>Últimas publicaciones en <?php single_term_title(); ?> <i class="fa icon-cat-<?php echo $term->term_id; ?> cat-col-<?php echo $term->term_id; ?>"></i></h2>
+    </div>
+  </div>
   <div class="row posts-home">
-    <div class="col-md-12">
-      <div class="row title-loggedout">
-        <div class="col-md-5">
-          <div class="menuFlotante">
-            <div id="dl-menu" class="dl-menuwrapper">
-              <button class="dl-trigger">Abrir Menú</button>
-              <ul class="dl-menu">
-                  <li>
-                    <a href="#"><i class="fa fa-user"></i> Ingresa</a>
-                    <ul id="mfl_ingresa" class="dl-submenu">
-                      <li>
-                        <form class="nav-loginform" id="mfl-loginform" action="" method="post" role="form" aria-labelledby="nav-loginform">
-                          <input type="text" name="log" id="user_login" class="input" value="" placeholder="Nombre de usuario o Email" required>
-                          <input type="password" name="pwd" id="user_pass" class="input" value="" placeholder="Contraseña" required>
-                          <input type="submit" name="wp-submit" id="wp-submit" class="btn btn-block btn-green" value="Ingresa" >
-                          <p>¿Aun sin cuenta? <a href="#">Regístrate</a></p>
-                        </form>
-                        <p>Accede con tu cuenta de:</p>
-                        <a href="#" class="login-facebook"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="login-twitter"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="login-google"><i class="fa fa-google-plus"></i></a>
-                        <a href="#" class="login-linkedin"><i class="fa fa-linkedin"></i></a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li><a href="#"><i class="fa fa-cloud-upload"></i> Publica</a></li>
-                  <li><a href="#"><i class="fa fa-search"></i> Busca</a></li>
-                  <li>
-                    <a href="#"><i class="fa fa-bars"></i> Explora</a>
-                    <ul id="mfl_explora" class="dl-submenu">
-                      <li><a class="cat-20" href="#">Administración</a></li>
-                      <li><a class="cat-3" href="#">Marketing</a></li>
-                      <li><a class="cat-15" href="#">Autoayuda</a></li>
-                      <li><a class="cat-23" href="#">Medio Ambiente</a></li>
-                      <li><a class="cat-16" href="#">Contabilidad</a></li>
-                      <li><a class="cat-21" href="#">Talento</a></li>
-                      <li><a class="cat-17" href="#">Economía</a></li>
-                      <li><a class="cat-56" href="#">Tecnología</a></li>
-                      <li><a class="cat-18" href="emprendimiento.php">Emprendimiento</a></li>
-                      <li><a class="cat-24" href="#">Otros temas</a></li>
-                      <li><a class="cat-19" href="#">Finanzas</a></li>
-                      <li class="explora_autores"><a href="#"><img src="assets/img/autores-destacados-explora.png" width="28" height="28" alt="Autores destacados"/>&nbsp;&nbsp;Autores destacados</a></li>
-                      <li class="explora_autores"><a href="#"><i class="fa fa-tags"></i>&nbsp;&nbsp;Temas tendencia</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fa fa-info"></i> Info</a>
-                    <ul id="mfl_info" class="dl-submenu">
-                      <li><a href="#">Acerca de</a></li>
-                      <li><a href="#">Ayuda</a></li>
-                      <li><a href="#">Términos legales</a></li>
-                      <li><a href="#">ABC temático</a></li>
-                      <li><a href="#">Contacto</a></li>
-                      <li><a href="#">Derechos de autor</a></li>
-                      <li><a href="#">Archivo</a></li>
-                      <li><a href="#">Publicidad</a></li>
-                    </ul>
-                  </li>
-              </ul>
-          </div><!-- /dl-menuwrapper -->
-        </div><!-- .menuFlotante-->
-          <div class="title-home">
-            <h2>Todo <?php single_term_title(); ?> <i class="fa icon-cat-<?php echo $term->term_id; ?> cat-col-<?php echo $term->term_id; ?>"></i></h2>
-            <!--<a href="#" class="btn btn-unete">Únete</a>-->
-          </div>
-        </div><!-- .span4 -->
-      </div><!-- .row -->
-      <div class="row tab-content">
-        <div class="tab-pane active" id="recientes">
-          <?php
-            if ( have_posts() ) :
-              // Start the Loop.
-              while ( have_posts() ) : the_post();
+    <div id="recientes">
+      <?php
+        if ( have_posts() ) :
+          // Start the Loop.
+          while ( have_posts() ) : the_post();
 
-                /*
-                 * Include the post format-specific template for the content. If you want to
-                 * use this in a child theme, then include a file called called content-___.php
-                 * (where ___ is the post format) and that will be used instead.
-                 */
-                get_template_part( 'templates/content' );
-            
-              endwhile;
-              ?>
-              <div class="pagination">
-                <div class="nav-previous alignleft"><?php next_posts_link( 'Artículos anteriores' ); ?></div>
-              </div>
-              <?php
-            endif;
+            /*
+             * Include the post format-specific template for the content. If you want to
+             * use this in a child theme, then include a file called called content-___.php
+             * (where ___ is the post format) and that will be used instead.
+             */
+            get_template_part( 'templates/content' );
+        
+          endwhile;
           ?>
-        </div><!-- #recientes -->
-      </div><!-- .row -->
-    </div><!-- .span12 -->
-  </div><!-- .row LISTADO DE POSTS -->
+          <div class="pagination">
+            <div class="nav-previous alignleft"><?php next_posts_link( 'Artículos anteriores' ); ?></div>
+          </div>
+          <?php
+        endif;
+      ?>
+    </div><!-- #recientes -->
+  </div><!-- .row -->
 </div><!-- .container -->

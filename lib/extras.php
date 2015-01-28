@@ -977,7 +977,7 @@ function popular_tags_from_category($catid, $days, $limit=15){
 		$tag_id = isset($tag->term_id) ? $tag->term_id : $key;
 		$tag_name = $terms[ $key ]->name;
 
-		echo "<a href='$tag_link' class='tag-link-$tag_id' title='" . esc_attr( $tag->count ) . " temas'><i class='fa fa-tag'></i> $tag_name</a>";
+		echo "<a href='$tag_link' class='tag-link-$tag_id' title='" . esc_attr( $tag->count ) . " temas'>$tag_name</a>";
 	}	
 		//echo wp_generate_tag_cloud( $terms, $args );
 	}

@@ -1,82 +1,24 @@
 /*==========  3.2. CATEGORÍA Y TAG  ==========*/
-.autores-archive,
 .temas-archive{
-  font-family: @title-font, sans-serif;
+  font-family: @text-font, sans-serif;
+  text-align:center;
 }
-.autores-archive h2,
-.temas-archive h2{
-  background: #9595da;
-  color: #f5f5f5;
-  font-size: 1.5rem;
-  font-weight: 700;
-  padding-left: 24px;
-  position:relative;
-}
-.temas-archive h2{
-  background: #98b4d7;
-}
-.autores-archive h2::after, 
-.temas-archive h2::after {
-  bottom: -4px;
-  border-left: solid transparent;
-  border-right: solid transparent;
-  border-top: solid #9595da;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-width: 4px;
-  left: 14%;
-  margin: -20px 0 0 -15px;
-}
-.temas-archive h2::after{
-  border-top: solid #98b4d7;
-  bottom: -4px;
-  border-width: 5px;
-}
-.autores-archive .wrapper-nombre { margin-bottom:8px}
-.autores-archive .info-autor,
-.autores-archive .btn-seguir {
-  position:absolute;
-  bottom:8px;
-  right:8px;
-}
-.autores-archive .info-autor {
-  color:#222;
-  font-size:0.9375rem;
-  font-weight:400;
-}
-.autores-archive .info-autor i {
-  color:#cd6d66;
-}
-.autores-archive .col-sm-6:hover .info-autor {
-  display:none;
-}
-.autores-archive .col-sm-6 .btn-seguir {
-  display:none;
-}
-.autores-archive .col-sm-6:hover .btn-seguir {
-  display:block;
-}
-.temas-archive a,
-.wrapper-temas a {
-  background:#d3dfee;
-  color:#324354;
+.temas-archive a {
+  background:#fff;
+  color:#283593;
   display: inline-block;
-  font-size:1.125rem;
-  font-weight:700;
-  height: 48px;
-  line-height: 2.75rem;
+  font-size:1.25rem;
+  font-weight:600;
+  //height: 48px;
+  //line-height: 2.75rem;
   margin: 0 8px 8px 0;
-  padding: 0 16px;
+  padding: 9px 16px;
+  border: 1px solid #c5cae9;
+  text-decoration:none;
 }
 .temas-archive a:hover,
 .wrapper-temas a:hover {
-  background:#e2eaf4;
-}
-.autores-temas {
-  margin: 32px 0 48px;
+  background:#c5cae9;
 }
 .titu-cat{
   font-family: @text-font, sans-serif;
@@ -209,20 +151,4 @@
 }
 .tag #seguidores .col-sm-12:hover .btn-seguir {
   background:#ff6344;
-}
-.tab-pane .span4 {
-  margin-bottom: 32px;
-  width:392px;
-  float: left;
-  min-height: 1px;
-  margin-left: 32px;
-}
-.tab-pane .span1 {
-  width: 74px; 
-  margin-left: 32px;
-  float:left;
-}
-.tag #seguidores .col-sm-12,
-.tag #autores .col-sm-12 {
-  margin-bottom:32px;
 }
