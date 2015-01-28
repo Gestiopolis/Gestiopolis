@@ -41,34 +41,7 @@ var Gestiopolis = {
       //3. Iniciar tooltips
       $("a[data-toggle=tooltip]").tooltip();
 
-      //4. Off canvas header
-      //Navigation Menu Slider
-        $('#nav-expander').on('click',function(e){
-          e.preventDefault();
-          $('body').toggleClass('nav-expanded');
-        });
-        $('#nav-close').on('click',function(e){
-          e.preventDefault();
-          $('body').removeClass('nav-expanded');
-        });
-
-        // Initialize navgoco with default options
-        $(".main-menu").navgoco({
-            caret: '<span class="caret"></span>',
-            accordion: false,
-            openClass: 'open',
-            save: true,
-            cookie: {
-                name: 'navgoco',
-                expires: false,
-                path: '/'
-            },
-            slide: {
-                duration: 300,
-                easing: 'swing'
-            }
-        });
-        //5. Función de buscador mobile friendly http://tympanus.net/codrops/2013/06/26/expanding-search-bar-deconstructed/
+      //5. Función de buscador mobile friendly http://tympanus.net/codrops/2013/06/26/expanding-search-bar-deconstructed/
         new UISearch( document.getElementById( 'sb-search' ) );
         //6. hide bar on scroll down
         // Hide Header on on scroll down
