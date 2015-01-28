@@ -73,10 +73,10 @@
 }
 .destacados [class*="destaca"] > a:hover > .bg-image {
   opacity: 0.7;
-  transform: scale3d(2,2,1);
+  transform: scale3d(1.1,1.1,1);
 }
 .destacados [class*="destaca"] > a:hover > .overlay {
-  background-color: transparent;
+  background-color: rgba(45,41,57,0.25);
 }
 .destacados [class*="destaca"]>a:hover h2 {
   text-shadow: 2px 0 5px rgba(0, 0, 0, 1);
@@ -91,7 +91,7 @@
   color:#f5f5f5;
   display:block;
   height:80px;
-  padding:12px 4px 12px 12px;
+  padding:18px 4px 12px 12px;
   position:relative;
   text-decoration:none;
   text-align: center;
@@ -112,6 +112,11 @@
 .ejes-home a[class*="cat-bg-"] .eje-tagline {
   font-size: 0.875rem;
   font-weight: 400;
+}
+@media (min-width: @screen-md-min) {
+  .ejes-home a[class*="cat-bg-"] {
+    padding: 12px 4px 12px 12px;
+  }
 }
 .og-grid {
   list-style: none;

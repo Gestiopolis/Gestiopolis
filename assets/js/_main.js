@@ -121,7 +121,7 @@ var Gestiopolis = {
       //2. Slider home autores
       //slider(".autores-home", ".autores-home .carrusel", ".carrusel>.span3", 8);
       $('#myCarousel').carousel({
-        interval: 4000
+        interval: false
       });
 
       $('.carousel .item').each(function(){
@@ -207,7 +207,7 @@ var Gestiopolis = {
     init: function() {
       //1. Slider home autores
       $('#myCarousel').carousel({
-        interval: 4000
+        interval: false
       });
 
       $('.carousel .item').each(function(){
@@ -485,6 +485,7 @@ var Gestiopolis = {
   single: {
     init: function() {
       $('table').addClass('table table-bordered');
+      $('table td').removeAttr( "width" );
       // JavaScript to be fired on a single post
       if (serverval.manage_options == "1" && serverval.userlogin == "1"){
         /*$(document).on('edit_started', function(ev) {

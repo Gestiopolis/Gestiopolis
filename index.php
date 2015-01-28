@@ -19,7 +19,7 @@
             if($i == 1){
 
         ?>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-9 col-lg-6">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
               <div class="bg-image" style="background-image: url(<?php echo wp_imager(640, 250, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>); height: 250px;"></div>
@@ -35,7 +35,7 @@
           </article>
         </div><!-- ./col-sm-6 -->
         <?php } else if($i == 2 || $i == 3){ ?>
-        <div class="col-sm-3">
+        <div class="col-sm-6 col-md-3 col-lg-3">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
               <div class="bg-image" style="background-image: url(<?php echo wp_imager(640, 250, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>); height: 250px;"></div>
@@ -51,9 +51,7 @@
           </article>
         </div><!-- ./col-sm-3 -->
         <?php } else if($i == 4){ ?>
-      </div><!-- /.row -->
-      <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-6 col-md-9 col-lg-3">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
               <div class="bg-image" style="background-image: url(<?php echo wp_imager(640, 250, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>); height: 250px;"></div>
@@ -69,7 +67,7 @@
           </article>
         </div><!-- ./col-sm-3 -->
         <?php } else if($i == 5){ ?>
-        <div class="col-sm-3">
+        <div class="col-sm-6 col-md-4 col-lg-3">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
               <div class="bg-image" style="background-image: url(<?php echo wp_imager(640, 250, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>); height: 250px;"></div>
@@ -85,7 +83,7 @@
           </article>
         </div><!-- ./col-sm-3 -->
         <?php } else if($i == 6){ ?>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-4 col-lg-6">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
               <div class="bg-image" style="background-image: url(<?php echo wp_imager(640, 250, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>); height: 250px;"></div>
@@ -100,10 +98,8 @@
             </a>
           </article>
         </div><!-- ./col-sm-6 -->
-      </div><!-- /.row -->
-      <div class="row">
         <?php } else if($i == 7 || $i == 8 || $i == 9 || $i == 10){ ?>
-        <div class="col-sm-3">
+        <div class="col-sm-6 col-md-4 col-lg-3">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
               <div class="bg-image" style="background-image: url(<?php echo wp_imager(640, 250, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>); height: 250px;"></div>
@@ -140,7 +136,7 @@
           );
         $categories = get_categories( $args );
         foreach ( $categories as $category ) { ?>
-        <li class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+        <li class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
           <a href="<?php echo get_category_link( $category->term_id ); ?>" class="cat-bg-<?php echo $category->term_id; ?>">
             <i class="fa icon-cat-<?php echo $category->term_id; ?>"></i>
             <span class="eje-nombre"><?php echo $category->name; ?></span>
@@ -186,7 +182,7 @@
   <div class="row title-section">
     <div class="col-sm-12">
       <h2>Temas del momento</h2>
-      <div class="subtitle">De lo que habla y lo que se publica ahora</div>
+      <div class="subtitle">De lo que habla lo que se publica y lee ahora</div>
     </div>
   </div>
   <div class="row">
