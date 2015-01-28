@@ -484,6 +484,7 @@ var Gestiopolis = {
   }, //Fin page_id_264
   single: {
     init: function() {
+      $('table').addClass('table table-bordered');
       // JavaScript to be fired on a single post
       if (serverval.manage_options == "1" && serverval.userlogin == "1"){
         /*$(document).on('edit_started', function(ev) {
