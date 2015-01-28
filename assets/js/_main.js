@@ -713,9 +713,19 @@ var Gestiopolis = {
           setTimeout(function() {
             a2h.fit_width(); //Escala las páginas para que se ajusten al ancho del contenedor
           },1500);
-          $( window ).on( 'debouncedresize', function() {
-            a2h.fit_width(); //Escala las páginas para que se ajusten al ancho del contenedor si la ventana cambia de tamaño
+          $(window).resize(function() {
+            if(this.resizeTO) {clearTimeout(this.resizeTO);}
+            this.resizeTO = setTimeout(function() {
+                $(this).trigger('resizeEnd');
+            }, 500);
           });
+
+          $(window).bind('resizeEnd', function() {
+              a2h.fit_width(); //Escala las páginas para que se ajusten al ancho del contenedor si la ventana cambia de tamaño
+          });
+          /*$( window ).on( 'debouncedresize', function() {
+            a2h.fit_width(); //Escala las páginas para que se ajusten al ancho del contenedor si la ventana cambia de tamaño
+          });*/
         });
       } //if htmlcontent
     } //init
