@@ -4,14 +4,25 @@
 <div class="postw col-lg-3 col-md-4 col-sm-6">
   <article id="post-<?php the_ID(); ?>" class="post">
     <div class="wrapper-img">
-      <?php echo wp_imager(640, 360, '', 'img-responsive'); ?>
+      <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
+        <img src="<?php echo wp_imager(640, 360, '', 'img-responsive', false, null, true); ?>" alt="<?php the_title_attribute(); ?>" class="img-responsive">
+        <?php //echo wp_imager(640, 360, '', 'img-responsive'); ?>
+        <div class="overlay"></div>
+        <div class="vert-center-wrapper">
+          <div class="vert-centered">
+            <div class="text-center">
+              <h2 class="entry-title"><span><?php the_title(); ?></span></h2>
+            </div>
+          </div>
+        </div>
+      </a>
     </div>
     <div class="wrapper-post cat-<?php echo $category[0]->term_id; ?>">
       <div class="cat-bar">
         <!--<a href="<?php //echo get_category_link( $category[0]->term_id ) ?>" class="hexagon cat-bg-<?php //echo $category[0]->term_id; ?>" title="Enlace a categoría <?php //echo $category[0]->cat_name; ?>"><i class="fa icon-cat-<?php //echo $category[0]->term_id; ?>"></i></a>-->
       </div>
       <div class="wrapper-content clearfix">
-        <h2 class="entry-title"><a id="titulo-<?php the_ID(); ?>" href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+        <!--<h2 class="entry-title"><a id="titulo-<?php the_ID(); ?>" href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>-->
         <a class="autor" href="<?php echo get_author_posts_url($post->post_author); ?>">
           <?php echo get_avatar( get_the_author_meta( 'ID' ), 32, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> Por: <?php echo get_the_author_meta('display_name', $post->post_author); ?>
         </a>

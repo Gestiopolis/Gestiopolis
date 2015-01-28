@@ -43,9 +43,9 @@
   font-size: 1.5rem;
   line-height: 1.75rem;
 }
-.destacados .article:hover .overlay {
+/*.destacados .article:hover .overlay {
   opacity: 0;
-}
+}*/
 .destacados [class*="destaca"] h2/* a */{
   color: #f5f5f5;
   display: inline;
@@ -420,21 +420,74 @@
   /*height: 616px;*/
 }
 .posts-home .wrapper-img {
-  //height: 192px;
+  height: 415px;
   overflow:hidden;
   position:relative;
 }
-.posts-home .compartir {
-  bottom:auto;
-  top:0;
+@media (min-width: @screen-lg-min) {
+  .posts-home .wrapper-img {
+    height: 171px;
+  }
+}
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  .posts-home .wrapper-img {
+    height: 173px;
+  }
+}
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  .posts-home .wrapper-img {
+    height: 200px;
+  }
+}
+@media (max-width: @screen-xs-max) {
+  .posts-home .wrapper-img {
+    height: 415px;
+  }
+}
+.posts-home .vert-center-wrapper {
+  top: 0;
+}
+.posts-home .wrapper-img > a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.posts-home .wrapper-img .text-center {
+  padding: 0 8px;
+}
+.posts-home .wrapper-img h2 {
+  margin: 0 auto;
+  text-align: center;
+  //padding: 0 8px;
+  z-index: 1;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  color: #f5f5f5;
+  display: inline;
+  text-decoration: none;
+  text-shadow: 2px 0 5px rgba(0,0,0,0.7);
+  white-space: pre-wrap;
+  transition:all 0.3s ease-in-out;
+}
+/*.posts-home article:hover .overlay {
+  opacity: 0;
+}*/
+.posts-home .wrapper-img span {
+  position: relative;
+  //padding-right:8px;
+}
+.posts-home article:hover .wrapper-img img {
+  opacity: 0.7;
+  transform: scale3d(1.1,1.1,1);
+}
+.posts-home article:hover .wrapper-img .overlay {
+  background-color: rgba(45,41,57,0.25);
+}
+.posts-home article:hover .wrapper-img h2 {
+  text-shadow: 2px 0 5px rgba(0, 0, 0, 1);
 }
 .posts-home article:hover .compartir {display:none;}
 .posts-home article:hover .meta-content { display:block; }
-.posts-home .botones-compartir {
-  bottom:auto;
-  top:8px;
-}
-.platform.bc-gplus { width: 70px !important;}
 .posts-home .wrapper-post {
   position:relative;
   border-top: 4px solid;
