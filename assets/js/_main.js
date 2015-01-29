@@ -721,11 +721,8 @@ var Gestiopolis = {
           });
 
           $(window).bind('resizeEnd', function() {
-              a2h.fit_width(); //Escala las páginas para que se ajusten al ancho del contenedor si la ventana cambia de tamaño
+              a2h.fit_width_resize(); //Escala las páginas para que se ajusten al ancho del contenedor si la ventana cambia de tamaño
           });
-          /*$( window ).on( 'debouncedresize', function() {
-            a2h.fit_width(); //Escala las páginas para que se ajusten al ancho del contenedor si la ventana cambia de tamaño
-          });*/
         });
       } //if htmlcontent
     } //init
