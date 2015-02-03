@@ -92,7 +92,7 @@ function roots_scripts() {
       wp_enqueue_script('all2html', home_url() . $assets['pdfall'], array(), null, false);
     }
   }
-  if ((is_home() || is_archive()) && !is_date() && !is_author() ){
+  if ((is_home() || is_archive() || is_author()) && !is_date() ){
     wp_enqueue_script('isotope', $assets['iso'], array(), array( 'jquery' ), true);
     wp_enqueue_script('infinitescroll', $assets['infi'], array(), array( 'jquery' ), true);
     wp_enqueue_script('imagesloaded', $assets['imglo'], array(), array( 'jquery' ), true);
@@ -116,7 +116,7 @@ function roots_jquery_local_fallback($src, $handle = null) {
   static $add_jquery_fallback = false;
 
   if ($add_jquery_fallback) {
-    echo '<script>window.jQuery || document.write(\'<script src="' . get_template_directory_uri() . '/assets/vendor/jquery/dist/jquery.min.js?2.1.1"><\/script>\')</script>' . "\n";
+    echo '<script>window.jQuery || document.write(\'<script src="' . get_template_directory_uri() . '/assets/vendor/jquery/dist/jquery.min.js?2.1.3"><\/script>\')</script>' . "\n";
     $add_jquery_fallback = false;
   }
 
@@ -176,4 +176,4 @@ function footer_scripts() { ?>
   })();
 </script>
 <?php }
-add_action('wp_footer', 'footer_scripts', 20);
+//add_action('wp_footer', 'footer_scripts', 20);

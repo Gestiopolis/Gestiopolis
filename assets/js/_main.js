@@ -125,15 +125,16 @@ var Gestiopolis = {
       });
       // Infinite Scroll
       $('#recientes').infinitescroll({
-        navSelector  : 'div.pagination',
-        nextSelector : '.nav-previous a:first',
-        itemSelector : '.postw',
-        bufferPx     : 200,
         loading: {
-          msgText: 'Cargando...',
-          finishedMsg: 'We\'re done here.',
-          img: serverval.template_directory+'/assets/img/ajax-loader.gif'
-        }
+          finishedMsg: "<em>Felicitaciones, has llegado al fin de Internet.</em>",
+          img: serverval.template_directory+'/assets/img/ajax-loader.gif',
+          msgText: '<em>Cargando el siguiente grupo de publicaciones...</em>',
+          speed: 'fast'
+        },
+        navSelector  : 'div.pagination',
+        nextSelector : '.nextpostslink',
+        itemSelector : '.postw',
+        bufferPx     : 200
       },
       // Infinite Scroll Callback
       function( newElements ) {
@@ -156,15 +157,16 @@ var Gestiopolis = {
       });
       // Infinite Scroll
       $('#publicaciones').infinitescroll({
-        navSelector  : 'div.pagination',
-        nextSelector : '.nav-previous a:first',
-        itemSelector : '.postw',
-        bufferPx     : 200,
         loading: {
-          msgText: 'Cargando...',
-          finishedMsg: 'We\'re done here.',
-          img: serverval.template_directory+'/assets/img/ajax-loader.gif'
-        }
+          finishedMsg: "<em>Felicitaciones, has llegado al fin de Internet.</em>",
+          img: serverval.template_directory+'/assets/img/ajax-loader.gif',
+          msgText: '<em>Cargando el siguiente grupo de publicaciones...</em>',
+          speed: 'fast'
+        },
+        navSelector  : 'div.pagination',
+        nextSelector : '.nextpostslink',
+        itemSelector : '.postw',
+        bufferPx     : 200
       },
       // Infinite Scroll Callback
       function( newElements ) {
@@ -209,15 +211,16 @@ var Gestiopolis = {
       });
       // Infinite Scroll
       $('#recientes').infinitescroll({
-        navSelector  : 'div.pagination',
-        nextSelector : '.nav-previous a:first',
-        itemSelector : '.postw',
-        bufferPx     : 200,
         loading: {
-          msgText: 'Cargando...',
-          finishedMsg: 'We\'re done here.',
-          img: serverval.template_directory+'/assets/img/ajax-loader.gif'
-        }
+          finishedMsg: "<em>Felicitaciones, has llegado al fin de Internet.</em>",
+          img: serverval.template_directory+'/assets/img/ajax-loader.gif',
+          msgText: '<em>Cargando el siguiente grupo de publicaciones...</em>',
+          speed: 'fast'
+        },
+        navSelector  : 'div.pagination',
+        nextSelector : '.nextpostslink',
+        itemSelector : '.postw',
+        bufferPx     : 200
       },
       // Infinite Scroll Callback
       function( newElements ) {
@@ -240,15 +243,16 @@ var Gestiopolis = {
       });
       // Infinite Scroll
       $('#publicaciones').infinitescroll({
-        navSelector  : 'div.pagination',
-        nextSelector : '.nav-previous a:first',
-        itemSelector : '.postw',
-        bufferPx     : 200,
         loading: {
-          msgText: 'Cargando...',
-          finishedMsg: 'We\'re done here.',
-          img: serverval.template_directory+'/assets/img/ajax-loader.gif'
-        }
+          finishedMsg: "<em>Felicitaciones, has llegado al fin de Internet.</em>",
+          img: serverval.template_directory+'/assets/img/ajax-loader.gif',
+          msgText: '<em>Cargando el siguiente grupo de publicaciones...</em>',
+          speed: 'fast'
+        },
+        navSelector  : 'div.pagination',
+        nextSelector : '.nextpostslink',
+        itemSelector : '.postw',
+        bufferPx     : 200
       },
       // Infinite Scroll Callback
       function( newElements ) {

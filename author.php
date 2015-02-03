@@ -28,21 +28,6 @@ get_currentuserinfo();
             </div>
           </div> 
         </div><!-- .col-sm-8 -->
-        <!--<div class="col-sm-4">
-          <div class="btns-orden btn-toolbar">
-            <div id="OrdenNuevasPopulares" class="btn-group">
-              <a href="#"  id="ordenNuevas" class="btn btn-orden dropdown-toggle" data-toggle="dropdown">Ordenar por <i class="icon-sort-down"></i></a>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="ordenNuevas">
-                <li><a href="#">Más nuevas</a></li>
-                <li><a href="#">Más populares</a></li>
-              </ul>
-              <a href="#" class="btn btn-orden">Más populares <i class="icon-sort"></i></a>
-            </div>
-            <div id="OrdenEjes" class="btn-group">
-              <a href="#" class="btn btn-unete">Invita a tus amigos</a>
-            </div>
-          </div>
-        </div>--><!-- .col-sm-4 -->
       </div><!-- .row -->
       <div class="row tab-content">
         <div class="tab-pane" id="perfil">
@@ -90,9 +75,15 @@ get_currentuserinfo();
             
               endwhile;
               ?>
+              <?php if ( function_exists( 'wp_pagenavi' ) ) { ?>
+              <div class="pagination">
+                <?php wp_pagenavi(); ?>
+              </div>
+              <?php } else { ?>
               <div class="pagination">
                 <div class="nav-previous alignleft"><?php next_posts_link( 'Artículos anteriores' ); ?></div>
               </div>
+              <?php } ?>
               <?php
             endif;
           ?>

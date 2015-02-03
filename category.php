@@ -210,9 +210,15 @@ get_currentuserinfo();
         
           endwhile;
           ?>
+          <?php if ( function_exists( 'wp_pagenavi' ) ) { ?>
+          <div class="pagination">
+            <?php wp_pagenavi(); ?>
+          </div>
+          <?php } else { ?>
           <div class="pagination">
             <div class="nav-previous alignleft"><?php next_posts_link( 'Artículos anteriores' ); ?></div>
           </div>
+          <?php } ?>
           <?php
         endif;
       ?>
