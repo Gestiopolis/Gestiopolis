@@ -83,6 +83,21 @@ var Gestiopolis = {
             
             lastScrollTop = st;
         }
+        //Button toTop
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 100) {
+            $('.toTop').fadeIn();
+          } else {
+            $('.toTop').fadeOut();
+          }
+        });
+        
+        //Click event to scroll to top
+        $('.toTop').click(function(e){
+          e.preventDefault();
+          $('html, body').animate({scrollTop : 0},800);
+          return false;
+        });
     }
   },
   // Home page
