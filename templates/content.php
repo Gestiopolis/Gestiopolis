@@ -34,8 +34,12 @@
           <div class="tiempo pull-left"><?php echo estimate_time();?> de lectura</div>
           <div class="fecha pull-right"><?php echo get_the_date('j\.m\.Y'); ?></div>
         </div>
-        <div class="category pull-left"><a href="#" class="cat-bg-<?php echo $category[0]->term_id; ?>"><i class="fa icon-cat-<?php echo $category[0]->term_id; ?>"></i> <?php echo $category[0]->cat_name; ?></a></div>
         <?php the_tags('<div class="tags"> ',', ','</div>'); ?>
+        <div class="category pull-left">
+          <?php foreach ($category as $cat) {?>
+          <a href="#" class="cat-col-<?php echo $cat->term_id; ?>"><i class="fa icon-cat-<?php echo $cat->term_id; ?>"></i> <?php echo $cat->cat_name; ?></a>
+          <?php }?>
+        </div>
       </div>
     </div>
     <!--<div class="wrapper-meta clearfix">
