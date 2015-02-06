@@ -61,7 +61,7 @@
             <div class="entry-content">
               <?php the_content(); ?>
             </div>
-            <div class="autores">
+            <div id="autores" class="autores">
               <h2><i class="fa fa-user"></i> Sobre el autor</h2>
               <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
               <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><strong><?php echo get_post_meta($post->ID, "author-name_value", true); ?></strong></a>
