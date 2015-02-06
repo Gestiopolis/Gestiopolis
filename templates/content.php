@@ -20,7 +20,7 @@
       <div class="cat-bar"></div>
       <div class="wrapper-content clearfix">
         <a class="autor" href="<?php echo get_author_posts_url($post->post_author); ?>">
-          <?php echo get_avatar( get_the_author_meta( 'ID' ), 32, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?> 
+          <?php echo get_author_color_id(); ?> 
           <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
           Por: <?php echo get_the_author();//echo get_post_meta($post->ID, "author-name_value", true); ?>
           <?php else : ?>
