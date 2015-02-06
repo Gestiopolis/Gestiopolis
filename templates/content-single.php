@@ -95,6 +95,16 @@
             <a href="#" class="btn btn-copiar">Copiar</a>
           </div><!-- .quotes -->
 
+          <div class="autores">
+            <h2><i class="fa fa-user"></i> Sobre el autor</h2>
+            <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
+            <strong><?php echo get_post_meta($post->ID, "author-name_value", true); ?></strong>
+            <p><?php echo get_post_meta($post->ID, "author-bio_value", true); ?></p>
+            <?php else : ?>
+            <strong><?php echo get_the_author(); ?></strong>
+            <p><?php echo get_the_author_meta('description'); ?></p>
+            <?php endif; ?>
+          </div>
           <div class="comentarios">
             <h2><i class="fa fa-comments"></i> Comentarios</h2>
             <?php comments_template('/templates/comments.php'); ?>
