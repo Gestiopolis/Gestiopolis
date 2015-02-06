@@ -75,11 +75,11 @@
           <footer>
             <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
           </footer>
-
+          <?php get_template_part('templates/entry-exlinks'); ?>
           <div class="related-in">
             <h2><i class="fa fa-thumb-tack"></i> Más sobre este tema</h2>
           </div><!-- .related-in -->
-          <?php get_template_part('templates/entry-exlinks'); ?>
+          
 
           <div class="quotes">
             <h2><i class="fa fa-bookmark"></i> Cita esta publicación</h2>

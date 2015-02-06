@@ -9,7 +9,7 @@ if(!is_array($exlinks)){?>
   </div>
   <?php } ?>
   <div class="related-out">
-    <h2><i class="fa fa-external-link"></i> Más en la web</h2>
+    <h2><i class="fa fa-external-link-square"></i> Más en la web</h2>
     <?php
     echo get_post_meta($post->ID, "exlinks_value", true);?>
   </div>
@@ -82,7 +82,7 @@ if(!is_array($exlinks)){?>
 <?php }?>
 
 <div class="related-out">
-  <h2><i class="fa fa-external-link"></i> Más en la web</h2>
+  <h2><i class="fa fa-external-link-square"></i> Más en la web</h2>
   <ul>
   <?php 
   foreach($exlinks as $q){
