@@ -65,6 +65,16 @@
           <footer>
             <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
           </footer>
+          <div class="autores">
+            <h2><i class="fa fa-user"></i> Sobre el autor</h2>
+            <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
+            <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><strong><?php echo get_post_meta($post->ID, "author-name_value", true); ?></strong></a>
+            <p><em><?php echo get_post_meta($post->ID, "author-bio_value", true); ?></em></p>
+            <?php else : ?>
+            <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><strong><?php echo get_the_author(); ?></strong></a>
+            <p><em><?php echo get_the_author_meta('description'); ?></em></p>
+            <?php endif; ?>
+          </div>
           <div class="related-in">
             <h2><i class="fa fa-thumb-tack"></i> Más sobre este tema</h2>
           </div><!-- .related-in -->
@@ -95,16 +105,6 @@
             <a href="#" class="btn btn-copiar">Copiar</a>
           </div><!-- .quotes -->
 
-          <div class="autores">
-            <h2><i class="fa fa-user"></i> Sobre el autor</h2>
-            <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
-            <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><strong><?php echo get_post_meta($post->ID, "author-name_value", true); ?></strong></a>
-            <p><em><?php echo get_post_meta($post->ID, "author-bio_value", true); ?></em></p>
-            <?php else : ?>
-            <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><strong><?php echo get_the_author(); ?></strong></a>
-            <p><em><?php echo get_the_author_meta('description'); ?></em></p>
-            <?php endif; ?>
-          </div>
           <div class="comentarios">
             <h2><i class="fa fa-comments"></i> Comentarios</h2>
             <?php comments_template('/templates/comments.php'); ?>
