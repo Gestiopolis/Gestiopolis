@@ -203,7 +203,13 @@
 <div class="container">
   <div class="row title-section">
     <div class="col-sm-12">
-      <h2>Últimas publicaciones</h2>
+      <h2>Todas las publicaciones</h2>
+      <?php
+      $count_posts = wp_count_posts();
+
+      $published_posts = $count_posts->publish;
+      ?>
+      <div class="subtitle">Son <strong><?php echo number_format_i18n($published_posts); ?></strong> desde acá las puedes explorar todas</div>
     </div>
   </div>
   <div class="row posts-home">
