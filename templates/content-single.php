@@ -71,18 +71,19 @@
               <p><em><?php echo get_the_author_meta('description'); ?></em></p>
               <?php endif; ?>
             </div>
+            <div class="post-tags">
+              <h2><i class="fa fa-tags"></i> En esta publicación se habla sobre</h2>
+              <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
+            </div><!-- .post-tags -->
+            <?php get_template_part('templates/entry-exlinks'); ?>
+            <div class="related-in">
+              <h2><i class="fa fa-thumb-tack"></i> Más sobre este tema</h2>
+            </div><!-- .related-in -->
           </div>
           <footer>
             <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
           </footer>
-          <div class="post-tags">
-            <h2><i class="fa fa-tags"></i> En esta publicación se habla sobre</h2>
-            <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
-          </div><!-- .related-in -->
-          <?php get_template_part('templates/entry-exlinks'); ?>
-          <div class="related-in">
-            <h2><i class="fa fa-thumb-tack"></i> Más sobre este tema</h2>
-          </div><!-- .related-in -->
+
           
 
           <div class="quotes">
