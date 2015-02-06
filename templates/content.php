@@ -40,7 +40,7 @@
         <?php the_tags('<div class="tags"> ',', ','</div>'); ?>
         <div class="category pull-left">
           <?php foreach ($category as $cat) {?>
-          <a href="#" class="cat-col-<?php echo $cat->term_id; ?>"><i class="fa icon-cat-<?php echo $cat->term_id; ?>"></i> <?php echo $cat->cat_name; ?></a>
+          <a href="<?php echo get_category_link( $cat->term_id ); ?>" class="cat-col-<?php echo $cat->term_id; ?>"><i class="fa icon-cat-<?php echo $cat->term_id; ?>"></i> <?php echo $cat->cat_name; ?></a>
           <?php }?>
         </div>
       </div>
