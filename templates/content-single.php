@@ -77,7 +77,7 @@
           </footer>
           <div class="post-tags">
             <h2><i class="fa fa-tags"></i> En esta publicación se habla sobre</h2>
-            <?php the_tags('<div class="temas-archive"> ',' ',''); ?>
+            <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
           </div><!-- .related-in -->
           <?php get_template_part('templates/entry-exlinks'); ?>
           <div class="related-in">
