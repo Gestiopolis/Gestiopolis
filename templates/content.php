@@ -29,6 +29,9 @@
         </a>
         <div class="post-content">
           <p><?php echo title_trim(220, get_the_excerpt()); ?></p>
+          <?php if (get_post_meta($post->ID, "all2html_excerpt", true) != "") { ?>
+            <p><?php echo get_post_meta($post->ID, "all2html_excerpt", true); ?></p>
+          <?php } ?>
         </div>
         <div class="tiempo-fecha">
           <div class="tiempo pull-left"><?php echo estimate_time();?> de lectura</div>
@@ -42,12 +45,5 @@
         </div>
       </div>
     </div>
-    <!--<div class="wrapper-meta clearfix">
-      <div class="tiempo pull-left"><?php echo estimate_time();?> de lectura</div>
-      <div class="fecha pull-right"><?php echo get_the_date('j\.m\.Y'); ?></div>
-      <?php the_tags('<div class="tags"><i class="fa fa-tags"></i> ',', ','</div>'); ?>
-      <div class="stats"><i class="fa fa-eye"></i> <?php if(function_exists('the_views')) { the_views(); } ?> <i class="fa fa-comments"></i> <?php comments_number('0','1','%'); ?> <i class="fa fa-heart"></i> 21</div>
-      
-    </div>-->
   </article><!-- .post -->
 </div><!-- .col-md-3 col-sm-6 -->
