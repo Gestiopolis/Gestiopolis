@@ -38,7 +38,7 @@
         <div class="category pull-left">
           <?php foreach ($category as $cat) {
             $term = get_queried_object();
-            if(is_category() && $cat->term_id != $term->term_id){
+            if(is_home() || is_archive() || (is_category() && $cat->term_id != $term->term_id)){
             ?>
             <a href="<?php echo get_category_link( $cat->term_id ); ?>" class="cat-col-<?php echo $cat->term_id; ?>"><i class="fa icon-cat-<?php echo $cat->term_id; ?>"></i> <?php echo $cat->cat_name; ?></a>
           <?php }}?>
