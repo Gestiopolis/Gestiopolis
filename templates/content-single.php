@@ -98,10 +98,10 @@
           <div class="autores">
             <h2><i class="fa fa-user"></i> Sobre el autor</h2>
             <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
-            <strong><?php echo get_post_meta($post->ID, "author-name_value", true); ?></strong>
+            <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><strong><?php echo get_post_meta($post->ID, "author-name_value", true); ?></strong></a>
             <p><?php echo get_post_meta($post->ID, "author-bio_value", true); ?></p>
             <?php else : ?>
-            <strong><?php echo get_the_author(); ?></strong>
+            <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><strong><?php echo get_the_author(); ?></strong></a>
             <p><?php echo get_the_author_meta('description'); ?></p>
             <?php endif; ?>
           </div>
