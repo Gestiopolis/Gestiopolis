@@ -420,18 +420,21 @@
   margin-bottom:32px;
   /*height: 616px;*/
 }
-.posts-home .wrapper-img {
+.posts-home .wrapper-img,
+.sidebar-post .wrapper-img {
   height: 180px;
   overflow:hidden;
   position:relative;
 }
 @media (min-width: @screen-lg-min) {
-  .posts-home .wrapper-img {
+  .posts-home .wrapper-img,
+  .sidebar-post .wrapper-img {
     height: 171px;
   }
 }
 @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
-  .posts-home .wrapper-img {
+  .posts-home .wrapper-img,
+  .sidebar-post .wrapper-img {
     height: 173px;
   }
 }
@@ -445,18 +448,22 @@
     height: 180px;
   }
 }
-.posts-home .vert-center-wrapper {
+.posts-home .vert-center-wrapper,
+.sidebar-post .vert-center-wrapper {
   top: 0;
 }
-.posts-home .wrapper-img > a {
+.posts-home .wrapper-img > a,
+.sidebar-post .wrapper-img > a {
   display: block;
   height: 100%;
   width: 100%;
 }
-.posts-home .wrapper-img .text-center {
+.posts-home .wrapper-img .text-center,
+.sidebar-post .wrapper-img .text-center {
   padding: 0 8px;
 }
-.posts-home .wrapper-img h2 {
+.posts-home .wrapper-img h2,
+.sidebar-post .wrapper-img h2 {
   margin: 0 auto;
   text-align: center;
   //padding: 0 8px;
@@ -470,22 +477,29 @@
   white-space: pre-wrap;
   transition:all 0.3s ease-in-out;
 }
-.posts-home .wrapper-img span {
+.posts-home .wrapper-img span,
+.sidebar-post .wrapper-img span {
   position: relative;
 }
 .posts-home article .wrapper-img img,
 .posts-home article .wrapper-img .overlay,
-.posts-home article .wrapper-img h2 {
+.posts-home article .wrapper-img h2,
+.sidebar-post article .wrapper-img img,
+.sidebar-post article .wrapper-img .overlay,
+.sidebar-post article .wrapper-img h2 {
   transition:all 0.3s ease-in-out;
 }
-.posts-home article:hover .wrapper-img img {
+.posts-home article:hover .wrapper-img img,
+.sidebar-post article:hover .wrapper-img img {
   opacity: 0.7;
   transform: scale3d(1.1,1.1,1);
 }
-.posts-home article:hover .wrapper-img .overlay {
+.posts-home article:hover .wrapper-img .overlay,
+.sidebar-post article:hover .wrapper-img .overlay {
   background-color: rgba(45,41,57,0.15);
 }
-.posts-home article:hover .wrapper-img h2 {
+.posts-home article:hover .wrapper-img h2,
+.sidebar-post article:hover .wrapper-img h2 {
   text-shadow: 2px 0 5px rgba(0, 0, 0, 1);
 }
 .posts-home article:hover .compartir {display:none;}
@@ -538,7 +552,8 @@
   margin-right: 5px;
   text-decoration: none;
 }
-.posts-home h2 {
+.posts-home h2,
+.sidebar-post h2 {
   font:700 1.125rem @title-font, sans-serif;
   margin:0 0 16px 0;
   line-height: 1.2;
