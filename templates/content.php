@@ -29,9 +29,6 @@
         </a>
         <div class="post-content">
           <p><?php echo title_trim(220, get_the_excerpt()); ?></p>
-          <?php if (get_post_meta($post->ID, "all2html_excerpt", true) != "") { ?>
-            <p><?php echo get_post_meta($post->ID, "all2html_excerpt", true); ?></p>
-          <?php } ?>
         </div>
         <div class="tiempo-fecha">
           <div class="tiempo pull-left"><?php echo estimate_time();?> de lectura</div>
@@ -39,9 +36,12 @@
         </div>
         <?php the_tags('<div class="tags"> ',', ','</div>'); ?>
         <div class="category pull-left">
-          <?php foreach ($category as $cat) {?>
-          <a href="<?php echo get_category_link( $cat->term_id ); ?>" class="cat-col-<?php echo $cat->term_id; ?>"><i class="fa icon-cat-<?php echo $cat->term_id; ?>"></i> <?php echo $cat->cat_name; ?></a>
-          <?php }?>
+          <?php foreach ($category as $cat) {
+            $term = get_queried_object();
+            if(is_category() && $cat->term_id != $term->term_id){
+            ?>
+            <a href="<?php echo get_category_link( $cat->term_id ); ?>" class="cat-col-<?php echo $cat->term_id; ?>"><i class="fa icon-cat-<?php echo $cat->term_id; ?>"></i> <?php echo $cat->cat_name; ?></a>
+          <?php }}?>
         </div>
       </div>
     </div>
