@@ -4,62 +4,45 @@ global $current_user;
 get_currentuserinfo();
 ?>
 <!-- Empieza sección de LISTADO DE POSTS -->
+<div class="post-image">
+  <div class="bg-image" style="background: #edede4; height: 400px;"></div>
+  <div class="vert-center-wrapper">
+    <div class="vert-centered">
+      <div class="center container">
+        <?php echo get_author_color_id($curaut->ID); ?>
+        <h1 class="title"><?php echo $curaut->display_name; ?></h1>
+        <span class="autdesc"><?php echo title_trim(125, get_the_author_meta('description', $curaut->ID)); ?></span>
+        <div class="autsocial">
+          <ul class="list-unstyled">
+            <?php if($curaut->user_email != '') { ?>
+            <li><a href="mailto:<?php echo $curaut->user_email; ?>"><i class="fa fa-envelope-square"></i></a></li>
+            <?php } ?>
+            <?php if($curaut->user_url != '') { ?>
+            <li><a href="<?php echo $curaut->user_url; ?>"><i class="fa fa-external-link-square"></i></a></li>
+            <?php } ?>
+            <?php if(get_user_meta($curaut->ID, 'googleplus', true) != '') { ?>
+            <li><a href="<?php echo get_user_meta($curaut->ID, 'googleplus', true); ?>"><i class="fa fa-google-plus-square"></i></a></li>
+            <?php } ?>
+            <?php if(get_user_meta($curaut->ID, 'twitter', true) != '') { ?>
+            <li><a href="<?php echo get_user_meta($curaut->ID, 'twitter', true); ?>"><i class="fa fa-twitter-square"></i></a></li>
+            <?php } ?>
+            <?php if(get_user_meta($curaut->ID, 'facebook', true) != '') { ?>
+            <li><a href="<?php echo get_user_meta($curaut->ID, 'facebook', true); ?>"><i class="fa fa-facebook-square"></i></a></li>
+            <?php } ?>
+            <?php if(get_user_meta($curaut->ID, 'linkedin', true) != '') { ?>
+            <li><a href="<?php echo get_user_meta($curaut->ID, 'linkedin', true); ?>"><i class="fa fa-linkedin-square"></i></a></li>
+            <?php } ?>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>        
+</div>
 <div class="container">
   <!-- Empieza sección de TÍTULO DE CATEGORÍA -->
-  <div class="row titu-tag">
-    <div class="col-sm-8">
-      <?php echo get_avatar( $curaut->ID, 96, esc_url(get_template_directory_uri() . '/assets/img/user_default.png'), 'Avatar' ); ?>
-      <div class="tag-nombre"><?php echo $curaut->display_name; ?></div>
-      <!--<br class="clearfix">-->
-      <div class="tag-tagline">
-        <div class="user-tagline"><?php echo title_trim(125, get_the_author_meta('description', $curaut->ID)); ?></div>
-        <a href="#" class="enl-compartir"><i class="fa fa-share"></i> Compartir perfil</a>
-        <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
-      </div>
-    </div><!-- .col-sm-8 -->
-  </div><!-- .row TÍTULO DE TAG -->
   <div class="row posts-home">
     <div class="col-md-12">
-      <div class="row title-loggedin">
-        <div class="col-sm-8">
-          <div class="title-home-loggedin">
-            <div class="thl">
-              <a href="#perfil" data-toggle="tab">Perfil</a> <span>&bull;</span> <a href="#publicaciones" class="active" data-toggle="tab">Publicaciones (<?php echo number_format_i18n( count_user_posts( $curaut->ID) ); ?>)</a><!-- <span>&bull;</span> <a href="#autores" data-toggle="tab">Autores (11)</a> <span>&bull;</span>--><!-- <a href="#seguidores" data-toggle="tab">Seguidores (12)</a>-->
-            </div>
-          </div> 
-        </div><!-- .col-sm-8 -->
-      </div><!-- .row -->
       <div class="row tab-content">
-        <div class="tab-pane" id="perfil">
-          <!--<div class="row tab-content">-->
-            <div class="col-md-3 col-sm-6">
-              <article class="userbox">
-                <div class="box-title">Mini Bio</div>
-                <div class="box-content"><?php echo get_the_author_meta('description', $curaut->ID); ?></div>
-              </article>
-            </div>
-            <div class="col-md-3 col-sm-6">
-              <article class="userbox">
-                <div class="box-title">Contacto</div>
-                <div class="box-content">
-                  <ul>
-                    <li>Email: <?php echo hideEmail($curaut->user_email); ?></li>
-                    <li>URL: <?php echo $curaut->user_url; ?></li>
-                    <li>Google+: <?php echo get_user_meta($curaut->ID, 'googleplus', true); ?></li>
-                    <li>Facebook: <?php echo get_user_meta($curaut->ID, 'twitter', true); ?></li>
-                    <li>Twitter: <?php echo get_user_meta($curaut->ID, 'facebook', true); ?></li>
-                  </ul>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-3 col-sm-6">
-              <article class="userbox">
-                <div class="box-title">Localización</div>
-                <div class="box-content"></div>
-              </article>
-            </div>
-          <!--</div>-->
-        </div>
         <div class="tab-pane active" id="publicaciones">
           <?php
             if ( have_posts() ) :

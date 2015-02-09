@@ -3,31 +3,22 @@ $term = get_queried_object();
 global $current_user;
 get_currentuserinfo();
 ?>
+<div class="post-image">
+  <div class="bg-image" style="background: #edede4; height: 248px;"></div>
+  <div class="vert-center-wrapper">
+    <div class="vert-centered">
+      <div class="center container">
+        <span class="author-color"><i class="fa fa-tag"></i></span>
+        <h1 class="title"><?php single_term_title(); ?></h1>
+      </div>
+    </div>
+  </div>        
+</div>
 <!-- Empieza sección de LISTADO DE POSTS -->
 <div class="container">
   <!-- Empieza sección de TÍTULO DE CATEGORÍA -->
-  <div class="row titu-tag">
-    <div class="col-sm-8">
-      <i class="fa fa-tag"></i>
-      <div class="tag-nombre"><?php single_term_title(); ?></div>
-      <!--<br class="clearfix">-->
-      <div class="tag-tagline">
-        <a href="#" class="enl-compartir"><i class="fa fa-share"></i> Compartir</a>
-        <!--<a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a>-->
-      </div>
-    </div><!-- .col-sm-8 -->
-  </div><!-- .row TÍTULO DE TAG -->
   <div class="row posts-home">
     <div class="col-md-12">
-      <div class="row title-loggedin">
-        <div class="col-sm-8">
-          <div class="title-home-loggedin">
-            <div class="thl">
-              <a href="#publicaciones" class="active" data-toggle="tab">Publicaciones (<?php echo $term->count; ?>)</a><!-- <span>&bull;</span> <a href="#autores" data-toggle="tab">Autores (11)</a> <span>&bull;</span><a href="#seguidores" data-toggle="tab">Seguidores (12)</a>-->
-            </div>
-          </div> 
-        </div><!-- .col-sm-8 -->
-      </div><!-- .row -->
       <div class="row tab-content">
         <div class="tab-pane active" id="publicaciones">
           <?php
