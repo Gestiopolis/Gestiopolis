@@ -5,7 +5,7 @@
     $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
     $tag_ids = wp_get_post_tags( $post->ID, array( 'fields' => 'ids' ) );
     if($tag_ids){
-    $args1=array( 'cat' => $category_id, 'posts_per_page'=>9, 'post__not_in'=>array($post->ID), 'tag__in' => $tag_ids, 'paged' => $paged);//Empieza query del último post
+    $args1=array( 'cat' => $category_id, 'posts_per_page'=>9, 'post__not_in'=>array($post->ID), 'tag__in' => $tag_ids, 'paged' => $paged, 'orderby' => 'rand');//Empieza query del último post
       $query1 = new WP_Query($args1);
         if( $query1->have_posts() ) { while ($query1->have_posts()) : $query1->the_post(); ?>
     <article id="post-<?php the_ID(); ?>" class="post">
