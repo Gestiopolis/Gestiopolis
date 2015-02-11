@@ -19,6 +19,7 @@
     <div class="wrapper-post cat-<?php echo $category[0]->term_id; ?>">
       <div class="cat-bar"></div>
       <div class="wrapper-content clearfix">
+        <?php if(!is_author()) { ?>
         <a class="autor" href="<?php echo get_author_posts_url($post->post_author); ?>">
           <?php echo get_author_color_id(); ?> 
           <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
@@ -27,6 +28,7 @@
           <strong><?php echo get_the_author(); ?></strong>
           <?php endif; ?>
         </a>
+        <?php } ?>
         <div class="post-content">
           <p><?php echo title_trim(220, get_the_excerpt()); ?></p>
         </div>

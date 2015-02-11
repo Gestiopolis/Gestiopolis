@@ -15,7 +15,7 @@ get_currentuserinfo();
     <div class="col-sm-5">
       <ul>
         <!--<li><a href="#" class="btn btn-seguir"><i class="icon-plus-sign"></i> Seguir</a></li>-->
-        <li>Publicaciones <a href="#" class="btn btn-publ"><?php echo $term->count; ?></a></li>
+        <li>Posts <a href="#" class="btn btn-publ"><?php echo $term->count; ?></a></li>
         <li>Autores <a href="#" class="btn btn-aut"><?php autcat($term->term_id); ?></a></li>
         <?php 
           $args = array('categories' => $term->term_id);
@@ -29,7 +29,7 @@ get_currentuserinfo();
   <div class="row title-section">
     <div class="col-sm-12">
       <h2>Se destacan</h2>
-      <div class="subtitle">Estas son las publicaciones preferidas por nuestros lectores hoy en <?php single_term_title(); ?></div>
+      <div class="subtitle">Estos son las posts preferidos por nuestros lectores hoy en <?php single_term_title(); ?></div>
     </div>
   </div>
   <div class="row destacados">
@@ -164,7 +164,7 @@ get_currentuserinfo();
               <div class="trending-author">
                 <a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_author_color_id($author->post_author); ?></a>
                 <div class="author-name"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>  
-                <div class="author-posts"><a href="<?php echo get_author_posts_url($author->post_author); ?>" title="<?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> publicaciones de <?php echo get_the_author_meta('display_name', $author->post_author); ?>"><?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> publicaciones <i class="fa fa-angle-double-right"></i></a></div>
+                <div class="author-posts"><a href="<?php echo get_author_posts_url($author->post_author); ?>" title="<?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> posts de <?php echo get_the_author_meta('display_name', $author->post_author); ?>"><?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> posts <i class="fa fa-angle-double-right"></i></a></div>
               </div>
             </div>
           </div>
@@ -191,7 +191,7 @@ get_currentuserinfo();
 <div class="container">
   <div class="row title-section">
     <div class="col-sm-12">
-      <h2>Últimas publicaciones en <?php single_term_title(); ?> <i class="fa icon-cat-<?php echo $term->term_id; ?> cat-col-<?php echo $term->term_id; ?>"></i></h2>
+      <h2>Últimos posts en <?php single_term_title(); ?> <i class="fa icon-cat-<?php echo $term->term_id; ?> cat-col-<?php echo $term->term_id; ?>"></i></h2>
     </div>
   </div>
   <div class="row posts-home">

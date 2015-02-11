@@ -142,31 +142,33 @@
   text-shadow: none;
   color: #333;
   font-size: 3rem;
-  line-height: 280px;
+  line-height: 250px;
+}
+.carousel-control.right {
+  right: -30px !important;
 }
 .carousel-inner .active.right { left: 25%; }
+.carousel-inner .active.right { left: 25%; }
 .trending-author {
-  min-height: 280px;
+  min-height: 250px;
   position: relative;
 }
 .autores-home a {
   text-decoration:none;
 }
 .autores-home .author-color {
-  border-radius: 100%;
-  display: block;
-  height:110px;
-  width:110px;
-  line-height: 110px;
-  text-align:center;
-  color:#fff;
-  text-shadow:none;
-  box-shadow: none;
-  margin: 0 auto 30px;
-  font-weight: 700;
-  font-size: 4rem;
+  height: 6rem;
+  width: 6rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+  line-height: 6rem;
+  font-size: 3.75rem;
   font-family: @title-font, sans-serif;
-  transition:all 0.3s ease-in-out;
+  font-weight: 700;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  margin: 0 auto 30px;
 }
 .trending-author:hover .author-color {
   font-size: 3.5rem;
@@ -194,7 +196,7 @@
 .autores-home .author-posts a{
   position: absolute;
   bottom: 0;
-  left: 22%;
+  left: 33%;
   text-align: center;
   padding: 15px;
   background: #c9c9ed;
@@ -202,7 +204,7 @@
   display:block;
   font-weight: 700;
   margin: 0 auto;
-  width: 174px;
+  width: 116px;
   transition:all 0.3s ease-in-out;
 }
 .trending-author:hover .author-posts a {
@@ -554,7 +556,7 @@
 }
 .posts-home h2,
 .sidebar-post h2 {
-  font:700 1.125rem @title-font, sans-serif;
+  font:700 1.2125rem @title-font, sans-serif;
   margin:0 0 16px 0;
   line-height: 1.2;
 }
@@ -581,7 +583,8 @@
 }
 .posts-home .fecha {float:right;}
 .posts-home .autor,
-.posts-home .fecha {
+.posts-home .fecha,
+.posts-home .tiempo {
   font:400 0.875rem @text-font, sans-serif;
   line-height:1.2;
 }

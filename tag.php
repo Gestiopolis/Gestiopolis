@@ -58,7 +58,7 @@ get_currentuserinfo();
             <div>
               <div class="wrapper-meta">
                 <div class="span1">
-                  <span class="number">12</span> publicaciones
+                  <span class="number">12</span> posts
                 </div><!-- .span1 -->
                 <div class="span1">
                   <span class="number">123456</span> lectores
@@ -85,7 +85,7 @@ get_currentuserinfo();
             <div>
               <div class="wrapper-meta">
                 <div class="span1">
-                  <span class="number">12</span> publicaciones
+                  <span class="number">12</span> posts
                 </div><!-- .span1 -->
                 <div class="span1">
                   <span class="number">123456</span> lectores
@@ -112,7 +112,7 @@ get_currentuserinfo();
             <div>
               <div class="wrapper-meta">
                 <div class="span1">
-                  <span class="number">12</span> publicaciones
+                  <span class="number">12</span> posts
                 </div><!-- .span1 -->
                 <div class="span1">
                   <span class="number">123456</span> lectores

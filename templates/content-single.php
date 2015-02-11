@@ -3,7 +3,7 @@
     <?php if (get_post_meta($post->ID, "Thumbnail", true) != "") { ?>
     <div class="bg-image" style="background-image: url(<?php echo wp_imager(1024, 448, '', 'img-responsive', false, null, true); ?>); height: 448px;"></div>
     <?php } else { ?>
-    <div class="bg-image" style="background: #ccc; height: 448px;"></div>
+    <div class="bg-image" style="background: #ccc; height: 28rem;"></div>
     <?php } ?>
     <div class="overlay"></div>
     <div class="vert-center-wrapper">
@@ -72,7 +72,7 @@
               <?php endif; ?>
             </div>
             <div class="post-tags">
-              <h2><i class="fa fa-tags"></i> En esta publicación se habla sobre</h2>
+              <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
               <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
             </div><!-- .post-tags -->
             <?php get_template_part('templates/entry-exlinks'); ?>

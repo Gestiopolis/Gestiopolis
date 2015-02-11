@@ -3,7 +3,7 @@
   <div class="row title-section">
     <div class="col-sm-12">
       <h2>Se destacan</h2>
-      <div class="subtitle">Estas son las publicaciones preferidas por nuestros lectores hoy</div>
+      <div class="subtitle">Estos son los posts preferidos por nuestros lectores hoy</div>
     </div>
   </div>
   <div class="row destacados">
@@ -122,7 +122,7 @@
   <div class="row title-section">
     <div class="col-sm-12">
       <h2>Materias</h2>
-      <div class="subtitle">Temáticas en las que clasificamos las publicaciones</div>
+      <div class="subtitle">Temáticas en las que clasificamos los posts</div>
     </div>
   </div>
   <div class="row ejes-home">
@@ -168,7 +168,7 @@
               <div class="trending-author">
                 <a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_author_color_id($author->post_author); ?></a>
                 <div class="author-name"><a href="<?php echo get_author_posts_url($author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>  
-                <div class="author-posts"><a href="<?php echo get_author_posts_url($author->post_author); ?>" title="<?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> publicaciones de <?php echo get_the_author_meta('display_name', $author->post_author); ?>"><?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> publicaciones <i class="fa fa-angle-double-right"></i></a></div>
+                <div class="author-posts"><a href="<?php echo get_author_posts_url($author->post_author); ?>" title="<?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> posts de <?php echo get_the_author_meta('display_name', $author->post_author); ?>"><?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> posts <i class="fa fa-angle-double-right"></i></a></div>
               </div>
             </div>
           </div>
@@ -194,7 +194,7 @@
           $tag_id = isset($tag->term_id) ? $tag->term_id : $key;
           $tag_name = $terms[ $key ]->name;
       ?>
-      <a href="<?php echo $tag_link; ?>" title="<?php echo esc_attr( $tag->count ); ?>"><?php echo $tag_name; ?></a>
+      <a href="<?php echo $tag_link; ?>" title="<?php echo esc_attr( $tag->count ); ?> posts"><?php echo $tag_name; ?></a>
       <?php }  ?>
     </div><!-- .col-sm-12 -->
   </div><!-- .row TEMAS -->
@@ -203,13 +203,13 @@
 <div class="container">
   <div class="row title-section">
     <div class="col-sm-12">
-      <h2>Todas las publicaciones</h2>
+      <h2>Todos los posts</h2>
       <?php
       $count_posts = wp_count_posts();
 
       $published_posts = $count_posts->publish;
       ?>
-      <div class="subtitle">Son <strong><?php echo number_format_i18n($published_posts); ?></strong> desde acá las puedes explorar todas</div>
+      <div class="subtitle">Son <strong><?php echo number_format_i18n($published_posts); ?></strong> desde acá los puedes explorar todos</div>
     </div>
   </div>
   <div class="row posts-home">

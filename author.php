@@ -5,7 +5,7 @@ get_currentuserinfo();
 ?>
 <!-- Empieza sección de LISTADO DE POSTS -->
 <div class="post-image">
-  <div class="bg-image" style="background: #edede4; height: 400px;"></div>
+  <div class="bg-image" style="background: #edede4; height: 25rem;"></div>
   <div class="vert-center-wrapper">
     <div class="vert-centered">
       <div class="center container">
@@ -24,7 +24,7 @@ get_currentuserinfo();
             <li><a href="<?php echo get_user_meta($curaut->ID, 'googleplus', true); ?>"><i class="fa fa-google-plus-square"></i></a></li>
             <?php } ?>
             <?php if(get_user_meta($curaut->ID, 'twitter', true) != '') { ?>
-            <li><a href="<?php echo get_user_meta($curaut->ID, 'twitter', true); ?>"><i class="fa fa-twitter-square"></i></a></li>
+            <li><a href="http://www.twitter.com/<?php echo get_user_meta($curaut->ID, 'twitter', true); ?>"><i class="fa fa-twitter-square"></i></a></li>
             <?php } ?>
             <?php if(get_user_meta($curaut->ID, 'facebook', true) != '') { ?>
             <li><a href="<?php echo get_user_meta($curaut->ID, 'facebook', true); ?>"><i class="fa fa-facebook-square"></i></a></li>

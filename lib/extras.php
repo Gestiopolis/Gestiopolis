@@ -977,7 +977,7 @@ function popular_tags_from_category($catid, $days, $limit=15){
 		$tag_id = isset($tag->term_id) ? $tag->term_id : $key;
 		$tag_name = $terms[ $key ]->name;
 
-		echo "<a href='$tag_link' class='tag-link-$tag_id' title='" . esc_attr( $tag->count ) . " temas'>$tag_name</a>";
+		echo "<a href='$tag_link' class='tag-link-$tag_id' title='" . esc_attr( $tag->count ) . " posts'>$tag_name</a>";
 	}	
 		//echo wp_generate_tag_cloud( $terms, $args );
 	}
@@ -1084,7 +1084,7 @@ function estimate_time() {
 	$estimated_minutes = floor($content_words / $wpm);
 
 	if ($estimated_minutes < 1) {
-		$result = "menos de un minuto";
+		$result = "1 minuto";
 	}
 	else if ($estimated_minutes > 60) {
 		if ($estimated_minutes > 1440){
