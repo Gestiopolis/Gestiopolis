@@ -3,7 +3,7 @@
     <?php if (get_post_meta($post->ID, "Thumbnail", true) != "") { ?>
     <div class="bg-image" style="background-image: url(<?php echo wp_imager(1024, 448, '', 'img-responsive', false, null, true); ?>); height: 448px;"></div>
     <?php } else { ?>
-    <div class="bg-image" style="background: #ccc; height: 28rem;"></div>
+    <div class="bg-image" style="background: #ccc; height: 448px;"></div>
     <?php } ?>
     <div class="overlay"></div>
     <div class="vert-center-wrapper">
