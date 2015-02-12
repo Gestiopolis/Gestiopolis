@@ -49,6 +49,8 @@ function roots_setup() {
   //Remove the Admin Bar preference in user profile
   remove_action( 'personal_options', '_admin_bar_preferences' );
 
+  //Quitar related posts por defecto
+  add_filter( 'rp4wp_append_content', '__return_false' );
 }
 add_action('after_setup_theme', 'roots_setup');
 
