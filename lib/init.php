@@ -51,8 +51,15 @@ function roots_setup() {
 
   //Quitar related posts por defecto
   add_filter( 'rp4wp_append_content', '__return_false' );
+  add_image_size( 'sidebar-thumb', 304, 171, true );
 }
 add_action('after_setup_theme', 'roots_setup');
+
+function rp4wp_example_my_thumbnail_size( $thumb_size ) {
+  return 'sidebar-thumb';
+}
+
+add_filter( 'rp4wp_thumbnail_size', 'rp4wp_example_my_thumbnail_size' );
 
 /**
  * Register sidebars
