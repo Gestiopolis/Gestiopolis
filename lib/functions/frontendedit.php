@@ -128,9 +128,14 @@ function flickr_image_attach ($flickrurl, $post_id){
 			return $id;
 		}
 
+		$fullsize_path = get_attached_file( $id ); // Full path
+		if (function_exists('ewww_image_optimizer')) {
+			ewww_image_optimizer($fullsize_path, $gallery_type = 4, $converted = false, $new = true, $fullsize = true);
+		}
 		$src = wp_get_attachment_url( $id );
 	}
 	if (!empty($src)){
+
 		update_post_meta($post_id, 'image_url_value', $flickrurl);
 		update_post_meta($post_id, 'image_author_t_value', $flickruser);
 		update_post_meta($post_id, 'image_value', $src);

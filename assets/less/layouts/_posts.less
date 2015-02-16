@@ -96,14 +96,19 @@
   filter: none;
 }
 .breadcredit {
-  margin-top: -48px;
+  margin-top: -100px;
   position: relative;
+}
+@media (min-width: @screen-sm-min) {
+  .breadcredit {
+    margin-top: -48px;
+  }
 }
 .breadcredit {
   /*bottom: 0;*/
   font: 400 0.875rem @text-font, sans-serif;
   line-height: 1rem;
-  height:32px;
+  min-height:32px;
   display:block;
   /*right:0;*/
   padding: 8px;

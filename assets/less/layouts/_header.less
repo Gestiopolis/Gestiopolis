@@ -25,10 +25,16 @@ header.banner {
   margin-left: 16px !important;
   padding: 0;
 }
+.navbar-inverse .nav>li {
+  display:inline-block;
+}
 @media (min-width: @screen-sm-min) {
   .navbar .navbar-brand {
     margin-left: 0 !important;
     padding: 0;
+  }
+  .navbar-inverse .nav>li {
+    display:block;
   }
 }
 .navbar-inverse .nav>li>a {

@@ -7,31 +7,32 @@
     //if($tag_ids){
     //$args1=array( 'cat' => $category_id, 'posts_per_page'=>25, 'post__not_in'=>array($post->ID), 'tag__in' => $tag_ids, 'paged' => $paged, 'orderby' => 'rand');//Empieza query del último post
       //$query1 = new WP_Query($args1);
-    $query1 = ci_get_related_posts( $post->ID, 25 );
-        if( $query1->have_posts() ) { while ($query1->have_posts()) : $query1->the_post(); ?>
-    <article id="post-<?php the_ID(); ?>" class="post">
+    rp4wp_children( $post->ID );
+    /*$query1 = ci_get_related_posts( $post->ID, 25 );
+        if( $query1->have_posts() ) { while ($query1->have_posts()) : $query1->the_post(); */?>
+    <!--<article id="post-<?php //the_ID(); ?>" class="post">
       <div class="wrapper-img">
-        <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
-          <img src="<?php echo wp_imager(640, 360, '', 'img-responsive', false, null, true); ?>" alt="<?php the_title_attribute(); ?>" class="img-responsive">
+        <a href="<?php //echo get_permalink($post->ID); ?>" title="<?php //the_title_attribute(); ?>" rel="bookmark">
+          <img src="<?php //echo wp_imager(640, 360, '', 'img-responsive', false, null, true); ?>" alt="<?php //the_title_attribute(); ?>" class="img-responsive">
           <div class="overlay"></div>
           <div class="vert-center-wrapper">
             <div class="vert-centered">
               <div class="text-center">
-                <h2 class="entry-title"><span><?php the_title(); ?></span></h2>
+                <h2 class="entry-title"><span><?php //the_title(); ?></span></h2>
               </div>
             </div>
           </div>
         </a>
       </div>
     </article>
-    <?php endwhile;?>
+    <?php //endwhile;?>
     <div class="pagination">
-      <div class="nav-previous alignleft"><?php next_posts_link( 'Artículos anteriores', $query1->max_num_pages ); ?></div>
+      <div class="nav-previous alignleft"><?php //next_posts_link( 'Artículos anteriores', $query1->max_num_pages ); ?></div>
     </div>
     <?php } 
-    wp_reset_query(); 
-    wp_reset_postdata();
-    //} ?>
+    //wp_reset_query(); 
+    //wp_reset_postdata();
+    //} ?>-->
     <!--<a href="#" class="btn btn-cargar btn-block"><i class="fa fa-plus"></i> Cargar más</a>-->
   </div><!-- .sidebar-post -->
 </div><!-- .right-post -->
