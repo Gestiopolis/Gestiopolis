@@ -1,7 +1,6 @@
 <?php global $post; ?>
 <div class="right-post">
   <div class="sidebar-post">
-    <?php rp4wp_children($post->ID); ?>
     <h3>Relacionados manuales</h3>
     <?php 
     $query1 = ci_get_related_posts( $post->ID, 12 );

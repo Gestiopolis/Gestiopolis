@@ -25,6 +25,7 @@ function roots_setup() {
   add_image_size( 'rel-thumb', 130, 88 );
   add_image_size( 'list-thumb', 120, 100 );
   add_image_size( 'bol-thumb', 100, 100 );
+  add_image_size( 'sidebar-thumb', 304, 171, true );
 
   // Add post formats
   // http://codex.wordpress.org/Post_Formats
@@ -49,17 +50,10 @@ function roots_setup() {
   //Remove the Admin Bar preference in user profile
   remove_action( 'personal_options', '_admin_bar_preferences' );
 
-  //Quitar related posts por defecto
-  add_filter( 'rp4wp_append_content', '__return_false' );
-  add_image_size( 'sidebar-thumb', 304, 171, true );
+  
 }
 add_action('after_setup_theme', 'roots_setup');
 
-function rp4wp_example_my_thumbnail_size( $thumb_size ) {
-  return 'sidebar-thumb';
-}
-
-add_filter( 'rp4wp_thumbnail_size', 'rp4wp_example_my_thumbnail_size' );
 
 /**
  * Register sidebars
