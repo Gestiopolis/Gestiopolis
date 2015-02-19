@@ -96,14 +96,14 @@
   filter: none;
 }
 .breadcredit {
-  margin-top: -100px;
+  margin-top: 32px;
   position: relative;
 }
-@media (min-width: @screen-sm-min) {
+/*@media (min-width: @screen-sm-min) {
   .breadcredit {
     margin-top: -48px;
   }
-}
+}*/
 .breadcredit {
   /*bottom: 0;*/
   font: 400 0.875rem @text-font, sans-serif;
@@ -111,7 +111,7 @@
   min-height:32px;
   display:block;
   /*right:0;*/
-  padding: 8px;
+  padding: 0 8px 8px 0;
   /*position: absolute;*/
   text-shadow: 2px 0px 5px rgba(0,0,0,0.5);
   color: #fff;
@@ -119,9 +119,13 @@
 .breadcredit a {
   color: #fff;
 }
-
+.breadcredit .author-info, 
+.breadcredit .list-unstyled {
+  display: inline-block;
+}
 .breadcredit .author-info {
   font: 700 0.8125rem @title-font, sans-serif;
+  margin-left: 24px;
 }
 .breadcredit li {
   display: inline-block;

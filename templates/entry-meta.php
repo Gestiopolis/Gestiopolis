@@ -1,11 +1,11 @@
-<div class="author-info pull-left">
+<div class="author-info">
   <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
   <?php echo get_author_color_id(); ?> <a href="#autores" rel="author" class="fn"><?php echo get_the_author();//echo get_post_meta($post->ID, "author-name_value", true); ?></a>
   <?php else : ?>
   <?php echo get_author_color_id(); ?> <a href="#autores" rel="author" class="fn"><?php echo get_the_author(); ?></a>
   <?php endif; ?>
 </div>
-<ul class="list-unstyled pull-right">
+<ul class="list-unstyled">
   <li><?php 
   $category = get_the_category(); 
   if($category[0]){

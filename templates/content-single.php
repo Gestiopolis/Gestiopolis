@@ -10,12 +10,12 @@
       <div class="vert-centered">
         <div class="center container">
           <h1 class="title"><?php the_title(); ?></h1>
+          <div class="breadcredit">
+            <?php get_template_part('templates/entry-meta'); ?>
+          </div>
         </div>
       </div>
     </div>        
-  </div>
-  <div class="breadcredit container">
-    <?php get_template_part('templates/entry-meta'); ?>
   </div>
   <div class="container cposts">
     <div class="row">
