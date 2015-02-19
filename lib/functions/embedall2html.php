@@ -1,4 +1,5 @@
 <?php 
+echo 'Entró al archivo';
 $servidor = $_SERVER['HTTP_HOST'] == 'localhost' ? 'blog23/' : '';
 include_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor.'wp-load.php');
 global $wpdb;

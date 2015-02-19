@@ -34,7 +34,6 @@
     $query2 = ci_get_related_posts_2( $post->ID, $postsnot, $show );
         if( $query2->have_posts() ) { while ($query2->have_posts()) : $query2->the_post();?>
     <article id="post-<?php the_ID(); ?>" class="post">
-      <!--<p><?php //echo $show;?></p>-->
       <div class="wrapper-img">
         <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
           <img src="<?php echo wp_imager(640, 360, '', 'img-responsive', false, null, true); ?>" alt="<?php the_title_attribute(); ?>" class="img-responsive">
