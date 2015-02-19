@@ -22,7 +22,7 @@ if($hash){
 <meta charset="utf-8"/>
 <meta name="generator" content="pdf2htmlEX"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="<?php echo home_url( '/pdf2htmlEX/base.min.css' ); ?>"/>
 <link rel="stylesheet" href="<?php echo home_url( '/pdf2htmlEX/fancy.min.css' ); ?>"/>
 <link rel="stylesheet" href="<?php echo home_url(get_post_meta($postID, "all2html_css", true)); ?>"/>
@@ -71,10 +71,10 @@ if($hash){
     <div class="btn-group btn-group-sm pull-left">
       <a type="button" id="btnfull" class="btn btn-default fullscreen" href="#" title="Ver en pantalla completa"><span style="display:none" class="glyphicon glyphicon-resize-small"></span><span class="glyphicon glyphicon-resize-full"></span></a>
     </div>
-    <div class="logo pull-right"><a href="<?php echo home_url( '/' ); ?>"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logoGestiopolis.jpg';?>" alt="GestioPolis" height="20" width="88"/></a></div>
+    <div class="logo pull-right"><a href="<?php echo home_url( '/' ); ?>"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logoGestiopolis.jpg');?>" alt="GestioPolis" height="20" width="88"/></a></div>
   </div>
 </div>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/screenfull.min.js"></script>
 <script>
 $(document).on('ready', function() {
