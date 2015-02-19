@@ -28,6 +28,31 @@ if($type_edit && $post_ID){
 
 			}
 			break;
+		case 'imageupload':
+			$file = ( !empty($_FILES['img_file'])) ? $_FILES['img_file'] : false;
+			if($file){
+				$arch = pathinfo($file['name']);
+        $extension = $arch['extension'];
+        if($extension == 'jpg' || $extension == 'JPG' || $extension == 'jpeg' || $extension == 'JPEG' || $extension == 'png' || $extension == 'PNG'){
+        	$id = media_handle_sideload( $file, $post_ID, $desc=null );
+        	// If error storing permanently, unlink
+					if ( is_wp_error($id) ) {
+						return $id;
+					}
+
+					$fullsize_path = get_attached_file( $id ); // Full path
+					if (function_exists('ewww_image_optimizer')) {
+						ewww_image_optimizer($fullsize_path, $gallery_type = 4, $converted = false, $new = true, $fullsize = true);
+					}
+					$src = wp_get_attachment_url( $id );
+					if (!empty($src)){
+						update_post_meta($post_ID, 'image_value', $src);
+						set_post_thumbnail( $post_ID, $id );
+						return update_post_meta($post_ID, 'Thumbnail', $src);
+					}
+				}
+			}
+			break;	
 		case 'deletepost':
 			wp_delete_post($post_ID);
 			wp_redirect( home_url('/') ); exit;
@@ -95,6 +120,19 @@ if($type_edit && $post_ID){
 
 //Funciones para migrar imagen de Flickr a WordPress
 function flickr_image_attach ($flickrurl, $post_id){
+	preg_match('/http\:\/\/www\.flickr\.com\/photos\/(.*?)\/([0-9]+)\//si', $flickrurl, $m);
+	if($m){
+		$flickruser = $m[1];
+		$photo_id = $m[2];
+	}else{
+		return;
+	}
+	update_post_meta($post_id, 'image_url_value', $flickrurl);
+	return update_post_meta($post_id, 'image_author_t_value', $flickruser);
+}
+
+//Funciones para migrar imagen de Flickr a WordPress
+function flickr_image_attach_deprecated ($flickrurl, $post_id){
 	preg_match('/http\:\/\/www\.flickr\.com\/photos\/(.*?)\/([0-9]+)\//si', $flickrurl, $m);
 	if($m){
 		$flickruser = $m[1];

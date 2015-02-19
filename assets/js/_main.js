@@ -604,6 +604,20 @@ var Gestiopolis = {
           var jqpost = $(this).attr("rel");
           $("#"+jqpost).remove();
         });
+        $("form#optimg").submit(function(e){
+          e.preventDefault();
+          var formData = new FormData($(this)[0]);
+          $.ajax({
+            url: serverval.template_directory+'/lib/functions/frontendedit.php',
+            type: 'POST',
+            data: formData,
+            async: true,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (returndata) { location.reload(); }
+          });
+        });
         $("form#all2html").submit(function(e){
           e.preventDefault();
           $('#myModal').modal('show');

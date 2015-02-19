@@ -20,7 +20,16 @@
 <?php }else{ ?>
   <p><b>URL Original de la Imagen en Flickr:</b> <input type="text" name="imageedit" id="imageedit" value=""> <input type="submit" name="editimage" id="editimage" value="Añadir"></p>
   <p><b>URL de Imagen en GestioPolis:</b> </p>
-  <p><b>Autor de la Imagen:</b> </p>              
+  <p><b>Autor de la Imagen:</b> </p>
+  <p>
+    <b>Subir imágen optimizada:</b> 
+    <form id="optimg" class="form-horizontal" role="form" method="post" enctype="multipart/form-data" action="">
+      <input type="file" class="form-control" id="img_file" name="img_file" required>
+      <input type="hidden" name="postid" id="postids" value="<?php echo $post->ID; ?>" />
+      <input type="hidden" name="type" id="type" value="imageupload" />
+      <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-play"></span> Subir imagen</button>
+    </form>
+  </p>              
 <?php } ?>
   <h3>Edición de Embebidos Superiores</h3>
   <p><b>URL de embebido de Presentaciones:</b> <?php echo get_post_meta($post->ID, "ppts_value", "input", true); ?></p>
