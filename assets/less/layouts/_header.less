@@ -90,6 +90,18 @@ header.banner {
     width: 100% !important;
   }
 }
+@media (min-width: @screen-md-min) {
+  .sb-search.sb-search-open,
+  .no-js .sb-search {
+    width: 420px !important;
+  }
+  .sb-search-input {
+    position: absolute !important;
+    top: 0 !important;
+    width: 420px !important;
+    padding: 12px 96px 12px 12px !important;
+  }
+}
 .navbar-inverse .nav>li>a {
   //border-left: 1px solid #666;
   font-size: 1.5rem;
@@ -389,7 +401,7 @@ input[type="search"].sb-search-input {
 
 .sb-search.sb-search-open .sb-search-submit,
 .no-js .sb-search .sb-search-submit {
-  z-index: 90;
+  z-index: 9999;
 }
 
 
