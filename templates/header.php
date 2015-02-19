@@ -44,7 +44,7 @@
       <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><img width="179" height="48" class="logo" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo.png'); ?>" alt="<?php bloginfo('name'); ?>"></a>
     </div>
 
-    <nav role="navigation" style="display:none; visibility: hidden;">
+    <nav role="navigation">
       <ul class="nav navbar-nav navbar-right">
         <?php if(!is_single()){ ?>
         <!--<li id="nav_explora" class="dropdown">
