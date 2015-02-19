@@ -99,7 +99,7 @@
 
         <li>
           <a id="nav-expander" class="nav-expander navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
-            <span class="hidden-xs">MENU &nbsp;</span><i class="fa fa-bars fa-lg white"></i>
+            <i class="fa fa-bars white"></i><span class="hidden-xs">&nbsp;Menú</span>
           </a>
         </li>
       </ul>

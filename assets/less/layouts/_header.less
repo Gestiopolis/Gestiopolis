@@ -6,8 +6,9 @@ header.banner {
   transition: top 0.2s ease-in-out;
 }
 .navbar-nav > li > a {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  //padding-top: 15px;
+  //padding-bottom: 15px;
+  padding: 15px 14px
 }
 .navbar-inverse {
   background-image: none;
@@ -27,6 +28,22 @@ header.banner {
 }
 .navbar-inverse .nav>li {
   display:inline-block;
+  float: left;
+}
+.navbar-inverse .navbar-header,
+.navbar-inverse nav,
+.navbar-inverse .nav {
+  display:inline-block;
+}
+.navbar-inverse .navbar-header {
+  float:left;
+}
+.navbar-inverse nav,
+.navbar-inverse .nav {
+  float:right;
+}
+.navbar-inverse .nav {
+  margin: 0;
 }
 @media (min-width: @screen-sm-min) {
   .navbar .navbar-brand {
@@ -36,13 +53,37 @@ header.banner {
   .navbar-inverse .nav>li {
     display:block;
   }
+  .navbar-inverse .navbar-header,
+  .navbar-inverse nav,
+  .navbar-inverse .nav {
+    display:block;
+  }
+  .navbar-inverse .nav {
+    margin: 0;
+  }
+  .navbar-nav > li > a {
+    padding: 15px 24px;
+  }
+  .navbar-inverse .nav > li > a {
+    font-size: 1.125rem !important;
+  }
+  .sb-search {
+    min-width: 112px !important;
+  }
+  .sb-icon-search,
+  .sb-search-submit  {
+    width: 112px !important;
+  }
+  a.nav-expander {
+    width: 100% !important;
+  }
 }
 .navbar-inverse .nav>li>a {
-  border-left: 1px solid #666;
-  font-size: 1.125rem;
-  font-weight:700;
+  //border-left: 1px solid #666;
+  font-size: 1.5rem;
+  font-family: @title-font,sans-serif;
+  font-weight:400;
   text-shadow: none;
-  //text-transform: uppercase;
   min-height: 48px;
 }
 .navbar-inverse .nav>li#nav_facebook>a,
@@ -106,10 +147,11 @@ header.banner {
 a.nav-expander {
   //background: none repeat scroll 0 0 #000000;
   color: #FFFFFF;
-  display: block;
-  font-size: 15px;
-  font-weight: 400;
+  //display: block;
+  //font-size: 15px;
+  //font-weight: 400;
   height: 48px;
+  width: 48px;
   margin-right: 0;
   margin-top: 0;
   margin-bottom: 0;
@@ -117,10 +159,10 @@ a.nav-expander {
   position: absolute;
   right: 0;
   text-decoration: none;
-  text-transform: uppercase;
+  //text-transform: uppercase;
   top: 0;
   transition: right 0.3s ease-in-out 0s;
-  width: 130px;
+  //width: 130px;
   z-index: 12;
   border: none;
   border-radius: 0;
@@ -204,8 +246,8 @@ a.nav-expander:hover {
 #explora_mas .copy { font-size:0.75rem; }
 
 /*==========  PUBLICA  ==========*/
-li#nav_publica>a:hover {background:#e9640c;}
-li#nav_publica>a {background:#ff6c0a;}
+li#nav_publica>a:hover {background:#e33c39;}
+li#nav_publica>a {background:#fe423f;}
 /*==========  BUSCA  ==========*/
 .navbar-search {
   margin-top: 0;
@@ -216,7 +258,7 @@ li#nav_publica>a {background:#ff6c0a;}
   position: relative;
   //margin-top: 10px;
   width: 0%;
-  min-width: 90px;
+  min-width: 48px;
   height: 48px;
   float: right;
   overflow: hidden;
@@ -266,7 +308,7 @@ input[type="search"].sb-search-input {
 
 .sb-icon-search,
 .sb-search-submit  {
-  width: 90px;
+  width: 48px;
   height: 48px;
   display: block;
   position: absolute;
@@ -295,6 +337,8 @@ input[type="search"].sb-search-input {
   background: rgba(34,34,34,0.7);
   z-index: 90;
   font-size: 1.125rem;
+  font-family: @title-font, sans-serif;
+  font-weight: 400;
   //font-family: 'icomoon';
   /*speak: none;
   font-style: normal;
