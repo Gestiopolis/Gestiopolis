@@ -170,7 +170,7 @@ header.banner {
 }
 //Off canvas
 a.nav-expander {
-  //background: none repeat scroll 0 0 #000000;
+  background: none repeat scroll 0 0 #444;
   color: #FFFFFF;
   //display: block;
   //font-size: 15px;
@@ -202,6 +202,29 @@ a.nav-expander {
 a.nav-expander:hover {
   background: none repeat scroll 0 0 #141414;
   cursor: pointer;
+}
+
+.offcanvas i {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  margin-right: 8px;
+  border-radius: 100%;
+  text-align:center;
+  line-height: 32px;
+}
+
+.offcanvas .home-link i {
+  background: #000;
+}
+
+.offcanvas .more-link i {
+  background: #9575cd;
+}
+
+.offcanvas .fa-angle-double-down {
+  background: transparent !important;
+  margin-right:0;
 }
 
 /*==========  EXPLORA  ==========*/
@@ -360,7 +383,8 @@ input[type="search"].sb-search-input {
 
 .sb-icon-search {
   color: #fff;
-  background: rgba(34,34,34,0.7);
+  background: #444;
+  border-right: 1px solid #555;
   z-index: 90;
   font-size: 1.125rem;
   font-family: @title-font, sans-serif;

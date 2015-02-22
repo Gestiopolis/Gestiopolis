@@ -19,12 +19,12 @@
 @navmenu-width:                     300px;
 @navmenu-margin-vertical:           (0.5 * @line-height-computed);
 @navmenu-default-color:             #777;
-@navmenu-default-bg:                #f8f8f8;
-@navmenu-default-border:            darken(@navmenu-default-bg, 6.5%);
+@navmenu-default-bg:                #444;
+@navmenu-default-border:            #555;
 
 // Navmenu links
-@navmenu-default-link-color:                #777;
-@navmenu-default-link-hover-color:          #333;
+@navmenu-default-link-color:                #fff;
+@navmenu-default-link-hover-color:          #fff;
 @navmenu-default-link-hover-bg:             transparent;
 @navmenu-default-link-active-color:         #555;
 @navmenu-default-link-active-bg:            darken(@navmenu-default-bg, 6.5%);
@@ -81,6 +81,10 @@
   border-width: 1px;
   border-style: solid;
   border-radius: @border-radius-base;
+  font-family: @title-font, sans-serif;
+  font-weight: 700;
+  padding: 4px 0 7px 0;
+  
 }
 
 .navmenu-fixed-left,
@@ -229,6 +233,7 @@
 
     > li > a {
       color: @navmenu-default-link-color;
+      padding: 5px 16px 5px 32px;
       &:hover,
       &:focus {
         color: @navmenu-default-link-hover-color;
@@ -314,6 +319,7 @@
 
     > li > a {
       color: @navmenu-inverse-link-color;
+      padding: 5px 16px 5px 32px;
       &:hover,
       &:focus {
         color: @navmenu-inverse-link-hover-color;

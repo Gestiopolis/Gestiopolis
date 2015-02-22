@@ -1,5 +1,6 @@
 <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas">
   <ul class="nav navmenu-nav">
+    <li><a class="home-link" href="<?php echo esc_url(home_url('/')); ?>"><i class="fa fa-home"></i> Ir al inicio</a></li>
     <?php
     $args = array(
       'orderby' => 'name',
@@ -8,16 +9,16 @@
       );
     $categories = get_categories( $args );
     foreach ( $categories as $category ) {
-      echo '<li><a class="cat-' . $category->term_id . '" href="' . get_category_link( $category->term_id ) . '"><i class="fa icon-cat-'.$category->term_id.' cat-col-'.$category->term_id.'"></i>  ' . $category->name . '<span class="icon"></span></a></li>';
+      echo '<li><a class="cat-' . $category->term_id . '" href="' . get_category_link( $category->term_id ) . '"><i class="fa icon-cat-'.$category->term_id.' cat-bg-'.$category->term_id.'"></i>  ' . $category->name . '</a></li>';
     }
     ?>
-    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Autores y Temas</a>
+    <!--<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Autores y Temas</a>
       <ul id="explora_autores" class="dropdown-menu navmenu-nav">
         <li><a href="#"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/autores-destacados-explora.png'); ?>" width="28" height="28" alt="Autores destacados"/>&nbsp;&nbsp;Autores destacados</a></li>
         <li><a href="#"><i class="fa fa-tags"></i>&nbsp;&nbsp;Temas tendencia</a></li>
       </ul>
-    </li>
-    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Más&nbsp;&nbsp;<i class="fa fa-angle-double-down"></i></a>
+    </li>-->
+    <li class="dropdown more-link"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plus"></i>Más&nbsp;&nbsp;<i class="fa fa-angle-double-down"></i></a>
       <ul id="explora_mas" class="dropdown-menu navmenu-nav">
         <li><a href="<?php echo get_page_link(2); ?>">Acerca de</a></li>
         <li><a href="#">Ayuda</a></li>
