@@ -3,15 +3,36 @@ $term = get_queried_object();
 global $current_user;
 get_currentuserinfo();
 ?>
+<div class="post-image">
+  <div class="bg-image cat-bg-<?php echo $term->term_id; ?>" style="height: 248px;"></div>
+  <div class="vert-center-wrapper">
+    <div class="vert-centered">
+      <div class="center container">
+        <!--<span class="author-color"><i class="fa fa-tag"></i></span>-->
+        <h1 class="title"><i class="fa icon-cat-<?php echo $term->term_id; ?>"></i> <?php single_term_title(); ?></h1>
+        <div class="eje-tagline"><?php echo $term->description; ?></div>
+        <ul class="catcounts list-unstyled">
+          <li><i class="fa fa-file-o"></i> <?php echo $term->count; ?> posts</li>
+          <li><i class="fa fa-pencil"></i> <?php autcat($term->term_id); ?> autores</li>
+          <?php 
+            $args = array('categories' => $term->term_id);
+            $tags = get_category_tags($args);
+          ?>
+          <li><i class="fa fa-tags"></i> <?php echo count($tags); ?> temas</li>
+        </ul>
+      </div>
+    </div>
+  </div>        
+</div>
 <div class="container">
   <!-- Empieza sección de TÍTULO DE CATEGORÍA -->
-  <div class="row titu-cat">
+  <!--<div class="row titu-cat">
     <div class="col-sm-5">
       <i class="fa icon-cat-<?php echo $term->term_id; ?> cat-col-<?php echo $term->term_id; ?>"></i>
       <span class="eje-nombre"><?php single_term_title(); ?></span>
       <br class="clearfix">
       <span class="eje-tagline"><?php echo $term->description; ?></span>
-    </div><!-- .col-sm-5 -->
+    </div>
     <div class="col-sm-5">
       <ul>
         <li>Posts <a href="#" class="btn btn-publ"><?php echo $term->count; ?></a></li>
@@ -22,8 +43,8 @@ get_currentuserinfo();
         ?>
         <li>Temas <a href="#" class="btn btn-tem"><?php echo count($tags); ?></a></li>
       </ul>
-    </div><!-- .col-sm-5 -->
-  </div><!-- .row TÍTULO DE CATEGORÍA -->
+    </div>
+  </div>--><!-- .row TÍTULO DE CATEGORÍA -->
   <div class="row title-section">
     <div class="col-sm-12">
       <h2>Se destacan</h2>

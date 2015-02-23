@@ -36,7 +36,28 @@
           <div class="tiempo pull-left"><i class="fa fa-clock-o"></i> <?php echo estimate_time();?> de lectura</div>
           <div class="fecha pull-right"><i class="fa fa-calendar"></i> <?php echo get_the_date('j\.m\.Y'); ?></div>
         </div>
-        <?php the_tags('<div class="tags"><i class="fa fa-tags"></i> ',', ','</div>'); ?>
+        <?php if(!is_tag()) { 
+            the_tags('<div class="tags"><i class="fa fa-tags"></i> ',', ','</div>'); 
+          }else {
+            $term = get_queried_object();
+            $posttags = get_the_tags();
+            if ($posttags) {
+              echo '<div class="tags"><i class="fa fa-tags"></i> ';
+              $count = 2;
+              $tagscount = count($posttags);
+              foreach($posttags as $tag) {
+                if($tag->term_id != $term->term_id){
+                  echo '<a href="' . get_tag_link($tag->term_id) . '" rel="tag">' . $tag->name . '</a>';
+                  if($tagscount > $count){
+                    echo ', ';
+                  }
+                  $count++;
+                }
+              }
+              echo '</div>';
+            }
+          }
+        ?>
         <div class="category pull-left">
           <?php foreach ($category as $cat) {
             if(is_category()){

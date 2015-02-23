@@ -50,7 +50,6 @@ function roots_setup() {
   //Remove the Admin Bar preference in user profile
   remove_action( 'personal_options', '_admin_bar_preferences' );
 
-  
 }
 add_action('after_setup_theme', 'roots_setup');
 

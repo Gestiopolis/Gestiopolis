@@ -1197,7 +1197,7 @@ function ci_get_related_posts_1( $post_id, $related_count, $args = array() ) {
   }
 }
 
-function ci_get_related_posts_2( $post_id, $postsnot, $related_count, $args = array() ) {
+function ci_get_related_posts_2( $post_id, $postsnot, $related_count, $paged, $args = array() ) {
   $args = wp_parse_args( (array) $args, array(
     'orderby' => 'rand',
     'return'  => 'query', // Valid values are: 'query' (WP_Query object), 'array' (the arguments array)
@@ -1212,7 +1212,7 @@ function ci_get_related_posts_2( $post_id, $postsnot, $related_count, $args = ar
     'post_status'    => 'publish',
     'post__not_in'   => $postsnot,
     'orderby'        => $args['orderby'],
-    //'s'							 => $post->post_title,
+    'paged'					 => $paged,
     'tax_query'      => array()
   );
 

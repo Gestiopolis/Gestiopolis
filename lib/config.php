@@ -17,6 +17,9 @@ if (!defined('WP_ENV')) {
   define('WP_ENV', 'production');  // scripts.php checks for values 'production' or 'development'
 }
 
+//For pagination of related posts
+ini_set( 'mysql.trace_mode', 0 );
+
 /**
  * Add body class if sidebar is active
  */

@@ -4,7 +4,7 @@ global $current_user;
 get_currentuserinfo();
 ?>
 <div class="post-image">
-  <div class="bg-image" style="background: #edede4; height: 248px;"></div>
+  <div class="bg-image" style="background: #c5cae9; height: 248px;"></div>
   <div class="vert-center-wrapper">
     <div class="vert-centered">
       <div class="center container">

@@ -1,7 +1,7 @@
 <?php global $post; ?>
 <div class="right-post">
   <div class="sidebar-post">
-    <h3>Relacionados manuales</h3>
+    <h3><i class="fa fa-thumb-tack"></i> Te recomendamos</h3>
     <?php 
     $show = 25;
     $postsnot = array();
@@ -31,7 +31,8 @@
     wp_reset_postdata();
     $show = $show - count($query1->posts);
      if ($show > 0) {
-    $query2 = ci_get_related_posts_2( $post->ID, $postsnot, $show );
+      $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+    $query2 = ci_get_related_posts_2( $post->ID, $postsnot, $show, $paged );
         if( $query2->have_posts() ) { while ($query2->have_posts()) : $query2->the_post();?>
     <article id="post-<?php the_ID(); ?>" class="post">
       <div class="wrapper-img">
@@ -49,6 +50,9 @@
       </div>
     </article>
     <?php endwhile;?>
+    <div class="pagination">
+      <div class="nav-previous alignleft"><?php next_posts_link( 'Artículos anteriores', $query2->max_num_pages ); ?></div>
+    </div>
     <?php } 
     wp_reset_query(); 
     wp_reset_postdata();

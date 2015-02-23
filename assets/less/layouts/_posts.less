@@ -37,7 +37,8 @@
 
 .single .post-image,
 .author .post-image,
-.tag .post-image {
+.tag .post-image,
+.category .post-image {
   display: block;
   height: 448px;
   overflow: hidden;
@@ -48,7 +49,8 @@
   height: 25rem !important;
   margin-top: 0 !important;
 }
-.tag .post-image {
+.tag .post-image,
+.category .post-image {
   height: 248px !important;
   margin-top: 0 !important;
 }
@@ -58,12 +60,14 @@
 .author .post-image > .container {
   height: 25rem;
 }
-.tag .post-image > .container {
+.tag .post-image > .container,
+.category .post-image > .container {
   height: 248px;
 }
 .single .post-image .bg-image,
 .author .post-image .bg-image,
-.tag .post-image .bg-image {
+.tag .post-image .bg-image,
+.category .post-image .bg-image {
   position: absolute;
   z-index: -100;
   background-size: cover;
@@ -73,7 +77,8 @@
 .overlay, 
 .single .post-image .bg-image,
 .author .post-image .bg-image,
-.tag .post-image .bg-image {
+.tag .post-image .bg-image,
+.category .post-image .bg-image {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -96,7 +101,8 @@
 }
 .single .post-image .center,
 .author .post-image .center,
-.tag .post-image .center {
+.tag .post-image .center,
+.category .post-image .center {
   text-align: center;
   margin: 0 auto;
   filter: none;
@@ -382,7 +388,11 @@
 .post-content .entry-content table {
   font-size: 0.875rem;
 }
-.post-content .entry-content table p {
+.post-content .entry-content table p,
+.post-content .entry-content table ul,
+.post-content .entry-content table ol,
+.post-content .entry-content table ul ul,
+.post-content .entry-content table ol ol {
   padding: 0;
 }
 @media (min-width: @screen-lg-min) {
@@ -397,7 +407,7 @@
   .autores,
   .related-out,
   .post-tags {
-    padding: 0 5rem;
+    padding: 0 7rem;
   }
   .post-content .entry-content {
     font-size: 1.25rem;
@@ -639,6 +649,13 @@
 }
 
 /* SIDEBAR POST */
+.sidebar-post>h3 {
+  text-align: center;
+  font-family: @title-font,sans-serif;
+  font-weight: 700;
+  font-size: 1.875rem;
+  margin-bottom: 32px;
+}
 .sidebar-post article {
   margin-bottom: 16px;
   position:relative;
