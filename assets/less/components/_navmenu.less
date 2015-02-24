@@ -25,7 +25,7 @@
 // Navmenu links
 @navmenu-default-link-color:                #fff;
 @navmenu-default-link-hover-color:          #fff;
-@navmenu-default-link-hover-bg:             transparent;
+@navmenu-default-link-hover-bg:             darken(@navmenu-default-bg, 6.5%);
 @navmenu-default-link-active-color:         #555;
 @navmenu-default-link-active-bg:            darken(@navmenu-default-bg, 6.5%);
 @navmenu-default-link-disabled-color:       #ccc;
@@ -34,7 +34,7 @@
 // Navmenu brand label
 @navmenu-default-brand-color:               @navmenu-default-link-color;
 @navmenu-default-brand-hover-color:         darken(@navmenu-default-link-color, 10%);
-@navmenu-default-brand-hover-bg:            transparent;
+@navmenu-default-brand-hover-bg:            darken(@navmenu-default-bg, 6.5%);
 
 
 // Inverted navmenu
@@ -47,7 +47,7 @@
 // Inverted navmenu links
 @navmenu-inverse-link-color:                 @gray-light;
 @navmenu-inverse-link-hover-color:           #fff;
-@navmenu-inverse-link-hover-bg:              transparent;
+@navmenu-inverse-link-hover-bg:              darken(@navmenu-default-bg, 6.5%);
 @navmenu-inverse-link-active-color:          @navmenu-inverse-link-hover-color;
 @navmenu-inverse-link-active-bg:             darken(@navmenu-inverse-bg, 10%);
 @navmenu-inverse-link-disabled-color:        #444;
@@ -56,7 +56,7 @@
 // Inverted navmenu brand label
 @navmenu-inverse-brand-color:                @navmenu-inverse-link-color;
 @navmenu-inverse-brand-hover-color:          #fff;
-@navmenu-inverse-brand-hover-bg:             transparent;
+@navmenu-inverse-brand-hover-bg:             darken(@navmenu-default-bg, 6.5%);
 
 // Inverted navmenu search
 // Normal navmenu needs no special styles or vars
@@ -206,7 +206,7 @@
       &:hover,
       &:focus {
         background-color: @navmenu-default-link-active-bg;
-        color: @navmenu-default-link-active-color;
+        color: @navmenu-default-link-color;
         .caret {
           border-top-color: @navmenu-default-link-active-color;
           border-bottom-color: @navmenu-default-link-active-color;
@@ -238,6 +238,7 @@
       &:focus {
         color: @navmenu-default-link-hover-color;
         background-color: @navmenu-default-link-hover-bg;
+        transition: background-color .2s linear;
       }
     }
     > .active > a {
@@ -292,7 +293,7 @@
       &:hover,
       &:focus {
         background-color: @navmenu-inverse-link-active-bg;
-        color: @navmenu-inverse-link-active-color;
+        color: @navmenu-default-link-color;
         .caret {
           border-top-color: @navmenu-inverse-link-active-color;
           border-bottom-color: @navmenu-inverse-link-active-color;

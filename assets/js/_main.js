@@ -480,6 +480,7 @@ var Gestiopolis = {
     init: function() {
       $('table').addClass('table table-bordered');
       $('table td').removeAttr( "width" );
+      $('table').removeAttr( "style" );
       // JavaScript to be fired on a single post
       if (serverval.manage_options == "1" && serverval.userlogin == "1"){
         /*$(document).on('edit_started', function(ev) {

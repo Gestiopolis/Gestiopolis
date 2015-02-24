@@ -527,7 +527,7 @@
   border: 1px solid #edede4;
   border-top:none;
   padding:1rem;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
 }
 .posts-home article:hover .wrapper-content {
   border: 1px solid #d5d5d5;
@@ -564,17 +564,12 @@
   color: #1c1c1c;
 }
 .posts-home .autor {
-  font:700 0.725rem @title-font, sans-serif !important;
+  font:700 1rem @title-font, sans-serif !important;
   line-height: 32px !important;
   color:#1c1c1c;
   float: left;
   margin-bottom:1rem;
 }
-/*.posts-home .avatar {
-  border-radius:100%;
-  float:left;
-  margin-right: 4px;
-}*/
 .posts-home .author-color {
   float:left;
   margin-right: 4px;
@@ -586,7 +581,7 @@
 .posts-home .autor,
 .posts-home .fecha,
 .posts-home .tiempo {
-  font:400 0.875rem @text-font, sans-serif;
+  font:400 1.125rem @text-font, sans-serif;
   line-height:1.2;
 }
 .posts-home .post-content {
@@ -595,19 +590,28 @@
   margin-top: 0;
   margin-bottom:1rem;
   padding:0;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
 }
 .posts-home .wrapper-meta {
-  //background:#edede4;
-  font:400 0.875rem @text-font, sans-serif;
-  //padding: 16px;
+  font:400 1.125rem @text-font, sans-serif;
 }
-/*.posts-home  article:hover .wrapper-meta {
-  background:#d5d5d5;
-}*/
+@media (min-width: @screen-sm-min) {
+  .posts-home .autor {
+    font-size: 0.725rem !important;
+  }
+  .posts-home .fecha,
+  .posts-home .tiempo,
+  .posts-home .post-content,
+  .posts-home .wrapper-meta,
+  .posts-home .wrapper-meta i,
+  .posts-home .wrapper-content {
+    font-size: 0.875rem !important;
+  }
+}
+
 .posts-home .wrapper-meta i {
   color: #e76d65;
-  font-size:0.875rem;
+  font-size:1rem;
   margin-left:4px;
 }
 .posts-home .tags {
