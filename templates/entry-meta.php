@@ -7,9 +7,9 @@
 </div>
 <ul class="list-unstyled">
   <li><?php 
-  $category = get_the_category(); 
-  if($category[0]){
-    echo '<i class="fa icon-cat-'.$category[0]->term_id.'"></i> <a href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a>';
+  $categories = get_the_category(); 
+  foreach($categories as $category){
+    echo '<i class="fa icon-cat-'.$category->term_id.'"></i> <a href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a>';
   }
   ?></li>
   <li><time class="updated" datetime="<?php echo get_the_time('c'); ?>"><i class="fa fa-calendar"></i> <?php echo get_the_date('d.m.Y'); ?></time></li>
