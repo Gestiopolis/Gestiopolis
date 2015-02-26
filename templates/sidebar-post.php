@@ -7,10 +7,10 @@
     $postsnot = array();
     $postsnot[] = $post->ID;
     $query1 = ci_get_related_posts_1( $post->ID, $show );
-    $countp= 1;
+    $countp = 1;
         if( $query1->have_posts() ) { while ($query1->have_posts()) : $query1->the_post(); 
           $postsnot[] = $post->ID;
-          if($countp==1) continue;
+          if($countp != 1){
           ?>
     <article id="post-<?php the_ID(); ?>" class="post">
       <div class="wrapper-img">
@@ -27,8 +27,8 @@
         </a>
       </div>
     </article>
-    <?php
-      $countp++;
+    <?php }
+      $countp++; 
      endwhile;?>
     <?php } 
     wp_reset_query(); 
