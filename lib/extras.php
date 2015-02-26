@@ -1172,6 +1172,7 @@ function ci_get_related_posts_1( $post_id, $related_count, $args = array() ) {
     'post__not_in'   => array( $post_id ),
     'orderby'        => $args['orderby'],
     's'							 => $post->post_title,
+    'offset'				 => 1,
     'tax_query'      => array()
   );
 
