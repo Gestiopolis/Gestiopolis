@@ -31,7 +31,7 @@
                 <a type="button" class="btn btn-default prevpage" href="#" title="Página Anterior"><i class="fa fa-chevron-up"></i></a>
                 <a type="button" class="btn btn-default nextpage" href="#" title="Página Siguiente"><i class="fa fa-chevron-down"></i></a>
               </div>&nbsp;&nbsp;
-              Página <input class="pagen" value="0" name="gopage" maxlength="4" size="1"> de <span id="pages"></span>
+              Página <input class="pagen" value="0" name="gopage" maxlength="4" size="4"> de <span id="pages"></span>
               <div class="btn-group pull-right">
                   <a type="button" title="Descargar archivo" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-download-alt"></span> Descargar <span class="caret"></span></a>
                   <ul class="dropdown-menu list-unstyled" role="menu">
