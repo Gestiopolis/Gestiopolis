@@ -40,7 +40,7 @@
               <input type="hidden" name="cx" value="002900072100095058217:mp7ncjp0apo">
               <input type="hidden" name="cof" value="FORID:10">
               <input type="hidden" name="ie" value="UTF-8">
-              <input class="sb-search-input" placeholder="Ingresa tu búsqueda..." type="search" value="" name="s" id="search">
+              <input class="sb-search-input elasticpress-autosuggest" placeholder="Ingresa tu búsqueda..." type="search" value="" name="s" id="search">
               <input class="sb-search-submit" type="submit" value="">
               <span class="sb-icon-search"><i class="fa fa-search"></i><span class="hidden-xs"> Busca</span></span>
             </form>
