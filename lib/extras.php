@@ -1242,7 +1242,18 @@ function footer_lazyload() {
     echo '
 <script type="text/javascript">
     (function($){
-      $("img.lazy").lazyload();
+      $(".single img.lazy").show().lazyload({
+			  effect : "fadeIn",
+			  failure_limit : 15
+			});
+			$(".home img.lazy, .category img.lazy").show().lazyload({
+			  effect : "fadeIn",
+    		container: $("#recientes")
+			});
+			$(".author img.lazy, .tag img.lazy").show().lazyload({
+			  effect : "fadeIn",
+    		container: $("#publicaciones")
+			});
     })(jQuery);
 </script>
 ';
