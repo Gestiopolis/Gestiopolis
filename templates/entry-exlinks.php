@@ -9,9 +9,12 @@ if(!is_array($exlinks)){?>
   </div>
   <?php } ?>
   <div class="related-out">
-    <h2><i class="fa fa-external-link-square"></i> Más en la web</h2>
-    <?php
-    echo get_post_meta($post->ID, "exlinks_value", true);?>
+    <div>
+      <i class="fa fa-link"></i>
+      <strong>Más para aprender en la web</strong>
+      <?php
+      echo get_post_meta($post->ID, "exlinks_value", true);?>
+    </div>
   </div>
 <?php 
 }else if(empty($exlinks)){
@@ -82,14 +85,17 @@ if(!is_array($exlinks)){?>
 <?php }?>
 
 <div class="related-out">
-  <h2><i class="fa fa-external-link-square"></i> Más en la web</h2>
-  <ul>
-  <?php 
-  foreach($exlinks as $q){
-    echo "<li><a rel=\"nofollow\" href=\"",$q['exlink'],"\" title =\"",$q['titulo'],"\">",$q['titulo'],"</a><span><a href=\"#\" data-toggle=\"tooltip\" title=\"Reportar enlace roto\"><i class=\"fa fa-chain-broken\"></i></a></span></li>";
-  }
-  ?>
-  </ul>
+  <div>
+    <i class="fa fa-link"></i>
+    <strong>Más para aprender en la web</strong>
+    <ul>
+    <?php 
+    foreach($exlinks as $q){
+      echo "<li><a rel=\"nofollow\" href=\"",$q['exlink'],"\" title =\"",$q['titulo'],"\">",$q['titulo'],"</a><span><a href=\"#\" data-toggle=\"tooltip\" title=\"Reportar enlace roto\"><i class=\"fa fa-chain-broken\"></i></a></span></li>";
+    }
+    ?>
+    </ul>
+  </div>
 </div>
 <?php } }else{ ?>
 <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>

@@ -62,55 +62,69 @@
               <?php the_content(); ?>
             </div>
             <div id="autores" class="autores">
-              <h2><i class="fa fa-user"></i> Sobre el autor</h2>
-              <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
-              <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><strong><?php echo get_post_meta($post->ID, "author-name_value", true); ?></strong></a>
-              <p><em><?php echo get_post_meta($post->ID, "author-bio_value", true); ?></em></p>
-              <?php else : ?>
-              <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><strong><?php echo get_the_author(); ?></strong></a>
-              <p><em><?php echo get_the_author_meta('description'); ?></em></p>
-              <?php endif; ?>
+              <div>
+                <!--<h2><i class="fa fa-user"></i> Sobre el autor</h2>-->
+                <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
+                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn">
+                  <?php echo get_author_color_id(); ?>
+                  <strong><?php echo get_post_meta($post->ID, "author-name_value", true); ?></strong>
+                </a>
+                <p class="selectionShareable">
+                  <em><?php echo get_post_meta($post->ID, "author-bio_value", true); ?></em>
+                </p>
+                <?php else : ?>
+                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn">
+                  <?php echo get_author_color_id(); ?>
+                  <strong><?php echo get_the_author(); ?></strong>
+                </a>
+                <p class="selectionShareable">
+                  <em><?php echo get_the_author_meta('description'); ?></em>
+                </p>
+                <?php endif; ?>
+              </div>
             </div>
+            <div>Imagen del encabezado cortesía de #Nombre en Flickr</div>
             <div class="post-tags">
               <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
               <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
             </div><!-- .post-tags -->
+
+            <div class="quotes">
+              <div>
+                <span class="author-color"><i class="fa fa-thumb-tack"></i></span>
+                <strong>Cita esta página</strong>
+                <ul>
+                  <li class="active"><a href="#apa" data-toggle="tab">APA</a></li>
+                  <li><a href="#mla" data-toggle="tab">MLA</a></li>
+                  <li><a href="#chicago" data-toggle="tab">CHICAGO</a></li>
+                  <li><a href="#icontec" data-toggle="tab">ICONTEC</a></li>
+                </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="apa">
+                  <?php echo get_the_author_meta('last_name').' '.get_the_author_meta('first_name'); ?>. (<?php echo get_the_date('Y, F j'); ?>). <em><?php echo get_the_title(); ?></em>. Recuperado de <?php echo get_permalink(); ?> 
+                </div>
+                <div class="tab-pane" id="mla">
+                  <?php echo get_the_author_meta('last_name').', '.get_the_author_meta('first_name'); ?>. "<?php echo get_the_title(); ?>". <em><?php echo get_bloginfo('name'); ?></em>. <?php echo get_the_date('j F Y'); ?>. Web. &lt;<?php echo get_permalink(); ?>&gt;.
+                </div>
+                <div class="tab-pane" id="chicago">
+                  <?php echo get_the_author_meta('last_name').', '.get_the_author_meta('first_name'); ?>. "<?php echo get_the_title(); ?>". <em><?php echo get_bloginfo('name'); ?></em>. <?php echo get_the_date('F j, Y'); ?>. Consultado el <?php actual_date(); ?>. <?php echo get_permalink(); ?>.
+                </div>
+                <div class="tab-pane" id="icontec">
+                  <?php echo get_the_author_meta('last_name').', '.get_the_author_meta('first_name'); ?>. <?php echo get_the_title(); ?> [en línea]. &lt;<?php echo get_permalink(); ?>&gt; [Citado el <?php actual_date(); ?>].
+                </div>
+              </div>
+              <a href="#" class="btn btn-copiar">Copiar</a>
+            </div>
+          </div><!-- .quotes -->
+
             <?php get_template_part('templates/entry-exlinks'); ?>
-            <div class="related-in">
+            <!--<div class="related-in">
               <h2><i class="fa fa-thumb-tack"></i> Más sobre este tema</h2>
-            </div><!-- .related-in -->
+            </div>--><!-- .related-in -->
           </div>
           <footer>
             <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
           </footer>
-
-          
-
-          <div class="quotes">
-            <h2><i class="fa fa-bookmark"></i> Cita esta publicación</h2>
-            <ul>
-              <li class="active"><a href="#apa" data-toggle="tab">APA</a></li>
-              <li><a href="#mla" data-toggle="tab">MLA</a></li>
-              <li><a href="#chicago" data-toggle="tab">CHICAGO</a></li>
-              <li><a href="#icontec" data-toggle="tab">ICONTEC</a></li>
-            </ul>
-            <div class="tab-content">
-              <div class="tab-pane active" id="apa">
-                <?php echo get_the_author_meta('last_name').' '.get_the_author_meta('first_name'); ?>. (<?php echo get_the_date('Y, F j'); ?>). <em><?php echo get_the_title(); ?></em>. Recuperado de <?php echo get_permalink(); ?> 
-              </div>
-              <div class="tab-pane" id="mla">
-                <?php echo get_the_author_meta('last_name').', '.get_the_author_meta('first_name'); ?>. "<?php echo get_the_title(); ?>". <em><?php echo get_bloginfo('name'); ?></em>. <?php echo get_the_date('j F Y'); ?>. Web. &lt;<?php echo get_permalink(); ?>&gt;.
-              </div>
-              <div class="tab-pane" id="chicago">
-                <?php echo get_the_author_meta('last_name').', '.get_the_author_meta('first_name'); ?>. "<?php echo get_the_title(); ?>". <em><?php echo get_bloginfo('name'); ?></em>. <?php echo get_the_date('F j, Y'); ?>. Consultado el <?php actual_date(); ?>. <?php echo get_permalink(); ?>.
-              </div>
-              <div class="tab-pane" id="icontec">
-                <?php echo get_the_author_meta('last_name').', '.get_the_author_meta('first_name'); ?>. <?php echo get_the_title(); ?> [en línea]. &lt;<?php echo get_permalink(); ?>&gt; [Citado el <?php actual_date(); ?>].
-              </div>
-            </div>
-            <a href="#" class="btn btn-copiar">Copiar</a>
-          </div><!-- .quotes -->
-
           <div class="comentarios">
             <h2><i class="fa fa-comments"></i> Comentarios</h2>
             <?php comments_template('/templates/comments.php'); ?>
