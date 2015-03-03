@@ -14,7 +14,4 @@
   ?>
   <li><time class="updated" datetime="<?php echo get_the_time('c'); ?>"><i class="fa fa-calendar"></i> <?php echo get_the_date('d.m.Y'); ?></time></li>
   <li class="estimate-time"><i class="fa fa-clock-o"></i> <?php echo estimate_time();?> de lectura</li>
-  <?php if (get_post_meta($post->ID, "image_url_value", true) != "") { ?>
-  <li class="image-credit"><a href="<?php echo get_post_meta($post->ID, "image_url_value", $single = true); ?>" target="_blank"><i class="fa fa-camera"></i> <?php echo get_post_meta($post->ID, "image_author_t_value", true); ?></a></li>
-  <?php } ?>
 </ul>

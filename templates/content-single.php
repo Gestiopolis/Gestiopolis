@@ -83,7 +83,9 @@
                 <?php endif; ?>
               </div>
             </div>
-            <div>Imagen del encabezado cortesía de #Nombre en Flickr</div>
+            <?php if (get_post_meta($post->ID, "image_url_value", true) != "") { ?>
+            <div class="image-credit">Imagen del encabezado cortesía de <a href="<?php echo get_post_meta($post->ID, "image_url_value", $single = true); ?>" target="_blank"><?php echo get_post_meta($post->ID, "image_author_t_value", true); ?></a> en Flickr</div>
+            <?php } ?>
             <div class="post-tags">
               <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
               <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
@@ -134,6 +136,65 @@
       <div class="hidden-xs hidden-sm col-md-3">
         <?php get_template_part('templates/sidebar-post'); ?>
       </div><!--.col-sm-3-->
+    </div>
+    <div class="row title-section">
+      <div class="col-sm-12">
+        <?php
+          $category = get_the_category($post->ID);
+          $category_id = $category[0]->term_id;
+        ?>
+        <h2>También en <i class="fa icon-cat-<?php echo $category_id; ?> cat-col-<?php echo $category_id; ?>"></i> <?php echo $category[0]->name; ?></h2>
+      </div>
+    </div>
+    <div class="row posts-home">
+      <div class="col-sm-12">
+        <div id="recientes">
+          <?php
+            //$postp       = get_post( $post->ID );
+            //$taxonomies = get_object_taxonomies( $postp, 'names' );
+            $recent_args = array(
+              'post_type'      => get_post_type( $post->ID ),
+              'posts_per_page' => 16,
+              'post_status'    => 'publish',
+              'post__not_in'   => array($post->ID),
+              'orderby'        => 'date',
+              'paged'          => $paged,
+              'cat'      => $category_id
+            );
+            /*foreach( $taxonomies as $taxonomy ) {
+              $terms = get_the_terms( $post->ID, $taxonomy );
+              if ( empty( $terms ) ) continue;
+              $term_list = wp_list_pluck( $terms, 'slug' );
+              $recent_args['tax_query'][] = array(
+                  'taxonomy' => $taxonomy,
+                  'field'    => 'slug',
+                  'terms'    => $term_list
+              );
+            }
+
+            if( count( $recent_args['tax_query'] ) > 1 ) {
+              $recent_args['tax_query']['relation'] = 'OR';
+            }*/
+            $the_query = new WP_Query( $recent_args );
+
+            if ( $the_query->have_posts() ) :
+              // Start the Loop.
+              while ( $the_query->have_posts() ) : $the_query->the_post();
+
+                /*
+                 * Include the post format-specific template for the content. If you want to
+                 * use this in a child theme, then include a file called called content-___.php
+                 * (where ___ is the post format) and that will be used instead.
+                 */
+                get_template_part( 'templates/content', 'recents' );
+            
+              endwhile;
+              ?>
+            <?php endif;
+            wp_reset_query(); 
+            wp_reset_postdata(); ?>
+        </div><!-- #recientes -->
+      </div>
     </div>
   </div>
 <?php endwhile; ?>
