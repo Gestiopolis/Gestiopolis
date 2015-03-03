@@ -154,7 +154,7 @@
             //$taxonomies = get_object_taxonomies( $postp, 'names' );
             $recent_args = array(
               'post_type'      => get_post_type( $post->ID ),
-              'posts_per_page' => 16,
+              'posts_per_page' => 12,
               'post_status'    => 'publish',
               'post__not_in'   => array($post->ID),
               'orderby'        => 'date',
