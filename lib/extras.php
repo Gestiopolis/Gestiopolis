@@ -1238,6 +1238,33 @@ function ci_get_related_posts_2( $post_id, $postsnot, $related_count, $paged, $a
   }
 }
 
+function footer_lazyload() {
+    echo '
+<script type="text/javascript">
+    (function($){
+      $("img.lazy").lazyload();
+    })(jQuery);
+</script>
+';
+}
+add_action('wp_footer', 'footer_lazyload', 100);
+
+function filter_lazyload($content) {
+    return preg_replace_callback('/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', 'preg_lazyload', $content);
+}
+add_filter('the_content', 'filter_lazyload');
+
+function preg_lazyload($img_match) {
+ 
+  $img_replace = $img_match[1] . 'src="' . get_stylesheet_directory_uri() . '/assets/img/grey.gif" data-original' . substr($img_match[2], 3) . $img_match[3];
+
+  $img_replace = preg_replace('/class\s*=\s*"/i', 'class="lazy ', $img_replace);
+
+  $img_replace .= '<noscript>' . $img_match[0] . '</noscript>';
+  return $img_replace;
+}
+
+
 //Función de Wp_Imager https://github.com/Jany-M/WP-Imager
 require_once ('functions/wp-imager.php');
 //Archivos necesarios para la cabecera en la administración
