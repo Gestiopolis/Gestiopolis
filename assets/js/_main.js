@@ -105,6 +105,9 @@ var Gestiopolis = {
   // Home page
   home: {
     init: function() {
+      $("img.lazy").show().lazyload({
+        effect : "fadeIn"
+      });
       // JavaScript to be fired on the home page
       //1. Grid Ejes temáticos Home
       //Grid.init();
@@ -159,12 +162,18 @@ var Gestiopolis = {
         $newElems.imagesLoaded(function(){
           $newElems.fadeIn();
           $container.isotope( 'appended', $newElems );
+          $("img.lazy").show().lazyload({
+            effect : "fadeIn"
+          });
         });
       });
     }
   },
   author: { //Página del autor
     init: function() {
+      $("img.lazy").show().lazyload({
+        effect : "fadeIn"
+      });
       var $conta3 = $('#publicaciones');
       // Fire Isotope only when images are loaded
       $conta3.imagesLoaded(function(){
@@ -191,12 +200,18 @@ var Gestiopolis = {
         $newElems.imagesLoaded(function(){
           $newElems.fadeIn();
           $conta3.isotope( 'appended', $newElems );
+          $("img.lazy").show().lazyload({
+            effect : "fadeIn"
+          });
         });
       });
     }
   },
   category: { //Página del autor
     init: function() {
+      $("img.lazy").show().lazyload({
+        effect : "fadeIn"
+      });
       //1. Slider home autores
       $('#myCarousel').carousel({
         interval: false
@@ -245,12 +260,18 @@ var Gestiopolis = {
         $newElems.imagesLoaded(function(){
           $newElems.fadeIn();
           $conta1.isotope( 'appended', $newElems );
+          $("img.lazy").show().lazyload({
+            effect : "fadeIn"
+          });
         });
       });
     }
   },
   tag: { //Página del autor
     init: function() {
+      $("img.lazy").show().lazyload({
+        effect : "fadeIn"
+      });
       var $conta2 = $('#publicaciones');
       // Fire Isotope only when images are loaded
       $conta2.imagesLoaded(function(){
@@ -277,6 +298,9 @@ var Gestiopolis = {
         $newElems.imagesLoaded(function(){
           $newElems.fadeIn();
           $conta2.isotope( 'appended', $newElems );
+          $("img.lazy").show().lazyload({
+            effect : "fadeIn"
+          });
         });
       });
     }
