@@ -83,9 +83,6 @@
                 <?php endif; ?>
               </div>
             </div>
-            <?php if (get_post_meta($post->ID, "image_url_value", true) != "") { ?>
-            <div class="image-credit">Imagen del encabezado cortesía de <a href="<?php echo get_post_meta($post->ID, "image_url_value", $single = true); ?>" target="_blank"><?php echo get_post_meta($post->ID, "image_author_t_value", true); ?></a> en Flickr</div>
-            <?php } ?>
             <div class="post-tags">
               <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
               <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
@@ -123,12 +120,15 @@
             <!--<div class="related-in">
               <h2><i class="fa fa-thumb-tack"></i> Más sobre este tema</h2>
             </div>--><!-- .related-in -->
+            <?php if (get_post_meta($post->ID, "image_url_value", true) != "") { ?>
+            <div class="image-credit"><i class="fa fa-camera"></i> Imagen del encabezado cortesía de <a href="<?php echo get_post_meta($post->ID, "image_url_value", $single = true); ?>" target="_blank"><?php echo get_post_meta($post->ID, "image_author_t_value", true); ?></a> en Flickr</div>
+            <?php } ?>
           </div>
           <footer>
             <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
           </footer>
           <div class="comentarios">
-            <a href="#" class="btn btn-block btn-primary btn-lg cerrado"><span>Ver los comentarios</span><span style="display:none;">Esconder los comentarios</span></a>
+            <a href="#" class="btn btn-block btn-primary btn-lg cerrado"><span>Ver los comentarios</span><span style="display:none;">Ocultar los comentarios</span></a>
             <div class="comments-wrapper">
               <h2><i class="fa fa-comments"></i> Comentarios</h2>
               <?php comments_template('/templates/comments.php'); ?>
