@@ -36,8 +36,8 @@
                   <a type="button" title="Descargar archivo" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-download-alt"></span> Descargar <span class="caret"></span></a>
                   <ul class="dropdown-menu list-unstyled" role="menu">
                     <li><a href="<?php echo get_post_meta($post->ID, 'all2html_docu', true); ?>">Original</a></li>
-                    <?php if (get_post_meta($post->ID, "all2html_zip", true) != '') { ?>
-                    <li><a href="<?php echo home_url(get_post_meta($post->ID, 'all2html_zip', true)); ?>">Comprimido</a></li>
+                    <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
+                    <li><a href="<?php echo home_url(get_post_meta($post->ID, 'downloads_value', true)); ?>">Comprimido</a></li>
                     <?php } ?>
                     <?php if (get_post_meta($post->ID, "all2html_ext", true) != 'pdf') { ?>
                     <li><a href="<?php echo home_url(get_post_meta($post->ID, 'all2html_pdf', true)); ?>">PDF</a></li>
