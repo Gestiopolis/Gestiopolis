@@ -112,7 +112,7 @@
                   <?php echo get_the_author_meta('last_name').', '.get_the_author_meta('first_name'); ?>. <?php echo get_the_title(); ?> [en línea]. &lt;<?php echo get_permalink(); ?>&gt; [Citado el <?php actual_date(); ?>].
                 </div>
               </div>
-              <a href="#" id="copytext" class="btn btn-copiar" data-clipboard-target="apa">Copiar</a>
+              <a href="javascript:;" id="copytext" class="btn btn-copiar" data-clipboard-target="apa">Copiar</a>
               <div class="hidden alert alert-success" role="alert">¡Texto copiado al portapapeles!</div>
             </div>
           </div><!-- .quotes -->
