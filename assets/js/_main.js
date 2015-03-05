@@ -510,6 +510,18 @@ var Gestiopolis = {
         $(".comments-wrapper").toggle('fast', 'linear');
         $(".comentarios > a.btn-block span").toggle();
       });
+
+      $('.related-out li span a').on('click', function(e) {
+        e.preventDefault();
+        var idpost = $(this).data('el-pid');
+        var linkid = $(this).attr('class');
+        var titlelink = $(this).data('el-title');
+        var urllink = $(this).data('el-url');
+        $.post(serverval.template_directory+'/lib/functions/report-link.php', {id:linkid, postid:idpost, title:titlelink, url:urllink}).done(function() {
+            window.alert("Se ha reportado el enlace roto con éxito");
+          });
+      });
+
       // JavaScript to be fired on a single post
       if (serverval.manage_options == "1" && serverval.userlogin == "1"){
         /*$(document).on('edit_started', function(ev) {

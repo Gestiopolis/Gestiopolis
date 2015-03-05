@@ -33,7 +33,7 @@ if(!is_array($exlinks)){?>
     <p id="exlinks-o">
     <label for="exlinks_t[]">T&iacute;tulo del Enlace:</label><input type="text" name="exlinks_t[]" class="gesti-input" /><br />
     <label for="exlinks_u[]">URL del enlace:</label><input type="text" name="exlinks_u[]" class="gesti-input" /><br />
-    &nbsp;&nbsp;<a href="javascript:;" class="borrarjq" rel="exlinks-o">Borrar Enlace</a>
+    &nbsp;&nbsp;<a href="javascript:;" class="borrarjq" rel="exlinks-o" data-el->Borrar Enlace</a>
     </p>
     <?php for($m=0; $m<20; $m++){
     echo '<p id="exlinks-',$m,'" style="display:none">';
@@ -90,8 +90,10 @@ if(!is_array($exlinks)){?>
     <strong>Más para aprender en la web</strong>
     <ul>
     <?php 
+    $number = 1;
     foreach($exlinks as $q){
-      echo "<li><a rel=\"nofollow\" href=\"",$q['exlink'],"\" title =\"",$q['titulo'],"\">",$q['titulo'],"</a><span><a href=\"#\" data-toggle=\"tooltip\" title=\"Reportar enlace roto\"><i class=\"fa fa-chain-broken\"></i></a></span></li>";
+      echo "<li><a rel=\"nofollow\" href=\"",$q['exlink'],"\" title =\"",$q['titulo'],"\" class=\"el-",$number,"\">",$q['titulo'],"</a><span><a class=\"el-",$number,"\" href=\"javascript:;\" data-toggle=\"tooltip\" data-el-title=\"",$q['titulo'],"\" data-el-url=\"",$q['exlink'],"\" data-el-pid=\"",$post->ID,"\" title=\"Reportar enlace roto\"><i class=\"fa fa-chain-broken\"></i></a></span></li>";
+      $number++;
     }
     ?>
     </ul>
