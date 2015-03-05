@@ -113,6 +113,7 @@
                 </div>
               </div>
               <a href="#" id="copytext" class="btn btn-copiar" data-clipboard-target="apa">Copiar</a>
+              <div class="hidden alert alert-success" role="alert">¡Texto copiado al portapapeles!</div>
             </div>
           </div><!-- .quotes -->
 

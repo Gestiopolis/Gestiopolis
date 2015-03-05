@@ -539,8 +539,11 @@ var Gestiopolis = {
           client.on( "aftercopy", function( event ) {
           // `this` === `client`
           // `event.target` === the element that was clicked
-          event.target.style.display = "none";
-          alert("Texto copiado: " + event.data["text/plain"] );
+          //event.target.style.display = "none";
+          $('.quotes .alert').removeClass('hidden').addClass('show');
+          setTimeout(function(){
+            $('.quotes .alert').removeClass('show').addClass('hidden');
+          }, 2000);
         });
       });
 
