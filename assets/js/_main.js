@@ -521,8 +521,8 @@ var Gestiopolis = {
         console.info(linkid);
         console.info(titlelink);
         console.info(urllink);
-        $.post(serverval.template_directory+'/lib/functions/report-link.php', {id:linkid, postid:idpost, title:titlelink, url:urllink}).done(function(data) {
-            window.alert("Se ha reportado el enlace roto con éxito\n" + data);
+        $.post(serverval.template_directory+'/lib/functions/report-link.php', {id:linkid, postid:idpost, title:titlelink, url:urllink}).done(function() {
+            window.alert("Se ha reportado el enlace roto con éxito\n");
           });
       });
 
