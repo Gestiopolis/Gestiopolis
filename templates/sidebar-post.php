@@ -1,7 +1,7 @@
 <?php global $post; ?>
 <div class="right-post">
   <div class="sidebar-post">
-    <h3><i class="fa fa-thumb-tack"></i> Te recomendamos</h3>
+    <h3>Te recomendamos</h3>
     <?php 
     $show = 26;
     $postsnot = array();
