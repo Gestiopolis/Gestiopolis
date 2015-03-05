@@ -517,6 +517,10 @@ var Gestiopolis = {
         var linkid = $(this).attr('class');
         var titlelink = $(this).data('el-title');
         var urllink = $(this).data('el-url');
+        console.info(idpost);
+        console.info(linkid);
+        console.info(titlelink);
+        console.info(urllink);
         $.post(serverval.template_directory+'/lib/functions/report-link.php', {id:linkid, postid:idpost, title:titlelink, url:urllink}).done(function() {
             window.alert("Se ha reportado el enlace roto con éxito");
           });
