@@ -526,6 +526,24 @@ var Gestiopolis = {
           });
       });
 
+      $('.quotes a[data-toggle="tab"]').on('click', function () {
+        var id = $(this).attr('href').slice(1);
+        $('#copytext').data('clipboard-target', id)
+      });
+
+      // main.js
+      var client = new ZeroClipboard( document.getElementById("copytext") );
+
+      client.on( "ready", function( readyEvent ) {
+        // alert( "ZeroClipboard SWF is ready!" );
+          client.on( "aftercopy", function( event ) {
+          // `this` === `client`
+          // `event.target` === the element that was clicked
+          event.target.style.display = "none";
+          alert("Texto copiado: " + event.data["text/plain"] );
+        });
+      });
+
       // JavaScript to be fired on a single post
       if (serverval.manage_options == "1" && serverval.userlogin == "1"){
         /*$(document).on('edit_started', function(ev) {

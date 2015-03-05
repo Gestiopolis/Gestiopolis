@@ -35,7 +35,8 @@ function roots_scripts() {
       'pdfall'    => '/pdf2htmlEX/all2html.js',
       'imglo'    => '//cdn.rawgit.com/desandro/imagesloaded/master/imagesloaded.pkgd.js',
       'iso'    => '//cdn.rawgit.com/metafizzy/isotope/master/dist/isotope.pkgd.js',
-      'infi'    => '//cdn.rawgit.com/paulirish/infinite-scroll/master/wordpress-plugin/js/front-end/jquery.infinitescroll.js'
+      'infi'    => '//cdn.rawgit.com/paulirish/infinite-scroll/master/wordpress-plugin/js/front-end/jquery.infinitescroll.js',
+      'zero'    => '//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.js'
     );
   } else {
     $get_assets = file_get_contents(get_template_directory() . '/assets/manifest.json');
@@ -53,7 +54,8 @@ function roots_scripts() {
       'pdfall'    => '/pdf2htmlEX/all2html.min.js',
       'imglo'    => '//cdn.rawgit.com/desandro/imagesloaded/master/imagesloaded.pkgd.min.js',
       'iso'    => '//cdn.rawgit.com/metafizzy/isotope/master/dist/isotope.pkgd.min.js',
-      'infi'    => '//cdn.rawgit.com/paulirish/infinite-scroll/master/wordpress-plugin/js/front-end/jquery.infinitescroll.js'
+      'infi'    => '//cdn.rawgit.com/paulirish/infinite-scroll/master/wordpress-plugin/js/front-end/jquery.infinitescroll.js',
+      'zero'    => '//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js'
     );
   }
 
@@ -90,6 +92,7 @@ function roots_scripts() {
     if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {
       wp_enqueue_script('compatibility', home_url() . $assets['pdfcomp'], array(), null, false);
       wp_enqueue_script('all2html', home_url() . $assets['pdfall'], array(), null, false);
+      wp_enqueue_script('copytext', $assets['zero'], array(), array( 'jquery' ), false);
     }
   }
   if ((is_home() || is_archive() || is_author()) && !is_date() ){
