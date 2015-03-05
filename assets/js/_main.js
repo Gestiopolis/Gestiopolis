@@ -528,7 +528,7 @@ var Gestiopolis = {
 
       $('.quotes a[data-toggle="tab"]').on('click', function () {
         var id = $(this).attr('href').slice(1);
-        $('#copytext').data('clipboard-target', id)
+        $('#copytext').attr('data-clipboard-target', id);
       });
 
       // main.js
