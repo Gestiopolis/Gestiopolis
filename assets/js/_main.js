@@ -87,7 +87,7 @@ var Gestiopolis = {
         }
         //Button toTop
         $(window).scroll(function(){
-          if ($(this).scrollTop() > 1080) {
+          if ($(this).scrollTop() > 1200) {
             $('.toTop').fadeIn();
           } else {
             $('.toTop').fadeOut();
