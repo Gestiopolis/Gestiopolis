@@ -2,7 +2,7 @@
 $servidor = $_SERVER['HTTP_HOST'] == 'localhost' ? 'Gestiopolis/' : '';
 include_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor.'wp-load.php');
 
-$linkid = ( isset($_POST['id']) && (int)$_POST['id'] ) ? $_POST['id'] : false;
+$linkid = ( isset($_POST['id']) && (string)$_POST['id'] ) ? $_POST['id'] : false;
 $post_ID = ( isset($_POST['postid']) && (int)$_POST['postid'] ) ? $_POST['postid'] : false;
 $title = ( isset($_POST['title']) && (string)$_POST['title'] ) ? $_POST['title'] : false;
 $url = ( isset($_POST['url']) && (string)$_POST['url'] ) ? $_POST['url'] : false;
