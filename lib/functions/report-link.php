@@ -19,7 +19,7 @@ if($linkid && $post_ID && $title && $url){
 	$body .= '<p>Gracias por su atenci&oacute;n.</p>';
 	$headers = array('Content-Type: text/html; charset=UTF-8');
 
-	wp_mail( $to, $subject, $body, $headers );
+	$send = wp_mail( $to, $subject, $body, $headers );
 
 	// Reset content-type to avoid conflicts -- http://core.trac.wordpress.org/ticket/23578
 	remove_filter( 'wp_mail_content_type', 'set_html_content_type' );
@@ -27,7 +27,12 @@ if($linkid && $post_ID && $title && $url){
 	function set_html_content_type() {
 		return 'text/html';
 	}
-
+	$log = ($send == true) ? "wp_mail: true\n" : "wp_mail: false\n";
+	$log .= "linkid: '.$linkid.'\n";
+	$log .= "pid: '.$post_ID.'\n";
+	$log .= "title: '.$title.'\n";
+	$log .= "url: '.$url.'\n";
+	return $log;
 }else{
 	echo 'No deber&iacute;as estar aqu&iacute;';
 }
