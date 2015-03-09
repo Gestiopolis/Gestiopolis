@@ -481,7 +481,8 @@
   .post-tags,
   .image-credit,
   .quotes,
-  .comentarios {
+  .comentarios,
+  .suscripcion {
     padding: 0 7rem;
   }
   .post-content .entry-content {
@@ -505,7 +506,8 @@
   .post-tags,
   .image-credit,
   .quotes,
-  .comentarios {
+  .comentarios,
+  .suscripcion {
     padding: 0 4rem;
   }
   .post-content .entry-content {
@@ -529,7 +531,8 @@
   .post-tags,
   .image-credit,
   .quotes,
-  .comentarios {
+  .comentarios,
+  .suscripcion {
     padding: 0 3rem;
   }
   .post-content .entry-content blockquote:before {
@@ -556,7 +559,8 @@
 .comentarios h2,
 .autores h2,
 .related-out h2,
-.post-tags h2 {
+.post-tags h2,
+.suscripcion h2 {
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.5;
@@ -570,7 +574,8 @@
 .comentarios h2 i,
 .autores h2 i,
 .related-out h2 i,
-.post-tags h2 i {
+.post-tags h2 i,
+.suscripcion h2 i {
   font-size: 1.5rem;
 }
 .post-tags h2 i,
@@ -584,17 +589,20 @@
 }
 .autores,
 .related-out,
-.post-tags {
+.post-tags,
+.suscripcion {
   font-size: 1.25rem;
   float: left;
   display: block;
   width: 100%;
 }
-.autores {
+.autores,
+.suscripcion {
   margin: 32px 0;
   width: 100%;
 }
-.autores > div {
+.autores > div,
+.suscripcion > div {
   padding: 2rem;
   border: 1px solid #edede4;
   border-radius: 4px;
@@ -613,9 +621,19 @@
   font-family: @title-font, sans-serif;
   letter-spacing: -0.04em;
 }
-.autores p {
+.autores p,
+.suscripcion p {
   margin: 1rem;
   font-size: 1rem;
+}
+.suscripcion p {
+  color: #edede4;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.suscripcion .input-group {
+  width: 80%;
+  margin: 0 auto 16px auto;
 }
 .single .temas-archive {
   margin: 2rem 0 1.25rem 0;
@@ -673,12 +691,17 @@
   border-radius: 4px;
   margin-bottom: 32px;
 }
-.quotes>div {
+.quotes>div,
+.suscripcion>div {
   padding: 2rem; 
   background: #edede4;
   border-radius: 4px;
 }
-.quotes .author-color {
+.suscripcion>div {
+  background: #323232;
+}
+.quotes .author-color,
+.suscripcion .author-color {
   margin-right: .5rem;
   font-family: @title-font, sans-serif;
   height: 4rem;
@@ -691,11 +714,22 @@
 .quotes .author-color i {
   color: #4b4b57;
 }
-.quotes>div>strong {
+.suscripcion .author-color {
+  background-color: #616161;
+  text-align: center;
+}
+.suscripcion .author-color i {
+  color: #fff;
+}
+.quotes>div>strong,
+.suscripcion>div>strong {
   color: #4b4b57;
   font-family: @title-font, sans-serif;
   letter-spacing: -0.04em;
   font-size: 1.25rem;
+}
+.suscripcion>div>strong {
+  color: #fff;
 }
 .quotes ul {
   list-style: none;

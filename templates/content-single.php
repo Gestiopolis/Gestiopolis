@@ -61,6 +61,19 @@
             <div class="entry-content">
               <?php the_content(); ?>
             </div>
+            <div id="suscripcion" class="suscripcion">
+              <div>
+                <span class="author-color"><i class="fa fa-envelope"></i></span>
+                <strong>Recibe los mejores contenidos en tu email</strong>
+                <p>
+                  <em>Nos aseguraremos de seleccionar especialmente para ti sólo lo mejor de las nuevas publicaciones cada semana</em>
+                </p>
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="Que se vea y funcione como http://azumbrunnen.me/frontkit/" aria-describedby="basic-addon1">
+                  </div>
+              </div>
+            </div>
             <div id="autores" class="autores">
               <div>
                 <!--<h2><i class="fa fa-user"></i> Sobre el autor</h2>-->
