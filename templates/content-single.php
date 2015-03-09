@@ -1,9 +1,9 @@
 <?php while (have_posts()) : the_post(); ?>
   <div class="post-image">
     <?php if (get_post_meta($post->ID, "Thumbnail", true) != "") { ?>
-    <div class="bg-image" style="background-image: url(<?php echo wp_imager(1024, 448, '', 'img-responsive', false, null, true); ?>); height: 448px;"></div>
+    <div class="bg-image" style="background-image: url(<?php echo wp_imager(1024, 400, '', 'img-responsive', false, null, true); ?>); height: 400px;"></div>
     <?php } else { ?>
-    <div class="bg-image" style="background: #ccc; height: 448px;"></div>
+    <div class="bg-image" style="background: #ccc; height: 400px;"></div>
     <?php } ?>
     <div class="overlay"></div>
     <div class="vert-center-wrapper">
