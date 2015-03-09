@@ -161,7 +161,8 @@
 .entry-meta,
 .entry-edit,
 .post-tags,
-.image-credit {
+.image-credit,
+.compartelo {
   background: #fff;
   margin-top: 30px;
   position:relative;
@@ -482,7 +483,8 @@
   .image-credit,
   .quotes,
   .comentarios,
-  .suscripcion {
+  .suscripcion,
+  .compartelo {
     padding: 0 7rem;
   }
   .post-content .entry-content {
@@ -507,7 +509,8 @@
   .image-credit,
   .quotes,
   .comentarios,
-  .suscripcion {
+  .suscripcion,
+  .compartelo {
     padding: 0 4rem;
   }
   .post-content .entry-content {
@@ -532,7 +535,8 @@
   .image-credit,
   .quotes,
   .comentarios,
-  .suscripcion {
+  .suscripcion,
+  .compartelo {
     padding: 0 3rem;
   }
   .post-content .entry-content blockquote:before {
@@ -560,7 +564,8 @@
 .autores h2,
 .related-out h2,
 .post-tags h2,
-.suscripcion h2 {
+.suscripcion h2,
+.compartelo h2 {
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.5;
@@ -575,11 +580,13 @@
 .autores h2 i,
 .related-out h2 i,
 .post-tags h2 i,
-.suscripcion h2 i {
+.suscripcion h2 i,
+.compartelo h2 i {
   font-size: 1.5rem;
 }
 .post-tags h2 i,
-.related-out > div > i {
+.related-out > div > i,
+.compartelo h2 i {
   font-size: 2rem;
   margin-right: .5rem;
   margin-left: 3rem;
@@ -590,11 +597,58 @@
 .autores,
 .related-out,
 .post-tags,
-.suscripcion {
+.suscripcion,
+.compartelo {
   font-size: 1.25rem;
   float: left;
   display: block;
   width: 100%;
+  margin-bottom:30px;
+}
+.compartelo ul {
+  text-align:center;
+}
+.compartelo ul li {
+  display: inline-block;
+}
+.compartelo ul a {
+  background: #ccc;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 2px;
+  margin-right: 5px;
+    padding: 10px 16px;
+}
+.compartelo .facebook {
+  background: @facebook-color;
+}
+.compartelo .facebook:hover {
+  background: @facebook-hover;
+}
+.compartelo .twitter {
+  background: @twitter-color;
+}
+.compartelo .twitter:hover {
+  background: @twitter-hover;
+}
+.compartelo .google {
+  background: @google-color;
+}
+.compartelo .google:hover {
+  background: @google-hover;
+}
+.compartelo .linkedin {
+  background: @linkedin-color;
+}
+.compartelo .linkedin:hover {
+  background: @linkedin-hover;
+}
+.compartelo .more {
+  background: @more-color;
+}
+.compartelo .more:hover {
+  background: @more-hover;
 }
 .autores,
 .suscripcion {

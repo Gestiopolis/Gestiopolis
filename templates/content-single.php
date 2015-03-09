@@ -74,6 +74,16 @@
                   </div>
               </div>
             </div>
+            <div class="compartelo">
+              <h2><i class="fa fa-share"></i> Compártelo con tu mundo</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="btn facebook"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+                <li><a href="#" class="btn twitter"><i class="fa fa-twitter-square"></i> Twitter</a></li>
+                <li><a href="#" class="btn google"><i class="fa fa-google-plus-square"></i> Google +</a></li>
+                <li><a href="#" class="btn linkedin"><i class="fa fa-linkedin-square"></i> Linkedin</a></li>
+                <li><a href="#" class="btn more"><i class="fa fa-plus-square"></i></a></li>
+              </ul>
+            </div><!-- .post-tags -->
             <div id="autores" class="autores">
               <div>
                 <!--<h2><i class="fa fa-user"></i> Sobre el autor</h2>-->
