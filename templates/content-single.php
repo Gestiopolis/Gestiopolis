@@ -77,10 +77,12 @@
             <div class="compartelo">
               <h2><i class="fa fa-share"></i> Compártelo con tu mundo</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="btn facebook"><i class="fa fa-facebook-square"></i> Facebook</a></li>
-                <li><a href="#" class="btn twitter"><i class="fa fa-twitter-square"></i> Twitter</a></li>
-                <li><a href="#" class="btn google"><i class="fa fa-google-plus-square"></i> Google +</a></li>
-                <li><a href="#" class="btn linkedin"><i class="fa fa-linkedin-square"></i> Linkedin</a></li>
+                <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&layout=link&appId=220995104693477" class="btn facebook"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+                <li><a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink());?>&amp;text=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
+ ?>&amp;via=gestiopoliscom" class="btn twitter"><i class="fa fa-twitter-square"></i> Twitter</a></li>
+                <li><a target="_blank" href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink()); ?>" class="btn google"><i class="fa fa-google-plus-square"></i> Google +</a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(get_permalink()); ?>&title=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
+ ?>" class="btn linkedin"><i class="fa fa-linkedin-square"></i> Linkedin</a></li>
                 <li><a href="#" class="btn more"><i class="fa fa-plus-square"></i></a></li>
               </ul>
             </div><!-- .post-tags -->
