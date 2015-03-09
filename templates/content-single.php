@@ -128,7 +128,7 @@
           <footer>
             <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
           </footer>
-          <div class="comentarios">
+          <div id="comments" class="comentarios">
             <a href="#" class="btn btn-block btn-primary btn-lg cerrado"><span>Ver los comentarios</span><span style="display:none;">Ocultar los comentarios</span></a>
             <div class="comments-wrapper">
               <h2><i class="fa fa-comments"></i> Comentarios</h2>
@@ -165,31 +165,11 @@
               'paged'          => $paged,
               'cat'      => $category_id
             );
-            /*foreach( $taxonomies as $taxonomy ) {
-              $terms = get_the_terms( $post->ID, $taxonomy );
-              if ( empty( $terms ) ) continue;
-              $term_list = wp_list_pluck( $terms, 'slug' );
-              $recent_args['tax_query'][] = array(
-                  'taxonomy' => $taxonomy,
-                  'field'    => 'slug',
-                  'terms'    => $term_list
-              );
-            }
-
-            if( count( $recent_args['tax_query'] ) > 1 ) {
-              $recent_args['tax_query']['relation'] = 'OR';
-            }*/
             $the_query = new WP_Query( $recent_args );
 
             if ( $the_query->have_posts() ) :
-              // Start the Loop.
               while ( $the_query->have_posts() ) : $the_query->the_post();
 
-                /*
-                 * Include the post format-specific template for the content. If you want to
-                 * use this in a child theme, then include a file called called content-___.php
-                 * (where ___ is the post format) and that will be used instead.
-                 */
                 get_template_part( 'templates/content', 'recents' );
             
               endwhile;

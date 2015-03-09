@@ -106,7 +106,7 @@ function($) {
 				}, 10);
 				$('.stuckMenu').css("position","fixed");
 				$('.isStuck').css({
-					top: '0px'
+					bottom: '0px'
 				}, 10, function(){
 
 				});

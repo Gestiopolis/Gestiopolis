@@ -4,7 +4,7 @@
   }
 ?>
 
-<section id="comments" class="comments">
+<section class="comments">
   <?php if (have_comments()) : ?>
     <h2><?php printf(_nx('One response to &ldquo;%2$s&rdquo;', '%1$s responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'roots'), number_format_i18n(get_comments_number()), '<span>' . get_the_title() . '</span>'); ?></h2>
 
