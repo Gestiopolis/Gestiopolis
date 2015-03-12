@@ -512,10 +512,10 @@ var Gestiopolis = {
       });
       //Button toTop
         $(window).scroll(function(){
-          if ($(this).scrollTop() > 600) {
-            $('.fixed-action-btn').fadeIn();
+          if ($(this).scrollTop() > 450) {
+            $('.fixed-action-btn.top-left').fadeIn();
           } else {
-            $('.fixed-action-btn').fadeOut();
+            $('.fixed-action-btn.top-left').fadeOut();
           }
         });
 
