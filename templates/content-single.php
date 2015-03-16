@@ -154,7 +154,7 @@
             <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
           </footer>
           <div id="comments" class="comentarios">
-            <a href="#" class="btn btn-block btn-primary btn-lg cerrado"><span>Ver los comentarios</span><span style="display:none;">Ocultar los comentarios</span></a>
+            <a href="javascript:;" class="btn btn-block btn-primary btn-lg cerrado"><span>Ver los comentarios</span><span style="display:none;">Ocultar los comentarios</span></a>
             <div class="comments-wrapper">
               <h2><i class="fa fa-comments"></i> Comentarios</h2>
               <?php comments_template('/templates/comments.php'); ?>

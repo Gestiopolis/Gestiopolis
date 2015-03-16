@@ -28,23 +28,24 @@
     global $post;
     if (get_post_meta($post->ID, "all2html_htmlcontent", true) == "") {?>
     <div class="fixed-action-btn bottom-right">
-      <a herf="<?php comments_link(); ?>"class="btn-floating red">
-        <i class="large fa fa-comments"></i>
+      <a href="javascript:;"class="btn-floating share-color">
+        <i class="large fa fa-share"></i>
       </a>
       <ul>
-        <li><a href="#" class="btn-floating yellow"><i class="large fa fa-facebook"></i></a></li>
-        <li><a href="#" class="btn-floating green"><i class="large fa fa-twitter"></i></a></li>
-        <li><a href="#" class="btn-floating blue"><i class="large fa fa-heart"></i></a></li>
+        <li><a target="_blank" href="https://www.facebook.com/gestiopolis" class="btn-floating fb-color"><i class="large fa fa-facebook"></i></a></li>
+        <li><a target="_blank" href="https://twitter.com/gestiopoliscom" class="btn-floating tw-color"><i class="large fa fa-twitter"></i></a></li>
+        <li><a href="#" class="btn-floating red"><i class="large fa fa-heart"></i></a></li>
+        <li><a href="<?php comments_link(); ?>" class="btn-floating gray"><i class="large fa fa-comments"></i></a></li>
       </ul>
     </div>
     <div class="fixed-action-btn top-left">
-      <a herf="<?php comments_link(); ?>"class="btn-floating red">
+      <a href="<?php comments_link(); ?>"class="btn-floating gray">
         <i class="large fa fa-comments"></i>
       </a>
       <ul>
-        <li><a href="#" class="btn-floating yellow"><i class="large fa fa-facebook"></i></a></li>
-        <li><a href="#" class="btn-floating green"><i class="large fa fa-twitter"></i></a></li>
-        <li><a href="#" class="btn-floating blue"><i class="large fa fa-heart"></i></a></li>
+        <li><a target="_blank" href="https://www.facebook.com/gestiopolis" class="btn-floating fb-color"><i class="large fa fa-facebook"></i></a></li>
+        <li><a target="_blank" href="https://twitter.com/gestiopoliscom" class="btn-floating tw-color"><i class="large fa fa-twitter"></i></a></li>
+        <li><a href="#" class="btn-floating red"><i class="large fa fa-heart"></i></a></li>
       </ul>
     </div>
   <?php }} ?>

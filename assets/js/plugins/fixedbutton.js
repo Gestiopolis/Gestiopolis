@@ -35,8 +35,28 @@
         { opacity: "0", scaleX: ".4", scaleY: ".4", translateY: "40px"},
         { duration: 80 });
     });
+  	/*$(window).scroll(function(){
+      if ($(this).scrollTop() > 500) {
+        $('.fixed-action-btn.top-left').find('ul a.btn-floating').velocity(
+	        { scaleY: ".4", scaleX: ".4", translateY: "0"},
+	        { duration: 0 });
 
-    $(document).on('mouseenter.fixedActionBtn', '.fixed-action-btn.top-left', function(e) {
+	      var time = 0;
+	      $('.fixed-action-btn.top-left').find('ul a.btn-floating').reverse().each(function () {
+	        $(this).velocity(
+	          { opacity: "1", scaleX: "1", scaleY: "1", translateY: "10px"},
+	          { duration: 80, delay: time });
+	        time += 40;
+	      });
+      } else {
+        var time = 0;
+	      $('.fixed-action-btn.top-left').find('ul a.btn-floating').velocity("stop", true);
+	      $('.fixed-action-btn.top-left').find('ul a.btn-floating').velocity(
+	        { opacity: "0", scaleX: ".4", scaleY: ".4", translateY: "0"},
+	        { duration: 80 });
+      }
+    });*/
+    /*$(document).on('mouseenter.fixedActionBtn', '.fixed-action-btn.top-left', function(e) {
       var $this = $(this);
 
       $this.find('ul a.btn-floating').velocity(
@@ -51,9 +71,9 @@
         time += 40;
       });
 
-    });
+    });*/
 
-    $(document).on('mouseleave.fixedActionBtn', '.fixed-action-btn.top-left', function(e) {
+    /*$(document).on('mouseleave.fixedActionBtn', '.fixed-action-btn.top-left', function(e) {
       var $this = $(this);
 
       var time = 0;
@@ -61,7 +81,7 @@
       $this.find('ul a.btn-floating').velocity(
         { opacity: "0", scaleX: ".4", scaleY: ".4", translateY: "0"},
         { duration: 80 });
-    });
+    });*/
 
   });
 }( jQuery ));
