@@ -517,6 +517,9 @@ var Gestiopolis = {
             $('.fixed-action-btn').fadeOut();
           }
         });
+        $('.fixed-action-btn.top-left .btn-floating.red').on('click', function(){
+          $('.fixed-action-btn.top-left ul li.additional').toggle();
+        });
 
       $('.related-out li span a').on('click', function(e) {
         e.preventDefault();
