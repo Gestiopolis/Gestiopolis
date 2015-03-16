@@ -32,8 +32,9 @@
         <i class="large fa fa-share"></i>
       </a>
       <ul>
-        <li><a target="_blank" href="https://www.facebook.com/gestiopolis" class="btn-floating fb-color"><i class="large fa fa-facebook"></i></a></li>
-        <li><a target="_blank" href="https://twitter.com/gestiopoliscom" class="btn-floating tw-color"><i class="large fa fa-twitter"></i></a></li>
+        <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&layout=link&appId=220995104693477" class="btn-floating fb-color"><i class="large fa fa-facebook"></i></a></li>
+        <li><a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink());?>&amp;text=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
+ ?>&amp;via=gestiopoliscom" class="btn-floating tw-color"><i class="large fa fa-twitter"></i></a></li>
         <li><a href="#" class="btn-floating red"><i class="large fa fa-heart"></i></a></li>
         <li><a href="<?php comments_link(); ?>" class="btn-floating gray"><i class="large fa fa-comments"></i></a></li>
       </ul>
@@ -43,8 +44,9 @@
         <i class="large fa fa-comments"></i>
       </a>
       <ul>
-        <li><a target="_blank" href="https://www.facebook.com/gestiopolis" class="btn-floating fb-color"><i class="large fa fa-facebook"></i></a></li>
-        <li><a target="_blank" href="https://twitter.com/gestiopoliscom" class="btn-floating tw-color"><i class="large fa fa-twitter"></i></a></li>
+        <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&layout=link&appId=220995104693477" class="btn-floating fb-color"><i class="large fa fa-facebook"></i></a></li>
+        <li><a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink());?>&amp;text=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
+ ?>&amp;via=gestiopoliscom" class="btn-floating tw-color"><i class="large fa fa-twitter"></i></a></li>
         <li><a href="#" class="btn-floating red"><i class="large fa fa-heart"></i></a></li>
       </ul>
     </div>
