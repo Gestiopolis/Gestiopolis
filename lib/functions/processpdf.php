@@ -106,7 +106,7 @@ if($post_ID && $step){
       if(get_post_meta($post_ID, "all2html_ok", true) == 'ok'){
         $pdfpath = get_post_meta($post_ID, "all2html_pdfpath", true);
         $pdfoptpath = get_post_meta($post_ID, "all2html_pdfoptpath", true);
-        $opt = "/usr/local/bin/gs -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dAutoRotatePages=/None -sOutputFile='".$pdfoptpath."' ".$pdfpath." 2>&1";
+        $opt = "/usr/local/bin/gs -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -dAutoRotatePages=/None -sOutputFile='".$pdfoptpath."' ".$pdfpath." 2>&1";
         exec($opt, $outopt); //ejecuta el comando $opt en Linux
         update_post_meta($post_ID, 'output_optpdf', $outopt);
       }
