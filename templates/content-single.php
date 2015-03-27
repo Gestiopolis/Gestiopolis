@@ -87,6 +87,29 @@
                 <li><a href="#" class="btn more"><i class="fa fa-plus"></i></a></li>
               </ul>
             </div><!-- .post-tags -->
+            <div class="compartelo posts-home">
+              <div class="title-section"><h2>Te recomendamos</h2></div>
+              <?php 
+              $show = 8;
+              $postsnot = array();
+              //$postsnot[] = $post->ID;
+              $mainpost = $post->ID;
+              $query1 = ci_get_related_posts_1( $post->ID, $show );
+              //$countp = 1;
+                  if( $query1->have_posts() ) { while ($query1->have_posts()) : $query1->the_post(); 
+                    //$postsnot[] = $post->ID;
+                    if($mainpost != $post->ID){
+                      get_template_part( 'templates/content', 'recommend' );
+                    ?>
+
+                    <?php }
+                    //$countp++; 
+                   endwhile;?>
+                  <?php } 
+                  wp_reset_query(); 
+                  wp_reset_postdata(); ?>
+            </div><!-- .recomendados -->
+
             <div id="autores" class="autores">
               <div>
                 <!--<h2><i class="fa fa-user"></i> Sobre el autor</h2>-->
