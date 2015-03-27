@@ -2,6 +2,7 @@
 <div class="right-post">
   <div class="sidebar-post">
     <h3>Te recomendamos</h3>
+    <i class="fa fa-caret-down"></i>
     <?php 
     $show = 26;
     $postsnot = array();

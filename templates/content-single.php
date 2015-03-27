@@ -88,7 +88,7 @@
               </ul>
             </div><!-- .post-tags -->
             <div class="compartelo posts-home hidden-md hidden-lg">
-              <div class="title-section"><h2>Te recomendamos</h2></div>
+              <div class="title-section"><h2>Te recomendamos</h2><i class="fa fa-caret-down"></i></div>
               <?php 
               $show = 9;
               $postsnot = array();

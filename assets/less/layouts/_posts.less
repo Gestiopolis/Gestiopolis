@@ -878,12 +878,7 @@
   display: inline-block !important;
 }
 /*Sidebar*/
-.single .right-post {
-  //float: left;
-  margin-top: 32px;
-  //width: 336px;
-}
-#top_ejes_side{float:left;}
+/*#top_ejes_side{float:left;}
 
 #drop_menu_ejes {
   color:#222;
@@ -957,7 +952,7 @@
 .eje-tabs a.popular.active {
   background: #ff6347;
   color:#f5f5f5;
-}
+}*/
 
 /* SIDEBAR POST */
 .sidebar-post>h3 {
@@ -965,10 +960,27 @@
   font-family: @title-font,sans-serif;
   font-weight: 700;
   font-size: 2rem;
-  margin-bottom: 32px;
+  margin-bottom: 0;
+}
+.sidebar-post>h3,
+.compartelo .title-section h2 {
+  border-bottom: 4px solid;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+}
+.sidebar-post>i.fa-caret-down,
+.compartelo .title-section i.fa-caret-down {
+  margin-top: -9px;
+  text-align: center;
+  display: block;
+  font-size: 1.5rem;
+  color: @headings-color;
+}
+.compartelo .title-section i.fa-caret-down {
+    color: #4b4b57 !important;
 }
 .sidebar-post article {
-  margin-bottom: 48px;
+  margin: 24px 0 24px;
   position:relative;
   overflow:hidden;
   width:100%;
