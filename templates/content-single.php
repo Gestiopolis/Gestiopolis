@@ -90,7 +90,7 @@
             <div class="compartelo posts-home hidden-md hidden-lg">
               <div class="title-section"><h2>Te recomendamos</h2></div>
               <?php 
-              $show = 8;
+              $show = 9;
               $postsnot = array();
               $postsnot[] = $post->ID;
               $mainpost = $post->ID;
