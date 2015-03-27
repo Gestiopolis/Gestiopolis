@@ -95,11 +95,11 @@ var Gestiopolis = {
         });
         
         //Click event to scroll to top
-        /*$('.toTop').click(function(e){
+        $('.toTop').click(function(e){
           e.preventDefault();
-          $('html, body').animate({scrollTop : 0},800);
+          $('html, body').animate({scrollTop : 0},0);
           return false;
-        });*/
+        });
     }
   },
   // Home page
