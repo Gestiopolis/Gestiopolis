@@ -87,27 +87,36 @@
                 <li><a href="#" class="btn more"><i class="fa fa-plus"></i></a></li>
               </ul>
             </div><!-- .post-tags -->
-            <div class="compartelo posts-home">
+            <div class="compartelo posts-home hidden-md hidden-lg">
               <div class="title-section"><h2>Te recomendamos</h2></div>
               <?php 
               $show = 8;
               $postsnot = array();
-              //$postsnot[] = $post->ID;
+              $postsnot[] = $post->ID;
               $mainpost = $post->ID;
               $query1 = ci_get_related_posts_1( $post->ID, $show );
               //$countp = 1;
                   if( $query1->have_posts() ) { while ($query1->have_posts()) : $query1->the_post(); 
-                    //$postsnot[] = $post->ID;
+                    $postsnot[] = $post->ID;
                     if($mainpost != $post->ID){
                       get_template_part( 'templates/content', 'recommend' );
-                    ?>
-
-                    <?php }
+                    }
                     //$countp++; 
                    endwhile;?>
                   <?php } 
                   wp_reset_query(); 
-                  wp_reset_postdata(); ?>
+                  wp_reset_postdata(); 
+                  $show = $show - count($query1->posts);
+                 if ($show > 0) {
+                  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+                $query2 = ci_get_related_posts_2( $post->ID, $postsnot, $show, $paged );
+                    if( $query2->have_posts() ) { while ($query2->have_posts()) : $query2->the_post();get_template_part( 'templates/content', 'recommend' );
+                     endwhile;
+                    } 
+                    wp_reset_query(); 
+                    wp_reset_postdata();
+                  }
+                  ?>
             </div><!-- .recomendados -->
 
             <div id="autores" class="autores">
