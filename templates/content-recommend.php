@@ -11,6 +11,7 @@
             </div>
           </div>
         </div>
+        <div class="sb-caption"><i class="fa fa-clock-o"></i> <?php echo estimate_time();?> de lectura</div>
       </a>
     </div>
   </article><!-- .post -->
