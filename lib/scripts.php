@@ -25,7 +25,7 @@ function roots_scripts() {
     $assets = array(
       'css'       => '/assets/css/main.css',
       'fonts'     => '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Montserrat:700',
-      'iconfont'     => '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css',
+      'iconfont'     => '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css',
       'pdfcssbase'=> '/pdf2htmlEX/base.css',
       'pdfcssfancy'   => '/pdf2htmlEX/fancy.css',
       'js'        => '/assets/js/scripts.js',
@@ -33,9 +33,9 @@ function roots_scripts() {
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js',
       'pdfcomp'    => '/pdf2htmlEX/compatibility.js',
       'pdfall'    => '/pdf2htmlEX/all2html.js',
-      'imglo'    => '//cdn.rawgit.com/desandro/imagesloaded/master/imagesloaded.pkgd.js',
-      'iso'    => '//cdn.rawgit.com/metafizzy/isotope/master/dist/isotope.pkgd.js',
-      'infi'    => '//cdn.rawgit.com/paulirish/infinite-scroll/master/wordpress-plugin/js/front-end/jquery.infinitescroll.js',
+      'imglo'    => '//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.js',
+      'iso'    => '//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.1.1/isotope.pkgd.js',
+      'infi'    => '//cdnjs.cloudflare.com/ajax/libs/jquery-infinitescroll/2.0b2.120519/jquery.infinitescroll.min.js',
       'zero'    => '//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.js'
     );
   } else {
@@ -44,7 +44,7 @@ function roots_scripts() {
     $assets     = array(
       'css'       => '/assets/css/main.min.css?' . $assets['assets/css/main.min.css']['hash'],
       'fonts'       => '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Montserrat:700',
-      'iconfont'     => '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css',
+      'iconfont'     => '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
       'pdfcssbase'=> '/pdf2htmlEX/base.min.css',
       'pdfcssfancy'   => '/pdf2htmlEX/fancy.min.css',
       'js'        => '/assets/js/scripts.min.js?' . $assets['assets/js/scripts.min.js']['hash'],
@@ -52,9 +52,9 @@ function roots_scripts() {
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js',
       'pdfcomp'    => '/pdf2htmlEX/compatibility.min.js',
       'pdfall'    => '/pdf2htmlEX/all2html.min.js',
-      'imglo'    => '//cdn.rawgit.com/desandro/imagesloaded/master/imagesloaded.pkgd.min.js',
-      'iso'    => '//cdn.rawgit.com/metafizzy/isotope/master/dist/isotope.pkgd.min.js',
-      'infi'    => '//cdn.rawgit.com/paulirish/infinite-scroll/master/wordpress-plugin/js/front-end/jquery.infinitescroll.js',
+      'imglo'    => '//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js',
+      'iso'    => '//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.1.1/isotope.pkgd.min.js',
+      'infi'    => '//cdnjs.cloudflare.com/ajax/libs/jquery-infinitescroll/2.0b2.120519/jquery.infinitescroll.min.js',
       'zero'    => '//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js'
     );
   }
