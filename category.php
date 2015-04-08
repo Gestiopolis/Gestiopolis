@@ -54,7 +54,7 @@ get_currentuserinfo();
   <div class="row destacados">
     <div class="col-sm-12">
       <div class="row">
-        <?php $tposts = get_trending_posts(10, 1240, $term->term_id);
+        <?php $tposts = get_trending_posts(10, TRENDING_DAYS, $term->term_id);
           $i = 1;
           foreach ($tposts as $tpost) {
             $post_title = stripslashes($tpost->post_title);
@@ -174,7 +174,7 @@ get_currentuserinfo();
     <div class="col-sm-12">
       <div class="carousel slide" id="myCarousel">
         <div class="carousel-inner">
-          <?php $authors = get_trending_authors(12, 1240, $term->term_id); 
+          <?php $authors = get_trending_authors(12, TRENDING_DAYS, $term->term_id); 
             $k = 1;
             foreach ($authors as $author) {
           ?>
@@ -202,7 +202,7 @@ get_currentuserinfo();
   </div>
   <div class="row">
     <div class="col-sm-12 temas-archive">
-      <?php popular_tags_from_category($term->term_id, 1240, 30)?>
+      <?php popular_tags_from_category($term->term_id, TRENDING_DAYS, 30)?>
     </div><!-- .col-sm-12 -->
   </div><!-- .row TEMAS -->
 </div><!-- .container -->

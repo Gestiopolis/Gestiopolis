@@ -9,7 +9,7 @@
   <div class="row destacados">
     <div class="col-sm-12">
       <div class="row">
-        <?php $tposts = get_trending_posts(10, 1240);
+        <?php $tposts = get_trending_posts(10, TRENDING_DAYS);
           $i = 1;
           foreach ($tposts as $tpost) {
             $post_title = stripslashes($tpost->post_title);
@@ -159,7 +159,7 @@
     <div class="col-sm-12">
       <div class="carousel slide" id="myCarousel">
         <div class="carousel-inner">
-          <?php $authors = get_trending_authors(12, 1240); 
+          <?php $authors = get_trending_authors(12, TRENDING_DAYS); 
             $k = 1;
             foreach ($authors as $author) {
           ?>
@@ -187,7 +187,7 @@
   </div>
   <div class="row">
     <div class="col-sm-12 temas-archive">
-      <?php $terms = trending_tags(30, 1240 ); 
+      <?php $terms = trending_tags(30, TRENDING_DAYS ); 
         foreach ($terms as $key => $tag) {
           $link = get_term_link( intval($tag->term_id), 'post_tag' );
           $tag_link = '#' != $tag->link ? esc_url( $link ) : '#';

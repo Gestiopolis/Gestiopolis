@@ -26,7 +26,7 @@ function limit_posts_per_search_page() {
 	if ( is_search() )
 		set_query_var('posts_per_archive_page', 100); 
 }
-add_filter('pre_get_posts', 'limit_posts_per_search_page');
+//add_filter('pre_get_posts', 'limit_posts_per_search_page');
 
 //Formulario de Login Personalizado*/
 function custom_login() { echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/customlog/customlog.css" />'; }

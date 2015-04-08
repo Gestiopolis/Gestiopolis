@@ -314,6 +314,46 @@ var Gestiopolis = {
       $('.scrollabc').tinyscrollbar();
     }
   },
+  search: { //ABC temático
+    init: function() {
+      $("img.lazy").show().lazyload({
+        effect : "fadeIn",
+        failure_limit : 15
+      });
+      var $conta2 = $('#publicaciones');
+      // Fire Isotope only when images are loaded
+      $conta2.imagesLoaded(function(){
+        $conta2.isotope({
+          itemSelector : '.postw'
+        });
+      });
+      // Infinite Scroll
+      $('#publicaciones').infinitescroll({
+        loading: {
+          finishedMsg: "<em>Felicitaciones, has llegado al fin de Internet.</em>",
+          img: serverval.template_directory+'/assets/img/ajax-loader.gif',
+          msgText: '<em>Cargando el siguiente grupo de publicaciones...</em>',
+          speed: 'fast'
+        },
+        navSelector  : 'div.pagination',
+        nextSelector : '.nextpostslink',
+        itemSelector : '.postw',
+        bufferPx     : 200
+      },
+      // Infinite Scroll Callback
+      function( newElements ) {
+        var $newElems = jQuery( newElements ).hide();
+        $newElems.imagesLoaded(function(){
+          $newElems.fadeIn();
+          $conta2.isotope( 'appended', $newElems );
+          $("img.lazy").show().lazyload({
+            effect : "fadeIn",
+            failure_limit : 15
+          });
+        });
+      });
+    }
+  },
   // About us page, note the change from about-us to about_us.
   page_id_80284: { //Página de Archivo
     init: function() {
