@@ -10,7 +10,7 @@
           </div>
         </div>
         <div class="col-sm-9">
-          <div class=" contsearch pull-left">
+          <div class="contsearch pull-left">
             <h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title_attribute(); ?></a></h2>
             <span class="autor">
               <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
