@@ -318,7 +318,7 @@ var Gestiopolis = {
     init: function() {
       $("img.lazy").show().lazyload({
         effect : "fadeIn",
-        failure_limit : 15
+        failure_limit : 30
       });
       var $conta2 = $('#publicaciones');
       // Fire Isotope only when images are loaded
@@ -348,7 +348,7 @@ var Gestiopolis = {
           //$conta2.isotope( 'appended', $newElems );
           $("img.lazy").show().lazyload({
             effect : "fadeIn",
-            failure_limit : 15
+            failure_limit : 30
           });
         });
       });
