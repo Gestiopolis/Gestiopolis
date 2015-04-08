@@ -323,9 +323,9 @@ var Gestiopolis = {
       var $conta2 = $('#publicaciones');
       // Fire Isotope only when images are loaded
       $conta2.imagesLoaded(function(){
-        $conta2.isotope({
+        /*$conta2.isotope({
           itemSelector : '.postw'
-        });
+        });*/
       });
       // Infinite Scroll
       $('#publicaciones').infinitescroll({
@@ -345,7 +345,7 @@ var Gestiopolis = {
         var $newElems = jQuery( newElements ).hide();
         $newElems.imagesLoaded(function(){
           $newElems.fadeIn();
-          $conta2.isotope( 'appended', $newElems );
+          //$conta2.isotope( 'appended', $newElems );
           $("img.lazy").show().lazyload({
             effect : "fadeIn",
             failure_limit : 15
