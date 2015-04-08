@@ -28,7 +28,8 @@
 <header class="banner navbar navbar-inverse navbar-fixed-top" role="banner">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><img width="179" height="48" class="logo" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo.png'); ?>" alt="<?php bloginfo('name'); ?>"></a>
+      <a class="navbar-brand hidden-xs" href="<?php echo esc_url(home_url('/')); ?>"><img width="179" height="48" class="logo" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo.png'); ?>" alt="<?php bloginfo('name'); ?>"></a>
+      <a class="navbar-brand visible-xs-block" href="<?php echo esc_url(home_url('/')); ?>"><img width="150" height="48" class="logo" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-min.png'); ?>" alt="<?php bloginfo('name'); ?>"></a>
     </div>
 
     <nav role="navigation">
