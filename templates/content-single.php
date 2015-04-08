@@ -61,6 +61,13 @@
             <div class="entry-content">
               <?php the_content(); ?>
             </div>
+            <?php //if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
+            <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
+            <?php //} ?>
+            <div class="post-tags">
+              <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
+              <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
+            </div><!-- .post-tags -->
             <div id="suscripcion" class="suscripcion">
               <div>
                 <span class="author-color"><i class="fa fa-envelope"></i></span>
@@ -86,11 +93,33 @@
  ?>" class="btn linkedin"><i class="fa fa-linkedin"></i></a></li>
                 <li><a href="#" class="btn more"><i class="fa fa-plus"></i></a></li>
               </ul>
-            </div><!-- .post-tags -->
+            </div><!-- .compartelo -->
+            <div id="autores" class="autores">
+              <h2>Escrito por:</h2>
+              <div>
+                <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
+                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn">
+                  <?php echo get_author_color_id(); ?>
+                  <strong><?php echo get_post_meta($post->ID, "author-name_value", true); ?></strong>
+                </a>
+                <p class="selectionShareable">
+                  <em><?php echo get_post_meta($post->ID, "author-bio_value", true); ?></em>
+                </p>
+                <?php else : ?>
+                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn">
+                  <?php echo get_author_color_id(); ?>
+                  <strong><?php echo get_the_author(); ?></strong>
+                </a>
+                <p class="selectionShareable">
+                  <em><?php echo get_the_author_meta('description'); ?></em>
+                </p>
+                <?php endif; ?>
+              </div>
+            </div>
             <div class="compartelo posts-home hidden-md hidden-lg">
               <div class="title-section"><h2>Te recomendamos</h2><i class="fa fa-caret-down"></i></div>
               <?php 
-              $show = 9;
+              $show = 13;
               $postsnot = array();
               $postsnot[] = $post->ID;
               $mainpost = $post->ID;
@@ -118,34 +147,7 @@
                   }
                   ?>
             </div><!-- .recomendados -->
-
-            <div id="autores" class="autores">
-              <h2>Escrito por:</h2>
-              <div>
-                <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
-                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn">
-                  <?php echo get_author_color_id(); ?>
-                  <strong><?php echo get_post_meta($post->ID, "author-name_value", true); ?></strong>
-                </a>
-                <p class="selectionShareable">
-                  <em><?php echo get_post_meta($post->ID, "author-bio_value", true); ?></em>
-                </p>
-                <?php else : ?>
-                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn">
-                  <?php echo get_author_color_id(); ?>
-                  <strong><?php echo get_the_author(); ?></strong>
-                </a>
-                <p class="selectionShareable">
-                  <em><?php echo get_the_author_meta('description'); ?></em>
-                </p>
-                <?php endif; ?>
-              </div>
-            </div>
-            <div class="post-tags">
-              <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
-              <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
-            </div><!-- .post-tags -->
-
+            <?php get_template_part('templates/entry-exlinks'); ?>
             <div class="quotes">
               <div>
                 <span class="author-color"><i class="fa fa-thumb-tack"></i></span>
@@ -175,10 +177,7 @@
             </div>
           </div><!-- .quotes -->
 
-            <?php get_template_part('templates/entry-exlinks'); ?>
-            <!--<div class="related-in">
-              <h2><i class="fa fa-thumb-tack"></i> Más sobre este tema</h2>
-            </div>--><!-- .related-in -->
+            
             <?php if (get_post_meta($post->ID, "image_url_value", true) != "") { ?>
             <div class="image-credit"><i class="fa fa-camera"></i> Imagen del encabezado cortesía de <a href="<?php echo get_post_meta($post->ID, "image_url_value", $single = true); ?>" target="_blank"><?php echo get_post_meta($post->ID, "image_author_t_value", true); ?></a> en Flickr</div>
             <?php } ?>
