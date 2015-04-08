@@ -64,11 +64,7 @@
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
-            <div class="post-tags">
-              <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
-              <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
-            </div><!-- .post-tags -->
-            <div id="suscripcion" class="suscripcion">
+            <div id="suscripcion" class="suscripcion hidden">
               <div>
                 <span class="author-color"><i class="fa fa-envelope"></i></span>
                 <strong>Recibe los mejores contenidos en tu email</strong>
@@ -116,6 +112,10 @@
                 <?php endif; ?>
               </div>
             </div>
+            <div class="post-tags">
+              <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
+              <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
+            </div><!-- .post-tags -->
             <div class="compartelo posts-home hidden-md hidden-lg">
               <div class="title-section"><h2>Te recomendamos</h2><i class="fa fa-caret-down"></i></div>
               <?php 
