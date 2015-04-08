@@ -119,7 +119,7 @@
             <div class="compartelo posts-home hidden-md hidden-lg">
               <div class="title-section"><h2>Te recomendamos</h2><i class="fa fa-caret-down"></i></div>
               <?php 
-              $show = 13;
+              $show = 12;
               $postsnot = array();
               $postsnot[] = $post->ID;
               $mainpost = $post->ID;
