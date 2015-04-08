@@ -733,16 +733,18 @@ Se necesita tener instalado el plugin I Like This
 ****************/
 function get_trending_posts($numberOf, $days, $catid = '') {
 	global $wpdb;
-    $request = "SELECT ID, post_title, post_content, post_author, votos.meta_value AS likes,views.meta_value AS vistas, comment_count FROM $wpdb->posts posts INNER JOIN $wpdb->postmeta votos ON (posts.ID = votos.post_id)
-	INNER JOIN $wpdb->postmeta views ON (posts.ID = views.post_id)";
+    //$request = "SELECT ID, post_title, post_content, post_author, votos.meta_value AS likes,views.meta_value AS vistas, comment_count FROM $wpdb->posts posts INNER JOIN $wpdb->postmeta votos ON (posts.ID = votos.post_id) INNER JOIN $wpdb->postmeta views ON (posts.ID = views.post_id)";
+    $request = "SELECT ID, post_title, post_content, post_author, views.meta_value AS vistas, comment_count FROM $wpdb->posts posts INNER JOIN $wpdb->postmeta views ON (posts.ID = views.post_id)";
 	if($catid != ''){
 		$request .= " INNER JOIN $wpdb->term_relationships term ON (posts.ID = term.object_id)";
 	}
-	$request .= " WHERE posts.post_type='post' AND post_date > '" . date('Y-m-d', strtotime('-'.$days.' days')) . "' AND posts.post_status='publish' AND votos.meta_key='_liked' AND views.meta_key='views'";
+	//$request .= " WHERE posts.post_type='post' AND post_date > '" . date('Y-m-d', strtotime('-'.$days.' days')) . "' AND posts.post_status='publish' AND votos.meta_key='_liked' AND views.meta_key='views'";
+	$request .= " WHERE posts.post_type='post' AND post_date > '" . date('Y-m-d', strtotime('-'.$days.' days')) . "' AND posts.post_status='publish' AND views.meta_key='views'";
 	if($catid != ''){
 	$request .= " AND term.term_taxonomy_id=$catid";
 	}
-	$request .= " ORDER BY views.meta_value+0 DESC, votos.meta_value+0 DESC, posts.comment_count DESC LIMIT $numberOf";
+	//$request .= " ORDER BY views.meta_value+0 DESC, votos.meta_value+0 DESC, posts.comment_count DESC LIMIT $numberOf";
+	$request .= " ORDER BY views.meta_value+0 DESC, posts.comment_count DESC LIMIT $numberOf";
     $posts = $wpdb->get_results($request);
     return $posts;
 }
