@@ -61,9 +61,9 @@
             <div class="entry-content">
               <?php the_content(); ?>
             </div>
-            <?php //if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
+            <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
-            <?php //} ?>
+            <?php } ?>
             <div class="post-tags">
               <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
               <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
