@@ -14,7 +14,7 @@
     <article id="post-<?php echo $tpost->ID;?>" class="post">
       <div class="wrapper-img">
         <a href="<?php echo get_permalink($tpost->ID); ?>" title="<?php echo $post_title; ?>" rel="bookmark">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo wp_imager(640, 360, '', 'img-responsive', false, get_post_meta($tpost->ID, "Thumbnail", true), true); ?>" alt="<?php the_title_attribute(); ?>" class="lazy img-responsive">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>" alt="<?php the_title_attribute(); ?>" class="lazy img-responsive">
           <div class="overlay"></div>
           <div class="vert-center-wrapper">
             <div class="vert-centered">

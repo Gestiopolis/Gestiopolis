@@ -712,6 +712,8 @@ function showmosttwittedposts(){
 /****************
 Mostrar los artículos más populares por comentarios, votos y visitas
 Se necesita tener instalado el plugin I Like This
+https://github.com/cabrerahector/wordpress-popular-posts/wiki/3.-Filters
+https://wordpress.org/plugins/wordpress-popular-posts/installation/
 ****************/
 function trending_posts($numberOf, $before, $after, $days) {
 	global $wpdb;
