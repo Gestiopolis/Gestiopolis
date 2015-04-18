@@ -120,7 +120,7 @@ function save_exlinks_meta( $post_id ) {
 				return $post_id;
 		}
 		
-		if($meta_box['name'] == 'exlinks'){
+		if($meta_box['name'] == 'exlinks' && !empty($_POST['exlinks_t']) ){
 			//$data = $_POST[$meta_box['name'].'_value'];
 			$titulo=array_values(array_filter($_POST['exlinks_t']));
 			$exlink=array_values(array_filter($_POST['exlinks_u']));
