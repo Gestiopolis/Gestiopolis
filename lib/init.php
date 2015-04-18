@@ -24,7 +24,7 @@ function roots_setup() {
   add_image_size( 'featured-img', 1024, 400, true );
   add_image_size( 'dest-img-big', 616, 250, true );
   add_image_size( 'dest-img-small', 304, 250, true );
-  add_image_size( 'main-thumb', 742, 171, true );
+  add_image_size( 'main-thumb', 742, 556 );
 
   // Add post formats
   // http://codex.wordpress.org/Post_Formats

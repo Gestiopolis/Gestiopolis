@@ -1,7 +1,7 @@
 <?php while (have_posts()) : the_post(); ?>
   <div class="post-image">
     <?php if (get_post_meta($post->ID, "Thumbnail", true) != "") { 
-      $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+      $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-img' );
       ?>
     <div class="bg-image" style="background-image: url(<?php echo $large_image_url[0]; ?>); height: 400px;"></div>
     <?php } else { ?>
