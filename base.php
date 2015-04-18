@@ -26,7 +26,7 @@
   </div><!-- /.wrap -->
   <?php if(is_single()){ 
     global $post;
-    if (get_post_meta($post->ID, "all2html_htmlcontent", true) == "") {?>
+    ?>
     <div class="fixed-action-btn bottom-right">
       <a href="javascript:;"class="btn-floating share-color">
         <i class="large fa fa-share"></i>
@@ -53,7 +53,7 @@
         <li title="Compartir en Google Plus" class="additional" style="display:none;"><a href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink()); ?>" class="btn-floating gp-color"><i class="large fa fa-google-plus"></i></a></li>
       </ul>
     </div>
-  <?php }} ?>
+  <?php } ?>
   <a href="#myNavmenu" class="toTop" title="Volver a arriba"><i class="fa fa-chevron-circle-up"></i></a>
   <?php get_template_part('templates/footer'); ?>
 

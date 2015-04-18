@@ -27,6 +27,7 @@
           <?php get_template_part('templates/post-front-edit'); ?>
           <?php } ?>
           <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") { ?>
+          <?php if (0 == 1) { ?>
           <div id="toolbar">
             <div class="btn-toolbar" role="toolbar">
               <div class="btn-group btn-group-sm pull-left">
@@ -48,6 +49,7 @@
               </div>
             </div>
           </div>
+          <?php } ?>
           <div id="sidebar" style="display: none !important;">
             <div id="outline"></div>
           </div>
