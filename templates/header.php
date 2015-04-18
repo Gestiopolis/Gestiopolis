@@ -18,7 +18,7 @@
         <li><a href="<?php echo get_page_link(2); ?>">Acerca de</a></li>
         <li><a href="<?php echo get_page_link(80309); ?>">ABC temático</a></li>
         <li><a href="<?php echo get_page_link(80284); ?>">Archivo</a></li>
-        <li><a href="#">Términos legales</a></li>
+        <li><a href="<?php echo get_page_link(325400); ?>">Términos legales</a></li>
         <li><a href="#">Publicidad</a></li>
         <li class="copy">&copy;<?php echo date('Y'); ?> WebProfit Ltda.</li>
       </ul>
