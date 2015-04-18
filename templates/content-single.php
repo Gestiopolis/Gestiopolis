@@ -210,7 +210,7 @@
       </div>
     </div>
     <div class="row posts-home">
-      <div class="col-sm-12">
+      <!--<div class="col-sm-12">-->
         <div id="recientes">
           <?php
             //$postp       = get_post( $post->ID );
@@ -237,7 +237,7 @@
             wp_reset_query(); 
             wp_reset_postdata(); ?>
         </div><!-- #recientes -->
-      </div>
+      <!--</div>-->
     </div>
   </div>
 <?php endwhile; ?>

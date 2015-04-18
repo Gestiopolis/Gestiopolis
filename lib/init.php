@@ -19,13 +19,12 @@ function roots_setup() {
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
   set_post_thumbnail_size( 120, 120, true );
-  add_image_size( 'category-thumb', 70, 70 );
-  add_image_size( 'trending-posts', 44, 50 );
-  add_image_size( 'fraenl-thumb', 80, 80 );
-  add_image_size( 'rel-thumb', 130, 88 );
-  add_image_size( 'list-thumb', 120, 100 );
-  add_image_size( 'bol-thumb', 100, 100 );
   add_image_size( 'sidebar-thumb', 304, 171, true );
+  add_image_size( 'search-thumb', 226, 120, true );
+  add_image_size( 'featured-img', 1024, 400, true );
+  add_image_size( 'dest-img-big', 616, 250, true );
+  add_image_size( 'dest-img-small', 304, 250, true );
+  add_image_size( 'main-thumb', 742, 171, true );
 
   // Add post formats
   // http://codex.wordpress.org/Post_Formats
