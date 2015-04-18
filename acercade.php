@@ -8,14 +8,11 @@ Template Name: Acerca de
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <div class="breadcrumb">
-          <a href="#">gestiopolis.com</a> <i class="fa fa-angle-right"></i> acerca de
-        </div><!-- .breadcrumb -->
         <h1 class="title">Acerca de gestiopolis</h1>
         
         <div class="row">
-          <div class="col-sm-4">
-            <nav class="aboutsidebar hidden-print hidden-xs hidden-sm" data-spy="affix" data-offset-top="150" data-offset-bottom="200">
+          <div class="col-sm-2">
+            <!--<nav class="aboutsidebar hidden-print hidden-xs hidden-sm" data-spy="affix" data-offset-top="150" data-offset-bottom="200">
               <ul class="nav aboutnav">
                 <li class="active"><a href="#quees"><i class="fa fa-question"></i> Qué es</a></li>
                 <li><a href="#linea"><i class="fa fa-info"></i> Línea de tiempo</a></li>
@@ -24,7 +21,8 @@ Template Name: Acerca de
                 <li><a href="#equipo"><i class="fa fa-group"></i> Equipo</a></li>
                 <li><a href="#cifras"><i class="fa fa-list-ol"></i> En cifras</a></li>
               </ul>
-            </nav>
+            </nav>-->
+            &nbsp;
           </div><!-- imagen tel -->
           <div class="col-sm-8 aboutsections">
             <section id="quees">
@@ -36,14 +34,15 @@ Template Name: Acerca de
               <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/compartir-ideas.png'); ?>" alt="Compartir ideas" width="256" height="256" class="center-block">
               <p>En gestiopolis.com confluyen estudiantes, profesionales independientes, ejecutivos, mandos medios, empresarios pyme, dirigentes corporativos, docentes y muchas otras personas que encuentran en él una extensa cantidad de información relevante y útil, tanto para mantenerse actualizados en las nuevas tendencias, como para adelantar sus labores académicas o las tareas propias de sus empleos.</p> 
             </section>
-            <section id="linea"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/linea.jpg'); ?>" alt="Línea de tiempo de Gestiopolis" width="816" height="136" class="center-block"></section>
+            <!--<section id="linea"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/linea.jpg'); ?>" alt="Línea de tiempo de Gestiopolis" width="816" height="136" class="center-block"></section>
             <section id="vision"><p>Nos proyectamos como el referente digital en latinoamérica en las áreas de estudio relacionadas con la administración, la empresa y la economía.</p></section>
             <section id="mision"><p>Proveer a las personas que nos consultan la información que requieren y facilitar su desarrollo a través de soluciones de capacitación que promuevan su éxito personal y profesional.</p></section>
             <section id="equipo">
               
             </section>
-            <section id="cifras"></section>
+            <section id="cifras"></section>-->
           </div>
+          <div class="col-sm-2">&nbsp;</div>
         </div><!-- .row -->
       </div><!-- .col-sm-12 -->
       

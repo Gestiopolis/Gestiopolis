@@ -882,7 +882,7 @@ var Gestiopolis = {
   }, //Fin single
   page_id_2: { //Acerca de
     init: function() {
-      $('body').scrollspy({ target: '.aboutsidebar' });
+      //$('body').scrollspy({ target: '.aboutsidebar' });
     }
   } //Fin Acerca de
 };
