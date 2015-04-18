@@ -47,16 +47,17 @@ Template Name: Contacto
                 <button type="submit" class="btn btn-green btn-block">Enviar</button>
               </form>-->
             </div>
+            <ul class="infocon">
+              <li class="email"><i class="fa fa-envelope"></i> <a href="mailto:info@gestiopolis.com">info@gestiopolis.com</a></li>
+              <li class="twitter"><i class="fa fa-twitter"></i> <a href="http://www.twitter.com/gestiopoliscom">@gestiopoliscom</a></li>
+              <li class="facebook"><i class="fa fa-facebook"></i> <a href="http://www.facebook.com/gestiopolis">facebook.com/gestiopolis</a></li>
+              <li class="phone"><i class="fa fa-phone"></i> (0571) 6333200</li>
+              <li class="dir"><i class="fa fa-building"></i> Cr. 53 127-70 T1 Of. 604</li>
+              <li class="map"><i class="fa fa-map-marker"></i> Bogotá, Colombia</li>
+            </ul>
           </div>
           <div class="col-md-4">
-            <ul class="infocon">
-              <li class="email"><a href="mailto:info@gestiopolis.com">info@gestiopolis.com <i class="fa fa-envelope"></i></a></li>
-              <li class="twitter"><a href="http://www.twitter.com/gestiopoliscom">@gestiopoliscom <i class="fa fa-twitter"></i></a></li>
-              <li class="facebook"><a href="http://www.facebook.com/gestiopolis">facebook.com/gestiopolis <i class="fa fa-facebook"></i></a></li>
-              <li class="phone">(0571) 6333200 <i class="fa fa-phone"></i></li>
-              <li class="dir">Cr. 53 127-70 T1 Of. 604 Bogotá, Colombia <i class="fa fa-building"></i></li>
-            </ul>
-            
+            &nbsp;            
           </div>
         </div>
       </div><!-- .col-md-12 -->
