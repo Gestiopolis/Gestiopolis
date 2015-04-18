@@ -22,8 +22,7 @@ function roots_setup() {
   add_image_size( 'sidebar-thumb', 304, 171, true );
   add_image_size( 'search-thumb', 226, 120, true );
   add_image_size( 'featured-img', 1024, 400, true );
-  add_image_size( 'dest-img-big', 616, 250, true );
-  add_image_size( 'dest-img-small', 304, 250, true );
+  add_image_size( 'dest-img', 742, 250, true );
   add_image_size( 'main-thumb', 742, 556 );
 
   // Add post formats
