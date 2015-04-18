@@ -23,7 +23,7 @@ function roots_setup() {
   add_image_size( 'search-thumb', 226, 120, true );
   add_image_size( 'featured-img', 1024, 400, true );
   add_image_size( 'dest-img', 742, 250, true );
-  add_image_size( 'main-thumb', 742, 556 );
+  add_image_size( 'main-thumb', 742, 556, true );
 
   // Add post formats
   // http://codex.wordpress.org/Post_Formats
