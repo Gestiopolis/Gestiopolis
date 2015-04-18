@@ -21,7 +21,8 @@ Template Name: Contacto
           </div><!-- imagen tel -->
           <div class="col-sm-4">
             <div class="form-con">
-              <form role="form">
+              <?php insert_cform('1'); ?>
+              <!--<form role="form">
                 <div class="form-group">
                   <label for="inputName">Tu nombre<span>*</span></label>
                   <input type="text" class="form-control" id="inputName">
@@ -47,7 +48,7 @@ Template Name: Contacto
                   <textarea class="form-control" rows="3" id="textMessage"></textarea>
                 </div>
                 <button type="submit" class="btn btn-green btn-block">Enviar</button>
-              </form>
+              </form>-->
             </div>
           </div>
           <div class="col-md-4">
