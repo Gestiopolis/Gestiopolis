@@ -9,15 +9,12 @@ Template Name: Contacto
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <div class="breadcrumb">
-          <a href="#">gestiopolis.com</a> <i class="fa fa-angle-right"></i> contacto
-        </div><!-- .breadcrumb -->
         <h1 class="title">Nos interesa saber de ti</h1>
         <div class="descrcon">Tus opiniones, sugerencias, dudas y cualquier otra clase de mensajes serán bienvenidos.</div>
 
         <div class="row">
-          <div class="col-sm-4">
-            <div class="img-tel"></div>
+          <div class="col-sm-4 hidden-xs">
+            &nbsp;
           </div><!-- imagen tel -->
           <div class="col-sm-4">
             <div class="form-con">

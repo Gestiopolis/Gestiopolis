@@ -1,12 +1,12 @@
 .bgcon{
   background: #f5f5f5 url('../img/bg-contacto.jpg');
 }
-.bgcon .img-tel {
+/*.bgcon .img-tel {
   background: transparent url('../img/tel.png') no-repeat top right;
   height: 676px; 
-}
+}*/
 .bgcon .descrcon {
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 30px;
   margin: 0 24px 48px;
 }
@@ -19,16 +19,17 @@
   border-color: #efede6;
   border-radius: 0;
   color:#888;
-  font-size:18px;
+  font-size:1.125rem;
   height:48px;
   outline:none;
+  width: 100%;
 }
 .form-con textarea {
   height:224px;
 }
 .form-con label {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 1.125rem;
   margin-bottom: 0;
 }
 .form-con select {
@@ -41,7 +42,7 @@
 .form-con .selectAs:after {
   content:"\f0d7";
   font-family: 'FontAwesome';
-  font-size: 36px;
+  font-size: 2.25rem;
   color:#aaa;
   right:0; 
   top:0;
@@ -54,17 +55,59 @@
   height:48px;
 }
 .form-con label span {
-  color:#ff6347;
+  color:@text-color;
 }
-.form-con .btn {
+.cform {
+  font-family: @font-family-sans-serif;
+  background: none !important;
+  margin: 0 !important;
+  width: 100%;
+  border: none !important;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.cform label {
+  color: @text-color;
+  display: block;
+  font-size: inherit;
+  font-weight: bold;
+  line-height: inherit;
+  margin: 0 !important;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+span.reqtxt, span.emailreqtxt {
+  width: 75% !important;
+}
+#sendbutton {
+  text-transform: uppercase !important;
+  height:48px !important;
+  font-size: 1.5rem !important;
+  color: #f5f5f5 !important;
+  background-color: #07af64 !important;
+  border-color: transparent !important;
+  text-shadow: none !important;
+  background-image: none !important;
+  -webkit-filter: none !important;
+  filter: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  display: block !important;
+  width: 100% !important;
+}
+/*.form-con .btn {
   text-transform: uppercase;
   height:48px;
   font-size: 24px;
-}
+}*/
 .bgcon .infocon {
   float:right;
   text-align:right;
-  font-size:18px;
+  font-size:1.125rem;
   margin:0;
   padding: 0;
   list-style:none;
@@ -84,7 +127,7 @@
   width:64px;
   line-height:64px;
   text-align:center;
-  font-size: 32px;
+  font-size: 2rem;
   margin-left:8px;
   text-decoration:none;
 }
