@@ -38,7 +38,7 @@
           <div class="tiempo pull-left"><i class="fa fa-clock-o"></i> <?php echo estimate_time();?> de lectura</div>
           <div class="fecha pull-right"><i class="fa fa-calendar"></i> <?php echo get_the_date('j\.m\.Y'); ?></div>
         </div>
-        <?php the_tags('<div class="tags"><i class="fa fa-tags"></i> ',', ','</div>'); ?>
+        <?php the_tags('<div class="tags hidden-xs"><i class="fa fa-tags"></i> ',', ','</div>'); ?>
         <div class="category pull-left">
           <?php foreach ($category as $cat) {
             if(is_category()){
