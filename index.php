@@ -16,6 +16,7 @@
             $permalink = get_permalink($tpost->ID);
             $category = get_the_category($tpost->ID);
             $category_id = $category[0]->term_id;
+            $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $tpost->ID ), 'dest-img' );
             if($i == 1){
 
         ?>
@@ -23,7 +24,7 @@
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
 
-              <div class="bg-image" style="background-image: url(<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>); height: 250px;"></div>
+              <div class="bg-image" style="background-image: url(<?php echo $large_image_url[0]; ?>); height: 250px;"></div>
               <div class="overlay"></div>
               <div class="vert-center-wrapper">
                 <div class="vert-centered">
@@ -39,7 +40,7 @@
         <div class="col-sm-6 col-md-3 col-lg-3">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
-              <div class="bg-image" style="background-image: url(<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>); height: 250px;"></div>
+              <div class="bg-image" style="background-image: url(<?php echo $large_image_url[0]; ?>); height: 250px;"></div>
               <div class="overlay"></div>
               <div class="vert-center-wrapper">
                 <div class="vert-centered">
@@ -55,7 +56,7 @@
         <div class="col-sm-6 col-md-9 col-lg-3">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
-              <div class="bg-image" style="background-image: url(<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>); height: 250px;"></div>
+              <div class="bg-image" style="background-image: url(<?php echo $large_image_url[0]; ?>); height: 250px;"></div>
               <div class="overlay"></div>
               <div class="vert-center-wrapper">
                 <div class="vert-centered">
@@ -71,7 +72,7 @@
         <div class="col-sm-6 col-md-4 col-lg-3">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
-              <div class="bg-image" style="background-image: url(<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>); height: 250px;"></div>
+              <div class="bg-image" style="background-image: url(<?php echo $large_image_url[0]; ?>); height: 250px;"></div>
               <div class="overlay"></div>
               <div class="vert-center-wrapper">
                 <div class="vert-centered">
@@ -87,7 +88,7 @@
         <div class="col-sm-6 col-md-4 col-lg-6">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
-              <div class="bg-image" style="background-image: url(<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>); height: 250px;"></div>
+              <div class="bg-image" style="background-image: url(<?php echo $large_image_url[0]; ?>); height: 250px;"></div>
               <div class="overlay"></div>
               <div class="vert-center-wrapper">
                 <div class="vert-centered">
@@ -103,7 +104,7 @@
         <div class="col-sm-6 col-md-4 col-lg-3">
           <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
-              <div class="bg-image" style="background-image: url(<?php echo get_post_meta($tpost->ID, "Thumbnail", true); ?>); height: 250px;"></div>
+              <div class="bg-image" style="background-image: url(<?php echo $large_image_url[0]; ?>); height: 250px;"></div>
               <div class="overlay"></div>
               <div class="vert-center-wrapper">
                 <div class="vert-centered">
