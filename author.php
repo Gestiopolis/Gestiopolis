@@ -15,7 +15,7 @@ get_currentuserinfo();
         <div class="autsocial">
           <ul class="list-unstyled">
             <?php if($curaut->user_email != '') { ?>
-            <li><a href="mailto:<?php echo hideEmail($curaut->user_email); ?>"><i class="fa fa-envelope-square"></i></a></li>
+            <li><a href="mailto:<?php echo antispambot($curaut->user_email); ?>"><i class="fa fa-envelope-square"></i></a></li>
             <?php } ?>
             <?php if($curaut->user_url != '') { ?>
             <li><a href="<?php echo $curaut->user_url; ?>"><i class="fa fa-external-link-square"></i></a></li>
