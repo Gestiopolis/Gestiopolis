@@ -18,6 +18,7 @@
               <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
               <a href="<?php bloginfo('url') ?>/author/<?php the_author_meta('nickname'); ?>" rel="author"><?php echo get_post_meta($post->ID, "author-name_value", true); ?></a>
               <?php else : ?>
+              <?php echo $post->post_author; ?>
               <a href="<?php echo get_author_posts_url($post->post_author); ?>" rel="author"><?php echo get_the_author_meta('display_name', $post->post_author); ?></a>
               <?php endif; ?>
                <time class="updated" datetime="<?php echo get_the_time('c'); ?>"><i class="fa fa-calendar"></i> <?php echo get_the_date('d.m.Y'); ?></time>
