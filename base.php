@@ -40,17 +40,17 @@
       </ul>
     </div>
     <div class="fixed-action-btn top-left">
-      <a href="<?php comments_link(); ?>"class="btn-floating gray">
+      <a title="Agrega tu comentario" href="<?php comments_link(); ?>"class="btn-floating gray">
         <i class="large fa fa-comments"></i>
       </a>
       <ul>
-        <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&layout=link&appId=220995104693477" class="btn-floating fb-color"><i class="large fa fa-facebook"></i></a></li>
-        <li><a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink());?>&amp;text=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
+        <li><a title="Compartir en Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&layout=link&appId=220995104693477" class="btn-floating fb-color"><i class="large fa fa-facebook"></i></a></li>
+        <li><a title="Compartir en Twitter" target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink());?>&amp;text=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
  ?>&amp;via=gestiopoliscom" class="btn-floating tw-color"><i class="large fa fa-twitter"></i></a></li>
-        <li><a href="javascript:;" class="btn-floating red"><i class="large fa fa-plus"></i></a></li>
-        <li class="additional" style="display:none;"><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(get_permalink()); ?>&title=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
+        <li><a title="Ver más" href="javascript:;" class="btn-floating red"><i class="large fa fa-plus"></i></a></li>
+        <li title="Compartir en Linkedin" class="additional" style="display:none;"><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(get_permalink()); ?>&title=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
  ?>" class="btn-floating linkedin-color"><i class="large fa fa-linkedin"></i></a></li>
-        <li class="additional" style="display:none;"><a href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink()); ?>" class="btn-floating gp-color"><i class="large fa fa-google-plus"></i></a></li>
+        <li title="Compartir en Google Plus" class="additional" style="display:none;"><a href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink()); ?>" class="btn-floating gp-color"><i class="large fa fa-google-plus"></i></a></li>
       </ul>
     </div>
   <?php }} ?>
