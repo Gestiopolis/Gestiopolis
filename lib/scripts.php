@@ -95,7 +95,7 @@ function roots_scripts() {
     }
     wp_enqueue_script('copytext', $assets['zero'], array(), array( 'jquery' ), true);
   }
-  if ((is_home() || is_archive() || is_author() || is_search()) && !is_date() ){
+  if (is_home() || is_archive() || is_author() || is_search() ){
     wp_enqueue_script('isotope', $assets['iso'], array(), array( 'jquery' ), true);
     wp_enqueue_script('infinitescroll', $assets['infi'], array(), array( 'jquery' ), true);
     wp_enqueue_script('imagesloaded', $assets['imglo'], array(), array( 'jquery' ), true);

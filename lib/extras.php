@@ -996,6 +996,13 @@ function trending_tags($limit=10, $days ){
 	$terms = $wpdb->get_results($popterms);
 	return $terms;
 }
+/*Función que trae las etiquetas por letra*/
+function tags_by_letter($letter, $letterM){
+	$tagsm = get_tags(array('name__like' => $letter) );
+	$tagsM = get_tags(array('name__like' => $letterM) );
+	$tags = array_merge($tagsm, $tagsM);
+	return $tags;
+}
 
 //Obtener fecha actual en español
 function actual_date(){
@@ -1271,6 +1278,47 @@ function preg_lazyload($img_match) {
   return $img_replace;
 }
 
+function month_name($month) {
+ 
+  switch ($month) {
+  	case '01':
+  		echo 'Enero'
+  		break;
+  	case '02':
+  		echo 'Febrero'
+  		break;
+  	case '03':
+  		echo 'Marzo'
+  		break;
+  	case '04':
+  		echo 'Abril'
+  		break;
+  	case '05':
+  		echo 'Mayo'
+  		break;
+  	case '06':
+  		echo 'Junio'
+  		break;
+  	case '07':
+  		echo 'Julio'
+  		break;
+  	case '08':
+  		echo 'Agosto'
+  		break;
+  	case '09':
+  		echo 'Septiembre'
+  		break;
+  	case '10':
+  		echo 'Octubre'
+  		break;
+  	case '11':
+  		echo 'Noviembre'
+  		break;
+  	case '12':
+  		echo 'Diciembre'
+  		break;										
+  }
+}
 
 //Función de Wp_Imager https://github.com/Jany-M/WP-Imager
 require_once ('functions/wp-imager.php');

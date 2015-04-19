@@ -18,8 +18,7 @@
         <li><a href="<?php echo get_page_link(2); ?>">Acerca de</a></li>
         <li><a href="<?php echo get_page_link(80309); ?>">ABC temático</a></li>
         <li><a href="<?php echo get_page_link(80284); ?>">Archivo</a></li>
-        <li><a href="<?php echo get_page_link(325400); ?>">Términos legales</a></li>
-        <li><a href="#">Publicidad</a></li>
+        <li><a href="<?php echo get_page_link(325400); ?>">Términos de uso</a></li>
         <li class="copy">&copy;<?php echo date('Y'); ?> WebProfit Ltda.</li>
       </ul>
     </li>
@@ -37,11 +36,8 @@
         <li id="nav_publica"><a href="<?php echo get_page_link(264); ?>"><i class="fa fa-cloud-upload"></i><span class="hidden-xs"> Publica</span></a></li>
         <li id="nav_busca">
           <div id="sb-search" class="sb-search">
-            <form id="searchbox_002900072100095058217:mp7ncjp0apo" action="<?php echo home_url( '/' ); ?>" role="search">
-              <input type="hidden" name="cx" value="002900072100095058217:mp7ncjp0apo">
-              <input type="hidden" name="cof" value="FORID:10">
-              <input type="hidden" name="ie" value="UTF-8">
-              <input class="sb-search-input elasticpress-autosuggest" placeholder="Ingresa tu búsqueda..." type="search" value="" name="s" id="search" data-es-host="108.61.29.227:9200">
+            <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search">
+              <input class="sb-search-input elasticpress-autosuggest" placeholder="Ingresa tu búsqueda..." type="search" value="" name="s" id="search" data-es-host="216.155.144.251:9200">
               <input class="sb-search-submit" type="submit" value="">
               <span class="sb-icon-search"><i class="fa fa-search"></i><span class="hidden-xs"> Busca</span></span>
             </form>

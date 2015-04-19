@@ -1,63 +1,63 @@
 <?php
-/*
-Template Name: Archivo
-*/
+$date = get_queried_object();
+global $current_user;
+get_currentuserinfo();
 ?>
-<div class="container">
-  <div class="row title-archivo">
-    <div class="col-sm-10">
-      <div class="title-arch"><h3>Archivo</h3></div>
-    </div><!-- .col-sm-30 -->
-    <!--<div class="col-sm-3 col-sm-offset-3">
-      <div class="btns-orden btn-toolbar">
-        <div id="OrdenEjes" class="btn-group">
-          <a href="#" class="btn btn-unete">Únete</a>
-        </div>
-      </div>
-    </div>--><!-- .col-sm-4 -->
-  </div><!-- .row -->
-  <div class="row">
-    <div class="col-sm-12">
-      <table class="table arch-table">
-        <thead>
-          <tr>
-            <th>&nbsp;</th>
-            <th id="12" class="month<?php if(date('m') == '12'){ echo ' selected';}?>">Diciembre</th>
-            <th id="11" class="month<?php if(date('m') == '11'){ echo ' selected';}?>">Noviembre</th>
-            <th id="10" class="month<?php if(date('m') == '10'){ echo ' selected';}?>">Octubre</th>
-            <th id="09" class="month<?php if(date('m') == '09'){ echo ' selected';}?>">Septiembre</th>
-            <th id="08" class="month<?php if(date('m') == '08'){ echo ' selected';}?>">Agosto</th>
-            <th id="07" class="month<?php if(date('m') == '07'){ echo ' selected';}?>">Julio</th>
-            <th id="06" class="month<?php if(date('m') == '06'){ echo ' selected';}?>">Junio</th>
-            <th id="05" class="month<?php if(date('m') == '05'){ echo ' selected';}?>">Mayo</th>
-            <th id="04" class="month<?php if(date('m') == '04'){ echo ' selected';}?>">Abril</th>
-            <th id="03" class="month<?php if(date('m') == '03'){ echo ' selected';}?>">Marzo</th>
-            <th id="02" class="month<?php if(date('m') == '02'){ echo ' selected';}?>">Febrero</th>
-            <th id="01" class="month<?php if(date('m') == '01'){ echo ' selected';}?>">Enero</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="year actual-year selected"><?php echo date('Y'); ?></td>
-            <td rowspan="13" colspan="12" class="ejes-table">
-              <!-- carga de archivo -->
-            </td>
-          </tr>
-          <?php 
-            $year = date('Y');
-            $j=1;
-            while ($year != '2000') { 
-              $year = date('Y', mktime(0, 0, 0, date('m'), 0, date('Y')-$j));
-              ?>
-              <tr>
-                <td class="year"><?php echo $year;?></td>
-              </tr>
-          <?php 
-            $j++;
-           }
+<div class="post-image">
+  <div class="bg-image" style="background: #edede4; height: 120px;"></div>
+  <div class="vert-center-wrapper">
+    <div class="vert-centered">
+      <div class="center container">
+        <h1 class="title">
+          <?php
+            if ( is_month() ) :
+              echo get_the_date( 'F \- Y');
+
+            elseif ( is_year() ) :
+              echo get_the_date( 'Y');
+
+            endif;
           ?>
-        </tbody>
-      </table>
+        </h1>
+      </div>
     </div>
-  </div>
-</div><!-- .container PRINCIPAL -->
+  </div>        
+</div>
+<!-- Empieza sección de LISTADO DE POSTS -->
+<div class="container">
+  <!-- Empieza sección de TÍTULO DE CATEGORÍA -->
+  <div class="row posts-home">
+    <div class="col-md-12">
+      <div class="row tab-content">
+        <div class="tab-pane active" id="publicaciones">
+          <?php
+            if ( have_posts() ) :
+              // Start the Loop.
+              while ( have_posts() ) : the_post();
+
+                /*
+                 * Include the post format-specific template for the content. If you want to
+                 * use this in a child theme, then include a file called called content-___.php
+                 * (where ___ is the post format) and that will be used instead.
+                 */
+                get_template_part( 'templates/content' );
+            
+              endwhile;
+              ?>
+              <?php if ( function_exists( 'wp_pagenavi' ) ) { ?>
+              <div class="pagination">
+                <?php wp_pagenavi(); ?>
+              </div>
+              <?php } else { ?>
+              <div class="pagination">
+                <div class="nav-previous alignleft"><?php next_posts_link( 'Artículos anteriores' ); ?></div>
+              </div>
+              <?php } ?>
+              <?php
+            endif;
+          ?>
+        </div><!-- #recientes -->
+      </div><!-- .row -->
+    </div><!-- .span4 -->
+  </div><!-- .row LISTADO DE POSTS -->
+</div><!-- .container -->
