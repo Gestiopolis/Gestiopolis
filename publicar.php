@@ -5,16 +5,21 @@ Template Name: Publicar
 ?>
 
 <?php while (have_posts()) : the_post(); ?>
+<div class="bgcon">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <h1 class="title">Publicar en gestiopolis</h1>
         <div class="row">
           <div class="col-sm-offset-2 col-sm-8 aboutsections">
-            <div class="upl-form">
-              <p>Selecciona el documento que deseas cargar</p>
-              <?php insert_cform('2');?>
-              <p class="bg-info">Archivos compatibles: pdf, doc, docx, xls, ppt, pptx, odt, ott, rtf, txt, odp, csv, ods, pps</p>
+            <div class="row">
+              <div class="col-sm-offset-2 col-sm-8">
+                <div class="form-con">
+                  <p>Selecciona el documento que deseas cargar</p>
+                  <?php insert_cform('2');?>
+                  <p class="bg-info">Archivos compatibles: pdf, doc, docx, xls, ppt, pptx, odt, ott, rtf, txt, odp, csv, ods, pps</p>
+                </div>
+              </div>
             </div>
             <!-- start carousel -->
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -77,7 +82,7 @@ Template Name: Publicar
                 <div class="panel-heading" role="tab" id="headingThree">
                   <h4 class="panel-title">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Collapsible Group Item #3
+                      Preguntas frecuentes
                     </a>
                   </h4>
                 </div>
@@ -109,4 +114,5 @@ Template Name: Publicar
     </div>
 
   </div><!-- .container PRINCIPAL -->
+</div>
 <?php endwhile; ?>
