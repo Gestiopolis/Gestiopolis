@@ -6,9 +6,8 @@
         <div class="descrcon">La buena noticia es que empleando el buscador que está más abajo hallaras valiosos recursos sobre eso que te interesa y te trajo hasta acá.</div>
         <div id="sb-search" class="sb-search">
           <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search">
-            <input class="sb-search-input elasticpress-autosuggest" placeholder="Ingresa tu búsqueda..." type="search" value="" name="s" id="search" data-es-host="216.155.144.251:9200">
-            <input class="sb-search-submit" type="submit" value="">
-            <span class="sb-icon-search"><i class="fa fa-search"></i> Busca</span>
+            <input class="elasticpress-autosuggest" placeholder="Ingresa tu búsqueda..." type="search" value="" name="s" id="search" data-es-host="216.155.144.251:9200">
+            <input class="submit" type="submit" value="Busca">
           </form>
         </div>
         <div class="descrcon">También puedes consultar el ABC temático con todos los tópicos tratados en los posts</div>

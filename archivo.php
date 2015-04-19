@@ -7,7 +7,7 @@ Template Name: Archivo
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h1 class="title">Nos interesa saber de ti</h1>
+        <h1 class="title">Archivo</h1>
           <div class="row posts-home">
             <div class="postw col-lg-3 col-md-4 col-sm-6">
                   <article class="post">
@@ -58,46 +58,6 @@ Template Name: Archivo
              }
             ?>
           </div><!-- .row -->
-        <!--<table class="table arch-table">
-          <thead>
-            <tr>
-              <th>&nbsp;</th>
-              <th id="12" class="month<?php if(date('m') == '12'){ echo ' selected';}?>">Diciembre</th>
-              <th id="11" class="month<?php if(date('m') == '11'){ echo ' selected';}?>">Noviembre</th>
-              <th id="10" class="month<?php if(date('m') == '10'){ echo ' selected';}?>">Octubre</th>
-              <th id="09" class="month<?php if(date('m') == '09'){ echo ' selected';}?>">Septiembre</th>
-              <th id="08" class="month<?php if(date('m') == '08'){ echo ' selected';}?>">Agosto</th>
-              <th id="07" class="month<?php if(date('m') == '07'){ echo ' selected';}?>">Julio</th>
-              <th id="06" class="month<?php if(date('m') == '06'){ echo ' selected';}?>">Junio</th>
-              <th id="05" class="month<?php if(date('m') == '05'){ echo ' selected';}?>">Mayo</th>
-              <th id="04" class="month<?php if(date('m') == '04'){ echo ' selected';}?>">Abril</th>
-              <th id="03" class="month<?php if(date('m') == '03'){ echo ' selected';}?>">Marzo</th>
-              <th id="02" class="month<?php if(date('m') == '02'){ echo ' selected';}?>">Febrero</th>
-              <th id="01" class="month<?php if(date('m') == '01'){ echo ' selected';}?>">Enero</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="year actual-year selected"><?php echo date('Y'); ?></td>
-              <td rowspan="13" colspan="12" class="ejes-table">
-                <!-- carga de archivo -->
-              </td>
-            </tr>
-            <?php 
-              $year = date('Y');
-              $j=1;
-              while ($year != '2000') { 
-                $year = date('Y', mktime(0, 0, 0, date('m'), 0, date('Y')-$j));
-                ?>
-                <tr>
-                  <td class="year"><?php echo $year;?></td>
-                </tr>
-            <?php 
-              $j++;
-             }
-            ?>
-          </tbody>
-        </table>-->
       </div>
     </div>
   </div><!-- .container PRINCIPAL -->

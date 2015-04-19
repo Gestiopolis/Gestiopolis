@@ -46,8 +46,7 @@ Template Name: ABC Temático
               <div class="letter">A</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('a', 'A');
-                if(!empty($tagsa){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -55,8 +54,7 @@ Template Name: ABC Temático
                   $html .= "{$tag->name}</a>";
                 }
                 echo $html;
-                ?>
-              <?php } else {
+                 } else {
                 echo 'No existen temas con esta letra';
               } ?>
               </div>
@@ -65,7 +63,7 @@ Template Name: ABC Temático
               <div class="letter">B</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('b', 'B');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -84,7 +82,7 @@ Template Name: ABC Temático
               <div class="letter">C</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('c', 'C');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -103,7 +101,7 @@ Template Name: ABC Temático
               <div class="letter">D</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('d', 'D');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -122,7 +120,7 @@ Template Name: ABC Temático
               <div class="letter">E</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('e', 'E');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -141,7 +139,7 @@ Template Name: ABC Temático
               <div class="letter">F</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('f', 'F');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -160,7 +158,7 @@ Template Name: ABC Temático
               <div class="letter">G</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('g', 'G');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -179,7 +177,7 @@ Template Name: ABC Temático
               <div class="letter">H</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('h', 'H');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -198,7 +196,7 @@ Template Name: ABC Temático
               <div class="letter">I</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('i', 'I');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -217,7 +215,7 @@ Template Name: ABC Temático
               <div class="letter">J</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('j', 'J');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -236,7 +234,7 @@ Template Name: ABC Temático
               <div class="letter">K</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('k', 'K');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -255,7 +253,7 @@ Template Name: ABC Temático
               <div class="letter">L</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('l', 'L');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -274,7 +272,7 @@ Template Name: ABC Temático
               <div class="letter">M</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('m', 'M');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -293,7 +291,7 @@ Template Name: ABC Temático
               <div class="letter">N</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('n', 'N');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -312,7 +310,7 @@ Template Name: ABC Temático
               <div class="letter">O</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('o', 'O');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -331,7 +329,7 @@ Template Name: ABC Temático
               <div class="letter">P</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('p', 'P');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -350,7 +348,7 @@ Template Name: ABC Temático
               <div class="letter">Q</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('q', 'Q');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -369,7 +367,7 @@ Template Name: ABC Temático
               <div class="letter">R</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('r', 'R');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -388,7 +386,7 @@ Template Name: ABC Temático
               <div class="letter">S</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('s', 'S');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -407,7 +405,7 @@ Template Name: ABC Temático
               <div class="letter">T</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('t', 'T');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -426,7 +424,7 @@ Template Name: ABC Temático
               <div class="letter">U</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('u', 'U');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -445,7 +443,7 @@ Template Name: ABC Temático
               <div class="letter">V</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('v', 'V');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -464,7 +462,7 @@ Template Name: ABC Temático
               <div class="letter">W</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('w', 'W');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -483,7 +481,7 @@ Template Name: ABC Temático
               <div class="letter">X</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('x', 'X');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -502,7 +500,7 @@ Template Name: ABC Temático
               <div class="letter">Y</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('y', 'Y');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
@@ -521,7 +519,7 @@ Template Name: ABC Temático
               <div class="letter">Z</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('z', 'Z');
-                if(!empty($tagsa){ ?>
+                if(!empty($tagsa)){ ?>
                 <?php 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );

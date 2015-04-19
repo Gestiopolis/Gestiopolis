@@ -23,6 +23,9 @@ var Gestiopolis = {
   common: {
     init: function() {
       // JavaScript to be fired on all pages
+      $("img.lazy").show().lazyload({
+        effect : "fadeIn"
+      });
       //1. Formulario de búsqueda top-nav
       $('.busca-link').on('click', function(e){
         e.preventDefault();
