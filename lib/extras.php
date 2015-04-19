@@ -1282,40 +1282,40 @@ function month_name($month) {
  
   switch ($month) {
   	case '01':
-  		echo 'Enero'
+  		echo 'Enero';
   		break;
   	case '02':
-  		echo 'Febrero'
+  		echo 'Febrero';
   		break;
   	case '03':
-  		echo 'Marzo'
+  		echo 'Marzo';
   		break;
   	case '04':
-  		echo 'Abril'
+  		echo 'Abril';
   		break;
   	case '05':
-  		echo 'Mayo'
+  		echo 'Mayo';
   		break;
   	case '06':
-  		echo 'Junio'
+  		echo 'Junio';
   		break;
   	case '07':
-  		echo 'Julio'
+  		echo 'Julio';
   		break;
   	case '08':
-  		echo 'Agosto'
+  		echo 'Agosto';
   		break;
   	case '09':
-  		echo 'Septiembre'
+  		echo 'Septiembre';
   		break;
   	case '10':
-  		echo 'Octubre'
+  		echo 'Octubre';
   		break;
   	case '11':
-  		echo 'Noviembre'
+  		echo 'Noviembre';
   		break;
   	case '12':
-  		echo 'Diciembre'
+  		echo 'Diciembre';
   		break;										
   }
 }
