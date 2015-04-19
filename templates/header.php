@@ -16,8 +16,8 @@
     <li class="dropdown more-link"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plus"></i>Más&nbsp;&nbsp;<i class="fa fa-angle-double-down"></i></a>
       <ul id="explora_mas" class="dropdown-menu navmenu-nav">
         <li><a href="<?php echo get_page_link(2); ?>">Acerca de</a></li>
-        <li><a href="<?php echo get_page_link(80309); ?>">ABC temático</a></li>
-        <li><a href="<?php echo get_page_link(80284); ?>">Archivo</a></li>
+        <li><a href="#<?php //echo get_page_link(80309); ?>">ABC temático</a></li>
+        <li><a href="#<?php //echo get_page_link(80284); ?>">Archivo</a></li>
         <li><a href="<?php echo get_page_link(325400); ?>">Términos de uso</a></li>
         <li class="copy">&copy;<?php echo date('Y'); ?> WebProfit Ltda.</li>
       </ul>

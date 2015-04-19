@@ -4,13 +4,13 @@
       <div class="col-sm-12">
         <h1 class="title">La página que intentaste ver no existe</h1>
         <div class="descrcon">La buena noticia es que empleando el buscador que está más abajo hallaras valiosos recursos sobre eso que te interesa y te trajo hasta acá.</div>
-        <div id="sb-search" class="sb-search">
-          <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search">
-            <input class="elasticpress-autosuggest" placeholder="Ingresa tu búsqueda..." type="search" value="" name="s" id="search" data-es-host="216.155.144.251:9200">
-            <input class="submit" type="submit" value="Busca">
+        <div class="search404">
+          <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search" class="searchnotf form-inline">
+          	<input class="elasticpress-autosuggest form-control input-lg" placeholder="Ingresa tu búsqueda..." type="search" value="" name="s" id="search" data-es-host="216.155.144.251:9200">
+	          <input class="submit btn btn-black btn-lg" type="submit" value="Busca">
           </form>
         </div>
-        <div class="descrcon">También puedes consultar el ABC temático con todos los tópicos tratados en los posts</div>
+        <div class="descrcon hidden">También puedes consultar el ABC temático con todos los tópicos tratados en los posts</div>
 
         <div class="row posts-home">
 		      <div id="recientes">
@@ -33,8 +33,12 @@
 	            wp_reset_query(); 
 	            wp_reset_postdata(); ?>
 	        </div><!-- #recientes -->
-	        <a href="<?php echo esc_url(home_url('/#recientes')); ?>" class="btn btn-green">Ver posts más recientes</a>
-		    </div>
+	        <div class="row">
+	        	<div class="col-sm-6 col-sm-offset-3">
+	        		<a class="link404" href="<?php echo esc_url(home_url('/#recientes')); ?>" class="btn btn-green">Ver posts más recientes</a>
+	        	</div>
+	        </div>
+	      </div>
       </div><!-- .col-md-12 -->
     </div>
 	</div><!-- .container PRINCIPAL -->
