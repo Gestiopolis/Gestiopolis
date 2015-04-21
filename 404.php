@@ -35,7 +35,7 @@
 	        </div><!-- #recientes -->
 	        <div class="row">
 	        	<div class="col-sm-6 col-sm-offset-3">
-	        		<a class="link404" href="<?php echo esc_url(home_url('/#recientes')); ?>" class="btn btn-green">Ver posts más recientes</a>
+	        		<a class="link404 btn btn-green" href="<?php echo esc_url(home_url('/#recientes')); ?>">Ver posts más recientes</a>
 	        	</div>
 	        </div>
 	      </div>
