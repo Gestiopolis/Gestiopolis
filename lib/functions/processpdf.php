@@ -119,7 +119,7 @@ if($post_ID && $step){
         $htmlpath = get_post_meta($post_ID, "all2html_path", true);
         $archivo = get_post_meta($post_ID, "all2html_arch", true);
         $uppath = str_replace($_SERVER['DOCUMENT_ROOT'], '', $htmlpath);
-        $cmd = '/usr/local/bin/pdf2htmlEX --fit-width 872 --hdpi 96 --vdpi 96 --embed cFijo --no-drm 1 --optimize-text 1 --data-dir '.$_SERVER['DOCUMENT_ROOT'].'/pdf2htmlEX --dest-dir '.$htmlpath.' --external-hint-tool=/usr/local/bin/ttfautohint '. $pdfoptpath .' 2>&1';
+        $cmd = '/usr/local/bin/pdf2htmlEX --fit-width 872 --embed cfijo --no-drm 1 --optimize-text 1 --data-dir '.$_SERVER['DOCUMENT_ROOT'].'/pdf2htmlEX --dest-dir '.$htmlpath.' --external-hint-tool=/usr/local/bin/ttfautohint '. $pdfoptpath .' 2>&1';
         exec($cmd, $outcmd); //ejecuta el comando $cmd en Linux
         $outcmd = implode("\n", $outcmd);
         update_post_meta($post_ID, 'output_pdf2html', $outcmd);
