@@ -70,10 +70,12 @@ if($post_ID && $step){
           update_post_meta($post_ID, 'all2html_pdfpath', $pdfpath);
           update_post_meta($post_ID, 'all2html_pdfoptpath', $pdfoptpath);
           if($extension != 'pdf'){
+            putenv('PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/node/bin');
             exec('/usr/bin/unoconvunoconv -l &', $outpt);
             sleep(3);
             $command = '/usr/bin/unoconv --format pdf --output %s %s 2>&1';
             $command = sprintf($command, $htmlpath, $upl_file);
+            putenv('PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/node/bin');
             exec($command, $output);
             $output = implode("\n", $output);
             update_post_meta($post_ID, 'output_convpdf', $output);
