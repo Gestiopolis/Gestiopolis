@@ -70,9 +70,9 @@ if($post_ID && $step){
           update_post_meta($post_ID, 'all2html_pdfpath', $pdfpath);
           update_post_meta($post_ID, 'all2html_pdfoptpath', $pdfoptpath);
           if($extension != 'pdf'){
-            exec('unoconv -l &', $outpt);
+            /*exec('unoconv -l &', $outpt);*/
             sleep(3);
-            $command = 'unoconv --format pdf --output %s %s 2>&1';
+            $command = '/usr/bin/unoconv --format pdf --output %s %s 2>&1';
             $command = sprintf($command, $htmlpath, $upl_file);
             exec($command, $output);
             $output = implode("\n", $output);
