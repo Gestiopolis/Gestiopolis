@@ -16,7 +16,7 @@ Template Name: Publicar
               <div class="col-sm-offset-2 col-sm-8">
                 <div class="form-con">
                   <p>Selecciona el documento que deseas cargar</p>
-                  <?php insert_cform('2');?>
+                  <?php echo do_shortcode('[contact-form-7 id="325591" title="Formulario de aportes"]'); ?>
                   <p class="bg-info">Archivos compatibles: pdf, doc, docx, xls, ppt, pptx, odt, ott, rtf, txt, odp, csv, ods, pps</p>
                 </div>
               </div>

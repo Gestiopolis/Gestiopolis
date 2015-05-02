@@ -12,13 +12,13 @@
       echo '<li><a class="cat-' . $category->term_id . '" href="' . get_category_link( $category->term_id ) . '"><i class="fa icon-cat-'.$category->term_id.' cat-bg-'.$category->term_id.'"></i>  ' . $category->name . '</a></li>';
     }
     ?>
-    <li class="contact-link"><a href="<?php echo get_page_link(4767); ?>"><i class="fa fa-map-marker"></i> Contacto</a></li>
+    <li class="contact-link"><a href="<?php echo get_page_link(325586); ?>"><i class="fa fa-map-marker"></i> Contacto</a></li>
     <li class="dropdown more-link"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plus"></i>Más&nbsp;&nbsp;<i class="fa fa-angle-double-down"></i></a>
       <ul id="explora_mas" class="dropdown-menu navmenu-nav">
-        <li><a href="<?php echo get_page_link(2); ?>">Acerca de</a></li>
-        <li><a href="<?php echo esc_url(home_url('/')); ?><?php //echo get_page_link(80309); ?>">ABC temático</a></li>
-        <li><a href="<?php echo esc_url(home_url('/')); ?><?php //echo get_page_link(80284); ?>">Archivo</a></li>
-        <li><a href="<?php echo get_page_link(325400); ?>">Términos de uso</a></li>
+        <li><a href="<?php echo get_page_link(325585); ?>">Acerca de</a></li>
+        <li><a href="<?php echo esc_url(home_url('/')); ?><?php //echo get_page_link(325588); ?>">ABC temático</a></li>
+        <li><a href="<?php echo esc_url(home_url('/')); ?><?php //echo get_page_link(325589); ?>">Archivo</a></li>
+        <li><a href="<?php echo get_page_link(325587); ?>">Términos de uso</a></li>
         <li class="copy">&copy;<?php echo date('Y'); ?> WebProfit Ltda.</li>
       </ul>
     </li>
@@ -33,11 +33,11 @@
 
     <nav role="navigation">
       <ul class="nav navbar-nav navbar-right">
-        <li id="nav_publica"><a href="<?php echo get_page_link(264); ?>"><i class="fa fa-cloud-upload"></i><span class="hidden-xs"> Publica</span></a></li>
+        <li id="nav_publica"><a href="<?php echo get_page_link(325584); ?>"><i class="fa fa-cloud-upload"></i><span class="hidden-xs"> Publica</span></a></li>
         <li id="nav_busca">
           <div id="sb-search" class="sb-search">
             <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search">
-              <input class="sb-search-input elasticpress-autosuggest" placeholder="Ingresa tu búsqueda..." type="search" value="" name="s" id="search" data-es-host="216.155.144.251:9200">
+              <input class="sb-search-input elasticpress-autosuggest" placeholder="Ingresa tu búsqueda..." type="search" value="" name="s" id="search">
               <input class="sb-search-submit" type="submit" value="">
               <span class="sb-icon-search"><i class="fa fa-search"></i><span class="hidden-xs"> Busca</span></span>
             </form>

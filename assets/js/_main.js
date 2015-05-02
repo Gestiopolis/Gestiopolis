@@ -458,7 +458,7 @@ var Gestiopolis = {
       });
     }
   },
-  page_id_264: { //Página de publicar
+  page_id_325584: { //Página de publicar
     init: function() {
       //Funciones javascript de página de publicar
       $("form#upldoc").submit(function(e){
@@ -921,7 +921,7 @@ var Gestiopolis = {
       } //if htmlcontent
     } //init
   }, //Fin single
-  page_id_2: { //Acerca de
+  page_id_325585: { //Acerca de
     init: function() {
       //$('body').scrollspy({ target: '.aboutsidebar' });
     }
