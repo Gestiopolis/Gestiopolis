@@ -1,9 +1,9 @@
 <?php 
-$servidor = $_SERVER['HTTP_HOST'] == 'localhost' ? 'Gestiopolis/' : '';
-include_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor.'wp-load.php'); //Cargar el core de WordPress
-require_once(ABSPATH . 'wp-admin/includes/media.php');
-require_once(ABSPATH . 'wp-admin/includes/file.php');
-require_once(ABSPATH . 'wp-admin/includes/image.php');
+$servidor = $_SERVER['HTTP_HOST'] == 'localhost' ? 'blog23/' : '';
+include_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor.'wp-load.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor. 'wp-admin/includes/image.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor. 'wp-admin/includes/file.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor. 'wp-admin/includes/media.php');
 echo 'Si entra a fixer';
 echo ABSPATH;
 $args = array (
