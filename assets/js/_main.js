@@ -586,10 +586,14 @@ var Gestiopolis = {
       $('table').addClass('table table-bordered');
       $('table td').removeAttr( "width" );
       $('table').removeAttr( "style" );
-      $('.comentarios > a.btn-block, .fixed-action-btn .btn-floating.gray').on('click', function(){
-        $(".comments-wrapper").toggle('fast', 'linear');
-        $(".comentarios > a.btn-block span").toggle();
-      });
+      setTimeout(function(){
+        $(".comments-wrapper").hide();
+        $('.comentarios > a.btn-block, .fixed-action-btn .btn-floating.gray').on('click', function(){
+          $(".comments-wrapper").toggle('fast', 'linear');
+          $(".comentarios > a.btn-block span").toggle();
+        });
+      }, 2000);
+      
       //Button toTop
         $(window).scroll(function(){
           if ($(this).scrollTop() > 500) {
