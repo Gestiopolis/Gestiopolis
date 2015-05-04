@@ -10,7 +10,7 @@ $args = array (
   'post_type'              => 'post',
   'post_status'            => 'publish',
   //'offset'         => '-1',
-  'posts_per_page' => 1000,
+  'posts_per_page' => 500,
   'meta_query' => array(
     'relation' => 'AND',
     array(
