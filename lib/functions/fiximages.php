@@ -9,8 +9,8 @@ echo ABSPATH;
 $args = array (
   'post_type'              => 'post',
   'post_status'            => 'publish',
-  'posts_per_page'         => '-1',
-  'nopaging'               => true,
+  //'offset'         => '-1',
+  'posts_per_page' => 1000,
   'meta_query' => array(
     'relation' => 'AND',
     array(
@@ -24,7 +24,7 @@ $args = array (
     ),
   ),
 );
-/*$query = new WP_Query($args);
+$query = new WP_Query($args);
 if( $query->have_posts() ) { 
   $count = 0;
   echo '<h1>Listado de imágenes readjuntadas</h1><ol>';
@@ -45,7 +45,7 @@ if( $query->have_posts() ) {
   endwhile;
   echo '</ol>';
   echo '<strong>'.$count.' imágenes reasinadas como principales</strong>'
-}*/
+}
 
 function media_sideload_image_1( $file, $post_id, $desc = null, $return = 'html' ) {
   if ( ! empty( $file ) ) {
