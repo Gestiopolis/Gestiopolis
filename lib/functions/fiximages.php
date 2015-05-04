@@ -9,8 +9,8 @@ echo ABSPATH;
 $args = array (
   'post_type'              => 'post',
   'post_status'            => 'publish',
-  //'offset'         => '-1',
-  'posts_per_page' => 1000,
+  'posts_per_page'         => '-1',
+  'nopaging'               => true,
   'meta_query' => array(
     'relation' => 'AND',
     array(
@@ -29,10 +29,10 @@ if( $query->have_posts() ) {
   $count = 0;
   echo '<h1>Listado de imágenes readjuntadas</h1><ol>';
   while ($query->have_posts()) : $query->the_post();
-    //$thumbid = get_post_meta( $post->ID, '_thumbnail_id', true );
+    $thumbid = get_post_meta( $post->ID, '_thumbnail_id', true );
     $imageurl = get_post_meta( $post->ID, 'image_value', true );
     // check if the custom field has a value
-    //if(empty($thumbid) && !empty($imageurl)) {
+    if(empty($thumbid) && !empty($imageurl)) {
       //Utilizar función de media_sideload_image_1
       $result = media_sideload_image_1( $imageurl, $post->ID );
       if (!is_wp_error( $result )) {
@@ -41,10 +41,10 @@ if( $query->have_posts() ) {
       }
       sleep(1);
       echo $resultli;
-    //} 
+    } 
   endwhile;
   echo '</ol>';
-  echo '<strong>'.$count.' imágenes reasignadas como principales</strong>'
+  echo '<strong>'.$count.' imágenes reasinadas como principales</strong>';
 }
 
 function media_sideload_image_1( $file, $post_id, $desc = null, $return = 'html' ) {
