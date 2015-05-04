@@ -592,7 +592,7 @@ var Gestiopolis = {
           $(".comments-wrapper").toggle('fast', 'linear');
           $(".comentarios > a.btn-block span").toggle();
         });
-      }, 2000);
+      }, 9000);
       
       //Button toTop
         $(window).scroll(function(){
