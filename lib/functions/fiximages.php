@@ -4,6 +4,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor.'wp-load.php'); //Cargar el
 require_once(ABSPATH . 'wp-admin/includes/media.php');
 require_once(ABSPATH . 'wp-admin/includes/file.php');
 require_once(ABSPATH . 'wp-admin/includes/image.php');
+echo 'Si entra a fixer';
+echo ABSPATH;
 $args = array (
   'post_type'              => 'post',
   'post_status'            => 'publish',
@@ -22,7 +24,6 @@ $args = array (
     ),
   ),
 );
-
 $query = new WP_Query($args);
 if( $query->have_posts() ) { 
   $count = 0;
