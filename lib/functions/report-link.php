@@ -8,7 +8,7 @@ $title = ( isset($_POST['title']) && (string)$_POST['title'] ) ? $_POST['title']
 $url = ( isset($_POST['url']) && (string)$_POST['url'] ) ? $_POST['url'] : false;
 if($linkid && $post_ID && $title && $url){
 
-	$to = 'djdiego88@gmail.com';
+	$to = 'aljago@gestiopolis.com';
 	$subject = 'Enlace reportado roto en GestioPolis';
 	$body = '<h1>Reporte de enlace roto</h1>';
 	$body .= '<p>Se ha reportado el siguiente enlace roto en el artículo: <a href="'.get_permalink( $post_ID ).'" title="'.get_the_title( $post_ID ).'">'.get_the_title( $post_ID ).'</a>:</p>';

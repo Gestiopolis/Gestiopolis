@@ -193,7 +193,8 @@
             <a href="javascript:;" class="btn btn-block btn-primary btn-lg cerrado"><span>Tu opinión vale, comenta aquí</span><span style="display:none;">Oculta los comentarios</span></a>
             <div class="comments-wrapper">
               <h2><i class="fa fa-comments"></i> Comentarios</h2>
-              <?php comments_template('/templates/comments.php'); ?>
+              <?php echo do_shortcode('[fbcomments]'); ?>
+              <?php //comments_template('/templates/comments.php'); ?>
             </div>
           </div>
         </article>
