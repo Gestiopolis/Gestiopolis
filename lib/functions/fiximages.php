@@ -70,17 +70,17 @@ function media_sideload_image_1( $file, $post_id, $desc = null, $return = 'html'
       @unlink( $file_array['tmp_name'] );
       return $id;
     }
-    $fullsize_path = get_attached_file( $id ); // Full path
+    /*$fullsize_path = get_attached_file( $id ); // Full path
     if (function_exists('ewww_image_optimizer')) {
       ewww_image_optimizer($fullsize_path, $gallery_type = 4, $converted = false, $new = true, $fullsize = true);
-    }
+    }*/
     $src = wp_get_attachment_url( $id );
   }
 
  if ( ! empty( $src ) ) {
-    update_post_meta($post_id, 'image_value', $src);
+    //update_post_meta($post_id, 'image_value', $src);
     set_post_thumbnail( $post_id, $id );
-    update_post_meta($post_id, 'Thumbnail', $src);
+    //update_post_meta($post_id, 'Thumbnail', $src);
     return get_post_meta( $post_id, 'image_value', true );
   } else {
     return new WP_Error( 'image_sideload_failed' );
