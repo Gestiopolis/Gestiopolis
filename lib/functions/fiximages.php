@@ -9,8 +9,9 @@ echo ABSPATH;
 $args = array (
   'post_type'              => 'post',
   'post_status'            => 'publish',
-  'posts_per_page'         => '-1',
-  'nopaging'               => true,
+  'posts_per_page'         => 1000,
+  'offset'               => 0,
+  'order' => 'ASC',
   'meta_query' => array(
     'relation' => 'AND',
     array(
@@ -37,10 +38,9 @@ if( $query->have_posts() ) {
       $result = media_sideload_image_1( $imageurl, $post->ID );
       if (!is_wp_error( $result )) {
         $count++;
-        $resultli = '<li>'.$result.'<li>';
+        echo '<li>'.$result.'<li>';
       }
       sleep(1);
-      echo $resultli;
     } 
   endwhile;
   echo '</ol>';
