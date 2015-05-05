@@ -92,7 +92,7 @@ if(!is_array($exlinks)){?>
     <?php 
     $number = 1;
     foreach($exlinks as $q){
-      echo "<li><a rel=\"nofollow\" href=\"",$q['exlink'],"\" title =\"",$q['titulo'],"\" class=\"el-",$number,"\">",$q['titulo'],"</a><span><a class=\"el-",$number,"\" href=\"javascript:;\" data-toggle=\"tooltip\" data-el-title=\"",$q['titulo'],"\" data-el-url=\"",$q['exlink'],"\" data-el-pid=\"",$post->ID,"\" title=\"Reportar enlace roto\"><i class=\"fa fa-chain-broken\"></i></a></span></li>";
+      echo "<li><a target=\"_blank\" rel=\"nofollow\" href=\"",$q['exlink'],"\" title =\"",$q['titulo'],"\" class=\"el-",$number,"\">",$q['titulo'],"</a><span><a class=\"el-",$number,"\" href=\"javascript:;\" data-toggle=\"tooltip\" data-el-title=\"",$q['titulo'],"\" data-el-url=\"",$q['exlink'],"\" data-el-pid=\"",$post->ID,"\" title=\"Reportar enlace roto\"><i class=\"fa fa-chain-broken\"></i></a></span></li>";
       $number++;
     }
     ?>

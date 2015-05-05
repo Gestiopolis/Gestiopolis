@@ -4,7 +4,7 @@
     <h3>Te recomendamos</h3>
     <i class="fa fa-caret-down"></i>
     <?php 
-    $show = 26;
+    $show = 17;
     $postsnot = array();
     $postsnot[] = $post->ID;
     $mainpost = $post->ID;

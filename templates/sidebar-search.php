@@ -4,7 +4,7 @@
     <h3>Populares</h3>
     <i class="fa fa-caret-down"></i>
     <?php 
-    $tposts = get_trending_posts(25, TRENDING_DAYS);
+    $tposts = get_trending_posts(16, TRENDING_DAYS);
     foreach ($tposts as $tpost) {
       $post_title = stripslashes($tpost->post_title);
       $permalink = get_permalink($tpost->ID);

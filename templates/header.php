@@ -1,6 +1,6 @@
 <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas">
   <ul class="nav navmenu-nav">
-    <li><a class="home-link" href="<?php echo esc_url(home_url('/')); ?>"><i class="fa fa-home"></i> Ir al inicio</a></li>
+    <li><a title="GestioPolis - Conocimiento en Negocios" class="home-link" href="<?php echo esc_url(home_url('/')); ?>"><i class="fa fa-home"></i> Ir al inicio</a></li>
     <?php
     $args = array(
       'orderby' => 'name',
@@ -9,16 +9,16 @@
       );
     $categories = get_categories( $args );
     foreach ( $categories as $category ) {
-      echo '<li><a class="cat-' . $category->term_id . '" href="' . get_category_link( $category->term_id ) . '"><i class="fa icon-cat-'.$category->term_id.' cat-bg-'.$category->term_id.'"></i>  ' . $category->name . '</a></li>';
+      echo '<li><a title="Categoría '.$category->name.'" class="cat-' . $category->term_id . '" href="' . get_category_link( $category->term_id ) . '"><i class="fa icon-cat-'.$category->term_id.' cat-bg-'.$category->term_id.'"></i>  ' . $category->name . '</a></li>';
     }
     ?>
-    <li class="contact-link"><a href="<?php echo get_page_link(325586); ?>"><i class="fa fa-map-marker"></i> Contacto</a></li>
-    <li class="dropdown more-link"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plus"></i>Más&nbsp;&nbsp;<i class="fa fa-angle-double-down"></i></a>
+    <li class="contact-link"><a title="Contacto" href="<?php echo get_page_link(325586); ?>"><i class="fa fa-map-marker"></i> Contacto</a></li>
+    <li class="dropdown more-link"><a title="Desplegar más enlaces" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plus"></i>Más&nbsp;&nbsp;<i class="fa fa-angle-double-down"></i></a>
       <ul id="explora_mas" class="dropdown-menu navmenu-nav">
-        <li><a href="<?php echo get_page_link(325585); ?>">Acerca de</a></li>
-        <li><a href="<?php echo esc_url(home_url('/')); ?><?php //echo get_page_link(325588); ?>">ABC temático</a></li>
-        <li><a href="<?php echo esc_url(home_url('/')); ?><?php //echo get_page_link(325589); ?>">Archivo</a></li>
-        <li><a href="<?php echo get_page_link(325587); ?>">Términos de uso</a></li>
+        <li><a title="Acerca de" href="<?php echo get_page_link(325585); ?>">Acerca de</a></li>
+        <li><a title="ABC Temático" href="<?php echo esc_url(home_url('/')); ?><?php //echo get_page_link(325588); ?>">ABC temático</a></li>
+        <li><a title="Archivo" href="<?php echo esc_url(home_url('/')); ?><?php //echo get_page_link(325589); ?>">Archivo</a></li>
+        <li><a title="Términos de uso" href="<?php echo get_page_link(325587); ?>">Términos de uso</a></li>
         <li class="copy">&copy;<?php echo date('Y'); ?> WebProfit Ltda.</li>
       </ul>
     </li>
@@ -27,13 +27,13 @@
 <header class="banner navbar navbar-inverse navbar-fixed-top" role="banner">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand hidden-xs" href="<?php echo esc_url(home_url('/')); ?>"><img width="179" height="48" class="logo" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo.png'); ?>" alt="<?php bloginfo('name'); ?>"></a>
-      <a class="navbar-brand visible-xs-block" href="<?php echo esc_url(home_url('/')); ?>"><img width="150" height="48" class="logo" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-min.png'); ?>" alt="<?php bloginfo('name'); ?>"></a>
+      <a title="GestioPolis - Conocimiento en Negocios" class="navbar-brand hidden-xs" href="<?php echo esc_url(home_url('/')); ?>"><img width="179" height="48" class="logo" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo.png'); ?>" alt="<?php bloginfo('name'); ?>"></a>
+      <a title="GestioPolis - Conocimiento en Negocios" class="navbar-brand visible-xs-block" href="<?php echo esc_url(home_url('/')); ?>"><img width="150" height="48" class="logo" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-min.png'); ?>" alt="<?php bloginfo('name'); ?>"></a>
     </div>
 
     <nav role="navigation">
       <ul class="nav navbar-nav navbar-right">
-        <li id="nav_publica"><a href="<?php echo get_page_link(325584); ?>"><i class="fa fa-cloud-upload"></i><span class="hidden-xs"> Publica</span></a></li>
+        <li id="nav_publica"><a title="Publicar en GestioPolis" href="<?php echo get_page_link(325584); ?>"><i class="fa fa-cloud-upload"></i><span class="hidden-xs"> Publica</span></a></li>
         <li id="nav_busca">
           <div id="sb-search" class="sb-search">
             <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search">
@@ -45,7 +45,7 @@
         </li>
 
         <li>
-          <a id="nav-expander" class="nav-expander navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+          <a title="Menú de navegación" id="nav-expander" class="nav-expander navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
             <i class="fa fa-bars white"></i><span class="hidden-xs">&nbsp;Menú</span>
           </a>
         </li>
