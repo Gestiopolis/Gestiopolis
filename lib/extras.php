@@ -740,8 +740,8 @@ function get_trending_posts($numberOf, $days, $catid = '') {
 	if($catid != ''){
 		$request .= " INNER JOIN $wpdb->term_relationships term ON (posts.ID = term.object_id)";
 	}
-	//$request .= " WHERE posts.post_type='post' AND post_date > '" . date('Y-m-d', strtotime('-'.$days.' days')) . "' AND posts.post_status='publish' AND votos.meta_key='_liked' AND views.meta_key='views'";
-	$request .= " WHERE posts.post_type='post' AND posts.post_status='publish' AND views.meta_key='views'";
+	$request .= " WHERE posts.post_type='post' AND post_date > '" . date('Y-m-d', strtotime('-'.$days.' days')) . "' AND posts.post_status='publish' AND views.meta_key='views'";
+	//$request .= " WHERE posts.post_type='post' AND posts.post_status='publish' AND views.meta_key='views'";
 	if($catid != ''){
 	$request .= " AND term.term_taxonomy_id=$catid";
 	}
