@@ -133,7 +133,7 @@ function media_sideload_image_1( $file, $post_id, $desc = null, $return = 'html'
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <form role="form" id="signin" method="post" action="<?php the_permalink(); ?>">
+  <form role="form" id="signin" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <input type="text" class="form-control" placeholder="Año" id="year" name="year" autocomplete="off" pattern="[0-9]{4}" title="Ingresa el año. Ej. 2015" required>
     <input type="text" class="form-control" placeholder="Mes" id="month" name="month" autocomplete="off" title="Ingresa el mes. Ej. 6">
     <input type="hidden" name="submitted" id="submitted" value="true" />
