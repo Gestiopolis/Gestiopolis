@@ -4,47 +4,84 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor.'wp-load.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor. 'wp-admin/includes/image.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor. 'wp-admin/includes/file.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor. 'wp-admin/includes/media.php');
-echo 'Si entra a fixer';
-echo ABSPATH;
-$args = array (
-  'post_type'              => 'post',
-  'post_status'            => 'publish',
-  'posts_per_page'         => 1000,
-  'offset'               => 0,
-  'order' => 'ASC',
-  'meta_query' => array(
-    'relation' => 'AND',
-    array(
-      'key' => '_thumbnail_id',
-      'value' => null,
-      'compare' => 'NOT EXISTS'
-    ),
-    array(
-      'key' => 'image_value',
-      'compare' => 'EXISTS'
-    ),
-  ),
-);
-$query = new WP_Query($args);
-if( $query->have_posts() ) { 
-  $count = 0;
-  echo '<h1>Listado de imágenes readjuntadas</h1><ol>';
-  while ($query->have_posts()) : $query->the_post();
-    $thumbid = get_post_meta( $post->ID, '_thumbnail_id', true );
-    $imageurl = get_post_meta( $post->ID, 'image_value', true );
-    // check if the custom field has a value
-    if(empty($thumbid) && !empty($imageurl)) {
-      //Utilizar función de media_sideload_image_1
-      $result = media_sideload_image_1( $imageurl, $post->ID );
-      if (!is_wp_error( $result )) {
-        $count++;
-        echo '<li>'.$result.'<li>';
-      }
-      sleep(1);
-    } 
-  endwhile;
-  echo '</ol>';
-  echo '<strong>'.$count.' imágenes reasinadas como principales</strong>';
+$year = ( isset($_POST['year']) && (int)$_POST['year'] ) ? esc_sql( $_POST['year'] ) : false;
+$month = ( isset($_POST['month']) && (int)$_POST['month'] ) ? esc_sql( $_POST['month'] ) : false;
+if(isset($_POST['submitted']) && $year){
+  if($month){
+    $args = array (
+      'post_type'              => 'post',
+      'post_status'            => 'publish',
+      'posts_per_page'         => -1,
+      'nopaging' => true,
+      //'offset'               => 0,
+      'order' => 'ASC',
+      'meta_query' => array(
+        'relation' => 'AND',
+        array(
+          'key' => '_thumbnail_id',
+          'value' => null,
+          'compare' => 'NOT EXISTS'
+        ),
+        array(
+          'key' => 'image_value',
+          'compare' => 'EXISTS'
+        ),
+      ),
+      'date_query' => array(
+        array(
+          'year'  => $year,
+          'month' => $month,
+        ),
+      ),
+    );
+  }else {
+    $args = array (
+      'post_type'              => 'post',
+      'post_status'            => 'publish',
+      'posts_per_page'         => -1,
+      'nopaging' => true,
+      //'offset'               => 0,
+      'order' => 'ASC',
+      'meta_query' => array(
+        'relation' => 'AND',
+        array(
+          'key' => '_thumbnail_id',
+          'value' => null,
+          'compare' => 'NOT EXISTS'
+        ),
+        array(
+          'key' => 'image_value',
+          'compare' => 'EXISTS'
+        ),
+      ),
+      'date_query' => array(
+        array(
+          'year'  => $year,
+        ),
+      ),
+    );
+  }
+  $query = new WP_Query($args);
+  if( $query->have_posts() ) { 
+    $count = 0;
+    echo '<h1>Listado de imágenes readjuntadas</h1><ol>';
+    while ($query->have_posts()) : $query->the_post();
+      $thumbid = get_post_meta( $post->ID, '_thumbnail_id', true );
+      $imageurl = get_post_meta( $post->ID, 'image_value', true );
+      // check if the custom field has a value
+      if(empty($thumbid) && !empty($imageurl)) {
+        //Utilizar función de media_sideload_image_1
+        $result = media_sideload_image_1( $imageurl, $post->ID );
+        if (!is_wp_error( $result )) {
+          $count++;
+          echo '<li>'.$result.'<li>';
+        }
+        sleep(1);
+      } 
+    endwhile;
+    echo '</ol>';
+    echo '<strong>'.$count.' imágenes reasinadas como principales</strong>';
+  }
 }
 
 function media_sideload_image_1( $file, $post_id, $desc = null, $return = 'html' ) {
@@ -87,3 +124,20 @@ function media_sideload_image_1( $file, $post_id, $desc = null, $return = 'html'
   }
 }
 ?>
+<!doctype html>
+<html class="no-js" <?php language_attributes(); ?>>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><?php wp_title('|', true, 'right'); ?></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <form role="form" id="signin" method="post" action="<?php the_permalink(); ?>">
+    <input type="text" class="form-control" placeholder="Año" id="year" name="year" autocomplete="off" pattern="[0-9]{4}" title="Ingresa el año. Ej. 2015" required>
+    <input type="text" class="form-control" placeholder="Mes" id="month" name="month" autocomplete="off" title="Ingresa el mes. Ej. 6">
+    <input type="hidden" name="submitted" id="submitted" value="true" />
+    <button type="submit" class="btn btn-info btn-lg">Enviar</button>
+  </form>
+</body>
+</html>
