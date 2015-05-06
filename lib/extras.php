@@ -1255,7 +1255,7 @@ function footer_lazyload() {
     (function($){
       $(".single img.lazy").show().lazyload({
 			  effect : "fadeIn",
-			  failure_limit : 15
+			  failure_limit : 40
 			});
     })(jQuery);
 </script>
