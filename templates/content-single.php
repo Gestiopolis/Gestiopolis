@@ -120,7 +120,7 @@
               <?php } ?>
               <?php the_content(); ?>
             </div>
-            <?php if (is_single(40765) && is_single(332811)){?>
+            <?php if (is_single(40765) || is_single(332811)){?>
             <div class="adsce">
               <!-- 1-bottom-ad-posts-convs -->
               <ins class="adsbygoogle"
