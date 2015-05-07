@@ -26,8 +26,7 @@
           <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
           <?php get_template_part('templates/post-front-edit'); ?>
           <?php } ?>
-          <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") { 
-            if(is_single(40765)){?>
+          <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
           <div class="adsce">
             <div id="google-ads-1"></div>
  
@@ -69,7 +68,7 @@
             </script>
              
           </div>
-          <?php }
+          <?php 
           if (0 == 1) { ?>
           <div id="toolbar">
             <div class="btn-toolbar" role="toolbar">
@@ -106,7 +105,7 @@
           <?php } ?>
           <div class="post-content clearfix">
             <div class="entry-content">
-              <?php if ( is_single(332811) && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
+              <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
                 <div class="adsfl">
                   <!-- 1-ad-top-posts -->
                   <ins class="adsbygoogle"
@@ -120,7 +119,6 @@
               <?php } ?>
               <?php the_content(); ?>
             </div>
-            <?php if (is_single(40765) || is_single(332811)){?>
             <div class="adsce">
               <!-- 1-bottom-ad-posts-convs -->
               <ins class="adsbygoogle"
@@ -131,8 +129,7 @@
               (adsbygoogle = window.adsbygoogle || []).push({});
               </script>
             </div>
-          <?php } ?>
-            <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
+           <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
             <div id="suscripcion" class="suscripcion hidden">
