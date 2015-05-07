@@ -2,8 +2,8 @@
   <p>Visitas: <b><?php if(function_exists('the_views')) { the_views(); } ?></b></p>
   <p><b><a href="<?php echo home_url('/'); ?>wp-admin/post.php?post=<?php echo $post->ID;?>&amp;action=edit" target="_blank">Enlace a Editor</a></b></p>
   <p><b><a href="<?php echo home_url('/'); ?>" id="deletePost">ELIMINAR ARTÍCULO</a></b></p>
-  <h3>Edición de Enlace del Post (Slug)</h3>
-  <p><b>Slug:</b> <input type="text" name="slugedit" id="slugedit" value="<?php echo $post->post_name; ?>"> <input type="submit" name="editslug" id="editslug" value="Editar"></p>
+  <!--<h3>Edición de Enlace del Post (Slug)</h3>
+  <p><b>Slug:</b> <input type="text" name="slugedit" id="slugedit" value="<?php echo $post->post_name; ?>"> <input type="submit" name="editslug" id="editslug" value="Editar"></p>-->
   <h3>Edición de Yoast SEO</h3>
   <p><b>Título SEO:</b> <?php echo get_post_meta($post->ID, "_yoast_wpseo_title", "input", true); ?></p>
   <h3>Edición de Imagen Principal</h3>
