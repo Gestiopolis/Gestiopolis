@@ -6,9 +6,7 @@ add_filter( 'the_content', 'insert_adman_ads' );
 
 function insert_adman_ads( $content ) {
 	
-	$ad_code = '<div id="admanmedia"><div class="embed-responsive embed-responsive-16by9">
-  <script src="http://icarus-wings.admanmedia.com/intext/intext_vast.js?pmu=183f9431;pmb=216f0476;size=600x338;visibility=50"></script>
-</div></div>';
+	$ad_code = '<div id="admanmedia"><script src="http://icarus-wings.admanmedia.com/intext/intext_vast.js?pmu=183f9431;pmb=216f0476;size=600x338;visibility=50"></script></div>';
 
 	if ( is_single(332811) && ! is_admin() ) {
 		return prefix_insert_after_paragraph( $ad_code, 1, $content );
