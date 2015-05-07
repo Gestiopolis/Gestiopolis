@@ -26,8 +26,53 @@
           <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
           <?php get_template_part('templates/post-front-edit'); ?>
           <?php } ?>
-          <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") { ?>
-          <?php if (0 == 1) { ?>
+          <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") { 
+            if(is_single(40765)){?>
+          <div class="adsce">
+            <div id="google-ads-1"></div>
+ 
+            <script type="text/javascript"> 
+             
+                /* Calculate the width of available ad space */
+                ad = document.getElementById('google-ads-1');
+             
+                if (ad.getBoundingClientRect().width) {
+                    adWidth = ad.getBoundingClientRect().width; // for modern browsers 
+                } else {
+                    adWidth = ad.offsetWidth; // for old IE 
+                }
+             
+                /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
+                google_ad_client = "ca-pub-1187873112185798";
+             
+                /* Replace 1234567890 with the AdSense Ad Slot ID */ 
+                google_ad_slot = "7892616054";
+              
+                /* Do not change anything after this line */
+                if ( adWidth >= 728 )
+                  google_ad_size = ["728", "90"];  /* Leaderboard 728x90 */
+                else if ( adWidth >= 468 )
+                  google_ad_size = ["468", "60"];  /* Banner (468 x 60) */
+                else
+                  google_ad_size = ["300", "250"]; /* Medium Rectangle (300 x 250) */
+             
+                document.write (
+                 '<ins class="adsbygoogle" style="display:inline-block;width:' 
+                  + google_ad_size[0] + 'px;height:' 
+                  + google_ad_size[1] + 'px" data-ad-client="' 
+                  + google_ad_client + '" data-ad-slot="' 
+                  + google_ad_slot + '"></ins>'
+                );
+              
+                (adsbygoogle = window.adsbygoogle || []).push({});
+             
+            </script>
+             
+            <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+            </script>
+          </div>
+          <?php }
+          if (0 == 1) { ?>
           <div id="toolbar">
             <div class="btn-toolbar" role="toolbar">
               <div class="btn-group btn-group-sm pull-left">
