@@ -80,7 +80,8 @@ function so_25888630_ad_between_paragraphs($content){
             $totals = array( $first, $second );
         }
 
-        $new_paras = array();   
+        $new_paras = array();
+        ?><pre>Totals <?php var_dump($totals); ?></pre><?php
         foreach ( $totals as $key_total=>$total ) {
             /**-----------------------------------------------------------------------------
              *
