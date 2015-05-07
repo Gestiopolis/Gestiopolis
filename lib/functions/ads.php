@@ -52,6 +52,7 @@ function so_25888630_ad_between_paragraphs($content){
         $closing_p = '</p>';
         //$paragraphs = explode( $closing_p, wptexturize($content) );
         $paragraphs = preg_split("/(?=<\/p>)/", $content, null, PREG_SPLIT_DELIM_CAPTURE);
+        ?><pre><?php var_dump($paragraphs); ?></pre><?php
 
         /**-----------------------------------------------------------------------------
          *
