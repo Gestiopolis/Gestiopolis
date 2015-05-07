@@ -1282,11 +1282,7 @@ function head_scripts_ads() {
 	if(is_single( $post )) {
     echo '
 	<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-	</script>
-	<script async type="text/javascript"
-	src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-	</script>
-	';
+	</script>';
 	}
 }
 add_action('wp_head', 'head_scripts_ads', 100);

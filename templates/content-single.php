@@ -108,29 +108,29 @@
             <div class="entry-content">
               <?php if ( is_single(332811) && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
                 <div class="adsfl">
-                  <script type="text/javascript"><!--
-                  google_ad_client = "ca-pub-1187873112185798";
-                  /* 1-ad-top-posts */
-                  google_ad_slot = "6415908174";
-                  google_ad_width = 300;
-                  google_ad_height = 250;
-                  //-->
+                  <!-- 1-ad-top-posts -->
+                  <ins class="adsbygoogle"
+                       style="display:inline-block;width:300px;height:250px"
+                       data-ad-client="ca-pub-1187873112185798"
+                       data-ad-slot="6415908174"></ins>
+                  <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
                   </script>
                 </div>
               <?php } ?>
               <?php the_content(); ?>
             </div>
-            <?php if (is_single(40765)){?>
-          <div class="adsce">
-            <script type="text/javascript"><!--
-            google_ad_client = "ca-pub-1187873112185798";
-            /* 1-bottom-ad-posts-convs */
-            google_ad_slot = "1846031814";
-            google_ad_width = 300;
-            google_ad_height = 250;
-            //-->
-            </script>
-          </div>
+            <?php if (is_single(40765) && is_single(332811)){?>
+            <div class="adsce">
+              <!-- 1-bottom-ad-posts-convs -->
+              <ins class="adsbygoogle"
+                   style="display:inline-block;width:300px;height:250px"
+                   data-ad-client="ca-pub-1187873112185798"
+                   data-ad-slot="1846031814"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
           <?php } ?>
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
