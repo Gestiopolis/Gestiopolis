@@ -68,8 +68,6 @@
              
             </script>
              
-            <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-            </script>
           </div>
           <?php }
           if (0 == 1) { ?>
@@ -118,13 +116,22 @@
                   google_ad_height = 250;
                   //-->
                   </script>
-                  <script type="text/javascript"
-                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-                  </script>
                 </div>
               <?php } ?>
               <?php the_content(); ?>
             </div>
+            <?php if (is_single(40765)){?>
+          <div class="adsce">
+            <script type="text/javascript"><!--
+            google_ad_client = "ca-pub-1187873112185798";
+            /* 1-bottom-ad-posts-convs */
+            google_ad_slot = "1846031814";
+            google_ad_width = 300;
+            google_ad_height = 250;
+            //-->
+            </script>
+          </div>
+          <?php } ?>
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
