@@ -35,7 +35,9 @@ function so_25888630_ad_between_paragraphs($content){
      *     - http://wordpress.stackexchange.com/a/162787/31545
      *
     *------------------------------------------------------------------------------*/ 
-    if( is_single(332811) && ! is_admin() ){ //Simply make sure that these changes effect the main query only
+    //http://www.gestiopolis.com/autogerencia/
+    //http://www.gestiopolis.com/valor-economico-agregado-eva-y-gerencia-basada-en-valor-gbv/
+    if( is_single(9624) && ! is_admin() ){ //Simply make sure that these changes effect the main query only
 
         /**-----------------------------------------------------------------------------
          *
@@ -131,7 +133,7 @@ function so_25888630_ad_between_paragraphs($content){
              *  @todo I will try to insert widgets here to make it dynamic
              *
             *------------------------------------------------------------------------------*/ 
-            if( $key_total == 2 ){
+            if( $key_total == 0 ){
                 $ad = array( 'ad1' => '<p class="adsce"><!-- 2-anuncio-prueba-p-1 -->
 <ins class="adsbygoogle"
      style="display:block"
