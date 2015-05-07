@@ -52,8 +52,7 @@ function so_25888630_ad_between_paragraphs($content){
         $closing_p = '</p>';
         //$paragraphs = explode( $closing_p, wptexturize($content) );
         $paragraphs = preg_split("/(?=<\/p>)/", $content, null, PREG_SPLIT_DELIM_CAPTURE);
-        ?><pre><?php var_dump($paragraphs); ?></pre><?php
-
+        
         /**-----------------------------------------------------------------------------
          *
          *  The amount of paragraphs is counted to determine add frequency. If there are
@@ -81,7 +80,6 @@ function so_25888630_ad_between_paragraphs($content){
         }
 
         $new_paras = array();
-        ?><pre>Totals <?php var_dump($totals); ?></pre><?php
         foreach ( $totals as $key_total=>$total ) {
             /**-----------------------------------------------------------------------------
              *
@@ -107,7 +105,6 @@ function so_25888630_ad_between_paragraphs($content){
                     $p[$key_paras] = 1; 
                 }   
             }
-            ?><pre><?php var_dump($p); ?></pre><?php
             /**-----------------------------------------------------------------------------
              *
              *  Return a position where an add will be inserted
@@ -125,7 +122,6 @@ function so_25888630_ad_between_paragraphs($content){
                     $m[] = 'no-ad';
                 }
             } 
-            ?><pre>Valores de M: <?php var_dump($m); ?></pre><?php
 
             /**-----------------------------------------------------------------------------
              *
