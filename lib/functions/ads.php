@@ -64,7 +64,7 @@ function so_25888630_ad_between_paragraphs($content){
          *
         *------------------------------------------------------------------------------*/ 
         $count = count( $paragraphs );
-        if( 6 >= $count ) {
+        if( 4 >= $count ) {
             $totals = array( $paragraphs ); 
         }else{
             $midpoint = floor($count / 2);
@@ -131,7 +131,7 @@ function so_25888630_ad_between_paragraphs($content){
              *  @todo I will try to insert widgets here to make it dynamic
              *
             *------------------------------------------------------------------------------*/ 
-            if( $key_total == 0 ){
+            if( $key_total == 2 ){
                 $ad = array( 'ad1' => '<p class="adsce"><!-- 2-anuncio-prueba-p-1 -->
 <ins class="adsbygoogle"
      style="display:block"
