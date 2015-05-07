@@ -2,6 +2,7 @@
  
 //http://wordpress.stackexchange.com/questions/52662/check-if-first-paragraph-is-an-image-then-show-custom-code-right-after-it
 //http://premium.wpmudev.org/blog/wordpress-style-first-paragraph/
+//http://stackoverflow.com/questions/25888630/place-ads-in-between-text-only-paragraphs
 //Inserta admanmedia ads después del primer párrafo
 add_filter( 'the_content', 'insert_adman_ads' );
 

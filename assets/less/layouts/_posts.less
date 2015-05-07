@@ -435,13 +435,13 @@
   padding: 0;
   position:relative;
 }
-.post-content .entry-content blockquote:before {
-  content:'\f10d';
+.post-content .entry-content blockquote:after {
+  content:'\f10e';
   font-family: 'FontAwesome';
   font-size:1.875rem;
   position:absolute;
-  top:0;
-  left:-40px;
+  bottom:0;
+  right:-40px;
 }
 .post-content .entry-content blockquote p {
   padding: 0 !important;
@@ -526,8 +526,8 @@
   .post-content .entry-content {
     font-size: 1.25rem;
   }
-  .post-content .entry-content blockquote:before {
-    left:4rem;
+  .post-content .entry-content blockquote:after {
+    right:4rem;
   }
 }
 @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
@@ -553,8 +553,8 @@
   .post-content .entry-content {
     font-size: 1.25rem;
   }
-  .post-content .entry-content blockquote:before {
-    left:1rem;
+  .post-content .entry-content blockquote:after {
+    right:1rem;
   }
 }
 @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
@@ -577,8 +577,8 @@
   .download-box {
     padding: 0 3rem;
   }
-  .post-content .entry-content blockquote:before {
-    left:0;
+  .post-content .entry-content blockquote:after {
+    right:0;
   }
 }
 .related-out {
