@@ -125,6 +125,7 @@ function so_25888630_ad_between_paragraphs($content){
                     $m[] = 'no-ad';
                 }
             } 
+            ?><pre>Valores de M: <?php var_dump($m); ?></pre><?php
 
             /**-----------------------------------------------------------------------------
              *
