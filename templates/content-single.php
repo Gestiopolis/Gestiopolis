@@ -26,60 +26,18 @@
           <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
           <?php get_template_part('templates/post-front-edit'); ?>
           <?php } 
-          if ( is_single(332811) ) { ?>
-            <div id="google-ads-1"></div>
- 
-            <script type="text/javascript"> 
-             
-                /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-                google_ad_client = "ca-pub-2753881743271989";
-             
-                /* Replace YYY with the AdSense Ad Slot ID */ 
-                google_ad_slot = "6296725724";
-              
-                /* Replace ZZZ with the custom height of your Ad Unit */
-                google_ad_height = 250;
-              
-                ad = document.getElementById('google-ads-1');
-             
-                if (ad.getBoundingClientRect().width) {
-                    google_ad_width = ad.getBoundingClientRect().width;  
-                } else {
-                    google_ad_width = ad.offsetWidth; // for old IE 
-                } 
-             
-                /* The width of an Ad unit should be between 120-1200 pixels */  
-                if (google_ad_width>1200) {        
-                    google_ad_width = 1200;
-                }  else if (google_ad_width<120) {
-                    google_ad_width = 120;
-                }  
-             
-                /* The height of an Ad unit should be between 50-1200 pixels */  
-                if (google_ad_height>1200) {        
-                    google_ad_height = 1200;
-                }  else if (google_ad_height<50) {
-                    google_ad_height = 50;
-                }  
-                  
-                /* Both height or width cannot be more than 300 pixels */  
-                if ((google_ad_width>300) && (google_ad_height>300)) {        
-                    google_ad_height = 300;
-                }  
-                
-                document.write (
-                 '<ins class="adsbygoogle" style="display:inline-block;width:' 
-                  + google_ad_width + 'px;height:' 
-                  + google_ad_height + 'px" data-ad-client="' 
-                  + google_ad_client + '" data-ad-slot="' 
-                  + google_ad_slot + '"></ins>'
-                );
-              
-                (adsbygoogle = window.adsbygoogle || []).push({});
-             
+          if ( is_single(332811) && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
+            <script type="text/javascript"><!--
+            google_ad_client = "ca-pub-1187873112185798";
+            /* 1-ad-top-posts */
+            google_ad_slot = "6415908174";
+            google_ad_width = 300;
+            google_ad_height = 250;
+            //-->
             </script>
-             
-              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <script type="text/javascript"
+            src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+            </script>
           <?php }
           if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") { ?>
           <?php if (0 == 1) { ?>
