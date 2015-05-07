@@ -106,7 +106,7 @@ function so_25888630_ad_between_paragraphs($content){
                     $p[$key_paras] = 1; 
                 }   
             }
-
+            ?><pre><?php var_dump($p); ?></pre><?php
             /**-----------------------------------------------------------------------------
              *
              *  Return a position where an add will be inserted
