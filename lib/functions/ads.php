@@ -1,7 +1,8 @@
 <?php
  
-
-//Isserta admanmedia ads después del primer párrafo
+//http://wordpress.stackexchange.com/questions/52662/check-if-first-paragraph-is-an-image-then-show-custom-code-right-after-it
+//http://premium.wpmudev.org/blog/wordpress-style-first-paragraph/
+//Inserta admanmedia ads después del primer párrafo
 add_filter( 'the_content', 'insert_adman_ads' );
 
 function insert_adman_ads( $content ) {
