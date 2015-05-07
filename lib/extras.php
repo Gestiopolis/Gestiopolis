@@ -1276,7 +1276,7 @@ function footer_dataxpand() {
 </script>
 ';
 }
-//add_action('wp_footer', 'footer_dataxpand', 100);
+add_action('wp_footer', 'footer_dataxpand', 100);
 
 function head_scripts_ads() {
 	if(is_single( $post )) {
