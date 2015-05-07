@@ -25,23 +25,8 @@
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
           <?php get_template_part('templates/post-front-edit'); ?>
-          <?php } 
-          if ( is_single(332811) && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
-            <div class="adsfl">
-              <script type="text/javascript"><!--
-              google_ad_client = "ca-pub-1187873112185798";
-              /* 1-ad-top-posts */
-              google_ad_slot = "6415908174";
-              google_ad_width = 300;
-              google_ad_height = 250;
-              //-->
-              </script>
-              <script type="text/javascript"
-              src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-              </script>
-            </div>
-          <?php }
-          if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") { ?>
+          <?php } ?>
+          <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") { ?>
           <?php if (0 == 1) { ?>
           <div id="toolbar">
             <div class="btn-toolbar" role="toolbar">
@@ -78,6 +63,21 @@
           <?php } ?>
           <div class="post-content clearfix">
             <div class="entry-content">
+              <?php if ( is_single(332811) && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
+                <div class="adsfl">
+                  <script type="text/javascript"><!--
+                  google_ad_client = "ca-pub-1187873112185798";
+                  /* 1-ad-top-posts */
+                  google_ad_slot = "6415908174";
+                  google_ad_width = 300;
+                  google_ad_height = 250;
+                  //-->
+                  </script>
+                  <script type="text/javascript"
+                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                  </script>
+                </div>
+              <?php } ?>
               <?php the_content(); ?>
             </div>
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
