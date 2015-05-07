@@ -1276,7 +1276,7 @@ function footer_dataxpand() {
 </script>
 ';
 }
-add_action('wp_footer', 'footer_dataxpand', 100);
+//add_action('wp_footer', 'footer_dataxpand', 100);
 
 function filter_lazyload($content) {
     return preg_replace_callback('/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', 'preg_lazyload', $content);
@@ -1347,5 +1347,7 @@ require_once ('functions/meta_exlinks.php');
 require_once ('functions/meta_downloads.php');
 //Funciones para los seguimiento del blog
 require_once ('functions/follows.php');
+//Funciones para los anuncios
+require_once ('functions/ads.php');
 //require_once ('functions/form_functions.php');
 //require_once ('functions/recommendations.php');
