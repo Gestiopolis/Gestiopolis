@@ -1278,7 +1278,7 @@ function footer_dataxpand() {
 }
 //add_action('wp_footer', 'footer_dataxpand', 100);
 
-function footer_scripts_ads() {
+function head_scripts_ads() {
 	if(is_single( $post )) {
     echo '
 	<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
@@ -1289,7 +1289,7 @@ function footer_scripts_ads() {
 	';
 	}
 }
-add_action('wp_footer', 'footer_scripts_ads', 100);
+add_action('wp_head', 'head_scripts_ads', 100);
 function filter_lazyload($content) {
     return preg_replace_callback('/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', 'preg_lazyload', $content);
 }
