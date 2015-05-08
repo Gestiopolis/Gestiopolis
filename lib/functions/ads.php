@@ -5,7 +5,7 @@
 //http://stackoverflow.com/questions/25888630/place-ads-in-between-text-only-paragraphs
 //http://www.labnol.org/internet/adsense-custom-size-ads/28352/
 //Inserta admanmedia ads después del primer párrafo
-//add_filter( 'the_content', 'insert_adman_ads' );
+add_filter( 'the_content', 'insert_adman_ads' );
 
 function insert_adman_ads( $content ) {
 	
@@ -16,6 +16,39 @@ function insert_adman_ads( $content ) {
 	}
 	
 	return $content;
+}
+
+function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
+	$closing_p = '</p>';
+	$paragraphs = explode( $closing_p, $content );
+	foreach ($paragraphs as $index => $paragraph) {
+
+		if ( trim( $paragraph ) ) {
+			$paragraphs[$index] .= $closing_p;
+		}
+
+		if ( $paragraph_id == $index + 1 ) {
+			$paragraphs[$index] .= $insertion;
+		}
+	}
+	
+	return implode( '', $paragraphs );
+}
+
+function insert_ads_all2html( $content ) {
+	$pages = preg_split("/(?=<div id=\"pf)/", $content, null, PREG_SPLIT_DELIM_CAPTURE);
+	/*foreach ($pages as $index => $page) {
+
+		if ( trim( $page ) ) {
+			$pages[$index] .= $closing_p;
+		}
+
+		if ( $paragraph_id == $index + 1 ) {
+			$pages[$index] .= $ad1;
+		}
+	}
+	
+	return implode( '', $pages );*/
 }
 
 add_filter( 'the_content', 'so_25888630_ad_between_paragraphs' );
