@@ -37,18 +37,34 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 
 function insert_ads_all2html( $content ) {
 	$pages = preg_split("/(?=<div id=\"pf)/", $content, null, PREG_SPLIT_DELIM_CAPTURE);
-	/*foreach ($pages as $index => $page) {
+	foreach ($pages as $index => $page) {
 
-		if ( trim( $page ) ) {
-			$pages[$index] .= $closing_p;
+		if ( 1 == $index ) {
+			$pages[$index] .= '<div class="adsce"><!-- 2-anuncio-prueba-p-1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2753881743271989"
+     data-ad-slot="4128661723"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>';
 		}
 
-		if ( $paragraph_id == $index + 1 ) {
-			$pages[$index] .= $ad1;
+		if ( 3 == $index ) {
+			$pages[$index] .= '<div class="adsce"><!-- 3-anuncio-prueba-p-2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2753881743271989"
+     data-ad-slot="1035594527"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>';
 		}
 	}
 	
-	return implode( '', $pages );*/
+	return implode( '', $pages );
 }
 
 add_filter( 'the_content', 'so_25888630_ad_between_paragraphs' );
