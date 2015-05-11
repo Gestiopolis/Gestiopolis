@@ -85,7 +85,7 @@ function so_25888630_ad_between_paragraphs($content){
      *
     *------------------------------------------------------------------------------*/ 
     //http://www.gestiopolis.com/autogerencia/
-    if( is_single(9624) && ! is_admin() ){ //Simply make sure that these changes effect the main query only
+    if( (is_single(9624) || is_single(47346) || is_single(9649) || is_single(332873) || is_single(332832) || is_single(332823)) && ! is_admin() ){ //Simply make sure that these changes effect the main query only
 
         /**-----------------------------------------------------------------------------
          *
