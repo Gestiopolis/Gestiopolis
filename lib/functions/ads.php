@@ -37,6 +37,26 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 //http://www.gestiopolis.com/valor-economico-agregado-eva-y-gerencia-basada-en-valor-gbv/
 function insert_ads_all2html( $content ) {
 	$pages = preg_split("/(?=<div id=\"pf)/", $content, null, PREG_SPLIT_DELIM_CAPTURE);
+    $count = count($pages)-1;
+    if($count <= 4){
+        $pos2 = -1;
+        $pos3 = -1;
+        $pos4 = -1;
+    } elseif ($count > 4 && $count <= 16) {
+        $pos2 = floor($count / 2);
+        $pos3 = -1;
+        $pos4 = -1;
+    } elseif ($count > 16 && $count <= 48) {
+        $breakpoint = floor($count / 3)
+        $pos2 = $breakpoint;
+        $pos3 = $breakpoint*2;
+        $pos4 = -1;
+    }else {
+        $breakpoint = floor($count / 4)
+        $pos2 = $breakpoint;
+        $pos3 = $breakpoint*2;
+        $pos4 = $breakpoint*3;
+    }
 	foreach ($pages as $index => $page) {
 
 		if ( 1 == $index ) {
@@ -51,7 +71,7 @@ function insert_ads_all2html( $content ) {
 </script></div>';
 		}
 
-		if ( 3 == $index ) {
+		if ( $pos2 == $index ) {
 			$pages[$index] .= '<div class="adsce"><!-- 3-anuncio-prueba-p-2 -->
 <ins class="adsbygoogle"
      style="display:block"
@@ -62,6 +82,30 @@ function insert_ads_all2html( $content ) {
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></div>';
 		}
+
+        if ( $pos3 == $index ) {
+            $pages[$index] .= '<div class="adsce"><!-- 4-anuncio-prueba-p-3 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2753881743271989"
+     data-ad-slot="3425167724"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>';
+        }
+
+        if ( $pos4 == $index ) {
+            $pages[$index] .= '<div class="adsce"><!-- 5-anuncio-prueba-p-4 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2753881743271989"
+     data-ad-slot="3285566922"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>';
+        }
 	}
 	
 	return implode( '', $pages );
@@ -85,6 +129,8 @@ function so_25888630_ad_between_paragraphs($content){
      *
     *------------------------------------------------------------------------------*/ 
     //http://www.gestiopolis.com/autogerencia/
+    //http://www.gestiopolis.com/gestion-de-mantenimiento-e-iso-55000-sobre-manejo-de-activos-fisicos/
+    //http://www.gestiopolis.com/posicionamiento-estrategico-de-la-empresa/
     if( (is_single(9624) || is_single(332873) || is_single(332832)) && ! is_admin() ){ //Simply make sure that these changes effect the main query only
 
         /**-----------------------------------------------------------------------------
