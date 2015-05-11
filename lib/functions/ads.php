@@ -85,7 +85,7 @@ function so_25888630_ad_between_paragraphs($content){
      *
     *------------------------------------------------------------------------------*/ 
     //http://www.gestiopolis.com/autogerencia/
-    if( (is_single(9624) || is_single(47346) || is_single(9649) || is_single(332873) || is_single(332832) || is_single(332823)) && ! is_admin() ){ //Simply make sure that these changes effect the main query only
+    if( (is_single(9624) || is_single(47346) || is_single(332873) || is_single(332832) || is_single(332823)) && ! is_admin() ){ //Simply make sure that these changes effect the main query only
 
         /**-----------------------------------------------------------------------------
          *
@@ -116,7 +116,7 @@ function so_25888630_ad_between_paragraphs($content){
         $count = count( $paragraphs );
         if( 4 >= $count ) {
             $totals = array( $paragraphs ); 
-        }else if( $count > 4 && count <= 20 ){
+        }else if( $count > 4 && $count <= 20 ){
             $midpoint = floor($count / 2);
             $first = array_slice($paragraphs, 0, $midpoint );
             if( $count%2 == 1 ) {
@@ -125,7 +125,7 @@ function so_25888630_ad_between_paragraphs($content){
                 $second = array_slice( $paragraphs, $midpoint, $midpoint-1, true );
             }
             $totals = array( $first, $second );
-        } else if ($count > 20 && count <= 40){
+        } else if ($count > 20 && $count <= 40){
             $breakpoint = floor($count / 3);
             $first = array_slice($paragraphs, 0, $breakpoint );
             $second = array_slice( $paragraphs, $breakpoint, $breakpoint, true );
