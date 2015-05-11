@@ -47,12 +47,12 @@ function insert_ads_all2html( $content ) {
         $pos3 = -1;
         $pos4 = -1;
     } elseif ($count > 16 && $count <= 48) {
-        $breakpoint = floor($count / 3)
+        $breakpoint = floor($count / 3);
         $pos2 = $breakpoint;
         $pos3 = $breakpoint*2;
         $pos4 = -1;
     }else {
-        $breakpoint = floor($count / 4)
+        $breakpoint = floor($count / 4);
         $pos2 = $breakpoint;
         $pos3 = $breakpoint*2;
         $pos4 = $breakpoint*3;
