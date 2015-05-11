@@ -6,7 +6,7 @@
 //http://www.labnol.org/internet/adsense-custom-size-ads/28352/
 //Inserta admanmedia ads después del primer párrafo
 add_filter( 'the_content', 'insert_adman_ads' );
-
+//http://www.gestiopolis.com/la-etica-empresarial-como-fuente-de-ventajas-competitivas/
 function insert_adman_ads( $content ) {
 	
 	$ad_code = '<div id="admanmedia"><script src="http://icarus-wings.admanmedia.com/intext/intext_vast.js?pmu=183f9431;pmb=216f0476;size=600x338;visibility=50"></script></div>';
@@ -34,7 +34,7 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 	
 	return implode( '', $paragraphs );
 }
-
+//http://www.gestiopolis.com/valor-economico-agregado-eva-y-gerencia-basada-en-valor-gbv/
 function insert_ads_all2html( $content ) {
 	$pages = preg_split("/(?=<div id=\"pf)/", $content, null, PREG_SPLIT_DELIM_CAPTURE);
 	foreach ($pages as $index => $page) {
@@ -85,7 +85,6 @@ function so_25888630_ad_between_paragraphs($content){
      *
     *------------------------------------------------------------------------------*/ 
     //http://www.gestiopolis.com/autogerencia/
-    //http://www.gestiopolis.com/valor-economico-agregado-eva-y-gerencia-basada-en-valor-gbv/
     if( is_single(9624) && ! is_admin() ){ //Simply make sure that these changes effect the main query only
 
         /**-----------------------------------------------------------------------------
@@ -117,7 +116,7 @@ function so_25888630_ad_between_paragraphs($content){
         $count = count( $paragraphs );
         if( 4 >= $count ) {
             $totals = array( $paragraphs ); 
-        }else{
+        }else if( $count > 4 && count <= 20 ){
             $midpoint = floor($count / 2);
             $first = array_slice($paragraphs, 0, $midpoint );
             if( $count%2 == 1 ) {
@@ -126,6 +125,21 @@ function so_25888630_ad_between_paragraphs($content){
                 $second = array_slice( $paragraphs, $midpoint, $midpoint-1, true );
             }
             $totals = array( $first, $second );
+        } else if ($count > 20 && count <= 40){
+            $breakpoint = floor($count / 3);
+            $first = array_slice($paragraphs, 0, $breakpoint );
+            $second = array_slice( $paragraphs, $breakpoint, $breakpoint, true );
+            $diff = $count - ($breakpoint*2);
+            $third = array_slice( $paragraphs, $breakpoint*2, $diff, true );
+            $totals = array( $first, $second, $third );
+        } else {
+            $breakpoint = floor($count / 4);
+            $first = array_slice($paragraphs, 0, $breakpoint );
+            $second = array_slice( $paragraphs, $breakpoint, $breakpoint, true );
+            $third = array_slice( $paragraphs, $breakpoint*2, $breakpoint, true );
+            $diff = $count - ($breakpoint*3);
+            $fourth = array_slice( $paragraphs, $breakpoint*3, $diff, true );
+            $totals = array( $first, $second, $third, $fourth );
         }
 
         $new_paras = array();
@@ -191,12 +205,32 @@ function so_25888630_ad_between_paragraphs($content){
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>' );
-            }else{
+            }else if( $key_total == 1 ){
                 $ad = array( 'ad2' => '<p class="adsce"><!-- 3-anuncio-prueba-p-2 -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-2753881743271989"
      data-ad-slot="1035594527"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>' );
+            } else if( $key_total == 2 ){
+                $ad = array( 'ad3' => '<p class="adsce"><!-- 4-anuncio-prueba-p-3 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2753881743271989"
+     data-ad-slot="3425167724"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>' );
+            }else{
+                $ad = array( 'ad4' => '<p class="adsce"><!-- 5-anuncio-prueba-p-4 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2753881743271989"
+     data-ad-slot="3285566922"
      data-ad-format="auto"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
