@@ -6,7 +6,7 @@ Template Name: ABC Temático
 global $current_user;
 get_currentuserinfo();
 
-if(is_user_logged_in() && ($current_user->ID == 5833)){
+if(!is_user_logged_in() || ($current_user->ID != 5833)){
   wp_redirect( home_url() ); 
   exit;
 }
@@ -54,7 +54,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">A</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('a', 'A');
-                if(!empty($tagsa)){ 
+                if(!empty($tagsa)){
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -71,8 +72,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">B</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('b', 'B');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -90,8 +91,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">C</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('c', 'C');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -109,8 +110,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">D</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('d', 'D');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -128,8 +129,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">E</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('e', 'E');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -147,8 +148,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">F</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('f', 'F');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -166,8 +167,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">G</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('g', 'G');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -185,8 +186,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">H</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('h', 'H');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -204,8 +205,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">I</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('i', 'I');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -223,8 +224,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">J</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('j', 'J');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -242,8 +243,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">K</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('k', 'K');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -261,8 +262,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">L</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('l', 'L');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -280,8 +281,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">M</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('m', 'M');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -299,8 +300,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">N</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('n', 'N');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -318,8 +319,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">O</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('o', 'O');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -337,8 +338,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">P</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('p', 'P');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -356,8 +357,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">Q</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('q', 'Q');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -375,8 +376,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">R</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('r', 'R');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -394,8 +395,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">S</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('s', 'S');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -413,8 +414,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">T</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('t', 'T');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                  $html = '';
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -432,8 +433,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">U</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('u', 'U');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -451,8 +452,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">V</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('v', 'V');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -470,8 +471,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">W</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('w', 'W');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -489,8 +490,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">X</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('x', 'X');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -508,8 +509,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">Y</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('y', 'Y');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
@@ -527,8 +528,8 @@ if(is_user_logged_in() && ($current_user->ID == 5833)){
               <div class="letter">Z</div>
               <div class="temas-archive">
               <?php $tagsa = tags_by_letter('z', 'Z');
-                if(!empty($tagsa)){ ?>
-                <?php 
+                if(!empty($tagsa)){ 
+                $html = ''; 
                 foreach ( $tagsa as $tag ) {
                   $tag_link = get_tag_link( $tag->term_id );
                       
