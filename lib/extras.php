@@ -1006,9 +1006,9 @@ function old_style_name_like_wpse_123298($clauses) {
 add_filter('terms_clauses','old_style_name_like_wpse_123298');
 function tags_by_letter($letter, $letterM){
 	$tagsm = get_tags(array('name__like' => $letter) );
-	$tagsM = get_tags(array('name__like' => $letterM) );
+	//$tagsM = get_tags(array('name__like' => $letterM) );
 	$tags = array_merge($tagsm, $tagsM);
-	return $tags;
+	return $tagsm;
 }
 
 //Obtener fecha actual en español
