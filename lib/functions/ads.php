@@ -62,7 +62,7 @@ function insert_ads_all2html( $content ) {
     }
 	foreach ($pages as $index => $page) {
 
-		if ( 2 == $index ) {
+		if ( 1 == $index ) {
 			$pages[$index] .= '<div class="adsce"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Convertidos-SegundaP -->
 <ins class="adsbygoogle"
@@ -240,17 +240,12 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             $m = array();
-            $vari = 1;
             foreach ( $p as $key=>$value ) {
-                if ($vari == 1) {
-                    continue;
-                }
                 if( 1 === $value && array_key_exists( $key-1, $p ) && $p[$key] === $p[$key-1] && !$m){
                     $m[] = $key;
                 }elseif( !array_key_exists( $key+1, $p ) && !$m ) {
                     $m[] = 'no-ad';
                 }
-                $vari++;
             } 
 
             /**-----------------------------------------------------------------------------
