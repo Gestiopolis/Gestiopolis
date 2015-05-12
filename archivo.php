@@ -10,7 +10,7 @@ if(!is_user_logged_in() || ($current_user->ID != 5833)){
   wp_redirect( home_url() ); 
   exit;
 }
-global $wpdb; // Don't forget
+global $wpdb;
 
 $collection = $wpdb->get_results("
   SELECT DISTINCT YEAR(p.post_date) AS post_year, MONTH(p.post_date) AS post_month
@@ -31,13 +31,19 @@ $collection = $wpdb->get_results("
               $oneyear = 1999;
               foreach ( $collection as $year ){
                 if ( $oneyear === $year->post_year ) continue;
-                echo $year->post_year.'<br>';
+                echo '<div class="postw col-lg-3 col-md-4 col-sm-6">
+                <article class="post">';
+                echo '<h3><a href="'. get_year_link($year->post_year).'" title="Archivo de '.$year->post_year.'">'.$year->post_year.'</a></h3>';
+                echo '<ul>';
                 // Loop for a second time to grab the months inside a year
                 foreach ( $collection as $month ){
                   if ( $month->post_year != $year->post_year ) continue;
-                  echo 'Año: '.$year->post_year.' Mes: '.$month->post_month.'<br>';
+                  echo '<li><a href="'.get_month_link( $year->post_year, $month->post_month ).'" title="Archivo de '.month_name($month->post_month).' de '.$year->post_year.'">'.month_name($month->post_month).'</a></li>';
                   $oneyear = $year->post_year;
                 }
+                echo '</ul>
+                </article>
+                </div>';
 
               }
             ?>

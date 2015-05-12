@@ -1311,31 +1311,31 @@ function preg_lazyload($img_match) {
 function month_name($month) {
  
   switch ($month) {
-  	case '01':
+  	case '1':
   		return 'Enero';
   		break;
-  	case '02':
+  	case '2':
   		return 'Febrero';
   		break;
-  	case '03':
+  	case '3':
   		return 'Marzo';
   		break;
-  	case '04':
+  	case '4':
   		return 'Abril';
   		break;
-  	case '05':
+  	case '5':
   		return 'Mayo';
   		break;
-  	case '06':
+  	case '6':
   		return 'Junio';
   		break;
-  	case '07':
+  	case '7':
   		return 'Julio';
   		break;
-  	case '08':
+  	case '8':
   		return 'Agosto';
   		break;
-  	case '09':
+  	case '9':
   		return 'Septiembre';
   		break;
   	case '10':
