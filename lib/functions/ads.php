@@ -42,7 +42,7 @@ function insert_ads_all2html( $content ) {
         $pos2 = -1;
         $pos3 = -1;
         $pos4 = -1;
-    } elseif ($count > 4 && $count <= 16) {
+    }/* elseif ($count > 4 && $count <= 16) {
         $pos2 = floor($count / 2);
         $pos3 = -1;
         $pos4 = -1;
@@ -56,34 +56,39 @@ function insert_ads_all2html( $content ) {
         $pos2 = $breakpoint;
         $pos3 = $breakpoint*2;
         $pos4 = $breakpoint*3;
+    }*/
+    else {
+        $pos2 = floor($count / 2);
     }
 	foreach ($pages as $index => $page) {
 
-		if ( 1 == $index ) {
-			$pages[$index] .= '<div class="adsce"><!-- 2-anuncio-prueba-p-1 -->
+		if ( 2 == $index ) {
+			$pages[$index] .= '<div class="adsce"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Convertidos-SegundaP -->
 <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2753881743271989"
-     data-ad-slot="4128661723"
-     data-ad-format="auto"></ins>
+  style="display:block"
+  data-ad-client="ca-pub-2753881743271989"
+  data-ad-slot="9779425720"
+  data-ad-format="auto"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></div>';
 		}
 
 		if ( $pos2 == $index ) {
-			$pages[$index] .= '<div class="adsce"><!-- 3-anuncio-prueba-p-2 -->
+			$pages[$index] .= '<div class="adsce"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Convertidos-MitadP -->
 <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2753881743271989"
-     data-ad-slot="1035594527"
-     data-ad-format="auto"></ins>
+  style="display:block"
+  data-ad-client="ca-pub-2753881743271989"
+  data-ad-slot="2256158924"
+  data-ad-format="auto"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></div>';
 		}
 
-        if ( $pos3 == $index ) {
+        /*if ( $pos3 == $index ) {
             $pages[$index] .= '<div class="adsce"><!-- 4-anuncio-prueba-p-3 -->
 <ins class="adsbygoogle"
      style="display:block"
@@ -105,7 +110,7 @@ function insert_ads_all2html( $content ) {
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></div>';
-        }
+        }*/
 	}
 	
 	return implode( '', $pages );
@@ -131,7 +136,8 @@ function so_25888630_ad_between_paragraphs($content){
     //http://www.gestiopolis.com/autogerencia/
     //http://www.gestiopolis.com/gestion-de-mantenimiento-e-iso-55000-sobre-manejo-de-activos-fisicos/
     //http://www.gestiopolis.com/posicionamiento-estrategico-de-la-empresa/
-    if( (is_single(9624) || is_single(332873) || is_single(332832)) && ! is_admin() ){ //Simply make sure that these changes effect the main query only
+    //if( (is_single(9624) || is_single(332873) || is_single(332832)) && ! is_admin() ){ //Simply make sure that these changes effect the main query only
+    if( is_single() && ! is_admin() ){
 
         /**-----------------------------------------------------------------------------
          *
@@ -162,7 +168,7 @@ function so_25888630_ad_between_paragraphs($content){
         $count = count( $paragraphs );
         if( 4 >= $count ) {
             $totals = array( $paragraphs ); 
-        }else if( $count > 4 && $count <= 20 ){
+        }/*else if( $count > 4 && $count <= 20 ){
             $midpoint = floor($count / 2);
             $first = array_slice($paragraphs, 0, $midpoint );
             if( $count%2 == 1 ) {
@@ -186,6 +192,16 @@ function so_25888630_ad_between_paragraphs($content){
             $diff = $count - ($breakpoint*3);
             $fourth = array_slice( $paragraphs, $breakpoint*3, $diff, true );
             $totals = array( $first, $second, $third, $fourth );
+        }*/
+        else {
+            $midpoint = floor($count / 2);
+            $first = array_slice($paragraphs, 0, $midpoint );
+            if( $count%2 == 1 ) {
+                $second = array_slice( $paragraphs, $midpoint, $midpoint, true );
+            }else{
+                $second = array_slice( $paragraphs, $midpoint, $midpoint-1, true );
+            }
+            $totals = array( $first, $second );
         }
 
         $new_paras = array();
@@ -224,12 +240,17 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             $m = array();
+            $vari = 1;
             foreach ( $p as $key=>$value ) {
+                if ($vari == 1) {
+                    continue;
+                }
                 if( 1 === $value && array_key_exists( $key-1, $p ) && $p[$key] === $p[$key-1] && !$m){
                     $m[] = $key;
                 }elseif( !array_key_exists( $key+1, $p ) && !$m ) {
                     $m[] = 'no-ad';
                 }
+                $vari++;
             } 
 
             /**-----------------------------------------------------------------------------
@@ -242,22 +263,23 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
-                $ad = array( 'ad1' => '<p class="adsce"><!-- 2-anuncio-prueba-p-1 -->
+                $ad = array( 'ad1' => '<p class="adsce">
+<!-- Post-Parrafo2 -->
 <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2753881743271989"
-     data-ad-slot="4128661723"
-     data-ad-format="auto"></ins>
+  style="display:block"
+  data-ad-client="ca-pub-2753881743271989"
+  data-ad-slot="5209625329"
+  data-ad-format="auto"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>' );
             }else if( $key_total == 1 ){
-                $ad = array( 'ad2' => '<p class="adsce"><!-- 3-anuncio-prueba-p-2 -->
+                $ad = array( 'ad2' => '<p class="adsce"><!-- Post-Mitad -->
 <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2753881743271989"
-     data-ad-slot="1035594527"
-     data-ad-format="auto"></ins>
+  style="display:block"
+  data-ad-client="ca-pub-2753881743271989"
+  data-ad-slot="8163091728"
+  data-ad-format="auto"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>' );
