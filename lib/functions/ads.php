@@ -240,21 +240,13 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             $m = array();
-            /*foreach ( $p as $key=>$value ) {
+            foreach ( $p as $key=>$value ) {
                 if( 1 === $value && array_key_exists( $key-1, $p ) && $p[$key] === $p[$key-1] && !$m){
-                    $m[] = $key;
+                    $m[] = $key+1;
                 }elseif( !array_key_exists( $key+1, $p ) && !$m ) {
                     $m[] = 'no-ad';
                 }
-            }*/
-
-            foreach ( $p as $key=>$value ) {
-                if( 1 === $value && array_key_exists( $key, $p ) && $p[$key+1] === $p[$key] && !$m){
-                    $m[] = $key;
-                }elseif( !array_key_exists( $key+2, $p ) && !$m ) {
-                    $m[] = 'no-ad';
-                }
-            } 
+            }
 
             /**-----------------------------------------------------------------------------
              *
