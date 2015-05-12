@@ -13,7 +13,7 @@ if(!is_user_logged_in() || ($current_user->ID != 5833)){
 global $wpdb; // Don't forget
 
 $collection = $wpdb->get_results("
-  SELECT YEAR(p.post_date) AS post_year, MONTH(p.post_date) AS post_month
+  SELECT DISTINCT YEAR(p.post_date) AS post_year, MONTH(p.post_date) AS post_month
   FROM {$wpdb->posts} AS p
   WHERE p.post_type = 'post' AND p.post_status = 'publish'
   ORDER BY p.post_date DESC
@@ -28,18 +28,16 @@ $collection = $wpdb->get_results("
           <div class="row posts-home">
             <?php
               // Loop once to grab the years
-            print_r($collection);
-              foreach ( $collection as $year ):
-                  echo $year.'<br>';
+              foreach ( $collection as $year ){
+                  echo $year->post_year.'<br>';
                 // Loop for a second time to grab the months inside a year
-                foreach ( $collection as $month ):
+                foreach ( $collection as $month ){
 
                   // Continue unless years match
-                  if ( $month->post_year != $year ) continue;
-                    echo 'Año: '.$year.' Mes: '.$month.'<br>';
-                endforeach;
-
-              endforeach;
+                  if ( $month->post_year != $year->post_year ) continue;
+                  echo 'Año: '.$year->post_year.' Mes: '.$month->post_month.'<br>';
+                }
+              }
             ?>
             <!--<div class="postw col-lg-3 col-md-4 col-sm-6">
               <article class="post">
