@@ -28,15 +28,17 @@ $collection = $wpdb->get_results("
           <div class="row posts-home">
             <?php
               // Loop once to grab the years
+              $oneyear = 1999;
               foreach ( $collection as $year ){
-                  echo $year->post_year.'<br>';
+                if ( $oneyear === $year->post_year ) continue;
+                echo $year->post_year.'<br>';
                 // Loop for a second time to grab the months inside a year
                 foreach ( $collection as $month ){
-
-                  // Continue unless years match
                   if ( $month->post_year != $year->post_year ) continue;
                   echo 'Año: '.$year->post_year.' Mes: '.$month->post_month.'<br>';
+                  $oneyear = $year->post_year;
                 }
+
               }
             ?>
             <!--<div class="postw col-lg-3 col-md-4 col-sm-6">
