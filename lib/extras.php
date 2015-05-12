@@ -997,6 +997,13 @@ function trending_tags($limit=10, $days ){
 	return $terms;
 }
 /*Función que trae las etiquetas por letra*/
+function old_style_name_like_wpse_123298($clauses) {
+  remove_filter('term_clauses','old_style_name_like_wpse_123298');
+  $pattern = '|(name LIKE )\'%(.+%)\'|';
+  $clauses['where'] = preg_replace($pattern,'$1 \'$2\'',$clauses['where']);
+  return $clauses;
+}
+add_filter('terms_clauses','old_style_name_like_wpse_123298');
 function tags_by_letter($letter, $letterM){
 	$tagsm = get_tags(array('name__like' => $letter) );
 	$tagsM = get_tags(array('name__like' => $letterM) );

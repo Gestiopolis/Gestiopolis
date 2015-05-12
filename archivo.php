@@ -24,7 +24,7 @@ if(!is_user_logged_in() || ($current_user->ID != 5833)){
                     <ul>
                       <li><a href="<?php echo get_month_link( date('Y'), date('m') ); ?>" title="Archivo de <?php month_name(date('m'));?> de <?php echo date('Y');?>"><?php month_name(date('m'));?></a></li>
                       <?php 
-                      $m = date('m');
+                      //$m = date('m');
                       $l=1;
                       while ($m >= '01') { 
                       $m = date('m', mktime(0, 0, 0, date('m')-$l, 0, date('Y')));
