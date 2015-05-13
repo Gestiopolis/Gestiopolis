@@ -8,11 +8,12 @@
 add_filter( 'the_content', 'insert_adman_ads' );
 //http://www.gestiopolis.com/la-etica-empresarial-como-fuente-de-ventajas-competitivas/
 function insert_adman_ads( $content ) {
+    global $post;
 	
 	$ad_code = '<div id="admanmedia"><script src="http://icarus-wings.admanmedia.com/intext/intext_vast.js?pmu=183f9431;pmb=216f0476;size=600x338;visibility=50"></script></div>';
 
-	if ( is_single(332811) && ! is_admin() ) {
-		return prefix_insert_after_paragraph( $ad_code, 1, $content );
+	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
+		return prefix_insert_after_paragraph( $ad_code, 3, $content );
 	}
 	
 	return $content;
@@ -258,7 +259,7 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
-                $ad = array( 'ad1' => '<p class="adsce"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                $ad = array( 'ad1' => '<p class="adsce">
 <!-- Post-Segundo-300x250 -->
 <ins class="adsbygoogle"
   style="display:inline-block;width:300px;height:250px"
@@ -268,7 +269,7 @@ function so_25888630_ad_between_paragraphs($content){
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>' );
             }else if( $key_total == 1 ){
-                $ad = array( 'ad2' => '<p class="adsce"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- Post-Mitad-300x250 -->
+                $ad = array( 'ad2' => '<p class="adsce"><!-- Post-Mitad-300x250 -->
 <ins class="adsbygoogle"
   style="display:inline-block;width:300px;height:250px"
   data-ad-client="ca-pub-2753881743271989"
