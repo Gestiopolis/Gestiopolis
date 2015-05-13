@@ -110,8 +110,8 @@
           <div class="post-content clearfix">
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
-                
-                  <p class="adsfl" id="google-ads-2"></p>
+                <div class="adsfl">
+                  <div id="google-ads-2"></div>
  
                   <script type="text/javascript"> 
                    
@@ -120,6 +120,7 @@
                    
                       if (ad.getBoundingClientRect().width) {
                           adWidth = ad.getBoundingClientRect().width; // for modern browsers 
+                          console.log(adWidth);
                       } else {
                           adWidth = ad.offsetWidth; // for old IE 
                       }
@@ -148,7 +149,7 @@
                    
                   </script>
 
-                
+                </div>
               <?php } ?>
               <?php the_content(); ?>
             </div>
