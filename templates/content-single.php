@@ -120,10 +120,10 @@
                    
                       if (ad.getBoundingClientRect().width) {
                           adWidth = ad.getBoundingClientRect().width; // for modern browsers 
-                          console.log(adWidth);
                       } else {
                           adWidth = ad.offsetWidth; // for old IE 
                       }
+                      console.log(adWidth);
                    
                       /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
                       google_ad_client = "ca-pub-1187873112185798";
