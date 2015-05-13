@@ -111,44 +111,14 @@
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
                 <div class="adsfl">
-                  <div id="google-ads-2"></div>
- 
-                  <script type="text/javascript"> 
-                   
-                      /* Calculate the width of available ad space */
-                      ad1 = document.getElementById('google-ads-2');
-                   
-                      if (ad1.getBoundingClientRect().width) {
-                          adWidth1 = ad1.getBoundingClientRect().width; // for modern browsers 
-                      } else {
-                          adWidth1 = ad1.offsetWidth; // for old IE 
-                      }
-                      console.log(adWidth1);
-                   
-                      /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-                      google_ad_client1 = "ca-pub-1187873112185798";
-                   
-                      /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-                      google_ad_slot1 = "2144145894";
-                    
-                      /* Do not change anything after this line */
-                      if ( adWidth1 >= 336 )
-                        google_ad_size1 = ["336", "280"];  /* Banner (468 x 60) */
-                      else
-                        google_ad_size1 = ["300", "100"]; /* Medium Rectangle (300 x 250) */
-                   
-                      document.write (
-                       '<ins class="adsbygoogle" style="display:inline-block;width:' 
-                        + google_ad_size1[0] + 'px;height:' 
-                        + google_ad_size1[1] + 'px" data-ad-client="' 
-                        + google_ad_client1 + '" data-ad-slot="' 
-                        + google_ad_slot1 + '"></ins>'
-                      );
-                    
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                   
+                  <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-1187873112185798"
+                    data-ad-slot="6415908174"
+                    data-ad-format="auto"></ins>
+                  <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
                   </script>
-
                 </div>
               <?php } ?>
               <?php the_content(); ?>
