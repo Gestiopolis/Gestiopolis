@@ -111,13 +111,16 @@
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
                 <div class="adsfl">
-                  <ins class="adsbygoogle"
-                    style="display:block"
-                    data-ad-client="ca-pub-1187873112185798"
-                    data-ad-slot="6415908174"
-                    data-ad-format="auto"></ins>
-                  <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
+                  <script type="text/javascript"><!--
+                  google_ad_client = "ca-pub-1187873112185798";
+                  /* 1-ad-top-posts */
+                  google_ad_slot = "6415908174";
+                  google_ad_width = 300;
+                  google_ad_height = 250;
+                  //-->
+                  </script>
+                  <script type="text/javascript"
+                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                   </script>
                 </div>
               <?php } ?>
