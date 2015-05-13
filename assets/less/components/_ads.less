@@ -4,8 +4,25 @@
   display:block;
 }
 .adsfl {
-  float:left;
-  margin: 0 1.5rem 1.5rem 0;
+  float: left;
+  margin: 0 1.5rem 1.5rem 0 !important;
+  padding: 2rem 0 0 0 !important;
+  
+}
+@media (min-width: @screen-lg-min) {
+  .adsfl {
+    padding: 2rem 0 0 7rem !important;
+  }
+}
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  .adsfl {
+    padding: 2rem 0 0 4rem !important;
+  }
+}
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  .adsfl {
+    padding: 2rem 0 0 3rem !important;
+  }
 }
 .adsfr {
   float:left;
