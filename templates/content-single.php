@@ -131,7 +131,7 @@
                       google_ad_slot = "2144145894";
                     
                       /* Do not change anything after this line */
-                      if ( adWidth >= 468 )
+                      if ( adWidth >= 336 )
                         google_ad_size = ["336", "280"];  /* Banner (468 x 60) */
                       else
                         google_ad_size = ["300", "100"]; /* Medium Rectangle (300 x 250) */
@@ -175,7 +175,7 @@
                       /* Do not change anything after this line */
                       if ( adWidth >= 580 )
                         google_ad_size = ["580", "400"];  /* Leaderboard 728x90 */
-                      else if ( adWidth >= 468 )
+                      else if ( adWidth >= 400 )
                         google_ad_size = ["336", "280"];  /* Banner (468 x 60) */
                       else
                         google_ad_size = ["300", "250"]; /* Medium Rectangle (300 x 250) */
