@@ -258,7 +258,7 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
-                $ad = array( 'ad1' => '<p class="adsce">
+                $ad = array( 'ad1' => '<p class="adsce"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Post-Segundo-300x250 -->
 <ins class="adsbygoogle"
   style="display:inline-block;width:300px;height:250px"
@@ -268,7 +268,7 @@ function so_25888630_ad_between_paragraphs($content){
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>' );
             }else if( $key_total == 1 ){
-                $ad = array( 'ad2' => '<p class="adsce"><!-- Post-Mitad-300x250 -->
+                $ad = array( 'ad2' => '<p class="adsce"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- Post-Mitad-300x250 -->
 <ins class="adsbygoogle"
   style="display:inline-block;width:300px;height:250px"
   data-ad-client="ca-pub-2753881743271989"
