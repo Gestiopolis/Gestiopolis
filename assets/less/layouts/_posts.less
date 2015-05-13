@@ -71,7 +71,8 @@
 .single .post-image,
 .author .post-image,
 .tag .post-image,
-.category .post-image {
+.category .post-image,
+.archive .post-image {
   display: block;
   height: 400px;
   overflow: hidden;
@@ -87,6 +88,10 @@
   height: 248px !important;
   margin-top: 0 !important;
 }
+.archive .post-image {
+  height: 120px !important;
+  margin-top: 0 !important;
+}
 .single .post-image > .container {
   height: 400px;
 }
@@ -97,10 +102,14 @@
 .category .post-image > .container {
   height: 248px;
 }
+.archive .post-image > .container {
+  height: 120px;
+}
 .single .post-image .bg-image,
 .author .post-image .bg-image,
 .tag .post-image .bg-image,
-.category .post-image .bg-image {
+.category .post-image .bg-image,
+.archive .post-image .bg-image {
   position: absolute;
   z-index: -100;
   background-size: cover;
@@ -111,7 +120,8 @@
 .single .post-image .bg-image,
 .author .post-image .bg-image,
 .tag .post-image .bg-image,
-.category .post-image .bg-image {
+.category .post-image .bg-image,
+.archive .post-image .bg-image {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -135,7 +145,8 @@
 .single .post-image .center,
 .author .post-image .center,
 .tag .post-image .center,
-.category .post-image .center {
+.category .post-image .center,
+.archive .post-image .center {
   text-align: center;
   margin: 0 auto;
   filter: none;
