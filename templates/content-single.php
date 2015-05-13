@@ -116,33 +116,33 @@
                   <script type="text/javascript"> 
                    
                       /* Calculate the width of available ad space */
-                      ad = document.getElementById('google-ads-2');
+                      ad1 = document.getElementById('google-ads-2');
                    
                       if (ad.getBoundingClientRect().width) {
-                          adWidth = ad.getBoundingClientRect().width; // for modern browsers 
+                          adWidth1 = ad1.getBoundingClientRect().width; // for modern browsers 
                       } else {
-                          adWidth = ad.offsetWidth; // for old IE 
+                          adWidth1 = ad1.offsetWidth; // for old IE 
                       }
-                      console.log(adWidth);
+                      console.log(adWidth1);
                    
                       /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-                      google_ad_client = "ca-pub-1187873112185798";
+                      google_ad_client1 = "ca-pub-1187873112185798";
                    
                       /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-                      google_ad_slot = "2144145894";
+                      google_ad_slot1 = "2144145894";
                     
                       /* Do not change anything after this line */
-                      if ( adWidth >= 336 )
-                        google_ad_size = ["336", "280"];  /* Banner (468 x 60) */
+                      if ( adWidth1 >= 336 )
+                        google_ad_size1 = ["336", "280"];  /* Banner (468 x 60) */
                       else
-                        google_ad_size = ["300", "100"]; /* Medium Rectangle (300 x 250) */
+                        google_ad_size1 = ["300", "100"]; /* Medium Rectangle (300 x 250) */
                    
                       document.write (
                        '<ins class="adsbygoogle" style="display:inline-block;width:' 
-                        + google_ad_size[0] + 'px;height:' 
-                        + google_ad_size[1] + 'px" data-ad-client="' 
-                        + google_ad_client + '" data-ad-slot="' 
-                        + google_ad_slot + '"></ins>'
+                        + google_ad_size1[0] + 'px;height:' 
+                        + google_ad_size1[1] + 'px" data-ad-client="' 
+                        + google_ad_client1 + '" data-ad-slot="' 
+                        + google_ad_slot1 + '"></ins>'
                       );
                     
                       (adsbygoogle = window.adsbygoogle || []).push({});
@@ -159,34 +159,34 @@
                   <script type="text/javascript"> 
                    
                       /* Calculate the width of available ad space */
-                      ad = document.getElementById('google-ads-3');
+                      ad2 = document.getElementById('google-ads-3');
                    
                       if (ad.getBoundingClientRect().width) {
-                          adWidth = ad.getBoundingClientRect().width; // for modern browsers 
+                          adWidth2 = ad2.getBoundingClientRect().width; // for modern browsers 
                       } else {
-                          adWidth = ad.offsetWidth; // for old IE 
+                          adWidth2 = ad2.offsetWidth; // for old IE 
                       }
                    
                       /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-                      google_ad_client = "ca-pub-1187873112185798";
+                      google_ad_client2 = "ca-pub-1187873112185798";
                    
                       /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-                      google_ad_slot = "6574269534";
+                      google_ad_slot2 = "6574269534";
                     
                       /* Do not change anything after this line */
-                      if ( adWidth >= 580 )
-                        google_ad_size = ["580", "400"];  /* Leaderboard 728x90 */
-                      else if ( adWidth >= 400 )
-                        google_ad_size = ["336", "280"];  /* Banner (468 x 60) */
+                      if ( adWidth2 >= 580 )
+                        google_ad_size2 = ["580", "400"];  /* Leaderboard 728x90 */
+                      else if ( adWidth2 >= 400 )
+                        google_ad_size2 = ["336", "280"];  /* Banner (468 x 60) */
                       else
-                        google_ad_size = ["300", "250"]; /* Medium Rectangle (300 x 250) */
+                        google_ad_size2 = ["300", "250"]; /* Medium Rectangle (300 x 250) */
                    
                       document.write (
                        '<ins class="adsbygoogle" style="display:inline-block;width:' 
-                        + google_ad_size[0] + 'px;height:' 
-                        + google_ad_size[1] + 'px" data-ad-client="' 
-                        + google_ad_client + '" data-ad-slot="' 
-                        + google_ad_slot + '"></ins>'
+                        + google_ad_size2[0] + 'px;height:' 
+                        + google_ad_size2[1] + 'px" data-ad-client="' 
+                        + google_ad_client2 + '" data-ad-slot="' 
+                        + google_ad_slot2 + '"></ins>'
                       );
                     
                       (adsbygoogle = window.adsbygoogle || []).push({});
