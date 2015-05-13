@@ -118,7 +118,7 @@
                       /* Calculate the width of available ad space */
                       ad1 = document.getElementById('google-ads-2');
                    
-                      if (ad.getBoundingClientRect().width) {
+                      if (ad1.getBoundingClientRect().width) {
                           adWidth1 = ad1.getBoundingClientRect().width; // for modern browsers 
                       } else {
                           adWidth1 = ad1.offsetWidth; // for old IE 
@@ -161,7 +161,7 @@
                       /* Calculate the width of available ad space */
                       ad2 = document.getElementById('google-ads-3');
                    
-                      if (ad.getBoundingClientRect().width) {
+                      if (ad2.getBoundingClientRect().width) {
                           adWidth2 = ad2.getBoundingClientRect().width; // for modern browsers 
                       } else {
                           adWidth2 = ad2.offsetWidth; // for old IE 
