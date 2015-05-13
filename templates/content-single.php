@@ -110,8 +110,8 @@
           <div class="post-content clearfix">
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
-                <p class="adsfl">
-                  <div id="google-ads-2"></div>
+                
+                  <p class="adsfl" id="google-ads-2"></p>
  
                   <script type="text/javascript"> 
                    
@@ -148,7 +148,7 @@
                    
                   </script>
 
-                </p>
+                
               <?php } ?>
               <?php the_content(); ?>
             </div>
