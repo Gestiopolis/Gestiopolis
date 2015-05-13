@@ -259,22 +259,20 @@ function so_25888630_ad_between_paragraphs($content){
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
                 $ad = array( 'ad1' => '<p class="adsce">
-<!-- Post-Parrafo2 -->
+<!-- Post-Segundo-300x250 -->
 <ins class="adsbygoogle"
-  style="display:block"
+  style="display:inline-block;width:300px;height:250px"
   data-ad-client="ca-pub-2753881743271989"
-  data-ad-slot="5209625329"
-  data-ad-format="auto"></ins>
+  data-ad-slot="1527802123"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>' );
             }else if( $key_total == 1 ){
-                $ad = array( 'ad2' => '<p class="adsce"><!-- Post-Mitad -->
+                $ad = array( 'ad2' => '<p class="adsce"><!-- Post-Mitad-300x250 -->
 <ins class="adsbygoogle"
-  style="display:block"
+  style="display:inline-block;width:300px;height:250px"
   data-ad-client="ca-pub-2753881743271989"
-  data-ad-slot="8163091728"
-  data-ad-format="auto"></ins>
+  data-ad-slot="3004535328"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>' );
