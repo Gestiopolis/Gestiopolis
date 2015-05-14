@@ -259,7 +259,7 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
-                $ad = array( 'ad1' => '<p class="adsce">
+                $ad = array( 'ad1' => '<div class="adsce">
 <!-- Post-Segundo-300x250 -->
 <ins class="adsbygoogle"
   style="display:inline-block;width:300px;height:250px"
@@ -267,18 +267,18 @@ function so_25888630_ad_between_paragraphs($content){
   data-ad-slot="1527802123"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
-</script></p>' );
+</script></div>' );
             }else if( $key_total == 1 ){
-                $ad = array( 'ad2' => '<p class="adsce"><!-- Post-Mitad-300x250 -->
+                $ad = array( 'ad2' => '<div class="adsce"><!-- Post-Mitad-300x250 -->
 <ins class="adsbygoogle"
   style="display:inline-block;width:300px;height:250px"
   data-ad-client="ca-pub-2753881743271989"
   data-ad-slot="3004535328"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
-</script></p>' );
+</script></div>' );
             } else if( $key_total == 2 ){
-                $ad = array( 'ad3' => '<p class="adsce"><!-- 4-anuncio-prueba-p-3 -->
+                $ad = array( 'ad3' => '<div class="adsce"><!-- 4-anuncio-prueba-p-3 -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-2753881743271989"
@@ -286,9 +286,9 @@ function so_25888630_ad_between_paragraphs($content){
      data-ad-format="auto"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
-</script></p>' );
+</script></div>' );
             }else{
-                $ad = array( 'ad4' => '<p class="adsce"><!-- 5-anuncio-prueba-p-4 -->
+                $ad = array( 'ad4' => '<div class="adsce"><!-- 5-anuncio-prueba-p-4 -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-2753881743271989"
@@ -296,7 +296,7 @@ function so_25888630_ad_between_paragraphs($content){
      data-ad-format="auto"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
-</script></p>' );
+</script></div>' );
             }
 
             /**-----------------------------------------------------------------------------

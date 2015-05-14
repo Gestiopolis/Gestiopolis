@@ -584,7 +584,8 @@ var Gestiopolis = {
   single: {
     init: function() {
       $('table').addClass('table table-bordered');
-      $('table td').removeAttr( "width" );
+      $('table td').removeAttr( "width" ).removeAttr( "style" );
+      $('table tr').removeAttr( "width" ).removeAttr( "style" );
       $('table').removeAttr( "style" );
       setTimeout(function(){
         $(".comments-wrapper").hide();
