@@ -1286,10 +1286,21 @@ function footer_dataxpand() {
 add_action('wp_footer', 'footer_dataxpand', 100);
 
 function head_scripts_ads() {
-	if(is_single( $post )) {
+	if(is_single()) {
     echo '
 	<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
 	</script>
+	';
+	}
+	if(is_single( 80291 )) {
+    echo '
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle"
+     style="display:none"
+     data-ad-client="ca-pub-1187873112185798"
+     data-reactive-ad-format="1"
+     data-ad-slot="3280776294"
+     data-ad-channel="1152052122"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 	';
 	}
 }
