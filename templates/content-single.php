@@ -139,6 +139,17 @@
               src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               </script>
             </div>
+            <?php if(is_single(80291)){ ?>
+            <div class="adsce">
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle"
+              style="display:none"
+              data-ad-client="ca-pub-1187873112185798"
+              data-reactive-ad-format="1"
+              data-ad-slot="3280776294"
+              data-ad-channel="1152052122"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <?php } ?>
            <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
