@@ -111,17 +111,16 @@
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
                 <div class="adsfl">
-                  <script type="text/javascript"><!--
-                  google_ad_client = "ca-pub-1187873112185798";
-                  /* Ad top Posts (336x280) */
-                  google_ad_slot = "4757484174";
-                  google_ad_width = 336;
-                  google_ad_height = 280;
-                  //-->
-                  </script>
-                  <script type="text/javascript"
-                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-                  </script>
+                  <style type="text/css">
+                  .adslot_1 { width: 300px; height: 250px; }
+                  @media (min-width:500px) { .adslot_1 { width: 336px; height: 280px; } }
+                  </style>
+                  <ins class="adsbygoogle adslot_1"
+                      style="display:inline-block;"
+                      data-ad-client="ca-pub-1187873112185798"
+                      data-ad-slot="4757484174"></ins>
+                  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
               <?php } ?>
               <?php the_content(); ?>
