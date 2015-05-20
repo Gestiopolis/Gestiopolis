@@ -119,7 +119,6 @@
                       style="display:inline-block;"
                       data-ad-client="ca-pub-1187873112185798"
                       data-ad-slot="4757484174"></ins>
-                  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
               <?php } ?>
