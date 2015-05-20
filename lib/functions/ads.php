@@ -260,29 +260,25 @@ function so_25888630_ad_between_paragraphs($content){
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
                 $ad = array( 'ad1' => '<div class="adsce">
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-1187873112185798";
-/* Ad Segundo Párrafo (336x280) */
-google_ad_slot = "6234192054";
-google_ad_width = 336;
-google_ad_height = 280;
-//-->
-</script>
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script></div>' );
+<style type="text/css">
+              .adslot_2 { width: 300px; height: 250px; }
+              @media (min-width:500px) { .adslot_2 { width: 336px; height: 280px; } }
+              </style>
+              <ins class="adsbygoogle adslot_2"
+                  style="display:inline-block;"
+                  data-ad-client="ca-pub-1187873112185798"
+                  data-ad-slot="6234192054"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>' );
             }else if( $key_total == 1 ){
-                $ad = array( 'ad2' => '<div class="adsce"><script type="text/javascript"><!--
-google_ad_client = "ca-pub-1187873112185798";
-/* Ad Mitad Posts (336x280) */
-google_ad_slot = "7710899934";
-google_ad_width = 336;
-google_ad_height = 280;
-//-->
-</script>
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script></div>' );
+                $ad = array( 'ad2' => '<div class="adsce"><style type="text/css">
+              .adslot_3 { width: 300px; height: 250px; }
+              @media (min-width:500px) { .adslot_3 { width: 336px; height: 280px; } }
+              </style>
+              <ins class="adsbygoogle adslot_3"
+                  style="display:inline-block;"
+                  data-ad-client="ca-pub-1187873112185798"
+                  data-ad-slot="7710899934"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>' );
             } else if( $key_total == 2 ){
                 $ad = array( 'ad3' => '<div class="adsce"><!-- 4-anuncio-prueba-p-3 -->
 <ins class="adsbygoogle"

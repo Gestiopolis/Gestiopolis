@@ -126,17 +126,15 @@
               <?php the_content(); ?>
             </div>
             <div class="adsce">
-              <script type="text/javascript"><!--
-              google_ad_client = "ca-pub-1187873112185798";
-              /* Abajo Post (336x280) */
-              google_ad_slot = "9187607814";
-              google_ad_width = 336;
-              google_ad_height = 280;
-              //-->
-              </script>
-              <script type="text/javascript"
-              src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-              </script>
+              <style type="text/css">
+              .adslot_4 { width: 300px; height: 250px; }
+              @media (min-width:500px) { .adslot_4 { width: 336px; height: 280px; } }
+              </style>
+              <ins class="adsbygoogle adslot_4"
+                  style="display:inline-block;"
+                  data-ad-client="ca-pub-1187873112185798"
+                  data-ad-slot="9187607814"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
            <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
