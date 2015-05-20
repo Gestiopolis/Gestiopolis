@@ -1281,10 +1281,6 @@ function footer_dataxpand() {
     s.parentNode.insertBefore(tagjs, s);
   }());
 </script>
-<script type="text/javascript">
-  window._taboola = window._taboola || [];
-  _taboola.push({flush: true});
-</script>
 ';
 }
 add_action('wp_footer', 'footer_dataxpand', 100);
@@ -1294,17 +1290,6 @@ function head_scripts_ads() {
     echo '
 	<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
 	</script>
-	<script type="text/javascript">
-  window._taboola = window._taboola || [];
-  _taboola.push({article:"auto"});
-  !function (e, f, u) {
-    e.async = 1;
-    e.src = u;
-    f.parentNode.insertBefore(e, f);
-  }(document.createElement("script"),
-  document.getElementsByTagName("script")[0],
-  "http://cdn.taboola.com/libtrc/gestiopolis-network/loader.js");
-</script>
 	';
 	}
 }

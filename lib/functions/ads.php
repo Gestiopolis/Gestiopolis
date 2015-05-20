@@ -64,7 +64,7 @@ function insert_ads_all2html( $content ) {
 	foreach ($pages as $index => $page) {
 
 		if ( 1 == $index ) {
-			$pages[$index] .= '<div class="adsce"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			$pages[$index] .= '<div class="adsce">
 <!-- Convertidos-SegundaP -->
 <ins class="adsbygoogle"
   style="display:block"
@@ -77,7 +77,7 @@ function insert_ads_all2html( $content ) {
 		}
 
 		if ( $pos2 == $index ) {
-			$pages[$index] .= '<div class="adsce"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			$pages[$index] .= '<div class="adsce">
 <!-- Convertidos-MitadP -->
 <ins class="adsbygoogle"
   style="display:block"
@@ -260,22 +260,28 @@ function so_25888630_ad_between_paragraphs($content){
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
                 $ad = array( 'ad1' => '<div class="adsce">
-<!-- Post-Segundo-300x250 -->
-<ins class="adsbygoogle"
-  style="display:inline-block;width:300px;height:250px"
-  data-ad-client="ca-pub-2753881743271989"
-  data-ad-slot="1527802123"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-1187873112185798";
+/* Ad Segundo Párrafo (336x280) */
+google_ad_slot = "6234192054";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script></div>' );
             }else if( $key_total == 1 ){
-                $ad = array( 'ad2' => '<div class="adsce"><!-- Post-Mitad-300x250 -->
-<ins class="adsbygoogle"
-  style="display:inline-block;width:300px;height:250px"
-  data-ad-client="ca-pub-2753881743271989"
-  data-ad-slot="3004535328"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
+                $ad = array( 'ad2' => '<div class="adsce"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-1187873112185798";
+/* Ad Mitad Posts (336x280) */
+google_ad_slot = "7710899934";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script></div>' );
             } else if( $key_total == 2 ){
                 $ad = array( 'ad3' => '<div class="adsce"><!-- 4-anuncio-prueba-p-3 -->

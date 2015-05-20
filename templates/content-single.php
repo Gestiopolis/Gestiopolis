@@ -113,10 +113,10 @@
                 <div class="adsfl">
                   <script type="text/javascript"><!--
                   google_ad_client = "ca-pub-1187873112185798";
-                  /* 1-ad-top-posts */
-                  google_ad_slot = "6415908174";
-                  google_ad_width = 300;
-                  google_ad_height = 250;
+                  /* Ad top Posts (336x280) */
+                  google_ad_slot = "4757484174";
+                  google_ad_width = 336;
+                  google_ad_height = 280;
                   //-->
                   </script>
                   <script type="text/javascript"
@@ -127,44 +127,17 @@
               <?php the_content(); ?>
             </div>
             <div class="adsce">
-              <div id="google-ads-3"></div>
- 
-                  <script type="text/javascript"> 
-                   
-                      /* Calculate the width of available ad space */
-                      ad2 = document.getElementById('google-ads-3');
-                   
-                      if (ad2.getBoundingClientRect().width) {
-                          adWidth2 = ad2.getBoundingClientRect().width; // for modern browsers 
-                      } else {
-                          adWidth2 = ad2.offsetWidth; // for old IE 
-                      }
-                   
-                      /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-                      google_ad_client2 = "ca-pub-1187873112185798";
-                   
-                      /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-                      google_ad_slot2 = "6574269534";
-                    
-                      /* Do not change anything after this line */
-                      if ( adWidth2 >= 580 )
-                        google_ad_size2 = ["580", "400"];  /* Leaderboard 728x90 */
-                      else if ( adWidth2 >= 400 )
-                        google_ad_size2 = ["336", "280"];  /* Banner (468 x 60) */
-                      else
-                        google_ad_size2 = ["300", "250"]; /* Medium Rectangle (300 x 250) */
-                   
-                      document.write (
-                       '<ins class="adsbygoogle" style="display:inline-block;width:' 
-                        + google_ad_size2[0] + 'px;height:' 
-                        + google_ad_size2[1] + 'px" data-ad-client="' 
-                        + google_ad_client2 + '" data-ad-slot="' 
-                        + google_ad_slot2 + '"></ins>'
-                      );
-                    
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                   
-                  </script>
+              <script type="text/javascript"><!--
+              google_ad_client = "ca-pub-1187873112185798";
+              /* Abajo Post (336x280) */
+              google_ad_slot = "9187607814";
+              google_ad_width = 336;
+              google_ad_height = 280;
+              //-->
+              </script>
+              <script type="text/javascript"
+              src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+              </script>
             </div>
            <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
