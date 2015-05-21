@@ -924,6 +924,7 @@ var Gestiopolis = {
           });
         });
       } //if htmlcontent
+      $(".sidebarcol, .maincol").stick_in_parent();
     } //init
   }, //Fin single
   page_id_325585: { //Acerca de

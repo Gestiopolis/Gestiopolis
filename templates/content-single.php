@@ -21,7 +21,7 @@
   </div>
   <div class="container cposts">
     <div class="row">
-      <div class="col-sm-12 col-md-9">
+      <div class="col-sm-12 col-md-9 maincol">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
           <?php get_template_part('templates/post-front-edit'); ?>
@@ -269,7 +269,7 @@
           </div>
         </article>
       </div><!--.col-sm-9-->
-      <div class="hidden-xs hidden-sm col-md-3">
+      <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
         <?php get_template_part('templates/sidebar-post'); ?>
       </div><!--.col-sm-3-->
     </div>
