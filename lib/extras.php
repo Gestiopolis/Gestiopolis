@@ -1288,6 +1288,17 @@ add_action('wp_footer', 'footer_dataxpand', 100);
 function head_scripts_ads() {
 	if(is_single()) {
     echo '
+    <!-- Hotjar Tracking Code for www.gestiopolis.com -->
+<script>
+    (function(f,b){
+        var c;
+        f.hj=f.hj||function(){(f.hj.q=f.hj.q||[]).push(arguments)};
+        f._hjSettings={hjid:5254, hjsv:4};
+        c=b.createElement("script");c.async=1;
+        c.src="//static.hotjar.com/c/hotjar-"+f._hjSettings.hjid+".js?sv="+f._hjSettings.hjsv;
+        b.getElementsByTagName("head")[0].appendChild(c); 
+    })(window,document);
+</script>
 	<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
 	</script>
 	';
