@@ -151,6 +151,11 @@ function roots_google_analytics() { ?>
   <?php endif; ?>
   ga('create','<?php echo GOOGLE_ANALYTICS_ID; ?>','auto');ga('send','pageview');
 </script>
+<script>
+jQuery(function() {
+  jQuery.scrollDepth();
+});
+</script>
 
 <?php }
 if (GOOGLE_ANALYTICS_ID && (WP_ENV !== 'production' || !current_user_can('manage_options'))) {
