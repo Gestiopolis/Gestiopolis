@@ -153,7 +153,9 @@ function roots_google_analytics() { ?>
 </script>
 <script>
 jQuery(function() {
-  jQuery.scrollDepth();
+  jQuery.scrollDepth({
+    userTiming: false
+  });
 });
 </script>
 
