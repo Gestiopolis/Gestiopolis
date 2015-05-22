@@ -154,7 +154,8 @@ function roots_google_analytics() { ?>
 <script>
 jQuery(function() {
   jQuery.scrollDepth({
-    userTiming: false
+    userTiming: false,
+    pixelDepth: false
   });
 });
 </script>
