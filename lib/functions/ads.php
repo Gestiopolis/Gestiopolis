@@ -65,28 +65,28 @@ function insert_ads_all2html( $content ) {
 
 		if ( 1 == $index ) {
 			$pages[$index] .= '<div class="adsce">
-<!-- Convertidos-SegundaP -->
-<ins class="adsbygoogle"
-  style="display:block"
-  data-ad-client="ca-pub-2753881743271989"
-  data-ad-slot="9779425720"
-  data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></div>';
+<style type="text/css">
+              .adslot_5 { width: 300px; height: 250px; }
+              @media (min-width:500px) { .adslot_5 { width: 336px; height: 280px; } }
+              </style>
+              <ins class="adsbygoogle adslot_5"
+                  style="display:inline-block;"
+                  data-ad-client="ca-pub-1187873112185798"
+                  data-ad-slot="4338226014"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>';
 		}
 
 		if ( $pos2 == $index ) {
 			$pages[$index] .= '<div class="adsce">
-<!-- Convertidos-MitadP -->
-<ins class="adsbygoogle"
-  style="display:block"
-  data-ad-client="ca-pub-2753881743271989"
-  data-ad-slot="2256158924"
-  data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></div>';
+<style type="text/css">
+              .adslot_6 { width: 300px; height: 250px; }
+              @media (min-width:500px) { .adslot_6 { width: 336px; height: 280px; } }
+              </style>
+              <ins class="adsbygoogle adslot_6"
+                  style="display:inline-block;"
+                  data-ad-client="ca-pub-1187873112185798"
+                  data-ad-slot="58149338944"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>';
 		}
 
         /*if ( $pos3 == $index ) {
