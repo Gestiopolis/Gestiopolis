@@ -168,20 +168,20 @@
               <h2>Escrito por:</h2>
               <div>
                 <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
-                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn">
+                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn" itemprop="author" itemscope itemtype="http://schema.org/Person">
                   <?php echo get_author_color_id(); ?>
-                  <strong><?php echo get_post_meta($post->ID, "author-name_value", true); ?></strong>
+                  <strong itemprop="name"><?php echo get_post_meta($post->ID, "author-name_value", true); ?></strong>
                 </a>
                 <p class="selectionShareable">
-                  <em><?php echo get_post_meta($post->ID, "author-bio_value", true); ?></em>
+                  <em itemprop="description"><?php echo get_post_meta($post->ID, "author-bio_value", true); ?></em>
                 </p>
                 <?php else : ?>
-                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn">
+                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn" itemprop="author" itemscope itemtype="http://schema.org/Person">
                   <?php echo get_author_color_id(); ?>
-                  <strong><?php echo get_the_author(); ?></strong>
+                  <strong itemprop="name"><?php echo get_the_author(); ?></strong>
                 </a>
                 <p class="selectionShareable">
-                  <em><?php echo get_the_author_meta('description'); ?></em>
+                  <em itemprop="description"><?php echo get_the_author_meta('description'); ?></em>
                 </p>
                 <?php endif; ?>
               </div>

@@ -208,6 +208,23 @@ var Gestiopolis = {
           });
         });
       });
+      $('.see-more').on('click',function(event){
+        event.preventDefault();
+        $('.autdesc').css('height', 'auto');
+        var height = ($('.post-image .vert-centered').outerHeight()+16);
+        $('.author .post-image').css('height', height+'px');
+        $('.author .post-image .bg-image').css('height', height+'px');
+        $(this).hide();
+        $('.see-less').show();
+      });
+      $('.see-less').on('click',function(event){
+        event.preventDefault();
+        $('.autdesc').css('height', '22px');
+        $('.author .post-image').css('height', '25rem');
+        $('.author .post-image .bg-image').css('height', '25rem');
+        $(this).hide();
+        $('.see-more').show();
+      });
     }
   },
   category: { //Página del autor

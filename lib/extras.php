@@ -1305,6 +1305,23 @@ function head_scripts_ads() {
 	}
 }
 add_action('wp_head', 'head_scripts_ads', 100);
+function head_meta_schema() {
+	if(is_single()) {
+		global $post;
+		if(get_post_meta($post->ID, "author-name_value", true) != "") :
+	    echo '
+	    <meta itemprop="author" content="'.get_author_posts_url($post->post_author).'"/>
+	    <meta itemprop="dateModified" content="'.get_the_modified_time('c').'"/>
+			';
+		else :
+			echo '
+	    <meta itemprop="author" content="'.get_post_meta($post->ID, "author-name_value", true).'"/>
+	    <meta itemprop="dateModified" content="'.get_the_modified_time('c').'"/>
+			';
+		endif;
+	}
+}
+add_action('wp_head', 'head_meta_schema', 1);
 function filter_lazyload($content) {
     return preg_replace_callback('/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', 'preg_lazyload', $content);
 }
