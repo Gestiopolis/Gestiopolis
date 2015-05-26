@@ -1310,12 +1310,10 @@ function head_meta_schema() {
 		global $post;
 		if(get_post_meta($post->ID, "author-name_value", true) != "") :
 	    echo '
-	    <meta itemprop="author" content="'.get_the_author().'"/>
 	    <meta itemprop="dateModified" content="'.get_the_modified_time('c').'"/>
 			';
 		else :
 			echo '
-	    <meta itemprop="author" content="'.get_post_meta($post->ID, "author-name_value", true).'"/>
 	    <meta itemprop="dateModified" content="'.get_the_modified_time('c').'"/>
 			';
 		endif;
