@@ -166,9 +166,9 @@
             </div><!-- .compartelo -->
             <div id="autores" class="autores">
               <h2>Escrito por:</h2>
-              <div>
+              <div itemprop="author" itemscope itemtype="http://schema.org/Person">
                 <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
-                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn">
                   <?php echo get_author_color_id(); ?>
                   <strong itemprop="name"><?php echo get_post_meta($post->ID, "author-name_value", true); ?></strong>
                 </a>
@@ -176,7 +176,7 @@
                   <em itemprop="description"><?php echo get_post_meta($post->ID, "author-bio_value", true); ?></em>
                 </p>
                 <?php else : ?>
-                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn">
                   <?php echo get_author_color_id(); ?>
                   <strong itemprop="name"><?php echo get_the_author(); ?></strong>
                 </a>
