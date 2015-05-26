@@ -22,7 +22,7 @@
   <div class="container cposts">
     <div class="row">
       <div class="col-sm-12 col-md-9 maincol">
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('hentry'); ?>>
           <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
           <?php get_template_part('templates/post-front-edit'); ?>
           <?php } ?>
