@@ -2,7 +2,7 @@
 	$category = get_the_category($post->ID);
 ?>
 <div class="postw col-lg-3 col-md-4 col-sm-6">
-  <article id="post-<?php the_ID(); ?>" class="post">
+  <article id="post-<?php the_ID(); ?>" class="post hentry">
     <div class="wrapper-img">
       <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
         <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'main-thumb' );
@@ -22,16 +22,16 @@
       <div class="cat-bar"></div>
       <div class="wrapper-content clearfix">
         <?php if(!is_author()) { ?>
-        <a class="autor" href="<?php echo get_author_posts_url($post->post_author); ?>">
+        <a class="autor author vcard" href="<?php echo get_author_posts_url($post->post_author); ?>">
           <?php echo get_author_color_id(); ?> 
           <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
-          <strong><?php echo get_the_author();//echo get_post_meta($post->ID, "author-name_value", true); ?></strong>
+          <strong class="fn"><?php echo get_the_author();//echo get_post_meta($post->ID, "author-name_value", true); ?></strong>
           <?php else : ?>
-          <strong><?php echo get_the_author(); ?></strong>
+          <strong class="fn"><?php echo get_the_author(); ?></strong>
           <?php endif; ?>
         </a>
         <?php } ?>
-        <div class="post-content">
+        <div class="post-content entry-content">
           <p><?php echo title_trim(220, get_the_excerpt()); ?></p>
         </div>
         <div class="tiempo-fecha">
