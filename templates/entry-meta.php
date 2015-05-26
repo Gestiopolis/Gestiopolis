@@ -12,6 +12,7 @@
     echo '<li><i class="fa icon-cat-'.$category->term_id.'"></i> <a href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a></li>';
   }
   ?>
-  <li><time class="updated" datetime="<?php echo get_the_time('c'); ?>"><i class="fa fa-calendar"></i> <?php echo get_the_date('d.m.Y'); ?></time></li>
+  <li><time class="entry-date published" datetime="<?php echo get_the_time('c'); ?>"><i class="fa fa-calendar"></i> <?php echo get_the_date('d.m.Y'); ?></time></li>
+  <time class="entry-date updated hidden" datetime="<?php echo get_the_modified_time('c'); ?>"><?php echo get_the_modified_date('d.m.Y'); ?></time>
   <li class="estimate-time"><i class="fa fa-clock-o"></i> <?php echo estimate_time();?> de lectura</li>
 </ul>

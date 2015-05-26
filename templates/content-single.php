@@ -11,7 +11,7 @@
     <div class="vert-center-wrapper">
       <div class="vert-centered">
         <div class="center container">
-          <h1 class="title"><?php the_title(); ?></h1>
+          <h1 class="title entry-title"><?php the_title(); ?></h1>
           <div class="breadcredit">
             <?php get_template_part('templates/entry-meta'); ?>
           </div>
@@ -166,9 +166,9 @@
             </div><!-- .compartelo -->
             <div id="autores" class="autores">
               <h2>Escrito por:</h2>
-              <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="author vcard">
                 <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
-                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn">
+                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="url fn">
                   <?php echo get_author_color_id(); ?>
                   <strong itemprop="name"><?php echo get_post_meta($post->ID, "author-name_value", true); ?></strong>
                 </a>
@@ -176,7 +176,7 @@
                   <em itemprop="description"><?php echo get_post_meta($post->ID, "author-bio_value", true); ?></em>
                 </p>
                 <?php else : ?>
-                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn">
+                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="url fn">
                   <?php echo get_author_color_id(); ?>
                   <strong itemprop="name"><?php echo get_the_author(); ?></strong>
                 </a>
