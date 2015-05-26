@@ -11,7 +11,7 @@ get_currentuserinfo();
       <div class="center container" itemscope itemtype="http://schema.org/Person">
         <?php echo get_author_color_id($curaut->ID); ?>
         <h1 class="title" itemprop="name"><?php echo $curaut->display_name; ?></h1>
-        <span itemprop="description" class="autdesc"><?php echo get_the_author_meta('description', $curaut->ID); ?></span><a href="#" class="see-more">Ver más...</a><a style="display:none;" href="#" class="see-less">Ver menos...</a>
+        <span itemprop="description" class="autdesc"><?php echo get_the_author_meta('description', $curaut->ID); ?></span><?php if(get_the_author_meta('description', $curaut->ID) != ''){?><a href="#" class="see-more">Ver más...</a><a style="display:none;" href="#" class="see-less">Ver menos...</a><?php } ?>
         <div class="autsocial">
           <ul class="list-unstyled">
             <?php if($curaut->user_email != '') { ?>
