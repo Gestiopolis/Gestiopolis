@@ -31,6 +31,7 @@
           <?php } ?>
           <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
           <div class="adsce">
+            <!-- Ad Top Convertido 728x90 (Adsense) -->
             <div id="google-ads-1"></div>
  
             <script type="text/javascript"> 
@@ -45,10 +46,10 @@
                 }
              
                 /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-                google_ad_client = "ca-pub-1187873112185798";
+                google_ad_client = "ca-pub-2753881743271989";
              
                 /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-                google_ad_slot = "7892616054";
+                google_ad_slot = "2501884129";
               
                 /* Do not change anything after this line */
                 if ( adWidth >= 728 )
@@ -114,15 +115,14 @@
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
                 <div class="adsfl">
-                  <style type="text/css">
-                  .adslot_1 { width: 300px; height: 250px; }
-                  @media (min-width:500px) { .adslot_1 { width: 336px; height: 280px; } }
-                  </style>
-                  <ins class="adsbygoogle adslot_1"
-                      style="display:inline-block;"
-                      data-ad-client="ca-pub-1187873112185798"
-                      data-ad-slot="4757484174"></ins>
-                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                  <!-- Ad Top Post 300x250 (Adsense) -->
+                  <ins class="adsbygoogle"
+                       style="display:inline-block;width:300px;height:250px"
+                       data-ad-client="ca-pub-2753881743271989"
+                       data-ad-slot="8548417729"></ins>
+                  <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
                 </div>
               <?php } ?>
               <?php the_content(); ?>
@@ -130,12 +130,13 @@
             <div class="adsce">
               <style type="text/css">
               .adslot_4 { width: 300px; height: 250px; }
-              @media (min-width:500px) { .adslot_4 { width: 336px; height: 280px; } }
+              @media (min-width:600px) { .adslot_4 { width: 580px; height: 400px; } }
               </style>
+              <!-- Ad-Bottom-580x400 -->
               <ins class="adsbygoogle adslot_4"
                   style="display:inline-block;"
                   data-ad-client="ca-pub-1187873112185798"
-                  data-ad-slot="9187607814"></ins>
+                  data-ad-slot="6574269534"></ins>
               <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
            <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
