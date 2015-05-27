@@ -60,6 +60,7 @@ function insert_ads_all2html( $content ) {
     }*/
     else {
         $pos2 = floor($count / 2);
+        $pos2 = $pos2 -($pos2*0.25);
     }
 	foreach ($pages as $index => $page) {
 
@@ -225,7 +226,7 @@ function so_25888630_ad_between_paragraphs($content){
          *
         *------------------------------------------------------------------------------*/ 
         $count = count( $paragraphs );
-        if( 4 >= $count ) {
+        if( 8 >= $count ) {
             $totals = array( $paragraphs ); 
         }/*else if( $count > 4 && $count <= 20 ){
             $midpoint = floor($count / 2);
@@ -252,7 +253,7 @@ function so_25888630_ad_between_paragraphs($content){
             $fourth = array_slice( $paragraphs, $breakpoint*3, $diff, true );
             $totals = array( $first, $second, $third, $fourth );
         }*/
-        else {
+        /*else {
             $midpoint = floor($count / 2);
             $first = array_slice($paragraphs, 0, $midpoint );
             if( $count%2 == 1 ) {
@@ -261,6 +262,17 @@ function so_25888630_ad_between_paragraphs($content){
                 $second = array_slice( $paragraphs, $midpoint, $midpoint-1, true );
             }
             $totals = array( $first, $second );
+        }*/
+        else {
+            $breakpoint = floor($count / 6);
+            $first = array_slice($paragraphs, 0, $breakpoint );
+            $second = array_slice( $paragraphs, $breakpoint, $breakpoint, true );
+            $third = array_slice( $paragraphs, $breakpoint*2, $breakpoint, true );
+            $fourth = array_slice( $paragraphs, $breakpoint*3, $breakpoint, true );
+            $fifth = array_slice( $paragraphs, $breakpoint*4, $breakpoint, true );
+            $diff = $count - ($breakpoint*5);
+            $sixth = array_slice( $paragraphs, $breakpoint*5, $diff, true );
+            $totals = array( $first, $second, $third, $fourth, $fifth, $sixth);
         }
 
         $new_paras = array();
@@ -325,7 +337,7 @@ function so_25888630_ad_between_paragraphs($content){
                   <script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
                   </script></div>' );
-            }else if( $key_total == 1 ){
+            }else if( $key_total == 2 ){
                 $ad = array( 'ad2' => '<div class="adsce"><!-- Ad Mitad Posts (300x250) -->
                   <ins class="adsbygoogle"
                        style="display:inline-block;width:300px;height:250px"
@@ -334,7 +346,7 @@ function so_25888630_ad_between_paragraphs($content){
                   <script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
                   </script></div>' );
-            } else if( $key_total == 2 ){
+            }/* else if( $key_total == 2 ){
                 $ad = array( 'ad3' => '<div class="adsce"><!-- 4-anuncio-prueba-p-3 -->
 <ins class="adsbygoogle"
      style="display:block"
@@ -354,7 +366,7 @@ function so_25888630_ad_between_paragraphs($content){
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></div>' );
-            }
+            }*/
 
             /**-----------------------------------------------------------------------------
              *

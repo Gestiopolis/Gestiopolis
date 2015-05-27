@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h1 class="title">La página que intentaste ver no existe</h1>
+        <h1 class="title">Has ingresado a un lugar prohibido</h1>
         <div class="descrcon">La buena noticia es que empleando el buscador que está más abajo hallarás valiosos recursos sobre eso que te interesa y te trajo hasta acá.</div>
         <div class="search404">
           <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search" class="searchnotf form-inline">
