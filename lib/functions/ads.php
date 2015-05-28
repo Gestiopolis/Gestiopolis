@@ -327,7 +327,7 @@ function so_25888630_ad_between_paragraphs($content){
                   <script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
                   </script></div>' );
-            }else if( $key_total == 2 ){
+            }else if( $key_total == 1 ){
                 $ad = array( 'ad2' => '<div class="adsce"><!-- Ad Mitad Posts (300x250) -->
                   <ins class="adsbygoogle"
                        style="display:inline-block;width:300px;height:250px"
