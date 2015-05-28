@@ -253,7 +253,7 @@ function so_25888630_ad_between_paragraphs($content){
             $fourth = array_slice( $paragraphs, $breakpoint*3, $diff, true );
             $totals = array( $first, $second, $third, $fourth );
         }*/
-        /*else {
+        else {
             $midpoint = floor($count / 2);
             $first = array_slice($paragraphs, 0, $midpoint );
             if( $count%2 == 1 ) {
@@ -262,18 +262,8 @@ function so_25888630_ad_between_paragraphs($content){
                 $second = array_slice( $paragraphs, $midpoint, $midpoint-1, true );
             }
             $totals = array( $first, $second );
-        }*/
-        else {
-            $breakpoint = floor($count / 6);
-            $first = array_slice($paragraphs, 0, $breakpoint );
-            $second = array_slice( $paragraphs, $breakpoint, $breakpoint, true );
-            $third = array_slice( $paragraphs, $breakpoint*2, $breakpoint, true );
-            $fourth = array_slice( $paragraphs, $breakpoint*3, $breakpoint, true );
-            $fifth = array_slice( $paragraphs, $breakpoint*4, $breakpoint, true );
-            $diff = $count - ($breakpoint*5);
-            $sixth = array_slice( $paragraphs, $breakpoint*5, $diff, true );
-            $totals = array( $first, $second, $third, $fourth, $fifth, $sixth);
         }
+        
 
         $new_paras = array();
         foreach ( $totals as $key_total=>$total ) {
