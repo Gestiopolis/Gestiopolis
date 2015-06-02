@@ -1327,7 +1327,12 @@ function head_scripts_ads() {
 		addSize([750, 450], [[300, 250], [728, 90], [580, 400], [336, 280]])
 		.build();
     googletag.defineSlot(\'/1007663/post-doc-fondo-contenido\', [[300, 250], [728, 90], [580, 400], [336, 280]], \'div-gpt-ad-1433261534384-4\').defineSizeMapping(mapping).addService(googletag.pubads());
-    googletag.defineSlot(\'/1007663/docs-comienzo-contenido\', [728, 90], \'div-gpt-ad-1433261534384-5\').addService(googletag.pubads());
+    var mapping1 = googletag.sizeMapping().
+    addSize([320, 700], [300, 250]).
+		addSize([550, 200], [468, 60]).
+		addSize([768, 200], [728, 90]).
+		build();
+    googletag.defineSlot(\'/1007663/docs-comienzo-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-5\').defineSizeMapping(mapping1).addService(googletag.pubads());
     googletag.defineSlot(\'/1007663/docs-2da-pagina-contenido\', [728, 90], \'div-gpt-ad-1433261534384-6\').addService(googletag.pubads());
     googletag.defineSlot(\'/1007663/docs-mitad-contenido\', [728, 90], \'div-gpt-ad-1433261534384-7\').addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
