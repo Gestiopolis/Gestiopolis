@@ -1327,7 +1327,7 @@ function head_scripts_ads() {
     googletag.defineOutOfPageSlot(\'/1007663/post-2do-parrafo-contenido\', \'div-gpt-ad-1433210711278-1\').addService(googletag.pubads());
     googletag.defineOutOfPageSlot(\'/1007663/post-3er-parrafo-contenido\', \'div-gpt-ad-1433210711278-2\').addService(googletag.pubads());
     googletag.defineOutOfPageSlot(\'/1007663/post-mitad-contenido\', \'div-gpt-ad-1433210711278-3\').addService(googletag.pubads());
-    googletag.defineOutOfPageSlot(\'/1007663/post-doc-fondo-contenido\', \'div-gpt-ad-1433210711278-4\').defineSizeMapping(mapadfondo).addService(googletag.pubads());
+    googletag.defineOutOfPageSlot(\'/1007663/post-doc-fondo-contenido\', [300, 250],\'div-gpt-ad-1433210711278-4\').defineSizeMapping(mapadfondo).addService(googletag.pubads());
     googletag.defineOutOfPageSlot(\'/1007663/docs-comienzo-contenido\', \'div-gpt-ad-1433210711278-5\').addService(googletag.pubads());
     googletag.defineOutOfPageSlot(\'/1007663/docs-2da-pagina-contenido\', \'div-gpt-ad-1433210711278-6\').addService(googletag.pubads());
     googletag.defineOutOfPageSlot(\'/1007663/docs-mitad-contenido\', \'div-gpt-ad-1433210711278-7\').addService(googletag.pubads());
