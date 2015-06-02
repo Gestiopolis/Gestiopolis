@@ -1321,29 +1321,30 @@ function head_scripts_ads() {
     googletag.defineSlot(\'/1007663/post-3er-parrafo-contenido\', [600, 338], \'div-gpt-ad-1433261534384-2\').addService(googletag.pubads());
     googletag.defineSlot(\'/1007663/post-mitad-contenido\', [300, 250], \'div-gpt-ad-1433261534384-3\').addService(googletag.pubads());
     var mapping = googletag.sizeMapping().
-    addSize([320, 700], [300, 250]).
+    addSize([0, 0], [300, 250]).
 		addSize([750, 450], [[300, 250], [728, 90], [580, 400], [336, 280]])
 		.build();
     googletag.defineSlot(\'/1007663/post-doc-fondo-contenido\', [[300, 250], [728, 90], [580, 400], [336, 280]], \'div-gpt-ad-1433261534384-4\').defineSizeMapping(mapping).addService(googletag.pubads());
     var mapping1 = googletag.sizeMapping().
-    addSize([320, 700], [300, 250]).
+    addSize([0, 0], [300, 250]).
 		addSize([550, 200], [468, 60]).
 		addSize([768, 200], [728, 90]).
 		build();
     googletag.defineSlot(\'/1007663/docs-comienzo-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-5\').defineSizeMapping(mapping1).addService(googletag.pubads());
     var mapping2 = googletag.sizeMapping().
-    addSize([320, 700], [300, 250]).
+    addSize([0, 0], [300, 250]).
 		addSize([550, 200], [468, 60]).
 		addSize([768, 200], [728, 90]).
 		build();
     googletag.defineSlot(\'/1007663/docs-2da-pagina-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-6\').defineSizeMapping(mapping2).addService(googletag.pubads());
     var mapping3 = googletag.sizeMapping().
-    addSize([320, 700], [300, 250]).
+    addSize([0, 0], [300, 250]).
 		addSize([550, 200], [468, 60]).
 		addSize([768, 200], [728, 90]).
 		build();
     googletag.defineSlot(\'/1007663/docs-mitad-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-7\').defineSizeMapping(mapping3).addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
     googletag.enableServices();
   });
 </script>
