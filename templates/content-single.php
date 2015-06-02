@@ -32,7 +32,7 @@
           <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
           <div class="adsce">
             <!-- /1007663/docs-comienzo-contenido -->
-            <div id='div-gpt-ad-1433261534384-5' style='height:90px; width:728px;'>
+            <div id='div-gpt-ad-1433261534384-5'>
             <script type='text/javascript'>
             googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-5'); });
             </script>

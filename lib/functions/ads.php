@@ -65,87 +65,21 @@ function insert_ads_all2html( $content ) {
 	foreach ($pages as $index => $page) {
 
 		if ( 1 == $index ) {
-			$pages[$index] .= '<div class="adsce"><!-- Ad Top Convertido 728x90 (Adsense) -->
-            <div id="google-ads-2"></div>
- 
-            <script type="text/javascript"> 
-             
-                /* Calculate the width of available ad space */
-                ad = document.getElementById("google-ads-2");
-             
-                if (ad.getBoundingClientRect().width) {
-                    adWidth = ad.getBoundingClientRect().width; // for modern browsers 
-                } else {
-                    adWidth = ad.offsetWidth; // for old IE 
-                }
-             
-                /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-                google_ad_client = "ca-pub-1187873112185798";
-             
-                /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-                google_ad_slot = "4338226014";
-              
-                /* Do not change anything after this line */
-                if ( adWidth >= 728 )
-                  google_ad_size = ["728", "90"];  /* Leaderboard 728x90 */
-                else if ( adWidth >= 468 )
-                  google_ad_size = ["468", "60"];  /* Banner (468 x 60) */
-                else
-                  google_ad_size = ["300", "250"]; /* Medium Rectangle (300 x 250) */
-             
-                document.write (
-                 "<ins class=\"adsbygoogle\" style=\"display:inline-block;width:" 
-                  + google_ad_size[0] + "px;height:" 
-                  + google_ad_size[1] + "px\" data-ad-client=\"" 
-                  + google_ad_client + "\" data-ad-slot=\"" 
-                  + google_ad_slot + "\"></ins>"
-                );
-              
-                (adsbygoogle = window.adsbygoogle || []).push({});
-             
-            </script></div>';
+			$pages[$index] .= '<div class="adsce"><!-- /1007663/docs-2da-pagina-contenido -->
+<div id=\'div-gpt-ad-1433261534384-6\'>
+<script type=\'text/javascript\'>
+googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-6\'); });
+</script>
+</div></div>';
 		}
 
 		if ( $pos2 == $index ) {
-			$pages[$index] .= '<div class="adsce"><!-- Ad Top Convertido 728x90 (Adsense) -->
-            <div id="google-ads-3"></div>
- 
-            <script type="text/javascript"> 
-             
-                /* Calculate the width of available ad space */
-                ad = document.getElementById("google-ads-3");
-             
-                if (ad.getBoundingClientRect().width) {
-                    adWidth = ad.getBoundingClientRect().width; // for modern browsers 
-                } else {
-                    adWidth = ad.offsetWidth; // for old IE 
-                }
-             
-                /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-                google_ad_client = "ca-pub-1187873112185798";
-             
-                /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-                google_ad_slot = "5814933894";
-              
-                /* Do not change anything after this line */
-                if ( adWidth >= 728 )
-                  google_ad_size = ["728", "90"];  /* Leaderboard 728x90 */
-                else if ( adWidth >= 468 )
-                  google_ad_size = ["468", "60"];  /* Banner (468 x 60) */
-                else
-                  google_ad_size = ["300", "250"]; /* Medium Rectangle (300 x 250) */
-             
-                document.write (
-                 "<ins class=\"adsbygoogle\" style=\"display:inline-block;width:" 
-                  + google_ad_size[0] + "px;height:" 
-                  + google_ad_size[1] + "px\" data-ad-client=\"" 
-                  + google_ad_client + "\" data-ad-slot=\"" 
-                  + google_ad_slot + "\"></ins>"
-                );
-              
-                (adsbygoogle = window.adsbygoogle || []).push({});
-             
-            </script></div>';
+			$pages[$index] .= '<div class="adsce"><!-- /1007663/docs-mitad-contenido -->
+<div id=\'div-gpt-ad-1433261534384-7\'>
+<script type=\'text/javascript\'>
+googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'); });
+</script>
+</div></div>';
 		}
 
         /*if ( $pos3 == $index ) {
@@ -319,23 +253,19 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
-                $ad = array( 'ad1' => '<div class="adsce"><!-- Ad Segundo Párrafo (300x250) -->
-                  <ins class="adsbygoogle"
-                       style="display:inline-block;width:300px;height:250px"
-                       data-ad-client="ca-pub-1187873112185798"
-                       data-ad-slot="6234192054"></ins>
-                  <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-                  </script></div>' );
+                $ad = array( 'ad1' => '<div class="adsce"><!-- /1007663/post-2do-parrafo-contenido -->
+<div id=\'div-gpt-ad-1433261534384-1\' style=\'height:250px; width:300px;\'>
+<script type=\'text/javascript\'>
+googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-1\'); });
+</script>
+</div></div>' );
             }else if( $key_total == 1 ){
-                $ad = array( 'ad2' => '<div class="adsce"><!-- Ad Mitad Posts (300x250) -->
-                  <ins class="adsbygoogle"
-                       style="display:inline-block;width:300px;height:250px"
-                       data-ad-client="ca-pub-1187873112185798"
-                       data-ad-slot="7710899934"></ins>
-                  <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-                  </script></div>' );
+                $ad = array( 'ad2' => '<div class="adsce"><!-- /1007663/post-mitad-contenido -->
+<div id=\'div-gpt-ad-1433261534384-3\' style=\'height:250px; width:300px;\'>
+<script type=\'text/javascript\'>
+googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-3\'); });
+</script>
+</div></div>' );
             }/* else if( $key_total == 2 ){
                 $ad = array( 'ad3' => '<div class="adsce"><!-- 4-anuncio-prueba-p-3 -->
 <ins class="adsbygoogle"

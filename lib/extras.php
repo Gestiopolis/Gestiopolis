@@ -1299,8 +1299,6 @@ function head_scripts_ads() {
         b.getElementsByTagName("head")[0].appendChild(c); 
     })(window,document);
 </script>
-	<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-	</script>
 	<script type=\'text/javascript\'>
   var googletag = googletag || {};
   googletag.cmd = googletag.cmd || [];
@@ -1333,8 +1331,18 @@ function head_scripts_ads() {
 		addSize([768, 200], [728, 90]).
 		build();
     googletag.defineSlot(\'/1007663/docs-comienzo-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-5\').defineSizeMapping(mapping1).addService(googletag.pubads());
-    googletag.defineSlot(\'/1007663/docs-2da-pagina-contenido\', [728, 90], \'div-gpt-ad-1433261534384-6\').addService(googletag.pubads());
-    googletag.defineSlot(\'/1007663/docs-mitad-contenido\', [728, 90], \'div-gpt-ad-1433261534384-7\').addService(googletag.pubads());
+    var mapping2 = googletag.sizeMapping().
+    addSize([320, 700], [300, 250]).
+		addSize([550, 200], [468, 60]).
+		addSize([768, 200], [728, 90]).
+		build();
+    googletag.defineSlot(\'/1007663/docs-2da-pagina-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-6\').defineSizeMapping(mapping2).addService(googletag.pubads());
+    var mapping3 = googletag.sizeMapping().
+    addSize([320, 700], [300, 250]).
+		addSize([550, 200], [468, 60]).
+		addSize([768, 200], [728, 90]).
+		build();
+    googletag.defineSlot(\'/1007663/docs-mitad-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-7\').defineSizeMapping(mapping3).addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
     googletag.enableServices();
   });
