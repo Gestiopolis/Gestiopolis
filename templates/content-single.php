@@ -128,6 +128,8 @@
               <?php the_content(); ?>
             </div>
             <div class="adsce">
+              <!-- http://www.gestiopolis.com/desarrollo-del-tratado-de-libre-comercio-de-colombia-con-ee-uu-en-el-sector-agricola/ -->
+              <?php if(!is_single(333171)){ ?>
               <style type="text/css">
               .adslot_4 { width: 300px; height: 250px; }
               @media (min-width:600px) { .adslot_4 { width: 580px; height: 400px; } }
@@ -138,6 +140,14 @@
                   data-ad-client="ca-pub-1187873112185798"
                   data-ad-slot="6574269534"></ins>
               <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+              <?php }else { ?>
+              <!-- /1007663/post-doc-fondo-contenido -->
+              <div id='div-gpt-ad-1433210711278-4'>
+                <script type='text/javascript'>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433210711278-4'); });
+                </script>
+              </div>
+              <?php } ?>
             </div>
            <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
