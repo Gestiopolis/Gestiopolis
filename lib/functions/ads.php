@@ -254,14 +254,14 @@ function so_25888630_ad_between_paragraphs($content){
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
                 $ad = array( 'ad1' => '<div class="adsce"><!-- /1007663/post-2do-parrafo-contenido -->
-<div id=\'div-gpt-ad-1433261534384-1\' style=\'height:250px; width:300px;\'>
+<div id=\'div-gpt-ad-1433261534384-1\'>
 <script type=\'text/javascript\'>
 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-1\'); });
 </script>
 </div></div>' );
             }else if( $key_total == 1 ){
                 $ad = array( 'ad2' => '<div class="adsce"><!-- /1007663/post-mitad-contenido -->
-<div id=\'div-gpt-ad-1433261534384-3\' style=\'height:250px; width:300px;\'>
+<div id=\'div-gpt-ad-1433261534384-3\'>
 <script type=\'text/javascript\'>
 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-3\'); });
 </script>
