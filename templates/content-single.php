@@ -115,6 +115,7 @@
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
                 <div class="adsfl">
+                  <?php if(!is_single(333171)){ ?>
                   <!-- Ad Top Post 300x250 (Adsense) -->
                   <ins class="adsbygoogle"
                        style="display:inline-block;width:300px;height:250px"
@@ -123,12 +124,20 @@
                   <script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
                   </script>
+                  <?php }else { ?>
+                  <!-- /1007663/post-comienzo-contenido -->
+                  <div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
+                  <script type='text/javascript'>
+                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-0'); });
+                  </script>
+                  </div>
+                  <?php } ?>
                 </div>
               <?php } ?>
               <?php the_content(); ?>
             </div>
             <div class="adsce">
-              <!-- http://www.gestiopolis.com/desarrollo-del-tratado-de-libre-comercio-de-colombia-con-ee-uu-en-el-sector-agricola/ -->
+              <!-- http://www.gestiopolis.com/7-consejos-para-enfrentar-los-problemas-del-ego/ -->
               <?php if(!is_single(333171)){ ?>
               <style type="text/css">
               .adslot_4 { width: 300px; height: 250px; }
@@ -142,10 +151,10 @@
               <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
               <?php }else { ?>
               <!-- /1007663/post-doc-fondo-contenido -->
-              <div id='div-gpt-ad-1433210711278-4'>
-                <script type='text/javascript'>
-                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433210711278-4'); });
-                </script>
+              <div id='div-gpt-ad-1433261534384-4'>
+              <script type='text/javascript'>
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-4'); });
+              </script>
               </div>
               <?php } ?>
             </div>

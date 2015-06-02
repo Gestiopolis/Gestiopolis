@@ -1318,14 +1318,14 @@ function head_scripts_ads() {
 
 <script type=\'text/javascript\'>
   googletag.cmd.push(function() {
-  	googletag.defineOutOfPageSlot(\'/1007663/post-comienzo-contenido\', \'div-gpt-ad-1433210711278-0\').addService(googletag.pubads());
-    googletag.defineOutOfPageSlot(\'/1007663/post-2do-parrafo-contenido\', \'div-gpt-ad-1433210711278-1\').addService(googletag.pubads());
-    googletag.defineOutOfPageSlot(\'/1007663/post-3er-parrafo-contenido\', \'div-gpt-ad-1433210711278-2\').addService(googletag.pubads());
-    googletag.defineOutOfPageSlot(\'/1007663/post-mitad-contenido\', \'div-gpt-ad-1433210711278-3\').addService(googletag.pubads());
-    googletag.defineOutOfPageSlot(\'/1007663/post-doc-fondo-contenido\',\'div-gpt-ad-1433210711278-4\').addService(googletag.pubads());
-    googletag.defineOutOfPageSlot(\'/1007663/docs-comienzo-contenido\', \'div-gpt-ad-1433210711278-5\').addService(googletag.pubads());
-    googletag.defineOutOfPageSlot(\'/1007663/docs-2da-pagina-contenido\', \'div-gpt-ad-1433210711278-6\').addService(googletag.pubads());
-    googletag.defineOutOfPageSlot(\'/1007663/docs-mitad-contenido\', \'div-gpt-ad-1433210711278-7\').addService(googletag.pubads());
+    googletag.defineSlot(\'/1007663/post-comienzo-contenido\', [300, 250], \'div-gpt-ad-1433261534384-0\').addService(googletag.pubads());
+    googletag.defineSlot(\'/1007663/post-2do-parrafo-contenido\', [300, 250], \'div-gpt-ad-1433261534384-1\').addService(googletag.pubads());
+    googletag.defineSlot(\'/1007663/post-3er-parrafo-contenido\', [600, 338], \'div-gpt-ad-1433261534384-2\').addService(googletag.pubads());
+    googletag.defineSlot(\'/1007663/post-mitad-contenido\', [300, 250], \'div-gpt-ad-1433261534384-3\').addService(googletag.pubads());
+    googletag.defineSlot(\'/1007663/post-doc-fondo-contenido\', [[300, 250], [728, 90], [580, 400], [336, 280]], \'div-gpt-ad-1433261534384-4\').addService(googletag.pubads());
+    googletag.defineSlot(\'/1007663/docs-comienzo-contenido\', [728, 90], \'div-gpt-ad-1433261534384-5\').addService(googletag.pubads());
+    googletag.defineSlot(\'/1007663/docs-2da-pagina-contenido\', [728, 90], \'div-gpt-ad-1433261534384-6\').addService(googletag.pubads());
+    googletag.defineSlot(\'/1007663/docs-mitad-contenido\', [728, 90], \'div-gpt-ad-1433261534384-7\').addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
     googletag.pubads().collapseEmptyDivs();
     googletag.enableServices();
