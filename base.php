@@ -59,13 +59,6 @@
   <?php get_template_part('templates/footer'); ?>
 
   <?php wp_footer(); ?>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle"
-  style="display:none"
-  data-ad-client="ca-pub-1187873112185798"
-  data-reactive-ad-format="1"
-  data-ad-slot="3280776294"
-  data-ad-channel="1152052122"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
 </body>
 </html>
