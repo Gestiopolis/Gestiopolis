@@ -727,7 +727,6 @@ var Gestiopolis = {
             curpage = this_cur_page_idx;
             $('input.pagen').val(curpage+1);
           });
-          //$('#toolbar').stickUp();
           $('#toolbar').width($('#page-container').width());
           var page = document.getElementsByClassName('pf');
 
