@@ -1500,6 +1500,9 @@ function custom_error_class($classes)
 }
  
 add_action('wp','custom_error_pages');
+//NO cargara Contact form en todas partes
+add_filter( 'wpcf7_load_js', '__return_false' );
+add_filter( 'wpcf7_load_css', '__return_false' );
 
 //Función de Wp_Imager https://github.com/Jany-M/WP-Imager
 require_once ('functions/wp-imager.php');
