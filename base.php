@@ -58,7 +58,14 @@
   <a href="#myNavmenu" class="toTop" title="Volver a arriba"><i class="fa fa-chevron-circle-up"></i></a>
   <?php get_template_part('templates/footer'); ?>
 
-  <?php wp_footer(); ?>
-
+  <?php wp_footer(); 
+  if(is_single(30230)){ ?>
+  <!-- /1007663/zocalo-movil -->
+  <div id='div-gpt-ad-1433302084091-8'>
+  <script type='text/javascript'>
+  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433302084091-8'); });
+  </script>
+  </div>
+ <?php } ?>
 </body>
 </html>

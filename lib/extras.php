@@ -1331,6 +1331,7 @@ function head_scripts_ads() {
 		addSize([768, 200], [728, 90]).
 		build();
     googletag.defineSlot(\'/1007663/docs-mitad-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-7\').defineSizeMapping(mapping3).addService(googletag.pubads());
+    googletag.defineSlot(\'/1007663/zocalo-movil\', [300, 125], \'div-gpt-ad-1433302084091-8\').addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
     googletag.pubads().collapseEmptyDivs();
     googletag.enableServices();
