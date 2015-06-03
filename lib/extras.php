@@ -1503,6 +1503,11 @@ add_action('wp','custom_error_pages');
 //NO cargara Contact form en todas partes
 add_filter( 'wpcf7_load_js', '__return_false' );
 add_filter( 'wpcf7_load_css', '__return_false' );
+//Quitar Emojis
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 //Función de Wp_Imager https://github.com/Jany-M/WP-Imager
 require_once ('functions/wp-imager.php');
