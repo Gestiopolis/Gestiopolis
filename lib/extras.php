@@ -1306,7 +1306,7 @@ function head_scripts_ads() {
   googletag.cmd.push(function() {
     googletag.defineSlot(\'/1007663/post-comienzo-contenido\', [300, 250], \'div-gpt-ad-1433261534384-0\').addService(googletag.pubads());
     googletag.defineSlot(\'/1007663/post-2do-parrafo-contenido\', [300, 250], \'div-gpt-ad-1433261534384-1\').addService(googletag.pubads());
-    googletag.defineSlot(\'/1007663/post-3er-parrafo-contenido\', [600, 338], \'div-gpt-ad-1433261534384-2\').addService(googletag.pubads());
+    googletag.defineSlot(\'/1007663/post-3er-parrafo-contenido\', [600, 338], \'div-gpt-ad-1433302990009-0\').addService(googletag.pubads());
     googletag.defineSlot(\'/1007663/post-mitad-contenido\', [300, 250], \'div-gpt-ad-1433261534384-3\').addService(googletag.pubads());
     var mapping = googletag.sizeMapping().
     addSize([0, 0], [300, 250]).

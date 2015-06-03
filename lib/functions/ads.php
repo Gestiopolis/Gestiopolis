@@ -11,9 +11,9 @@ function insert_adman_ads( $content ) {
     global $post;
 	
 	$ad_code = '<div id="admanmedia" class="hidden-xs"><!-- /1007663/post-3er-parrafo-contenido -->
-<div id=\'div-gpt-ad-1433301350994-2\'>
+<div id=\'div-gpt-ad-1433303077158-0\' style=\'height:338px; width:600px;\'>
 <script type=\'text/javascript\'>
-googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433301350994-2\'); });
+googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433303077158-0\'); });
 </script>
 </div></div>';
 
