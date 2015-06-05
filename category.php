@@ -8,7 +8,6 @@ get_currentuserinfo();
   <div class="vert-center-wrapper">
     <div class="vert-centered">
       <div class="center container">
-        <!--<span class="author-color"><i class="fa fa-tag"></i></span>-->
         <h1 class="title"><i class="fa icon-cat-<?php echo $term->term_id; ?>"></i> <?php single_term_title(); ?></h1>
         <div class="eje-tagline"><?php echo $term->description; ?></div>
         <ul class="catcounts list-unstyled">
@@ -25,26 +24,6 @@ get_currentuserinfo();
   </div>        
 </div>
 <div class="container">
-  <!-- Empieza sección de TÍTULO DE CATEGORÍA -->
-  <!--<div class="row titu-cat">
-    <div class="col-sm-5">
-      <i class="fa icon-cat-<?php echo $term->term_id; ?> cat-col-<?php echo $term->term_id; ?>"></i>
-      <span class="eje-nombre"><?php single_term_title(); ?></span>
-      <br class="clearfix">
-      <span class="eje-tagline"><?php echo $term->description; ?></span>
-    </div>
-    <div class="col-sm-5">
-      <ul>
-        <li>Posts <a href="#" class="btn btn-publ"><?php echo $term->count; ?></a></li>
-        <li>Autores <a href="#" class="btn btn-aut"><?php autcat($term->term_id); ?></a></li>
-        <?php 
-          $args = array('categories' => $term->term_id);
-          $tags = get_category_tags($args);
-        ?>
-        <li>Temas <a href="#" class="btn btn-tem"><?php echo count($tags); ?></a></li>
-      </ul>
-    </div>
-  </div>--><!-- .row TÍTULO DE CATEGORÍA -->
   <div class="row title-section">
     <div class="col-sm-12">
       <h2>Se destacan</h2>
@@ -184,7 +163,6 @@ get_currentuserinfo();
               <div class="trending-author">
                 <a href="<?php echo get_author_posts_url($author->post_author); ?>" data-toggle="tooltip" title="<?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> posts de <?php echo get_the_author_meta('display_name', $author->post_author); ?>"><?php echo get_author_color_id($author->post_author); ?></a>
                 <div class="author-name"><a href="<?php echo get_author_posts_url($author->post_author); ?>" data-toggle="tooltip" title="<?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> posts de <?php echo get_the_author_meta('display_name', $author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>  
-                <!--<div class="author-posts"><a href="<?php echo get_author_posts_url($author->post_author); ?>" title="<?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> posts de <?php echo get_the_author_meta('display_name', $author->post_author); ?>"><?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> posts <i class="fa fa-angle-double-right"></i></a></div>-->
               </div>
             </div>
           </div>

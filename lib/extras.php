@@ -1268,7 +1268,7 @@ function footer_lazyload() {
 </script>
 ';
 }
-add_action('wp_footer', 'footer_lazyload', 100);
+//add_action('wp_footer', 'footer_lazyload', 100);
 
 function footer_dataxpand() {
     echo '
@@ -1357,7 +1357,7 @@ add_action('wp_head', 'head_meta_schema', 1);
 function filter_lazyload($content) {
     return preg_replace_callback('/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', 'preg_lazyload', $content);
 }
-add_filter('the_content', 'filter_lazyload');
+//add_filter('the_content', 'filter_lazyload');
 
 function preg_lazyload($img_match) {
  
