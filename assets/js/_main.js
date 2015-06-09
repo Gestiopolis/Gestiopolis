@@ -953,7 +953,7 @@ var Gestiopolis = {
   }, //Fin Acerca de
   abc_tematico: { //ABC
     init: function() {
-      $('.tags-letters').stickUp();
+      //$('.tags-letters').stickUp();
     }
   }
 };

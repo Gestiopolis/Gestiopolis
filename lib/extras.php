@@ -1283,7 +1283,7 @@ function footer_dataxpand() {
 </script>
 ';
 }
-add_action('wp_footer', 'footer_dataxpand', 100);
+//add_action('wp_footer', 'footer_dataxpand', 100);
 
 function head_scripts_ads() {
 	if(is_single()) {
@@ -1339,7 +1339,7 @@ function head_scripts_ads() {
 	';
 	}
 }
-add_action('wp_head', 'head_scripts_ads', 100);
+//add_action('wp_head', 'head_scripts_ads', 100);
 function head_meta_schema() {
 	if(is_single()) {
 		global $post;
@@ -1499,6 +1499,11 @@ function custom_error_class($classes)
 }
  
 add_action('wp','custom_error_pages');
+//Quitar Emojis
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 //Función de Wp_Imager https://github.com/Jany-M/WP-Imager
 require_once ('functions/wp-imager.php');

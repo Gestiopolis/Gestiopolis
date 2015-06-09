@@ -32,11 +32,11 @@
           <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
           <div class="adsce">
             <!-- /1007663/docs-comienzo-contenido -->
-            <div id='div-gpt-ad-1433261534384-5'>
+            <!--<div id='div-gpt-ad-1433261534384-5'>
             <script type='text/javascript'>
             googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-5'); });
             </script>
-            </div>
+            </div>-->
           </div>
           <?php 
           if (0 == 1) { ?>
@@ -82,22 +82,22 @@
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
                 <div class="adsfl">
                   <!-- /1007663/post-comienzo-contenido -->
-                  <div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
+                  <!--<div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
                   <script type='text/javascript'>
                   googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-0'); });
                   </script>
-                  </div>
+                  </div>-->
                 </div>
               <?php } ?>
               <?php the_content(); ?>
             </div>
             <div class="adsce">
               <!-- /1007663/post-doc-fondo-contenido -->
-              <div id='div-gpt-ad-1433261534384-4'>
+              <!--<div id='div-gpt-ad-1433261534384-4'>
               <script type='text/javascript'>
               googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-4'); });
               </script>
-              </div>
+              </div>-->
             </div>
            <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
