@@ -33,7 +33,7 @@
           <div class="adsce">
             <!-- /1007663/docs-comienzo-contenido -->
             <div id='div-gpt-ad-1433261534384-5'>
-            <script type='text/javascript'>
+            <script pagespeed_no_defer="" type='text/javascript'>
             googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-5'); });
             </script>
             </div>
@@ -83,7 +83,7 @@
                 <div class="adsfl">
                   <!-- /1007663/post-comienzo-contenido -->
                   <div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
-                  <script type='text/javascript'>
+                  <script pagespeed_no_defer="" type='text/javascript'>
                   googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-0'); });
                   </script>
                   </div>
@@ -94,7 +94,7 @@
             <div class="adsce">
               <!-- /1007663/post-doc-fondo-contenido -->
               <div id='div-gpt-ad-1433261534384-4'>
-              <script type='text/javascript'>
+              <script pagespeed_no_defer="" type='text/javascript'>
               googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-4'); });
               </script>
               </div>

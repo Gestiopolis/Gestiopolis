@@ -1289,7 +1289,7 @@ add_action('wp_footer', 'footer_dataxpand', 100);
 
 function head_scripts_ads() {
 	if(is_single()) {
-    echo '<script type=\'text/javascript\'>
+    echo '<script pagespeed_no_defer="" type=\'text/javascript\'>
   var googletag = googletag || {};
   googletag.cmd = googletag.cmd || [];
   (function() {
@@ -1304,7 +1304,7 @@ function head_scripts_ads() {
   })();
 </script>
 
-<script type=\'text/javascript\'>
+<script pagespeed_no_defer="" type=\'text/javascript\'>
   googletag.cmd.push(function() {
     googletag.defineSlot(\'/1007663/post-comienzo-contenido\', [300, 250], \'div-gpt-ad-1433261534384-0\').addService(googletag.pubads());
     googletag.defineSlot(\'/1007663/post-2do-parrafo-contenido\', [300, 250], \'div-gpt-ad-1433261534384-1\').addService(googletag.pubads());
