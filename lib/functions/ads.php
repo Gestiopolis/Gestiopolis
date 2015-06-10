@@ -65,18 +65,16 @@ function insert_ads_all2html( $content ) {
 	foreach ($pages as $index => $page) {
 
 		if ( 1 == $index ) {
-			$pages[$index] .= '<div class="adsce"><!-- /1007663/docs-2da-pagina-contenido -->
-<div id=\'div-gpt-ad-1433261534384-6\'>
-<script pagespeed_no_defer="" type=\'text/javascript\'>
+			$pages[$index] .= '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-6\'>
+<script pagespeed_no_defer=\'\' type=\'text/javascript\'>
 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-6\'); });
 </script>
 </div></div>';
 		}
 
 		if ( $pos2 == $index ) {
-			$pages[$index] .= '<div class="adsce"><!-- /1007663/docs-mitad-contenido -->
-<div id=\'div-gpt-ad-1433261534384-7\'>
-<script pagespeed_no_defer="" type=\'text/javascript\'>
+			$pages[$index] .= '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-7\'>
+<script pagespeed_no_defer=\'\' type=\'text/javascript\'>
 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'); });
 </script>
 </div></div>';
@@ -253,16 +251,14 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
-                $ad = array( 'ad1' => '<div class="adsce"><!-- /1007663/post-2do-parrafo-contenido -->
-<div id=\'div-gpt-ad-1433261534384-1\'>
-<script pagespeed_no_defer="" type=\'text/javascript\'>
+                $ad = array( 'ad1' => '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-1\'>
+<script pagespeed_no_defer=\'\' type=\'text/javascript\'>
 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-1\'); });
 </script>
 </div></div>' );
             }else if( $key_total == 1 ){
-                $ad = array( 'ad2' => '<div class="adsce"><!-- /1007663/post-mitad-contenido -->
-<div id=\'div-gpt-ad-1433261534384-3\'>
-<script pagespeed_no_defer="" type=\'text/javascript\'>
+                $ad = array( 'ad2' => '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-3\'>
+<script pagespeed_no_defer=\'\' type=\'text/javascript\'>
 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-3\'); });
 </script>
 </div></div>' );
