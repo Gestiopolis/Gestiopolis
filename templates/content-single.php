@@ -32,7 +32,7 @@
           <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
           <div class="adsce">
             <div id='div-gpt-ad-1433261534384-5'>
-            <script pagespeed_no_defer='' type='text/javascript'>
+            <script type='text/javascript'>
             googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-5'); });
             </script>
             </div>
@@ -81,7 +81,7 @@
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
                 <div class="adsfl">
                   <div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
-                  <script pagespeed_no_defer='' type='text/javascript'>
+                  <script type='text/javascript'>
                   googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-0'); });
                   </script>
                   </div>
@@ -91,7 +91,7 @@
             </div>
             <div class="adsce">
               <div id='div-gpt-ad-1433261534384-4'>
-              <script pagespeed_no_defer='' type='text/javascript'>
+              <script type='text/javascript'>
               googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-4'); });
               </script>
               </div>
