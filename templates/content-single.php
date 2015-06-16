@@ -5,13 +5,13 @@
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <h1 class="entry-title title"><?php the_title(); ?></h1>
           <div class="row"><!-- Empieza row de contenido y meta datos -->
-            <div class="col-sm-12 col-md-2">
+            <div class="col-sm-12 col-md-3">
               <div class="breadcredit">
                 <?php get_template_part('templates/entry-meta'); ?>
                 <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm"> ','','</div>'); ?>
               </div>
             </div>
-            <div class="col-sm-12 col-md-10">
+            <div class="col-sm-12 col-md-9">
           <time class="entry-date published hidden" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('d.m.Y'); ?></time>
           <time class="entry-date updated hidden" datetime="<?php echo get_the_modified_time('c'); ?>"><?php echo get_the_modified_date('d.m.Y'); ?></time>
           <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
@@ -221,7 +221,12 @@
         </article>
       </div><!--.col-sm-9-->
       <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
-        <img src="http://placehold.it/300x600">
+        <!-- /1007663/300x600SideBar -->
+        <div id='div-gpt-ad-1434489240326-0' style='height:600px; width:300px;'>
+        <script type='text/javascript'>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1434489240326-0'); });
+        </script>
+        </div>
         <?php //get_template_part('templates/sidebar-post'); ?>
       </div><!--.col-sm-3-->
     </div><!-- fin de .row -->

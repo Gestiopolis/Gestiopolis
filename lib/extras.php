@@ -1331,6 +1331,11 @@ function head_scripts_ads() {
 		addSize([768, 200], [728, 90]).
 		build();
     googletag.defineSlot(\'/1007663/docs-mitad-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-7\').defineSizeMapping(mapping3).addService(googletag.pubads());
+    var mapping4 = googletag.sizeMapping().
+    addSize([0, 0], [160, 600]).
+		addSize([992, 500], [300, 600]).
+		build();
+		googletag.defineSlot(\'/1007663/300x600SideBar\', [[300, 600], [160, 600]], \'div-gpt-ad-1434489240326-0\').defineSizeMapping(mapping4).addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
     googletag.pubads().collapseEmptyDivs();
     googletag.enableServices();
@@ -1339,7 +1344,7 @@ function head_scripts_ads() {
 	';
 	}
 }
-//add_action('wp_head', 'head_scripts_ads', 100);
+add_action('wp_head', 'head_scripts_ads', 1);
 function head_meta_schema() {
 	if(is_single()) {
 		global $post;
