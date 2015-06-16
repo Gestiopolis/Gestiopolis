@@ -17,12 +17,6 @@
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <h1 class="entry-title title"><?php the_title(); ?></h1>
           <div class="row"><!-- Empieza row de contenido y meta datos -->
-            <div class="col-sm-12 col-md-2">
-              <div class="breadcredit">
-                <?php get_template_part('templates/entry-meta'); ?>
-                <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm"> ','','</div>'); ?>
-              </div>
-            </div>
             <div class="col-sm-12 col-md-10">
           <time class="entry-date published hidden" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('d.m.Y'); ?></time>
           <time class="entry-date updated hidden" datetime="<?php echo get_the_modified_time('c'); ?>"><?php echo get_the_modified_date('d.m.Y'); ?></time>
@@ -79,7 +73,7 @@
           <div class="post-content clearfix">
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
-                <div class="adsfl">
+                <div class="adsfr">
                   <div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
                   <script type='text/javascript'>
                   googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-0'); });
@@ -229,6 +223,13 @@
             </div>
           </div>
         </div><!-- fin col-md-10 -->
+        <div class="col-sm-12 col-md-2">
+          <div class="breadcredit">
+            <?php get_template_part('templates/entry-meta'); ?>
+            <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm"> ','','</div>'); ?>
+          </div>
+        </div>
+            
         </div><!-- fin de row de contenido y meta -->
         </article>
       </div><!--.col-sm-9-->
