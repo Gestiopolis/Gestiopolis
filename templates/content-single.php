@@ -1,24 +1,4 @@
 <?php while (have_posts()) : the_post(); ?>
-  <!--<div class="post-image">
-    <?php if (get_post_meta($post->ID, "Thumbnail", true) != "") { 
-      $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-img' );
-      ?>
-    <div class="bg-image" style="background-image: url(<?php echo $large_image_url[0]; ?>); height: 400px;"></div>
-    <?php } else { ?>
-    <div class="bg-image" style="background: #ccc; height: 400px;"></div>
-    <?php } ?>
-    <div class="overlay"></div>
-    <div class="vert-center-wrapper">
-      <div class="vert-centered">
-        <div class="center container">
-          <h1 class="title entry-title"><?php the_title(); ?></h1>
-          <div class="breadcredit">
-            <?php get_template_part('templates/entry-meta'); ?>
-          </div>
-        </div>
-      </div>
-    </div>        
-  </div>-->
   <div class="container cposts">
     <div class="row">
       <div class="col-sm-12 col-md-9 maincol">
@@ -28,6 +8,7 @@
             <div class="col-sm-12 col-md-2">
               <div class="breadcredit">
                 <?php get_template_part('templates/entry-meta'); ?>
+                <?php the_tags('<div class="temas-uppost hidden-md hidden-lg"> ','','</div>'); ?>
               </div>
             </div>
             <div class="col-sm-12 col-md-10">
@@ -154,7 +135,7 @@
                 <?php endif; ?>
               </div>
             </div>
-            <div class="post-tags">
+            <div class="post-tags hidden-xs hidden-sm">
               <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
               <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
             </div><!-- .post-tags -->
