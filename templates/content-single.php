@@ -1,5 +1,5 @@
 <?php while (have_posts()) : the_post(); ?>
-  <div class="post-image">
+  <!--<div class="post-image">
     <?php if (get_post_meta($post->ID, "Thumbnail", true) != "") { 
       $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-img' );
       ?>
@@ -18,12 +18,17 @@
         </div>
       </div>
     </div>        
-  </div>
+  </div>-->
   <div class="container cposts">
     <div class="row">
       <div class="col-sm-12 col-md-9 maincol">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          <h2 class="hidden entry-title"><?php the_title(); ?></h2>
+          <h1 class="entry-title"><?php the_title(); ?></h1>
+          <div class="row"><!-- Empieza row de contenido y meta datos -->
+            <div class="col-sm-12 col-md-2">
+              <?php get_template_part('templates/entry-meta'); ?>
+            </div>
+            <div class="col-sm-12 col-md-10">
           <time class="entry-date published hidden" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('d.m.Y'); ?></time>
           <time class="entry-date updated hidden" datetime="<?php echo get_the_modified_time('c'); ?>"><?php echo get_the_modified_date('d.m.Y'); ?></time>
           <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
@@ -31,12 +36,11 @@
           <?php } ?>
           <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
           <div class="adsce">
-            <!-- /1007663/docs-comienzo-contenido -->
-            <!--<div id='div-gpt-ad-1433261534384-5'>
+            <div id='div-gpt-ad-1433261534384-5'>
             <script type='text/javascript'>
             googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-5'); });
             </script>
-            </div>-->
+            </div>
           </div>
           <?php 
           if (0 == 1) { ?>
@@ -81,23 +85,21 @@
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
                 <div class="adsfl">
-                  <!-- /1007663/post-comienzo-contenido -->
-                  <!--<div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
+                  <div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
                   <script type='text/javascript'>
                   googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-0'); });
                   </script>
-                  </div>-->
+                  </div>
                 </div>
               <?php } ?>
               <?php the_content(); ?>
             </div>
             <div class="adsce">
-              <!-- /1007663/post-doc-fondo-contenido -->
-              <!--<div id='div-gpt-ad-1433261534384-4'>
+              <div id='div-gpt-ad-1433261534384-4'>
               <script type='text/javascript'>
               googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-4'); });
               </script>
-              </div>-->
+              </div>
             </div>
            <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
@@ -231,12 +233,14 @@
               <?php //comments_template('/templates/comments.php'); ?>
             </div>
           </div>
+        </div><!-- fin col-md-10 -->
+        </div><!-- fin de row de contenido y meta -->
         </article>
       </div><!--.col-sm-9-->
       <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
         <?php get_template_part('templates/sidebar-post'); ?>
       </div><!--.col-sm-3-->
-    </div>
+    </div><!-- fin de .row -->
     <div class="row title-section">
       <div class="col-sm-12">
         <?php
