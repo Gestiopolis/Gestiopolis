@@ -10,7 +10,7 @@
   margin-top: 16px;
 }
 .single .navbar-inverse {
-  background-color: rgba(34, 34, 34, 0.6);
+  background-color: rgba(34, 34, 34, 1);
 }
 .single .title,
 .error400 .title,
@@ -29,7 +29,8 @@
   color: @headings-color;
   font: 700 2.25rem @title-font, sans-serif;
   line-height: 1.2;
-  margin: 0 0 0 2rem !important;
+  //margin: 0 0 0 2rem !important;
+  margin: 0 !important;
   //text-shadow: 2px 0px 50px rgba(0,0,0,0.5);
   //margin-top:48px;
 }
@@ -179,13 +180,27 @@
   display: inline-block;
 }
 .breadcredit .author-info {
-  font: 700 0.8125rem @title-font, sans-serif;
+  font: 700 1.125rem @title-font, sans-serif;
 }
 .breadcredit li {
   display: inline-block;
   margin-left: 24px;
   height: 32px;
   line-height: 32px;
+  padding: 0.5rem 0;
+}
+.breadcredit .catego {
+  font-family: @title-font, sans-serif;
+  font-size: 0.875rem;
+}
+.breadcredit .catego i {
+  display: inline-block;
+  height: 1.75rem;
+  width: 1.75rem;
+  margin-right: 8px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 1.75rem;
 }
 .temas-uppost a {
   display:block;

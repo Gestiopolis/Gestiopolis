@@ -5,13 +5,13 @@
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <h1 class="entry-title title"><?php the_title(); ?></h1>
           <div class="row"><!-- Empieza row de contenido y meta datos -->
-            <div class="col-sm-12 col-md-3">
+            <div class="col-sm-12 col-md-2">
               <div class="breadcredit">
                 <?php get_template_part('templates/entry-meta'); ?>
                 <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm"> ','','</div>'); ?>
               </div>
             </div>
-            <div class="col-sm-12 col-md-9">
+            <div class="col-sm-12 col-md-10">
           <time class="entry-date published hidden" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('d.m.Y'); ?></time>
           <time class="entry-date updated hidden" datetime="<?php echo get_the_modified_time('c'); ?>"><?php echo get_the_modified_date('d.m.Y'); ?></time>
           <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
