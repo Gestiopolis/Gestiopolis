@@ -1273,17 +1273,19 @@ function footer_lazyload() {
 add_action('wp_footer', 'footer_lazyload', 100);
 
 function footer_dataxpand() {
-    echo '
-<script type="text/javascript">
-  (function () {
-    var tagjs = document.createElement("script");
-    var s = document.getElementsByTagName("script")[0];
-    tagjs.async = true;
-    tagjs.src = "//dataxpand.script.ag/tag.js#site=63UCMvc";
-    s.parentNode.insertBefore(tagjs, s);
-  }());
-</script>
-';
+	if(!is_single(28207 )){
+	    echo '
+	<script type="text/javascript">
+	  (function () {
+	    var tagjs = document.createElement("script");
+	    var s = document.getElementsByTagName("script")[0];
+	    tagjs.async = true;
+	    tagjs.src = "//dataxpand.script.ag/tag.js#site=63UCMvc";
+	    s.parentNode.insertBefore(tagjs, s);
+	  }());
+	</script>
+	';
+	}
 }
 add_action('wp_footer', 'footer_dataxpand', 100);
 
