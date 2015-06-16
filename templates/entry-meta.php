@@ -9,7 +9,7 @@
   <?php 
   $categories = get_the_category(); 
   foreach($categories as $category){
-    echo '<li class="catego"><i class="fa icon-cat-'.$category->term_id.' cat-col-'.$category->term_id.'"></i> <a href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a></li>';
+    echo '<li class="catego cat-col-'.$category->term_id.'"><i class="fa icon-cat-'.$category->term_id.'"></i> <a href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a></li>';
   }
   ?>
   <li><time class="entry-date published" datetime="<?php echo get_the_time('c'); ?>"><i class="fa fa-calendar"></i> <?php echo get_the_date('d.m.Y'); ?></time></li>
