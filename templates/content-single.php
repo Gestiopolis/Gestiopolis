@@ -8,7 +8,7 @@
             <div class="col-sm-12 col-md-2">
               <div class="breadcredit">
                 <?php get_template_part('templates/entry-meta'); ?>
-                <?php the_tags('<div class="temas-uppost hidden-md hidden-lg"> ','','</div>'); ?>
+                <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm"> ','','</div>'); ?>
               </div>
             </div>
             <div class="col-sm-12 col-md-10">
@@ -135,7 +135,7 @@
                 <?php endif; ?>
               </div>
             </div>
-            <div class="post-tags hidden-xs hidden-sm">
+            <div class="post-tags hidden-md hidden-lg">
               <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
               <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
             </div><!-- .post-tags -->
