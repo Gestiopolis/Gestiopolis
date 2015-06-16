@@ -26,7 +26,9 @@
           <h1 class="entry-title"><?php the_title(); ?></h1>
           <div class="row"><!-- Empieza row de contenido y meta datos -->
             <div class="col-sm-12 col-md-2">
-              <?php get_template_part('templates/entry-meta'); ?>
+              <div class="breadcredit">
+                <?php get_template_part('templates/entry-meta'); ?>
+              </div>
             </div>
             <div class="col-sm-12 col-md-10">
           <time class="entry-date published hidden" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('d.m.Y'); ?></time>
@@ -238,7 +240,8 @@
         </article>
       </div><!--.col-sm-9-->
       <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
-        <?php get_template_part('templates/sidebar-post'); ?>
+        <img src="http://placehold.it/300x600">
+        <?php //get_template_part('templates/sidebar-post'); ?>
       </div><!--.col-sm-3-->
     </div><!-- fin de .row -->
     <div class="row title-section">
