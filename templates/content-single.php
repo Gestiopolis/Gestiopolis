@@ -1,23 +1,17 @@
 <?php while (have_posts()) : the_post(); ?>
   <div class="container cposts">
     <div class="row">
-      <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Adsense 300 x 600 Posts -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:300px;height:600px"
-     data-ad-client="ca-pub-2753881743271989"
-     data-ad-slot="8839025323"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-        <?php //get_template_part('templates/sidebar-post'); ?>
-      </div><!--.col-sm-3-->
       <div class="col-sm-12 col-md-9 maincol">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <h1 class="entry-title title"><?php the_title(); ?></h1>
           <div class="row"><!-- Empieza row de contenido y meta datos -->
-            <div class="col-sm-12 col-md-10">
+            <div class="col-sm-12 col-md-3">
+              <div class="breadcredit">
+                <?php get_template_part('templates/entry-meta'); ?>
+                <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm"> ','','</div>'); ?>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-9">
           <time class="entry-date published hidden" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('d.m.Y'); ?></time>
           <time class="entry-date updated hidden" datetime="<?php echo get_the_modified_time('c'); ?>"><?php echo get_the_modified_date('d.m.Y'); ?></time>
           <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
@@ -73,7 +67,7 @@
           <div class="post-content clearfix">
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
-                <div class="adsfr">
+                <div class="adsfl">
                   <div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
                   <script type='text/javascript'>
                   googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-0'); });
@@ -223,17 +217,21 @@
             </div>
           </div>
         </div><!-- fin col-md-10 -->
-        <div class="col-sm-12 col-md-2">
-          <div class="breadcredit">
-            <?php get_template_part('templates/entry-meta'); ?>
-            <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm"> ','','</div>'); ?>
-          </div>
-        </div>
-            
         </div><!-- fin de row de contenido y meta -->
         </article>
       </div><!--.col-sm-9-->
-      
+      <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Adsense 300 x 600 Posts -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-2753881743271989"
+     data-ad-slot="8839025323"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <?php //get_template_part('templates/sidebar-post'); ?>
+      </div><!--.col-sm-3-->
     </div><!-- fin de .row -->
     <div class="row title-section">
       <div class="col-sm-12">
