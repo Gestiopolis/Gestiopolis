@@ -139,37 +139,6 @@
               <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
               <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
             </div><!-- .post-tags -->
-            <div class="compartelo posts-home hidden-md hidden-lg">
-              <div class="title-section"><h2>Te recomendamos</h2><i class="fa fa-caret-down"></i></div>
-              <?php 
-              $show = 12;
-              $postsnot = array();
-              $postsnot[] = $post->ID;
-              $mainpost = $post->ID;
-              $query1 = ci_get_related_posts_1( $post->ID, $show );
-              //$countp = 1;
-                  if( $query1->have_posts() ) { while ($query1->have_posts()) : $query1->the_post(); 
-                    $postsnot[] = $post->ID;
-                    if($mainpost != $post->ID){
-                      get_template_part( 'templates/content', 'recommend' );
-                    }
-                    //$countp++; 
-                   endwhile;?>
-                  <?php } 
-                  wp_reset_query(); 
-                  wp_reset_postdata(); 
-                  $show = $show - count($query1->posts);
-                 if ($show > 0) {
-                  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-                $query2 = ci_get_related_posts_2( $post->ID, $postsnot, $show, $paged );
-                    if( $query2->have_posts() ) { while ($query2->have_posts()) : $query2->the_post();get_template_part( 'templates/content', 'recommend' );
-                     endwhile;
-                    } 
-                    wp_reset_query(); 
-                    wp_reset_postdata();
-                  }
-                  ?>
-            </div><!-- .recomendados -->
             <?php get_template_part('templates/entry-exlinks'); ?>
             <div class="quotes">
               <div>
@@ -241,36 +210,6 @@
         ?>
         <h2>También en <i class="fa icon-cat-<?php echo $category_id; ?> cat-col-<?php echo $category_id; ?>"></i> <?php echo $category[0]->name; ?></h2>
       </div>
-    </div>
-    <div class="row posts-home">
-      <!--<div class="col-sm-12">-->
-        <div id="recientes">
-          <?php
-            //$postp       = get_post( $post->ID );
-            //$taxonomies = get_object_taxonomies( $postp, 'names' );
-            $recent_args = array(
-              'post_type'      => get_post_type( $post->ID ),
-              'posts_per_page' => 12,
-              'post_status'    => 'publish',
-              'post__not_in'   => array($post->ID),
-              'orderby'        => 'date',
-              'paged'          => $paged,
-              'cat'      => $category_id
-            );
-            $the_query = new WP_Query( $recent_args );
-
-            if ( $the_query->have_posts() ) :
-              while ( $the_query->have_posts() ) : $the_query->the_post();
-
-                get_template_part( 'templates/content', 'recents' );
-            
-              endwhile;
-              ?>
-            <?php endif;
-            wp_reset_query(); 
-            wp_reset_postdata(); ?>
-        </div><!-- #recientes -->
-      <!--</div>-->
     </div>
   </div>
 <?php endwhile; ?>

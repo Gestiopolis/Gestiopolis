@@ -33,9 +33,8 @@
 
     <nav role="navigation">
       <ul class="nav navbar-nav navbar-right">
-        <li id="nav_publica"><a title="Publicar en GestioPolis" href="<?php echo get_page_link(325584); ?>"><i class="fa fa-cloud-upload"></i><span class="hidden-xs"> Publica</span></a></li>
         <li id="nav_busca">
-          <div id="sb-search" class="sb-search">
+          <div id="sb-search" class="sb-search sb-search-open">
             <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search">
               <input class="sb-search-input elasticpress-autosuggest" placeholder="Ingresa tu búsqueda..." type="search" value="" name="s" id="search">
               <input class="sb-search-submit" type="submit" value="">
@@ -43,7 +42,7 @@
             </form>
           </div>
         </li>
-
+        <li id="nav_publica"><a title="Publicar en GestioPolis" href="<?php echo get_page_link(325584); ?>"><i class="fa fa-cloud-upload"></i><span class="hidden-xs"> Publica</span></a></li>
         <li>
           <a title="Menú de navegación" id="nav-expander" class="nav-expander navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
             <i class="fa fa-bars white"></i><span class="hidden-xs">&nbsp;Menú</span>
