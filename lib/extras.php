@@ -1335,7 +1335,7 @@ function head_scripts_ads() {
     addSize([0, 0], [160, 600]).
 		addSize([768, 500], [300, 600]).
 		build();
-		googletag.defineSlot(\'/1007663/300x600SideBar\', [300, 600], \'div-gpt-ad-1434489240326-0\').addService(googletag.pubads());
+		googletag.defineSlot(\'/1007663/300x600SideBar\', [300, 600], \'div-gpt-ad-1434491761197-0\').addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
     googletag.pubads().collapseEmptyDivs();
     googletag.enableServices();

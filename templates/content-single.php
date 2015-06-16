@@ -222,9 +222,9 @@
       </div><!--.col-sm-9-->
       <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
         <!-- /1007663/300x600SideBar -->
-        <div id='div-gpt-ad-1434489240326-0' style='height:600px; width:300px;'>
+        <div id='div-gpt-ad-1434491761197-0' style='height:600px; width:300px;'>
         <script type='text/javascript'>
-        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1434489240326-0'); });
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1434491761197-0'); });
         </script>
         </div>
         <?php //get_template_part('templates/sidebar-post'); ?>
