@@ -29,7 +29,7 @@
   color: @headings-color;
   font: 700 2.25rem @title-font, sans-serif;
   line-height: 1.2;
-  //margin: 0 auto;
+  margin: 0 !important;
   //text-shadow: 2px 0px 50px rgba(0,0,0,0.5);
   //margin-top:48px;
 }
@@ -67,7 +67,7 @@
 }
 @media (min-width: @screen-sm-min) {
   .single .title {
-    font-size: 3.25rem;
+    font-size: 2.25rem;
   }
 }
 
@@ -183,15 +183,14 @@
 }
 .breadcredit li {
   display: inline-block;
-  //margin-left: 24px;
-  height: 32px;
-  line-height: 32px;
-}
-.col-sm-12 > .breadcredit li {
-  display: inline-block;
   margin-left: 24px;
   height: 32px;
   line-height: 32px;
+}
+@media (min-width: @screen-md-min) {
+  .breadcredit li {
+    margin-left: 0px;
+  }
 }
 .image-credit {
   margin: 2rem 0;
