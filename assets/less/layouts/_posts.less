@@ -182,13 +182,26 @@
   font: 700 0.8125rem @title-font, sans-serif;
 }
 .breadcredit li {
-  display: inline-block;
+  display: block;
   margin-left: 24px;
   height: 32px;
   line-height: 32px;
 }
+.temas-uppost a {
+  display:block;
+  margin-bottom: 0.5rem;
+  margin-right: 20px;
+}
+.post-content a:before {
+  content:'\f02b';
+  font-family: 'FontAwesome';
+  position:absolute;
+  bottom:0;
+  right:-20px;
+}
 @media (min-width: @screen-md-min) {
   .breadcredit li {
+    display: inline-block;
     margin-left: 0px;
   }
 }
