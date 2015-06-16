@@ -131,7 +131,7 @@ function so_25888630_ad_between_paragraphs($content){
     //http://www.gestiopolis.com/gestion-de-mantenimiento-e-iso-55000-sobre-manejo-de-activos-fisicos/
     //http://www.gestiopolis.com/posicionamiento-estrategico-de-la-empresa/
     //if( (is_single(9624) || is_single(332873) || is_single(332832)) && ! is_admin() ){ //Simply make sure that these changes effect the main query only
-    if( is_single() && ! is_admin() ){
+    if( !is_single(28207) && ! is_admin() ){
 
         /**-----------------------------------------------------------------------------
          *

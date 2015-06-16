@@ -80,22 +80,37 @@
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
                 <div class="adsfl">
-                  <div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
-                  <script type='text/javascript'>
-                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-0'); });
-                  </script>
-                  </div>
+                  <?php if(!is_single(28207)){ ?>
+                    <div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
+                    <script type='text/javascript'>
+                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-0'); });
+                    </script>
+                    </div>
+                  <?php }else {?>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Ad Top Post 300x250 (Adsense) -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:250px"
+                         data-ad-client="ca-pub-2753881743271989"
+                         data-ad-slot="8548417729"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                  <?php  } ?>
                 </div>
               <?php } ?>
               <?php the_content(); ?>
             </div>
-            <div class="adsce">
-              <div id='div-gpt-ad-1433261534384-4'>
-              <script type='text/javascript'>
-              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-4'); });
-              </script>
+            <?php if(!is_single(28207)){ ?>
+              <div class="adsce">
+                <div id='div-gpt-ad-1433261534384-4'>
+                <script type='text/javascript'>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-4'); });
+                </script>
+                </div>
               </div>
-            </div>
+            <?php }?>
+            
            <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>

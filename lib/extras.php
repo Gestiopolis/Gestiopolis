@@ -1273,7 +1273,7 @@ function footer_lazyload() {
 add_action('wp_footer', 'footer_lazyload', 100);
 
 function footer_dataxpand() {
-	//if(!is_single(28207 )){
+	//if(!is_single(28207)){
 	    echo '
 	<script type="text/javascript">
 	  (function () {
@@ -1290,7 +1290,7 @@ function footer_dataxpand() {
 add_action('wp_footer', 'footer_dataxpand', 100);
 
 function head_scripts_ads() {
-	if(is_single()) {
+	if(!is_single(28207)) {
     echo '<script type=\'text/javascript\'>
   var googletag = googletag || {};
   googletag.cmd = googletag.cmd || [];
