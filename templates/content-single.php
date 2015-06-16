@@ -221,12 +221,15 @@
         </article>
       </div><!--.col-sm-9-->
       <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
-        <!-- /1007663/300x600SideBar -->
-        <div id='div-gpt-ad-1434491761197-0' style='height:600px; width:300px;'>
-        <script type='text/javascript'>
-        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1434491761197-0'); });
-        </script>
-        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Adsense 300 x 600 Posts -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-2753881743271989"
+     data-ad-slot="8839025323"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
         <?php //get_template_part('templates/sidebar-post'); ?>
       </div><!--.col-sm-3-->
     </div><!-- fin de .row -->
