@@ -1273,7 +1273,7 @@ function footer_lazyload() {
 add_action('wp_footer', 'footer_lazyload', 100);
 
 function footer_dataxpand() {
-	if(!is_single(28207 )){
+	//if(!is_single(28207 )){
 	    echo '
 	<script type="text/javascript">
 	  (function () {
@@ -1285,7 +1285,7 @@ function footer_dataxpand() {
 	  }());
 	</script>
 	';
-	}
+	//}
 }
 add_action('wp_footer', 'footer_dataxpand', 100);
 
@@ -1342,7 +1342,7 @@ function head_scripts_ads() {
 </script>';
 	}
 }
-add_action('wp_head', 'head_scripts_ads', 100);
+add_action('wp_head', 'head_scripts_ads', 1);
 function head_meta_schema() {
 	if(is_single()) {
 		global $post;

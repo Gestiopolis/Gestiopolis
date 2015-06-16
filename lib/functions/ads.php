@@ -13,9 +13,9 @@ function insert_adman_ads( $content ) {
 	$ad_code = '<div id="admanmedia" class="hidden-xs"><script src="http://icarus-wings.admanmedia.com/intext/intext_vast.js?pmu=183f9431;pmb=216f0476;size=600x338;visibility=50"></script></div>';
 
 	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
-        if(!is_single(28207 )){
+        //if(!is_single(28207 )){
     		return prefix_insert_after_paragraph( $ad_code, 3, $content );
-        }
+        //}
 	}
 	
 	return $content;
