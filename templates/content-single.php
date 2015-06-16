@@ -202,14 +202,5 @@
         <?php //get_template_part('templates/sidebar-post'); ?>
       </div><!--.col-sm-3-->
     </div><!-- fin de .row -->
-    <div class="row title-section">
-      <div class="col-sm-12">
-        <?php
-          $category = get_the_category($post->ID);
-          $category_id = $category[0]->term_id;
-        ?>
-        <h2>También en <i class="fa icon-cat-<?php echo $category_id; ?> cat-col-<?php echo $category_id; ?>"></i> <?php echo $category[0]->name; ?></h2>
-      </div>
-    </div>
   </div>
 <?php endwhile; ?>
