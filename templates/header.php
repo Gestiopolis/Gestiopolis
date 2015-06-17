@@ -36,7 +36,7 @@
         <li id="nav_busca">
           <div id="sb-search" class="sb-search sb-search-open">
             <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search">
-              <input class="sb-search-input elasticpress-autosuggest" placeholder="Ingresa tu búsqueda..." type="search" value="" name="s" id="search">
+              <input class="sb-search-input elasticpress-autosuggest" placeholder="Encuentra lo que necesitas Aquí" type="search" value="" name="s" id="search">
               <input class="sb-search-submit" type="submit" value="">
               <span class="sb-icon-search"><i class="fa fa-search"></i><span class="hidden-xs"> Busca</span></span>
             </form>
