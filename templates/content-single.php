@@ -84,6 +84,11 @@
               </script>
               </div>
             </div>
+            <?php if (is_single(28207)) { ?>
+            <div class="adsce">
+              <script type="text/javascript" src="http://nl.ads.justpremium.com/adserve/js.php?zone=3767"></script>
+            </div>
+            <?php } ?>
            <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
