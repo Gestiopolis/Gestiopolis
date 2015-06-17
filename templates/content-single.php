@@ -1,29 +1,17 @@
 <?php while (have_posts()) : the_post(); ?>
-  <div class="post-image">
-    <?php if (get_post_meta($post->ID, "Thumbnail", true) != "") { 
-      $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-img' );
-      ?>
-    <div class="bg-image" style="background-image: url(<?php echo $large_image_url[0]; ?>); height: 400px;"></div>
-    <?php } else { ?>
-    <div class="bg-image" style="background: #ccc; height: 400px;"></div>
-    <?php } ?>
-    <div class="overlay"></div>
-    <div class="vert-center-wrapper">
-      <div class="vert-centered">
-        <div class="center container">
-          <h1 class="title entry-title"><?php the_title(); ?></h1>
-          <div class="breadcredit">
-            <?php get_template_part('templates/entry-meta'); ?>
-          </div>
-        </div>
-      </div>
-    </div>        
-  </div>
   <div class="container cposts">
     <div class="row">
       <div class="col-sm-12 col-md-9 maincol">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          <h2 class="hidden entry-title"><?php the_title(); ?></h2>
+          <h1 class="entry-title title"><?php the_title(); ?></h1>
+          <div class="row"><!-- Empieza row de contenido y meta datos -->
+            <div class="col-sm-12 col-md-2">
+              <div class="breadcredit">
+                <?php get_template_part('templates/entry-meta'); ?>
+                <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm"> ','','</div>'); ?>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-10">
           <time class="entry-date published hidden" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('d.m.Y'); ?></time>
           <time class="entry-date updated hidden" datetime="<?php echo get_the_modified_time('c'); ?>"><?php echo get_the_modified_date('d.m.Y'); ?></time>
           <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
@@ -80,37 +68,22 @@
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
                 <div class="adsfl">
-                  <?php if(!is_single(28207)){ ?>
-                    <div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
-                    <script type='text/javascript'>
-                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-0'); });
-                    </script>
-                    </div>
-                  <?php }else {?>
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Ad Top Post 300x250 (Adsense) -->
-                    <ins class="adsbygoogle"
-                         style="display:inline-block;width:300px;height:250px"
-                         data-ad-client="ca-pub-2753881743271989"
-                         data-ad-slot="8548417729"></ins>
-                    <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                  <?php  } ?>
+                  <div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
+                  <script type='text/javascript'>
+                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-0'); });
+                  </script>
+                  </div>
                 </div>
               <?php } ?>
               <?php the_content(); ?>
             </div>
-            <?php if(!is_single(28207)){ ?>
-              <div class="adsce">
-                <div id='div-gpt-ad-1433261534384-4'>
-                <script type='text/javascript'>
-                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-4'); });
-                </script>
-                </div>
+            <div class="adsce">
+              <div id='div-gpt-ad-1433261534384-4'>
+              <script type='text/javascript'>
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-4'); });
+              </script>
               </div>
-            <?php }?>
-            
+            </div>
            <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
@@ -162,41 +135,10 @@
                 <?php endif; ?>
               </div>
             </div>
-            <div class="post-tags">
+            <div class="post-tags hidden-md hidden-lg">
               <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
               <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
             </div><!-- .post-tags -->
-            <div class="compartelo posts-home hidden-md hidden-lg">
-              <div class="title-section"><h2>Te recomendamos</h2><i class="fa fa-caret-down"></i></div>
-              <?php 
-              $show = 12;
-              $postsnot = array();
-              $postsnot[] = $post->ID;
-              $mainpost = $post->ID;
-              $query1 = ci_get_related_posts_1( $post->ID, $show );
-              //$countp = 1;
-                  if( $query1->have_posts() ) { while ($query1->have_posts()) : $query1->the_post(); 
-                    $postsnot[] = $post->ID;
-                    if($mainpost != $post->ID){
-                      get_template_part( 'templates/content', 'recommend' );
-                    }
-                    //$countp++; 
-                   endwhile;?>
-                  <?php } 
-                  wp_reset_query(); 
-                  wp_reset_postdata(); 
-                  $show = $show - count($query1->posts);
-                 if ($show > 0) {
-                  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-                $query2 = ci_get_related_posts_2( $post->ID, $postsnot, $show, $paged );
-                    if( $query2->have_posts() ) { while ($query2->have_posts()) : $query2->the_post();get_template_part( 'templates/content', 'recommend' );
-                     endwhile;
-                    } 
-                    wp_reset_query(); 
-                    wp_reset_postdata();
-                  }
-                  ?>
-            </div><!-- .recomendados -->
             <?php get_template_part('templates/entry-exlinks'); ?>
             <div class="quotes">
               <div>
@@ -243,50 +185,22 @@
               <?php //comments_template('/templates/comments.php'); ?>
             </div>
           </div>
+        </div><!-- fin col-md-10 -->
+        </div><!-- fin de row de contenido y meta -->
         </article>
       </div><!--.col-sm-9-->
       <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
-        <?php get_template_part('templates/sidebar-post'); ?>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Adsense 300 x 600 Posts -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-2753881743271989"
+     data-ad-slot="8839025323"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <?php //get_template_part('templates/sidebar-post'); ?>
       </div><!--.col-sm-3-->
-    </div>
-    <div class="row title-section">
-      <div class="col-sm-12">
-        <?php
-          $category = get_the_category($post->ID);
-          $category_id = $category[0]->term_id;
-        ?>
-        <h2>También en <i class="fa icon-cat-<?php echo $category_id; ?> cat-col-<?php echo $category_id; ?>"></i> <?php echo $category[0]->name; ?></h2>
-      </div>
-    </div>
-    <div class="row posts-home">
-      <!--<div class="col-sm-12">-->
-        <div id="recientes">
-          <?php
-            //$postp       = get_post( $post->ID );
-            //$taxonomies = get_object_taxonomies( $postp, 'names' );
-            $recent_args = array(
-              'post_type'      => get_post_type( $post->ID ),
-              'posts_per_page' => 12,
-              'post_status'    => 'publish',
-              'post__not_in'   => array($post->ID),
-              'orderby'        => 'date',
-              'paged'          => $paged,
-              'cat'      => $category_id
-            );
-            $the_query = new WP_Query( $recent_args );
-
-            if ( $the_query->have_posts() ) :
-              while ( $the_query->have_posts() ) : $the_query->the_post();
-
-                get_template_part( 'templates/content', 'recents' );
-            
-              endwhile;
-              ?>
-            <?php endif;
-            wp_reset_query(); 
-            wp_reset_postdata(); ?>
-        </div><!-- #recientes -->
-      <!--</div>-->
-    </div>
+    </div><!-- fin de .row -->
   </div>
 <?php endwhile; ?>

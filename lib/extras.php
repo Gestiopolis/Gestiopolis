@@ -1273,8 +1273,7 @@ function footer_lazyload() {
 add_action('wp_footer', 'footer_lazyload', 100);
 
 function footer_dataxpand() {
-	//if(!is_single(28207)){
-	    echo '
+	echo '
 	<script type="text/javascript">
 	  (function () {
 	    var tagjs = document.createElement("script");
@@ -1285,13 +1284,11 @@ function footer_dataxpand() {
 	  }());
 	</script>
 	';
-	//}
 }
-add_action('wp_footer', 'footer_dataxpand', 100);
+//add_action('wp_footer', 'footer_dataxpand', 100);
 
 function head_scripts_ads() {
-	if(!is_single(28207)) {
-    echo '<script type=\'text/javascript\'>
+	echo '<script type=\'text/javascript\'>
   var googletag = googletag || {};
   googletag.cmd = googletag.cmd || [];
   (function() {
@@ -1340,7 +1337,6 @@ function head_scripts_ads() {
     googletag.enableServices();
   });
 </script>';
-	}
 }
 add_action('wp_head', 'head_scripts_ads', 1);
 function head_meta_schema() {

@@ -5,7 +5,7 @@
 //http://stackoverflow.com/questions/25888630/place-ads-in-between-text-only-paragraphs
 //http://www.labnol.org/internet/adsense-custom-size-ads/28352/
 //Inserta admanmedia ads después del primer párrafo
-add_filter( 'the_content', 'insert_adman_ads' );
+//add_filter( 'the_content', 'insert_adman_ads' );
 //http://www.gestiopolis.com/la-etica-empresarial-como-fuente-de-ventajas-competitivas/
 function insert_adman_ads( $content ) {
     global $post;
@@ -131,7 +131,7 @@ function so_25888630_ad_between_paragraphs($content){
     //http://www.gestiopolis.com/gestion-de-mantenimiento-e-iso-55000-sobre-manejo-de-activos-fisicos/
     //http://www.gestiopolis.com/posicionamiento-estrategico-de-la-empresa/
     //if( (is_single(9624) || is_single(332873) || is_single(332832)) && ! is_admin() ){ //Simply make sure that these changes effect the main query only
-    if( !is_single(28207) && ! is_admin() ){
+    if( is_single() && ! is_admin() ){
 
         /**-----------------------------------------------------------------------------
          *
