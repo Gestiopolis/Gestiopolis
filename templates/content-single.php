@@ -190,14 +190,44 @@
         </article>
       </div><!--.col-sm-9-->
       <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Adsense 300 x 600 Posts -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:300px;height:600px"
-     data-ad-client="ca-pub-2753881743271989"
-     data-ad-slot="8839025323"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
+<div id="google-ads-sidebar"></div>
+ 
+<script type="text/javascript"> 
+ 
+    /* Calculate the width of available ad space */
+    ad = document.getElementById('google-ads-sidebar');
+ 
+    if (ad.getBoundingClientRect().width) {
+        adWidth = ad.getBoundingClientRect().width; // for modern browsers 
+    } else {
+        adWidth = ad.offsetWidth; // for old IE 
+    }
+ 
+    /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
+    google_ad_client = "ca-pub-2753881743271989";
+ 
+    /* Replace 1234567890 with the AdSense Ad Slot ID */ 
+    google_ad_slot = "8839025323";
+  
+    /* Do not change anything after this line */
+    if ( adWidth >= 300 )
+      google_ad_size = ["300", "600"];  /* Leaderboard 728x90 */
+    else
+      google_ad_size = ["160", "600"]; /* Button (125 x 125) */
+ 
+    document.write (
+     '<ins class="adsbygoogle" style="display:inline-block;width:' 
+      + google_ad_size[0] + 'px;height:' 
+      + google_ad_size[1] + 'px" data-ad-client="' 
+      + google_ad_client + '" data-ad-slot="' 
+      + google_ad_slot + '"></ins>'
+    );
+  
+    (adsbygoogle = window.adsbygoogle || []).push({});
+ 
+</script>
+ 
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
 </script>
         <?php //get_template_part('templates/sidebar-post'); ?>
       </div><!--.col-sm-3-->
