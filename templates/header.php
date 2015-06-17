@@ -41,7 +41,7 @@
               <span class="sb-icon-search"><i class="fa fa-search"></i><span class="hidden-xs"> Busca</span></span>
             </form>
           </div>
-          <div id="sb-search" class="sb-search hidden-md hidden-lg">
+          <div id="sb-search1" class="sb-search hidden-md hidden-lg">
             <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search">
               <input class="sb-search-input elasticpress-autosuggest" placeholder="Encuentra lo que necesitas Aquí" type="search" value="" name="s" id="search">
               <input class="sb-search-submit" type="submit" value="">
