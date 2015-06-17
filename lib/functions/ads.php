@@ -237,7 +237,7 @@ function so_25888630_ad_between_paragraphs($content){
             $m = array();
             foreach ( $p as $key=>$value ) {
                 if( 1 === $value && array_key_exists( $key-1, $p ) && $p[$key] === $p[$key-1] && !$m){
-                    $m[] = $key+1;
+                    $m[] = $key+2;
                 }elseif( !array_key_exists( $key+1, $p ) && !$m ) {
                     $m[] = 'no-ad';
                 }
