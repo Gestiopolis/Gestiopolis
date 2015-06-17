@@ -187,7 +187,7 @@ function so_25888630_ad_between_paragraphs($content){
             $fourth = array_slice( $paragraphs, $breakpoint*3, $diff, true );
             $totals = array( $first, $second, $third, $fourth );
         }*/
-        else {
+        /*else {
             $midpoint = floor($count / 2);
             $first = array_slice($paragraphs, 0, $midpoint );
             if( $count%2 == 1 ) {
@@ -195,6 +195,13 @@ function so_25888630_ad_between_paragraphs($content){
             }else{
                 $second = array_slice( $paragraphs, $midpoint, $midpoint-1, true );
             }
+            $totals = array( $first, $second );
+        }*/
+        else {
+            $midpoint = floor($count / 2);
+            $first = array_slice($paragraphs, 0, $midpoint );
+            $diff = $count - $midpoint;
+            $second = array_slice( $paragraphs, $midpoint, $diff+1, true );
             $totals = array( $first, $second );
         }
         
