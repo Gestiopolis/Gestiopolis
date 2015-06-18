@@ -1288,6 +1288,8 @@ function footer_dataxpand() {
 //add_action('wp_footer', 'footer_dataxpand', 100);
 
 function head_scripts_ads() {
+	global $post;
+	//if ( is_single() && get_post_meta($post->ID, "all2html_htmlcontent", true) != "" ) {
 	echo '<script type=\'text/javascript\'>
   var googletag = googletag || {};
   googletag.cmd = googletag.cmd || [];
@@ -1338,7 +1340,8 @@ function head_scripts_ads() {
   });
 </script>';
 }
-add_action('wp_head', 'head_scripts_ads', 1);
+//}
+//add_action('wp_head', 'head_scripts_ads', 1);
 function head_meta_schema() {
 	if(is_single()) {
 		global $post;
@@ -1354,6 +1357,13 @@ function head_meta_schema() {
 	}
 }
 add_action('wp_head', 'head_meta_schema', 1);
+function head_adsense_script() {
+	if(is_single()) {
+		echo '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			';
+	}
+}
+add_action('wp_head', 'head_adsense_script', 1);
 function filter_lazyload($content) {
     return preg_replace_callback('/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', 'preg_lazyload', $content);
 }

@@ -18,13 +18,51 @@
           <?php get_template_part('templates/post-front-edit'); ?>
           <?php } ?>
           <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
-          <div class="adsce">
+          <!--<div class="adsce">
             <div id='div-gpt-ad-1433261534384-5'>
             <script type='text/javascript'>
             googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-5'); });
             </script>
             </div>
-          </div>
+          </div>-->
+          <div id="google-ads-docs-1"></div>
+ 
+          <script type="text/javascript"> 
+           
+              /* Calculate the width of available ad space */
+              ad = document.getElementById('google-ads-docs-1');
+           
+              if (ad.getBoundingClientRect().width) {
+                  adWidth = ad.getBoundingClientRect().width; // for modern browsers 
+              } else {
+                  adWidth = ad.offsetWidth; // for old IE 
+              }
+           
+              /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
+              google_ad_client = "ca-pub-2753881743271989";
+           
+              /* Replace 1234567890 with the AdSense Ad Slot ID */ 
+              google_ad_slot = "2109774525";
+            
+              /* Do not change anything after this line */
+              if ( adWidth >= 727 )
+                google_ad_size = ["728", "90"];  /* Leaderboard 728x90 */
+              else if (adWidth >= 467 && adWidth < 727)
+                google_ad_size = ["468", "60"]; /* Button (125 x 125) */
+              else
+                google_ad_size = ["300", "250"]; /* Button (125 x 125) */
+           
+              document.write (
+               '<ins class="adsbygoogle" style="display:inline-block;width:' 
+                + google_ad_size[0] + 'px;height:' 
+                + google_ad_size[1] + 'px" data-ad-client="' 
+                + google_ad_client + '" data-ad-slot="' 
+                + google_ad_slot + '"></ins>'
+              );
+            
+              (adsbygoogle = window.adsbygoogle || []).push({});
+           
+          </script>
           <?php 
           if (0 == 1) { ?>
           <div id="toolbar">
@@ -67,22 +105,42 @@
           <div class="post-content clearfix">
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
-                <div class="adsfl">
+                <!--<div class="adsfl">
                   <div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
                   <script type='text/javascript'>
                   googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-0'); });
                   </script>
                   </div>
+                </div>-->
+                <div class="adsfl">
+                  <!-- post-comienzo-contenido -->
+                  <ins class="adsbygoogle"
+                       style="display:inline-block;width:300px;height:250px"
+                       data-ad-client="ca-pub-2753881743271989"
+                       data-ad-slot="7951158520"></ins>
+                  <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
                 </div>
               <?php } ?>
               <?php the_content(); ?>
             </div>
-            <div class="adsce">
+            <!--<div class="adsce">
               <div id='div-gpt-ad-1433261534384-4'>
               <script type='text/javascript'>
               googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-4'); });
               </script>
               </div>
+            </div>-->
+            <div class="adsce">
+              <!-- Footer Posts 300x250 -->
+              <ins class="adsbygoogle"
+                   style="display:inline-block;width:300px;height:250px"
+                   data-ad-client="ca-pub-2753881743271989"
+                   data-ad-slot="8028113322"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
             </div>
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
@@ -225,9 +283,6 @@
   
     (adsbygoogle = window.adsbygoogle || []).push({});
  
-</script>
- 
-<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
 </script>
         <?php //get_template_part('templates/sidebar-post'); ?>
       </div><!--.col-sm-3-->
