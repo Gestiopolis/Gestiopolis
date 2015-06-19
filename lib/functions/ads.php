@@ -83,12 +83,12 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'
 		}*/
 
         if ( 1 == $index ) {
-            $pages[$index] .= '<div class="adsce"><div id="google-ads-docs-1"></div>
+            $pages[$index] .= '<div class="adsce"><div id="google-ads-docs-2"></div>
  
           <script type="text/javascript"> 
            
               /* Calculate the width of available ad space */
-              ad = document.getElementById(\'google-ads-docs-1\');
+              ad = document.getElementById(\'google-ads-docs-2\');
            
               if (ad.getBoundingClientRect().width) {
                   adWidth = ad.getBoundingClientRect().width; // for modern browsers 
@@ -100,7 +100,7 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'
               google_ad_client = "ca-pub-2753881743271989";
            
               /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-              google_ad_slot = "3446906922";
+              google_ad_slot = "4647341320";
             
               /* Do not change anything after this line */
               if ( adWidth >= 727 )
@@ -110,26 +110,19 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'
               else
                 google_ad_size = ["300", "250"]; /* Button (125 x 125) */
            
-              document.write (
-               \'<ins class="adsbygoogle" style="display:inline-block;width:\' 
-                + google_ad_size[0] + \'px;height:\' 
-                + google_ad_size[1] + \'px" data-ad-client="\' 
-                + google_ad_client + \'" data-ad-slot="\' 
-                + google_ad_slot + \'"></ins>\'
-              );
-            
-              (adsbygoogle = window.adsbygoogle || []).push({});
+              google_ad_width = google_ad_size[0];
+            google_ad_height=google_ad_size[1];
            
           </script></div>';
         }
 
         if ( $pos2 == $index ) {
-            $pages[$index] .= '<div class="adsce"><div id="google-ads-docs-1"></div>
+            $pages[$index] .= '<div class="adsce"><div id="google-ads-docs-3"></div>
  
           <script type="text/javascript"> 
            
               /* Calculate the width of available ad space */
-              ad = document.getElementById(\'google-ads-docs-1\');
+              ad = document.getElementById(\'google-ads-docs-3\');
            
               if (ad.getBoundingClientRect().width) {
                   adWidth = ad.getBoundingClientRect().width; // for modern browsers 
@@ -141,7 +134,7 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'
               google_ad_client = "ca-pub-2753881743271989";
            
               /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-              google_ad_slot = "1830572928";
+              google_ad_slot = "7600807726";
             
               /* Do not change anything after this line */
               if ( adWidth >= 727 )
@@ -151,15 +144,8 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'
               else
                 google_ad_size = ["300", "250"]; /* Button (125 x 125) */
            
-              document.write (
-               \'<ins class="adsbygoogle" style="display:inline-block;width:\' 
-                + google_ad_size[0] + \'px;height:\' 
-                + google_ad_size[1] + \'px" data-ad-client="\' 
-                + google_ad_client + \'" data-ad-slot="\' 
-                + google_ad_slot + \'"></ins>\'
-              );
-            
-              (adsbygoogle = window.adsbygoogle || []).push({});
+               google_ad_width = google_ad_size[0];
+            google_ad_height=google_ad_size[1];
            
           </script></div>';
         }

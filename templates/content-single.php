@@ -42,7 +42,7 @@
               google_ad_client = "ca-pub-2753881743271989";
            
               /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-              google_ad_slot = "2109774525";
+              google_ad_slot = "9217141722";
             
               /* Do not change anything after this line */
               if ( adWidth >= 727 )
@@ -52,15 +52,9 @@
               else
                 google_ad_size = ["300", "250"]; /* Button (125 x 125) */
            
-              document.write (
-               '<ins class="adsbygoogle" style="display:inline-block;width:' 
-                + google_ad_size[0] + 'px;height:' 
-                + google_ad_size[1] + 'px" data-ad-client="' 
-                + google_ad_client + '" data-ad-slot="' 
-                + google_ad_slot + '"></ins>'
-              );
-            
-              (adsbygoogle = window.adsbygoogle || []).push({});
+              google_ad_width = google_ad_size[0];
+            google_ad_height=google_ad_size[1];
+           
            
           </script>
           <?php 
@@ -113,14 +107,13 @@
                   </div>
                 </div>-->
                 <div class="adsfl">
-                  <!-- post-comienzo-contenido -->
-                  <ins class="adsbygoogle"
-                       style="display:inline-block;width:300px;height:250px"
-                       data-ad-client="ca-pub-2753881743271989"
-                       data-ad-slot="7951158520"></ins>
-                  <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
+                  <script type="text/javascript">
+                    google_ad_client = "ca-pub-2753881743271989";
+                    google_ad_slot = "6403276125";
+                    google_ad_width = 300;
+                    google_ad_height = 250;
                   </script>
+                  <!-- post-comienzo-contenido-sync -->
                 </div>
               <?php } ?>
               <?php the_content(); ?>
@@ -133,14 +126,13 @@
               </div>
             </div>-->
             <div class="adsce">
-              <!-- Footer Posts 300x250 -->
-              <ins class="adsbygoogle"
-                   style="display:inline-block;width:300px;height:250px"
-                   data-ad-client="ca-pub-2753881743271989"
-                   data-ad-slot="8028113322"></ins>
-              <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
+              <script type="text/javascript">
+                  google_ad_client = "ca-pub-2753881743271989";
+                  google_ad_slot = "4786942127";
+                  google_ad_width = 300;
+                  google_ad_height = 250;
               </script>
+              <!-- Footer Posts 300x250 Sync -->
             </div>
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
@@ -265,7 +257,7 @@
     google_ad_client = "ca-pub-2753881743271989";
  
     /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-    google_ad_slot = "8839025323";
+    google_ad_slot = "1833475723";
   
     /* Do not change anything after this line */
     if ( adWidth >= 300 )
@@ -273,15 +265,8 @@
     else
       google_ad_size = ["160", "600"]; /* Button (125 x 125) */
  
-    document.write (
-     '<ins class="adsbygoogle" style="display:inline-block;width:' 
-      + google_ad_size[0] + 'px;height:' 
-      + google_ad_size[1] + 'px" data-ad-client="' 
-      + google_ad_client + '" data-ad-slot="' 
-      + google_ad_slot + '"></ins>'
-    );
-  
-    (adsbygoogle = window.adsbygoogle || []).push({});
+    google_ad_width = google_ad_size[0];
+    google_ad_height=google_ad_size[1];
  
 </script>
         <?php //get_template_part('templates/sidebar-post'); ?>

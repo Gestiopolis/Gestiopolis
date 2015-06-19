@@ -1359,8 +1359,8 @@ function head_meta_schema() {
 add_action('wp_head', 'head_meta_schema', 1);
 function head_adsense_script() {
 	if(is_single()) {
-		echo '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			';
+		echo '<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>';
 	}
 }
 add_action('wp_head', 'head_adsense_script', 1);
