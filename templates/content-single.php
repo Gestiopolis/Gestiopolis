@@ -57,6 +57,9 @@
            
            
           </script>
+          <script type="text/javascript"
+                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                  </script>
           <?php 
           if (0 == 1) { ?>
           <div id="toolbar">
@@ -275,6 +278,9 @@
     google_ad_height=google_ad_size[1];
  
 </script>
+<script type="text/javascript"
+                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                  </script>
         <?php //get_template_part('templates/sidebar-post'); ?>
       </div><!--.col-sm-3-->
     </div><!-- fin de .row -->

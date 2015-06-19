@@ -113,7 +113,10 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'
               google_ad_width = google_ad_size[0];
             google_ad_height=google_ad_size[1];
            
-          </script></div>';
+          </script>
+          <script type="text/javascript"
+                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                  </script></div>';
         }
 
         if ( $pos2 == $index ) {
@@ -147,7 +150,10 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'
                google_ad_width = google_ad_size[0];
             google_ad_height=google_ad_size[1];
            
-          </script></div>';
+          </script>
+          <script type="text/javascript"
+                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                  </script></div>';
         }
 
         /*if ( $pos3 == $index ) {
