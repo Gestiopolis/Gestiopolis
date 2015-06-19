@@ -52,7 +52,7 @@
               else
                 google_ad_size = ["300", "250"]; /* Button (125 x 125) */
            
-              google_ad_width = google_ad_size[0];
+            google_ad_width = google_ad_size[0];
             google_ad_height=google_ad_size[1];
            
            
@@ -108,12 +108,15 @@
                 </div>-->
                 <div class="adsfl">
                   <script type="text/javascript">
-                    google_ad_client = "ca-pub-2753881743271989";
-                    google_ad_slot = "6403276125";
-                    google_ad_width = 300;
-                    google_ad_height = 250;
+                      google_ad_client = "ca-pub-2753881743271989";
+                      google_ad_slot = "6403276125";
+                      google_ad_width = 300;
+                      google_ad_height = 250;
                   </script>
                   <!-- post-comienzo-contenido-sync -->
+                  <script type="text/javascript"
+                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                  </script>
                 </div>
               <?php } ?>
               <?php the_content(); ?>
@@ -133,6 +136,9 @@
                   google_ad_height = 250;
               </script>
               <!-- Footer Posts 300x250 Sync -->
+              <script type="text/javascript"
+              src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+              </script>
             </div>
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
