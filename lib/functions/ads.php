@@ -97,10 +97,10 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'
               }
            
               /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-              google_ad_client = "ca-pub-2753881743271989";
+              google_ad_client = "ca-pub-1187873112185798";
            
               /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-              google_ad_slot = "4647341320";
+              google_ad_slot = "6811811574";
             
               /* Do not change anything after this line */
               if ( adWidth >= 727 )
@@ -134,10 +134,10 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'
               }
            
               /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-              google_ad_client = "ca-pub-2753881743271989";
+              google_ad_client = "ca-pub-1187873112185798";
            
               /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-              google_ad_slot = "7600807726";
+              google_ad_slot = "8288519454";
             
               /* Do not change anything after this line */
               if ( adWidth >= 727 )
@@ -184,7 +184,7 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'
 	return implode( '', $pages );
 }
 
-//add_filter( 'the_content', 'so_25888630_ad_between_paragraphs' );
+add_filter( 'the_content', 'so_25888630_ad_between_paragraphs' );
 
 function so_25888630_ad_between_paragraphs($content){
     /**-----------------------------------------------------------------------------
@@ -334,18 +334,24 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
-                $ad = array( 'ad1' => '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-1\'>
-<script type=\'text/javascript\'>
-googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-1\'); });
+                $ad = array( 'ad1' => '<div class="adsce"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-1187873112185798";
+/* Ad Segundo Párrafo (300x250)  */
+google_ad_slot = "6234192054";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
 </script>
-</div></div>' );
-            }else if( $key_total == 1 ){
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>' );
+            }/*else if( $key_total == 1 ){
                 $ad = array( 'ad2' => '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-3\'>
 <script type=\'text/javascript\'>
 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-3\'); });
 </script>
 </div></div>' );
-            }/* else if( $key_total == 2 ){
+            }*//* else if( $key_total == 2 ){
                 $ad = array( 'ad3' => '<div class="adsce"><!-- 4-anuncio-prueba-p-3 -->
 <ins class="adsbygoogle"
      style="display:block"

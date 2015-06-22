@@ -39,10 +39,10 @@
               }
            
               /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-              google_ad_client = "ca-pub-2753881743271989";
+              google_ad_client = "ca-pub-1187873112185798";
            
               /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-              google_ad_slot = "9217141722";
+              google_ad_slot = "7892616054";
             
               /* Do not change anything after this line */
               if ( adWidth >= 727 )
@@ -110,13 +110,14 @@
                   </div>
                 </div>-->
                 <div class="adsfl">
-                  <script type="text/javascript">
-                      google_ad_client = "ca-pub-2753881743271989";
-                      google_ad_slot = "6403276125";
-                      google_ad_width = 300;
-                      google_ad_height = 250;
+                  <script type="text/javascript"><!--
+                  google_ad_client = "ca-pub-1187873112185798";
+                  /* 1-ad-top-posts */
+                  google_ad_slot = "6415908174";
+                  google_ad_width = 300;
+                  google_ad_height = 250;
+                  //-->
                   </script>
-                  <!-- post-comienzo-contenido-sync -->
                   <script type="text/javascript"
                   src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                   </script>
@@ -132,13 +133,14 @@
               </div>
             </div>-->
             <div class="adsce">
-              <script type="text/javascript">
-                  google_ad_client = "ca-pub-2753881743271989";
-                  google_ad_slot = "4786942127";
-                  google_ad_width = 300;
-                  google_ad_height = 250;
+              <script type="text/javascript"><!--
+              google_ad_client = "ca-pub-1187873112185798";
+              /* post-doc-fondo-contenido */
+              google_ad_slot = "2800946094";
+              google_ad_width = 300;
+              google_ad_height = 250;
+              //-->
               </script>
-              <!-- Footer Posts 300x250 Sync -->
               <script type="text/javascript"
               src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               </script>
@@ -263,10 +265,10 @@
     }
  
     /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-    google_ad_client = "ca-pub-2753881743271989";
+    google_ad_client = "ca-pub-1187873112185798";
  
     /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-    google_ad_slot = "1833475723";
+    google_ad_slot = "1561780254";
   
     /* Do not change anything after this line */
     if ( adWidth >= 300 )
@@ -279,8 +281,8 @@
  
 </script>
 <script type="text/javascript"
-                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-                  </script>
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
         <?php //get_template_part('templates/sidebar-post'); ?>
       </div><!--.col-sm-3-->
     </div><!-- fin de .row -->
