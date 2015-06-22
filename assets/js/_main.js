@@ -547,14 +547,14 @@ var Gestiopolis = {
 
       // JavaScript to be fired on a single post
       if (serverval.manage_options == "1" && serverval.userlogin == "1"){
-        $("input#editslug").on('click', function(e){
+        /*$("input#editslug").on('click', function(e){
           e.preventDefault();
           var slug = $("input#slugedit").val();
           var idpost = parseInt(serverval.postid, 10);
           $.post(serverval.template_directory+'/lib/functions/frontendedit.php', {type: "slugedit", postid:idpost, newslug:slug}).done(function() {
                   location.reload();
                 });
-        });
+        });*/
         $("input#editimage").on('click', function(e){
           e.preventDefault();
           var imageurl = $("input#imageedit").val();
@@ -570,14 +570,14 @@ var Gestiopolis = {
               $.post(serverval.template_directory+'/lib/functions/frontendedit.php', {type: "deletepost", postid:idpost});
           }
         });
-        $("input#editmargin").on('click', function(e){
+        /*$("input#editmargin").on('click', function(e){
           e.preventDefault();
           var margin = $("input#imagemargin").val();
           var idpost = parseInt(serverval.postid, 10);
           $.post(serverval.template_directory+'/lib/functions/frontendedit.php', {type: "imagemargin", postid:idpost, immargin:margin}).done(function() {
                   location.reload();
                 });
-        });
+        });*/
         $("#deleteImage").on('click', function(e){
           e.preventDefault();
           var idpost = parseInt(serverval.postid, 10);
@@ -597,7 +597,7 @@ var Gestiopolis = {
           }
         });
 
-        $("a.gesti-open").click(function(){
+        /*$("a.gesti-open").click(function(){
 
           $($(this).attr('href')).fadeIn('normal');
               return false;
@@ -619,7 +619,7 @@ var Gestiopolis = {
         $(".borrarjq").click(function() {
           var jqpost = $(this).attr("rel");
           $("#"+jqpost).remove();
-        });
+        });*/
         $("form#optimg").submit(function(e){
           e.preventDefault();
           var formData = new FormData($(this)[0]);
