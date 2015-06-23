@@ -51,22 +51,11 @@
     </div>
   </div>
   <?php } else {?>
-  <p><b>Server Root:</b> <?php echo $_SERVER['DOCUMENT_ROOT']; ?></p>
   <p><b>Enlace al documento original:</b> <?php echo get_post_meta($post->ID, "all2html_docu", true); ?></p>
   <p><b>Enlace al documento en PDF:</b> <?php echo get_post_meta($post->ID, "all2html_pdf", true); ?></p>
   <p><b>Hash para embebidos:</b> <?php echo get_post_meta($post->ID, "all2html_hash", true); ?></p>
   <p><b>Iframe:</b> &lt;iframe width=&quot;800&quot; height=&quot;566&quot; src=&quot;<?php echo home_url('/'); ?>embed/<?php echo get_post_meta($post->ID, "all2html_hash", true); ?>&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</p>
   <?php if (get_post_meta($post->ID, "all2html_zip", true) != '') { ?>
-  <p><b>Url del ZIP:</b> <?php echo home_url(get_post_meta($post->ID, 'all2html_zip', true)); ?></p>
-  <p><b>Output del ZIP:</b> <?php echo home_url(get_post_meta($post->ID, 'all2html_outzip', true)); ?></p>
-  <?php } ?>
-  <p><b>Id del attachment:</b> <?php echo get_post_meta($post->ID, "all2html_id", true); ?></p>
-  <p><b>Extensión del archivo:</b> <?php echo get_post_meta($post->ID, "all2html_ext", true); ?></p>
-  <p><b>Ruta donde está el archivo:</b> <?php echo path2url(get_post_meta($post->ID, "all2html_path", true)); ?></p>
-  <p><b>HTML del PDF:</b> <?php echo get_post_meta($post->ID, "all2html_html", true); ?></p>
-  <p><b>CSS del HTML:</b> <?php echo get_post_meta($post->ID, "all2html_css", true); ?></p>
-  <p><b>Full HTML del PDF:</b> <?php echo get_post_meta($post->ID, "all2html_fullhtml", true); ?></p>
-  <p><b>Versión en PHP del HTML:</b> <?php echo get_post_meta($post->ID, "all2html_php", true); ?></p>
   <p><b><a href="<?php echo home_url('/'); ?>" id="deletePdf">ELIMINAR DOCUMENTO</a></b></p>
   <?php }?>
   </p>
