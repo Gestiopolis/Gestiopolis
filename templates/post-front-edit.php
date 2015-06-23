@@ -51,11 +51,11 @@
     </div>
   </div>
   <?php } else {?>
+  <p><b>Server Root:</b> <?php echo $_SERVER['DOCUMENT_ROOT']; ?></p>
   <p><b>Enlace al documento original:</b> <?php echo get_post_meta($post->ID, "all2html_docu", true); ?></p>
   <p><b>Enlace al documento en PDF:</b> <?php echo get_post_meta($post->ID, "all2html_pdf", true); ?></p>
   <p><b>Hash para embebidos:</b> <?php echo get_post_meta($post->ID, "all2html_hash", true); ?></p>
   <p><b>Iframe:</b> &lt;iframe width=&quot;800&quot; height=&quot;566&quot; src=&quot;<?php echo home_url('/'); ?>embed/<?php echo get_post_meta($post->ID, "all2html_hash", true); ?>&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</p>
-  <?php if (get_post_meta($post->ID, "all2html_zip", true) != '') { ?>
   <p><b><a href="<?php echo home_url('/'); ?>" id="deletePdf">ELIMINAR DOCUMENTO</a></b></p>
   <?php }?>
   </p>
