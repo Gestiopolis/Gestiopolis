@@ -1527,6 +1527,8 @@ require_once ('functions/meta_author.php');
 require_once ('functions/meta_exlinks.php');
 //Campo personalizado de Descargas
 require_once ('functions/meta_downloads.php');
+//Campo personalizado de Imagen Principal
+require_once ('functions/meta_main_image.php');
 //Funciones para los seguimiento del blog
 require_once ('functions/follows.php');
 //Funciones para los anuncios
