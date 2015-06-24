@@ -24,7 +24,7 @@ get_currentuserinfo();
   </div>        
 </div>
 <div class="container">
-  <?php if (is_category('18');) {?>
+  <?php if (is_category('18')) {?>
   <div class="review-ad">
     <div class="row title-section">
       <div class="col-sm-12">
