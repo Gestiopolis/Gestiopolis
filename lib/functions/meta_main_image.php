@@ -6,7 +6,7 @@ $main_image_meta = array(
 		"name" => "main_image",
 		"std" => "",
 		"title" => "URL Original de la Imagen en Flickr: ",
-		"description" => "Aqu&iacute; se pone el enlace  original de una imagen de Flickr para descargar el archivo, y asociar dicha imagen en la librería multimedia y que se ponga como imágen destacada de este artículo.Por ejemplo:<br /><code>http://www.flickr.com/photos/dannyqu/4753513735/</code>",
+		"description" => "Aqu&iacute; se pone el enlace  original de una imagen de Flickr para descargar el archivo, y asociar dicha imagen en la librer&iacute;a multimedia y que se ponga como imagen destacada de este art&iacute;culo.Por ejemplo:<br /><code>http://www.flickr.com/photos/dannyqu/4753513735/</code>",
 		"description2" => "Ingresa aqu&iacute; la URL de una imagen en Flickr. Para m&aacute;s informaci&oacute;n haz clic en \"&iquest;Qu&eacute; es esto?\""
 		),
 	);
@@ -35,11 +35,11 @@ function main_image_meta() {
 		
 		//Si el campo esta vacío
 		if($meta_box_value == "") {
-			echo '<input type="text" name="imageedit" id="imageedit" value="">';
+			echo '<input class="gesti-input" type="text" name="imageedit" id="imageedit" value="">';
 			echo '<p><input type="file" name="' . $meta_box['name'] . '_value" class="gesti-input" value="" /></p>';
 			
 		}else {
-			echo '<input type="text" name="imageedit" id="imageedit" value="' . $meta_box_value . '">';
+			echo '<input class="gesti-input" type="text" name="imageedit" id="imageedit" value="' . $meta_box_value . '">';
 			echo '<p><input type="file" name="' . $meta_box['name'] . '_value" class="gesti-input" value="" /></p>';
 
 		}
