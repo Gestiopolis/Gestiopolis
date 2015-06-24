@@ -1,7 +1,14 @@
 <?php while (have_posts()) : the_post(); ?>
   <div class="container cposts">
     <div class="row">
+      <?php if (is_single(333666)) {?>
+      <div class="hidden-xs hidden-sm col-md-1">
+        &nbsp;
+      </div>
       <div class="col-sm-12 col-md-9 maincol">
+      <?php }else { ?>
+      <div class="col-sm-12 col-md-9 maincol">
+        <?php } ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <h1 class="entry-title title"><?php the_title(); ?></h1>
           <div class="row"><!-- Empieza row de contenido y meta datos -->
@@ -25,6 +32,7 @@
             </script>
             </div>
           </div>-->
+          <?php if (!is_single(333666)) {?>
           <div id="google-ads-docs-1"></div>
  
           <script type="text/javascript"> 
@@ -60,6 +68,7 @@
           <script type="text/javascript"
                   src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                   </script>
+          <?php } ?>
           <?php 
           if (0 == 1) { ?>
           <div id="toolbar">
@@ -102,13 +111,7 @@
           <div class="post-content clearfix">
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
-                <!--<div class="adsfl">
-                  <div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
-                  <script type='text/javascript'>
-                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-0'); });
-                  </script>
-                  </div>
-                </div>-->
+              <?php if (!is_single(333666)) {?>
                 <div class="adsfl">
                   <script type="text/javascript"><!--
                   google_ad_client = "ca-pub-1187873112185798";
@@ -122,6 +125,7 @@
                   src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                   </script>
                 </div>
+                <?php } ?>
               <?php } ?>
               <?php the_content(); ?>
             </div>
@@ -132,6 +136,7 @@
               </script>
               </div>
             </div>-->
+            <?php if (!is_single(333666)) {?>
             <div class="adsce">
               <script type="text/javascript"><!--
               google_ad_client = "ca-pub-1187873112185798";
@@ -145,6 +150,7 @@
               src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               </script>
             </div>
+            <?php } ?>
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
@@ -250,7 +256,13 @@
         </div><!-- fin de row de contenido y meta -->
         </article>
       </div><!--.col-sm-9-->
+      <?php if (is_single(333666)) {?>
+      <div class="hidden-xs hidden-sm col-md-2 sidebarcol">
+      <?php }else { ?>
       <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
+        <?php } ?>
+      
+        <?php if (!is_single(333666)) {?>
 <div id="google-ads-sidebar"></div>
  
 <script type="text/javascript"> 
@@ -283,6 +295,7 @@
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
+<?php } ?>
         <?php //get_template_part('templates/sidebar-post'); ?>
       </div><!--.col-sm-3-->
     </div><!-- fin de .row -->
