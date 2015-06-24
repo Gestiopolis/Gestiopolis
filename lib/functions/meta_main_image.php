@@ -19,7 +19,7 @@ function main_image_meta() {
 	global $post_ID, $temp_ID;
 	
 	foreach($main_image_meta as $meta_box) {
-		$meta_box_value = get_post_meta($post->ID, 'image_value', true);
+		$meta_box_value = get_post_meta($post->ID, 'image_url_value', true);
 		
 
 			
@@ -78,7 +78,7 @@ function save_main_image_meta( $post_id ) {
 		//$data = $_POST['image_value'];
 		$file = ( !empty($_FILES[$meta_box['name'].'_value'])) ? $_FILES[$meta_box['name'].'_value'] : false;
 
-		if(get_post_meta($post_id, 'image_value') == "" && $_POST['imageedit'] != ""){
+		if(get_post_meta($post_id, 'image_url_value') == "" && $_POST['imageedit'] != ""){
 			flickr_image_attach ($_POST['imageedit'], $post_id);
 			if($file){
 				$arch = pathinfo($file['name']);
@@ -102,7 +102,7 @@ function save_main_image_meta( $post_id ) {
 					}
 				}
 			}
-		} elseif($_POST['imageedit'] != "" && $_POST['imageedit'] != get_post_meta($post_id, 'image_value', true)){
+		} elseif($_POST['imageedit'] != "" && $_POST['imageedit'] != get_post_meta($post_id, 'image_url_value', true)){
 			flickr_image_attach ($_POST['imageedit'], $post_id);
 			if($file){
 				$arch = pathinfo($file['name']);
