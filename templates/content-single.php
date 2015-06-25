@@ -295,7 +295,25 @@
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
+<?php if (!is_single(27836)) {?>
+<div class="ad-sidebar">
+  <h3>Te va interesar<span class="arrow"><i class="fa fa-chevron-circle-down"></i></span></h3>
+  <div class="post-home">
+    <div class="postw">
+      <article id="post-333666" class="post hentry">
+        <div class="wrapper-img">
+          <a href="http://www.gestiopolis.com/relacion-entre-precio-y-calidad-en-la-generacion-de-proyectos-exitosos-la-nueva-chevrolet-n300-pick-up-como-ejemplo/" title="Relación entre precio y calidad en la generación de proyectos exitosos. La nueva chevrolet N300 Pick up como ejemplo" rel="bookmark">
+          <img src="http://www.gestiopolis.com/wp-content/uploads/2015/06/19098262611_8af2deba22_b-742x556.jpg" data-original="http://www.gestiopolis.com/wp-content/uploads/2015/06/19098262611_8af2deba22_b-742x556.jpg" alt="Relación entre precio y calidad en la generación de proyectos exitosos. La nueva chevrolet N300 Pick up como ejemplo" class="lazy img-responsive" style="display: block;">
+          </a>
+        </div>
+        <h4 class="entry-title"><a href="http://www.gestiopolis.com/relacion-entre-precio-y-calidad-en-la-generacion-de-proyectos-exitosos-la-nueva-chevrolet-n300-pick-up-como-ejemplo/"><span>Relación entre precio y calidad en la generación de proyectos exitosos. La nueva chevrolet N300 Pick up como ejemplo</span></a></h4>
+      </article>
+    </div>
+  </div>
+</div>
 <?php } ?>
+<?php } ?>
+
         <?php //get_template_part('templates/sidebar-post'); ?>
       </div><!--.col-sm-3-->
     </div><!-- fin de .row -->

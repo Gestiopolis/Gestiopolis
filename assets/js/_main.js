@@ -505,6 +505,17 @@ var Gestiopolis = {
             $('.fixed-action-btn').fadeOut();
           }
         });
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 510) {
+            $('.ad-sidebar').animate({
+              bottom: "10px"
+            }, 1500 );
+          } else {
+            $('.ad-sidebar').animate({
+              bottom: "-400px"
+            }, 1500 );
+          }
+        });
         $('.fixed-action-btn.top-left .btn-floating.red').on('click', function(){
           $('.fixed-action-btn.top-left ul li.additional').toggle();
         });
