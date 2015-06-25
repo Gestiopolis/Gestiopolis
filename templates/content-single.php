@@ -295,6 +295,9 @@
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
+<?php if (is_single(30646)) {?>
+<?php get_template_part('templates/sidebar-post'); ?>
+<?php } ?>
 <div class="ad-sidebar">
   <h3>Te va a interesar <span class="arrow down"><i class="fa fa-chevron-circle-down"></i></span><span class="arrow up" style="display: none;"><i class="fa fa-chevron-circle-up"></i></span></h3>
   <div class="post-home">
@@ -312,7 +315,6 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </div>
 <?php } ?>
 
-        <?php //get_template_part('templates/sidebar-post'); ?>
       </div><!--.col-sm-3-->
     </div><!-- fin de .row -->
   </div>
