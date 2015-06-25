@@ -13,7 +13,7 @@ get_currentuserinfo();
           if ( is_day() ) :
               echo get_the_date( 'j \d\e F \- Y');
 
-            if ( is_month() ) :
+            elseif ( is_month() ) :
               echo get_the_date( 'F \- Y');
 
             elseif ( is_year() ) :
