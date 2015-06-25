@@ -295,7 +295,7 @@
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-<?php if (is_single(30646)) {?>
+<?php if (is_single(array(30646,56381,333736,333680,333687))) {?>
 <?php get_template_part('templates/sidebar-post'); ?>
 <?php } ?>
 <div class="ad-sidebar">
