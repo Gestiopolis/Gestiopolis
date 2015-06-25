@@ -68,7 +68,29 @@
   border: 5px solid #edede4;
   position: fixed;
   bottom: -400px;
-  width: 304px;
+  width: 229px;
+}
+.single .ad-sidebar.off {
+  bottom: -325px;
+}
+.single .ad-sidebar.on {
+  bottom: 10px !important;
+}
+@media (min-width: @screen-lg-min) {
+  .single .ad-sidebar {
+    width: 304px;
+  }
+  .single .ad-sidebar.off {
+    bottom: -310px !important;
+  }
+}
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  .single .ad-sidebar {
+    width: 229px;
+  }
+  .single .ad-sidebar.off {
+    bottom: -325px !important;
+  }
 }
 .single .ad-sidebar h3 {
   padding: 10px;
