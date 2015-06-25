@@ -25,39 +25,26 @@ get_currentuserinfo();
 </div>
 <!-- Empieza sección de LISTADO DE POSTS -->
 <div class="container">
-  <!-- Empieza sección de TÍTULO DE CATEGORÍA -->
-  <div class="row posts-home">
-    <div class="col-md-12">
-      <div class="row tab-content">
-        <div class="tab-pane active" id="publicaciones">
-          <?php
-            if ( have_posts() ) :
-              // Start the Loop.
-              while ( have_posts() ) : the_post();
-
-                /*
-                 * Include the post format-specific template for the content. If you want to
-                 * use this in a child theme, then include a file called called content-___.php
-                 * (where ___ is the post format) and that will be used instead.
-                 */
-                get_template_part( 'templates/content' );
-            
-              endwhile;
-              ?>
-              <?php if ( function_exists( 'wp_pagenavi' ) ) { ?>
-              <div class="pagination">
-                <?php wp_pagenavi(); ?>
-              </div>
-              <?php } else { ?>
-              <div class="pagination">
-                <div class="nav-previous alignleft"><?php next_posts_link( 'Artículos anteriores' ); ?></div>
-              </div>
-              <?php } ?>
-              <?php
-            endif;
-          ?>
-        </div><!-- #recientes -->
-      </div><!-- .row -->
-    </div><!-- .span4 -->
-  </div><!-- .row LISTADO DE POSTS -->
-</div><!-- .container -->
+  <div class="row">
+    <div class="col-sm-12 col-md-9">
+      <h1 class="title">Todos los posts Son 13.481 desde acá los puedes explorar todos</h1>
+      <div id="publicaciones">
+        <?php while (have_posts()) : the_post(); 
+          get_template_part( 'templates/content', 'search' );
+         endwhile; ?>
+         <?php if ( function_exists( 'wp_pagenavi' ) ) { ?>
+        <div class="pagination">
+          <?php wp_pagenavi(); ?>
+        </div>
+        <?php } else { ?>
+        <div class="pagination">
+          <div class="nav-previous alignleft"><?php next_posts_link( 'Artículos anteriores' ); ?></div>
+        </div>
+        <?php } ?>
+      </div>
+    </div><!-- .col-sm-12 -->
+    <div class="hidden-xs hidden-sm col-md-3">
+      <?php get_template_part('templates/sidebar-search'); ?>
+    </div><!--.col-sm-3-->
+  </div>
+</div><!-- .container PRINCIPAL -->
