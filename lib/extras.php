@@ -1257,37 +1257,40 @@ function ci_get_related_posts_2( $post_id, $postsnot, $related_count, $paged, $a
 }
 
 function footer_lazyload() {
+	if(is_single()){
     echo '
-<script type="text/javascript">
-    (function($){
-      $(".single img.lazy").show().lazyload({
-			  effect : "fadeIn",
-			  failure_limit : 40
-			});
-    })(jQuery);
-</script>
-';
+	<script type="text/javascript">
+	    (function($){
+	      $(".single img.lazy").show().lazyload({
+				  effect : "fadeIn",
+				  failure_limit : 40
+				});
+	    })(jQuery);
+	</script>
+	';
+	}
 }
 add_action('wp_footer', 'footer_lazyload', 100);
 
 function footer_dataxpand() {
-    echo '
-<script type="text/javascript">
-  (function () {
-    var tagjs = document.createElement("script");
-    var s = document.getElementsByTagName("script")[0];
-    tagjs.async = true;
-    tagjs.src = "//dataxpand.script.ag/tag.js#site=63UCMvc";
-    s.parentNode.insertBefore(tagjs, s);
-  }());
-</script>
-';
+	echo '
+	<script type="text/javascript">
+	  (function () {
+	    var tagjs = document.createElement("script");
+	    var s = document.getElementsByTagName("script")[0];
+	    tagjs.async = true;
+	    tagjs.src = "//dataxpand.script.ag/tag.js#site=63UCMvc";
+	    s.parentNode.insertBefore(tagjs, s);
+	  }());
+	</script>
+	';
 }
 //add_action('wp_footer', 'footer_dataxpand', 100);
 
 function head_scripts_ads() {
-	if(is_single()) {
-    echo '<script type=\'text/javascript\'>
+	global $post;
+	//if ( is_single() && get_post_meta($post->ID, "all2html_htmlcontent", true) != "" ) {
+	echo '<script type=\'text/javascript\'>
   var googletag = googletag || {};
   googletag.cmd = googletag.cmd || [];
   (function() {
@@ -1306,7 +1309,7 @@ function head_scripts_ads() {
   googletag.cmd.push(function() {
     googletag.defineSlot(\'/1007663/post-comienzo-contenido\', [300, 250], \'div-gpt-ad-1433261534384-0\').addService(googletag.pubads());
     googletag.defineSlot(\'/1007663/post-2do-parrafo-contenido\', [300, 250], \'div-gpt-ad-1433261534384-1\').addService(googletag.pubads());
-    googletag.defineSlot(\'/1007663/post-3er-parrafo-contenido\', [600, 338], \'div-gpt-ad-1433261534384-2\').addService(googletag.pubads());
+    googletag.defineSlot(\'/1007663/post-3er-parrafo-contenido\', [600, 338], \'div-gpt-ad-1433303077158-0\').addService(googletag.pubads());
     googletag.defineSlot(\'/1007663/post-mitad-contenido\', [300, 250], \'div-gpt-ad-1433261534384-3\').addService(googletag.pubads());
     var mapping = googletag.sizeMapping().
     addSize([0, 0], [300, 250]).
@@ -1331,16 +1334,14 @@ function head_scripts_ads() {
 		addSize([768, 200], [728, 90]).
 		build();
     googletag.defineSlot(\'/1007663/docs-mitad-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-7\').defineSizeMapping(mapping3).addService(googletag.pubads());
-    googletag.defineSlot(\'/1007663/300x600SideBar\', [300, 600], \'div-gpt-ad-1434491761197-0\').addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
     googletag.pubads().collapseEmptyDivs();
     googletag.enableServices();
   });
-</script>
-	';
-	}
+</script>';
 }
-add_action('wp_head', 'head_scripts_ads', 1);
+//}
+//add_action('wp_head', 'head_scripts_ads', 1);
 function head_meta_schema() {
 	if(is_single()) {
 		global $post;
@@ -1356,6 +1357,13 @@ function head_meta_schema() {
 	}
 }
 add_action('wp_head', 'head_meta_schema', 1);
+function head_adsense_script() {
+	if(is_single()) {
+		echo '<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>';
+	}
+}
+//add_action('wp_head', 'head_adsense_script', 1);
 function filter_lazyload($content) {
     return preg_replace_callback('/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', 'preg_lazyload', $content);
 }
@@ -1500,6 +1508,9 @@ function custom_error_class($classes)
 }
  
 add_action('wp','custom_error_pages');
+//NO cargara Contact form en todas partes
+add_filter( 'wpcf7_load_js', '__return_false' );
+add_filter( 'wpcf7_load_css', '__return_false' );
 //Quitar Emojis
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
@@ -1516,6 +1527,8 @@ require_once ('functions/meta_author.php');
 require_once ('functions/meta_exlinks.php');
 //Campo personalizado de Descargas
 require_once ('functions/meta_downloads.php');
+//Campo personalizado de Imagen Principal
+require_once ('functions/meta_main_image.php');
 //Funciones para los seguimiento del blog
 require_once ('functions/follows.php');
 //Funciones para los anuncios

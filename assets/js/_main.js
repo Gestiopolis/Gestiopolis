@@ -364,119 +364,7 @@ var Gestiopolis = {
       });
     }
   },
-  page_id_80309: { //ABC temático
-    init: function() {
-      // JavaScript to be fired on the home page
-      //1. Grid Ejes temáticos Home
-      Grid.init();
-      //2. Scrollbar ABC 404
-      $('.scrollabc').tinyscrollbar();
-    }
-  },
-  search: { //ABC temático
-    init: function() {
-      $("img.lazy").show().lazyload({
-        effect : "fadeIn",
-        failure_limit : 30
-      });
-      var $conta2 = $('#publicaciones');
-      // Fire Isotope only when images are loaded
-      $conta2.imagesLoaded(function(){
-        /*$conta2.isotope({
-          itemSelector : '.postw'
-        });*/
-      });
-      // Infinite Scroll
-      $('#publicaciones').infinitescroll({
-        loading: {
-          finishedMsg: "<em>Felicitaciones, has llegado al fin de Internet.</em>",
-          img: serverval.template_directory+'/assets/img/ajax-loader.gif',
-          msgText: '<em>Cargando el siguiente grupo de publicaciones...</em>',
-          speed: 'fast'
-        },
-        navSelector  : 'div.pagination',
-        nextSelector : '.nextpostslink',
-        itemSelector : '.postw',
-        bufferPx     : 200
-      },
-      // Infinite Scroll Callback
-      function( newElements ) {
-        var $newElems = jQuery( newElements ).hide();
-        $newElems.imagesLoaded(function(){
-          $newElems.fadeIn();
-          //$conta2.isotope( 'appended', $newElems );
-          $("img.lazy").show().lazyload({
-            effect : "fadeIn",
-            failure_limit : 30
-          });
-        });
-      });
-    }
-  },
-  // About us page, note the change from about-us to about_us.
-  page_id_80284: { //Página de Archivo
-    init: function() {
-      //1. Grid archivo
-      Boxgrid.init();
-      //2. Carga último archivo del último mes y año
-      var currentTime = new Date();
-      var month = ("0" + (currentTime.getMonth() + 1)).slice(-2);
-      var year = currentTime.getFullYear();
-
-      $.ajax({
-        url: serverval.template_directory+'/lib/functions/archive_posts.php',
-        type: 'POST',
-        data: { year: year.toString(), month: month.toString() },
-        async: true,
-        cache: false,
-        processData: true,
-        success: function (result) {
-          $( "td.ejes-table" ).html(result);
-        }
-      });
-      //3. Carga archivo del año y 1er mes
-      $("td.year").click(function(e){
-        e.preventDefault();
-        $( "td.ejes-table" ).empty();
-        $("td.year").removeClass('selected');
-        $(this).addClass('selected');
-        $("th#01").addClass('selected');
-        var selectedyear = $(this).text();
-        $.ajax({
-          url: serverval.template_directory+'/lib/functions/archive_posts.php',
-          type: 'POST',
-          data: { year: selectedyear, month: '01' },
-          async: true,
-          cache: false,
-          processData: true,
-          success: function (result) {
-            $( "td.ejes-table" ).html(result);
-          }
-        });
-      });
-      //4. Carga archivo del año y mes seleccionado
-      $("th.month").click(function(e){
-        e.preventDefault();
-        $( "td.ejes-table" ).empty();
-        $("th.month").removeClass('selected');
-        $(this).addClass('selected');
-        var selectedyear = $('td.year.selected').text();
-        var selectedmonth = $(this).attr('id');
-        $.ajax({
-          url: serverval.template_directory+'/lib/functions/archive_posts.php',
-          type: 'POST',
-          data: { year: selectedyear, month: selectedmonth },
-          async: true,
-          cache: false,
-          processData: true,
-          success: function (result) {
-            $( "td.ejes-table" ).html(result);
-          }
-        });
-      });
-    }
-  },
-  page_id_325584: { //Página de publicar
+  /*page_id_325584: { //Página de publicar
     init: function() {
       //Funciones javascript de página de publicar
       $("form#upldoc").submit(function(e){
@@ -546,18 +434,14 @@ var Gestiopolis = {
                               $('#publicar2 .docprog').text('¡Listo!');
                               $( "#uplpost button" ).removeAttr( "disabled" );
                               //$('#publicar2 input#postid').val(pID5);
-                              /*setTimeout(function(){
-                                window.location.replace(pID5);
-                              }, 4000);*/
+                              
                             }else if (pID5 == 'error') {
                               $('#myModal img').hide();
                               console.info('Error en la conversión');
                               $('#publicar2 .docprog').text('Error en la conversión');
                               setTimeout(function(){
                                 location.reload();
-                                /*$.post(serverval.template_directory+'/lib/functions/frontendedit.php', {type: "deletepdf", postid:parseInt(serverval.postid, 10)}).done(function() {
-                                    location.reload();
-                                  });*/
+                                
                               }, 6000);
                             }
                           }
@@ -598,7 +482,7 @@ var Gestiopolis = {
         return false;
       });
     }
-  }, //Fin page_id_264
+  },*/ //Fin page_id_264
   single: {
     init: function() {
       $('table').addClass('table table-bordered');
@@ -617,9 +501,42 @@ var Gestiopolis = {
         $(window).scroll(function(){
           if ($(this).scrollTop() > 500) {
             $('.fixed-action-btn').fadeIn();
+            $('.ad-sidebar').animate({
+              bottom: "10px"
+            }, 100 );
           } else {
             $('.fixed-action-btn').fadeOut();
+            $('.ad-sidebar').animate({
+              bottom: "-400px"
+            }, 100 );
           }
+        });
+        /*$(window).scroll(function(){
+          if ($(this).scrollTop() > 510) {
+            $('.ad-sidebar').animate({
+              bottom: "10px"
+            }, 200 );
+          } else {
+            $('.ad-sidebar').animate({
+              bottom: "-400px"
+            }, 200 );
+          }
+        });*/
+        $('.ad-sidebar .arrow.down').on('click', function(event) {
+          event.preventDefault();
+          $('.ad-sidebar').animate({
+              bottom: "-310px"
+            }, 100 );
+          $(this).hide();
+          $('.ad-sidebar .arrow.up').show();
+        });
+        $('.ad-sidebar .arrow.up').on('click', function(event) {
+          event.preventDefault();
+          $('.ad-sidebar').animate({
+              bottom: "10px"
+            }, 100 );
+          $(this).hide();
+          $('.ad-sidebar .arrow.down').show();
         });
         $('.fixed-action-btn.top-left .btn-floating.red').on('click', function(){
           $('.fixed-action-btn.top-left ul li.additional').toggle();
@@ -663,65 +580,14 @@ var Gestiopolis = {
 
       // JavaScript to be fired on a single post
       if (serverval.manage_options == "1" && serverval.userlogin == "1"){
-        /*$(document).on('edit_started', function(ev) {
-          var el = $(ev.target);
-          var longitud = el.text().length;
-
-          if(el.data('filter') == 'the_title'){
-            $('#titcount').show();
-            if (longitud > "56") {
-                $('#titcount').css('color', '#ff0000');
-              }else{
-                $('#titcount').css('color', '#00913F');
-              }
-            $("#titcount").html('<b>'+longitud+'</b> caracteres');
-            $("#title_edit input.fee-form-content").on('keyup', function(){
-              var nueva_longitud = $(this).val().length;
-              $("#titcount").html('<b>'+nueva_longitud+'</b> caracteres');
-              if (nueva_longitud > "56") {
-                $('#titcount').css('color', '#ff0000');
-              }else{
-                $('#titcount').css('color', '#00913F');
-              }
-            });
-          }
-          if(el.data('key') == '_yoast_wpseo_metadesc'){
-            $('#descount').show();
-            if (longitud > "156") {
-                $('#descount').css('color', '#ff0000');
-              }else{
-                $('#descount').css('color', '#00913F');
-              }
-            $("#descount").html('<b>'+longitud+'</b> caracteres');
-            $("#desc_edit input.fee-form-content").on('keyup', function(){
-              var nueva_longitud = $(this).val().length;
-              $("#descount").html('<b>'+nueva_longitud+'</b> caracteres');
-              if (nueva_longitud > "156") {
-                $('#descount').css('color', '#ff0000');
-              }else{
-                $('#descount').css('color', '#00913F');
-              }
-            });
-          }
-        });*/
-        /*$(document).on('edit_saved', function(ev) {
-          var el = $(ev.target);
-          if(el.data('filter') == 'the_title'){
-              $('#titcount').hide();
-            }
-            if(el.data('key') == '_yoast_wpseo_metadesc'){
-              $('#descount').hide();
-            }
-
-        });*/
-        $("input#editslug").on('click', function(e){
+        /*$("input#editslug").on('click', function(e){
           e.preventDefault();
           var slug = $("input#slugedit").val();
           var idpost = parseInt(serverval.postid, 10);
           $.post(serverval.template_directory+'/lib/functions/frontendedit.php', {type: "slugedit", postid:idpost, newslug:slug}).done(function() {
                   location.reload();
                 });
-        });
+        });*/
         $("input#editimage").on('click', function(e){
           e.preventDefault();
           var imageurl = $("input#imageedit").val();
@@ -737,14 +603,14 @@ var Gestiopolis = {
               $.post(serverval.template_directory+'/lib/functions/frontendedit.php', {type: "deletepost", postid:idpost});
           }
         });
-        $("input#editmargin").on('click', function(e){
+        /*$("input#editmargin").on('click', function(e){
           e.preventDefault();
           var margin = $("input#imagemargin").val();
           var idpost = parseInt(serverval.postid, 10);
           $.post(serverval.template_directory+'/lib/functions/frontendedit.php', {type: "imagemargin", postid:idpost, immargin:margin}).done(function() {
                   location.reload();
                 });
-        });
+        });*/
         $("#deleteImage").on('click', function(e){
           e.preventDefault();
           var idpost = parseInt(serverval.postid, 10);
@@ -764,7 +630,7 @@ var Gestiopolis = {
           }
         });
 
-        $("a.gesti-open").click(function(){
+        /*$("a.gesti-open").click(function(){
 
           $($(this).attr('href')).fadeIn('normal');
               return false;
@@ -786,7 +652,7 @@ var Gestiopolis = {
         $(".borrarjq").click(function() {
           var jqpost = $(this).attr("rel");
           $("#"+jqpost).remove();
-        });
+        });*/
         $("form#optimg").submit(function(e){
           e.preventDefault();
           var formData = new FormData($(this)[0]);
@@ -895,7 +761,6 @@ var Gestiopolis = {
             curpage = this_cur_page_idx;
             $('input.pagen').val(curpage+1);
           });
-          //$('#toolbar').stickUp();
           $('#toolbar').width($('#page-container').width());
           var page = document.getElementsByClassName('pf');
 
@@ -946,16 +811,6 @@ var Gestiopolis = {
         offset_top: 48
       });*/
     } //init
-  }, //Fin single
-  page_id_325585: { //Acerca de
-    init: function() {
-      //$('body').scrollspy({ target: '.aboutsidebar' });
-    }
-  }, //Fin Acerca de
-  abc_tematico: { //ABC
-    init: function() {
-      //$('.tags-letters').stickUp();
-    }
   }
 };
 

@@ -13,7 +13,9 @@ function insert_adman_ads( $content ) {
 	$ad_code = '<div id="admanmedia" class="hidden-xs"><script src="http://icarus-wings.admanmedia.com/intext/intext_vast.js?pmu=183f9431;pmb=216f0476;size=600x338;visibility=50"></script></div>';
 
 	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
-		return prefix_insert_after_paragraph( $ad_code, 3, $content );
+        //if(!is_single(28207 )){
+    		return prefix_insert_after_paragraph( $ad_code, 3, $content );
+        //}
 	}
 	
 	return $content;
@@ -64,9 +66,8 @@ function insert_ads_all2html( $content ) {
     }
 	foreach ($pages as $index => $page) {
 
-		if ( 1 == $index ) {
-			$pages[$index] .= '<div class="adsce"><!-- /1007663/docs-2da-pagina-contenido -->
-<div id=\'div-gpt-ad-1433261534384-6\'>
+		/*if ( 1 == $index ) {
+			$pages[$index] .= '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-6\'>
 <script type=\'text/javascript\'>
 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-6\'); });
 </script>
@@ -74,13 +75,86 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-6\'
 		}
 
 		if ( $pos2 == $index ) {
-			$pages[$index] .= '<div class="adsce"><!-- /1007663/docs-mitad-contenido -->
-<div id=\'div-gpt-ad-1433261534384-7\'>
+			$pages[$index] .= '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-7\'>
 <script type=\'text/javascript\'>
 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'); });
 </script>
 </div></div>';
-		}
+		}*/
+
+        if ( 1 == $index ) {
+            $pages[$index] .= '<div class="adsce"><div id="google-ads-docs-2"></div>
+ 
+          <script type="text/javascript"> 
+           
+              /* Calculate the width of available ad space */
+              ad = document.getElementById(\'google-ads-docs-2\');
+           
+              if (ad.getBoundingClientRect().width) {
+                  adWidth = ad.getBoundingClientRect().width; // for modern browsers 
+              } else {
+                  adWidth = ad.offsetWidth; // for old IE 
+              }
+           
+              /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
+              google_ad_client = "ca-pub-1187873112185798";
+           
+              /* Replace 1234567890 with the AdSense Ad Slot ID */ 
+              google_ad_slot = "6811811574";
+            
+              /* Do not change anything after this line */
+              if ( adWidth >= 727 )
+                google_ad_size = ["728", "90"];  /* Leaderboard 728x90 */
+              else if (adWidth >= 467 && adWidth < 727)
+                google_ad_size = ["468", "60"]; /* Button (125 x 125) */
+              else
+                google_ad_size = ["300", "250"]; /* Button (125 x 125) */
+           
+              google_ad_width = google_ad_size[0];
+            google_ad_height=google_ad_size[1];
+           
+          </script>
+          <script type="text/javascript"
+                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                  </script></div>';
+        }
+
+        if ( $pos2 == $index ) {
+            $pages[$index] .= '<div class="adsce"><div id="google-ads-docs-3"></div>
+ 
+          <script type="text/javascript"> 
+           
+              /* Calculate the width of available ad space */
+              ad = document.getElementById(\'google-ads-docs-3\');
+           
+              if (ad.getBoundingClientRect().width) {
+                  adWidth = ad.getBoundingClientRect().width; // for modern browsers 
+              } else {
+                  adWidth = ad.offsetWidth; // for old IE 
+              }
+           
+              /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
+              google_ad_client = "ca-pub-1187873112185798";
+           
+              /* Replace 1234567890 with the AdSense Ad Slot ID */ 
+              google_ad_slot = "8288519454";
+            
+              /* Do not change anything after this line */
+              if ( adWidth >= 727 )
+                google_ad_size = ["728", "90"];  /* Leaderboard 728x90 */
+              else if (adWidth >= 467 && adWidth < 727)
+                google_ad_size = ["468", "60"]; /* Button (125 x 125) */
+              else
+                google_ad_size = ["300", "250"]; /* Button (125 x 125) */
+           
+               google_ad_width = google_ad_size[0];
+            google_ad_height=google_ad_size[1];
+           
+          </script>
+          <script type="text/javascript"
+                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                  </script></div>';
+        }
 
         /*if ( $pos3 == $index ) {
             $pages[$index] .= '<div class="adsce"><!-- 4-anuncio-prueba-p-3 -->
@@ -110,7 +184,7 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'
 	return implode( '', $pages );
 }
 
-//add_filter( 'the_content', 'so_25888630_ad_between_paragraphs' );
+add_filter( 'the_content', 'so_25888630_ad_between_paragraphs' );
 
 function so_25888630_ad_between_paragraphs($content){
     /**-----------------------------------------------------------------------------
@@ -131,7 +205,7 @@ function so_25888630_ad_between_paragraphs($content){
     //http://www.gestiopolis.com/gestion-de-mantenimiento-e-iso-55000-sobre-manejo-de-activos-fisicos/
     //http://www.gestiopolis.com/posicionamiento-estrategico-de-la-empresa/
     //if( (is_single(9624) || is_single(332873) || is_single(332832)) && ! is_admin() ){ //Simply make sure that these changes effect the main query only
-    if( is_single() && ! is_admin() ){
+    if( is_single() && ! is_admin() && !is_single(333666) ){
 
         /**-----------------------------------------------------------------------------
          *
@@ -187,7 +261,7 @@ function so_25888630_ad_between_paragraphs($content){
             $fourth = array_slice( $paragraphs, $breakpoint*3, $diff, true );
             $totals = array( $first, $second, $third, $fourth );
         }*/
-        else {
+        /*else {
             $midpoint = floor($count / 2);
             $first = array_slice($paragraphs, 0, $midpoint );
             if( $count%2 == 1 ) {
@@ -195,6 +269,13 @@ function so_25888630_ad_between_paragraphs($content){
             }else{
                 $second = array_slice( $paragraphs, $midpoint, $midpoint-1, true );
             }
+            $totals = array( $first, $second );
+        }*/
+        else {
+            $midpoint = floor($count / 2);
+            $first = array_slice($paragraphs, 0, $midpoint );
+            $diff = $count - $midpoint;
+            $second = array_slice( $paragraphs, $midpoint, $diff+1, true );
             $totals = array( $first, $second );
         }
         
@@ -237,7 +318,7 @@ function so_25888630_ad_between_paragraphs($content){
             $m = array();
             foreach ( $p as $key=>$value ) {
                 if( 1 === $value && array_key_exists( $key-1, $p ) && $p[$key] === $p[$key-1] && !$m){
-                    $m[] = $key+1;
+                    $m[] = $key+2;
                 }elseif( !array_key_exists( $key+1, $p ) && !$m ) {
                     $m[] = 'no-ad';
                 }
@@ -253,20 +334,24 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
-                $ad = array( 'ad1' => '<div class="adsce"><!-- /1007663/post-2do-parrafo-contenido -->
-<div id=\'div-gpt-ad-1433261534384-1\'>
-<script type=\'text/javascript\'>
-googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-1\'); });
+                $ad = array( 'ad1' => '<div class="adsce"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-1187873112185798";
+/* Ad Segundo Párrafo (300x250)  */
+google_ad_slot = "6234192054";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
 </script>
-</div></div>' );
-            }else if( $key_total == 1 ){
-                $ad = array( 'ad2' => '<div class="adsce"><!-- /1007663/post-mitad-contenido -->
-<div id=\'div-gpt-ad-1433261534384-3\'>
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>' );
+            }/*else if( $key_total == 1 ){
+                $ad = array( 'ad2' => '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-3\'>
 <script type=\'text/javascript\'>
 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-3\'); });
 </script>
 </div></div>' );
-            }/* else if( $key_total == 2 ){
+            }*//* else if( $key_total == 2 ){
                 $ad = array( 'ad3' => '<div class="adsce"><!-- 4-anuncio-prueba-p-3 -->
 <ins class="adsbygoogle"
      style="display:block"

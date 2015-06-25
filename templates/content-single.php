@@ -1,7 +1,14 @@
 <?php while (have_posts()) : the_post(); ?>
   <div class="container cposts">
     <div class="row">
+      <?php if (is_single(333666)) {?>
+      <div class="hidden-xs hidden-sm col-md-1">
+        &nbsp;
+      </div>
       <div class="col-sm-12 col-md-9 maincol">
+      <?php }else { ?>
+      <div class="col-sm-12 col-md-9 maincol">
+        <?php } ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <h1 class="entry-title title"><?php the_title(); ?></h1>
           <div class="row"><!-- Empieza row de contenido y meta datos -->
@@ -18,13 +25,50 @@
           <?php get_template_part('templates/post-front-edit'); ?>
           <?php } ?>
           <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
-          <div class="adsce">
+          <!--<div class="adsce">
             <div id='div-gpt-ad-1433261534384-5'>
             <script type='text/javascript'>
             googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-5'); });
             </script>
             </div>
-          </div>
+          </div>-->
+          <?php if (!is_single(333666)) {?>
+          <div id="google-ads-docs-1"></div>
+ 
+          <script type="text/javascript"> 
+           
+              /* Calculate the width of available ad space */
+              ad = document.getElementById('google-ads-docs-1');
+           
+              if (ad.getBoundingClientRect().width) {
+                  adWidth = ad.getBoundingClientRect().width; // for modern browsers 
+              } else {
+                  adWidth = ad.offsetWidth; // for old IE 
+              }
+           
+              /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
+              google_ad_client = "ca-pub-1187873112185798";
+           
+              /* Replace 1234567890 with the AdSense Ad Slot ID */ 
+              google_ad_slot = "7892616054";
+            
+              /* Do not change anything after this line */
+              if ( adWidth >= 727 )
+                google_ad_size = ["728", "90"];  /* Leaderboard 728x90 */
+              else if (adWidth >= 467 && adWidth < 727)
+                google_ad_size = ["468", "60"]; /* Button (125 x 125) */
+              else
+                google_ad_size = ["300", "250"]; /* Button (125 x 125) */
+           
+            google_ad_width = google_ad_size[0];
+            google_ad_height=google_ad_size[1];
+           
+           
+          </script>
+          <script type="text/javascript"
+                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                  </script>
+          <?php } ?>
           <?php 
           if (0 == 1) { ?>
           <div id="toolbar">
@@ -67,24 +111,47 @@
           <div class="post-content clearfix">
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
+              <?php if (!is_single(333666)) {?>
                 <div class="adsfl">
-                  <div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
-                  <script type='text/javascript'>
-                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-0'); });
+                  <script type="text/javascript"><!--
+                  google_ad_client = "ca-pub-1187873112185798";
+                  /* 1-ad-top-posts */
+                  google_ad_slot = "6415908174";
+                  google_ad_width = 300;
+                  google_ad_height = 250;
+                  //-->
                   </script>
-                  </div>
+                  <script type="text/javascript"
+                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                  </script>
                 </div>
+                <?php } ?>
               <?php } ?>
               <?php the_content(); ?>
             </div>
-            <div class="adsce">
+            <!--<div class="adsce">
               <div id='div-gpt-ad-1433261534384-4'>
               <script type='text/javascript'>
               googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-4'); });
               </script>
               </div>
+            </div>-->
+            <?php if (!is_single(333666)) {?>
+            <div class="adsce">
+              <script type="text/javascript"><!--
+              google_ad_client = "ca-pub-1187873112185798";
+              /* post-doc-fondo-contenido */
+              google_ad_slot = "2800946094";
+              google_ad_width = 300;
+              google_ad_height = 250;
+              //-->
+              </script>
+              <script type="text/javascript"
+              src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+              </script>
             </div>
-           <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
+            <?php } ?>
+            <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
             <div id="suscripcion" class="suscripcion hidden">
@@ -189,17 +256,65 @@
         </div><!-- fin de row de contenido y meta -->
         </article>
       </div><!--.col-sm-9-->
+      <?php if (is_single(333666)) {?>
+      <div class="hidden-xs hidden-sm col-md-2 sidebarcol">
+      <?php }else { ?>
       <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Adsense 300 x 600 Posts -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:300px;height:600px"
-     data-ad-client="ca-pub-2753881743271989"
-     data-ad-slot="8839025323"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
+        <?php } ?>
+      
+        <?php if (!is_single(333666)) {?>
+<div id="google-ads-sidebar"></div>
+ 
+<script type="text/javascript"> 
+ 
+    /* Calculate the width of available ad space */
+    ad = document.getElementById('google-ads-sidebar');
+ 
+    if (ad.getBoundingClientRect().width) {
+        adWidth = ad.getBoundingClientRect().width; // for modern browsers 
+    } else {
+        adWidth = ad.offsetWidth; // for old IE 
+    }
+ 
+    /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
+    google_ad_client = "ca-pub-1187873112185798";
+ 
+    /* Replace 1234567890 with the AdSense Ad Slot ID */ 
+    google_ad_slot = "1561780254";
+  
+    /* Do not change anything after this line */
+    if ( adWidth >= 300 )
+      google_ad_size = ["300", "600"];  /* Leaderboard 728x90 */
+    else
+      google_ad_size = ["160", "600"]; /* Button (125 x 125) */
+ 
+    google_ad_width = google_ad_size[0];
+    google_ad_height=google_ad_size[1];
+ 
 </script>
-        <?php //get_template_part('templates/sidebar-post'); ?>
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<?php if (is_single(array(30646,56381,333736,333680,333687))) {?>
+<?php get_template_part('templates/sidebar-post'); ?>
+<?php } ?>
+<div class="ad-sidebar">
+  <h3>Te va a interesar <span class="arrow down"><i class="fa fa-chevron-circle-down"></i></span><span class="arrow up" style="display: none;"><i class="fa fa-chevron-circle-up"></i></span></h3>
+  <div class="post-home">
+    <div class="postw">
+      <article id="post-333666" class="post hentry">
+        <div class="wrapper-img">
+          <a href="http://www.gestiopolis.com/relacion-entre-precio-y-calidad-en-la-generacion-de-proyectos-exitosos-la-nueva-chevrolet-n300-pick-up-como-ejemplo/" title="Relación entre precio y calidad en la generación de proyectos exitosos. La nueva chevrolet N300 Pick up como ejemplo" rel="bookmark">
+          <img src="http://www.gestiopolis.com/wp-content/uploads/2015/06/19098262611_8af2deba22_b-742x556.jpg" data-original="http://www.gestiopolis.com/wp-content/uploads/2015/06/19098262611_8af2deba22_b-742x556.jpg" alt="Relación entre precio y calidad en la generación de proyectos exitosos. La nueva chevrolet N300 Pick up como ejemplo" class="lazy img-responsive" style="display: block;">
+          </a>
+        </div>
+        <h4 class="entry-title"><a href="http://www.gestiopolis.com/relacion-entre-precio-y-calidad-en-la-generacion-de-proyectos-exitosos-la-nueva-chevrolet-n300-pick-up-como-ejemplo/"><span>Relación entre precio y calidad en la generación de proyectos exitosos. La nueva chevrolet N300 Pick up como ejemplo</span></a></h4>
+      </article>
+    </div>
+  </div>
+</div>
+<?php } ?>
+
       </div><!--.col-sm-3-->
     </div><!-- fin de .row -->
   </div>
