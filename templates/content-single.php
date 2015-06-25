@@ -297,7 +297,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 <?php if (is_single(27836)) {?>
 <div class="ad-sidebar">
-  <h3>Te va interesar <span class="arrow down"><i class="fa fa-chevron-circle-down"></i></span><span class="arrow up" style="display: none;"><i class="fa fa-chevron-circle-up"></i></span></h3>
+  <h3>Te va a interesar <span class="arrow down"><i class="fa fa-chevron-circle-down"></i></span><span class="arrow up" style="display: none;"><i class="fa fa-chevron-circle-up"></i></span></h3>
   <div class="post-home">
     <div class="postw">
       <article id="post-333666" class="post hentry">

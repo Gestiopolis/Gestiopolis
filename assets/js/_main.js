@@ -503,12 +503,12 @@ var Gestiopolis = {
             $('.fixed-action-btn').fadeIn();
             $('.ad-sidebar').animate({
               bottom: "10px"
-            }, 10 );
+            }, 100 );
           } else {
             $('.fixed-action-btn').fadeOut();
             $('.ad-sidebar').animate({
               bottom: "-400px"
-            }, 10 );
+            }, 100 );
           }
         });
         /*$(window).scroll(function(){
@@ -525,7 +525,7 @@ var Gestiopolis = {
         $('.ad-sidebar .arrow.down').on('click', function(event) {
           event.preventDefault();
           $('.ad-sidebar').animate({
-              bottom: "-278px"
+              bottom: "-310px"
             }, 100 );
           $(this).hide();
           $('.ad-sidebar .arrow.up').show();
