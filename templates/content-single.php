@@ -295,7 +295,7 @@
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-<?php if (!is_single(27836)) {?>
+<?php if (is_single(27836)) {?>
 <div class="ad-sidebar">
   <h3>Te va interesar<span class="arrow"><i class="fa fa-chevron-circle-down"></i></span></h3>
   <div class="post-home">
