@@ -298,7 +298,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 <?php //if (is_single(array(30646,56381,333736,333680,333687))) {?>
 <?php get_template_part('templates/sidebar-post'); ?>
 <?php //} ?>
-<div class="ad-sidebar">
+<!--<div class="ad-sidebar">
   <h3>Te va a interesar <span class="arrow down"><i class="fa fa-chevron-circle-down"></i></span><span class="arrow up" style="display: none;"><i class="fa fa-chevron-circle-up"></i></span></h3>
   <div class="post-home">
     <div class="postw">
@@ -312,7 +312,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
       </article>
     </div>
   </div>
-</div>
+</div>-->
 <?php } ?>
 
       </div><!--.col-sm-3-->
