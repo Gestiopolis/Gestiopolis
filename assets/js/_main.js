@@ -506,7 +506,7 @@ var Gestiopolis = {
             }, 100 );
           } else {
             $('.fixed-action-btn').fadeOut();
-            $('.ad-sidebar').animate({
+            $('.ad-sidebar').removeClass('on').removeClass('off').animate({
               bottom: "-400px"
             }, 100 );
           }
