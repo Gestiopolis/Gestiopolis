@@ -506,20 +506,35 @@ var Gestiopolis = {
             }, 100 );
           } else {
             $('.fixed-action-btn').fadeOut();
-            $('.ad-sidebar').removeClass('on').removeClass('off').animate({
+            $('.ad-sidebar').animate({
               bottom: "-400px"
             }, 100 );
           }
         });
+        /*$(window).scroll(function(){
+          if ($(this).scrollTop() > 510) {
+            $('.ad-sidebar').animate({
+              bottom: "10px"
+            }, 200 );
+          } else {
+            $('.ad-sidebar').animate({
+              bottom: "-400px"
+            }, 200 );
+          }
+        });*/
         $('.ad-sidebar .arrow.down').on('click', function(event) {
           event.preventDefault();
-          $('.ad-sidebar').addClass('off').removeClass('on');
+          $('.ad-sidebar').animate({
+              bottom: "-310px"
+            }, 100 );
           $(this).hide();
           $('.ad-sidebar .arrow.up').show();
         });
         $('.ad-sidebar .arrow.up').on('click', function(event) {
           event.preventDefault();
-          $('.ad-sidebar').addClass('on').removeClass('off');
+          $('.ad-sidebar').animate({
+              bottom: "10px"
+            }, 100 );
           $(this).hide();
           $('.ad-sidebar .arrow.down').show();
         });
