@@ -110,14 +110,15 @@ var Gestiopolis = {
   home: {
     init: function() {
       $("img.lazy").show().lazyload({
-        effect : "fadeIn"
-      });
+          effect : "fadeIn",
+          failure_limit : 40
+        });
       // JavaScript to be fired on the home page
       //1. Grid Ejes temáticos Home
       //Grid.init();
       //2. Slider home autores
       //slider(".autores-home", ".autores-home .carrusel", ".carrusel>.span3", 8);
-      $('#myCarousel').carousel({
+      /*$('#myCarousel').carousel({
         interval: false
       });
 
@@ -136,11 +137,11 @@ var Gestiopolis = {
           
           next.children(':first-child').clone().appendTo($(this));
         }
-      });
+      });*/
       //3. Slider home temas
       //slider(".temas-home", ".temas-home .carrusel", ".carrusel>.span3", 8);
       
-      var $container = $('#recientes');
+      /*var $container = $('#recientes');
       // Fire Isotope only when images are loaded
       $container.imagesLoaded(function(){
         $container.isotope({
@@ -170,15 +171,16 @@ var Gestiopolis = {
             effect : "fadeIn"
           });
         });
-      });
+      });*/
     }
   },
   author: { //Página del autor
     init: function() {
       $("img.lazy").show().lazyload({
-        effect : "fadeIn"
-      });
-      var $conta3 = $('#publicaciones');
+          effect : "fadeIn",
+          failure_limit : 40
+        });
+      /*var $conta3 = $('#publicaciones');
       // Fire Isotope only when images are loaded
       $conta3.imagesLoaded(function(){
         $conta3.isotope({
@@ -208,7 +210,7 @@ var Gestiopolis = {
             effect : "fadeIn"
           });
         });
-      });
+      });*/
       $('.see-more').on('click',function(event){
         event.preventDefault();
         $('.autdesc').css('height', 'auto');
@@ -231,10 +233,11 @@ var Gestiopolis = {
   category: { //Página del autor
     init: function() {
       $("img.lazy").show().lazyload({
-        effect : "fadeIn"
-      });
+          effect : "fadeIn",
+          failure_limit : 40
+        });
       //1. Slider home autores
-      $('#myCarousel').carousel({
+      /*$('#myCarousel').carousel({
         interval: false
       });
 
@@ -285,15 +288,16 @@ var Gestiopolis = {
             effect : "fadeIn"
           });
         });
-      });
+      });*/
     }
   },
   tag: { //Página del autor
     init: function() {
       $("img.lazy").show().lazyload({
-        effect : "fadeIn"
-      });
-      var $conta2 = $('#publicaciones');
+          effect : "fadeIn",
+          failure_limit : 40
+        });
+      /*var $conta2 = $('#publicaciones');
       // Fire Isotope only when images are loaded
       $conta2.imagesLoaded(function(){
         $conta2.isotope({
@@ -323,15 +327,16 @@ var Gestiopolis = {
             effect : "fadeIn"
           });
         });
-      });
+      });*/
     }
   },
   date: { //Página del autor
     init: function() {
       $("img.lazy").show().lazyload({
-        effect : "fadeIn"
-      });
-      var $conta2 = $('#publicaciones');
+          effect : "fadeIn",
+          failure_limit : 40
+        });
+      /*var $conta2 = $('#publicaciones');
       // Fire Isotope only when images are loaded
       $conta2.imagesLoaded(function(){
         $conta2.isotope({
@@ -361,7 +366,7 @@ var Gestiopolis = {
             effect : "fadeIn"
           });
         });
-      });
+      });*/
     }
   },
   /*page_id_325584: { //Página de publicar
