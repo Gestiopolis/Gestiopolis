@@ -505,7 +505,7 @@ var Gestiopolis = {
             $('.fixed-action-btn').fadeOut();
           }
         });
-        $(window).scroll(function(){
+        /*$(window).scroll(function(){
           if ($(this).scrollTop() > 510) {
             $('.ad-sidebar').animate({
               bottom: "10px"
@@ -515,12 +515,12 @@ var Gestiopolis = {
               bottom: "-400px"
             }, 200 );
           }
-        });
+        });*/
         $('.ad-sidebar .arrow.down').on('click', function(event) {
           event.preventDefault();
           $('.ad-sidebar').animate({
               bottom: "-278px"
-            }, 200 );
+            }, 10 );
           $(this).hide();
           $('.ad-sidebar .arrow.up').show();
         });
@@ -528,7 +528,7 @@ var Gestiopolis = {
           event.preventDefault();
           $('.ad-sidebar').animate({
               bottom: "10px"
-            }, 200 );
+            }, 10 );
           $(this).hide();
           $('.ad-sidebar .arrow.down').show();
         });
