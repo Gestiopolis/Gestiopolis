@@ -10,6 +10,9 @@ get_currentuserinfo();
       <div class="center container">
         <h1 class="title">
           <?php
+          if ( is_day() ) :
+              echo get_the_date( 'j \d\e F \- Y');
+
             if ( is_month() ) :
               echo get_the_date( 'F \- Y');
 
