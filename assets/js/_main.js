@@ -526,7 +526,7 @@ var Gestiopolis = {
           event.preventDefault();
           $('.ad-sidebar').animate({
               bottom: "-278px"
-            }, 10 );
+            }, 100 );
           $(this).hide();
           $('.ad-sidebar .arrow.up').show();
         });
@@ -534,7 +534,7 @@ var Gestiopolis = {
           event.preventDefault();
           $('.ad-sidebar').animate({
               bottom: "10px"
-            }, 10 );
+            }, 100 );
           $(this).hide();
           $('.ad-sidebar .arrow.down').show();
         });
