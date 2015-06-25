@@ -1,3 +1,6 @@
+<?php 
+  $category = get_the_category($post->ID);
+?>
 <div class="row postw">
   <div class="col-sm-12">
     <article id="post-<?php the_ID(); ?>" class="post ">
