@@ -501,8 +501,14 @@ var Gestiopolis = {
         $(window).scroll(function(){
           if ($(this).scrollTop() > 500) {
             $('.fixed-action-btn').fadeIn();
+            $('.ad-sidebar').animate({
+              bottom: "10px"
+            }, 10 );
           } else {
             $('.fixed-action-btn').fadeOut();
+            $('.ad-sidebar').animate({
+              bottom: "-400px"
+            }, 10 );
           }
         });
         /*$(window).scroll(function(){
