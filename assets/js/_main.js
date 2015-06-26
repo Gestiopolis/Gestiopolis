@@ -326,6 +326,46 @@ var Gestiopolis = {
       });
     }
   },
+  search: { //ABC temático
+    init: function() {
+      $("img.lazy").show().lazyload({
+        effect : "fadeIn",
+        failure_limit : 20
+      });
+      var $conta2 = $('#publicaciones');
+      // Fire Isotope only when images are loaded
+      $conta2.imagesLoaded(function(){
+        $conta2.isotope({
+          itemSelector : '.postw'
+        });
+      });
+      // Infinite Scroll
+      $('#publicaciones').infinitescroll({
+        loading: {
+          finishedMsg: "<em>Felicitaciones, has llegado al fin de Internet.</em>",
+          img: serverval.template_directory+'/assets/img/ajax-loader.gif',
+          msgText: '<em>Cargando el siguiente grupo de publicaciones...</em>',
+          speed: 'fast'
+        },
+        navSelector  : 'div.pagination',
+        nextSelector : '.nextpostslink',
+        itemSelector : '.postw',
+        bufferPx     : 200
+      },
+      // Infinite Scroll Callback
+      function( newElements ) {
+        var $newElems = jQuery( newElements ).hide();
+        $newElems.imagesLoaded(function(){
+          $newElems.fadeIn();
+          $conta2.isotope( 'appended', $newElems );
+          $("img.lazy").show().lazyload({
+            effect : "fadeIn",
+            failure_limit : 15
+          });
+        });
+      });
+    }
+  },
   date: { //Página del autor
     init: function() {
       $("img.lazy").show().lazyload({
@@ -483,6 +523,7 @@ var Gestiopolis = {
       });
     }
   },*/ //Fin page_id_264
+
   single: {
     init: function() {
       $('table').addClass('table table-bordered');
