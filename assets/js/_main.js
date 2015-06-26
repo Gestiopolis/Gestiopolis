@@ -629,14 +629,14 @@ var Gestiopolis = {
                   location.reload();
                 });
         });*/
-        $("input#editimage").on('click', function(e){
+        /*$("input#editimage").on('click', function(e){
           e.preventDefault();
           var imageurl = $("input#imageedit").val();
           var idpost = parseInt(serverval.postid, 10);
           $.post(serverval.template_directory+'/lib/functions/frontendedit.php', {type: "imageedit", postid:idpost, flickrurl:imageurl}).done(function() {
                   location.reload();
                 });
-        });
+        });*/
         $("#deletePost").on('click', function(e){
           e.preventDefault();
           var idpost = parseInt(serverval.postid, 10);
@@ -652,7 +652,7 @@ var Gestiopolis = {
                   location.reload();
                 });
         });*/
-        $("#deleteImage").on('click', function(e){
+        /*$("#deleteImage").on('click', function(e){
           e.preventDefault();
           var idpost = parseInt(serverval.postid, 10);
           if (confirm('¿Estás seguro que deseas eliminar esta Imágen?')) {
@@ -660,7 +660,7 @@ var Gestiopolis = {
                   location.reload();
                 });
           }
-        });
+        });*/
         $("#deletePdf").on('click', function(e){
           e.preventDefault();
           var idpost = parseInt(serverval.postid, 10);
@@ -694,7 +694,7 @@ var Gestiopolis = {
           var jqpost = $(this).attr("rel");
           $("#"+jqpost).remove();
         });*/
-        $("form#optimg").submit(function(e){
+        /*$("form#optimg").submit(function(e){
           e.preventDefault();
           var formData = new FormData($(this)[0]);
           $.ajax({
@@ -707,7 +707,7 @@ var Gestiopolis = {
             processData: false,
             success: function (returndata) { location.reload(); }
           });
-        });
+        });*/
         $("form#all2html").submit(function(e){
           e.preventDefault();
           $('#myModal').modal('show');
