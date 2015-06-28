@@ -1,6 +1,3 @@
-<?php 
-  $category = get_the_category($post->ID);
-?>
 <div class="row postw">
   <div class="col-sm-12">
     <article id="post-<?php the_ID(); ?>" class="post ">
@@ -28,21 +25,7 @@
                <time class="updated" datetime="<?php echo get_the_time('c'); ?>"><i class="fa fa-calendar"></i> <?php echo get_the_date('d.m.Y'); ?></time>
                <i class="fa fa-clock-o"></i> <?php echo estimate_time();?> de lectura
             </span><!--/.autor-->
-            <p><?php echo title_trim(270, get_the_excerpt()); ?></p><!--/post-excerpt -->
-            <span class="catstags">
-              <?php the_tags('<div class="tags hidden-xs"><i class="fa fa-tags"></i> ',', ','</div>'); ?>
-              <div class="category pull-left">
-                <?php foreach ($category as $cat) {
-                  if(is_category()){
-                    $term = get_queried_object();
-                    if($cat->term_id != $term->term_id){?>
-                  <a href="<?php echo get_category_link( $cat->term_id ); ?>" class="cat-col-<?php echo $cat->term_id; ?>"><i class="fa icon-cat-<?php echo $cat->term_id; ?>"></i> <?php echo $cat->cat_name; ?></a>
-                  <?php } ?>
-                <?php }else { ?>
-                  <a href="<?php echo get_category_link( $cat->term_id ); ?>" class="cat-col-<?php echo $cat->term_id; ?>"><i class="fa icon-cat-<?php echo $cat->term_id; ?>"></i> <?php echo $cat->cat_name; ?></a>
-                <?php }}?>
-              </div>
-            </span>
+            <p><?php echo title_trim(180, get_the_excerpt()); ?></p><!--/post-excerpt -->
           </div>
         </div>
       </div>

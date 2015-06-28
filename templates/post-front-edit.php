@@ -2,31 +2,6 @@
   <p>Visitas: <b><?php if(function_exists('the_views')) { the_views(); } ?></b></p>
   <p><b><a href="<?php echo home_url('/'); ?>wp-admin/post.php?post=<?php echo $post->ID;?>&amp;action=edit" target="_blank">Enlace a Editor</a></b></p>
   <p><b><a href="<?php echo home_url('/'); ?>" id="deletePost">ELIMINAR ARTÍCULO</a></b></p>
-  <h3>Edición de Imagen Principal</h3>
-<?php if(get_post_meta($post->ID, "image_value", true) != ""){?>
-  <p><b><a href="<?php echo home_url('/'); ?>" id="deleteImage">ELIMINAR IMAGEN</a></b></p>
-  <p><b>URL Original de la Imagen en Flickr:</b> <input type="text" name="imageedit" id="imageedit" value="<?php echo get_post_meta($post->ID, "image_url_value", "input", true); ?>"> <input type="submit" name="editimage" id="editimage" value="Editar"></p>
-  <p><b>URL de Imagen en GestioPolis:</b> <?php echo get_post_meta($post->ID, "image_value", true); ?></p>
-  <p><b>Autor de la Imagen:</b> <?php echo get_post_meta($post->ID, "image_author_t_value", true); ?></p>                
-<?php } else if(get_post_meta($post->ID, "Thumbnail", true) != "") { ?>
-  <p><b><a href="<?php echo home_url('/'); ?>" id="deleteImage">ELIMINAR IMÁGEN</a></b></p>
-  <p><b>URL Original de la Imagen en Flickr:</b> <input type="text" name="imageedit" id="imageedit" value="<?php echo get_post_meta($post->ID, "Thumbnail", "input", true); ?>"> <input type="submit" name="editimage" id="editimage" value="Editar"></p>
-  <p><b>URL de Imagen en GestioPolis:</b> <?php echo get_post_meta($post->ID, "Thumbnail", true); ?></p>
-  <p><b>Autor de la Imagen:</b> <?php echo get_post_meta($post->ID, "image_author_t_value", true); ?></p>
-<?php }else{ ?>
-  <p><b>URL Original de la Imagen en Flickr:</b> <input type="text" name="imageedit" id="imageedit" value=""> <input type="submit" name="editimage" id="editimage" value="Añadir"></p>
-  <p><b>URL de Imagen en GestioPolis:</b> </p>
-  <p><b>Autor de la Imagen:</b> </p>
-  <p>
-    <b>Subir imágen optimizada:</b> 
-    <form id="optimg" class="form-horizontal" role="form" method="post" enctype="multipart/form-data" action="">
-      <input type="file" class="form-control" id="img_file" name="img_file" required>
-      <input type="hidden" name="postid" id="postids" value="<?php echo $post->ID; ?>" />
-      <input type="hidden" name="type" id="type" value="imageupload" />
-      <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-play"></span> Subir imagen</button>
-    </form>
-  </p>           
-<?php } ?>
   <h3>Edición de Embebidos Superiores</h3>
   <p><b>URL de embebido de Presentaciones:</b> <?php echo get_post_meta($post->ID, "ppts_value", "input", true); ?></p>
   <p><b>URL de embebido de Documentos complejos:</b> <?php echo get_post_meta($post->ID, "docs_c_value", "input", true); ?></p>

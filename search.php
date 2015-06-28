@@ -22,5 +22,4 @@
         <?php get_template_part('templates/sidebar-search'); ?>
       </div><!--.col-sm-3-->
     </div>
-
-  </div><!-- .container PRINCIPAL -->
+</div><!-- .container PRINCIPAL -->
