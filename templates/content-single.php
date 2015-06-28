@@ -1,14 +1,7 @@
 <?php while (have_posts()) : the_post(); ?>
   <div class="container cposts">
     <div class="row">
-      <?php if (is_single(333666)) {?>
-      <div class="hidden-xs hidden-sm col-md-1">
-        &nbsp;
-      </div>
       <div class="col-sm-12 col-md-9 maincol">
-      <?php }else { ?>
-      <div class="col-sm-12 col-md-9 maincol">
-        <?php } ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <h1 class="entry-title title"><?php the_title(); ?></h1>
           <div class="row"><!-- Empieza row de contenido y meta datos -->
@@ -32,7 +25,7 @@
             </script>
             </div>
           </div>-->
-          <?php if (!is_single(333666)) {?>
+          <div class="adsce">
           <div id="google-ads-docs-1"></div>
  
           <script type="text/javascript"> 
@@ -50,7 +43,7 @@
               google_ad_client = "ca-pub-1187873112185798";
            
               /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-              google_ad_slot = "7892616054";
+              google_ad_slot = "3336602214";
             
               /* Do not change anything after this line */
               if ( adWidth >= 727 )
@@ -68,7 +61,7 @@
           <script type="text/javascript"
                   src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                   </script>
-          <?php } ?>
+          </div>
           <?php 
           if (0 == 1) { ?>
           <div id="toolbar">
@@ -111,12 +104,11 @@
           <div class="post-content clearfix">
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
-              <?php if (!is_single(333666)) {?>
-                <div class="adsfl">
-                  <script type="text/javascript"><!--
+              <div class="adsfl">
+                <script type="text/javascript"><!--
                   google_ad_client = "ca-pub-1187873112185798";
-                  /* 1-ad-top-posts */
-                  google_ad_slot = "6415908174";
+                  /* exp1-300x250-1-posts-derecha */
+                  google_ad_slot = "6429770694";
                   google_ad_width = 300;
                   google_ad_height = 250;
                   //-->
@@ -124,8 +116,7 @@
                   <script type="text/javascript"
                   src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                   </script>
-                </div>
-                <?php } ?>
+              </div>
               <?php } ?>
               <?php the_content(); ?>
             </div>
@@ -136,7 +127,6 @@
               </script>
               </div>
             </div>-->
-            <?php if (!is_single(333666)) {?>
             <div class="adsce">
               <script type="text/javascript"><!--
               google_ad_client = "ca-pub-1187873112185798";
@@ -150,7 +140,6 @@
               src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               </script>
             </div>
-            <?php } ?>
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
@@ -256,13 +245,8 @@
         </div><!-- fin de row de contenido y meta -->
         </article>
       </div><!--.col-sm-9-->
-      <?php if (is_single(333666)) {?>
-      <div class="hidden-xs hidden-sm col-md-2 sidebarcol">
-      <?php }else { ?>
       <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
-        <?php } ?>
-      
-        <?php if (!is_single(333666)) {?>
+<?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
 <div id="google-ads-sidebar"></div>
  
 <script type="text/javascript"> 
@@ -280,7 +264,7 @@
     google_ad_client = "ca-pub-1187873112185798";
  
     /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-    google_ad_slot = "1561780254";
+    google_ad_slot = "4813310094";
   
     /* Do not change anything after this line */
     if ( adWidth >= 300 )
@@ -295,6 +279,40 @@
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
+<?php }else { ?>      
+<div id="google-ads-sidebar"></div>
+ 
+<script type="text/javascript"> 
+ 
+    /* Calculate the width of available ad space */
+    ad = document.getElementById('google-ads-sidebar');
+ 
+    if (ad.getBoundingClientRect().width) {
+        adWidth = ad.getBoundingClientRect().width; // for modern browsers 
+    } else {
+        adWidth = ad.offsetWidth; // for old IE 
+    }
+ 
+    /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
+    google_ad_client = "ca-pub-1187873112185798";
+ 
+    /* Replace 1234567890 with the AdSense Ad Slot ID */ 
+    google_ad_slot = "7906478574";
+  
+    /* Do not change anything after this line */
+    if ( adWidth >= 300 )
+      google_ad_size = ["300", "600"];  /* Leaderboard 728x90 */
+    else
+      google_ad_size = ["160", "600"]; /* Button (125 x 125) */
+ 
+    google_ad_width = google_ad_size[0];
+    google_ad_height=google_ad_size[1];
+ 
+</script>
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<?php } ?>
 <?php //if (is_single(array(30646,56381,333736,333680,333687))) {?>
 <?php get_template_part('templates/sidebar-post'); ?>
 <?php //} ?>
@@ -313,7 +331,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
     </div>
   </div>
 </div>-->
-<?php } ?>
+
 
       </div><!--.col-sm-3-->
     </div><!-- fin de .row -->
