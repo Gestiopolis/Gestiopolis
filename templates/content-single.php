@@ -106,16 +106,16 @@
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
               <div class="adsfl">
                 <script type="text/javascript"><!--
-                  google_ad_client = "ca-pub-1187873112185798";
-                  /* exp1-300x250-1-posts-derecha */
-                  google_ad_slot = "6429770694";
-                  google_ad_width = 300;
-                  google_ad_height = 250;
-                  //-->
-                  </script>
-                  <script type="text/javascript"
-                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-                  </script>
+                google_ad_client = "ca-pub-1187873112185798";
+                /* exp1-300x250-1-posts-izquierda */
+                google_ad_slot = "4953062814";
+                google_ad_width = 300;
+                google_ad_height = 250;
+                //-->
+                </script>
+                <script type="text/javascript"
+                src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
               </div>
               <?php } ?>
               <?php the_content(); ?>
@@ -297,7 +297,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
     google_ad_client = "ca-pub-1187873112185798";
  
     /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-    google_ad_slot = "7906478574";
+    google_ad_slot = "79064785747906478574";
   
     /* Do not change anything after this line */
     if ( adWidth >= 300 )
