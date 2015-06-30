@@ -297,7 +297,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
     google_ad_client = "ca-pub-1187873112185798";
  
     /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-    google_ad_slot = "79064785747906478574";
+    google_ad_slot = "7906478574";
   
     /* Do not change anything after this line */
     if ( adWidth >= 300 )
