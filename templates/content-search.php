@@ -2,16 +2,16 @@
   <div class="col-sm-12">
     <article id="post-<?php the_ID(); ?>" class="post ">
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-12 col-md-3">
           <div class="wrapper-img pull-left">
             <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
-              <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'search-thumb' );
+              <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'main-thumb' );
       ?>
               <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy img-responsive">
             </a>
           </div>
         </div>
-        <div class="col-sm-9">
+        <div class="col-sm-12 col-md-9">
           <div class="contsearch pull-left">
             <h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title_attribute(); ?></a></h2>
             <span class="autor">
