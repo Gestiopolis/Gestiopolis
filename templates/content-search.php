@@ -3,7 +3,7 @@
     <article id="post-<?php the_ID(); ?>" class="post ">
       <div class="row">
         <div class="col-sm-12 col-md-3">
-          <div class="wrapper-img pull-left">
+          <div class="wrapper-img">
             <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
               <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'main-thumb' );
       ?>
@@ -12,7 +12,7 @@
           </div>
         </div>
         <div class="col-sm-12 col-md-9">
-          <div class="contsearch pull-left">
+          <div class="contsearch">
             <h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title_attribute(); ?></a></h2>
             <span class="autor">
               <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
