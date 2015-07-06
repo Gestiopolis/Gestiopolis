@@ -563,7 +563,7 @@ var Gestiopolis = {
             }, 200 );
           }
         });*/
-        $('.ad-sidebar .arrow.down').on('click', function(event) {
+        /*$('.ad-sidebar .arrow.down').on('click', function(event) {
           event.preventDefault();
           $('.ad-sidebar').animate({
               bottom: "-310px"
@@ -581,7 +581,7 @@ var Gestiopolis = {
         });
         $('.fixed-action-btn.top-left .btn-floating.red').on('click', function(){
           $('.fixed-action-btn.top-left ul li.additional').toggle();
-        });
+        });*/
 
       $('.related-out li span a').on('click', function(e) {
         e.preventDefault();
@@ -621,11 +621,44 @@ var Gestiopolis = {
 
       // JavaScript to be fired on a single post
       if (serverval.manage_options == "1" && serverval.userlogin == "1"){
+        $("input#editslug").on('click', function(e){
+          e.preventDefault();
+          var slug = $("input#slugedit").val();
+          var idpost = parseInt(serverval.postid, 10);
+          $.post(serverval.template_directory+'/lib/functions/frontendedit.php', {type: "slugedit", postid:idpost, newslug:slug}).done(function() {
+                  location.reload();
+                });
+        });
+        $("input#editimage").on('click', function(e){
+          e.preventDefault();
+          var imageurl = $("input#imageedit").val();
+          var idpost = parseInt(serverval.postid, 10);
+          $.post(serverval.template_directory+'/lib/functions/frontendedit.php', {type: "imageedit", postid:idpost, flickrurl:imageurl}).done(function() {
+                  location.reload();
+                });
+        });
         $("#deletePost").on('click', function(e){
           e.preventDefault();
           var idpost = parseInt(serverval.postid, 10);
           if (confirm('¿Estás seguro que deseas eliminar este Artículo?')) {
               $.post(serverval.template_directory+'/lib/functions/frontendedit.php', {type: "deletepost", postid:idpost});
+          }
+        });
+        $("input#editmargin").on('click', function(e){
+          e.preventDefault();
+          var margin = $("input#imagemargin").val();
+          var idpost = parseInt(serverval.postid, 10);
+          $.post(serverval.template_directory+'/lib/functions/frontendedit.php', {type: "imagemargin", postid:idpost, immargin:margin}).done(function() {
+                  location.reload();
+                });
+        });
+        $("#deleteImage").on('click', function(e){
+          e.preventDefault();
+          var idpost = parseInt(serverval.postid, 10);
+          if (confirm('¿Estás seguro que deseas eliminar esta Imágen?')) {
+              $.post(serverval.template_directory+'/lib/functions/frontendedit.php', {type: "deleteimage", postid:idpost}).done(function() {
+                  location.reload();
+                });
           }
         });
         $("#deletePdf").on('click', function(e){
@@ -638,6 +671,43 @@ var Gestiopolis = {
           }
         });
 
+        $("a.gesti-open").click(function(){
+
+          $($(this).attr('href')).fadeIn('normal');
+              return false;
+          
+        });
+
+        
+        $('a.gesti-close').click(function() {
+        
+              $($(this).attr('href')).fadeOut();
+              return false;
+              
+          });
+        var ques=0;
+        $("#agrexl").click(function() {
+          $("#exlinks-"+ques).show();
+          ques++;
+        });
+        $(".borrarjq").click(function() {
+          var jqpost = $(this).attr("rel");
+          $("#"+jqpost).remove();
+        });
+        $("form#optimg").submit(function(e){
+          e.preventDefault();
+          var formData = new FormData($(this)[0]);
+          $.ajax({
+            url: serverval.template_directory+'/lib/functions/frontendedit.php',
+            type: 'POST',
+            data: formData,
+            async: true,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (returndata) { location.reload(); }
+          });
+        });
         $("form#all2html").submit(function(e){
           e.preventDefault();
           $('#myModal').modal('show');

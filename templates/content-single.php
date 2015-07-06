@@ -103,9 +103,6 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
             <div class="col-sm-12 col-md-10 col-md-pull-2">
           <time class="entry-date published hidden" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('d.m.Y'); ?></time>
           <time class="entry-date updated hidden" datetime="<?php echo get_the_modified_time('c'); ?>"><?php echo get_the_modified_date('d.m.Y'); ?></time>
-          <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
-          <?php get_template_part('templates/post-front-edit'); ?>
-          <?php } ?>
           <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
           <!--<div class="adsce">
             <div id='div-gpt-ad-1433261534384-5'>
@@ -284,6 +281,9 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
               <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
             </div><!-- .post-tags -->
+            <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
+            <?php get_template_part('templates/post-front-edit'); ?>
+            <?php } ?>
             <?php get_template_part('templates/entry-exlinks'); ?>
             <div class="quotes">
               <div>
