@@ -544,6 +544,11 @@ var Gestiopolis = {
           var marginb = difh /(nrel-1);
           $('.single .sidebar-post article').each(function() {
             $(this).css( "marginBottom", marginb);
+            $(this).css( "left", "+=100px");
+            var visible = $(this).visible();
+            if (visible){
+              $(this).animate({ "left": "0" }, "slow" );
+            }
           });
         }
 
