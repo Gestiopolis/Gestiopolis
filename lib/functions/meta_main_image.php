@@ -33,7 +33,7 @@ function main_image_meta() {
 		echo '<p><a href="#help-' . $meta_box['name'] . '" class="gesti-close">Cerrar</a></p>';
 		echo '</div>';
 		
-		//Si el campo esta vacío
+		//Si el campo esta vacÃ­o
 		if($meta_box_value == "") {
 			echo '<input class="gesti-input" type="text" name="imageedit" id="imageedit" value="">';
 			echo '<p><input type="file" name="' . $meta_box['name'] . '_value" class="gesti-input" value="" /></p>';
@@ -259,13 +259,4 @@ function externimg_getext ($file) {
 	}
 	return '';
 }
-
-function delTree($dir) { 
-   $files = array_diff(scandir($dir), array('.','..')); 
-    foreach ($files as $file) { 
-      (is_dir("$dir/$file")) ? delTree("$dir/$file") : unlink("$dir/$file"); 
-    } 
-    return rmdir($dir); 
-  }
-
 ?>

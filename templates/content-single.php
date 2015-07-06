@@ -100,12 +100,9 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                 <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm"> ','','</div>'); ?>
               </div>
             </div>
-            <div class="col-sm-12 col-md-10 col-md-pull-2">
+            <div class="col-sm-12 col-md-10 col-md-pull-2 content-col">
           <time class="entry-date published hidden" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('d.m.Y'); ?></time>
           <time class="entry-date updated hidden" datetime="<?php echo get_the_modified_time('c'); ?>"><?php echo get_the_modified_date('d.m.Y'); ?></time>
-          <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
-          <?php get_template_part('templates/post-front-edit'); ?>
-          <?php } ?>
           <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
           <!--<div class="adsce">
             <div id='div-gpt-ad-1433261534384-5'>
@@ -196,8 +193,8 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               <div class="adsfr">
                 <script type="text/javascript"><!--
                 google_ad_client = "ca-pub-1187873112185798";
-                /* exp1-300x250-1-posts-izquierda */
-                google_ad_slot = "4953062814";
+                /* exp1-300x250-1-posts-derecha */
+                google_ad_slot = "6429770694";
                 google_ad_width = 300;
                 google_ad_height = 250;
                 //-->
@@ -284,6 +281,9 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
               <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
             </div><!-- .post-tags -->
+            <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
+            <?php get_template_part('templates/post-front-edit'); ?>
+            <?php } ?>
             <?php get_template_part('templates/entry-exlinks'); ?>
             <div class="quotes">
               <div>
