@@ -543,8 +543,11 @@ var Gestiopolis = {
           var difh = arth - sideh;
           var marginb = difh /(nrel-1);
           $('.single .sidebar-post article').each(function() {
-            $(this).css( "marginBottom", marginb);
-            $(this).css( "left", "+=100");
+            var styles = {
+              marginBottom : marginb,
+              left: "100"
+            };
+            $(this).css(styles);
           });
         }
 
@@ -574,9 +577,9 @@ var Gestiopolis = {
               bottom: "-400px"
             }, 100 );
           }
-          var visible = $(this).visible();
+          var visible = $('.single .sidebar-post article').visible();
           if (visible){
-            $(this).animate({ "left": "0" }, "slow" );
+            $('.single .sidebar-post article').animate({ "left": "0" }, "slow" );
           }
         });
         /*$(window).scroll(function(){
