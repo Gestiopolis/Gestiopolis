@@ -543,11 +543,7 @@ var Gestiopolis = {
           var difh = arth - sideh;
           var marginb = difh /(nrel-1);
           $('.single .sidebar-post article').each(function() {
-            var styles = {
-              marginBottom : marginb,
-              left: "100"
-            };
-            $(this).css(styles);
+            $(this).css( "marginBottom", marginb);
           });
         }
 
@@ -576,10 +572,6 @@ var Gestiopolis = {
             $('.ad-sidebar').animate({
               bottom: "-400px"
             }, 100 );
-          }
-          var visible = $('.single .sidebar-post article').visible();
-          if (visible){
-            $('.single .sidebar-post article').animate({ "left": "0" }, "slow" );
           }
         });
         /*$(window).scroll(function(){
