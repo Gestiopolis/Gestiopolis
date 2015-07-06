@@ -100,7 +100,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                 <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm"> ','','</div>'); ?>
               </div>
             </div>
-            <div class="col-sm-12 col-md-10 col-md-pull-2">
+            <div class="col-sm-12 col-md-10 col-md-pull-2 content-col">
           <time class="entry-date published hidden" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('d.m.Y'); ?></time>
           <time class="entry-date updated hidden" datetime="<?php echo get_the_modified_time('c'); ?>"><?php echo get_the_modified_date('d.m.Y'); ?></time>
           <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>

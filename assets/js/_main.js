@@ -526,6 +526,28 @@ var Gestiopolis = {
 
   single: {
     init: function() {
+      //Cuenta cuandos elementos de relacionados hay en el sidebar
+      var nrel = $(".single .sidebar-post article").length;
+      if(nrel > 0) {
+        var arth = 100;
+        if (serverval.all2html_htmlcontent != "") {
+          arth = $('#page-container').outerHeight();
+        } else {
+          arth = $('.single .post-content .entry-content').outerHeight();
+        }
+        var adsh = 600;
+        var relh = $('.single .sidebar-post').outerHeight();
+        var sideh = adsh + relh;
+        if (sideh < arth) {
+          var relitemh = $('.single .sidebar-post article').outerHeight();
+          var difh = arth - sideh;
+          var marginb = difh /(nrel-1);
+          $('.single .sidebar-post article').each(function() {
+            $(this).css( "marginBottom", marginb);
+          });
+        }
+
+      }
       $('table').addClass('table table-bordered');
       $('table td').removeAttr( "width" ).removeAttr( "style" );
       $('table tr').removeAttr( "width" ).removeAttr( "style" );
