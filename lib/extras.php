@@ -752,6 +752,50 @@ function get_trending_posts($numberOf, $days, $catid = '') {
 }
 
 /****************
+Mostrar los artículos más populares por visitas en el día
+Se necesita tener instalado el plugin Top 10 Plugin
+****************/
+function get_trending_posts_new($numberOf, $days, $catid = '') {
+	global $wpdb;
+	if ( function_exists( 'get_tptn_pop_posts' ) ) {
+		add_filter('tptn_posts_fields','fields_top_ten');
+	  if($catid != ''){
+			add_filter('tptn_posts_join','join_top_ten');
+			add_filter('tptn_posts_where',function( $where ) {global $catid; $where .= " AND $wpdb->term_relationships.term_taxonomy_id=$catid "; return $where; });
+		}
+		$settings = array(
+			'daily' => TRUE,
+			'daily_midnight' => true,
+			'daily_range' => $days,
+			'limit' => $numberOf,
+			'strict_limit' => FALSE,
+		);
+		$posts = get_tptn_pop_posts($settings);
+	  return $posts;
+	}
+	return;
+}
+function fields_top_ten($fields) {
+  $fields .= ", post_title, post_content, post_author ";
+  return $fields;
+}
+function join_top_ten($join) {
+  $join .= " INNER JOIN {$wpdb->term_relationships} ON $wpdb->term_relationships.object_id=$wpdb->posts.ID ";
+  return $join;
+}
+function script_top_ten($output) {
+	global $post;
+	if ( is_singular() ) {
+		$id = intval( $post->ID );
+		$home_url = home_url( '/' );
+		$blog_id = get_current_blog_id();
+	  return '<script type="text/javascript">jQuery.ajax({type: "POST", url: "' . $home_url . '", data: {top_ten_id: ' . $id . ', top_ten_blog_id: ' . $blog_id . ', activate_counter: 11, top10_rnd: (new Date()).getTime() + "-" + Math.floor(Math.random()*100000)}});</script>';
+	}
+}
+add_filter('tptn_viewed_count','script_top_ten');
+
+
+/****************
 Mostrar los autores con más artículos y más visitas a sus artículos
 ****************/
 function get_trending_authors($numberOf, $days, $catid = '') {

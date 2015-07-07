@@ -337,5 +337,4 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
       
     </div><!-- fin de .row -->
   </div>
-  <!-- <?php if ( function_exists ( 'echo_tptn_post_count' ) ) echo_tptn_post_count(); ?> -->
 <?php endwhile; ?>
