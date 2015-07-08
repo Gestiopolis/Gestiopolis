@@ -33,7 +33,12 @@ get_currentuserinfo();
   <div class="row destacados">
     <div class="col-sm-12">
       <div class="row">
-        <?php $tposts = get_trending_posts(10, TRENDING_DAYS, $term->term_id);
+        <?php 
+        if($term->term_id == 20){
+        $tposts = get_trending_posts_new(10, TRENDING_DAYS, $term->term_id);
+      }else {
+        $tposts = get_trending_posts(10, TRENDING_DAYS, $term->term_id);
+      }
           $i = 1;
           foreach ($tposts as $tpost) {
             $post_title = stripslashes($tpost->post_title);
@@ -154,7 +159,7 @@ get_currentuserinfo();
     <div class="col-sm-12">
       <div class="carousel slide" id="myCarousel">
         <div class="carousel-inner">
-          <?php $authors = get_trending_authors(12, TRENDING_DAYS, $term->term_id); 
+          <?php $authors = get_trending_authors(12, 360, $term->term_id); 
             $k = 1;
             foreach ($authors as $author) {
           ?>
