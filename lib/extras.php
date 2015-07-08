@@ -755,7 +755,7 @@ function get_trending_posts($numberOf, $days, $catid = '') {
 Mostrar los artículos más populares por visitas en el día
 Se necesita tener instalado el plugin Top 10 Plugin
 ****************/
-/*function get_trending_posts_new($numberOf, $days, $catid = '') {
+function get_trending_posts_new($numberOf, $days, $catid = '') {
 	global $wpdb;
 	$fields = '';
 	$where = '';
@@ -790,7 +790,7 @@ Se necesita tener instalado el plugin Top 10 Plugin
 	$sql = "SELECT $fields FROM {$table_name} $join WHERE 1=1 $where $groupby $orderby $limits";
 	$posts = $wpdb->get_results($sql);
   return $posts;
-}*/
+}
 add_filter('tptn_add_counter_script_url','addcount_url_top_ten');
 function addcount_url_top_ten($home_url) {
 	return get_template_directory_uri().'/lib/functions/top-10-addcount.js.php';

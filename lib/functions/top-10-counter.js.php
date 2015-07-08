@@ -10,7 +10,7 @@
  */
 Header( "content-type: application/x-javascript" );
 
-// Build the wp-config.php path from a plugin/theme
+/*// Build the wp-config.php path from a plugin/theme
 $wp_config_path = dirname( dirname( dirname( dirname( __FILE__ ) ) ) );
 $wp_config_filename = '/wp-load.php';
 
@@ -20,8 +20,10 @@ if ( ! file_exists( $wp_config_path . $wp_config_filename ) ) {
     $wp_config_filename = dirname( $wp_config_path ) . $wp_config_filename;
 }
 // Require the wp-config.php file
-require( $wp_config_filename );
+require( $wp_config_filename );*/
 
+$servidor = $_SERVER['HTTP_HOST'] == 'localhost' ? 'blog23/' : '';
+include_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor.'wp-load.php');
 // Include the now instantiated global $wpdb Class for use
 global $wpdb;
 
