@@ -733,7 +733,7 @@ WHERE posts.post_type='post' AND post_date > '" . date('Y-m-d', strtotime('-'.$d
 Mostrar los artículos más populares por comentarios, votos y visitas
 Se necesita tener instalado el plugin I Like This
 ****************/
-function get_trending_posts($numberOf, $days, $catid = '') {
+function get_trending_posts_deprecated($numberOf, $days, $catid = '') {
 	global $wpdb;
     //$request = "SELECT ID, post_title, post_content, post_author, votos.meta_value AS likes,views.meta_value AS vistas, comment_count FROM $wpdb->posts posts INNER JOIN $wpdb->postmeta votos ON (posts.ID = votos.post_id) INNER JOIN $wpdb->postmeta views ON (posts.ID = views.post_id)";
     $request = "SELECT ID, post_title, post_content, post_author, views.meta_value AS vistas FROM $wpdb->posts posts INNER JOIN $wpdb->postmeta views ON (posts.ID = views.post_id)";
@@ -755,7 +755,7 @@ function get_trending_posts($numberOf, $days, $catid = '') {
 Mostrar los artículos más populares por visitas en el día
 Se necesita tener instalado el plugin Top 10 Plugin
 ****************/
-function get_trending_posts_new($numberOf, $days, $catid = '') {
+function get_trending_posts($numberOf, $days, $catid = '') {
 	global $wpdb;
 	$fields = '';
 	$where = '';
@@ -768,13 +768,13 @@ function get_trending_posts_new($numberOf, $days, $catid = '') {
 	$current_time = current_time( 'timestamp', 0 );
 	$from_date = $current_time - ( max( 0, ( $days - 1 ) ) * DAY_IN_SECONDS );
 	$from_date = gmdate( 'Y-m-d 0' , $from_date );
-	$blog_id = get_current_blog_id();
+	$blog_id = 1;
 	$fields = " postnumber, ";
 	$fields .= "SUM(cntaccess) as vistas, dp_date, ";
 	$fields .= "ID, post_title, post_content, post_author ";
 	$join = " INNER JOIN {$wpdb->posts} ON postnumber=ID ";
 	if($catid != ''){
-		$join .= " INNER JOIN {$wpdb->term_relationships} ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id)";
+		$join .= " INNER JOIN {$wpdb->term_relationships} ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id) ";
 	}
 	$where .= $wpdb->prepare( " AND blog_id = %d ", $blog_id );				// Posts need to be from the current blog only
 	$where .= " AND $wpdb->posts.post_status = 'publish' ";

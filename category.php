@@ -33,12 +33,7 @@ get_currentuserinfo();
   <div class="row destacados">
     <div class="col-sm-12">
       <div class="row">
-        <?php 
-        if($term->term_id == 20){
-        $tposts = get_trending_posts_new(10, TRENDING_DAYS, $term->term_id);
-      }else {
-        $tposts = get_trending_posts(10, TRENDING_DAYS, $term->term_id);
-      }
+        <?php $tposts = get_trending_posts(10, TRENDING_DAYS, $term->term_id);
           $i = 1;
           foreach ($tposts as $tpost) {
             $post_title = stripslashes($tpost->post_title);
