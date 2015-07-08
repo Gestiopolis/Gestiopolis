@@ -790,18 +790,24 @@ Se necesita tener instalado el plugin Top 10 Plugin
 	$sql = "SELECT $fields FROM {$table_name} $join WHERE 1=1 $where $groupby $orderby $limits";
 	$posts = $wpdb->get_results($sql);
   return $posts;
+}*/
+add_filter('tptn_add_counter_script_url','addcount_url_top_ten');
+function addcount_url_top_ten($home_url) {
+	return get_template_directory().'/lib/functions/top-10-addcount.js.php';
+}
+add_filter('tptn_view_counter_script_url','viewcount_url_top_ten');
+function viewcount_url_top_ten($home_url) {
+	return get_template_directory().'/lib/functions/top-10-counter.js.php';
 }
 function script_top_ten($output) {
-	global $post;
 	if ( is_single() ) {
-		$id = intval( $post->ID );
-		$home_url = home_url();
-		$blog_id = get_current_blog_id();
-	  return '<script type="text/javascript">jQuery.ajax({type: "POST", url: "' . $home_url . '", data: {top_ten_id: ' . $id . ', top_ten_blog_id: ' . $blog_id . ', activate_counter: 11, top10_rnd: (new Date()).getTime() + "-" + Math.floor(Math.random()*100000)}});</script>';
+		global $post;
+		$home_url = get_template_directory().'/lib/functions/top-10-addcount.js.php';
+		return '<script type="text/javascript">jQuery.ajax({type: "POST", url: "' . $home_url . '", data: {top_ten_id: ' . $post->ID . ', top_ten_blog_id: 1, activate_counter: 11, top10_rnd: (new Date()).getTime() + "-" + Math.floor(Math.random()*100000)}});</script>';
 	}
 	return;
 }
-add_filter('tptn_viewed_count','script_top_ten');*/
+add_filter('tptn_viewed_count','script_top_ten');
 
 
 /****************
