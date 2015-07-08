@@ -784,7 +784,7 @@ function join_top_ten($join) {
   $join .= " INNER JOIN {$wpdb->term_relationships} ON $wpdb->term_relationships.object_id=$wpdb->posts.ID ";
   return $join;
 }*/
-function script_top_ten($output) {
+/*function script_top_ten($output) {
 	global $post;
 	if ( is_singular() ) {
 		$id = intval( $post->ID );
@@ -793,7 +793,7 @@ function script_top_ten($output) {
 	  return '<script type="text/javascript">jQuery.ajax({type: "POST", url: "' . $home_url . '", data: {top_ten_id: ' . $id . ', top_ten_blog_id: ' . $blog_id . ', activate_counter: 11, top10_rnd: (new Date()).getTime() + "-" + Math.floor(Math.random()*100000)}});</script>';
 	}
 }
-add_filter('tptn_viewed_count','script_top_ten');
+add_filter('tptn_viewed_count','script_top_ten');*/
 
 
 /****************
