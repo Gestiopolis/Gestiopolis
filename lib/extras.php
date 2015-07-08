@@ -756,14 +756,18 @@ Mostrar los artículos más populares por visitas en el día
 Se necesita tener instalado el plugin Top 10 Plugin
 ****************/
 /*function get_trending_posts_new($numberOf, $days, $catid = '') {
-	global $wpdb, $catid;
-	$catid = $catid;
-	if ( function_exists( 'get_tptn_pop_posts' ) ) {
-		add_filter('tptn_posts_fields','fields_top_ten');
-	  if($catid != ''){
-			add_filter('tptn_posts_join','join_top_ten');
-			add_filter('tptn_posts_where',function( $where ) {global $catid; $where .= " AND $wpdb->term_relationships.term_taxonomy_id=$catid "; return $where; });
-		}
+	global $wpdb;
+	$table_name = $wpdb->base_prefix . "top_ten_daily";
+	$current_time = current_time( 'timestamp', 0 );
+	$from_date = $current_time - ( max( 0, ( $days - 1 ) ) * DAY_IN_SECONDS );
+	$from_date = gmdate( 'Y-m-d 0' , $from_date );
+	$fields = " postnumber, ";
+	$fields .= "SUM(cntaccess) as sumCount, dp_date, ";
+	$fields .= "ID, post_title, post_content, post_author ";
+	$join = " INNER JOIN {$wpdb->posts} ON postnumber=ID INNER JOIN {$wpdb->term_relationships} term ON (posts.ID = term.object_id)";
+	$sql = "SELECT $fields FROM {$table_name} $join WHERE 1=1 $where $groupby $orderby $limits";
+	$posts = $wpdb->get_results($sql);
+  return $posts;
 		$settings = array(
 			'daily' => TRUE,
 			'daily_midnight' => true,
@@ -771,20 +775,8 @@ Se necesita tener instalado el plugin Top 10 Plugin
 			'limit' => $numberOf,
 			'strict_limit' => FALSE,
 		);
-		$posts = get_tptn_pop_posts($settings);
-	  return $posts;
-	}
-	return;
 }
-function fields_top_ten($fields) {
-  $fields .= ", post_title, post_content, post_author ";
-  return $fields;
-}
-function join_top_ten($join) {
-  $join .= " INNER JOIN {$wpdb->term_relationships} ON $wpdb->term_relationships.object_id=$wpdb->posts.ID ";
-  return $join;
-}*/
-/*function script_top_ten($output) {
+function script_top_ten($output) {
 	global $post;
 	if ( is_singular() ) {
 		$id = intval( $post->ID );
