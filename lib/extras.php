@@ -756,7 +756,8 @@ Mostrar los artículos más populares por visitas en el día
 Se necesita tener instalado el plugin Top 10 Plugin
 ****************/
 function get_trending_posts_new($numberOf, $days, $catid = '') {
-	global $wpdb;
+	global $wpdb, $catid;
+	$catid = $catid;
 	if ( function_exists( 'get_tptn_pop_posts' ) ) {
 		add_filter('tptn_posts_fields','fields_top_ten');
 	  if($catid != ''){
@@ -787,7 +788,7 @@ function script_top_ten($output) {
 	global $post;
 	if ( is_singular() ) {
 		$id = intval( $post->ID );
-		$home_url = home_url( '/' );
+		$home_url = home_url();
 		$blog_id = get_current_blog_id();
 	  return '<script type="text/javascript">jQuery.ajax({type: "POST", url: "' . $home_url . '", data: {top_ten_id: ' . $id . ', top_ten_blog_id: ' . $blog_id . ', activate_counter: 11, top10_rnd: (new Date()).getTime() + "-" + Math.floor(Math.random()*100000)}});</script>';
 	}
