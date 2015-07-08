@@ -541,7 +541,7 @@ var Gestiopolis = {
         if (sideh < arth) {
           var relitemh = $('.single .sidebar-post article').outerHeight();
           var difh = arth - sideh;
-          var marginb = difh /(nrel-1);
+          var marginb = difh /(nrel+2);
           $('.single .sidebar-post article').each(function() {
             $(this).css( "marginBottom", marginb);
           });

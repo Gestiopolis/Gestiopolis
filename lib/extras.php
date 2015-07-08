@@ -757,24 +757,39 @@ Se necesita tener instalado el plugin Top 10 Plugin
 ****************/
 /*function get_trending_posts_new($numberOf, $days, $catid = '') {
 	global $wpdb;
+	$fields = '';
+	$where = '';
+	$join = '';
+	$groupby = '';
+	$orderby = '';
+	$limits = '';
+	$match_fields = '';
 	$table_name = $wpdb->base_prefix . "top_ten_daily";
 	$current_time = current_time( 'timestamp', 0 );
 	$from_date = $current_time - ( max( 0, ( $days - 1 ) ) * DAY_IN_SECONDS );
 	$from_date = gmdate( 'Y-m-d 0' , $from_date );
+	$blog_id = get_current_blog_id();
 	$fields = " postnumber, ";
-	$fields .= "SUM(cntaccess) as sumCount, dp_date, ";
+	$fields .= "SUM(cntaccess) as vistas, dp_date, ";
 	$fields .= "ID, post_title, post_content, post_author ";
-	$join = " INNER JOIN {$wpdb->posts} ON postnumber=ID INNER JOIN {$wpdb->term_relationships} term ON (posts.ID = term.object_id)";
+	$join = " INNER JOIN {$wpdb->posts} ON postnumber=ID ";
+	if($catid != ''){
+		$join .= " INNER JOIN {$wpdb->term_relationships} ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id)";
+	}
+	$where .= $wpdb->prepare( " AND blog_id = %d ", $blog_id );				// Posts need to be from the current blog only
+	$where .= " AND $wpdb->posts.post_status = 'publish' ";
+	$where .= $wpdb->prepare( " AND dp_date >= '%s' ", $from_date );
+	if($catid != ''){
+		$where .= $wpdb->prepare( " AND $wpdb->term_relationships.term_taxonomy_id = %d ", $catid );
+	}
+	$groupby = " postnumber ";
+	$orderby = " vistas DESC ";
+	$limits .= $wpdb->prepare( " LIMIT %d ", $numberOf );
+	$groupby = " GROUP BY {$groupby} ";
+	$orderby = " ORDER BY {$orderby} ";
 	$sql = "SELECT $fields FROM {$table_name} $join WHERE 1=1 $where $groupby $orderby $limits";
 	$posts = $wpdb->get_results($sql);
   return $posts;
-		$settings = array(
-			'daily' => TRUE,
-			'daily_midnight' => true,
-			'daily_range' => $days,
-			'limit' => $numberOf,
-			'strict_limit' => FALSE,
-		);
 }
 function script_top_ten($output) {
 	global $post;
