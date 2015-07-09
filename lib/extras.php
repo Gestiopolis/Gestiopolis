@@ -766,8 +766,8 @@ function get_trending_posts($numberOf, $days, $catid = '') {
 	$match_fields = '';
 	$table_name = $wpdb->base_prefix . "top_ten_daily";
 	$current_time = current_time( 'timestamp', 0 );
-	$from_date = $current_time - ( max( 0, ( $days - 1 ) ) * DAY_IN_SECONDS );
-	$from_date = gmdate( 'Y-m-d 0' , $from_date );
+	$from_date = $current_time - ( max( 0, ($days - 1) ) * DAY_IN_SECONDS );
+	$from_date = gmdate( 'Y-m-d 0' , $from_date);
 	$blog_id = 1;
 	$fields = " postnumber, ";
 	$fields .= "SUM(cntaccess) as vistas, dp_date, ";
@@ -776,9 +776,9 @@ function get_trending_posts($numberOf, $days, $catid = '') {
 	if($catid != ''){
 		$join .= " INNER JOIN {$wpdb->term_relationships} ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id) ";
 	}
-	$where .= $wpdb->prepare( " AND blog_id = %d ", $blog_id );				// Posts need to be from the current blog only
+	$where .= $wpdb->prepare( " AND blog_id = %d ", $blog_id);				// Posts need to be from the current blog only
 	$where .= " AND $wpdb->posts.post_status = 'publish' ";
-	$where .= $wpdb->prepare( " AND dp_date >= '%s' ", $from_date );
+	$where .= $wpdb->prepare( " AND dp_date >= '%s' ", $from_date);
 	if($catid != ''){
 		$where .= $wpdb->prepare( " AND $wpdb->term_relationships.term_taxonomy_id = %d ", $catid );
 	}
