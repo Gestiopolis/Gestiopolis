@@ -846,7 +846,7 @@ function get_trending_authors($numberOf, $days, $catid = '') {
 	$from_date = gmdate( 'Y-m-d 0' , $from_date);
 	$blog_id = 1;
 	$fields = " DISTINCT post_author, postnumber, ";
-	$fields .= "COUNT(ID) AS count, SUM(cntaccess) as vistas, dp_date, ";
+	$fields .= "COUNT(ID) AS count, SUM(cntaccess) as vistas, dp_date ";
 	//$fields .= "ID, post_title, post_content, post_author ";
 	$join = " INNER JOIN {$wpdb->posts} ON postnumber=ID ";
 	if($catid != ''){
