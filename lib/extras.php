@@ -813,7 +813,7 @@ add_filter('tptn_viewed_count','script_top_ten');
 /****************
 Mostrar los autores con más artículos y más visitas a sus artículos
 ****************/
-function get_trending_authors($numberOf, $days, $catid = '') {
+function get_trending_authors_deprecated($numberOf, $days, $catid = '') {
 	global $wpdb;
     $request = "SELECT DISTINCT post_author, COUNT(ID) AS count, SUM(views.meta_value) AS vcount FROM wp_posts posts INNER JOIN wp_postmeta views ON (posts.ID = views.post_id)";
 	if($catid != ''){
@@ -831,7 +831,7 @@ function get_trending_authors($numberOf, $days, $catid = '') {
 /****************
 Mostrar los autores con más artículos y más visitas a sus artículos
 ****************/
-function get_trending_authors_new($numberOf, $days, $catid = '') {
+function get_trending_authors($numberOf, $days, $catid = '') {
 	global $wpdb;
 	$fields = '';
 	$where = '';
@@ -858,7 +858,7 @@ function get_trending_authors_new($numberOf, $days, $catid = '') {
 	if($catid != ''){
 		$where .= $wpdb->prepare( " AND $wpdb->term_relationships.term_taxonomy_id = %d ", $catid );
 	}
-	$groupby = " postnumber ";
+	$groupby = " post_author ";
 	$orderby = " count DESC, vistas DESC ";
 	$limits .= $wpdb->prepare( " LIMIT %d ", $numberOf );
 	$groupby = " GROUP BY {$groupby} ";
