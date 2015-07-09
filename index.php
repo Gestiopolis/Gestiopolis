@@ -161,7 +161,7 @@
     <div class="col-sm-12">
       <div class="carousel slide" id="myCarousel">
         <div class="carousel-inner">
-          <?php $authors = get_trending_authors(12, 360); 
+          <?php $authors = get_trending_authors(12, TRENDING_DAYS); 
             $k = 1;
             foreach ($authors as $author) {
           ?>
