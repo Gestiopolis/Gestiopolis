@@ -5,12 +5,12 @@
 //http://stackoverflow.com/questions/25888630/place-ads-in-between-text-only-paragraphs
 //http://www.labnol.org/internet/adsense-custom-size-ads/28352/
 //Inserta admanmedia ads después del primer párrafo
-//add_filter( 'the_content', 'insert_adman_ads' );
+add_filter( 'the_content', 'insert_adman_ads' );
 //http://www.gestiopolis.com/la-etica-empresarial-como-fuente-de-ventajas-competitivas/
 function insert_adman_ads( $content ) {
     global $post;
 	
-	$ad_code = '<div id="admanmedia" class="hidden-xs"><script src="http://icarus-wings.admanmedia.com/intext/intext_vast.js?pmu=183f9431;pmb=216f0476;size=600x338;visibility=50"></script></div>';
+	$ad_code = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript" src="http://www5.smartadserver.com/ac?out=js&nwid=1371&siteid=78378&pgname=all_site&fmtid=32469&tgt=[sas_target]&visit=m&tmstp=[timestamp]&clcturl=[countgo]"></script></div>';
 
 	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
         //if(!is_single(28207 )){
