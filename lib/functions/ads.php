@@ -5,7 +5,7 @@
 //http://stackoverflow.com/questions/25888630/place-ads-in-between-text-only-paragraphs
 //http://www.labnol.org/internet/adsense-custom-size-ads/28352/
 //Inserta admanmedia ads después del primer párrafo
-add_filter( 'the_content', 'insert_adman_ads' );
+//add_filter( 'the_content', 'insert_adman_ads' );
 //http://www.gestiopolis.com/la-etica-empresarial-como-fuente-de-ventajas-competitivas/
 function insert_adman_ads( $content ) {
     global $post;
