@@ -5,16 +5,16 @@
 //http://stackoverflow.com/questions/25888630/place-ads-in-between-text-only-paragraphs
 //http://www.labnol.org/internet/adsense-custom-size-ads/28352/
 //Inserta admanmedia ads después del primer párrafo
-//add_filter( 'the_content', 'insert_adman_ads' );
+add_filter( 'the_content', 'insert_adman_ads' );
 //http://www.gestiopolis.com/la-etica-empresarial-como-fuente-de-ventajas-competitivas/
 function insert_adman_ads( $content ) {
     global $post;
 	
-	$ad_code = '<div id="admanmedia" class="hidden-xs"><script src="http://icarus-wings.admanmedia.com/intext/intext_vast.js?pmu=183f9431;pmb=216f0476;size=600x338;visibility=50"></script></div>';
+	$ad_code = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript" src="http://www5.smartadserver.com/ac?out=js&nwid=1371&siteid=78378&pgname=all_site&fmtid=32469&tgt=[sas_target]&visit=m&tmstp=[timestamp]&clcturl=[countgo]"></script></div>';
 
 	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
         //if(!is_single(28207 )){
-    		return prefix_insert_after_paragraph( $ad_code, 3, $content );
+    		return prefix_insert_after_paragraph( $ad_code, 6, $content );
         //}
 	}
 	
@@ -345,13 +345,29 @@ google_ad_height = 250;
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script></div>' );
-            }/*else if( $key_total == 1 ){
-                $ad = array( 'ad2' => '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-3\'>
-<script type=\'text/javascript\'>
-googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-3\'); });
+            }else if( $key_total == 1 ){
+                $ad = array( 'ad2' => '<div class="adsce"><!-- Yieldlove AdTag - gestiopolis.com_300x250_1 -->
+<script type="text/javascript">
+ var googletag = googletag || {};
+ googletag.cmd = googletag.cmd || [];
+ (function() {
+   var gads = document.createElement("script");
+   gads.async = true;
+   gads.type = "text/javascript";
+   var useSSL = "https:" == document.location.protocol;
+   gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+   var node =document.getElementsByTagName("script")[0];
+   node.parentNode.insertBefore(gads, node);
+  })();
 </script>
+<div id=\'div-gpt-ad-1407836191409-0\'>
+  <script type=\'text/javascript\'>
+    googletag.cmd.push(function() {
+      googletag.pubads().display(\'/53015287/gestiopolis.com_300x250_1\', [300, 250], \'div-gpt-ad-1407836191409-0\');
+    });
+  </script>
 </div></div>' );
-            }*//* else if( $key_total == 2 ){
+            }/* else if( $key_total == 2 ){
                 $ad = array( 'ad3' => '<div class="adsce"><!-- 4-anuncio-prueba-p-3 -->
 <ins class="adsbygoogle"
      style="display:block"

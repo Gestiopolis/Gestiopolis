@@ -1,5 +1,5 @@
 <div class="entry-edit">
-  <p>Visitas: <b><?php if(function_exists('the_views')) { the_views(); } ?></b></p>
+  <p>Visitas: <b><?php if(function_exists('the_views')) { the_views(); } ?> <?php if ( function_exists ( 'echo_tptn_post_count' ) ) echo_tptn_post_count(); ?></b></p>
   <p><b><a href="<?php echo home_url('/'); ?>wp-admin/post.php?post=<?php echo $post->ID;?>&amp;action=edit" target="_blank">Enlace a Editor</a></b></p>
   <p><b><a href="<?php echo home_url('/'); ?>" id="deletePost">ELIMINAR ARTÍCULO</a></b></p>
   <h3>Edición de Imagen Principal</h3>

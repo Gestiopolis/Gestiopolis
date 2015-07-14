@@ -13,7 +13,7 @@ add_theme_support('jquery-cdn');            // Enable to load jQuery from the Go
  * Configuration values
  */
 define('GOOGLE_ANALYTICS_ID', 'UA-6592392-1'); // UA-XXXXX-Y (Note: Universal Analytics only, not Classic Analytics)
-define('TRENDING_DAYS', 360);
+define('TRENDING_DAYS', 1);
 
 if (!defined('WP_ENV')) {
   define('WP_ENV', 'production');  // scripts.php checks for values 'production' or 'development'
