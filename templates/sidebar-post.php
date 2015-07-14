@@ -26,12 +26,12 @@
       <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
       ?>
       <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy pull-left" width="64" height="56">
-      <div class="wrapper-content pull-left">
+      <div class="wrapper-content">
         <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
         <?php 
         $categories = get_the_category($post->ID); 
         foreach($categories as $category){
-          echo '<i class="fa icon-cat-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> &nbsp;&nbsp;';
+          echo '<i class="fa icon-cat-'.$category->term_id.' cat-col-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> &nbsp;&nbsp;';
         }
         ?>
       </div>
@@ -51,12 +51,12 @@
       <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
       ?>
       <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy pull-left" width="64" height="56">
-      <div class="wrapper-content pull-left">
+      <div class="wrapper-content">
         <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
         <?php 
         $categories = get_the_category($post->ID); 
         foreach($categories as $category){
-          echo '<i class="fa icon-cat-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> &nbsp;&nbsp;';
+          echo '<i class="fa icon-cat-'.$category->term_id.' cat-col-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> &nbsp;&nbsp;';
         }
         ?>
       </div>
