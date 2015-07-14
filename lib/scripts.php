@@ -162,7 +162,7 @@ jQuery(function() {
 
 <?php }
 if (GOOGLE_ANALYTICS_ID && (WP_ENV !== 'production' || !current_user_can('manage_options'))) {
-  add_action('wp_footer', 'roots_google_analytics', 20);
+  add_action('wp_footer', 'roots_google_analytics', 1);
 }
 function footer_scripts() { ?>
 <!-- Facebook Plugin-->
