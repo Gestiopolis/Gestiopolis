@@ -1055,14 +1055,15 @@
     color: #4b4b57 !important;
 }
 .sidebar-post article {
-  margin: 1rem 0 1rem;
-  position:relative;
-  overflow:hidden;
-  width:100%;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid #edede4;
 }
-.sidebar-post article:hover {
+/*.sidebar-post article:hover {
   border:none;
-}
+}*/
 .sidebar-post article h3 {
   border-left: 8px solid transparent;
   border-top: 2px solid transparent;
@@ -1073,7 +1074,19 @@
   top:0;
   z-index: 2;
 }
-.sidebar-post article h3 a {
+.sidebar-post article h2 {
+  font: 700 0.8rem 'Montserrat',sans-serif;
+  margin: 0 0 0.5rem 0;
+  line-height: 1;
+}
+.sidebar-post article {
+  font: 700 0.72rem 'Montserrat',sans-serif;
+  line-height: 1;
+}
+.sidebar-post article h2 a {
+  color: @headings-color;
+}
+/*.sidebar-post article h3 a {
   color: #f5f5f5;
   display: inline;
   text-decoration: none;
@@ -1092,11 +1105,12 @@
   background: none;
   color: #f5f5f5;
   text-shadow:none
-}
+}*/
 .sidebar-post article>img {
   max-height: inherit;
   max-width: 100%;
-  position:absolute;
+  margin-right: 0.5rem;
+  //position:absolute;
   //top:-15%;
 }
 .sidebar-post article:hover .destacado-content { display:block; }

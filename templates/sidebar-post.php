@@ -3,10 +3,53 @@
   <div class="sidebar-post">
     <h3>Más populares</h3>
     <i class="fa fa-caret-down"></i>
+    <?php $tposts = get_trending_posts(10, TRENDING_DAYS);
+      $i = 1;
+      foreach ($tposts as $tpost) {
+        $post_title = stripslashes($tpost->post_title);
+        $permalink = get_permalink($tpost->ID);
+        $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $tpost->ID ), 'thumbnail' );
+    ?>
+    <article id="post-<?php echo $tpost->ID; ?>" class="post">
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php echo $post_title; ?>" class="lazy pull-left" width="64" height="56">
+      <div class="wrapper-content">
+        <h2 class="entry-title"><a href="<?php echo $permalink; ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php echo $post_title; ?></a></h2>
+        <?php 
+        $categories = get_the_category($tpost->ID); 
+        foreach($categories as $category){
+          echo '<i class="fa icon-cat-'.$category->term_id.' cat-col-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> &nbsp;';
+        }
+        ?>
+      </div>
+    </article>
+    <?php } // fin foreach $tposts ?>
   </div>
   <div class="sidebar-post">
     <h3>Más recientes</h3>
     <i class="fa fa-caret-down"></i>
+    <?php 
+    $query2 = new WP_Query('posts_per_page=6');
+    while ( $query2->have_posts() ) {
+      $query2->the_post(); ?>
+      <article id="post-<?php the_ID(); ?>" class="post">
+      <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
+      ?>
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy pull-left" width="64" height="56">
+      <div class="wrapper-content">
+        <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+        <?php 
+        $categories = get_the_category($post->ID); 
+        foreach($categories as $category){
+          echo '<i class="fa icon-cat-'.$category->term_id.' cat-col-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> &nbsp;';
+        }
+        ?>
+      </div>
+    </article>
+    <?php 
+    }
+    wp_reset_query(); 
+    wp_reset_postdata();
+    ?>
   </div>
   <div class="sidebar-post">
     <h3>Vas a querer leer</h3>
@@ -23,21 +66,17 @@
           if($mainpost != $post->ID){
           ?>
     <article id="post-<?php the_ID(); ?>" class="post">
-      <div class="wrapper-img">
-        <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'sidebar-thumb' );
+      <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
       ?>
-        <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy img-responsive">
-          <div class="overlay"></div>
-          <div class="vert-center-wrapper">
-            <div class="vert-centered">
-              <div class="text-center">
-                <h2 class="entry-title"><span><?php the_title(); ?></span></h2>
-              </div>
-            </div>
-          </div>
-          <div class="sb-caption"><i class="fa fa-clock-o"></i> <?php echo estimate_time();?> de lectura</div>
-        </a>
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy pull-left" width="64" height="56">
+      <div class="wrapper-content">
+        <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+        <?php 
+        $categories = get_the_category($post->ID); 
+        foreach($categories as $category){
+          echo '<i class="fa icon-cat-'.$category->term_id.' cat-col-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> &nbsp;';
+        }
+        ?>
       </div>
     </article>
     <?php }
@@ -52,21 +91,17 @@
     $query2 = ci_get_related_posts_2( $post->ID, $postsnot, $show, $paged );
         if( $query2->have_posts() ) { while ($query2->have_posts()) : $query2->the_post();?>
     <article id="post-<?php the_ID(); ?>" class="post">
-      <div class="wrapper-img">
-        <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'sidebar-thumb' );
+      <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
       ?>
-        <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy img-responsive">
-          <div class="overlay"></div>
-          <div class="vert-center-wrapper">
-            <div class="vert-centered">
-              <div class="text-center">
-                <h2 class="entry-title"><span><?php the_title(); ?></span></h2>
-              </div>
-            </div>
-          </div>
-          <div class="sb-caption"><i class="fa fa-clock-o"></i> <?php echo estimate_time();?> de lectura</div>
-        </a>
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy pull-left" width="64" height="56">
+      <div class="wrapper-content">
+        <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+        <?php 
+        $categories = get_the_category($post->ID); 
+        foreach($categories as $category){
+          echo '<i class="fa icon-cat-'.$category->term_id.' cat-col-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> &nbsp;&nbsp;';
+        }
+        ?>
       </div>
     </article>
     <?php endwhile;?>
