@@ -1,7 +1,15 @@
 <?php global $post; ?>
 <div class="right-post">
   <div class="sidebar-post">
-    <h3>Te recomendamos</h3>
+    <h3>Más populares</h3>
+    <i class="fa fa-caret-down"></i>
+  </div>
+  <div class="sidebar-post">
+    <h3>Más recientes</h3>
+    <i class="fa fa-caret-down"></i>
+  </div>
+  <div class="sidebar-post">
+    <h3>Vas a querer leer</h3>
     <i class="fa fa-caret-down"></i>
     <?php 
     $show = 6;
