@@ -137,6 +137,14 @@ add_action('wp_head', 'roots_jquery_local_fallback');
  * Cookie domain is 'auto' configured. See: http://goo.gl/VUCHKM
  */
 function roots_google_analytics() { ?>
+<!-- Internal campaigns by Iñaki Huerta: blog.ikhuerta.com -->
+<script> 
+var gaic = function () { gaic.r( gaic.c(),'|'); gaic.r(location.search.substring(1) );}
+gaic.ns = '(not set)'; gaic.cn = '_gaic'; gaic.v = 0; gaic.k = { 'ic_medium' : 'medium', 'ic_source' : 'source', 'ic_campaign' : 'campaign', 'ic_term' : 'term', 'ic_content' : 'content', 'ic_referrer' : 'referrer', 'ic_landing' : 'landing' };gaic.gk = function ( k ){ for (var i in gaic.k) if ( k == gaic.k[i] ) return i; }
+gaic.r = function ( s , c) { if (!s) return; if (!c) c = '&';if (!gaic.v) { gaic.v = {};  var f = 1;  } else f = 0; s = s.split(c); var r = 0; for(var i in s) { s[i] = s[i].split('='); if ( gaic.k[s[i][0]] && !f ) { var r=1; break; } } if (r) { for ( var i in gaic.k ) gaic.v[gaic.k[i]] = gaic.ns; gaic.v.referrer = document.referrer; gaic.v.landing = location.pathname; };for(var i in s) { if ( gaic.k[s[i][0]] ) { gaic.v[gaic.k[s[i][0]]] = s[i][1]; if (!f) var r=1; } }gaic.d();gaic.s(); }
+gaic.d = function () { for ( var i in gaic.k ) if ( !gaic.v[gaic.k[i]] ) gaic.v[gaic.k[i]] = gaic.ns; }; gaic.c = function () { var re = new RegExp( gaic.cn+'=([^;]+)(;.+)?$'); var pd = document.cookie.match( re ); return (pd && pd[1]) ? pd[1] : ''; }; gaic.s = function () { var s = ''; for (i in gaic.v ) s += gaic.gk(i) + '=' + gaic.v[i] + '|'; document.cookie = gaic.cn+'='+s; }; 
+gaic.get = function (k) { return (k) ? gaic.v[k] : gaic.v; }; gaic();
+</script>
 <script>
   <?php if (WP_ENV === 'production') : ?>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -149,7 +157,7 @@ function roots_google_analytics() { ?>
       console.log('GoogleAnalytics: ' + [].slice.call(arguments));
     }
   <?php endif; ?>
-  ga('create','<?php echo GOOGLE_ANALYTICS_ID; ?>','auto');ga('send','pageview');
+  ga('create','<?php echo GOOGLE_ANALYTICS_ID; ?>','auto');ga('set', 'dimension1', gaic.get('medium') );ga('set', 'dimension2', gaic.get('source') );ga('send','pageview');
 </script>
 <!--<script>
 jQuery(function() {
