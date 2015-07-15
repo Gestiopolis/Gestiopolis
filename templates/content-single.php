@@ -4,8 +4,7 @@
       <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
 <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
 <div id="google-ads-sidebar"></div>
- 
-<!--<script type="text/javascript"> 
+<script type="text/javascript"> 
  
     /* Calculate the width of available ad space */
     ad = document.getElementById('google-ads-sidebar');
@@ -34,32 +33,10 @@
 </script>
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>-->
-<!-- Yieldlove AdTag - gestiopolis.com_300x600_1 -->
-<script type="text/javascript">
- var googletag = googletag || {};
- googletag.cmd = googletag.cmd || [];
- (function() {
-   var gads = document.createElement("script");
-   gads.async = true;
-   gads.type = "text/javascript";
-   var useSSL = "https:" == document.location.protocol;
-   gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
-   var node =document.getElementsByTagName("script")[0];
-   node.parentNode.insertBefore(gads, node);
-  })();
 </script>
-<div id='div-gpt-ad-1407836174885-0'>
-  <script type='text/javascript'>
-    googletag.cmd.push(function() {
-      googletag.pubads().display('/53015287/gestiopolis.com_300x600_1', [[300, 600], [160, 600]], 'div-gpt-ad-1407836174885-0');
-    });
-  </script>
-</div>
 <?php }else { ?>      
 <div id="google-ads-sidebar"></div>
- 
-<!--<script type="text/javascript"> 
+<script type="text/javascript"> 
  
     /* Calculate the width of available ad space */
     ad = document.getElementById('google-ads-sidebar');
@@ -88,28 +65,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>-->
-<!-- Yieldlove AdTag - gestiopolis.com_300x600_1 -->
-<script type="text/javascript">
- var googletag = googletag || {};
- googletag.cmd = googletag.cmd || [];
- (function() {
-   var gads = document.createElement("script");
-   gads.async = true;
-   gads.type = "text/javascript";
-   var useSSL = "https:" == document.location.protocol;
-   gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
-   var node =document.getElementsByTagName("script")[0];
-   node.parentNode.insertBefore(gads, node);
-  })();
 </script>
-<div id='div-gpt-ad-1407836174885-0'>
-  <script type='text/javascript'>
-    googletag.cmd.push(function() {
-      googletag.pubads().display('/53015287/gestiopolis.com_300x600_1', [[300, 600], [160, 600]], 'div-gpt-ad-1407836174885-0');
-    });
-  </script>
-</div>
 <?php } ?>
 <?php //if (is_single(array(30646,56381,333736,333680,333687))) {?>
 <?php get_template_part('templates/sidebar-post'); ?>
