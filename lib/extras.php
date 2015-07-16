@@ -1468,13 +1468,34 @@ function head_meta_schema() {
 	}
 }
 add_action('wp_head', 'head_meta_schema', 1);
-function head_adsense_script() {
-	if(is_single()) {
-		echo '<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>';
-	}
+function footer_adsense_script() {
+	
+		echo '<script type=\'text/javascript\'>
+  (function() {
+    var useSSL = \'https:\' == document.location.protocol;
+    var src = (useSSL ? \'https:\' : \'http:\') +
+        \'//www.googletagservices.com/tag/js/gpt.js\';
+    document.write(\'<scr\' + \'ipt src="\' + src + \'"></scr\' + \'ipt>\');
+  })();
+</script>
+
+<script type=\'text/javascript\'>
+  googletag.cmd.push(function() {
+    googletag.defineOutOfPageSlot(\'/11322282/GestioPolis.com_I//1x1\', \'div-gpt-ad-1436976370032-0\').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().enableSyncRendering();
+    googletag.enableServices();
+  });
+</script>
+
+<!-- /11322282/GestioPolis.com_I//1x1 -->
+<div id=\'div-gpt-ad-1436976370032-0\'>
+<script type=\'text/javascript\'>
+googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1436976370032-0\'); });
+</script>
+</div>';
 }
-//add_action('wp_head', 'head_adsense_script', 1);
+add_action('wp_footer', 'footer_adsense_script', 1);
 function filter_lazyload($content) {
     return preg_replace_callback('/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', 'preg_lazyload', $content);
 }
