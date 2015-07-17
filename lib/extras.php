@@ -1400,8 +1400,8 @@ function footer_dataxpand() {
 
 function head_scripts_ads() {
 	global $post;
-	//if ( is_single() && get_post_meta($post->ID, "all2html_htmlcontent", true) != "" ) {
-	echo '<script type=\'text/javascript\'>
+	if (is_single()) {
+	/*echo '<script type=\'text/javascript\'>
   var googletag = googletag || {};
   googletag.cmd = googletag.cmd || [];
   (function() {
@@ -1449,10 +1449,14 @@ function head_scripts_ads() {
     googletag.pubads().collapseEmptyDivs();
     googletag.enableServices();
   });
+</script>';*/
+echo '<script src=\'http://www5.smartadserver.com/config.js?nwid=1371\' type="text/javascript"></script>
+<script type="text/javascript">
+    sas.setup({ domain: \'http://www5.smartadserver.com\'});
 </script>';
 }
-//}
-//add_action('wp_head', 'head_scripts_ads', 1);
+}
+add_action('wp_head', 'head_scripts_ads', 1);
 function head_meta_schema() {
 	if(is_single()) {
 		global $post;

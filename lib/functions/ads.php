@@ -10,7 +10,19 @@ add_filter( 'the_content', 'insert_adman_ads' );
 function insert_adman_ads( $content ) {
     global $post;
 	
-	$ad_code = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript" src="http://www5.smartadserver.com/ac?out=js&nwid=1371&siteid=78378&pgname=all_site&fmtid=32469&tgt=[sas_target]&visit=m&tmstp=[timestamp]&clcturl=[countgo]"></script></div>';
+	$ad_code = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript">
+    sas.call("std", {
+        siteId:     78378,  // 
+        pageId:     574794, // P?gina : gestiopolis/all_site
+        formatId:   32469,  // Formato : Richmedia video 1x1
+        target:     ''  // Segmentaci?n
+    });
+</script>
+<noscript>
+    <a href="http://www5.smartadserver.com/ac?jump=1&nwid=1371&siteid=78378&pgname=all_site&fmtid=32469&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+        <img src="http://www5.smartadserver.com/ac?out=nonrich&nwid=1371&siteid=78378&pgname=all_site&fmtid=32469&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
+</noscript>
+<div id="contPauta"></div></div>';
 
 	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
         //if(!is_single(28207 )){
