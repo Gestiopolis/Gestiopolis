@@ -12,10 +12,10 @@ function insert_adman_ads( $content ) {
 	
 	$ad_code = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript">
     sas.call("std", {
-        siteId:     78378,  // 
-        pageId:     574794, // P?gina : gestiopolis/all_site
-        formatId:   32469,  // Formato : Richmedia video 1x1
-        target:     ''  // Segmentaci?n
+        siteId:     78378,
+        pageId:     574794,
+        formatId:   32469,
+        target:     ''
     });
 </script>
 <noscript>
