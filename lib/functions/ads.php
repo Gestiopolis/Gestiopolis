@@ -15,7 +15,7 @@ function insert_adman_ads( $content ) {
         siteId:     78378,
         pageId:     574794,
         formatId:   32469,
-        target:     ''
+        target:     \'\'
     });
 </script>
 <noscript>
