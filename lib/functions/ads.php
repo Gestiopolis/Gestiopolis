@@ -346,17 +346,9 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
-                $ad = array( 'ad1' => '<div class="adsce"><script type="text/javascript"><!--
-google_ad_client = "ca-pub-1187873112185798";
-/* Ad Segundo Párrafo (300x250)  */
-google_ad_slot = "6234192054";
-google_ad_width = 300;
-google_ad_height = 250;
-//-->
-</script>
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script></div>' );
+                $ad = array( 'ad1' => '<div class="adsce"><!-- BEGIN JS TAG - Gestiopolis - 300x250 < - DO NOT MODIFY -->
+<SCRIPT SRC="http://ib.adnxs.com/ttj?id=5223573" TYPE="text/javascript"></SCRIPT>
+<!-- END TAG --></div>' );
             }else if( $key_total == 1 ){
                 $ad = array( 'ad2' => '<div class="adsce"><script type="text/javascript">
     google_ad_client = "ca-pub-2753881743271989";
