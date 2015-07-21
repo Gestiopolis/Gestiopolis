@@ -10,7 +10,19 @@ add_filter( 'the_content', 'insert_adman_ads' );
 function insert_adman_ads( $content ) {
     global $post;
 	
-	$ad_code = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript" src="http://www5.smartadserver.com/ac?out=js&nwid=1371&siteid=78378&pgname=all_site&fmtid=32469&tgt=[sas_target]&visit=m&tmstp=[timestamp]&clcturl=[countgo]"></script></div>';
+	$ad_code = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript">
+    sas.call("std", {
+        siteId:     78378,
+        pageId:     574794,
+        formatId:   32469,
+        target:     \'\'
+    });
+</script>
+<noscript>
+    <a href="http://www5.smartadserver.com/ac?jump=1&nwid=1371&siteid=78378&pgname=all_site&fmtid=32469&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+        <img src="http://www5.smartadserver.com/ac?out=nonrich&nwid=1371&siteid=78378&pgname=all_site&fmtid=32469&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
+</noscript>
+<div id="contPauta"></div></div>';
 
 	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
         //if(!is_single(28207 )){
@@ -334,39 +346,9 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
-                $ad = array( 'ad1' => '<div class="adsce"><script type="text/javascript"><!--
-google_ad_client = "ca-pub-1187873112185798";
-/* Ad Segundo Párrafo (300x250)  */
-google_ad_slot = "6234192054";
-google_ad_width = 300;
-google_ad_height = 250;
-//-->
-</script>
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script></div>' );
+                $ad = array( 'ad1' => '<iframe id="wp_pro_ad_system_ad_zone" frameborder="0" src="http://www.gestiopolis.net/?wpproadszoneid=325431" width="300" height="250" scrolling="no"></iframe>' );
             }else if( $key_total == 1 ){
-                $ad = array( 'ad2' => '<div class="adsce"><!-- Yieldlove AdTag - gestiopolis.com_300x250_1 -->
-<script type="text/javascript">
- var googletag = googletag || {};
- googletag.cmd = googletag.cmd || [];
- (function() {
-   var gads = document.createElement("script");
-   gads.async = true;
-   gads.type = "text/javascript";
-   var useSSL = "https:" == document.location.protocol;
-   gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
-   var node =document.getElementsByTagName("script")[0];
-   node.parentNode.insertBefore(gads, node);
-  })();
-</script>
-<div id=\'div-gpt-ad-1407836191409-0\'>
-  <script type=\'text/javascript\'>
-    googletag.cmd.push(function() {
-      googletag.pubads().display(\'/53015287/gestiopolis.com_300x250_1\', [300, 250], \'div-gpt-ad-1407836191409-0\');
-    });
-  </script>
-</div></div>' );
+                $ad = array( 'ad2' => '<div class="adsce"><iframe id="wp_pro_ad_system_ad_zone" frameborder="0" src="http://www.gestiopolis.net/?wpproadszoneid=325429" width="300" height="250" scrolling="no"></iframe></div>' );
             }/* else if( $key_total == 2 ){
                 $ad = array( 'ad3' => '<div class="adsce"><!-- 4-anuncio-prueba-p-3 -->
 <ins class="adsbygoogle"

@@ -11,9 +11,9 @@
         $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $tpost->ID ), 'thumbnail' );
     ?>
     <article id="post-<?php echo $tpost->ID; ?>" class="post">
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php echo $post_title; ?>" class="lazy pull-left" width="64" height="56">
+      <a href="<?php echo $permalink; ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=popular_posts&ic_source=sidebar" class="internal-campaign"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php echo $post_title; ?>" class="lazy pull-left" width="64" height="56"></a>
       <div class="wrapper-content">
-        <h2 class="entry-title"><a href="<?php echo $permalink; ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php echo $post_title; ?></a></h2>
+        <h2 class="entry-title"><a href="<?php echo $permalink; ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=popular_posts&ic_source=sidebar" class="internal-campaign"><?php echo $post_title; ?></a></h2>
         <?php 
         $categories = get_the_category($tpost->ID); 
         foreach($categories as $category){
@@ -34,9 +34,9 @@
       <article id="post-<?php the_ID(); ?>" class="post">
       <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
       ?>
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy pull-left" width="64" height="56">
+      <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=recent_posts&ic_source=sidebar" class="internal-campaign"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy pull-left" width="64" height="56"></a>
       <div class="wrapper-content">
-        <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+        <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=recent_posts&ic_source=sidebar" class="internal-campaign"><?php the_title(); ?></a></h2>
         <?php 
         $categories = get_the_category($post->ID); 
         foreach($categories as $category){
@@ -68,9 +68,9 @@
     <article id="post-<?php the_ID(); ?>" class="post">
       <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
       ?>
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy pull-left" width="64" height="56">
+      <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=related_posts&ic_source=sidebar" class="internal-campaign"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy pull-left" width="64" height="56"></a>
       <div class="wrapper-content">
-        <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+        <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=related_posts&ic_source=sidebar" class="internal-campaign"><?php the_title(); ?></a></h2>
         <?php 
         $categories = get_the_category($post->ID); 
         foreach($categories as $category){
@@ -93,9 +93,9 @@
     <article id="post-<?php the_ID(); ?>" class="post">
       <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
       ?>
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy pull-left" width="64" height="56">
+      <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=related_posts&ic_source=sidebar"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy pull-left" width="64" height="56"></a>
       <div class="wrapper-content">
-        <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+        <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=related_posts&ic_source=sidebar"><?php the_title(); ?></a></h2>
         <?php 
         $categories = get_the_category($post->ID); 
         foreach($categories as $category){

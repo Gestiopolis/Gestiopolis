@@ -4,8 +4,7 @@
       <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
 <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
 <div id="google-ads-sidebar"></div>
- 
-<!--<script type="text/javascript"> 
+<script type="text/javascript"> 
  
     /* Calculate the width of available ad space */
     ad = document.getElementById('google-ads-sidebar');
@@ -34,82 +33,9 @@
 </script>
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>-->
-<!-- Yieldlove AdTag - gestiopolis.com_300x600_1 -->
-<script type="text/javascript">
- var googletag = googletag || {};
- googletag.cmd = googletag.cmd || [];
- (function() {
-   var gads = document.createElement("script");
-   gads.async = true;
-   gads.type = "text/javascript";
-   var useSSL = "https:" == document.location.protocol;
-   gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
-   var node =document.getElementsByTagName("script")[0];
-   node.parentNode.insertBefore(gads, node);
-  })();
 </script>
-<div id='div-gpt-ad-1407836174885-0'>
-  <script type='text/javascript'>
-    googletag.cmd.push(function() {
-      googletag.pubads().display('/53015287/gestiopolis.com_300x600_1', [[300, 600], [160, 600]], 'div-gpt-ad-1407836174885-0');
-    });
-  </script>
-</div>
 <?php }else { ?>      
-<div id="google-ads-sidebar"></div>
- 
-<!--<script type="text/javascript"> 
- 
-    /* Calculate the width of available ad space */
-    ad = document.getElementById('google-ads-sidebar');
- 
-    if (ad.getBoundingClientRect().width) {
-        adWidth = ad.getBoundingClientRect().width; // for modern browsers 
-    } else {
-        adWidth = ad.offsetWidth; // for old IE 
-    }
- 
-    /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-    google_ad_client = "ca-pub-1187873112185798";
- 
-    /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-    google_ad_slot = "9383186454";
-  
-    /* Do not change anything after this line */
-    if ( adWidth >= 300 )
-      google_ad_size = ["300", "600"];  /* Leaderboard 728x90 */
-    else
-      google_ad_size = ["160", "600"]; /* Button (125 x 125) */
- 
-    google_ad_width = google_ad_size[0];
-    google_ad_height=google_ad_size[1];
- 
-</script>
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>-->
-<!-- Yieldlove AdTag - gestiopolis.com_300x600_1 -->
-<script type="text/javascript">
- var googletag = googletag || {};
- googletag.cmd = googletag.cmd || [];
- (function() {
-   var gads = document.createElement("script");
-   gads.async = true;
-   gads.type = "text/javascript";
-   var useSSL = "https:" == document.location.protocol;
-   gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
-   var node =document.getElementsByTagName("script")[0];
-   node.parentNode.insertBefore(gads, node);
-  })();
-</script>
-<div id='div-gpt-ad-1407836174885-0'>
-  <script type='text/javascript'>
-    googletag.cmd.push(function() {
-      googletag.pubads().display('/53015287/gestiopolis.com_300x600_1', [[300, 600], [160, 600]], 'div-gpt-ad-1407836174885-0');
-    });
-  </script>
-</div>
+<?php echo do_shortcode("[pro_ad_display_adzone id=325433]"); ?>
 <?php } ?>
 <?php //if (is_single(array(30646,56381,333736,333680,333687))) {?>
 <?php get_template_part('templates/sidebar-post'); ?>
@@ -232,42 +158,11 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
           <div class="post-content clearfix">
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
-              <div class="adsfr">
-                <script type="text/javascript"><!--
-                google_ad_client = "ca-pub-1187873112185798";
-                /* exp1-300x250-1-posts-derecha */
-                google_ad_slot = "6429770694";
-                google_ad_width = 300;
-                google_ad_height = 250;
-                //-->
-                </script>
-                <script type="text/javascript"
-                src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-                </script>
-              </div>
+              <?php echo do_shortcode("[pro_ad_display_adzone id=325432]"); ?>
               <?php } ?>
               <?php the_content(); ?>
             </div>
-            <!--<div class="adsce">
-              <div id='div-gpt-ad-1433261534384-4'>
-              <script type='text/javascript'>
-              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-4'); });
-              </script>
-              </div>
-            </div>-->
-            <div class="adsce">
-              <script type="text/javascript"><!--
-              google_ad_client = "ca-pub-1187873112185798";
-              /* post-doc-fondo-contenido */
-              google_ad_slot = "2800946094";
-              google_ad_width = 300;
-              google_ad_height = 250;
-              //-->
-              </script>
-              <script type="text/javascript"
-              src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-              </script>
-            </div>
+            <?php echo do_shortcode("[pro_ad_display_adzone id=325430]"); ?>
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
