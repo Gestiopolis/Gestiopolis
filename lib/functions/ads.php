@@ -346,7 +346,7 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
-                $ad = array( 'ad1' => '<iframe id="wp_pro_ad_system_ad_zone" frameborder="0" src="http://www.gestiopolis.net/?wpproadszoneid=325431" width="300" height="250" scrolling="no"></iframe>' );
+                $ad = array( 'ad1' => '<div class="adsce"><iframe id="wp_pro_ad_system_ad_zone" frameborder="0" src="http://www.gestiopolis.net/?wpproadszoneid=325431" width="300" height="250" scrolling="no"></iframe></div>' );
             }else if( $key_total == 1 ){
                 $ad = array( 'ad2' => '<div class="adsce"><iframe id="wp_pro_ad_system_ad_zone" frameborder="0" src="http://www.gestiopolis.net/?wpproadszoneid=325429" width="300" height="250" scrolling="no"></iframe></div>' );
             }/* else if( $key_total == 2 ){

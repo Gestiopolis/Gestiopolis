@@ -158,7 +158,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
           <div class="post-content clearfix">
             <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
-              <?php echo do_shortcode("[pro_ad_display_adzone id=325432]"); ?>
+              <div class="adsfr"><?php echo do_shortcode("[pro_ad_display_adzone id=325432]"); ?></div>
               <?php } ?>
               <?php the_content(); ?>
             </div>
