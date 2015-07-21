@@ -162,7 +162,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               <?php } ?>
               <?php the_content(); ?>
             </div>
-            <?php echo do_shortcode("[pro_ad_display_adzone id=325430]"); ?>
+            <div class="adsce"><?php echo do_shortcode("[pro_ad_display_adzone id=325430]"); ?></div>
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
