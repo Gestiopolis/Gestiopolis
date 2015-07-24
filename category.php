@@ -24,6 +24,47 @@ get_currentuserinfo();
   </div>        
 </div>
 <div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="adsce">
+          <div id="google-ads-docs-1"></div>
+ 
+          <script type="text/javascript"> 
+           
+              /* Calculate the width of available ad space */
+              ad = document.getElementById('google-ads-docs-1');
+           
+              if (ad.getBoundingClientRect().width) {
+                  adWidth = ad.getBoundingClientRect().width; // for modern browsers 
+              } else {
+                  adWidth = ad.offsetWidth; // for old IE 
+              }
+           
+              /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
+              google_ad_client = "ca-pub-1187873112185798";
+           
+              /* Replace 1234567890 with the AdSense Ad Slot ID */ 
+              google_ad_slot = "6606740694";
+            
+              /* Do not change anything after this line */
+              if ( adWidth >= 727 )
+                google_ad_size = ["728", "90"];  /* Leaderboard 728x90 */
+              else if (adWidth >= 467 && adWidth < 727)
+                google_ad_size = ["468", "60"]; /* Button (125 x 125) */
+              else
+                google_ad_size = ["300", "250"]; /* Button (125 x 125) */
+           
+            google_ad_width = google_ad_size[0];
+            google_ad_height=google_ad_size[1];
+           
+           
+          </script>
+          <script type="text/javascript"
+                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                  </script>
+          </div>
+    </div>
+  </div>
   <div class="row title-section">
     <div class="col-sm-12">
       <h2>Se destacan</h2>
