@@ -117,34 +117,21 @@ var Gestiopolis = {
       //Grid.init();
       //2. Slider home autores
       //slider(".autores-home", ".autores-home .carrusel", ".carrusel>.span3", 8);
-      $('#myCarousel').carousel({
-
-interval: false
-
-});
-
-var slides_count = $('.carousel .item').length;
-
-$('.carousel .item').each(function(){
-
-  var next = $(this).next();
-
-  if (!next.length) {
-
-  next = $(this).siblings(':first');
-
-  }
-
-  next.children(':first-child').clone().appendTo($(this));
-
-  for (var i=0;i<slides_count - 2;i++) {
-    next=next.next();
-    if (!next.length) {
-      next=$(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendto($(this));
-  }
-});
+      $('.carousel[data-type="multi"] .item').each(function(){
+        var next = $(this).next();
+        if (!next.length) {
+          next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+        
+        for (var i=0;i<2;i++) {
+          next=next.next();
+          if (!next.length) {
+            next = $(this).siblings(':first');
+          }
+          next.children(':first-child').clone().appendTo($(this));
+        }
+      });
       //3. Slider home temas
       //slider(".temas-home", ".temas-home .carrusel", ".carrusel>.span3", 8);
       
