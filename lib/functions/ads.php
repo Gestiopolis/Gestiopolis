@@ -26,7 +26,7 @@ function insert_adman_ads( $content ) {
 
 	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
         //if(!is_single(28207 )){
-    		return prefix_insert_after_paragraph( $ad_code, 6, $content );
+    		return prefix_insert_after_paragraph( $ad_code, 2, $content );
         //}
 	}
 	
@@ -330,7 +330,7 @@ function so_25888630_ad_between_paragraphs($content){
             $m = array();
             foreach ( $p as $key=>$value ) {
                 if( 1 === $value && array_key_exists( $key-1, $p ) && $p[$key] === $p[$key-1] && !$m){
-                    $m[] = $key+2;
+                    $m[] = $key+3;
                 }elseif( !array_key_exists( $key+1, $p ) && !$m ) {
                     $m[] = 'no-ad';
                 }
@@ -346,9 +346,28 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
-                $ad = array( 'ad1' => '<div class="adsce"><iframe id="wp_pro_ad_system_ad_zone" frameborder="0" src="http://www.gestiopolis.net/?wpproadszoneid=325431" width="300" height="250" scrolling="no"></iframe></div>' );
+                $ad = array( 'ad1' => '<div class="adsce"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-1187873112185798";
+/* Ad Segundo Párrafo (300x250)  */
+google_ad_slot = "6234192054";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>' );
             }else if( $key_total == 1 ){
-                $ad = array( 'ad2' => '<div class="adsce"><iframe id="wp_pro_ad_system_ad_zone" frameborder="0" src="http://www.gestiopolis.net/?wpproadszoneid=325429" width="300" height="250" scrolling="no"></iframe></div>' );
+                $ad = array( 'ad2' => '<div class="adsce"><script type="text/javascript">
+    google_ad_client = "ca-pub-2753881743271989";
+    google_ad_slot = "9288290921";
+    google_ad_width = 300;
+    google_ad_height = 250;
+</script>
+<!-- post-mitad-contenido -->
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>' );
             }/* else if( $key_total == 2 ){
                 $ad = array( 'ad3' => '<div class="adsce"><!-- 4-anuncio-prueba-p-3 -->
 <ins class="adsbygoogle"

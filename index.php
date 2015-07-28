@@ -159,14 +159,14 @@
   </div>
   <div class="row autores-home hidden-xs">
     <div class="col-sm-12">
-      <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="5000" id="myCarousel">
+      <div class="carousel slide" id="myCarousel">
         <div class="carousel-inner">
           <?php $authors = get_trending_authors(12, TRENDING_DAYS); 
             $k = 1;
             foreach ($authors as $author) {
           ?>
           <div class="item<?php if ($k==1){ echo ' active';}?>">
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col-xs-3">
               <div class="trending-author">
                 <a href="<?php echo get_author_posts_url($author->post_author); ?>" data-toggle="tooltip" title="<?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> posts de <?php echo get_the_author_meta('display_name', $author->post_author); ?>"><?php echo get_author_color_id($author->post_author); ?></a>
                 <div class="author-name"><a href="<?php echo get_author_posts_url($author->post_author); ?>" data-toggle="tooltip" title="<?php echo number_format_i18n( count_user_posts( $author->post_author ) ); ?> posts de <?php echo get_the_author_meta('display_name', $author->post_author); ?>"><?php echo get_the_author_meta('display_name', $author->post_author); ?></a></div>  

@@ -117,7 +117,11 @@ var Gestiopolis = {
       //Grid.init();
       //2. Slider home autores
       //slider(".autores-home", ".autores-home .carrusel", ".carrusel>.span3", 8);
-      $('.carousel[data-type="multi"] .item').each(function(){
+      /*$('#myCarousel').carousel({
+        interval: false
+      });
+
+      $('.carousel .item').each(function(){
         var next = $(this).next();
         if (!next.length) {
           next = $(this).siblings(':first');
@@ -129,9 +133,48 @@ var Gestiopolis = {
           if (!next.length) {
             next = $(this).siblings(':first');
           }
+          
           next.children(':first-child').clone().appendTo($(this));
         }
+      });*/
+      $('.carousel-inner').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        prevArrow: '.left.carousel-control',
+        nextArrow: '.right.carousel-control',
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
       });
+        
       //3. Slider home temas
       //slider(".temas-home", ".temas-home .carrusel", ".carrusel>.span3", 8);
       
@@ -230,7 +273,7 @@ var Gestiopolis = {
       });
       //1. Slider home autores
       $('#myCarousel').carousel({
-        interval: 40000
+        interval: false
       });
 
       $('.carousel .item').each(function(){
@@ -239,15 +282,14 @@ var Gestiopolis = {
           next = $(this).siblings(':first');
         }
         next.children(':first-child').clone().appendTo($(this));
-
-        if (next.next().length>0) {
-       
-            next.next().children(':first-child').clone().appendTo($(this)).addClass('rightest');
-            
-        }
-        else {
-            $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-           
+        
+        for (var i=0;i<2;i++) {
+          next=next.next();
+          if (!next.length) {
+            next = $(this).siblings(':first');
+          }
+          
+          next.children(':first-child').clone().appendTo($(this));
         }
       });
 
