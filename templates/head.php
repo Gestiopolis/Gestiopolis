@@ -26,4 +26,4 @@
   
   <?php wp_head(); ?>
 </head>
-<?php //flush(); // http://developer.yahoo.com/performance/rules.html#flush ?>
+<?php flush(); // http://developer.yahoo.com/performance/rules.html#flush ?>
