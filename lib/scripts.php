@@ -62,7 +62,7 @@ function roots_scripts() {
   wp_enqueue_style('google_fonts', $assets['fonts'], false, null);
   wp_enqueue_style('fontawesome', $assets['iconfont'], false, null);
   wp_enqueue_style('roots_css', get_template_directory_uri() . $assets['css'], false, null);
-  if (is_home()){
+  if (is_home() || is_archive()){
     wp_enqueue_style('slick_css', '//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css', false, null);
   }
   if (is_single()){
