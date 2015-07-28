@@ -1460,15 +1460,10 @@ add_action('wp_head', 'head_scripts_ads', 1);
 function head_meta_schema() {
 	if(is_single()) {
 		global $post;
-		if(get_post_meta($post->ID, "author-name_value", true) != "") :
-	    echo '
+		echo '
 	    <meta itemprop="dateModified" content="'.get_the_modified_time('c').'"/>
+	    <meta itemprop="datePublished" content="'.get_the_time('c').'"/>
 			';
-		else :
-			echo '
-	    <meta itemprop="dateModified" content="'.get_the_modified_time('c').'"/>
-			';
-		endif;
 	}
 }
 add_action('wp_head', 'head_meta_schema', 1);
