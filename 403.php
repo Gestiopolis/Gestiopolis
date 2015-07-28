@@ -1,8 +1,32 @@
-<div class="bgcon">
+<?php 
+$servidor = $_SERVER['HTTP_HOST'] == 'localhost' ? 'blog23/' : '';
+include_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor.'wp-blog-header.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor. 'wp-admin/includes/image.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor. 'wp-admin/includes/file.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor. 'wp-admin/includes/media.php');
+?>
+<?php get_template_part('templates/head'); ?>
+<body <?php body_class(); ?>>
+
+  <!--[if lt IE 8]>
+    <div class="alert alert-warning">
+      <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'roots'); ?>
+    </div>
+  <![endif]-->
+
+  <?php
+    do_action('get_header');
+    get_template_part('templates/header');
+  ?>
+
+  <div class="wrap" role="document">
+    <div class="content">
+      <main role="main">
+        <div class="bgcon">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h1 class="title">La página que intentaste ver no existe</h1>
+        <h1 class="title">No puedes acceder a esta página</h1>
         <div class="descrcon">La buena noticia es que empleando el buscador que está más abajo hallarás valiosos recursos sobre eso que te interesa y te trajo hasta acá.</div>
         <div class="search404">
           <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search" class="searchnotf form-inline">
@@ -43,3 +67,11 @@
     </div>
 	</div><!-- .container PRINCIPAL -->
 </div><!--bgcon-->
+      </main><!-- /.main -->
+    </div><!-- /.content -->
+  </div><!-- /.wrap -->
+  <?php get_template_part('templates/footer'); ?>
+
+  <?php wp_footer();?>
+</body>
+</html>
