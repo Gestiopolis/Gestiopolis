@@ -117,26 +117,6 @@ var Gestiopolis = {
       //Grid.init();
       //2. Slider home autores
       //slider(".autores-home", ".autores-home .carrusel", ".carrusel>.span3", 8);
-      /*$('#myCarousel').carousel({
-        interval: false
-      });
-
-      $('.carousel .item').each(function(){
-        var next = $(this).next();
-        if (!next.length) {
-          next = $(this).siblings(':first');
-        }
-        next.children(':first-child').clone().appendTo($(this));
-        
-        for (var i=0;i<2;i++) {
-          next=next.next();
-          if (!next.length) {
-            next = $(this).siblings(':first');
-          }
-          
-          next.children(':first-child').clone().appendTo($(this));
-        }
-      });*/
       $('.carousel-inner').slick({
         dots: false,
         infinite: true,
@@ -272,25 +252,42 @@ var Gestiopolis = {
         effect : "fadeIn"
       });
       //1. Slider home autores
-      $('#myCarousel').carousel({
-        interval: false
-      });
-
-      $('.carousel .item').each(function(){
-        var next = $(this).next();
-        if (!next.length) {
-          next = $(this).siblings(':first');
-        }
-        next.children(':first-child').clone().appendTo($(this));
-        
-        for (var i=0;i<2;i++) {
-          next=next.next();
-          if (!next.length) {
-            next = $(this).siblings(':first');
+      $('.carousel-inner').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        prevArrow: '.left.carousel-control',
+        nextArrow: '.right.carousel-control',
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
           }
-          
-          next.children(':first-child').clone().appendTo($(this));
-        }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
       });
 
       var $conta1 = $('#recientes');
