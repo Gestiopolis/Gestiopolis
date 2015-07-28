@@ -127,17 +127,23 @@ var slides_count = $('.carousel .item').length;
 
 $('.carousel .item').each(function(){
 
-var next = $(this).next();
+  var next = $(this).next();
 
-if (!next.length) {
+  if (!next.length) {
 
-next = $(this).siblings(':first');
+  next = $(this).siblings(':first');
 
-}
+  }
 
-next.children(':first-child').clone().appendTo($(this));
+  next.children(':first-child').clone().appendTo($(this));
 
-for (var i=0;i<slides_count - 2;i++) { next="next.next();" if (!next.length) { next="$(this).siblings(':first');" } next.children(':first-child').clone().appendto($(this)); } 
+  for (var i=0;i<slides_count - 2;i++) {
+    next=next.next();
+    if (!next.length) {
+      next=$(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendto($(this));
+  }
 });
       //3. Slider home temas
       //slider(".temas-home", ".temas-home .carrusel", ".carrusel>.span3", 8);
