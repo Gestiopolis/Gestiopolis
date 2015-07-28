@@ -137,9 +137,16 @@
 
 /* AUTORES POPULARES */
 
-.carousel-inner .active.left { left: -25%; }
+.carousel-inner .active.left { left: -33%; }
+.carousel-inner .next        { left:  33%; }
+.carousel-inner .prev        { left: -33%; }
+.carousel-control.left,.carousel-control.right {background-image:none;}
+.item:not(.prev) {visibility: visible;}
+.item.right:not(.prev) {visibility: hidden;}
+.rightest{ visibility: visible;}
+/*.carousel-inner .active.left { left: -25%; }
 .carousel-inner .next        { left:  25%; }
-.carousel-inner .prev    { left: -25%; }
+.carousel-inner .prev    { left: -25%; }*/
 .carousel-control        { width:  4%; }
 .carousel-control.left,.carousel-control.right {
   margin-left: -5px;
@@ -152,8 +159,8 @@
 .carousel-control.right {
   right: -30px !important;
 }
-.carousel-inner .active.right { left: 25%; }
-.carousel-inner .active.right { left: 25%; }
+/*.carousel-inner .active.right { left: 25%; }
+.carousel-inner .active.right { left: 25%; }*/
 .trending-author {
   min-height: 200px;
   position: relative;
