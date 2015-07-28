@@ -1,12 +1,9 @@
 <?php 
 $servidor = $_SERVER['HTTP_HOST'] == 'localhost' ? 'blog23/' : '';
 include_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor.'wp-blog-header.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor. 'wp-admin/includes/image.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor. 'wp-admin/includes/file.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor. 'wp-admin/includes/media.php');
 ?>
 <?php get_template_part('templates/head'); ?>
-<body <?php body_class(); ?>>
+<body <?php body_class('error404'); ?>>
 
   <!--[if lt IE 8]>
     <div class="alert alert-warning">
