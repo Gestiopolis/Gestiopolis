@@ -582,7 +582,11 @@ var Gestiopolis = {
           });*/
           $(window).scroll(function(){
             var scrolled = $(window).scrollTop();
-            $('.fixedside').css('top',-(scrolled*0.2)+'px');
+            if(scrolled > 0){
+              $('.fixedside').css('top',-(scrolled*0.2)+'px');
+            }else {
+              $('.fixedside').css('top','64px');
+            }
           });
         }
 
