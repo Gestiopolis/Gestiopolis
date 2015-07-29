@@ -577,8 +577,12 @@ var Gestiopolis = {
           var relitemh = $('.single .right-post .sidebar-post').outerHeight();
           var difh = arth - sideh;
           var marginb = difh /(nrel+1);
-          $('.single .right-post .sidebar-post').each(function() {
+          /*$('.single .right-post .sidebar-post').each(function() {
             $(this).css( "marginBottom", marginb);
+          });*/
+          $(window).scroll(function(){
+            var scrolled = $(window).scrollTop();
+            $('.fixedside').css('top',-(scrolled*0.2)+'px');
           });
         }
 

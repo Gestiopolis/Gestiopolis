@@ -2,6 +2,7 @@
   <div class="container cposts">
     <div class="row">
       <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
+        <div class="fixedside">
 <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
 <div id="google-ads-sidebar"></div>
 <script type="text/javascript"> 
@@ -86,7 +87,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
   </div>
 </div>-->
 
-
+      </div>
       </div><!--.col-sm-3-->
       <div class="col-sm-12 col-md-9 maincol">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
