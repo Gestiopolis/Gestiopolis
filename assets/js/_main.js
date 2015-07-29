@@ -583,8 +583,12 @@ var Gestiopolis = {
           $(window).scroll(function(){
             var scrolled = $(window).scrollTop();
             if(scrolled > 0){
-              $('.fixedside').css('top',-(scrolled*0.2)+'px');
-            }else {
+              if(sideh < arth){
+                $('.fixedside').css('top',-(scrolled*0.2)+'px');
+              } else {
+                $('.fixedside').css('top',-(scrolled*1.2)+'px');
+              }
+            } else {
               $('.fixedside').css('top','64px');
             }
           });
