@@ -606,6 +606,15 @@ var Gestiopolis = {
       }*/
       $(window).scroll(function(){
         var scrolled = $(window).scrollTop();
+        var arth = 100;
+        if (serverval.all2html_htmlcontent != "") {
+          arth = $('#page-container').outerHeight();
+        } else {
+          arth = $('.single .post-content .entry-content').outerHeight();
+        }
+        var adsh = 600;
+        var relh = $('.single .right-post').outerHeight();
+        var sideh = adsh + relh;
         if(scrolled > 0){
           if(sideh < arth){
             $('.fixedside').css('top',-(scrolled*0.2)+'px');
