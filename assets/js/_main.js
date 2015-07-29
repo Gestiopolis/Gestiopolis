@@ -562,7 +562,7 @@ var Gestiopolis = {
   single: {
     init: function() {
       //Cuenta cuandos elementos de relacionados hay en el sidebar
-      var nrel = $(".single .right-post .sidebar-post").length;
+      /*var nrel = $(".single .right-post .sidebar-post").length;
       if(nrel > 0) {
         var arth = 100;
         if (serverval.all2html_htmlcontent != "") {
@@ -579,9 +579,18 @@ var Gestiopolis = {
           var marginb = difh /(nrel+1);
           /*$('.single .right-post .sidebar-post').each(function() {
             $(this).css( "marginBottom", marginb);
-          });*/
+          });
           $(window).scroll(function(){
             var scrolled = $(window).scrollTop();
+            var arth = 100;
+            if (serverval.all2html_htmlcontent != "") {
+              arth = $('#page-container').outerHeight();
+            } else {
+              arth = $('.single .post-content .entry-content').outerHeight();
+            }
+            var adsh = 600;
+            var relh = $('.single .right-post').outerHeight();
+            var sideh = adsh + relh;
             if(scrolled > 0){
               if(sideh < arth){
                 $('.fixedside').css('top',-(scrolled*0.2)+'px');
@@ -594,7 +603,19 @@ var Gestiopolis = {
           });
         }
 
-      }
+      }*/
+      $(window).scroll(function(){
+        var scrolled = $(window).scrollTop();
+        if(scrolled > 0){
+          if(sideh < arth){
+            $('.fixedside').css('top',-(scrolled*0.2)+'px');
+          } else {
+            $('.fixedside').css('top',-(scrolled*1.2)+'px');
+          }
+        } else {
+          $('.fixedside').css('top','64px');
+        }
+      });
       $('table').addClass('table table-bordered');
       $('table td').removeAttr( "width" ).removeAttr( "style" );
       $('table tr').removeAttr( "width" ).removeAttr( "style" );
