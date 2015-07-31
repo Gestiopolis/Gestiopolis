@@ -176,7 +176,9 @@ jQuery(function() {
 if (GOOGLE_ANALYTICS_ID && (WP_ENV !== 'production' || !current_user_can('manage_options'))) {
   add_action('wp_footer', 'roots_google_analytics', 1);
 }
-function footer_scripts() { ?>
+function footer_scripts() { 
+if (is_single()){
+  ?>
 <!-- Facebook Plugin-->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -198,5 +200,5 @@ function footer_scripts() { ?>
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 </script>
-<?php }
-//add_action('wp_footer', 'footer_scripts', 20);
+<?php } }
+add_action('wp_footer', 'footer_scripts', 20);

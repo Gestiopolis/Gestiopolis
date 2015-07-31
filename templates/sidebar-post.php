@@ -116,4 +116,10 @@ $maincat = get_the_category($post->ID);
     </article>
     <?php } // fin foreach $tposts ?>
   </div>
+  <div class="sidebar-post">
+    <h3>Manténte al tanto</h3>
+    <i class="fa fa-caret-down"></i>
+    <p><a href="https://twitter.com/gestiopoliscom" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @gestiopoliscom</a></p>
+    <div class="fb-page" data-href="https://www.facebook.com/gestiopolis" data-width="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/gestiopolis"><a href="https://www.facebook.com/gestiopolis">GestioPolis</a></blockquote></div></div>
+  </div>
 </div><!-- .right-post -->
