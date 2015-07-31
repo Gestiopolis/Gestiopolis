@@ -228,6 +228,14 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
+            <div id="comments" class="comentarios">
+              <a href="javascript:;" class="btn btn-block btn-primary btn-lg cerrado"><span>Tu opinión vale, comenta aquí</span><span style="display:none;">Oculta los comentarios</span></a>
+              <div class="comments-wrapper">
+                <h2><i class="fa fa-comments"></i> Comentarios</h2>
+                <?php echo do_shortcode('[fbcomments]'); ?>
+                <?php //comments_template('/templates/comments.php'); ?>
+              </div>
+            </div>
             <div id="suscripcion" class="suscripcion hidden">
               <div>
                 <span class="author-color"><i class="fa fa-envelope"></i></span>
@@ -321,14 +329,6 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
           <footer>
             <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
           </footer>
-          <div id="comments" class="comentarios">
-            <a href="javascript:;" class="btn btn-block btn-primary btn-lg cerrado"><span>Tu opinión vale, comenta aquí</span><span style="display:none;">Oculta los comentarios</span></a>
-            <div class="comments-wrapper">
-              <h2><i class="fa fa-comments"></i> Comentarios</h2>
-              <?php echo do_shortcode('[fbcomments]'); ?>
-              <?php //comments_template('/templates/comments.php'); ?>
-            </div>
-          </div>
         </div><!-- fin col-md-10 -->
         </div><!-- fin de row de contenido y meta -->
         </article>
