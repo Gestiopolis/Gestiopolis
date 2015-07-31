@@ -615,11 +615,17 @@ var Gestiopolis = {
         var adsh = 600;
         var relh = $('.single .right-post').outerHeight();
         var sideh = (adsh + relh) * 2.5;
+        var sideh1 = adsh + relh;
         if(scrolled > 0){
           if(sideh < arth){
             $('.fixedside').css('top',-(scrolled*0.2)+'px');
           } else {
-            $('.fixedside').css('top',-(scrolled*1.2)+'px');
+            if (arth <= 2500){
+              $('.fixedside').css('position','relative');
+              $(".sidebarcol, .maincol").stick_in_parent();
+            }else {
+              $('.fixedside').css('top',-(scrolled*1.3)+'px');
+            }
           }
         } else {
           $('.fixedside').css('top','64px');

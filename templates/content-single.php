@@ -289,7 +289,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
             </div><!-- .post-tags -->
             <div class="compartelo posts-home hidden-md hidden-lg">
-              <div class="title-section"><h2>Te recomendamos</h2><i class="fa fa-caret-down"></i></div>
+              <div class="title-section"><h2>Relacionados</h2><i class="fa fa-caret-down"></i></div>
               <?php 
               $show = 12;
               $postsnot = array();
