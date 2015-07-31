@@ -628,7 +628,12 @@ var Gestiopolis = {
             }
           }
         } else {
-          $('.fixedside').css('top','64px');
+          if (arth <= 2500){
+            $('.fixedside').css('top','0');
+          }else {
+            $('.fixedside').css('top','64px');
+          }
+          
         }
       });
       $('table').addClass('table table-bordered');
