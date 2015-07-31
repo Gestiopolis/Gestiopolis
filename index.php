@@ -157,7 +157,7 @@
       <div class="subtitle">Quienes han querido compartir sus conocimientos con todos nosotros</div>
     </div>
   </div>
-  <div class="row autores-home hidden-xs">
+  <div class="row autores-home">
     <div class="col-sm-12">
       <div class="carousel slide" id="myCarousel">
         <div class="carousel-inner">

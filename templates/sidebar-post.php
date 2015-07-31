@@ -1,10 +1,12 @@
-<?php global $post; ?>
+<?php global $post; 
+$maincat = get_the_category($post->ID); 
+?>
 <div class="right-post">
   <div class="sidebar-post">
-    <h3>Vas a querer leer</h3>
+    <h3>Relacionados</h3>
     <i class="fa fa-caret-down"></i>
     <?php 
-    $show = 5;
+    $show = 12;
     $postsnot = array();
     $postsnot[] = $post->ID;
     $mainpost = $post->ID;
@@ -21,10 +23,10 @@
       <div class="wrapper-content">
         <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=related_posts&ic_source=sidebar" class="internal-campaign"><?php the_title(); ?></a></h2>
         <?php 
-        $categories = get_the_category($post->ID); 
+        /*$categories = get_the_category($post->ID); 
         foreach($categories as $category){
           echo '<i class="fa icon-cat-'.$category->term_id.' cat-col-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> &nbsp;';
-        }
+        }*/
         ?>
       </div>
     </article>
@@ -46,10 +48,10 @@
       <div class="wrapper-content">
         <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=related_posts&ic_source=sidebar"><?php the_title(); ?></a></h2>
         <?php 
-        $categories = get_the_category($post->ID); 
+        /*$categories = get_the_category($post->ID); 
         foreach($categories as $category){
           echo '<i class="fa icon-cat-'.$category->term_id.' cat-col-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> &nbsp;&nbsp;';
-        }
+        }*/
         ?>
       </div>
     </article>
@@ -64,10 +66,10 @@
     ?>
   </div><!-- .sidebar-post -->
   <div class="sidebar-post">
-    <h3>Más recientes</h3>
+    <h3>Recientes</h3>
     <i class="fa fa-caret-down"></i>
     <?php 
-    $query2 = new WP_Query('posts_per_page=5');
+    $query2 = new WP_Query('posts_per_page=6&cat='.$maincat[0]->term_id);
     while ( $query2->have_posts() ) {
       $query2->the_post(); ?>
       <article id="post-<?php the_ID(); ?>" class="post">
@@ -77,10 +79,10 @@
       <div class="wrapper-content">
         <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=recent_posts&ic_source=sidebar" class="internal-campaign"><?php the_title(); ?></a></h2>
         <?php 
-        $categories = get_the_category($post->ID); 
+        /*$categories = get_the_category($post->ID); 
         foreach($categories as $category){
           echo '<i class="fa icon-cat-'.$category->term_id.' cat-col-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> &nbsp;';
-        }
+        }*/
         ?>
       </div>
     </article>
@@ -91,9 +93,9 @@
     ?>
   </div>
   <div class="sidebar-post">
-    <h3>Más populares</h3>
+    <h3>Populares</h3>
     <i class="fa fa-caret-down"></i>
-    <?php $tposts = get_trending_posts(5, TRENDING_DAYS);
+    <?php $tposts = get_trending_posts(6, TRENDING_DAYS, $maincat[0]->term_id);
       $i = 1;
       foreach ($tposts as $tpost) {
         $post_title = stripslashes($tpost->post_title);
@@ -105,10 +107,10 @@
       <div class="wrapper-content">
         <h2 class="entry-title"><a href="<?php echo $permalink; ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=popular_posts&ic_source=sidebar" class="internal-campaign"><?php echo $post_title; ?></a></h2>
         <?php 
-        $categories = get_the_category($tpost->ID); 
+        /*$categories = get_the_category($tpost->ID); 
         foreach($categories as $category){
           echo '<i class="fa icon-cat-'.$category->term_id.' cat-col-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> &nbsp;';
-        }
+        }*/
         ?>
       </div>
     </article>
