@@ -2,6 +2,7 @@
   <div class="container cposts">
     <div class="row">
       <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
+        <div class="fixedside">
 <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
 <div id="google-ads-sidebar"></div>
 <script type="text/javascript"> 
@@ -86,7 +87,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
   </div>
 </div>-->
 
-
+      </div>
       </div><!--.col-sm-3-->
       <div class="col-sm-12 col-md-9 maincol">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -227,6 +228,14 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
+            <div id="comments" class="comentarios">
+              <a href="javascript:;" class="btn btn-block btn-primary btn-lg cerrado"><span>Tu opinión vale, comenta aquí</span><span style="display:none;">Oculta los comentarios</span></a>
+              <div class="comments-wrapper">
+                <h2><i class="fa fa-comments"></i> Comentarios</h2>
+                <?php echo do_shortcode('[fbcomments]'); ?>
+                <?php //comments_template('/templates/comments.php'); ?>
+              </div>
+            </div>
             <div id="suscripcion" class="suscripcion hidden">
               <div>
                 <span class="author-color"><i class="fa fa-envelope"></i></span>
@@ -279,6 +288,37 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
               <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
             </div><!-- .post-tags -->
+            <div class="compartelo posts-home hidden-md hidden-lg">
+              <div class="title-section"><h2>Relacionados</h2><i class="fa fa-caret-down"></i></div>
+              <?php 
+              $show = 12;
+              $postsnot = array();
+              $postsnot[] = $post->ID;
+              $mainpost = $post->ID;
+              $query1 = ci_get_related_posts_1( $post->ID, $show );
+              //$countp = 1;
+                  if( $query1->have_posts() ) { while ($query1->have_posts()) : $query1->the_post(); 
+                    $postsnot[] = $post->ID;
+                    if($mainpost != $post->ID){
+                      get_template_part( 'templates/content', 'recommend' );
+                    }
+                    //$countp++; 
+                   endwhile;?>
+                  <?php } 
+                  wp_reset_query(); 
+                  wp_reset_postdata(); 
+                  $show = $show - count($query1->posts);
+                 if ($show > 0) {
+                  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+                $query2 = ci_get_related_posts_2( $post->ID, $postsnot, $show, $paged );
+                    if( $query2->have_posts() ) { while ($query2->have_posts()) : $query2->the_post();get_template_part( 'templates/content', 'recommend' );
+                     endwhile;
+                    } 
+                    wp_reset_query(); 
+                    wp_reset_postdata();
+                  }
+                  ?>
+            </div><!-- .recomendados -->
             <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
             <?php get_template_part('templates/post-front-edit'); ?>
             <?php } ?>
@@ -320,14 +360,6 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
           <footer>
             <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
           </footer>
-          <div id="comments" class="comentarios">
-            <a href="javascript:;" class="btn btn-block btn-primary btn-lg cerrado"><span>Tu opinión vale, comenta aquí</span><span style="display:none;">Oculta los comentarios</span></a>
-            <div class="comments-wrapper">
-              <h2><i class="fa fa-comments"></i> Comentarios</h2>
-              <?php echo do_shortcode('[fbcomments]'); ?>
-              <?php //comments_template('/templates/comments.php'); ?>
-            </div>
-          </div>
         </div><!-- fin col-md-10 -->
         </div><!-- fin de row de contenido y meta -->
         </article>

@@ -31,6 +31,7 @@
   font: 700 2.25rem @title-font, sans-serif;
   line-height: 1.2;
   margin: 1.5rem 0 1.5rem 2rem !important;
+  width: auto !important;
   //text-shadow: 2px 0px 50px rgba(0,0,0,0.5);//
   //margin-top:48px;
 }
@@ -257,9 +258,9 @@
   float:left;
   width:100%;
 }
-.comentarios {
+/*.comentarios {
   padding: 0 2rem;
-}
+}*/
 .comentarios .btn-block {
   background: #858585;
   border-radius: 4px;
@@ -1029,6 +1030,25 @@
   color:#f5f5f5;
 }*/
 
+.sidebarcol {
+  position:relative;
+}
+.fixedside {
+  position:fixed;
+}
+#google-ads-sidebar,
+.right-post,
+.fixedside {
+  width: 230px;
+}
+@media (min-width: @screen-lg-min){
+  #google-ads-sidebar,
+  .right-post,
+  .fixedside {
+    width: 304px;
+  }
+}
+
 /* SIDEBAR POST */
 .sidebar-post>h3 {
   text-align: center;
@@ -1036,6 +1056,7 @@
   font-weight: 700;
   font-size: 2rem;
   margin-bottom: 0;
+  margin-top:4rem;
 }
 .sidebar-post>h3,
 .compartelo .title-section h2 {
@@ -1045,7 +1066,7 @@
 }
 .sidebar-post>i.fa-caret-down,
 .compartelo .title-section i.fa-caret-down {
-  margin-top: -9px;
+  margin-top: -10px;
   text-align: center;
   display: block;
   font-size: 1.5rem;
@@ -1075,9 +1096,9 @@
   z-index: 2;
 }
 .sidebar-post article h2 {
-  font: 700 0.8rem 'Montserrat',sans-serif;
+  font: 700 1rem 'Montserrat',sans-serif;
   margin: 0 0 0.5rem 0;
-  line-height: 1;
+  line-height: 1.5;
 }
 .sidebar-post article {
   font: 700 0.72rem 'Montserrat',sans-serif;
