@@ -618,9 +618,14 @@ var Gestiopolis = {
         var sideh1 = adsh + relh;
         if(scrolled > 0){
           if(sideh < arth){
-            $('.fixedside').css('top',-(scrolled*0.2)+'px');
+            if (arth <= 3300){
+              $('.fixedside').css('position','relative');
+              $(".sidebarcol, .maincol").stick_in_parent();
+            }else {
+              $('.fixedside').css('top',-(scrolled*0.2)+'px');
+            }
           } else {
-            if (arth <= 3700){
+            if (arth <= 3300){
               $('.fixedside').css('position','relative');
               $(".sidebarcol, .maincol").stick_in_parent();
             }else {
@@ -628,7 +633,7 @@ var Gestiopolis = {
             }
           }
         } else {
-          if (arth <= 3700){
+          if (arth <= 3300){
             $('.fixedside').css('top','0');
           }else {
             $('.fixedside').css('top','64px');
