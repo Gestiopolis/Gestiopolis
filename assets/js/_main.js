@@ -614,7 +614,7 @@ var Gestiopolis = {
         }
         var adsh = 600;
         var relh = $('.single .right-post').outerHeight();
-        var sideh = (adsh + relh) * 3.4;
+        var sideh = (adsh + relh) * 3.6;
         var sideh1 = adsh + relh;
         if(scrolled > 0){
           if(sideh < arth){
