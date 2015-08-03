@@ -613,7 +613,7 @@ var Gestiopolis = {
         var sideh1 = adsh + relh;
         if (serverval.all2html_htmlcontent != "") {
           arth = $('#page-container').outerHeight();
-          sideh = (adsh + relh) * 4.2;
+          sideh = (adsh + relh) * 4.1;
         } else {
           arth = $('.single .post-content .entry-content').outerHeight();
           sideh = (adsh + relh) * 3.4;
@@ -625,7 +625,7 @@ var Gestiopolis = {
               $('.fixedside').css('position','relative');
               $(".sidebarcol, .maincol").stick_in_parent();
             }else {
-              $('.fixedside').css('top',-(scrolled*0.2)+'px');
+              $('.fixedside').css('top',-(scrolled*0.35)+'px');
             }
           } else {
             if (arth <= 3300){
