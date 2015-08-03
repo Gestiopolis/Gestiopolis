@@ -613,10 +613,10 @@ var Gestiopolis = {
         var sideh1 = adsh + relh;
         if (serverval.all2html_htmlcontent != "") {
           arth = $('#page-container').outerHeight();
-          sideh = (adsh + relh) * 4.1;
+          sideh = (adsh + relh) * 3.9;
         } else {
           arth = $('.single .post-content .entry-content').outerHeight();
-          sideh = (adsh + relh) * 3.4;
+          sideh = (adsh + relh) * 3.2;
         }
         
         if(scrolled > 0){
