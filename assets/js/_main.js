@@ -620,7 +620,7 @@ var Gestiopolis = {
           if(sideh < arth){
             $('.fixedside').css('top',-(scrolled*0.2)+'px');
           } else {
-            if (arth <= 2500){
+            if (arth <= 3700){
               $('.fixedside').css('position','relative');
               $(".sidebarcol, .maincol").stick_in_parent();
             }else {
@@ -628,7 +628,7 @@ var Gestiopolis = {
             }
           }
         } else {
-          if (arth <= 2500){
+          if (arth <= 3700){
             $('.fixedside').css('top','0');
           }else {
             $('.fixedside').css('top','64px');
