@@ -622,7 +622,9 @@ var Gestiopolis = {
           } else {
             if (arth <= 3700){
               $('.fixedside').css('position','relative');
-              $(".sidebarcol, .maincol").stick_in_parent();
+              $(".sidebarcol, .maincol").stick_in_parent().on("sticky_kit:stick", function(e) {
+                console.log("has stuck!", e.target);
+              });
             }else {
               $('.fixedside').css('top',-(scrolled*1.3)+'px');
             }
@@ -961,9 +963,6 @@ var Gestiopolis = {
           });
         });
       } //if htmlcontent
-      /*$(".sidebarcol, .maincol").stick_in_parent({
-        offset_top: 48
-      });*/
     } //init
   }
 };
