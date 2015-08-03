@@ -613,7 +613,7 @@ var Gestiopolis = {
         var sideh1 = adsh + relh;
         if (serverval.all2html_htmlcontent != "") {
           arth = $('#page-container').outerHeight();
-          sideh = (adsh + relh) * 3.9;
+          sideh = (adsh + relh) * 3.3;
         } else {
           arth = $('.single .post-content .entry-content').outerHeight();
           sideh = (adsh + relh) * 3.2;
