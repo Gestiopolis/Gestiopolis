@@ -607,28 +607,25 @@ var Gestiopolis = {
       $(window).scroll(function(){
         var scrolled = $(window).scrollTop();
         var arth = 100;
-        var adsh = 600;
-        var relh = $('.single .right-post').outerHeight();
-        var sideh = 600;
-        var sideh1 = adsh + relh;
         if (serverval.all2html_htmlcontent != "") {
           arth = $('#page-container').outerHeight();
-          sideh = (adsh + relh) * 3.3;
         } else {
           arth = $('.single .post-content .entry-content').outerHeight();
-          sideh = (adsh + relh) * 3.2;
         }
-        
+        var adsh = 600;
+        var relh = $('.single .right-post').outerHeight();
+        var sideh = (adsh + relh) * 3.2;
+        var sideh1 = adsh + relh;
         if(scrolled > 0){
           if(sideh < arth){
-            if (arth <= 3300){
+            if (arth <= 3700){
               $('.fixedside').css('position','relative');
               $(".sidebarcol, .maincol").stick_in_parent();
             }else {
               $('.fixedside').css('top',-(scrolled*0.35)+'px');
             }
           } else {
-            if (arth <= 3300){
+            if (arth <= 3700){
               $('.fixedside').css('position','relative');
               $(".sidebarcol, .maincol").stick_in_parent();
             }else {
@@ -636,7 +633,7 @@ var Gestiopolis = {
             }
           }
         } else {
-          if (arth <= 3400){
+          if (arth <= 3700){
             $('.fixedside').css('top','0');
           }else {
             $('.fixedside').css('top','64px');
