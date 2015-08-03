@@ -622,7 +622,7 @@ var Gestiopolis = {
           } else {
             if (arth <= 3700){
               $('.fixedside').css('position','relative');
-              $(".sidebarcol, .maincol").stick_in_parent().on("sticky_kit:stick", function(e) {
+              $(".right-post, .maincol").stick_in_parent().on("sticky_kit:stick", function(e) {
                 console.log("has stuck!", e.target);
               });
             }else {
