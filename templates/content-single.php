@@ -148,8 +148,8 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                   </script>
           </div>
           <?php 
-          if (0 == 1) { ?>
-          <div id="toolbar">
+          //if (0 == 1) { ?>
+          <!--<div id="toolbar">
             <div class="btn-toolbar" role="toolbar">
               <div class="btn-group btn-group-sm pull-left">
                 <a type="button" class="btn btn-default prevpage" href="#" title="Página Anterior"><i class="fa fa-chevron-up"></i></a>
@@ -159,18 +159,18 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               <div class="btn-group pull-right">
                   <a type="button" title="Descargar archivo" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-download-alt"></span> Descargar <span class="caret"></span></a>
                   <ul class="dropdown-menu list-unstyled" role="menu">
-                    <li><a href="<?php echo get_post_meta($post->ID, 'all2html_docu', true); ?>">Original</a></li>
-                    <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
-                    <li><a href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>">Comprimido</a></li>
-                    <?php } ?>
-                    <?php if (get_post_meta($post->ID, "all2html_ext", true) != 'pdf') { ?>
-                    <li><a href="<?php echo home_url(get_post_meta($post->ID, 'all2html_pdf', true)); ?>">PDF</a></li>
-                    <?php } ?>
+                    <li><a href="<?php //echo get_post_meta($post->ID, 'all2html_docu', true); ?>">Original</a></li>
+                    <?php //if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
+                    <li><a href="<?php //echo get_post_meta($post->ID, 'downloads_value', true); ?>">Comprimido</a></li>
+                    <?php //} ?>
+                    <?php //if (get_post_meta($post->ID, "all2html_ext", true) != 'pdf') { ?>
+                    <li><a href="<?php //echo home_url(get_post_meta($post->ID, 'all2html_pdf', true)); ?>">PDF</a></li>
+                    <?php //} ?>
                   </ul>
               </div>
             </div>
-          </div>
-          <?php } ?>
+          </div>-->
+          <?php //} ?>
           <div id="sidebar" style="display: none !important;">
             <div id="outline"></div>
           </div>
@@ -226,7 +226,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               </script>
             </div>
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
-            <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
+            <div class="downbox"><a class="downlink" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
             <div id="comments" class="comentarios">
               <a href="javascript:;" class="btn btn-block btn-primary btn-lg cerrado"><span>Tu opinión vale, comenta aquí</span><span style="display:none;">Oculta los comentarios</span></a>
