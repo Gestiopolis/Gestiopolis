@@ -36,7 +36,7 @@
         <li><a title="Compartir en Twitter" target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink());?>&amp;text=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
  ?>&amp;via=gestiopoliscom" class="btn-floating tw-color"><i class="large fa fa-twitter"></i></a></li>
         <li title="Compartir por Correo"><a href="mailto:?subject=Revisa este artículo&amp;body=Hola! Revisa este artículo: <?php the_title(); ?> - <?php echo get_permalink(); ?>." class="btn-floating mail-color"><i class="large fa fa-envelope"></i></a></li>
-        <li class="votelink"><?php if(function_exists(getILikeThis)) getILikeThisMini('get'); ?></li>
+        <li class="votelink"><?php if(function_exists(getILikeThisMini)) getILikeThisMini('get'); ?></li>
         <li><a title="Agrega tu comentario" href="<?php comments_link(); ?>" class="btn-floating gray"><i class="large fa fa-comments"></i></a></li>
       </ul>
     </div>

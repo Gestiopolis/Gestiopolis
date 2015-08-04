@@ -10,7 +10,7 @@ add_filter( 'the_content', 'insert_adman_ads' );
 function insert_adman_ads( $content ) {
     global $post;
 	
-	$ad_code = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript">
+	$despegar = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript">
     sas.call("std", {
         siteId:     78378,
         pageId:     574794,
@@ -23,6 +23,9 @@ function insert_adman_ads( $content ) {
         <img src="http://www5.smartadserver.com/ac?out=nonrich&nwid=1371&siteid=78378&pgname=all_site&fmtid=32469&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
 </noscript>
 <div id="contPauta"></div></div>';
+$adman = '<div id="admanmedia" class="hidden-xs"><script src="http://icarus-wings.admanmedia.com/intext/intext_vast.js?pmu=183f9431;pmb=216f0476;size=600x338;visibility=50"></script></div>';
+$anuncios = array($despegar,$adman);
+$ad_code = $anuncios[rand(0,1)];
 
 	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
         //if(!is_single(28207 )){
