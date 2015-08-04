@@ -206,7 +206,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               <?php the_content(); ?>
             </div>
             <div id="likepost" class="compartelo">
-              <h2>Hazle saber al autor que aprecias su trabajo</h2>
+              <h2 class="text-center">Hazle saber al autor que aprecias su trabajo</h2>
               <?php if(function_exists(getILikeThis)) getILikeThis('get'); ?>
             </div>
             <!--<div class="adsce">
