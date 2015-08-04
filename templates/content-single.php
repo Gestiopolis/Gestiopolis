@@ -207,15 +207,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
             </div>
             <div id="likepost" class="compartelo">
               <h2>Hazle saber al autor que aprecias su trabajo</h2>
-              <div class="innervote">
-                <p class="text-center">
-                  <a onclick="likeThis(<?php echo $post->ID; ?>);" class="text-center"><span class="fa-stack fa-lg">
-                    <i class="fa fa-certificate fa-stack-3x vo-text-color"></i>
-                    <i class="fa fa-heart-o fa-stack-1x fa-inverse"></i>
-                  </span></a>
-                </p>
-                <small class="text-center">Estás en libertad de marcarlo con "Me gusta" o no</small>
-              </div>
+              <?php if(function_exists(getILikeThis)) getILikeThis('get'); ?>
             </div>
             <!--<div class="adsce">
               <div id='div-gpt-ad-1433261534384-4'>
