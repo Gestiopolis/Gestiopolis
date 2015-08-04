@@ -614,21 +614,23 @@ var Gestiopolis = {
         }
         var adsh = 600;
         var relh = $('.single .right-post').outerHeight();
-        var sideh = (adsh + relh) * 2.5;
+        var sideh = (adsh + relh) * 3.2;
         var sideh1 = adsh + relh;
         if(scrolled > 0){
           if(sideh < arth){
-            $('.fixedside').css('top',-(scrolled*0.2)+'px');
+            $('.fixedside').css('top',-(scrolled*0.35)+'px');
           } else {
-            if (arth <= 2500){
+            if (arth <= 3700){
               $('.fixedside').css('position','relative');
-              $(".sidebarcol, .maincol").stick_in_parent();
+              $(".right-post, .maincol").stick_in_parent().on("sticky_kit:stick", function(e) {
+                console.log("has stuck!", e.target);
+              });
             }else {
               $('.fixedside').css('top',-(scrolled*1.3)+'px');
             }
           }
         } else {
-          if (arth <= 2500){
+          if (arth <= 3700){
             $('.fixedside').css('top','0');
           }else {
             $('.fixedside').css('top','64px');
@@ -961,9 +963,6 @@ var Gestiopolis = {
           });
         });
       } //if htmlcontent
-      /*$(".sidebarcol, .maincol").stick_in_parent({
-        offset_top: 48
-      });*/
     } //init
   }
 };
