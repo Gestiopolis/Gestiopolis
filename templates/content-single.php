@@ -371,4 +371,9 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
       
     </div><!-- fin de .row -->
   </div>
+  <?php 
+  if(has_tag(8175)){
+    echo do_shortcode("[pro_ad_display_adzone id='325453' flyin='1' flyin_delay='3']"); 
+  }
+  ?>
 <?php endwhile; ?>
