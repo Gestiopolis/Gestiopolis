@@ -785,7 +785,7 @@ function get_trending_posts($numberOf, $days, $catid = '') {
 		$where .= $wpdb->prepare( " AND $wpdb->term_relationships.term_taxonomy_id = %d ", $catid );
 	}
 	$groupby = " postnumber ";
-	$orderby = " vistas DESC, meta_value+0 DESC ";
+	$orderby = " vistas DESC, meta_value+1 DESC ";
 	$limits .= $wpdb->prepare( " LIMIT %d ", $numberOf );
 	$groupby = " GROUP BY {$groupby} ";
 	$orderby = " ORDER BY {$orderby} ";
