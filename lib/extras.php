@@ -772,18 +772,20 @@ function get_trending_posts($numberOf, $days, $catid = '') {
 	$fields = " postnumber, ";
 	$fields .= "SUM(cntaccess) as vistas, dp_date, ";
 	$fields .= "ID, post_title, post_content, post_author ";
-	$join = " INNER JOIN {$wpdb->posts} ON postnumber=ID ";
+	//$join = " INNER JOIN {$wpdb->posts} ON postnumber=ID ";
+	$join = " INNER JOIN {$wpdb->posts} ON postnumber=ID INNER JOIN {$wpdb->postmeta} ON ($wpdb->posts.ID = $wpdb->postmeta.post_id) ";
 	if($catid != ''){
 		$join .= " INNER JOIN {$wpdb->term_relationships} ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id) ";
 	}
 	$where .= $wpdb->prepare( " AND blog_id = %d ", $blog_id);				// Posts need to be from the current blog only
 	$where .= " AND $wpdb->posts.post_status = 'publish' ";
 	$where .= $wpdb->prepare( " AND dp_date >= '%s' ", $from_date);
+	$where .= " AND $wpdb->postmeta.meta_key='_liked' ";
 	if($catid != ''){
 		$where .= $wpdb->prepare( " AND $wpdb->term_relationships.term_taxonomy_id = %d ", $catid );
 	}
 	$groupby = " postnumber ";
-	$orderby = " vistas DESC ";
+	$orderby = " vistas DESC, meta_value+0 DESC ";
 	$limits .= $wpdb->prepare( " LIMIT %d ", $numberOf );
 	$groupby = " GROUP BY {$groupby} ";
 	$orderby = " ORDER BY {$orderby} ";
@@ -848,18 +850,20 @@ function get_trending_authors($numberOf, $days, $catid = '') {
 	$fields = " DISTINCT post_author, postnumber, ";
 	$fields .= "COUNT(ID) AS count, SUM(cntaccess) as vistas, dp_date ";
 	//$fields .= "ID, post_title, post_content, post_author ";
-	$join = " INNER JOIN {$wpdb->posts} ON postnumber=ID ";
+	//$join = " INNER JOIN {$wpdb->posts} ON postnumber=ID ";
+	$join = " INNER JOIN {$wpdb->posts} ON postnumber=ID INNER JOIN {$wpdb->postmeta} ON ($wpdb->posts.ID = $wpdb->postmeta.post_id) ";
 	if($catid != ''){
 		$join .= " INNER JOIN {$wpdb->term_relationships} ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id) ";
 	}
 	$where .= $wpdb->prepare( " AND blog_id = %d ", $blog_id);				// Posts need to be from the current blog only
 	$where .= " AND $wpdb->posts.post_status = 'publish' ";
 	$where .= $wpdb->prepare( " AND dp_date >= '%s' ", $from_date);
+	$where .= " AND $wpdb->postmeta.meta_key='_liked' ";
 	if($catid != ''){
 		$where .= $wpdb->prepare( " AND $wpdb->term_relationships.term_taxonomy_id = %d ", $catid );
 	}
 	$groupby = " post_author ";
-	$orderby = " count DESC, vistas DESC ";
+	$orderby = " count DESC, vistas DESC, meta_value+0 DESC  ";
 	$limits .= $wpdb->prepare( " LIMIT %d ", $numberOf );
 	$groupby = " GROUP BY {$groupby} ";
 	$orderby = " ORDER BY {$orderby} ";

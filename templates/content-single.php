@@ -205,6 +205,10 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               <?php } ?>
               <?php the_content(); ?>
             </div>
+            <div id="likepost" class="compartelo">
+              <h2 class="text-center">Hazle saber al autor que aprecias su trabajo</h2>
+              <?php if(function_exists(getILikeThis)) getILikeThis('get'); ?>
+            </div>
             <!--<div class="adsce">
               <div id='div-gpt-ad-1433261534384-4'>
               <script type='text/javascript'>
@@ -367,4 +371,13 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
       
     </div><!-- fin de .row -->
   </div>
+  <?php 
+  $like = get_post_meta($post->ID, '_liked', true);
+  if ($like == ""){
+    update_post_meta($post->ID, '_liked', 1);
+  }
+  if(has_tag(8175)){
+    echo do_shortcode("[pro_ad_display_adzone id='334406' flyin='1' flyin_delay='3']"); 
+  }
+  ?>
 <?php endwhile; ?>
