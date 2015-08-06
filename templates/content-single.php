@@ -377,7 +377,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
     update_post_meta($post->ID, '_liked', 1);
   }
   if(has_tag(8175)){
-    echo do_shortcode("[pro_ad_display_adzone id='325453' flyin='1' flyin_delay='3']"); 
+    echo do_shortcode("[pro_ad_display_adzone id='334406' flyin='1' flyin_delay='3']"); 
   }
   ?>
 <?php endwhile; ?>
