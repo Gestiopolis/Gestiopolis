@@ -116,7 +116,7 @@ $maincat = get_the_category($post->ID);
     </article>
     <?php } // fin foreach $tposts ?>
   </div>
-  <div class="sidebar-post">
+  <div id="social-sidebar" class="sidebar-post">
     <h3>Manténte al tanto</h3>
     <i class="fa fa-caret-down"></i>
     <br>
