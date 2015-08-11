@@ -977,6 +977,7 @@ var Boxgrid = (function() {
         $overlay = $item.children( 'div.rb-overlay' );
 
       $item.on( 'click', function(e) {
+        console.log(e);
         e.preventDefault();
         if( $item.data( 'isExpanded' ) ) {
           return false;
