@@ -1051,6 +1051,20 @@ function sharethis_info($url, $provider) {
 	}
 }
 
+/*$join = " INNER JOIN {$wpdb->posts} ON postnumber=ID INNER JOIN {$wpdb->postmeta} ON ($wpdb->posts.ID = $wpdb->postmeta.post_id) ";
+	if($catid != ''){
+		$join .= " INNER JOIN {$wpdb->term_relationships} ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id) ";
+	}
+	$where .= $wpdb->prepare( " AND blog_id = %d ", $blog_id);				// Posts need to be from the current blog only
+	$where .= " AND $wpdb->posts.post_status = 'publish' ";
+	$where .= $wpdb->prepare( " AND dp_date >= '%s' ", $from_date);
+	$where .= " AND $wpdb->postmeta.meta_key='_liked' ";
+	if($catid != ''){
+		$where .= $wpdb->prepare( " AND $wpdb->term_relationships.term_taxonomy_id = %d ", $catid );
+	}
+	$groupby = " post_author ";
+	$orderby = " count DESC, vistas DESC, meta_value+0 DESC  ";*/
+
 /*Función que trae las etiquetas más vistas de determinada categoría*/
 function popular_tags_from_category($catid, $days, $limit=15){
 	global $wpdb;
@@ -1061,7 +1075,7 @@ function popular_tags_from_category($catid, $days, $limit=15){
 	$from_date = gmdate( 'Y-m-d 0' , $from_date);
 	$table_name = $wpdb->base_prefix . "top_ten_daily";
 	//$where = " AND dp_date >= '$from_date' ";
-	$popterms = "SELECT DISTINCT terms2.*, t2.count as count FROM $wpdb->posts as p1 LEFT JOIN $wpdb->term_relationships as r1 ON p1.ID = r1.object_ID LEFT JOIN $wpdb->term_taxonomy as t1 ON r1.term_taxonomy_id = t1.term_taxonomy_id LEFT JOIN $wpdb->terms as terms1 ON t1.term_id = terms1.term_id LEFT JOIN {$table_name} as top1 ON top1.postnumber = p1.ID, $wpdb->posts as p2 LEFT JOIN $wpdb->term_relationships as r2 ON p2.ID = r2.object_ID LEFT JOIN $wpdb->term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id 	LEFT JOIN $wpdb->terms as terms2 ON t2.term_id = terms2.term_id 	LEFT JOIN {$table_name} as top2 ON top2.postnumber = p2.ID WHERE t1.taxonomy = 'category' AND p1.post_status = 'publish' AND top1.dp_date >= '$from_date' AND terms1.term_id = '$catid' AND t2.taxonomy = 'post_tag' AND p2.post_status = 'publish' AND top2.dp_date >= '$from_date' AND 	p1.ID = p2.ID ORDER BY count DESC LIMIT $limit";
+	$popterms = "SELECT DISTINCT terms2.*, t2.count as count FROM $wpdb->posts as p1 LEFT JOIN $wpdb->term_relationships as r1 ON p1.ID = r1.object_ID LEFT JOIN $wpdb->term_taxonomy as t1 ON r1.term_taxonomy_id = t1.term_taxonomy_id LEFT JOIN $wpdb->terms as terms1 ON t1.term_id = terms1.term_id LEFT JOIN {$table_name} as top1 ON top1.postnumber = p1.ID LEFT JOIN {$wpdb->postmeta} as meta1 ON (p1.ID = meta1.post_id), $wpdb->posts as p2 LEFT JOIN $wpdb->term_relationships as r2 ON p2.ID = r2.object_ID LEFT JOIN $wpdb->term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id 	LEFT JOIN $wpdb->terms as terms2 ON t2.term_id = terms2.term_id 	LEFT JOIN {$table_name} as top2 ON top2.postnumber = p2.ID LEFT JOIN {$wpdb->postmeta} as meta2 ON (p2.ID = meta2.post_id) WHERE t1.taxonomy = 'category' AND p1.post_status = 'publish' AND top1.dp_date >= '$from_date' AND meta1.meta_key='_liked' AND terms1.term_id = '$catid' AND t2.taxonomy = 'post_tag' AND p2.post_status = 'publish' AND top2.dp_date >= '$from_date' AND meta2.meta_key='_liked' AND p1.ID = p2.ID ORDER BY count DESC, meta1.meta_value+0 DESC LIMIT $limit";
 	$terms = $wpdb->get_results($popterms);
 	if($terms){
 		$args = array(
@@ -1106,7 +1120,7 @@ function trending_tags($limit=10, $days ){
 	$from_date = gmdate( 'Y-m-d 0' , $from_date);
 	$table_name = $wpdb->base_prefix . "top_ten_daily";
 	$where = " AND dp_date >= '$from_date' ";
-	$popterms = "SELECT DISTINCT terms2.*, t2.count as count FROM $wpdb->posts as p2 LEFT JOIN $wpdb->term_relationships as r2 ON p2.ID = r2.object_ID LEFT JOIN $wpdb->term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id 	LEFT JOIN $wpdb->terms as terms2 ON t2.term_id = terms2.term_id LEFT JOIN {$table_name} as top2 ON top2.postnumber = p2.ID	WHERE t2.taxonomy = 'post_tag' AND p2.post_status = 'publish' AND top2.dp_date >= '$from_date' ORDER BY count DESC LIMIT $limit";
+	$popterms = "SELECT DISTINCT terms2.*, t2.count as count FROM $wpdb->posts as p2 LEFT JOIN $wpdb->term_relationships as r2 ON p2.ID = r2.object_ID LEFT JOIN $wpdb->term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id 	LEFT JOIN $wpdb->terms as terms2 ON t2.term_id = terms2.term_id LEFT JOIN {$table_name} as top2 ON top2.postnumber = p2.ID	LEFT JOIN {$wpdb->postmeta} as meta2 ON (p2.ID = meta2.post_id) WHERE t2.taxonomy = 'post_tag' AND p2.post_status = 'publish' AND top2.dp_date >= '$from_date' AND meta2.meta_key='_liked' ORDER BY count DESC, meta2.meta_value+0 DESC LIMIT $limit";
 	$terms = $wpdb->get_results($popterms);
 	return $terms;
 }
