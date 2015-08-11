@@ -943,7 +943,7 @@ var Boxgrid = (function() {
     return { width : w, height : h };
   }
 
-  var $items = $( '.ejes-home a[class*="cat-bg-"]' ),
+  var $items = $( '.ejes-home .og-grid > li' ),
     transEndEventNames = {
       'WebkitTransition' : 'webkitTransitionEnd',
       'MozTransition' : 'transitionend',
@@ -991,7 +991,7 @@ var Boxgrid = (function() {
         var layoutProp = getItemLayoutProp( $item ),
           clipPropFirst = 'rect(' + layoutProp.top + 'px ' + ( layoutProp.left + layoutProp.width ) + 'px ' + ( layoutProp.top + layoutProp.height ) + 'px ' + layoutProp.left + 'px)',
           clipPropLast = 'rect(0px ' + winsize.width + 'px ' + winsize.height + 'px 0px)';
-        console.log('3. '+layoutProp);
+        console.log('3. '+JSON.stringify(layoutProp));
         console.log('4. '+clipPropFirst);
         console.log('5. '+clipPropLast);
 
