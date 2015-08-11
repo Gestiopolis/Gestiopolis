@@ -249,7 +249,7 @@ function so_25888630_ad_between_paragraphs($content){
          *
         *------------------------------------------------------------------------------*/ 
         $count = count( $paragraphs );
-        if( 6 >= $count ) {
+        if( 12 >= $count ) {
             $totals = array( $paragraphs ); 
         }/*else if( $count > 4 && $count <= 20 ){
             $midpoint = floor($count / 2);
