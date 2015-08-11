@@ -24,8 +24,27 @@ function insert_adman_ads( $content ) {
 </noscript>
 <div id="contPauta"></div></div>';
 $adman = '<div id="admanmedia" class="hidden-xs"><script src="http://icarus-wings.admanmedia.com/intext/intext_vast.js?pmu=183f9431;pmb=216f0476;size=600x338;visibility=50"></script></div>';
-$anuncios = array($despegar,$adman);
-$ad_code = $anuncios[rand(0,1)];
+$teads = '<script type="text/javascript">
+window._ttf = window._ttf || [];
+_ttf.push({
+pid          : 35670
+,lang        : "es"
+,slot        : \'.post-content .entry-content > p\'
+,format      : "inread"
+,minSlot     : 7
+,css         : "margin: 32px 0px;"
+});
+
+(function (d) {
+var js, s = d.getElementsByTagName(\'script\')[0];
+js = d.createElement(\'script\');
+js.async = true;
+js.src = \'//cdn.teads.tv/media/format.js\';
+s.parentNode.insertBefore(js, s);
+})(window.document);
+</script>';
+$anuncios = array($despegar,$adman,$teads);
+$ad_code = $anuncios[rand(0,2)];
 
 	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
         //if(!is_single(28207 )){
