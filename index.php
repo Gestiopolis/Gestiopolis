@@ -144,25 +144,25 @@
             <span class="eje-nombre"><?php echo $category->name; ?></span>
             <br class="clearfix">
             <span class="eje-tagline"><?php echo $category->description; ?></span>
-            <div class="rb-overlay">
-              <span class="rb-close">cerrar</span>
-              <div class="rb-content cat-bg-<?php echo $category->term_id; ?>">
-                <?php 
-                // the query
-                $catsquery = new WP_Query( 'cat='.$category->term_id); ?>
-
-                <?php if ( $catsquery->have_posts() ) : ?>
-                  <?php while ( $catsquery->have_posts() ) : $catsquery->the_post(); ?>
-                    <h3><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-                  <?php endwhile; ?>
-                  <?php wp_reset_postdata(); ?>
-
-                <?php else : ?>
-                  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-                <?php endif; ?>
-              </div>
-            </div>
           </a>
+          <div class="rb-overlay">
+            <span class="rb-close">cerrar</span>
+            <div class="rb-content cat-bg-<?php echo $category->term_id; ?>">
+              <?php 
+              // the query
+              $catsquery = new WP_Query( 'cat='.$category->term_id); ?>
+
+              <?php if ( $catsquery->have_posts() ) : ?>
+                <?php while ( $catsquery->have_posts() ) : $catsquery->the_post(); ?>
+                  <h3><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+
+              <?php else : ?>
+                <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+              <?php endif; ?>
+            </div>
+          </div>
         </li><!-- .span3 -->
         <?php } ?>
       </ul><!-- .row -->

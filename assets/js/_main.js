@@ -943,7 +943,7 @@ var Boxgrid = (function() {
     return { width : w, height : h };
   }
 
-  var $items = $( '.ejes-home .og-grid > li' ),
+  var $items = $('.ejes-home .og-grid > li'),
     transEndEventNames = {
       'WebkitTransition' : 'webkitTransitionEnd',
       'MozTransition' : 'transitionend',
