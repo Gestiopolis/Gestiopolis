@@ -939,6 +939,7 @@ var Boxgrid = (function() {
     if( current === -1 ) {
       $( 'BODY' ).css( 'overflow-y', 'auto' );
     }
+    console.log('width : '+w+', height : '+h);
     return { width : w, height : h };
   }
 
@@ -985,10 +986,14 @@ var Boxgrid = (function() {
         $item.data( 'isExpanded', true );
         // save current item's index
         current = $item.index();
+        console.log('2. '+$item.index());
 
         var layoutProp = getItemLayoutProp( $item ),
           clipPropFirst = 'rect(' + layoutProp.top + 'px ' + ( layoutProp.left + layoutProp.width ) + 'px ' + ( layoutProp.top + layoutProp.height ) + 'px ' + layoutProp.left + 'px)',
           clipPropLast = 'rect(0px ' + winsize.width + 'px ' + winsize.height + 'px 0px)';
+        console.log('3. '+layoutProp);
+        console.log('4. '+clipPropFirst);
+        console.log('5. '+clipPropLast);
 
         $overlay.css( {
           clip : supportTransitions ? clipPropFirst : clipPropLast,
