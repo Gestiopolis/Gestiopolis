@@ -157,6 +157,9 @@ var Gestiopolis = {
         
       //3. Slider home temas
       //slider(".temas-home", ".temas-home .carrusel", ".carrusel>.span3", 8);
+
+      //11. Grid archivo
+      Boxgrid.init();
       
       var $container = $('#recientes');
       // Fire Isotope only when images are loaded
@@ -951,6 +954,30 @@ $(document).ready(UTIL.loadEvents);
 
   var Boxgrid = (function() {
 
+    function getWindowSize() {
+      $body.css( 'overflow-y', 'hidden' );
+      var w = $window.width(), h =  $window.height();
+      if( current === -1 ) {
+        $body.css( 'overflow-y', 'auto' );
+      }
+      return { width : w, height : h };
+    }
+
+    function getItemLayoutProp( $item ) {
+      
+      var scrollT = $window.scrollTop(),
+        scrollL = $window.scrollLeft(),
+        itemOffset = $item.offset();
+
+      return {
+        left : itemOffset.left - scrollL,
+        top : itemOffset.top - scrollT,
+        width : $item.outerWidth(),
+        height : $item.outerHeight()
+      };
+
+    }
+
     var $items = $( '.ejes-home li > a[class*="cat-bg-"]' ),
       transEndEventNames = {
         'WebkitTransition' : 'webkitTransitionEnd',
@@ -1074,30 +1101,6 @@ $(document).ready(UTIL.loadEvents);
         }
       } );
 
-    }
-
-    function getItemLayoutProp( $item ) {
-      
-      var scrollT = $window.scrollTop(),
-        scrollL = $window.scrollLeft(),
-        itemOffset = $item.offset();
-
-      return {
-        left : itemOffset.left - scrollL,
-        top : itemOffset.top - scrollT,
-        width : $item.outerWidth(),
-        height : $item.outerHeight()
-      };
-
-    }
-
-    function getWindowSize() {
-      $body.css( 'overflow-y', 'hidden' );
-      var w = $window.width(), h =  $window.height();
-      if( current === -1 ) {
-        $body.css( 'overflow-y', 'auto' );
-      }
-      return { width : w, height : h };
     }
 
     return { init : init };
