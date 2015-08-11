@@ -29,7 +29,7 @@ $ad_code = $anuncios[rand(0,1)];
 
 	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
         //if(!is_single(28207 )){
-    		return prefix_insert_after_paragraph( $ad_code, 2, $content );
+    		return prefix_insert_after_paragraph( $ad_code, 4, $content );
         //}
 	}
 	
@@ -333,7 +333,7 @@ function so_25888630_ad_between_paragraphs($content){
             $m = array();
             foreach ( $p as $key=>$value ) {
                 if( 1 === $value && array_key_exists( $key-1, $p ) && $p[$key] === $p[$key-1] && !$m){
-                    $m[] = $key+3;
+                    $m[] = $key+2;
                 }elseif( !array_key_exists( $key+1, $p ) && !$m ) {
                     $m[] = 'no-ad';
                 }
