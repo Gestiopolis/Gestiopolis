@@ -1,3 +1,5 @@
+(function($) {
+
 var Boxgrid = (function() {
 
 	function getWindowSize() {
@@ -151,3 +153,5 @@ var Boxgrid = (function() {
 	return { init : init };
 
 });
+
+})(jQuery);
