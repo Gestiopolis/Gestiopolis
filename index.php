@@ -155,39 +155,34 @@
                     <div class="subtitle">Estos son los posts preferidos por nuestros lectores hoy</div>
                   </div>
                 </div>
-                <div class="row cat-section">
+                <div class="row cat-section posts-home">
                   <?php 
-                  // the query
-                  $catsquery = new WP_Query( 'cat='.$category->term_id.'&posts_per_page=8'); ?>
-
-                  <?php if ( $catsquery->have_posts() ) : ?>
-                    <?php while ( $catsquery->have_posts() ) : $catsquery->the_post(); ?>
+                      $tposts = get_trending_posts(8, TRENDING_DAYS, $term->term_id);
+                      foreach ($tposts as $tpost) {
+                        $post_title = stripslashes($tpost->post_title);
+                        $permalink = get_permalink($tpost->ID);
+                        $category = get_the_category($tpost->ID);
+                        $category_id = $category[0]->term_id;
+                        $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $tpost->ID ), 'main-thumb' );
+                    ?>
                       <div class="postw col-lg-3 col-md-4 col-sm-6">
-                        <article id="post-<?php the_ID(); ?>" class="post">
+                        <article id="post-<?php echo $tpost->ID; ?>" class="post">
                           <div class="wrapper-img">
-                            <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
-                              <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'main-thumb' );
-                            ?>
+                            <a href="<?php echo $permalink; ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
                               <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy img-responsive">
                               <div class="overlay"></div>
                               <div class="vert-center-wrapper">
                                 <div class="vert-centered">
                                   <div class="text-center">
-                                    <h2 class="entry-title"><span><?php the_title(); ?></span></h2>
+                                    <h2 class="entry-title"><span><?php echo $post_title; ?></span></h2>
                                   </div>
                                 </div>
                               </div>
-                              <div class="sb-caption"><i class="fa fa-clock-o"></i> <?php echo estimate_time();?> de lectura</div>
                             </a>
                           </div>
                         </article><!-- .post -->
                       </div><!-- .col-md-3 col-sm-6 -->
-                    <?php endwhile; ?>
-                    <?php wp_reset_postdata(); ?>
-
-                  <?php else : ?>
-                    <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-                  <?php endif; ?>
+                    <?php } // fin foreach $tposts ?>
 
                 </div>
               </div>
