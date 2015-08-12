@@ -975,10 +975,16 @@ var Boxgrid = (function() {
 
       var $item = $( this ),
         $close = $item.find( 'span.rb-close' ),
-        $overlay = $item.children( 'div.rb-overlay' );
+        $overlay = $item.children( 'div.rb-overlay' ),
+        $link = $overlay.find( 'a' );
+
+      $link.on( 'click', function(e) {
+        e.preventDefault();
+        var addressValue = $(this).attr("href");
+        window.location.replace(addressValue);
+      });  
 
       $item.on( 'click', function(e) {
-        console.log(e);
         e.preventDefault();
         if( $item.data( 'isExpanded' ) ) {
           return false;
@@ -986,15 +992,11 @@ var Boxgrid = (function() {
         $item.data( 'isExpanded', true );
         // save current item's index
         current = $item.index();
-        console.log('2. '+$item.index());
-
+        
         var layoutProp = getItemLayoutProp( $item ),
           clipPropFirst = 'rect(' + layoutProp.top + 'px ' + ( layoutProp.left + layoutProp.width ) + 'px ' + ( layoutProp.top + layoutProp.height ) + 'px ' + layoutProp.left + 'px)',
           clipPropLast = 'rect(0px ' + winsize.width + 'px ' + winsize.height + 'px 0px)';
-        console.log('3. '+JSON.stringify(layoutProp));
-        console.log('4. '+clipPropFirst);
-        console.log('5. '+clipPropLast);
-
+        
         $overlay.css( {
           clip : supportTransitions ? clipPropFirst : clipPropLast,
           opacity : 1,
