@@ -1510,7 +1510,9 @@ function footer_adsense_script() {
 <script type=\'text/javascript\'>
 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1436976370032-0\'); });
 </script>
-</div>';
+</div>
+<script type="text/javascript" src="http://as.ebz.io/api/choixPubJS.htm?pid=1138158&screenLayer=1&mode=NONE&home=http://www.gestiopolis.com"></script>
+';
 }
 add_action('wp_footer', 'footer_adsense_script', 1);
 function filter_lazyload($content) {
