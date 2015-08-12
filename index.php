@@ -151,7 +151,7 @@
               <div class="container">
                 <div class="row title-section">
                   <div class="col-sm-12">
-                    <h2><?php echo $category->name; ?></h2>
+                    <h2><a href="<?php echo get_category_link( $category->term_id ); ?>"><?php echo $category->name; ?></a></h2>
                     <div class="subtitle">Estos son los posts preferidos por nuestros lectores hoy</div>
                   </div>
                 </div>
