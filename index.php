@@ -157,7 +157,7 @@
                 </div>
                 <div class="row cat-section posts-home">
                   <?php 
-                      $tposts = get_trending_posts(8, TRENDING_DAYS, $term->term_id);
+                      $tposts = get_trending_posts(8, TRENDING_DAYS, $category->term_id);
                       foreach ($tposts as $tpost) {
                         $post_title = stripslashes($tpost->post_title);
                         $permalink = get_permalink($tpost->ID);
