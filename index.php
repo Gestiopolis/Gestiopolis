@@ -148,19 +148,49 @@
           <div class="rb-overlay">
             <span class="rb-close">cerrar</span>
             <div class="rb-content cat-bg-<?php echo $category->term_id; ?>">
-              <?php 
-              // the query
-              $catsquery = new WP_Query( 'cat='.$category->term_id); ?>
+              <div class="container">
+                <div class="row title-section">
+                  <div class="col-sm-12">
+                    <h2><?php echo $category->name; ?></h2>
+                    <div class="subtitle">Estos son los posts preferidos por nuestros lectores hoy</div>
+                  </div>
+                </div>
+                <div class="row cat-section">
+                  <?php 
+                  // the query
+                  $catsquery = new WP_Query( 'cat='.$category->term_id.'&posts_per_page=8'); ?>
 
-              <?php if ( $catsquery->have_posts() ) : ?>
-                <?php while ( $catsquery->have_posts() ) : $catsquery->the_post(); ?>
-                  <h3><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-                <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
+                  <?php if ( $catsquery->have_posts() ) : ?>
+                    <?php while ( $catsquery->have_posts() ) : $catsquery->the_post(); ?>
+                      <div class="postw col-lg-3 col-md-4 col-sm-6">
+                        <article id="post-<?php the_ID(); ?>" class="post">
+                          <div class="wrapper-img">
+                            <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
+                              <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'main-thumb' );
+                            ?>
+                              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy img-responsive">
+                              <div class="overlay"></div>
+                              <div class="vert-center-wrapper">
+                                <div class="vert-centered">
+                                  <div class="text-center">
+                                    <h2 class="entry-title"><span><?php the_title(); ?></span></h2>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="sb-caption"><i class="fa fa-clock-o"></i> <?php echo estimate_time();?> de lectura</div>
+                            </a>
+                          </div>
+                        </article><!-- .post -->
+                      </div><!-- .col-md-3 col-sm-6 -->
+                    <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
 
-              <?php else : ?>
-                <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-              <?php endif; ?>
+                  <?php else : ?>
+                    <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+                  <?php endif; ?>
+
+                </div>
+              </div>
             </div>
           </div>
         </li><!-- .span3 -->
