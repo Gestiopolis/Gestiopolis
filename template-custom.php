@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: StoryAd Template
+Template Name: Custom Template
 */
 ?>
 
