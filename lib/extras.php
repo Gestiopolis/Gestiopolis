@@ -1475,6 +1475,13 @@ echo '<script src=\'http://www5.smartadserver.com/config.js?nwid=1371\' type="te
 }
 }
 add_action('wp_head', 'head_scripts_ads', 1);
+function head_storyad() {
+	if (is_page_template('storyadtemplate.php')) {
+	echo '<script type="text/javascript" src="http://storyad.net/advertisement/story.js"></script>
+	<meta name="robots" content="noindex,nofollow" />';
+	} 
+}
+add_action('wp_head', 'head_storyad', 1);
 function head_meta_schema() {
 	if(is_single()) {
 		global $post;
