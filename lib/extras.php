@@ -1412,6 +1412,7 @@ function footer_dataxpand() {
 	    s.parentNode.insertBefore(tagjs, s);
 	  }());
 	</script>
+	<script type=\'text/javascript\' src=\'//tag.imonomy.com/script/14567725385/preload.js\' ></script>
 	';
 }
 add_action('wp_footer', 'footer_dataxpand', 100);
