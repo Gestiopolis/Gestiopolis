@@ -78,15 +78,15 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
       </div><!--.col-sm-3-->
       <div class="col-sm-12 col-md-9 maincol">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          <h1 class="entry-title title"><!-- #Title --></h1>
+          <h1 class="entry-title title">#Title</h1>
           <div class="row">
             <div class="col-sm-12 col-md-2 col-md-push-10">
               <div class="breadcredit">
                 <div class="author-info">
-								  <a href="#autores" rel="author" class="fn"><!-- #Author --></a>
+								  <a href="#autores" rel="author" class="fn">#Author</a>
 								</div>
 								<ul class="list-unstyled">
-								  <li><time class="entry-date published" datetime="<?php echo get_the_time('c'); ?>"><i class="fa fa-calendar"></i> <!-- #ReleaseDate --></time></li>
+								  <li><time class="entry-date published" datetime="<?php echo get_the_time('c'); ?>"><i class="fa fa-calendar"></i>#ReleaseDate</time></li>
 								</ul>
               </div>
             </div>
@@ -94,7 +94,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
           <div class="post-content clearfix">
             <div class="entry-content">
               <?php //the_content(); ?>
-              <!-- #Release -->
+              #Release
             </div>
             <div class="adsce">
               <script type="text/javascript"><!--
@@ -109,58 +109,6 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               </script>
             </div>
-            <div id="comments" class="comentarios">
-              <a href="javascript:;" class="btn btn-block btn-primary btn-lg cerrado"><span>Tu opinión vale, comenta aquí</span><span style="display:none;">Oculta los comentarios</span></a>
-              <div class="comments-wrapper">
-                <h2><i class="fa fa-comments"></i> Comentarios</h2>
-                <?php echo do_shortcode('[fbcomments]'); ?>
-                <?php //comments_template('/templates/comments.php'); ?>
-              </div>
-            </div>
-            <div class="compartelo">
-              <h2><i class="fa fa-share"></i> Compártelo con tu mundo</h2>
-              <ul class="list-unstyled">
-                <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&layout=link&appId=220995104693477" class="btn facebook"><i class="fa fa-facebook-square"></i> Facebook</a></li>
-                <li><a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink());?>&amp;text=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
- ?>&amp;via=gestiopoliscom" class="btn twitter"><i class="fa fa-twitter-square"></i> Twitter</a></li>
-                <li><a target="_blank" href="mailto:?subject=Revisa este artículo&amp;body=Hola! Revisa este artículo: <?php the_title(); ?> - <?php echo get_permalink(); ?>." class="btn email"><i class="fa fa-envelope"></i></a></li>
-                <li><a target="_blank" href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink()); ?>" class="btn google"><i class="fa fa-google-plus"></i></a></li>
-                <li><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(get_permalink()); ?>&title=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
- ?>" class="btn linkedin"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="#" class="btn more"><i class="fa fa-plus"></i></a></li>
-              </ul>
-            </div><!-- .compartelo -->
-            <div class="compartelo posts-home hidden-md hidden-lg">
-              <div class="title-section"><h2>Relacionados</h2><i class="fa fa-caret-down"></i></div>
-              <?php 
-              $show = 12;
-              $postsnot = array();
-              $postsnot[] = $post->ID;
-              $mainpost = $post->ID;
-              $query1 = ci_get_related_posts_1( $post->ID, $show );
-              //$countp = 1;
-                  if( $query1->have_posts() ) { while ($query1->have_posts()) : $query1->the_post(); 
-                    $postsnot[] = $post->ID;
-                    if($mainpost != $post->ID){
-                      get_template_part( 'templates/content', 'recommend' );
-                    }
-                    //$countp++; 
-                   endwhile;?>
-                  <?php } 
-                  wp_reset_query(); 
-                  wp_reset_postdata(); 
-                  $show = $show - count($query1->posts);
-                 if ($show > 0) {
-                  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-                $query2 = ci_get_related_posts_2( $post->ID, $postsnot, $show, $paged );
-                    if( $query2->have_posts() ) { while ($query2->have_posts()) : $query2->the_post();get_template_part( 'templates/content', 'recommend' );
-                     endwhile;
-                    } 
-                    wp_reset_query(); 
-                    wp_reset_postdata();
-                  }
-                  ?>
-            </div><!-- .recomendados -->
           </div>
           <footer>
             <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
