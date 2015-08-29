@@ -7,6 +7,7 @@
       	<li><a title="ABC Temático" href="<?php echo get_page_link(325588); ?>">ABC Temático</a></li>
       	<li><a title="Archivo" href="<?php echo get_page_link(325589); ?>">Archivo</a></li>
       	<li><a title="Contacto" href="<?php echo get_page_link(325586); ?>">Contacto</a></li>
+        <li><a title="Paute aquí" href="<?php echo get_page_link(334632); ?>">Paute aquí</a></li>
       	<li><a title="Términos de uso" href="<?php echo get_page_link(325587); ?>">Términos de Uso</a></li>
       	<li>&copy; 2000 - <?php echo date('Y');?> WebProfit Ltda.</li>
       </ul>
