@@ -235,6 +235,8 @@ get_currentuserinfo();
   </div>
   <div class="row posts-home">
     <div id="recientes">
+      <script type="text/javascript" src="https://story.ad/advertisement/show_ad/48" async></script> 
+      <div id='story-63-48'></div> 
       <?php
         if ( have_posts() ) :
           // Start the Loop.
