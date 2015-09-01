@@ -1414,7 +1414,7 @@ function footer_dataxpand() {
 	</script>
 	';
 }
-//add_action('wp_footer', 'footer_dataxpand', 100);
+add_action('wp_footer', 'footer_dataxpand', 100);
 
 function head_scripts_ads() {
 	global $post;
@@ -1518,7 +1518,7 @@ function footer_adsense_script() {
 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1436976370032-0\'); });
 </script>
 </div>
-<script type="text/javascript" src="http://as.ebz.io/api/choixPubJS.htm?pid=1138158&screenLayer=1&mode=NONE&home=http://www.gestiopolis.com"></script>
+<!--<script type="text/javascript" src="http://as.ebz.io/api/choixPubJS.htm?pid=1138158&screenLayer=1&mode=NONE&home=http://www.gestiopolis.com"></script>-->
 ';
 }
 add_action('wp_footer', 'footer_adsense_script', 1);
