@@ -6,7 +6,7 @@ $maincat = get_the_category($post->ID);
     <h3>Relacionados</h3>
     <i class="fa fa-caret-down"></i>
     <?php 
-    $show = 12;
+    $show = 19;
     $postsnot = array();
     $postsnot[] = $post->ID;
     $mainpost = $post->ID;
@@ -22,12 +22,6 @@ $maincat = get_the_category($post->ID);
       <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=related_posts&ic_source=sidebar" class="internal-campaign"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy pull-left" width="64" height="56"></a>
       <div class="wrapper-content">
         <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=related_posts&ic_source=sidebar" class="internal-campaign"><?php the_title(); ?></a></h2>
-        <?php 
-        /*$categories = get_the_category($post->ID); 
-        foreach($categories as $category){
-          echo '<i class="fa icon-cat-'.$category->term_id.' cat-col-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> &nbsp;';
-        }*/
-        ?>
       </div>
     </article>
     <?php }
@@ -47,12 +41,6 @@ $maincat = get_the_category($post->ID);
       <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=related_posts&ic_source=sidebar"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy pull-left" width="64" height="56"></a>
       <div class="wrapper-content">
         <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=related_posts&ic_source=sidebar"><?php the_title(); ?></a></h2>
-        <?php 
-        /*$categories = get_the_category($post->ID); 
-        foreach($categories as $category){
-          echo '<i class="fa icon-cat-'.$category->term_id.' cat-col-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> &nbsp;&nbsp;';
-        }*/
-        ?>
       </div>
     </article>
     <?php endwhile;?>
@@ -65,33 +53,6 @@ $maincat = get_the_category($post->ID);
   }
     ?>
   </div><!-- .sidebar-post -->
-  <div class="sidebar-post">
-    <h3>Recientes</h3>
-    <i class="fa fa-caret-down"></i>
-    <?php 
-    $query2 = new WP_Query('posts_per_page=6&cat='.$maincat[0]->term_id);
-    while ( $query2->have_posts() ) {
-      $query2->the_post(); ?>
-      <article id="post-<?php the_ID(); ?>" class="post">
-      <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
-      ?>
-      <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=recent_posts&ic_source=sidebar" class="internal-campaign"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy pull-left" width="64" height="56"></a>
-      <div class="wrapper-content">
-        <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=recent_posts&ic_source=sidebar" class="internal-campaign"><?php the_title(); ?></a></h2>
-        <?php 
-        /*$categories = get_the_category($post->ID); 
-        foreach($categories as $category){
-          echo '<i class="fa icon-cat-'.$category->term_id.' cat-col-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> &nbsp;';
-        }*/
-        ?>
-      </div>
-    </article>
-    <?php 
-    }
-    wp_reset_query(); 
-    wp_reset_postdata();
-    ?>
-  </div>
   <div class="sidebar-post">
     <h3>Populares</h3>
     <i class="fa fa-caret-down"></i>
