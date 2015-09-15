@@ -242,9 +242,3 @@
     </div><!-- #recientes -->
   </div><!-- .row -->
 </div><!-- .container -->
-<!-- /1007663/zocalo-movil -->
-<div id='div-gpt-ad-1442329714332-0' style='height:125px; width:300px;'>
-<script type='text/javascript'>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1442329714332-0'); });
-</script>
-</div>
