@@ -88,7 +88,7 @@ if(!is_array($exlinks)){?>
   <div>
     <i class="fa fa-link"></i>
     <strong>Más para aprender en la web</strong>
-    <ul>
+    <ul class="gafrom from-post-exlinks">
     <?php 
     $number = 1;
     foreach($exlinks as $q){

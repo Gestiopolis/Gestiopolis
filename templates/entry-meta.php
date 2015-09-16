@@ -1,4 +1,4 @@
-<div class="author-info">
+<div class="author-info gafrom from-post-author-info">
   <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
   <?php //echo get_author_color_id(); ?> <a href="#autores" rel="author" class="fn"><?php echo get_the_author();//echo get_post_meta($post->ID, "author-name_value", true); ?></a>
   <?php else : ?>
@@ -9,7 +9,7 @@
   <?php 
   $categories = get_the_category(); 
   foreach($categories as $category){
-    echo '<li class="catego cat-col-'.$category->term_id.'"><i class="fa icon-cat-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a></li>';
+    echo '<li class="catego cat-col-'.$category->term_id.' gafrom from-post-categories"><i class="fa icon-cat-'.$category->term_id.'"></i> <a class="cat-col-'.$category->term_id.'" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a></li>';
   }
   ?>
   <li><time class="entry-date published" datetime="<?php echo get_the_time('c'); ?>"><i class="fa fa-calendar"></i> <?php echo get_the_date('d.m.Y'); ?></time></li>

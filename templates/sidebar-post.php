@@ -1,7 +1,7 @@
 <?php global $post; 
 $maincat = get_the_category($post->ID); 
 ?>
-<div class="right-post">
+<div class="right-post gafrom from-sidebar-right-post">
   <div class="sidebar-post">
     <h3>Relacionados</h3>
     <i class="fa fa-caret-down"></i>

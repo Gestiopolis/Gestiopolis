@@ -561,6 +561,7 @@ var Gestiopolis = {
 
   single: {
     init: function() {
+      $(".entry-content").find("a").addClass("gafrom from-post-content-link");
       $(window).scroll(function(){
         var scrolled = $(window).scrollTop();
         var arth = 100;

@@ -141,6 +141,11 @@ add_action('wp_head', 'roots_jquery_local_fallback');
  * Cookie domain is 'auto' configured. See: http://goo.gl/VUCHKM
  */
 function roots_google_analytics() { ?>
+<!-- Segumiento de recursos de navegación por ikhuerta.com -->
+<script>
+var gafrom = function (nd,v) {  if (!v) { v = document.cookie.match( /_gafrom=([^;]+)(;.+)?$/ ); if (!nd) document.cookie = '_gafrom=;path=/'; return (v && v[1]) ? v[1] : '(not set)';}  else document.cookie = '_gafrom='+v+';path=/'; } 
+$(function () { $('.gafrom').each( function (i,e) { var c = $(e).attr('class').split(' '); for (j in c) { var m = /^from\-(.+)/.exec(c[j]); if (m != null) { m[1]=m[1].split('-').join(' '); var a = ($(e).is('a'))? $(e) : $('a',e); a.data('gafrom', m[1] ).click(function () { gafrom(1, $(this).data('gafrom')+' (link)' );return true; }); a = ($(e).is('form'))? $(e) : $('form',e); a.data('gafrom', m[1] ).submit(function () { gafrom(1, $(this).data('gafrom')+' (form)' );return true; }); break;}}}); });
+</script>
 <!-- Internal campaigns by Iñaki Huerta: blog.ikhuerta.com -->
 <script> 
 var gaic = function () { gaic.r( gaic.c(),'|'); gaic.r(location.search.substring(1) );}
@@ -161,7 +166,7 @@ gaic.get = function (k) { return (k) ? gaic.v[k] : gaic.v; }; gaic();
       console.log('GoogleAnalytics: ' + [].slice.call(arguments));
     }
   <?php endif; ?>
-  ga('create','<?php echo GOOGLE_ANALYTICS_ID; ?>','auto');ga('set', 'dimension1', gaic.get('medium') );ga('set', 'dimension2', gaic.get('source') );ga('send','pageview');
+  ga('create','<?php echo GOOGLE_ANALYTICS_ID; ?>','auto');ga('set', 'dimension1', gaic.get('medium') );ga('set', 'dimension2', gaic.get('source') );ga('set', 'dimension3', gafrom() );ga('send','pageview');
 </script>
 <!--<script>
 jQuery(function() {
