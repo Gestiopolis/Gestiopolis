@@ -1485,7 +1485,7 @@ echo '
 </script>
 <script type=\'text/javascript\'>
   googletag.cmd.push(function() {
-    googletag.defineSlot(\'/1007663/zocalo-movil\', [300, 125], \'div-gpt-ad-1442500998553-0\').addService(googletag.pubads());
+    googletag.defineOutOfPageSlot(\'/1007663/zocalo-movil\', [300, 125], \'div-gpt-ad-1442500998553-0\').addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
     googletag.pubads().collapseEmptyDivs();
     googletag.enableServices();
