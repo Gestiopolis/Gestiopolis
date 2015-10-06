@@ -43,8 +43,8 @@ js.src = \'//cdn.teads.tv/media/format.js\';
 s.parentNode.insertBefore(js, s);
 })(window.document);
 </script></div>';
-$anuncios = array($despegar,$adman,$teads,$adman,$adman);
-$ad_code = $anuncios[rand(0,4)];
+$anuncios = array($adman,$teads,$adman,$adman, $teads, $adman, $teads, $adman, $adman, $adman);
+$ad_code = $anuncios[rand(0,9)];
 
 	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
         //if(!is_single(28207 )){
