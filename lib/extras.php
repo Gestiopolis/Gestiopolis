@@ -1495,7 +1495,7 @@ function head_meta_schema() {
 add_action('wp_head', 'head_meta_schema', 1);
 function footer_adsense_script() {
 	
-		echo '<script type=\'text/javascript\'>
+		$adslive = '<script type=\'text/javascript\'>
   (function() {
     var useSSL = \'https:\' == document.location.protocol;
     var src = (useSSL ? \'https:\' : \'http:\') +
@@ -1521,6 +1521,15 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1436976370032-0\'
 </div>
 <!--<script type="text/javascript" src="http://as.ebz.io/api/choixPubJS.htm?pid=1138158&screenLayer=1&mode=NONE&home=http://www.gestiopolis.com"></script>-->
 ';
+$plads= '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2753881743271989",
+    enable_page_level_ads: true
+  });
+</script>';
+$anuncios = array($plads,$adslive);
+echo $anuncios[rand(0,1)];
 }
 add_action('wp_footer', 'footer_adsense_script', 1);
 function filter_lazyload($content) {
