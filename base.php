@@ -27,7 +27,7 @@
   <?php if(is_single()){ 
     global $post;
     ?>
-    <div class="fixed-action-btn bottom-right">
+    <div class="fixed-action-btn bottom-right gafrom from-post-fixed-button-mobile">
       <a href="javascript:;"class="btn-floating share-color">
         <i class="large fa fa-share"></i>
       </a>
@@ -40,7 +40,7 @@
         <li><a title="Agrega tu comentario" href="<?php comments_link(); ?>" class="btn-floating gray"><i class="large fa fa-comments"></i></a></li>
       </ul>
     </div>
-    <div class="fixed-action-btn top-left">
+    <div class="fixed-action-btn top-left gafrom from-post-fixed-button">
       <a title="Agrega tu comentario" href="<?php comments_link(); ?>"class="btn-floating gray">
         <i class="large fa fa-comments"></i>
       </a>
@@ -57,7 +57,7 @@
       </ul>
     </div>
   <?php } ?>
-  <a href="#myNavmenu" class="toTop" title="Volver a arriba"><i class="fa fa-chevron-circle-up"></i></a>
+  <a href="#myNavmenu" class="toTop gafrom from-button-totop" title="Volver a arriba"><i class="fa fa-chevron-circle-up"></i></a>
   <?php get_template_part('templates/footer'); ?>
 
   <?php wp_footer();?>

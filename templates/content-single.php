@@ -1,10 +1,10 @@
 <?php while (have_posts()) : the_post(); ?>
   <div class="container cposts">
     <div class="row">
-      <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
+      <div class="hidden-xs hidden-sm col-md-3 sidebarcol gafrom from-sidebar-post">
         <div class="fixedside">
 <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
-<div id="google-ads-sidebar"></div>
+<div id="google-ads-sidebar" class="gafrom from-ad-sidebar"></div>
 <script type="text/javascript"> 
  
     /* Calculate the width of available ad space */
@@ -36,7 +36,7 @@
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 <?php }else { ?>      
-<div id="google-ads-sidebar"></div>
+<div id="google-ads-sidebar" class="gafrom from-ad-sidebar"></div>
 <script type="text/javascript"> 
  
     /* Calculate the width of available ad space */
@@ -94,9 +94,9 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
           <h1 class="entry-title title"><?php the_title(); ?></h1>
           <div class="row"><!-- Empieza row de contenido y meta datos -->
             <div class="col-sm-12 col-md-2 col-md-push-10">
-              <div class="breadcredit">
+              <div class="breadcredit gafrom from-post-breadcredit">
                 <?php get_template_part('templates/entry-meta'); ?>
-                <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm"> ','','</div>'); ?>
+                <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm gafrom from-post-tags"> ','','</div>'); ?>
               </div>
             </div>
             <div class="col-sm-12 col-md-10 col-md-pull-2 content-col">
@@ -187,7 +187,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
           <p><b><a href="<?php echo home_url('/'); ?>" id="deletePdf">ELIMINAR DOCUMENTO</a></b></p>
           <?php } ?>
           <div class="post-content clearfix">
-            <div class="entry-content">
+            <div class="entry-content gafrom from-post-entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
               <div class="adsfr">
                 <script type="text/javascript"><!--
@@ -205,7 +205,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               <?php } ?>
               <?php the_content(); ?>
             </div>
-            <div id="likepost" class="compartelo">
+            <div id="likepost" class="compartelo  gafrom from-post-likepost">
               <h2 class="text-center">Hazle saber al autor que aprecias su trabajo</h2>
               <?php if(function_exists(getILikeThis)) getILikeThis('get'); ?>
             </div>
@@ -230,9 +230,9 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
               </script>
             </div>
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
-            <div class="downbox"><a class="downlink" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
+            <div class="downbox"><a class="downlink gafrom from-post-downlink" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
-            <div id="comments" class="comentarios">
+            <div id="comments" class="comentarios gafrom from-post-comments">
               <a href="javascript:;" class="btn btn-block btn-primary btn-lg cerrado"><span>Tu opinión vale, comenta aquí</span><span style="display:none;">Oculta los comentarios</span></a>
               <div class="comments-wrapper">
                 <h2><i class="fa fa-comments"></i> Comentarios</h2>
@@ -240,22 +240,48 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                 <?php //comments_template('/templates/comments.php'); ?>
               </div>
             </div>
-            <div id="suscripcion" class="suscripcion hidden">
+            <script type="text/javascript">
+              //<![CDATA[
+              if (typeof newsletter_check !== "function") {
+              window.newsletter_check = function (f) {
+                  var re = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-]{1,})+\.)+([a-zA-Z0-9]{2,})+$/;
+                  if (!re.test(f.elements["ne"].value)) {
+                      alert("El email no es correcto");
+                      return false;
+                  }
+                  for (var i=1; i<20; i++) {
+                  if (f.elements["np" + i] && f.elements["np" + i].required && f.elements["np" + i].value == "") {
+                      alert("");
+                      return false;
+                  }
+                  }
+                  if (f.elements["ny"] && !f.elements["ny"].checked) {
+                      alert("Debes haber leído las políticas de privacidad.");
+                      return false;
+                  }
+                  return true;
+              }
+              }
+              //]]>
+              </script>
+            <div id="suscripcion" class="suscripcion gafrom from-post-suscripcion">
               <div>
                 <span class="author-color"><i class="fa fa-envelope"></i></span>
                 <strong>Recibe los mejores contenidos en tu email</strong>
                 <p>
                   <em>Nos aseguraremos de seleccionar especialmente para ti sólo lo mejor de las nuevas publicaciones cada semana</em>
                 </p>
+                <form method="post" action="http://www.gestiopolis.net/?na=s" onsubmit="return newsletter_check(this)">
                   <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">@</span>
-                    <input type="text" class="form-control" placeholder="Que se vea y funcione como http://azumbrunnen.me/frontkit/" aria-describedby="basic-addon1">
+                    <input type="email" class="form-control newsletter-email" name="ne" placeholder="Ingresa aquí tu email" aria-describedby="basic-addon1">
                   </div>
+                </form>
               </div>
             </div>
             <div class="compartelo">
               <h2><i class="fa fa-share"></i> Compártelo con tu mundo</h2>
-              <ul class="list-unstyled">
+              <ul class="list-unstyled gafrom from-post-compartelo">
                 <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&layout=link&appId=220995104693477" class="btn facebook"><i class="fa fa-facebook-square"></i> Facebook</a></li>
                 <li><a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink());?>&amp;text=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
  ?>&amp;via=gestiopoliscom" class="btn twitter"><i class="fa fa-twitter-square"></i> Twitter</a></li>
@@ -268,7 +294,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
             </div><!-- .compartelo -->
             <div id="autores" class="autores">
               <h2>Escrito por:</h2>
-              <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="author vcard">
+              <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="author vcard gafrom from-post-author-info-bottom">
                 <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
                 <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="url">
                   <?php echo get_author_color_id(); ?>
@@ -290,9 +316,9 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
             </div>
             <div class="post-tags hidden-md hidden-lg">
               <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
-              <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
+              <?php the_tags('<div class="temas-archive  gafrom from-post-tags-mobile"> ','','</div>'); ?>
             </div><!-- .post-tags -->
-            <div class="compartelo posts-home hidden-md hidden-lg">
+            <div class="compartelo posts-home hidden-md hidden-lg gafrom from-post-rels-mobile">
               <div class="title-section"><h2>Relacionados</h2><i class="fa fa-caret-down"></i></div>
               <?php 
               $show = 12;
@@ -327,7 +353,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
             <?php get_template_part('templates/post-front-edit'); ?>
             <?php } ?>
             <?php get_template_part('templates/entry-exlinks'); ?>
-            <div class="quotes">
+            <div class="quotes gafrom from-post-quotes">
               <div>
                 <span class="author-color"><i class="fa fa-thumb-tack"></i></span>
                 <strong>Cita esta página</strong>
@@ -358,7 +384,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 
             
             <?php if (get_post_meta($post->ID, "image_url_value", true) != "") { ?>
-            <div class="image-credit"><i class="fa fa-camera"></i> Imagen del encabezado cortesía de <a href="<?php echo get_post_meta($post->ID, "image_url_value", $single = true); ?>" target="_blank"><?php echo get_post_meta($post->ID, "image_author_t_value", true); ?></a> en Flickr</div>
+            <div class="image-credit gafrom from-post-img-credit"><i class="fa fa-camera"></i> Imagen del encabezado cortesía de <a href="<?php echo get_post_meta($post->ID, "image_url_value", $single = true); ?>" target="_blank"><?php echo get_post_meta($post->ID, "image_author_t_value", true); ?></a> en Flickr</div>
             <?php } ?>
           </div>
           <footer>

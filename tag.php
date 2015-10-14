@@ -63,7 +63,7 @@ get_currentuserinfo();
   <div class="row posts-home">
     <div class="col-md-12">
       <div class="row tab-content">
-        <div class="tab-pane active" id="publicaciones">
+        <div class="tab-pane active gafrom from-tag-posts" id="publicaciones">
           <?php
             if ( have_posts() ) :
               // Start the Loop.

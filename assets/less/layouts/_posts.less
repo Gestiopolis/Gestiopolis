@@ -488,17 +488,32 @@
   border-left:none;
   font-style: italic;
   font-weight: 400;
-  margin:0 48px 26px;
+  margin:60px 48px;
   padding: 0;
   position:relative;
 }
-.post-content .entry-content blockquote:after {
-  content:'\f10e';
+.post-content .entry-content blockquote:before {
+  content: '\f10d';
   font-family: 'FontAwesome';
-  font-size:1.875rem;
-  position:absolute;
-  bottom:0;
-  right:-40px;
+  font-size: 3.5rem;
+  position: absolute;
+  top: -64px;
+  left: 0;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  color: gray;
+}
+.post-content .entry-content blockquote:after {
+  content: '\f10e';
+  font-family: 'FontAwesome';
+  font-size: 3.5rem;
+  position: absolute;
+  bottom: -74px;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  color: gray;
 }
 .post-content .entry-content blockquote p {
   padding: 0 !important;
