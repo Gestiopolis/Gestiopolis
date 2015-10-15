@@ -1528,8 +1528,8 @@ $plads= '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogl
     enable_page_level_ads: true
   });
 </script>';
-$anuncios = array($plads,$adslive);
-echo $anuncios[rand(0,1)];
+$anuncios = array($plads,$adslive,$plads,$adslive,$plads,$plads,$plads,$plads,$plads,$plads);
+echo $anuncios[rand(0,9)];
 }
 add_action('wp_footer', 'footer_adsense_script', 1);
 function filter_lazyload($content) {
