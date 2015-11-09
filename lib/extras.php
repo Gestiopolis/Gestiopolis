@@ -1528,8 +1528,32 @@ $plads= '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogl
     enable_page_level_ads: true
   });
 </script>';
+$unipiloto = '<script type=\'text/javascript\'>
+  (function() {
+    var useSSL = \'https:\' == document.location.protocol;
+    var src = (useSSL ? \'https:\' : \'http:\') +
+        \'//www.googletagservices.com/tag/js/gpt.js\';
+    document.write(\'<scr\' + \'ipt src="\' + src + \'"></scr\' + \'ipt>\');
+  })();
+</script>
+
+<script type=\'text/javascript\'>
+  googletag.cmd.push(function() {
+    googletag.defineSlot(\'/1007663/zocalo-movil\', \'div-gpt-ad-1447096970014-0\').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().enableSyncRendering();
+    googletag.enableServices();
+  });
+</script>
+<!-- /1007663/zocalo-movil -->
+<div id=\'div-gpt-ad-1447096970014-0\'>
+<script type=\'text/javascript\'>
+googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1447096970014-0\'); });
+</script>
+</div>';
 $anuncios = array($plads,$adslive,$plads,$adslive,$plads,$plads,$plads,$plads,$plads,$plads);
-echo $anuncios[rand(0,9)];
+//echo $anuncios[rand(0,9)];
+echo $unipiloto;
 }
 add_action('wp_footer', 'footer_adsense_script', 1);
 function filter_lazyload($content) {
