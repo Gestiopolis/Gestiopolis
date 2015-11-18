@@ -1536,23 +1536,16 @@ $unipiloto = '<script type=\'text/javascript\'>
     document.write(\'<scr\' + \'ipt src="\' + src + \'"></scr\' + \'ipt>\');
   })();
 </script>
-
 <script type=\'text/javascript\'>
   googletag.cmd.push(function() {
-    googletag.defineSlot(\'/1007663/zocalo-movil\', \'div-gpt-ad-1447103488113-0\').addService(googletag.pubads());
+    googletag.defineSlot(\'/1007663/ad-relacionados-moviles\', [341, 401], \'div-gpt-ad-1447864264779-0\').addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
     googletag.pubads().enableSyncRendering();
     googletag.enableServices();
   });
-</script>
-<!-- /1007663/zocalo-movil -->
-<div id=\'div-gpt-ad-1447103488113-0\'>
-<script type=\'text/javascript\'>
-googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1447103488113-0\'); });
-</script>
-</div>';
+</script>';
 $anuncios = array($plads,$adslive,$plads,$adslive,$plads,$plads,$plads,$plads,$plads,$plads);
-echo $anuncios[rand(0,9)];
+echo $anuncios[rand(0,9)] . $unipiloto;
 //echo $unipiloto;
 }
 add_action('wp_footer', 'footer_adsense_script', 1);
