@@ -1552,8 +1552,8 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1447103488113-0\'
 </script>
 </div>';
 $anuncios = array($plads,$adslive,$plads,$adslive,$plads,$plads,$plads,$plads,$plads,$plads);
-//echo $anuncios[rand(0,9)];
-echo $unipiloto;
+echo $anuncios[rand(0,9)];
+//echo $unipiloto;
 }
 add_action('wp_footer', 'footer_adsense_script', 1);
 function filter_lazyload($content) {
