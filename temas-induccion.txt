@@ -1,0 +1,38 @@
+- Claves de acceso a servidor
+- Deploy y uso de GIT en GestioPolis
+- Configuraciones del Servidor (Nginx: variables, configuraciones)
+- Roots.io Sage
+- Funcionamiento Conversor
+- Funcionamiento ElasticPress
+- Funcionamiento Publicidad de WordPress (Ubicación, responsive, etc.)
+- Funciones especiales realizadas para el WordPress de GestioPolis
+
+Videos:
+1. Documentación y lugar donde se encuentran las claves de acceso a los diferentes sitios. 
+	- Herramientas utilizadas (WinSCP, Putty, Editor de código).
+2. Github (Comandos básicos)(Pull, push, clone, merge, branch)
+	- Comandos especiales para hacer deploy en Gestiopolis (g.net y g.com)
+	- Comando grunt para compilar la aplicación (grunt build --force)
+3. GestioPolis funciona con Nginx para más velocidad
+	- Donde se encuentras las configuraciones de Nginx y de g.com y de g.net
+	- El archivo nginx.conf
+	- Pagespeed
+	- Archivo gestiopolis.com.conf
+4. Qué es Sage de Roots?
+	- Ubicaciones de los archivos de los temas
+5. pdf2HtmlEX
+	- Como instalar las librerías y módulos necesarios en servidor Centos 7
+	- Crear crontab para unoconv en servidor Centos 7
+	- Como instalar las fuentes tipográficas en servidor Centos 7
+	- Funcionamiento conversor, proceso de conversión (processpdf.php)
+	- Funcionamiento embed de pdf2HtmlEX
+6. Qué es ElasticPress y para qué sirve en GestioPolis
+	- Como instalar las librerías y módulos de ElasticPress
+	- Cómo se está utilizando ElasticPress en GestioPolis
+7. Funciones de publicidad creadas para GestioPolis (ads.php y extras.php)
+	- Plugin WP Ad Pro (Como utilizarlo)
+8. Función de lazyLoading de imágenes
+	- Función de top10 con plugin
+	- Tiempo estimado de lectura
+	- 
+
