@@ -1401,88 +1401,7 @@ function footer_lazyload() {
 }
 add_action('wp_footer', 'footer_lazyload', 100);
 
-function footer_dataxpand() {
-	echo '
-	<script type="text/javascript">
-	  (function () {
-	    var tagjs = document.createElement("script");
-	    var s = document.getElementsByTagName("script")[0];
-	    tagjs.async = true;
-	    tagjs.src = "//dataxpand.script.ag/tag.js#site=63UCMvc";
-	    s.parentNode.insertBefore(tagjs, s);
-	  }());
-	</script>
-	';
-}
-add_action('wp_footer', 'footer_dataxpand', 100);
 
-function head_scripts_ads() {
-	global $post;
-	if (is_single()) {
-	/*echo '<script type=\'text/javascript\'>
-  var googletag = googletag || {};
-  googletag.cmd = googletag.cmd || [];
-  (function() {
-    var gads = document.createElement(\'script\');
-    gads.async = true;
-    gads.type = \'text/javascript\';
-    var useSSL = \'https:\' == document.location.protocol;
-    gads.src = (useSSL ? \'https:\' : \'http:\') +
-      \'//www.googletagservices.com/tag/js/gpt.js\';
-    var node = document.getElementsByTagName(\'script\')[0];
-    node.parentNode.insertBefore(gads, node);
-  })();
-</script>
-
-<script type=\'text/javascript\'>
-  googletag.cmd.push(function() {
-    googletag.defineSlot(\'/1007663/post-comienzo-contenido\', [300, 250], \'div-gpt-ad-1433261534384-0\').addService(googletag.pubads());
-    googletag.defineSlot(\'/1007663/post-2do-parrafo-contenido\', [300, 250], \'div-gpt-ad-1433261534384-1\').addService(googletag.pubads());
-    googletag.defineSlot(\'/1007663/post-3er-parrafo-contenido\', [600, 338], \'div-gpt-ad-1433303077158-0\').addService(googletag.pubads());
-    googletag.defineSlot(\'/1007663/post-mitad-contenido\', [300, 250], \'div-gpt-ad-1433261534384-3\').addService(googletag.pubads());
-    var mapping = googletag.sizeMapping().
-    addSize([0, 0], [300, 250]).
-		addSize([750, 450], [[300, 250], [728, 90], [580, 400], [336, 280]])
-		.build();
-    googletag.defineSlot(\'/1007663/post-doc-fondo-contenido\', [[300, 250], [728, 90], [580, 400], [336, 280]], \'div-gpt-ad-1433261534384-4\').defineSizeMapping(mapping).addService(googletag.pubads());
-    var mapping1 = googletag.sizeMapping().
-    addSize([0, 0], [300, 250]).
-		addSize([550, 200], [468, 60]).
-		addSize([768, 200], [728, 90]).
-		build();
-    googletag.defineSlot(\'/1007663/docs-comienzo-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-5\').defineSizeMapping(mapping1).addService(googletag.pubads());
-    var mapping2 = googletag.sizeMapping().
-    addSize([0, 0], [300, 250]).
-		addSize([550, 200], [468, 60]).
-		addSize([768, 200], [728, 90]).
-		build();
-    googletag.defineSlot(\'/1007663/docs-2da-pagina-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-6\').defineSizeMapping(mapping2).addService(googletag.pubads());
-    var mapping3 = googletag.sizeMapping().
-    addSize([0, 0], [300, 250]).
-		addSize([550, 200], [468, 60]).
-		addSize([768, 200], [728, 90]).
-		build();
-    googletag.defineSlot(\'/1007663/docs-mitad-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-7\').defineSizeMapping(mapping3).addService(googletag.pubads());
-    googletag.pubads().enableSingleRequest();
-    googletag.pubads().collapseEmptyDivs();
-    googletag.enableServices();
-  });
-</script>';*/
-echo '
-<script src=\'http://www5.smartadserver.com/config.js?nwid=1371\' type="text/javascript"></script>
-<script type="text/javascript">
-    sas.setup({ domain: \'http://www5.smartadserver.com\'});
-</script>';
-}
-}
-add_action('wp_head', 'head_scripts_ads', 1);
-function head_storyad() {
-	if (is_page_template('storyadtemplate.php')) {
-	echo '<script type="text/javascript" src="http://storyad.net/advertisement/story.js"></script>
-	<meta name="robots" content="noindex,nofollow" />';
-	} 
-}
-add_action('wp_head', 'head_storyad', 1);
 function head_meta_schema() {
 	if(is_single()) {
 		global $post;
@@ -1493,45 +1412,7 @@ function head_meta_schema() {
 	}
 }
 add_action('wp_head', 'head_meta_schema', 1);
-function footer_adsense_script() {
-	
-		$adslive = '<script type=\'text/javascript\'>
-  (function() {
-    var useSSL = \'https:\' == document.location.protocol;
-    var src = (useSSL ? \'https:\' : \'http:\') +
-        \'//www.googletagservices.com/tag/js/gpt.js\';
-    document.write(\'<scr\' + \'ipt src="\' + src + \'"></scr\' + \'ipt>\');
-  })();
-</script>
 
-<script type=\'text/javascript\'>
-  googletag.cmd.push(function() {
-    googletag.defineOutOfPageSlot(\'/11322282/GestioPolis.com_I//1x1\', \'div-gpt-ad-1436976370032-0\').addService(googletag.pubads());
-    googletag.pubads().enableSingleRequest();
-    googletag.pubads().enableSyncRendering();
-    googletag.enableServices();
-  });
-</script>
-
-<!-- /11322282/GestioPolis.com_I//1x1 -->
-<div id=\'div-gpt-ad-1436976370032-0\'>
-<script type=\'text/javascript\'>
-googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1436976370032-0\'); });
-</script>
-</div>
-<!--<script type="text/javascript" src="http://as.ebz.io/api/choixPubJS.htm?pid=1138158&screenLayer=1&mode=NONE&home=http://www.gestiopolis.com"></script>-->
-';
-$plads= '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-2753881743271989",
-    enable_page_level_ads: true
-  });
-</script>';
-$anuncios = array($plads,$adslive);
-echo $anuncios[rand(0,1)];
-}
-add_action('wp_footer', 'footer_adsense_script', 1);
 function filter_lazyload($content) {
     return preg_replace_callback('/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', 'preg_lazyload', $content);
 }
@@ -1686,7 +1567,7 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 //Función de Wp_Imager https://github.com/Jany-M/WP-Imager
-require_once ('functions/wp-imager.php');
+//require_once ('functions/wp-imager.php');
 //Archivos necesarios para la cabecera en la administración
 require_once ('functions/admin_head.php');
 //Campo personalizado de autor virtual

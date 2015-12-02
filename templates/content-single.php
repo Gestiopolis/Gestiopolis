@@ -240,43 +240,17 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                 <?php //comments_template('/templates/comments.php'); ?>
               </div>
             </div>
-            <script type="text/javascript">
-              //<![CDATA[
-              if (typeof newsletter_check !== "function") {
-              window.newsletter_check = function (f) {
-                  var re = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-]{1,})+\.)+([a-zA-Z0-9]{2,})+$/;
-                  if (!re.test(f.elements["ne"].value)) {
-                      alert("El email no es correcto");
-                      return false;
-                  }
-                  for (var i=1; i<20; i++) {
-                  if (f.elements["np" + i] && f.elements["np" + i].required && f.elements["np" + i].value == "") {
-                      alert("");
-                      return false;
-                  }
-                  }
-                  if (f.elements["ny"] && !f.elements["ny"].checked) {
-                      alert("Debes haber leído las políticas de privacidad.");
-                      return false;
-                  }
-                  return true;
-              }
-              }
-              //]]>
-              </script>
-            <div id="suscripcion" class="suscripcion gafrom from-post-suscripcion">
+            <div id="suscripcion" class="suscripcion hidden gafrom from-post-suscripcion">
               <div>
                 <span class="author-color"><i class="fa fa-envelope"></i></span>
                 <strong>Recibe los mejores contenidos en tu email</strong>
                 <p>
                   <em>Nos aseguraremos de seleccionar especialmente para ti sólo lo mejor de las nuevas publicaciones cada semana</em>
                 </p>
-                <form method="post" action="http://www.gestiopolis.net/?na=s" onsubmit="return newsletter_check(this)">
                   <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">@</span>
-                    <input type="email" class="form-control newsletter-email" name="ne" placeholder="Ingresa aquí tu email" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="Que se vea y funcione como http://azumbrunnen.me/frontkit/" aria-describedby="basic-addon1">
                   </div>
-                </form>
               </div>
             </div>
             <div class="compartelo">
@@ -320,6 +294,12 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
             </div><!-- .post-tags -->
             <div class="compartelo posts-home hidden-md hidden-lg gafrom from-post-rels-mobile">
               <div class="title-section"><h2>Relacionados</h2><i class="fa fa-caret-down"></i></div>
+              <!-- /1007663/ad-relacionados-moviles -->
+              <div id='div-gpt-ad-1447864264779-0'>
+              <script type='text/javascript'>
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1447864264779-0'); });
+              </script>
+              </div>
               <?php 
               $show = 12;
               $postsnot = array();
@@ -402,8 +382,8 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
   if ($like == ""){
     update_post_meta($post->ID, '_liked', 1);
   }
-  if(has_tag(8175)){
+  /*if(has_tag(8175)){
     echo do_shortcode("[pro_ad_display_adzone id='334406' flyin='1' flyin_delay='3']"); 
-  }
+  }*/
   ?>
 <?php endwhile; ?>

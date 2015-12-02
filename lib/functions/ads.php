@@ -9,8 +9,8 @@ add_filter( 'the_content', 'insert_adman_ads' );
 //http://www.gestiopolis.com/la-etica-empresarial-como-fuente-de-ventajas-competitivas/
 function insert_adman_ads( $content ) {
     global $post;
-	
-	$despegar = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript">
+    
+    $despegar = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript">
     sas.call("std", {
         siteId:     78378,
         pageId:     574794,
@@ -44,36 +44,37 @@ s.parentNode.insertBefore(js, s);
 })(window.document);
 </script></div>';
 $anuncios = array($adman,$teads,$adman,$adman, $teads, $adman, $teads, $adman, $adman, $adman);
-$ad_code = $anuncios[rand(0,9)];
+//$ad_code = $anuncios[rand(0,9)];
+$ad_code = $anuncios[0];
 
-	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
+    if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
         //if(!is_single(28207 )){
-    		return prefix_insert_after_paragraph( $ad_code, 4, $content );
+            return prefix_insert_after_paragraph( $ad_code, 4, $content );
         //}
-	}
-	
-	return $content;
+    }
+    
+    return $content;
 }
 
 function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
-	$closing_p = '</p>';
-	$paragraphs = explode( $closing_p, $content );
-	foreach ($paragraphs as $index => $paragraph) {
+    $closing_p = '</p>';
+    $paragraphs = explode( $closing_p, $content );
+    foreach ($paragraphs as $index => $paragraph) {
 
-		if ( trim( $paragraph ) ) {
-			$paragraphs[$index] .= $closing_p;
-		}
+        if ( trim( $paragraph ) ) {
+            $paragraphs[$index] .= $closing_p;
+        }
 
-		if ( $paragraph_id == $index + 1 ) {
-			$paragraphs[$index] .= $insertion;
-		}
-	}
-	
-	return implode( '', $paragraphs );
+        if ( $paragraph_id == $index + 1 ) {
+            $paragraphs[$index] .= $insertion;
+        }
+    }
+    
+    return implode( '', $paragraphs );
 }
 //http://www.gestiopolis.com/valor-economico-agregado-eva-y-gerencia-basada-en-valor-gbv/
 function insert_ads_all2html( $content ) {
-	$pages = preg_split("/(?=<div id=\"pf)/", $content, null, PREG_SPLIT_DELIM_CAPTURE);
+    $pages = preg_split("/(?=<div id=\"pf)/", $content, null, PREG_SPLIT_DELIM_CAPTURE);
     $count = count($pages)-1;
     if($count <= 4){
         $pos2 = -1;
@@ -98,23 +99,23 @@ function insert_ads_all2html( $content ) {
         $pos2 = floor($count / 2);
         $pos2 = $pos2 -($pos2*0.25);
     }
-	foreach ($pages as $index => $page) {
+    foreach ($pages as $index => $page) {
 
-		/*if ( 1 == $index ) {
-			$pages[$index] .= '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-6\'>
+        /*if ( 1 == $index ) {
+            $pages[$index] .= '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-6\'>
 <script type=\'text/javascript\'>
 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-6\'); });
 </script>
 </div></div>';
-		}
+        }
 
-		if ( $pos2 == $index ) {
-			$pages[$index] .= '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-7\'>
+        if ( $pos2 == $index ) {
+            $pages[$index] .= '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-7\'>
 <script type=\'text/javascript\'>
 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'); });
 </script>
 </div></div>';
-		}*/
+        }*/
 
         if ( 1 == $index ) {
             $pages[$index] .= '<div class="adsce"><div id="google-ads-docs-2"></div>
@@ -213,9 +214,9 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></div>';
         }*/
-	}
-	
-	return implode( '', $pages );
+    }
+    
+    return implode( '', $pages );
 }
 
 add_filter( 'the_content', 'so_25888630_ad_between_paragraphs' );
@@ -444,4 +445,145 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
     }
     return $content;
 }
+
+function footer_dataxpand() {
+    echo '
+    <script type="text/javascript">
+      (function () {
+        var tagjs = document.createElement("script");
+        var s = document.getElementsByTagName("script")[0];
+        tagjs.async = true;
+        tagjs.src = "//dataxpand.script.ag/tag.js#site=63UCMvc";
+        s.parentNode.insertBefore(tagjs, s);
+      }());
+    </script>
+    ';
+}
+add_action('wp_footer', 'footer_dataxpand', 100);
+
+function head_scripts_ads() {
+    global $post;
+    if (is_single()) {
+    /*echo '<script type=\'text/javascript\'>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  (function() {
+    var gads = document.createElement(\'script\');
+    gads.async = true;
+    gads.type = \'text/javascript\';
+    var useSSL = \'https:\' == document.location.protocol;
+    gads.src = (useSSL ? \'https:\' : \'http:\') +
+      \'//www.googletagservices.com/tag/js/gpt.js\';
+    var node = document.getElementsByTagName(\'script\')[0];
+    node.parentNode.insertBefore(gads, node);
+  })();
+</script>
+
+<script type=\'text/javascript\'>
+  googletag.cmd.push(function() {
+    googletag.defineSlot(\'/1007663/post-comienzo-contenido\', [300, 250], \'div-gpt-ad-1433261534384-0\').addService(googletag.pubads());
+    googletag.defineSlot(\'/1007663/post-2do-parrafo-contenido\', [300, 250], \'div-gpt-ad-1433261534384-1\').addService(googletag.pubads());
+    googletag.defineSlot(\'/1007663/post-3er-parrafo-contenido\', [600, 338], \'div-gpt-ad-1433303077158-0\').addService(googletag.pubads());
+    googletag.defineSlot(\'/1007663/post-mitad-contenido\', [300, 250], \'div-gpt-ad-1433261534384-3\').addService(googletag.pubads());
+    var mapping = googletag.sizeMapping().
+    addSize([0, 0], [300, 250]).
+        addSize([750, 450], [[300, 250], [728, 90], [580, 400], [336, 280]])
+        .build();
+    googletag.defineSlot(\'/1007663/post-doc-fondo-contenido\', [[300, 250], [728, 90], [580, 400], [336, 280]], \'div-gpt-ad-1433261534384-4\').defineSizeMapping(mapping).addService(googletag.pubads());
+    var mapping1 = googletag.sizeMapping().
+    addSize([0, 0], [300, 250]).
+        addSize([550, 200], [468, 60]).
+        addSize([768, 200], [728, 90]).
+        build();
+    googletag.defineSlot(\'/1007663/docs-comienzo-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-5\').defineSizeMapping(mapping1).addService(googletag.pubads());
+    var mapping2 = googletag.sizeMapping().
+    addSize([0, 0], [300, 250]).
+        addSize([550, 200], [468, 60]).
+        addSize([768, 200], [728, 90]).
+        build();
+    googletag.defineSlot(\'/1007663/docs-2da-pagina-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-6\').defineSizeMapping(mapping2).addService(googletag.pubads());
+    var mapping3 = googletag.sizeMapping().
+    addSize([0, 0], [300, 250]).
+        addSize([550, 200], [468, 60]).
+        addSize([768, 200], [728, 90]).
+        build();
+    googletag.defineSlot(\'/1007663/docs-mitad-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-7\').defineSizeMapping(mapping3).addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+  });
+</script>';*/
+echo '
+<script src=\'http://www5.smartadserver.com/config.js?nwid=1371\' type="text/javascript"></script>
+<script type="text/javascript">
+    sas.setup({ domain: \'http://www5.smartadserver.com\'});
+</script>';
+}
+}
+add_action('wp_head', 'head_scripts_ads', 1);
+
+function head_storyad() {
+    if (is_page_template('storyadtemplate.php')) {
+    echo '<script type="text/javascript" src="http://storyad.net/advertisement/story.js"></script>
+    <meta name="robots" content="noindex,nofollow" />';
+    } 
+}
+add_action('wp_head', 'head_storyad', 1);
+
+function footer_adsense_script() {
+    
+        $adslive = '<script type=\'text/javascript\'>
+  (function() {
+    var useSSL = \'https:\' == document.location.protocol;
+    var src = (useSSL ? \'https:\' : \'http:\') +
+        \'//www.googletagservices.com/tag/js/gpt.js\';
+    document.write(\'<scr\' + \'ipt src="\' + src + \'"></scr\' + \'ipt>\');
+  })();
+</script>
+
+<script type=\'text/javascript\'>
+  googletag.cmd.push(function() {
+    googletag.defineOutOfPageSlot(\'/11322282/GestioPolis.com_I//1x1\', \'div-gpt-ad-1436976370032-0\').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().enableSyncRendering();
+    googletag.enableServices();
+  });
+</script>
+
+<!-- /11322282/GestioPolis.com_I//1x1 -->
+<div id=\'div-gpt-ad-1436976370032-0\'>
+<script type=\'text/javascript\'>
+googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1436976370032-0\'); });
+</script>
+</div>
+<!--<script type="text/javascript" src="http://as.ebz.io/api/choixPubJS.htm?pid=1138158&screenLayer=1&mode=NONE&home=http://www.gestiopolis.com"></script>-->
+';
+$plads= '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2753881743271989",
+    enable_page_level_ads: true
+  });
+</script>';
+$unipiloto = '<script type=\'text/javascript\'>
+  (function() {
+    var useSSL = \'https:\' == document.location.protocol;
+    var src = (useSSL ? \'https:\' : \'http:\') +
+        \'//www.googletagservices.com/tag/js/gpt.js\';
+    document.write(\'<scr\' + \'ipt src="\' + src + \'"></scr\' + \'ipt>\');
+  })();
+</script>
+<script type=\'text/javascript\'>
+  googletag.cmd.push(function() {
+    googletag.defineSlot(\'/1007663/ad-relacionados-moviles\', [341, 401], \'div-gpt-ad-1447864264779-0\').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().enableSyncRendering();
+    googletag.enableServices();
+  });
+</script>';
+$anuncios = array($plads,$adslive,$plads,$adslive,$plads,$plads,$plads,$plads,$plads,$plads);
+echo $anuncios[rand(0,9)] . $unipiloto;
+//echo $unipiloto;
+}
+add_action('wp_footer', 'footer_adsense_script', 1);
 ?>
