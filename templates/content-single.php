@@ -383,8 +383,8 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
     update_post_meta($post->ID, '_liked', 1);
   }
   //if(has_tag(8175)){//Reclutamiento tag
-  if(has_tag(8277)){//gerencia y habilidades gerenciales
-  //if(has_category(21)){//Talento
+  //if(has_tag(8277)){//gerencia y habilidades gerenciales
+  if(has_category(20)){//Administración
     echo do_shortcode("[pro_ad_display_adzone id='334406' flyin='1' flyin_delay='3']"); 
   }
   ?>
