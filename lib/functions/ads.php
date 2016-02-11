@@ -369,7 +369,7 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
-                $ad = array( 'ad1' => '<div class="adsce"><script type="text/javascript"><!--
+                $adsense = array( 'ad1' => '<div class="adsce"><script type="text/javascript"><!--
 google_ad_client = "ca-pub-1187873112185798";
 /* Ad Segundo Párrafo (300x250)  */
 google_ad_slot = "6234192054";
@@ -380,6 +380,15 @@ google_ad_height = 250;
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script></div>' );
+                $sulvo = array( 'ad1' => '<div class="adsce"><!-- Sulvo Surge Pricing Unit - gestiopolis.com_300x250 -->
+<ins class="adsbysulvo"
+   data-ad-slot="sulvo_ikhlhb7p"
+   data-ad-size="300x250"
+></ins>
+<script src="//sulvo.co/v1/ads.js"></script></div>' );
+$anuncios = array($adsense,$sulvo);
+$ad_code = $anuncios[rand(0,1)];
+                $ad = $ad_code;
             }else if( $key_total == 1 ){
                 $ad = array( 'ad2' => '<div class="adsce"><script type="text/javascript">
     google_ad_client = "ca-pub-2753881743271989";
