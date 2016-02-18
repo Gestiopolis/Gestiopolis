@@ -35,8 +35,10 @@
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-<?php }else { ?>      
-<div id="google-ads-sidebar" class="gafrom from-ad-sidebar"></div>
+<?php }else { ?>
+  
+<?php if(function_exists('the_ad_placement')) the_ad_placement('lateral-arriba-articulos'); ?>      
+<!--<div id="google-ads-sidebar" class="gafrom from-ad-sidebar"></div>
 <script type="text/javascript"> 
  
     /* Calculate the width of available ad space */
@@ -66,7 +68,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
+</script>-->
 <?php } ?>
 <?php //if (is_single(array(30646,56381,333736,333680,333687))) {?>
 <?php get_template_part('templates/sidebar-post'); ?>
