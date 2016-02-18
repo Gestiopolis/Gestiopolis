@@ -53,20 +53,20 @@ $maincat = get_the_category($post->ID);
   }
     ?>
   </div><!-- .sidebar-post -->
-  <div class="sidebar-post">
+  <!--<div class="sidebar-post">
     <h3>Populares</h3>
     <i class="fa fa-caret-down"></i>
-    <?php $tposts = get_trending_posts(6, TRENDING_DAYS, $maincat[0]->term_id);
+    <?php /*$tposts = get_trending_posts(6, TRENDING_DAYS, $maincat[0]->term_id);
       $i = 1;
       foreach ($tposts as $tpost) {
         $post_title = stripslashes($tpost->post_title);
         $permalink = get_permalink($tpost->ID);
         $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $tpost->ID ), 'thumbnail' );
-    ?>
-    <article id="post-<?php echo $tpost->ID; ?>" class="post">
-      <a href="<?php echo $permalink; ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=popular_posts&ic_source=sidebar" class="internal-campaign"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php echo $post_title; ?>" class="lazy pull-left" width="64" height="56"></a>
+    */?>
+    <article id="post-<?php //echo $tpost->ID; ?>" class="post">
+      <a href="<?php //echo $permalink; ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=popular_posts&ic_source=sidebar" class="internal-campaign"><img src="<?php //echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php //echo $large_image_url[0]; ?>" alt="<?php //echo $post_title; ?>" class="lazy pull-left" width="64" height="56"></a>
       <div class="wrapper-content">
-        <h2 class="entry-title"><a href="<?php echo $permalink; ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=popular_posts&ic_source=sidebar" class="internal-campaign"><?php echo $post_title; ?></a></h2>
+        <h2 class="entry-title"><a href="<?php //echo $permalink; ?>" title="<?php //the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=popular_posts&ic_source=sidebar" class="internal-campaign"><?php //echo $post_title; ?></a></h2>
         <?php 
         /*$categories = get_the_category($tpost->ID); 
         foreach($categories as $category){
@@ -75,8 +75,8 @@ $maincat = get_the_category($post->ID);
         ?>
       </div>
     </article>
-    <?php } // fin foreach $tposts ?>
-  </div>
+    <?php //} // fin foreach $tposts ?>
+  </div>-->
   <div id="social-sidebar" class="sidebar-post">
     <h3>Manténte al tanto</h3>
     <i class="fa fa-caret-down"></i>
