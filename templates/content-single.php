@@ -35,14 +35,13 @@
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-<?php }else { ?>
+<?php }else { 
   
-<?php if(function_exists('the_ad_placement')) the_ad_placement('lateral-arriba-articulos'); ?>      
-<!--<div id="google-ads-sidebar" class="gafrom from-ad-sidebar"></div>
+$adsensesb = '<div id="google-ads-sidebar" class="gafrom from-ad-sidebar"></div>
 <script type="text/javascript"> 
  
     /* Calculate the width of available ad space */
-    ad = document.getElementById('google-ads-sidebar');
+    ad = document.getElementById(\'google-ads-sidebar\');
  
     if (ad.getBoundingClientRect().width) {
         adWidth = ad.getBoundingClientRect().width; // for modern browsers 
@@ -68,8 +67,15 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>-->
-<?php } ?>
+</script>';
+
+$netsonicsb='<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
+googletag.pubads().definePassback(\'/99685898/CO_gestiopolis.com_ALL/CO_gestiopolis.com/CO_gestiopolis.com_rich_filmstrip_300x600\', [300, 600]).display();
+</script>';
+$anunciossb = array($netsonicsb,$adsensesb);
+$ad_codesb = $anunciossb[rand(0,1)];
+echo $ad_codesb;
+ } ?>
 <?php //if (is_single(array(30646,56381,333736,333680,333687))) {?>
 <?php get_template_part('templates/sidebar-post'); ?>
 <?php //} ?>
@@ -192,7 +198,8 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
             <div class="entry-content gafrom from-post-entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
               <div class="adsfr">
-                <script type="text/javascript"><!--
+                <?php 
+                $adsensem='<script type="text/javascript"><!--
                 google_ad_client = "ca-pub-1187873112185798";
                 /* exp1-300x250-1-posts-derecha */
                 google_ad_slot = "6429770694";
@@ -202,7 +209,14 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                 </script>
                 <script type="text/javascript"
                 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-                </script>
+                </script>';
+                $netsonicm='<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
+  googletag.pubads().definePassback(\'/99685898/CO_gestiopolis.com_ALL/CO_gestiopolis.com/CO_gestiopolis.com_disp_300x250\', [300, 250]).display();
+</script>';
+$anunciosm = array($adsensem,$netsonicm);
+$ad_codesm = $anunciosm[rand(0,1)];
+echo $ad_codesm;
+                ?>
               </div>
               <?php } ?>
               <?php the_content(); ?>
