@@ -563,19 +563,10 @@ echo '
 <script src=\'http://www5.smartadserver.com/config.js?nwid=1371\' type="text/javascript"></script>
 <script type="text/javascript">
     sas.setup({ domain: \'http://www5.smartadserver.com\'});
-</script>
-<script src="http://gonzalezz.admanmedia.com/v3/native/chimera.js?type=text&pmu=183f9431&pmo=be3a3ed6" data-adm-native async></script>';
+</script>';
 }
 }
 add_action('wp_head', 'head_scripts_ads', 1);
-
-function head_storyad() {
-    if (is_page_template('storyadtemplate.php')) {
-    echo '<script type="text/javascript" src="http://storyad.net/advertisement/story.js"></script>
-    <meta name="robots" content="noindex,nofollow" />';
-    } 
-}
-add_action('wp_head', 'head_storyad', 1);
 
 function footer_adsense_script() {
     
@@ -612,24 +603,8 @@ $plads= '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogl
     enable_page_level_ads: true
   });
 </script>';
-$unipiloto = '<script type=\'text/javascript\'>
-  (function() {
-    var useSSL = \'https:\' == document.location.protocol;
-    var src = (useSSL ? \'https:\' : \'http:\') +
-        \'//www.googletagservices.com/tag/js/gpt.js\';
-    document.write(\'<scr\' + \'ipt src="\' + src + \'"></scr\' + \'ipt>\');
-  })();
-</script>
-<script type=\'text/javascript\'>
-  googletag.cmd.push(function() {
-    googletag.defineSlot(\'/1007663/ad-relacionados-moviles\', [341, 401], \'div-gpt-ad-1447864264779-0\').addService(googletag.pubads());
-    googletag.pubads().enableSingleRequest();
-    googletag.pubads().enableSyncRendering();
-    googletag.enableServices();
-  });
-</script>';
 $anuncios = array($plads,$adslive,$plads,$adslive,$plads,$plads,$plads,$plads,$plads,$plads);
-echo $anuncios[rand(0,9)] . $unipiloto;
+echo $anuncios[rand(0,9)];
 //echo $unipiloto;
 }
 add_action('wp_footer', 'footer_adsense_script', 1);
