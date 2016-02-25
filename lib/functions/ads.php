@@ -80,8 +80,8 @@ if (NS_allinone_options.enabled){ document.write("<scr"+"ipt type=\'text\/javasc
 
 </script>
 <!-- !NETSONIC.TV - ALL IN ONE (Intext) VIDEO 1.0 -->';
-$anuncios = array($adman,$adman,$netsonic,$netsonic,$netsonic,$netsonic,$netsonic,$netsonic,$netsonic,$netsonic);
-$ad_code = $anuncios[rand(0,9)];
+$anuncios = array($adman,$netsonic);
+$ad_code = $anuncios[rand(0,1)];
 //$ad_code = $anuncios[0];
 
 	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
@@ -603,9 +603,81 @@ $plads= '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogl
     enable_page_level_ads: true
   });
 </script>';
-$anuncios = array($plads,$adslive,$plads,$adslive,$plads,$plads,$plads,$plads,$plads,$plads);
-echo $anuncios[rand(0,9)];
+$fbads='<style>
+     #ad_root {
+        display: none;
+        font-size: 14px;
+        height: 250px;
+        line-height: 16px;
+        position: relative;
+        width: 300px;
+      }
+
+      .thirdPartyMediaClass {
+        height: 157px;
+        width: 300px;
+      }
+
+      .thirdPartyTitleClass {
+        font-weight: 600;
+        font-size: 16px;
+        margin: 8px 0 4px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .thirdPartyBodyClass {
+        display: -webkit-box;
+        height: 32px;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+
+      .thirdPartyCallToActionClass {
+        color: #326891;
+        font-family: sans-serif;
+        font-weight: 600;
+        margin-top: 8px;
+      }
+    </style>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.Event.subscribe(
+          \'ad.loaded\',
+          function(placementId) {
+            console.log(\'Audience Network ad loaded\');
+            document.getElementById(\'ad_root\').style.display = \'block\';
+          }
+        );
+        FB.Event.subscribe(
+          \'ad.error\',
+          function(errorCode, errorMessage, placementId) {
+            console.log(\'Audience Network error (\' + errorCode + \') \' + errorMessage);
+          }
+        );
+      };
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk/xfbml.ad.js#xfbml=1&version=v2.5&appId=154786858571";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, \'script\', \'facebook-jssdk\'));
+    </script>
+    <fb:ad placementid="154786858571_10154565912493572" format="native" nativeadid="ad_root" testmode="false"></fb:ad>
+    <div id="ad_root">
+      <a class="fbAdLink">
+        <div class="fbAdMedia thirdPartyMediaClass"></div>
+        <div class="fbAdTitle thirdPartyTitleClass"></div>
+        <div class="fbAdBody thirdPartyBodyClass"></div>
+        <div class="fbAdCallToAction thirdPartyCallToActionClass"></div>
+      </a>
+    </div>';
+//$anuncios = array($plads,$adslive,$plads,$adslive,$plads,$plads,$plads,$plads,$plads,$plads);
+//echo $anuncios[rand(0,9)];
 //echo $unipiloto;
+    echo $fbads;
 }
 add_action('wp_footer', 'footer_adsense_script', 1);
 ?>
