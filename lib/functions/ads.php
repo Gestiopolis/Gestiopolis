@@ -563,7 +563,8 @@ echo '
 <script src=\'http://www5.smartadserver.com/config.js?nwid=1371\' type="text/javascript"></script>
 <script type="text/javascript">
     sas.setup({ domain: \'http://www5.smartadserver.com\'});
-</script>';
+</script>
+<script src="http://gonzalezz.admanmedia.com/v3/native/chimera.js?type=text&pmu=183f9431&pmo=1e897874" data-adm-native async></script>';
 }
 }
 add_action('wp_head', 'head_scripts_ads', 1);
