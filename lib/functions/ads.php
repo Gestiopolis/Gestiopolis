@@ -563,8 +563,7 @@ echo '
 <script src=\'http://www5.smartadserver.com/config.js?nwid=1371\' type="text/javascript"></script>
 <script type="text/javascript">
     sas.setup({ domain: \'http://www5.smartadserver.com\'});
-</script>
-<script src="http://gonzalezz.admanmedia.com/v3/native/chimera.js?type=text&pmu=183f9431&pmo=1e897874" data-adm-native async></script>';
+</script>';
 }
 }
 add_action('wp_head', 'head_scripts_ads', 1);
@@ -678,7 +677,7 @@ $fbads='<style>
 //$anuncios = array($plads,$adslive,$plads,$adslive,$plads,$plads,$plads,$plads,$plads,$plads);
 //echo $anuncios[rand(0,9)];
 //echo $unipiloto;
-    echo $fbads;
+    echo $plads;
 }
 add_action('wp_footer', 'footer_adsense_script', 1);
 ?>
