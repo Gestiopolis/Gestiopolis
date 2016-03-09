@@ -69,11 +69,14 @@ $adsensesb = '<div id="google-ads-sidebar" class="gafrom from-ad-sidebar"></div>
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>';
 
-$netsonicsb='<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
+$filmstrip='<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
 googletag.pubads().definePassback(\'/99685898/CO_gestiopolis.com_ALL/CO_gestiopolis.com/CO_gestiopolis.com_rich_filmstrip_300x600\', [300, 600]).display();
 </script>';
-$anunciossb = array($netsonicsb,$adsensesb);
-$ad_codesb = $anunciossb[rand(0,1)];
+$disp = '<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
+  googletag.pubads().definePassback(\'/99685898/CO_gestiopolis.com_ALL/CO_gestiopolis.com/CO_gestiopolis.com_disp_300x600\', [300, 600]).display();
+</script>';
+$anunciossb = array($filmstrip,$disp,$disp,$adsensesb,$adsensesb,$adsensesb,$adsensesb,$adsensesb,$adsensesb,$adsensesb);
+$ad_codesb = $anunciossb[rand(0,9)];
 echo $ad_codesb;
  } ?>
 <?php //if (is_single(array(30646,56381,333736,333680,333687))) {?>
