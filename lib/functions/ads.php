@@ -81,7 +81,7 @@ if (NS_allinone_options.enabled){ document.write("<scr"+"ipt type=\'text\/javasc
 </script>
 <!-- !NETSONIC.TV - ALL IN ONE (Intext) VIDEO 1.0 -->';
 $anuncios = array($adman,$netsonic);
-$ad_code = $anuncios[rand(0,1)];
+$ad_code = $anuncios[mt_rand(0,1)];
 //$ad_code = $anuncios[0];
 
 	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
@@ -424,7 +424,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 ></ins>
 <script src="//sulvo.co/v1/ads.js"></script></div>' );
 $anuncios = array($adsense,$sulvo);
-$ad_code = $anuncios[rand(0,1)];
+$ad_code = $anuncios[mt_rand(0,1)];
                 $ad = $ad_code;
             }else if( $key_total == 1 ){
                 $ad = array( 'ad2' => '<div class="adsce"><script type="text/javascript">
@@ -590,7 +590,7 @@ echo '
 <script src=\'http://www5.smartadserver.com/config.js?nwid=1371\' type="text/javascript"></script>
 <script type="text/javascript">
     sas.setup({ domain: \'http://www5.smartadserver.com\'});
-</script>'.$anuncios[rand(0,9)];
+</script>'.$anuncios[mt_rand(0,9)];
 }
 }
 add_action('wp_head', 'head_scripts_ads', 1);
@@ -702,7 +702,7 @@ $fbads='<style>
       </a>
     </div>';
 //$anuncios = array($plads,$adslive,$plads,$adslive,$plads,$plads,$plads,$plads,$plads,$plads);
-//echo $anuncios[rand(0,9)];
+//echo $anuncios[mt_rand(0,9)];
 //echo $unipiloto;
     echo $plads;
 }
