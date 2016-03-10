@@ -559,11 +559,38 @@ function head_scripts_ads() {
     googletag.enableServices();
   });
 </script>';*/
+$adslive = '<script type=\'text/javascript\'>
+  (function() {
+    var useSSL = \'https:\' == document.location.protocol;
+    var src = (useSSL ? \'https:\' : \'http:\') +
+        \'//www.googletagservices.com/tag/js/gpt.js\';
+    document.write(\'<scr\' + \'ipt src="\' + src + \'"></scr\' + \'ipt>\');
+  })();
+</script>
+
+<script type=\'text/javascript\'>
+  googletag.cmd.push(function() {
+    googletag.defineOutOfPageSlot(\'/11322282/GestioPolis.com_I//1x1\', \'div-gpt-ad-1436976370032-0\').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().enableSyncRendering();
+    googletag.enableServices();
+  });
+</script>
+
+<!-- /11322282/GestioPolis.com_I//1x1 -->
+<div id=\'div-gpt-ad-1436976370032-0\'>
+<script type=\'text/javascript\'>
+googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1436976370032-0\'); });
+</script>
+</div>';
+$q1= '<script src="http://Q1MediaHydraPlatform.com/ads/video/controller.php?qid=56d841ab6fbe154632ae0e88&qz=1"></script>';
+$anuncios = array($adslive,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1);
+//echo $anuncios[rand(0,9)];
 echo '
 <script src=\'http://www5.smartadserver.com/config.js?nwid=1371\' type="text/javascript"></script>
 <script type="text/javascript">
     sas.setup({ domain: \'http://www5.smartadserver.com\'});
-</script>';
+</script>'.$anuncios[rand(0,9)];
 }
 }
 add_action('wp_head', 'head_scripts_ads', 1);
