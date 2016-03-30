@@ -313,12 +313,6 @@ echo $ad_codesm;
             </div><!-- .post-tags -->
             <div class="compartelo posts-home hidden-md hidden-lg gafrom from-post-rels-mobile">
               <div class="title-section"><h2>Relacionados</h2><i class="fa fa-caret-down"></i></div>
-              <!-- /1007663/ad-relacionados-moviles -->
-              <div id='div-gpt-ad-1447864264779-0'>
-              <script type='text/javascript'>
-              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1447864264779-0'); });
-              </script>
-              </div>
               <?php 
               $show = 12;
               $postsnot = array();
