@@ -590,7 +590,7 @@ echo '
 <script src=\'http://www5.smartadserver.com/config.js?nwid=1371\' type="text/javascript"></script>
 <script type="text/javascript">
     sas.setup({ domain: \'http://www5.smartadserver.com\'});
-</script>'.$anuncios[0];//mt_rand(0,9)
+</script>'.$anuncios[mt_rand(0,9)];//mt_rand(0,9)
 }
 }
 add_action('wp_head', 'head_scripts_ads', 1);
