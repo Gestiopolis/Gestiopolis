@@ -213,11 +213,14 @@ echo $ad_codesb;
                 <script type="text/javascript"
                 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                 </script>';
-                $netsonicm='<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
+                $netsonic1='<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
   googletag.pubads().definePassback(\'/99685898/CO_gestiopolis.com_ALL/CO_gestiopolis.com/CO_gestiopolis.com_disp_300x250\', [300, 250]).display();
 </script>';
-$anunciosm = array($adsensem,$adsensem,$adsensem,$netsonicm,$netsonicm,$netsonicm,$netsonicm,$netsonicm,$netsonicm,$netsonicm);
-$ad_codesm = $anunciosm[rand(0,9)];
+$netsonic2='<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
+  googletag.pubads().definePassback(\'/99685898/CO_gestiopolis.com_ALL/CO_gestiopolis.com/CO_gestiopolis.com_rich_exp_300x250\', [300, 250]).display();
+</script>';
+$anunciosm = array($adsensem,$adsensem,$adsensem,$adsensem,$netsonic1,$netsonic1,$netsonic1,$netsonic1,$netsonic2,$netsonic2);
+$ad_codesm = $anunciosm[mt_rand(0,9)];
 echo $ad_codesm;
                 ?>
               </div>

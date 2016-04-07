@@ -10,7 +10,7 @@ add_filter( 'the_content', 'insert_adman_ads' );
 function insert_adman_ads( $content ) {
     global $post;
 	
-	$despegar = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript">
+	$dtravel = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript">
     sas.call("std", {
         siteId:     78378,
         pageId:     574794,
@@ -507,7 +507,7 @@ function footer_dataxpand() {
 }
 add_action('wp_footer', 'footer_dataxpand', 100);
 
-function head_scripts_ads() {
+function head_scripts_single_ads() {
     global $post;
     if (is_single()) {
     /*echo '<script type=\'text/javascript\'>
@@ -584,14 +584,22 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1436976370032-0\'
 </script>
 </div>';
 $q1= '<script src="http://Q1MediaHydraPlatform.com/ads/video/controller.php?qid=56d841ab6fbe154632ae0e88&qz=1"></script>';
-$anuncios = array($adslive,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1);
+$anuncios = array($q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1);
 //echo $anuncios[rand(0,9)];
-echo '
+/*echo '
 <script src=\'http://www5.smartadserver.com/config.js?nwid=1371\' type="text/javascript"></script>
 <script type="text/javascript">
     sas.setup({ domain: \'http://www5.smartadserver.com\'});
-</script>'.$anuncios[mt_rand(0,9)];//mt_rand(0,9)
+</script>'.$anuncios[mt_rand(0,9)];*/
+echo $anuncios[mt_rand(0,9)];
 }
+}
+add_action('wp_head', 'head_scripts_single_ads', 1);
+
+function head_scripts_ads() {
+$adman= '<script src="http://gonzalezz.admanmedia.com/v3/native/chimera.js?type=video&pmu=183f9431&pmo=119b7ed6" data-adm-native async></script>';
+$anuncios = array('','','','',$adman,'','','','','');
+echo $anuncios[mt_rand(0,9)];
 }
 add_action('wp_head', 'head_scripts_ads', 1);
 
