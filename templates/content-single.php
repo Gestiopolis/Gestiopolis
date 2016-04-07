@@ -202,9 +202,8 @@ echo $ad_codesb;
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
               <div class="adsfr">
                 <?php 
-                $adsensem='<script type="text/javascript"><!--
+                /*$adsensem='<script type="text/javascript"><!--
                 google_ad_client = "ca-pub-1187873112185798";
-                /* exp1-300x250-1-posts-derecha */
                 google_ad_slot = "6429770694";
                 google_ad_width = 300;
                 google_ad_height = 250;
@@ -221,8 +220,14 @@ $netsonic2='<script type=\'text/javascript\' src=\'https://www.googletagservices
 </script>';
 $anunciosm = array($adsensem,$adsensem,$adsensem,$adsensem,$netsonic1,$netsonic1,$netsonic1,$netsonic1,$netsonic2,$netsonic2);
 $ad_codesm = $anunciosm[mt_rand(0,9)];
-echo $ad_codesm;
+echo $ad_codesm;*/
                 ?>
+                <!-- /1007663/Post-Principal-ATF-300x250 -->
+                <div id='div-gpt-ad-1459994552364-0' style='height:250px; width:300px;'>
+                <script type='text/javascript'>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1459994552364-0'); });
+                </script>
+                </div>
               </div>
               <?php } ?>
               <?php the_content(); ?>

@@ -559,6 +559,24 @@ function head_scripts_single_ads() {
     googletag.enableServices();
   });
 </script>';*/
+$dfpprincipal = "<script type='text/javascript'>
+  (function() {
+    var useSSL = 'https:' == document.location.protocol;
+    var src = (useSSL ? 'https:' : 'http:') +
+        '//www.googletagservices.com/tag/js/gpt.js';
+    document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+  })();
+</script>
+
+<script type='text/javascript'>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1007663/Post-Principal-ATF-300x250', [300, 250], 'div-gpt-ad-1459994552364-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.pubads().enableSyncRendering();
+    googletag.enableServices();
+  });
+</script>";
 $adslive = '<script type=\'text/javascript\'>
   (function() {
     var useSSL = \'https:\' == document.location.protocol;
@@ -591,7 +609,7 @@ $anuncios = array($q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1);
 <script type="text/javascript">
     sas.setup({ domain: \'http://www5.smartadserver.com\'});
 </script>'.$anuncios[mt_rand(0,9)];*/
-echo $anuncios[mt_rand(0,9)];
+echo $dfpprincipal.$anuncios[mt_rand(0,9)];
 }
 }
 add_action('wp_head', 'head_scripts_single_ads', 1);
