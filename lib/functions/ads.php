@@ -507,7 +507,7 @@ function footer_dataxpand() {
 }
 add_action('wp_footer', 'footer_dataxpand', 100);
 
-function head_scripts_ads() {
+function head_scripts_single_ads() {
     global $post;
     if (is_single()) {
     /*echo '<script type=\'text/javascript\'>
@@ -592,6 +592,13 @@ echo '
     sas.setup({ domain: \'http://www5.smartadserver.com\'});
 </script>'.$anuncios[mt_rand(0,9)];//mt_rand(0,9)
 }
+}
+add_action('wp_head', 'head_scripts_single_ads', 1);
+
+function head_scripts_ads() {
+$adman= '<script src="http://gonzalezz.admanmedia.com/v3/native/chimera.js?type=video&pmu=183f9431&pmo=119b7ed6" data-adm-native async></script>';
+$anuncios = array('','','','',$adman,'','','','','');
+echo $anuncios[mt_rand(0,9)];
 }
 add_action('wp_head', 'head_scripts_ads', 1);
 
