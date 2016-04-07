@@ -35,12 +35,13 @@
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-<?php }else { ?>      
-<div id="google-ads-sidebar" class="gafrom from-ad-sidebar"></div>
+<?php }else { 
+  
+$adsensesb = '<div id="google-ads-sidebar" class="gafrom from-ad-sidebar"></div>
 <script type="text/javascript"> 
  
     /* Calculate the width of available ad space */
-    ad = document.getElementById('google-ads-sidebar');
+    ad = document.getElementById(\'google-ads-sidebar\');
  
     if (ad.getBoundingClientRect().width) {
         adWidth = ad.getBoundingClientRect().width; // for modern browsers 
@@ -66,8 +67,18 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-<?php } ?>
+</script>';
+
+$filmstrip='<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
+googletag.pubads().definePassback(\'/99685898/CO_gestiopolis.com_ALL/CO_gestiopolis.com/CO_gestiopolis.com_rich_filmstrip_300x600\', [300, 600]).display();
+</script>';
+$disp = '<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
+  googletag.pubads().definePassback(\'/99685898/CO_gestiopolis.com_ALL/CO_gestiopolis.com/CO_gestiopolis.com_disp_300x600\', [300, 600]).display();
+</script>';
+$anunciossb = array($filmstrip,$disp,$disp,$adsensesb,$adsensesb,$adsensesb,$adsensesb,$adsensesb,$adsensesb,$adsensesb);
+$ad_codesb = $anunciossb[rand(0,9)];
+echo $ad_codesb;
+ } ?>
 <?php //if (is_single(array(30646,56381,333736,333680,333687))) {?>
 <?php get_template_part('templates/sidebar-post'); ?>
 <?php //} ?>
@@ -190,7 +201,8 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
             <div class="entry-content gafrom from-post-entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
               <div class="adsfr">
-                <script type="text/javascript"><!--
+                <?php 
+                $adsensem='<script type="text/javascript"><!--
                 google_ad_client = "ca-pub-1187873112185798";
                 /* exp1-300x250-1-posts-derecha */
                 google_ad_slot = "6429770694";
@@ -200,7 +212,14 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                 </script>
                 <script type="text/javascript"
                 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-                </script>
+                </script>';
+                $netsonicm='<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
+  googletag.pubads().definePassback(\'/99685898/CO_gestiopolis.com_ALL/CO_gestiopolis.com/CO_gestiopolis.com_disp_300x250\', [300, 250]).display();
+</script>';
+$anunciosm = array($adsensem,$adsensem,$adsensem,$netsonicm,$netsonicm,$netsonicm,$netsonicm,$netsonicm,$netsonicm,$netsonicm);
+$ad_codesm = $anunciosm[rand(0,9)];
+echo $ad_codesm;
+                ?>
               </div>
               <?php } ?>
               <?php the_content(); ?>
@@ -234,7 +253,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
             <?php } ?>
             <div id="comments" class="comentarios gafrom from-post-comments">
               <a href="javascript:;" class="btn btn-block btn-primary btn-lg cerrado"><span>Tu opinión vale, comenta aquí</span><span style="display:none;">Oculta los comentarios</span></a>
-              <div class="comments-wrapper">
+              <div id="respond" class="comments-wrapper">
                 <h2><i class="fa fa-comments"></i> Comentarios</h2>
                 <?php echo do_shortcode('[fbcomments]'); ?>
                 <?php //comments_template('/templates/comments.php'); ?>
@@ -294,12 +313,6 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
             </div><!-- .post-tags -->
             <div class="compartelo posts-home hidden-md hidden-lg gafrom from-post-rels-mobile">
               <div class="title-section"><h2>Relacionados</h2><i class="fa fa-caret-down"></i></div>
-              <!-- /1007663/ad-relacionados-moviles -->
-              <div id='div-gpt-ad-1447864264779-0'>
-              <script type='text/javascript'>
-              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1447864264779-0'); });
-              </script>
-              </div>
               <?php 
               $show = 12;
               $postsnot = array();
@@ -382,8 +395,10 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
   if ($like == ""){
     update_post_meta($post->ID, '_liked', 1);
   }
-  /*if(has_tag(8175)){
+  //if(has_tag(8175)){//Reclutamiento tag
+  //if(has_tag(8277)){//gerencia y habilidades gerenciales
+  if(has_category(20)){//Administración
     echo do_shortcode("[pro_ad_display_adzone id='334406' flyin='1' flyin_delay='3']"); 
-  }*/
+  }
   ?>
 <?php endwhile; ?>

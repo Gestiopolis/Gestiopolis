@@ -9,8 +9,8 @@ add_filter( 'the_content', 'insert_adman_ads' );
 //http://www.gestiopolis.com/la-etica-empresarial-como-fuente-de-ventajas-competitivas/
 function insert_adman_ads( $content ) {
     global $post;
-    
-    $despegar = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript">
+	
+	$despegar = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript">
     sas.call("std", {
         siteId:     78378,
         pageId:     574794,
@@ -43,38 +43,75 @@ js.src = \'//cdn.teads.tv/media/format.js\';
 s.parentNode.insertBefore(js, s);
 })(window.document);
 </script></div>';
-$anuncios = array($adman,$teads,$adman,$adman, $teads, $adman, $teads, $adman, $adman, $adman);
-//$ad_code = $anuncios[rand(0,9)];
-$ad_code = $anuncios[0];
+$netsonic = '<!-- NETSONIC.TV - ALL IN ONE (Intext) VIDEO 1.0 -->
+<script type="text/javascript">
+var NS_allinone_options = {
+   formato: \'intext\', // infirst | miniplayer | intext | interstitial
+   pub: \'CO_gestiopolis.com\',
+   vpcategory: \'netsonic_gestiopolis.com_intext\',
+   vpcategorymob: \'netsonic_gestiopolis.com_mobile\',
+   divID: "netsonic_divid_target", // div destino
+   position: 0, // 0: en la posicion | 1: antes | 2:despues | 3: dentro antes div hijo | 4: dentro despues contenido
+   vptags: "",
+   environment: "",
+   vpcontentid: "",
+   async : true,
+   version_aio: "1.0",
+   player: "flash-html5",   
+   width: "640",
+   height: "360",
+   volume: ".5",
+   title: undefined,
+   wait: false,
+   forceshow: false,
+   forceCloseButton: false,
+   mClick: undefined,
+   mPrint: undefined,
+   mFinish: undefined,
+   mNoad: undefined,
+   divClassName: "",
+   divClassNameNumber: 1,
+   miniplayer_click: false,
+   miniplayer_autosize: false,
+   rnd: Math.random().toString().substring (2, 11),
+   enabled: true
+}; 
+if (NS_allinone_options.enabled){ document.write("<scr"+"ipt type=\'text\/javascript\' src=\'http:\/\/cdn.netsonic.tv\/res\/allinone\/"+NS_allinone_options.version_aio+"\/aio.min.js?pub="+NS_allinone_options.pub+"&vpcategory="+NS_allinone_options.vpcategory+"&vpcategorymob="+NS_allinone_options.vpcategorymob+"&formato="+NS_allinone_options.formato+"&divID="+NS_allinone_options.divID+"&player="+NS_allinone_options.player+"&vptags="+NS_allinone_options.vptags+"&async="+NS_allinone_options.async+"&width="+NS_allinone_options.width+"&height="+NS_allinone_options.height+"&volume="+NS_allinone_options.volume+"&position="+NS_allinone_options.position+"&miniplayer_click="+NS_allinone_options.miniplayer_click+"&miniplayer_autosize="+NS_allinone_options.miniplayer_autosize+"&rnd="+NS_allinone_options.rnd+"\'><\/scr"+"ipt>");};
 
-    if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
+</script>
+<!-- !NETSONIC.TV - ALL IN ONE (Intext) VIDEO 1.0 -->';
+$anuncios = array($adman,$netsonic);
+$ad_code = $anuncios[mt_rand(0,1)];
+//$ad_code = $anuncios[0];
+
+	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
         //if(!is_single(28207 )){
-            return prefix_insert_after_paragraph( $ad_code, 4, $content );
+    		return prefix_insert_after_paragraph( $ad_code, 4, $content );
         //}
-    }
-    
-    return $content;
+	}
+	
+	return $content;
 }
 
 function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
-    $closing_p = '</p>';
-    $paragraphs = explode( $closing_p, $content );
-    foreach ($paragraphs as $index => $paragraph) {
+	$closing_p = '</p>';
+	$paragraphs = explode( $closing_p, $content );
+	foreach ($paragraphs as $index => $paragraph) {
 
-        if ( trim( $paragraph ) ) {
-            $paragraphs[$index] .= $closing_p;
-        }
+		if ( trim( $paragraph ) ) {
+			$paragraphs[$index] .= $closing_p;
+		}
 
-        if ( $paragraph_id == $index + 1 ) {
-            $paragraphs[$index] .= $insertion;
-        }
-    }
-    
-    return implode( '', $paragraphs );
+		if ( $paragraph_id == $index + 1 ) {
+			$paragraphs[$index] .= $insertion;
+		}
+	}
+	
+	return implode( '', $paragraphs );
 }
 //http://www.gestiopolis.com/valor-economico-agregado-eva-y-gerencia-basada-en-valor-gbv/
 function insert_ads_all2html( $content ) {
-    $pages = preg_split("/(?=<div id=\"pf)/", $content, null, PREG_SPLIT_DELIM_CAPTURE);
+	$pages = preg_split("/(?=<div id=\"pf)/", $content, null, PREG_SPLIT_DELIM_CAPTURE);
     $count = count($pages)-1;
     if($count <= 4){
         $pos2 = -1;
@@ -99,23 +136,23 @@ function insert_ads_all2html( $content ) {
         $pos2 = floor($count / 2);
         $pos2 = $pos2 -($pos2*0.25);
     }
-    foreach ($pages as $index => $page) {
+	foreach ($pages as $index => $page) {
 
-        /*if ( 1 == $index ) {
-            $pages[$index] .= '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-6\'>
+		/*if ( 1 == $index ) {
+			$pages[$index] .= '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-6\'>
 <script type=\'text/javascript\'>
 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-6\'); });
 </script>
 </div></div>';
-        }
+		}
 
-        if ( $pos2 == $index ) {
-            $pages[$index] .= '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-7\'>
+		if ( $pos2 == $index ) {
+			$pages[$index] .= '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-7\'>
 <script type=\'text/javascript\'>
 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'); });
 </script>
 </div></div>';
-        }*/
+		}*/
 
         if ( 1 == $index ) {
             $pages[$index] .= '<div class="adsce"><div id="google-ads-docs-2"></div>
@@ -214,9 +251,9 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></div>';
         }*/
-    }
-    
-    return implode( '', $pages );
+	}
+	
+	return implode( '', $pages );
 }
 
 add_filter( 'the_content', 'so_25888630_ad_between_paragraphs' );
@@ -369,7 +406,7 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
-                $ad = array( 'ad1' => '<div class="adsce"><script type="text/javascript"><!--
+                $adsense = array( 'ad1' => '<div class="adsce"><script type="text/javascript"><!--
 google_ad_client = "ca-pub-1187873112185798";
 /* Ad Segundo Párrafo (300x250)  */
 google_ad_slot = "6234192054";
@@ -380,6 +417,15 @@ google_ad_height = 250;
 <script type="text/javascript"
 src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script></div>' );
+                $sulvo = array( 'ad1' => '<div class="adsce"><!-- Sulvo Surge Pricing Unit - gestiopolis.com_300x250 -->
+<ins class="adsbysulvo"
+   data-ad-slot="sulvo_ikhlhb7p"
+   data-ad-size="300x250"
+></ins>
+<script src="//sulvo.co/v1/ads.js"></script></div>' );
+$anuncios = array($adsense,$sulvo);
+$ad_code = $anuncios[mt_rand(0,1)];
+                $ad = $ad_code;
             }else if( $key_total == 1 ){
                 $ad = array( 'ad2' => '<div class="adsce"><script type="text/javascript">
     google_ad_client = "ca-pub-2753881743271989";
@@ -513,22 +559,41 @@ function head_scripts_ads() {
     googletag.enableServices();
   });
 </script>';*/
+$adslive = '<script type=\'text/javascript\'>
+  (function() {
+    var useSSL = \'https:\' == document.location.protocol;
+    var src = (useSSL ? \'https:\' : \'http:\') +
+        \'//www.googletagservices.com/tag/js/gpt.js\';
+    document.write(\'<scr\' + \'ipt src="\' + src + \'"></scr\' + \'ipt>\');
+  })();
+</script>
+
+<script type=\'text/javascript\'>
+  googletag.cmd.push(function() {
+    googletag.defineOutOfPageSlot(\'/11322282/GestioPolis.com_I//1x1\', \'div-gpt-ad-1436976370032-0\').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().enableSyncRendering();
+    googletag.enableServices();
+  });
+</script>
+
+<!-- /11322282/GestioPolis.com_I//1x1 -->
+<div id=\'div-gpt-ad-1436976370032-0\'>
+<script type=\'text/javascript\'>
+googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1436976370032-0\'); });
+</script>
+</div>';
+$q1= '<script src="http://Q1MediaHydraPlatform.com/ads/video/controller.php?qid=56d841ab6fbe154632ae0e88&qz=1"></script>';
+$anuncios = array($adslive,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1);
+//echo $anuncios[rand(0,9)];
 echo '
 <script src=\'http://www5.smartadserver.com/config.js?nwid=1371\' type="text/javascript"></script>
 <script type="text/javascript">
     sas.setup({ domain: \'http://www5.smartadserver.com\'});
-</script>';
+</script>'.$anuncios[mt_rand(0,9)];//mt_rand(0,9)
 }
 }
 add_action('wp_head', 'head_scripts_ads', 1);
-
-function head_storyad() {
-    if (is_page_template('storyadtemplate.php')) {
-    echo '<script type="text/javascript" src="http://storyad.net/advertisement/story.js"></script>
-    <meta name="robots" content="noindex,nofollow" />';
-    } 
-}
-add_action('wp_head', 'head_storyad', 1);
 
 function footer_adsense_script() {
     
@@ -565,25 +630,81 @@ $plads= '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogl
     enable_page_level_ads: true
   });
 </script>';
-$unipiloto = '<script type=\'text/javascript\'>
-  (function() {
-    var useSSL = \'https:\' == document.location.protocol;
-    var src = (useSSL ? \'https:\' : \'http:\') +
-        \'//www.googletagservices.com/tag/js/gpt.js\';
-    document.write(\'<scr\' + \'ipt src="\' + src + \'"></scr\' + \'ipt>\');
-  })();
-</script>
-<script type=\'text/javascript\'>
-  googletag.cmd.push(function() {
-    googletag.defineSlot(\'/1007663/ad-relacionados-moviles\', [341, 401], \'div-gpt-ad-1447864264779-0\').addService(googletag.pubads());
-    googletag.pubads().enableSingleRequest();
-    googletag.pubads().enableSyncRendering();
-    googletag.enableServices();
-  });
-</script>';
-$anuncios = array($plads,$adslive,$plads,$adslive,$plads,$plads,$plads,$plads,$plads,$plads);
-echo $anuncios[rand(0,9)] . $unipiloto;
+$fbads='<style>
+     #ad_root {
+        display: none;
+        font-size: 14px;
+        height: 250px;
+        line-height: 16px;
+        position: relative;
+        width: 300px;
+      }
+
+      .thirdPartyMediaClass {
+        height: 157px;
+        width: 300px;
+      }
+
+      .thirdPartyTitleClass {
+        font-weight: 600;
+        font-size: 16px;
+        margin: 8px 0 4px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .thirdPartyBodyClass {
+        display: -webkit-box;
+        height: 32px;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+
+      .thirdPartyCallToActionClass {
+        color: #326891;
+        font-family: sans-serif;
+        font-weight: 600;
+        margin-top: 8px;
+      }
+    </style>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.Event.subscribe(
+          \'ad.loaded\',
+          function(placementId) {
+            console.log(\'Audience Network ad loaded\');
+            document.getElementById(\'ad_root\').style.display = \'block\';
+          }
+        );
+        FB.Event.subscribe(
+          \'ad.error\',
+          function(errorCode, errorMessage, placementId) {
+            console.log(\'Audience Network error (\' + errorCode + \') \' + errorMessage);
+          }
+        );
+      };
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk/xfbml.ad.js#xfbml=1&version=v2.5&appId=154786858571";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, \'script\', \'facebook-jssdk\'));
+    </script>
+    <fb:ad placementid="154786858571_10154565912493572" format="native" nativeadid="ad_root" testmode="false"></fb:ad>
+    <div id="ad_root">
+      <a class="fbAdLink">
+        <div class="fbAdMedia thirdPartyMediaClass"></div>
+        <div class="fbAdTitle thirdPartyTitleClass"></div>
+        <div class="fbAdBody thirdPartyBodyClass"></div>
+        <div class="fbAdCallToAction thirdPartyCallToActionClass"></div>
+      </a>
+    </div>';
+//$anuncios = array($plads,$adslive,$plads,$adslive,$plads,$plads,$plads,$plads,$plads,$plads);
+//echo $anuncios[mt_rand(0,9)];
 //echo $unipiloto;
+    echo $plads;
 }
 add_action('wp_footer', 'footer_adsense_script', 1);
 ?>
