@@ -584,7 +584,7 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1436976370032-0\'
 </script>
 </div>';
 $q1= '<script src="http://Q1MediaHydraPlatform.com/ads/video/controller.php?qid=56d841ab6fbe154632ae0e88&qz=1"></script>';
-$anuncios = array($adslive,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1);
+$anuncios = array($q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1);
 //echo $anuncios[rand(0,9)];
 echo '
 <script src=\'http://www5.smartadserver.com/config.js?nwid=1371\' type="text/javascript"></script>
