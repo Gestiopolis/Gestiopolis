@@ -4,102 +4,23 @@
       <div class="hidden-xs hidden-sm col-md-3 sidebarcol gafrom from-sidebar-post">
         <div class="fixedside">
 <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
-<div id="google-ads-sidebar" class="gafrom from-ad-sidebar"></div>
-<script type="text/javascript"> 
- 
-    /* Calculate the width of available ad space */
-    ad = document.getElementById('google-ads-sidebar');
- 
-    if (ad.getBoundingClientRect().width) {
-        adWidth = ad.getBoundingClientRect().width; // for modern browsers 
-    } else {
-        adWidth = ad.offsetWidth; // for old IE 
-    }
- 
-    /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-    google_ad_client = "ca-pub-1187873112185798";
- 
-    /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-    google_ad_slot = "6290017974";
-  
-    /* Do not change anything after this line */
-    if ( adWidth >= 300 )
-      google_ad_size = ["300", "600"];  /* Leaderboard 728x90 */
-    else
-      google_ad_size = ["160", "600"]; /* Button (125 x 125) */
- 
-    google_ad_width = google_ad_size[0];
-    google_ad_height=google_ad_size[1];
- 
+<!-- /1007663/Trans-Lateral-ATF-300x600 -->
+<div id='div-gpt-ad-1460590183368-14'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-14'); });
 </script>
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</div>
+<?php }else { ?>
+<!-- /1007663/Post-Lateral-ATF-300x600 -->
+<div id='div-gpt-ad-1460590183368-9'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9'); });
 </script>
-<?php }else { 
-  
-$adsensesb = '<div id="google-ads-sidebar" class="gafrom from-ad-sidebar"></div>
-<script type="text/javascript"> 
- 
-    /* Calculate the width of available ad space */
-    ad = document.getElementById(\'google-ads-sidebar\');
- 
-    if (ad.getBoundingClientRect().width) {
-        adWidth = ad.getBoundingClientRect().width; // for modern browsers 
-    } else {
-        adWidth = ad.offsetWidth; // for old IE 
-    }
- 
-    /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-    google_ad_client = "ca-pub-1187873112185798";
- 
-    /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-    google_ad_slot = "9383186454";
-  
-    /* Do not change anything after this line */
-    if ( adWidth >= 300 )
-      google_ad_size = ["300", "600"];  /* Leaderboard 728x90 */
-    else
-      google_ad_size = ["160", "600"]; /* Button (125 x 125) */
- 
-    google_ad_width = google_ad_size[0];
-    google_ad_height=google_ad_size[1];
- 
-</script>
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>';
-
-$filmstrip='<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
-googletag.pubads().definePassback(\'/99685898/CO_gestiopolis.com_ALL/CO_gestiopolis.com/CO_gestiopolis.com_rich_filmstrip_300x600\', [300, 600]).display();
-</script>';
-$disp = '<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
-  googletag.pubads().definePassback(\'/99685898/CO_gestiopolis.com_ALL/CO_gestiopolis.com/CO_gestiopolis.com_disp_300x600\', [300, 600]).display();
-</script>';
-$anunciossb = array($filmstrip,$disp,$disp,$adsensesb,$adsensesb,$adsensesb,$adsensesb,$adsensesb,$adsensesb,$adsensesb);
-$ad_codesb = $anunciossb[rand(0,9)];
-echo $ad_codesb;
- } ?>
-<?php //if (is_single(array(30646,56381,333736,333680,333687))) {?>
+</div>
+ <?php } ?>
 <?php get_template_part('templates/sidebar-post'); ?>
-<?php //} ?>
-<!--<div class="ad-sidebar">
-  <h3>Te va a interesar <span class="arrow down"><i class="fa fa-chevron-circle-down"></i></span><span class="arrow up" style="display: none;"><i class="fa fa-chevron-circle-up"></i></span></h3>
-  <div class="post-home">
-    <div class="postw">
-      <article id="post-333666" class="post hentry">
-        <div class="wrapper-img">
-          <a href="http://www.gestiopolis.com/relacion-entre-precio-y-calidad-en-la-generacion-de-proyectos-exitosos-la-nueva-chevrolet-n300-pick-up-como-ejemplo/" title="Relación entre precio y calidad en la generación de proyectos exitosos. La nueva chevrolet N300 Pick up como ejemplo" rel="bookmark">
-          <img src="http://www.gestiopolis.com/wp-content/uploads/2015/06/19098262611_8af2deba22_b-742x556.jpg" data-original="http://www.gestiopolis.com/wp-content/uploads/2015/06/19098262611_8af2deba22_b-742x556.jpg" alt="Relación entre precio y calidad en la generación de proyectos exitosos. La nueva chevrolet N300 Pick up como ejemplo" class="lazy img-responsive" style="display: block;">
-          </a>
-        </div>
-        <h4 class="entry-title"><a href="http://www.gestiopolis.com/relacion-entre-precio-y-calidad-en-la-generacion-de-proyectos-exitosos-la-nueva-chevrolet-n300-pick-up-como-ejemplo/"><span>Relación entre precio y calidad en la generación de proyectos exitosos. La nueva chevrolet N300 Pick up como ejemplo</span></a></h4>
-      </article>
-    </div>
   </div>
-</div>-->
-
-      </div>
-      </div><!--.col-sm-3-->
+</div><!--.col-sm-3-->
       <div class="col-sm-12 col-md-9 maincol">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <h1 class="entry-title title"><?php the_title(); ?></h1>
@@ -108,80 +29,28 @@ echo $ad_codesb;
               <div class="breadcredit gafrom from-post-breadcredit">
                 <?php get_template_part('templates/entry-meta'); ?>
                 <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm gafrom from-post-tags"> ','','</div>'); ?>
+                <div class="adstags gafrom from-ads-posttags hidden-xs hidden-sm" style="margin-top: 32px;">
+                  <!-- /1007663/Post-AbajoTags -->
+                  <div id='div-gpt-ad-1460590183368-8'>
+                  <script type='text/javascript'>
+                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-8'); });
+                  </script>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-sm-12 col-md-10 col-md-pull-2 content-col">
           <time class="entry-date published hidden" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('d.m.Y'); ?></time>
           <time class="entry-date updated hidden" datetime="<?php echo get_the_modified_time('c'); ?>"><?php echo get_the_modified_date('d.m.Y'); ?></time>
           <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
-          <!--<div class="adsce">
-            <div id='div-gpt-ad-1433261534384-5'>
+          <div class="adsce">
+            <!-- /1007663/Trans-Principal-ATF-728x90 -->
+            <div id='div-gpt-ad-1460590183368-15'>
             <script type='text/javascript'>
-            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-5'); });
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-15'); });
             </script>
             </div>
-          </div>-->
-          <div class="adsce">
-          <div id="google-ads-docs-1"></div>
- 
-          <script type="text/javascript"> 
-           
-              /* Calculate the width of available ad space */
-              ad = document.getElementById('google-ads-docs-1');
-           
-              if (ad.getBoundingClientRect().width) {
-                  adWidth = ad.getBoundingClientRect().width; // for modern browsers 
-              } else {
-                  adWidth = ad.offsetWidth; // for old IE 
-              }
-           
-              /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-              google_ad_client = "ca-pub-1187873112185798";
-           
-              /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-              google_ad_slot = "1859894334";
-            
-              /* Do not change anything after this line */
-              if ( adWidth >= 727 )
-                google_ad_size = ["728", "90"];  /* Leaderboard 728x90 */
-              else if (adWidth >= 467 && adWidth < 727)
-                google_ad_size = ["468", "60"]; /* Button (125 x 125) */
-              else
-                google_ad_size = ["300", "250"]; /* Button (125 x 125) */
-           
-            google_ad_width = google_ad_size[0];
-            google_ad_height=google_ad_size[1];
-           
-           
-          </script>
-          <script type="text/javascript"
-                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-                  </script>
           </div>
-          <?php 
-          //if (0 == 1) { ?>
-          <!--<div id="toolbar">
-            <div class="btn-toolbar" role="toolbar">
-              <div class="btn-group btn-group-sm pull-left">
-                <a type="button" class="btn btn-default prevpage" href="#" title="Página Anterior"><i class="fa fa-chevron-up"></i></a>
-                <a type="button" class="btn btn-default nextpage" href="#" title="Página Siguiente"><i class="fa fa-chevron-down"></i></a>
-              </div>&nbsp;&nbsp;
-              Página <input class="pagen" value="0" name="gopage" maxlength="4" size="4"> de <span id="pages"></span>
-              <div class="btn-group pull-right">
-                  <a type="button" title="Descargar archivo" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-download-alt"></span> Descargar <span class="caret"></span></a>
-                  <ul class="dropdown-menu list-unstyled" role="menu">
-                    <li><a href="<?php //echo get_post_meta($post->ID, 'all2html_docu', true); ?>">Original</a></li>
-                    <?php //if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
-                    <li><a href="<?php //echo get_post_meta($post->ID, 'downloads_value', true); ?>">Comprimido</a></li>
-                    <?php //} ?>
-                    <?php //if (get_post_meta($post->ID, "all2html_ext", true) != 'pdf') { ?>
-                    <li><a href="<?php //echo home_url(get_post_meta($post->ID, 'all2html_pdf', true)); ?>">PDF</a></li>
-                    <?php //} ?>
-                  </ul>
-              </div>
-            </div>
-          </div>-->
-          <?php //} ?>
           <div id="sidebar" style="display: none !important;">
             <div id="outline"></div>
           </div>
@@ -190,7 +59,6 @@ echo $ad_codesb;
           $content = file_get_contents($_SERVER['DOCUMENT_ROOT'].$servidor.get_post_meta($post->ID, "all2html_htmlcontent", true));
             echo insert_ads_all2html( $content );
           
-          //include_once($_SERVER['DOCUMENT_ROOT'].$servidor.get_post_meta($post->ID, "all2html_htmlcontent", true)); //Carga el php convertido por pdf2htmlEX 
         ?>
           <div class="loading-indicator"><img alt="" src="<?php echo home_url( '/pdf2htmlEX/pdf2htmlEX-64x64.png' ); ?>"></div>
           <?php } else if ((get_post_meta($post->ID, "all2html_php", true) != "") && (get_post_meta($post->ID, "all2html_htmlcontent", true) == "")) {?>
@@ -201,31 +69,10 @@ echo $ad_codesb;
             <div class="entry-content gafrom from-post-entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
               <div class="adsfr">
-                <?php 
-                /*$adsensem='<script type="text/javascript"><!--
-                google_ad_client = "ca-pub-1187873112185798";
-                google_ad_slot = "6429770694";
-                google_ad_width = 300;
-                google_ad_height = 250;
-                //-->
-                </script>
-                <script type="text/javascript"
-                src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-                </script>';
-                $netsonic1='<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
-  googletag.pubads().definePassback(\'/99685898/CO_gestiopolis.com_ALL/CO_gestiopolis.com/CO_gestiopolis.com_disp_300x250\', [300, 250]).display();
-</script>';
-$netsonic2='<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
-  googletag.pubads().definePassback(\'/99685898/CO_gestiopolis.com_ALL/CO_gestiopolis.com/CO_gestiopolis.com_rich_exp_300x250\', [300, 250]).display();
-</script>';
-$anunciosm = array($adsensem,$adsensem,$adsensem,$adsensem,$netsonic1,$netsonic1,$netsonic1,$netsonic1,$netsonic2,$netsonic2);
-$ad_codesm = $anunciosm[mt_rand(0,9)];
-echo $ad_codesm;*/
-                ?>
                 <!-- /1007663/Post-Principal-ATF-300x250 -->
-                <div id='div-gpt-ad-1459994552364-0' style='height:250px; width:300px;'>
+                <div id='div-gpt-ad-1460590183368-12'>
                 <script type='text/javascript'>
-                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1459994552364-0'); });
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-12'); });
                 </script>
                 </div>
               </div>
@@ -236,25 +83,13 @@ echo $ad_codesm;*/
               <h2 class="text-center">Hazle saber al autor que aprecias su trabajo</h2>
               <?php if(function_exists(getILikeThis)) getILikeThis('get'); ?>
             </div>
-            <!--<div class="adsce">
-              <div id='div-gpt-ad-1433261534384-4'>
+            <div class="adsce">
+              <!-- /1007663/Post-Abajo-BTF-300x250 -->
+              <div id='div-gpt-ad-1460590183368-7'>
               <script type='text/javascript'>
-              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-4'); });
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-7'); });
               </script>
               </div>
-            </div>-->
-            <div class="adsce">
-              <script type="text/javascript"><!--
-              google_ad_client = "ca-pub-1187873112185798";
-              /* post-doc-fondo-contenido */
-              google_ad_slot = "2800946094";
-              google_ad_width = 300;
-              google_ad_height = 250;
-              //-->
-              </script>
-              <script type="text/javascript"
-              src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-              </script>
             </div>
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="downbox"><a class="downlink gafrom from-post-downlink" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>

@@ -9,80 +9,14 @@ add_filter( 'the_content', 'insert_adman_ads' );
 //http://www.gestiopolis.com/la-etica-empresarial-como-fuente-de-ventajas-competitivas/
 function insert_adman_ads( $content ) {
     global $post;
-	
-	$dtravel = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript">
-    sas.call("std", {
-        siteId:     78378,
-        pageId:     574794,
-        formatId:   32469,
-        target:     \'\'
-    });
-</script>
-<noscript>
-    <a href="http://www5.smartadserver.com/ac?jump=1&nwid=1371&siteid=78378&pgname=all_site&fmtid=32469&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
-        <img src="http://www5.smartadserver.com/ac?out=nonrich&nwid=1371&siteid=78378&pgname=all_site&fmtid=32469&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
-</noscript>
-<div id="contPauta"></div></div>';
-$adman = '<div id="admanmedia" class="hidden-xs"><script src="http://icarus-wings.admanmedia.com/intext/intext_vast.js?pmu=183f9431;pmb=216f0476;size=600x338;visibility=50"></script></div>';
-$teads = '<div id="admanmedia" class="hidden-xs"><script type="text/javascript">
-window._ttf = window._ttf || [];
-_ttf.push({
-pid          : 35670
-,lang        : "es"
-,slot        : \'.post-content .entry-content > p\'
-,format      : "inread"
-,minSlot     : 7
-,css         : "margin: 32px 0px;"
-});
 
-(function (d) {
-var js, s = d.getElementsByTagName(\'script\')[0];
-js = d.createElement(\'script\');
-js.async = true;
-js.src = \'//cdn.teads.tv/media/format.js\';
-s.parentNode.insertBefore(js, s);
-})(window.document);
-</script></div>';
-$netsonic = '<!-- NETSONIC.TV - ALL IN ONE (Intext) VIDEO 1.0 -->
-<script type="text/javascript">
-var NS_allinone_options = {
-   formato: \'intext\', // infirst | miniplayer | intext | interstitial
-   pub: \'CO_gestiopolis.com\',
-   vpcategory: \'netsonic_gestiopolis.com_intext\',
-   vpcategorymob: \'netsonic_gestiopolis.com_mobile\',
-   divID: "netsonic_divid_target", // div destino
-   position: 0, // 0: en la posicion | 1: antes | 2:despues | 3: dentro antes div hijo | 4: dentro despues contenido
-   vptags: "",
-   environment: "",
-   vpcontentid: "",
-   async : true,
-   version_aio: "1.0",
-   player: "flash-html5",   
-   width: "640",
-   height: "360",
-   volume: ".5",
-   title: undefined,
-   wait: false,
-   forceshow: false,
-   forceCloseButton: false,
-   mClick: undefined,
-   mPrint: undefined,
-   mFinish: undefined,
-   mNoad: undefined,
-   divClassName: "",
-   divClassNameNumber: 1,
-   miniplayer_click: false,
-   miniplayer_autosize: false,
-   rnd: Math.random().toString().substring (2, 11),
-   enabled: true
-}; 
-if (NS_allinone_options.enabled){ document.write("<scr"+"ipt type=\'text\/javascript\' src=\'http:\/\/cdn.netsonic.tv\/res\/allinone\/"+NS_allinone_options.version_aio+"\/aio.min.js?pub="+NS_allinone_options.pub+"&vpcategory="+NS_allinone_options.vpcategory+"&vpcategorymob="+NS_allinone_options.vpcategorymob+"&formato="+NS_allinone_options.formato+"&divID="+NS_allinone_options.divID+"&player="+NS_allinone_options.player+"&vptags="+NS_allinone_options.vptags+"&async="+NS_allinone_options.async+"&width="+NS_allinone_options.width+"&height="+NS_allinone_options.height+"&volume="+NS_allinone_options.volume+"&position="+NS_allinone_options.position+"&miniplayer_click="+NS_allinone_options.miniplayer_click+"&miniplayer_autosize="+NS_allinone_options.miniplayer_autosize+"&rnd="+NS_allinone_options.rnd+"\'><\/scr"+"ipt>");};
-
+$ad_code = "<!-- /1007663/Post-3Parrafo-VideoAds -->
+<div id='div-gpt-ad-1460590183368-5'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-5'); });
 </script>
-<!-- !NETSONIC.TV - ALL IN ONE (Intext) VIDEO 1.0 -->';
-$anuncios = array($adman,$netsonic);
-$ad_code = $anuncios[mt_rand(0,1)];
-//$ad_code = $anuncios[0];
+</div>";
+
 
 	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
         //if(!is_single(28207 )){
@@ -117,78 +51,19 @@ function insert_ads_all2html( $content ) {
         $pos2 = -1;
         $pos3 = -1;
         $pos4 = -1;
-    }/* elseif ($count > 4 && $count <= 16) {
-        $pos2 = floor($count / 2);
-        $pos3 = -1;
-        $pos4 = -1;
-    } elseif ($count > 16 && $count <= 48) {
-        $breakpoint = floor($count / 3);
-        $pos2 = $breakpoint;
-        $pos3 = $breakpoint*2;
-        $pos4 = -1;
     }else {
-        $breakpoint = floor($count / 4);
-        $pos2 = $breakpoint;
-        $pos3 = $breakpoint*2;
-        $pos4 = $breakpoint*3;
-    }*/
-    else {
         $pos2 = floor($count / 2);
         $pos2 = $pos2 -($pos2*0.25);
     }
 	foreach ($pages as $index => $page) {
 
-		/*if ( 1 == $index ) {
-			$pages[$index] .= '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-6\'>
+		if ( 1 == $index ) {
+            $pages[$index] .= '<div class="adsce"><!-- /1007663/Trans-SegPag-BTF-728x90 -->
+<div id=\'div-gpt-ad-1460590183368-16\'>
 <script type=\'text/javascript\'>
-googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-6\'); });
+googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1460590183368-16\'); });
 </script>
 </div></div>';
-		}
-
-		if ( $pos2 == $index ) {
-			$pages[$index] .= '<div class="adsce"><div id=\'div-gpt-ad-1433261534384-7\'>
-<script type=\'text/javascript\'>
-googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'); });
-</script>
-</div></div>';
-		}*/
-
-        if ( 1 == $index ) {
-            $pages[$index] .= '<div class="adsce"><div id="google-ads-docs-2"></div>
- 
-          <script type="text/javascript"> 
-           
-              /* Calculate the width of available ad space */
-              ad = document.getElementById(\'google-ads-docs-2\');
-           
-              if (ad.getBoundingClientRect().width) {
-                  adWidth = ad.getBoundingClientRect().width; // for modern browsers 
-              } else {
-                  adWidth = ad.offsetWidth; // for old IE 
-              }
-           
-              /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-              google_ad_client = "ca-pub-1187873112185798";
-           
-              /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-              google_ad_slot = "6811811574";
-            
-              /* Do not change anything after this line */
-              if ( adWidth >= 727 )
-                google_ad_size = ["728", "90"];  /* Leaderboard 728x90 */
-              else if (adWidth >= 467 && adWidth < 727)
-                google_ad_size = ["468", "60"]; /* Button (125 x 125) */
-              else
-                google_ad_size = ["300", "250"]; /* Button (125 x 125) */
-           
-              google_ad_width = google_ad_size[0];
-            google_ad_height=google_ad_size[1];
-           
-          </script>
-          <script type="text/javascript"
-                  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-                  </script></div>';
         }
 
         if ( $pos2 == $index ) {
@@ -228,30 +103,7 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1433261534384-7\'
                   </script></div>';
         }
 
-        /*if ( $pos3 == $index ) {
-            $pages[$index] .= '<div class="adsce"><!-- 4-anuncio-prueba-p-3 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2753881743271989"
-     data-ad-slot="3425167724"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></div>';
-        }
-
-        if ( $pos4 == $index ) {
-            $pages[$index] .= '<div class="adsce"><!-- 5-anuncio-prueba-p-4 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2753881743271989"
-     data-ad-slot="3285566922"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></div>';
-        }*/
-	}
+}
 	
 	return implode( '', $pages );
 }
@@ -308,42 +160,7 @@ function so_25888630_ad_between_paragraphs($content){
         $count = count( $paragraphs );
         if( 12 >= $count ) {
             $totals = array( $paragraphs ); 
-        }/*else if( $count > 4 && $count <= 20 ){
-            $midpoint = floor($count / 2);
-            $first = array_slice($paragraphs, 0, $midpoint );
-            if( $count%2 == 1 ) {
-                $second = array_slice( $paragraphs, $midpoint, $midpoint, true );
-            }else{
-                $second = array_slice( $paragraphs, $midpoint, $midpoint-1, true );
-            }
-            $totals = array( $first, $second );
-        } else if ($count > 20 && $count <= 40){
-            $breakpoint = floor($count / 3);
-            $first = array_slice($paragraphs, 0, $breakpoint );
-            $second = array_slice( $paragraphs, $breakpoint, $breakpoint, true );
-            $diff = $count - ($breakpoint*2);
-            $third = array_slice( $paragraphs, $breakpoint*2, $diff, true );
-            $totals = array( $first, $second, $third );
-        } else {
-            $breakpoint = floor($count / 4);
-            $first = array_slice($paragraphs, 0, $breakpoint );
-            $second = array_slice( $paragraphs, $breakpoint, $breakpoint, true );
-            $third = array_slice( $paragraphs, $breakpoint*2, $breakpoint, true );
-            $diff = $count - ($breakpoint*3);
-            $fourth = array_slice( $paragraphs, $breakpoint*3, $diff, true );
-            $totals = array( $first, $second, $third, $fourth );
-        }*/
-        /*else {
-            $midpoint = floor($count / 2);
-            $first = array_slice($paragraphs, 0, $midpoint );
-            if( $count%2 == 1 ) {
-                $second = array_slice( $paragraphs, $midpoint, $midpoint, true );
-            }else{
-                $second = array_slice( $paragraphs, $midpoint, $midpoint-1, true );
-            }
-            $totals = array( $first, $second );
-        }*/
-        else {
+        }else {
             $midpoint = floor($count / 2);
             $first = array_slice($paragraphs, 0, $midpoint );
             $diff = $count - $midpoint;
@@ -406,58 +223,20 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
-                $adsense = array( 'ad1' => '<div class="adsce"><script type="text/javascript"><!--
-google_ad_client = "ca-pub-1187873112185798";
-/* Ad Segundo Párrafo (300x250)  */
-google_ad_slot = "6234192054";
-google_ad_width = 300;
-google_ad_height = 250;
-//-->
+                $ad = array( 'ad1' => '<div class="adsce"><!-- /1007663/Post-4Parrafo-BTF-300x250 -->
+<div id=\'div-gpt-ad-1460590183368-6\'>
+<script type=\'text/javascript\'>
+googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1460590183368-6\'); });
 </script>
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script></div>' );
-                $sulvo = array( 'ad1' => '<div class="adsce"><!-- Sulvo Surge Pricing Unit - gestiopolis.com_300x250 -->
-<ins class="adsbysulvo"
-   data-ad-slot="sulvo_ikhlhb7p"
-   data-ad-size="300x250"
-></ins>
-<script src="//sulvo.co/v1/ads.js"></script></div>' );
-$anuncios = array($adsense,$sulvo);
-$ad_code = $anuncios[mt_rand(0,1)];
-                $ad = $ad_code;
+</div></div>' );
             }else if( $key_total == 1 ){
-                $ad = array( 'ad2' => '<div class="adsce"><script type="text/javascript">
-    google_ad_client = "ca-pub-2753881743271989";
-    google_ad_slot = "9288290921";
-    google_ad_width = 300;
-    google_ad_height = 250;
+                $ad = array( 'ad2' => '<div class="adsce"><!-- /1007663/Post-Mitad-BTF-300x250 -->
+<div id=\'div-gpt-ad-1460590183368-11\'>
+<script type=\'text/javascript\'>
+googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1460590183368-11\'); });
 </script>
-<!-- post-mitad-contenido -->
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script></div>' );
-            }/* else if( $key_total == 2 ){
-                $ad = array( 'ad3' => '<div class="adsce"><!-- 4-anuncio-prueba-p-3 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2753881743271989"
-     data-ad-slot="3425167724"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></div>' );
-            }else{
-                $ad = array( 'ad4' => '<div class="adsce"><!-- 5-anuncio-prueba-p-4 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2753881743271989"
-     data-ad-slot="3285566922"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></div>' );
-            }*/
+</div></div>' );
+            }
 
             /**-----------------------------------------------------------------------------
              *
@@ -507,10 +286,10 @@ function footer_dataxpand() {
 }
 add_action('wp_footer', 'footer_dataxpand', 100);
 
-function head_scripts_single_ads() {
+/*function head_scripts_single_ads() {
     global $post;
     if (is_single()) {
-    /*echo '<script type=\'text/javascript\'>
+    echo '<script type=\'text/javascript\'>
   var googletag = googletag || {};
   googletag.cmd = googletag.cmd || [];
   (function() {
@@ -558,7 +337,7 @@ function head_scripts_single_ads() {
     googletag.pubads().collapseEmptyDivs();
     googletag.enableServices();
   });
-</script>';*/
+</script>';
 $dfpprincipal = "<script type='text/javascript'>
   (function() {
     var useSSL = 'https:' == document.location.protocol;
@@ -604,20 +383,58 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1436976370032-0\'
 $q1= '<script src="http://Q1MediaHydraPlatform.com/ads/video/controller.php?qid=56d841ab6fbe154632ae0e88&qz=1"></script>';
 $anuncios = array($q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1);
 //echo $anuncios[rand(0,9)];
-/*echo '
+echo '
 <script src=\'http://www5.smartadserver.com/config.js?nwid=1371\' type="text/javascript"></script>
 <script type="text/javascript">
     sas.setup({ domain: \'http://www5.smartadserver.com\'});
-</script>'.$anuncios[mt_rand(0,9)];*/
+</script>'.$anuncios[mt_rand(0,9)];
 echo $dfpprincipal.$anuncios[mt_rand(0,9)];
 }
 }
-add_action('wp_head', 'head_scripts_single_ads', 1);
+add_action('wp_head', 'head_scripts_single_ads', 1);*/
 
 function head_scripts_ads() {
-$adman= '<script src="http://gonzalezz.admanmedia.com/v3/native/chimera.js?type=video&pmu=183f9431&pmo=119b7ed6" data-adm-native async></script>';
-$anuncios = array('','','','',$adman,'','','','','');
-echo $anuncios[mt_rand(0,9)];
+  global $post;
+  $dfpPrincipal = "<script type='text/javascript'>
+  (function() {
+    var useSSL = 'https:' == document.location.protocol;
+    var src = (useSSL ? 'https:' : 'http:') +
+        '//www.googletagservices.com/tag/js/gpt.js';
+    document.write('<scr' + 'ipt src=\"' + src + '\"></scr' + 'ipt>');
+  })();
+</script>
+
+<script type='text/javascript'>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1007663/Categoria-Mitad-728x90', [728, 90], 'div-gpt-ad-1460590183368-0').addService(googletag.pubads());
+    googletag.defineSlot('/1007663/Categoria-Top-728x90', [728, 90], 'div-gpt-ad-1460590183368-1').addService(googletag.pubads());
+    googletag.defineSlot('/1007663/Home-Abajo-728x90', [728, 90], 'div-gpt-ad-1460590183368-2').addService(googletag.pubads());
+    googletag.defineSlot('/1007663/Home-Mitad-728x90', [728, 90], 'div-gpt-ad-1460590183368-3').addService(googletag.pubads());
+    googletag.defineSlot('/1007663/Home-Top-728x90', [728, 90], 'div-gpt-ad-1460590183368-4').addService(googletag.pubads());
+    googletag.defineSlot('/1007663/Post-3Parrafo-VideoAds', [1, 1], 'div-gpt-ad-1460590183368-5').addService(googletag.pubads());
+    googletag.defineSlot('/1007663/Post-4Parrafo-BTF-300x250', [300, 250], 'div-gpt-ad-1460590183368-6').addService(googletag.pubads());
+    googletag.defineSlot('/1007663/Post-Abajo-BTF-300x250', [300, 250], 'div-gpt-ad-1460590183368-7').addService(googletag.pubads());
+    googletag.defineSlot('/1007663/Post-AbajoTags', [[120, 60], [120, 90], [125, 125], [120, 240], [120, 600]], 'div-gpt-ad-1460590183368-8').addService(googletag.pubads());
+    googletag.defineSlot('/1007663/Post-Lateral-ATF-300x600', [300, 600], 'div-gpt-ad-1460590183368-9').addService(googletag.pubads());
+    googletag.defineSlot('/1007663/Post-Lateral-Fondo', [[160, 600], [300, 100], [300, 600], [300, 50], [300, 125], [168, 42], [300, 250], [168, 28], [300, 75]], 'div-gpt-ad-1460590183368-10').addService(googletag.pubads());
+    googletag.defineSlot('/1007663/Post-Mitad-BTF-300x250', [300, 250], 'div-gpt-ad-1460590183368-11').addService(googletag.pubads());
+    googletag.defineSlot('/1007663/Post-Principal-ATF-300x250', [300, 250], 'div-gpt-ad-1460590183368-12').addService(googletag.pubads());
+    googletag.defineSlot('/1007663/Tag-Top-728x90', [728, 90], 'div-gpt-ad-1460590183368-13').addService(googletag.pubads());
+    googletag.defineSlot('/1007663/Trans-Lateral-ATF-300x600', [300, 600], 'div-gpt-ad-1460590183368-14').addService(googletag.pubads());
+    googletag.defineSlot('/1007663/Trans-Principal-ATF-728x90', [728, 90], 'div-gpt-ad-1460590183368-15').addService(googletag.pubads());
+    googletag.defineSlot('/1007663/Trans-SegPag-BTF-728x90', [728, 90], 'div-gpt-ad-1460590183368-16').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.pubads().enableSyncRendering();
+    googletag.enableServices();
+  });
+</script>";
+  $scripts = '';
+  if (is_single()) {
+    $scripts .= '';
+  }
+
+echo $dfpPrincipal.$scripts;
 }
 add_action('wp_head', 'head_scripts_ads', 1);
 
