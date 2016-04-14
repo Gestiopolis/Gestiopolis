@@ -429,9 +429,13 @@ function head_scripts_ads() {
     googletag.enableServices();
   });
 </script>";
-  $scripts = '';
+  $scripts = '<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
+  googletag.pubads().definePassback(\'/1007663/Header-Moviles\', [1, 1]).display();
+</script>';
   if (is_single()) {
-    $scripts .= '';
+    $scripts .= '<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
+  googletag.pubads().definePassback(\'/1007663/Header-Moviles-Articulos\', [1, 1]).display();
+</script>';
   }
 
 echo $dfpPrincipal.$scripts;
@@ -547,7 +551,9 @@ $fbads='<style>
 //$anuncios = array($plads,$adslive,$plads,$adslive,$plads,$plads,$plads,$plads,$plads,$plads);
 //echo $anuncios[mt_rand(0,9)];
 //echo $unipiloto;
-    echo $plads;
+    echo '<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
+  googletag.pubads().definePassback(\'/1007663/Footer-Moviles\', [1, 1]).display();
+</script>';
 }
 add_action('wp_footer', 'footer_adsense_script', 1);
 ?>
