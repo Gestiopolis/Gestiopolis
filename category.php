@@ -26,9 +26,9 @@ get_currentuserinfo();
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <div class="adsce">
+      <div>
         <!-- /1007663/Categoria-Top-728x90 -->
-        <div id='div-gpt-ad-1460590183368-1'>
+        <div id='div-gpt-ad-1460590183368-1' class="adsce">
         <script type='text/javascript'>
         googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-1'); });
         </script>
@@ -185,9 +185,9 @@ get_currentuserinfo();
   </div><!-- .row AUTORES POPULARES -->
   <div class="row">
     <div class="col-sm-12">
-      <div class="adsce">
+      <div>
         <!-- /1007663/Categoria-Mitad-728x90 -->
-        <div id='div-gpt-ad-1460590183368-0'>
+        <div id='div-gpt-ad-1460590183368-0' class="adsce">
         <script type='text/javascript'>
         googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-0'); });
         </script>

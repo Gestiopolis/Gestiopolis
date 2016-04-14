@@ -2,9 +2,9 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <div class="adsce">
+      <div>
         <!-- /1007663/Home-Top-728x90 -->
-        <div id='div-gpt-ad-1460590183368-4'>
+        <div id='div-gpt-ad-1460590183368-4' class="adsce">
         <script type='text/javascript'>
         googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-4'); });
         </script>
@@ -134,9 +134,9 @@
   </div><!-- /.destacados -->
   <div class="row">
     <div class="col-sm-12">
-      <div class="adsce">
+      <div>
         <!-- /1007663/Home-Mitad-728x90 -->
-        <div id='div-gpt-ad-1460590183368-3'>
+        <div id='div-gpt-ad-1460590183368-3' class="adsce">
         <script type='text/javascript'>
         googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-3'); });
         </script>
@@ -204,9 +204,9 @@
   </div><!-- .row AUTORES POPULARES -->
   <div class="row">
     <div class="col-sm-12">
-      <div class="adsce">
+      <div>
         <!-- /1007663/Home-Abajo-728x90 -->
-        <div id='div-gpt-ad-1460590183368-2'>
+        <div id='div-gpt-ad-1460590183368-2' class="adsce">
         <script type='text/javascript'>
         googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-2'); });
         </script>

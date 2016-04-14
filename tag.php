@@ -18,13 +18,11 @@ get_currentuserinfo();
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <div class="adsce">
       <!-- /1007663/Tag-Top-728x90 -->
-      <div id='div-gpt-ad-1460590183368-13'>
+      <div id='div-gpt-ad-1460590183368-13' class="adsce">
       <script type='text/javascript'>
       googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-13'); });
       </script>
-      </div>
       </div>
     </div>
   </div>
