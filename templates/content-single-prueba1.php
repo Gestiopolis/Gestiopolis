@@ -1,56 +1,60 @@
 <?php while (have_posts()) : the_post(); ?>
   <div class="container cposts">
     <div class="row">
-      <div class="hidden-xs hidden-sm col-md-3 sidebarcol gafrom from-sidebar-post">
-        <div class="fixedside">
-<?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
-<!-- /1007663/Trans-Lateral-ATF-300x600 -->
-<div id='div-gpt-ad-1460590183368-14'>
-<script type='text/javascript'>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-14'); });
+      <div class="hidden-xs hidden-sm col-md-3 sidebarcol">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Adsense 300 x 600 Posts -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-2753881743271989"
+     data-ad-slot="8839025323"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-</div>
-<?php }else { ?>
-<!-- /1007663/Post-Lateral-ATF-300x600 -->
-<div id='div-gpt-ad-1460590183368-9'>
-<script type='text/javascript'>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9'); });
-</script>
-</div>
- <?php } ?>
-<?php get_template_part('templates/sidebar-post'); ?>
-  </div>
-</div><!--.col-sm-3-->
+        <?php //get_template_part('templates/sidebar-post'); ?>
+      </div><!--.col-sm-3-->
       <div class="col-sm-12 col-md-9 maincol">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <h1 class="entry-title title"><?php the_title(); ?></h1>
           <div class="row"><!-- Empieza row de contenido y meta datos -->
-            <div class="col-sm-12 col-md-2 col-md-push-10">
-              <div class="breadcredit gafrom from-post-breadcredit">
-                <?php get_template_part('templates/entry-meta'); ?>
-                <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm gafrom from-post-tags"> ','','</div>'); ?>
-                <div class="adstags gafrom from-ads-posttags hidden-xs hidden-sm" style="margin-top: 32px;">
-                  <!-- /1007663/Post-AbajoTags -->
-                  <div id='div-gpt-ad-1460590183368-8'>
-                  <script type='text/javascript'>
-                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-8'); });
-                  </script>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12 col-md-10 col-md-pull-2 content-col">
+            <div class="col-sm-12 col-md-10">
           <time class="entry-date published hidden" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('d.m.Y'); ?></time>
           <time class="entry-date updated hidden" datetime="<?php echo get_the_modified_time('c'); ?>"><?php echo get_the_modified_date('d.m.Y'); ?></time>
+          <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
+          <?php get_template_part('templates/post-front-edit'); ?>
+          <?php } ?>
           <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
           <div class="adsce">
-            <!-- /1007663/Trans-Principal-ATF-728x90 -->
-            <div id='div-gpt-ad-1460590183368-15'>
+            <div id='div-gpt-ad-1433261534384-5'>
             <script type='text/javascript'>
-            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-15'); });
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-5'); });
             </script>
             </div>
           </div>
+          <?php 
+          if (0 == 1) { ?>
+          <div id="toolbar">
+            <div class="btn-toolbar" role="toolbar">
+              <div class="btn-group btn-group-sm pull-left">
+                <a type="button" class="btn btn-default prevpage" href="#" title="Página Anterior"><i class="fa fa-chevron-up"></i></a>
+                <a type="button" class="btn btn-default nextpage" href="#" title="Página Siguiente"><i class="fa fa-chevron-down"></i></a>
+              </div>&nbsp;&nbsp;
+              Página <input class="pagen" value="0" name="gopage" maxlength="4" size="4"> de <span id="pages"></span>
+              <div class="btn-group pull-right">
+                  <a type="button" title="Descargar archivo" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-download-alt"></span> Descargar <span class="caret"></span></a>
+                  <ul class="dropdown-menu list-unstyled" role="menu">
+                    <li><a href="<?php echo get_post_meta($post->ID, 'all2html_docu', true); ?>">Original</a></li>
+                    <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
+                    <li><a href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>">Comprimido</a></li>
+                    <?php } ?>
+                    <?php if (get_post_meta($post->ID, "all2html_ext", true) != 'pdf') { ?>
+                    <li><a href="<?php echo home_url(get_post_meta($post->ID, 'all2html_pdf', true)); ?>">PDF</a></li>
+                    <?php } ?>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <?php } ?>
           <div id="sidebar" style="display: none !important;">
             <div id="outline"></div>
           </div>
@@ -59,6 +63,7 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
           $content = file_get_contents($_SERVER['DOCUMENT_ROOT'].$servidor.get_post_meta($post->ID, "all2html_htmlcontent", true));
             echo insert_ads_all2html( $content );
           
+          //include_once($_SERVER['DOCUMENT_ROOT'].$servidor.get_post_meta($post->ID, "all2html_htmlcontent", true)); //Carga el php convertido por pdf2htmlEX 
         ?>
           <div class="loading-indicator"><img alt="" src="<?php echo home_url( '/pdf2htmlEX/pdf2htmlEX-64x64.png' ); ?>"></div>
           <?php } else if ((get_post_meta($post->ID, "all2html_php", true) != "") && (get_post_meta($post->ID, "all2html_htmlcontent", true) == "")) {?>
@@ -66,43 +71,29 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
           <p><b><a href="<?php echo home_url('/'); ?>" id="deletePdf">ELIMINAR DOCUMENTO</a></b></p>
           <?php } ?>
           <div class="post-content clearfix">
-            <div class="entry-content gafrom from-post-entry-content">
+            <div class="entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
-              <div class="adsfr">
-                <!-- /1007663/Post-Principal-ATF-300x250 -->
-                <div id='div-gpt-ad-1460590183368-12'>
-                <script type='text/javascript'>
-                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-12'); });
-                </script>
+                <div class="adsfr">
+                  <div id='div-gpt-ad-1433261534384-0' style='height:250px; width:300px;'>
+                  <script type='text/javascript'>
+                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-0'); });
+                  </script>
+                  </div>
                 </div>
-              </div>
               <?php } ?>
               <?php the_content(); ?>
             </div>
-            <div id="likepost" class="compartelo  gafrom from-post-likepost">
-              <h2 class="text-center">Hazle saber al autor que aprecias su trabajo</h2>
-              <?php if(function_exists(getILikeThis)) getILikeThis('get'); ?>
-            </div>
             <div class="adsce">
-              <!-- /1007663/Post-Abajo-BTF-300x250 -->
-              <div id='div-gpt-ad-1460590183368-7'>
+              <div id='div-gpt-ad-1433261534384-4'>
               <script type='text/javascript'>
-              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-7'); });
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1433261534384-4'); });
               </script>
               </div>
             </div>
-            <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
-            <div class="downbox"><a class="downlink gafrom from-post-downlink" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
+           <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
+            <div class="download-box"><a class="download-link" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
-            <div id="comments" class="comentarios gafrom from-post-comments">
-              <a href="javascript:;" class="btn btn-block btn-primary btn-lg cerrado"><span>Tu opinión vale, comenta aquí</span><span style="display:none;">Oculta los comentarios</span></a>
-              <div id="respond" class="comments-wrapper">
-                <h2><i class="fa fa-comments"></i> Comentarios</h2>
-                <?php echo do_shortcode('[fbcomments]'); ?>
-                <?php //comments_template('/templates/comments.php'); ?>
-              </div>
-            </div>
-            <div id="suscripcion" class="suscripcion hidden gafrom from-post-suscripcion">
+            <div id="suscripcion" class="suscripcion hidden">
               <div>
                 <span class="author-color"><i class="fa fa-envelope"></i></span>
                 <strong>Recibe los mejores contenidos en tu email</strong>
@@ -117,7 +108,7 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
             </div>
             <div class="compartelo">
               <h2><i class="fa fa-share"></i> Compártelo con tu mundo</h2>
-              <ul class="list-unstyled gafrom from-post-compartelo">
+              <ul class="list-unstyled">
                 <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&layout=link&appId=220995104693477" class="btn facebook"><i class="fa fa-facebook-square"></i> Facebook</a></li>
                 <li><a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink());?>&amp;text=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
  ?>&amp;via=gestiopoliscom" class="btn twitter"><i class="fa fa-twitter-square"></i> Twitter</a></li>
@@ -130,7 +121,7 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
             </div><!-- .compartelo -->
             <div id="autores" class="autores">
               <h2>Escrito por:</h2>
-              <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="author vcard gafrom from-post-author-info-bottom">
+              <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="author vcard">
                 <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
                 <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="url">
                   <?php echo get_author_color_id(); ?>
@@ -152,10 +143,10 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
             </div>
             <div class="post-tags hidden-md hidden-lg">
               <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
-              <?php the_tags('<div class="temas-archive  gafrom from-post-tags-mobile"> ','','</div>'); ?>
+              <?php the_tags('<div class="temas-archive"> ','','</div>'); ?>
             </div><!-- .post-tags -->
-            <div class="compartelo posts-home hidden-md hidden-lg gafrom from-post-rels-mobile">
-              <div class="title-section"><h2>Relacionados</h2><i class="fa fa-caret-down"></i></div>
+            <div class="compartelo posts-home hidden-md hidden-lg">
+              <div class="title-section"><h2>Te recomendamos</h2><i class="fa fa-caret-down"></i></div>
               <?php 
               $show = 12;
               $postsnot = array();
@@ -185,11 +176,8 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
                   }
                   ?>
             </div><!-- .recomendados -->
-            <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
-            <?php get_template_part('templates/post-front-edit'); ?>
-            <?php } ?>
             <?php get_template_part('templates/entry-exlinks'); ?>
-            <div class="quotes gafrom from-post-quotes">
+            <div class="quotes">
               <div>
                 <span class="author-color"><i class="fa fa-thumb-tack"></i></span>
                 <strong>Cita esta página</strong>
@@ -220,28 +208,71 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
 
             
             <?php if (get_post_meta($post->ID, "image_url_value", true) != "") { ?>
-            <div class="image-credit gafrom from-post-img-credit"><i class="fa fa-camera"></i> Imagen del encabezado cortesía de <a href="<?php echo get_post_meta($post->ID, "image_url_value", $single = true); ?>" target="_blank"><?php echo get_post_meta($post->ID, "image_author_t_value", true); ?></a> en Flickr</div>
+            <div class="image-credit"><i class="fa fa-camera"></i> Imagen del encabezado cortesía de <a href="<?php echo get_post_meta($post->ID, "image_url_value", $single = true); ?>" target="_blank"><?php echo get_post_meta($post->ID, "image_author_t_value", true); ?></a> en Flickr</div>
             <?php } ?>
           </div>
           <footer>
             <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
           </footer>
+          <div id="comments" class="comentarios">
+            <a href="javascript:;" class="btn btn-block btn-primary btn-lg cerrado"><span>Tu opinión vale, comenta aquí</span><span style="display:none;">Oculta los comentarios</span></a>
+            <div class="comments-wrapper">
+              <h2><i class="fa fa-comments"></i> Comentarios</h2>
+              <?php echo do_shortcode('[fbcomments]'); ?>
+              <?php //comments_template('/templates/comments.php'); ?>
+            </div>
+          </div>
         </div><!-- fin col-md-10 -->
+        <div class="col-sm-12 col-md-2">
+          <div class="breadcredit">
+            <?php get_template_part('templates/entry-meta'); ?>
+            <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm"> ','','</div>'); ?>
+          </div>
+        </div>
+            
         </div><!-- fin de row de contenido y meta -->
         </article>
       </div><!--.col-sm-9-->
       
     </div><!-- fin de .row -->
+    <div class="row title-section">
+      <div class="col-sm-12">
+        <?php
+          $category = get_the_category($post->ID);
+          $category_id = $category[0]->term_id;
+        ?>
+        <h2>También en <i class="fa icon-cat-<?php echo $category_id; ?> cat-col-<?php echo $category_id; ?>"></i> <?php echo $category[0]->name; ?></h2>
+      </div>
+    </div>
+    <div class="row posts-home">
+      <!--<div class="col-sm-12">-->
+        <div id="recientes">
+          <?php
+            //$postp       = get_post( $post->ID );
+            //$taxonomies = get_object_taxonomies( $postp, 'names' );
+            $recent_args = array(
+              'post_type'      => get_post_type( $post->ID ),
+              'posts_per_page' => 12,
+              'post_status'    => 'publish',
+              'post__not_in'   => array($post->ID),
+              'orderby'        => 'date',
+              'paged'          => $paged,
+              'cat'      => $category_id
+            );
+            $the_query = new WP_Query( $recent_args );
+
+            if ( $the_query->have_posts() ) :
+              while ( $the_query->have_posts() ) : $the_query->the_post();
+
+                get_template_part( 'templates/content', 'recents' );
+            
+              endwhile;
+              ?>
+            <?php endif;
+            wp_reset_query(); 
+            wp_reset_postdata(); ?>
+        </div><!-- #recientes -->
+      <!--</div>-->
+    </div>
   </div>
-  <?php 
-  $like = get_post_meta($post->ID, '_liked', true);
-  if ($like == ""){
-    update_post_meta($post->ID, '_liked', 1);
-  }
-  //if(has_tag(8175)){//Reclutamiento tag
-  //if(has_tag(8277)){//gerencia y habilidades gerenciales
-  if(has_category(20)){//Administración
-    echo do_shortcode("[pro_ad_display_adzone id='334406' flyin='1' flyin_delay='3']"); 
-  }
-  ?>
 <?php endwhile; ?>

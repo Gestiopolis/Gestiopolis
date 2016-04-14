@@ -77,6 +77,14 @@ $maincat = get_the_category($post->ID);
     </article>
     <?php //} // fin foreach $tposts ?>
   </div>-->
+  <div class="sidebar-post">
+    <!-- /1007663/Post-Lateral-Fondo -->
+    <div id='div-gpt-ad-1460590183368-10'>
+    <script type='text/javascript'>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-10'); });
+    </script>
+    </div>
+  </div>
   <div id="social-sidebar" class="sidebar-post">
     <h3>Manténte al tanto</h3>
     <i class="fa fa-caret-down"></i>

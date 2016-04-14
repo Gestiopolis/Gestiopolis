@@ -18,44 +18,11 @@ get_currentuserinfo();
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <div class="adsce">
-      <div id="google-ads-docs-1"></div>
-
-      <script type="text/javascript"> 
-       
-          /* Calculate the width of available ad space */
-          ad = document.getElementById('google-ads-docs-1');
-       
-          if (ad.getBoundingClientRect().width) {
-              adWidth = ad.getBoundingClientRect().width; // for modern browsers 
-          } else {
-              adWidth = ad.offsetWidth; // for old IE 
-          }
-       
-          /* Replace ca-pub-XXX with your AdSense Publisher ID */ 
-          google_ad_client = "ca-pub-1187873112185798";
-       
-          /* Replace 1234567890 with the AdSense Ad Slot ID */ 
-          google_ad_slot = "7664190414";
-        
-          /* Do not change anything after this line */
-          if ( adWidth >= 970 )
-            google_ad_size = ["970", "90"];  /* Leaderboard 728x90 */
-          else if ( adWidth >= 727 )
-            google_ad_size = ["728", "90"];  /* Leaderboard 728x90 */
-          else if (adWidth >= 467 && adWidth < 727)
-            google_ad_size = ["468", "60"]; /* Button (125 x 125) */
-          else
-            google_ad_size = ["300", "250"]; /* Button (125 x 125) */
-       
-        google_ad_width = google_ad_size[0];
-        google_ad_height=google_ad_size[1];
-       
-       
+      <!-- /1007663/Tag-Top-728x90 -->
+      <div id='div-gpt-ad-1460590183368-13' class="adsce">
+      <script type='text/javascript'>
+      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-13'); });
       </script>
-      <script type="text/javascript"
-              src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-              </script>
       </div>
     </div>
   </div>
