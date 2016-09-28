@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
+  <script data-cfasync="false" src="//surgeprice.com/display/ads/FXvryitzNQQ7tCus9/ariel.js"></script>
+  <script type="text/javascript" async="true" src="//fo-api.omnitagjs.com/fo-api/ot.js"></script>
+  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title><?php wp_title('|', true, 'right'); ?></title>

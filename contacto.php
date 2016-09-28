@@ -34,7 +34,7 @@ Template Name: Contacto
               <li class="twitter"><i class="fa fa-twitter"></i> <a href="http://www.twitter.com/gestiopoliscom">@gestiopoliscom</a></li>
               <li class="facebook"><i class="fa fa-facebook"></i> <a href="http://www.facebook.com/gestiopolis">facebook.com/gestiopolis</a></li>
               <li class="phone"><i class="fa fa-phone"></i> (0571) 6333200</li>
-              <li class="dir"><i class="fa fa-building"></i> Cr. 53 127-70 T1 Of. 604</li>
+              <li class="dir"><i class="fa fa-building"></i> CR. 55 # 149-20 In.1 Ap.702</li>
               <li class="map"><i class="fa fa-map-marker"></i> Bogotá, Colombia</li>
             </ul>
           </div>

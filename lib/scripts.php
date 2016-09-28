@@ -135,6 +135,18 @@ function roots_jquery_local_fallback($src, $handle = null) {
 }
 add_action('wp_head', 'roots_jquery_local_fallback');
 
+
+//Surge price
+/*
+function surgeprice(){ ?>
+
+  <script data-cfasync="false" src="//surgeprice.com/display/ads/FXvryitzNQQ7tCus9/ariel.js"></script>
+
+<?php }
+
+add_action('wp_head', 'surgeprice');
+*/
+
 /**
  * Google Analytics snippet from HTML5 Boilerplate
  *
@@ -168,6 +180,7 @@ gaic.get = function (k) { return (k) ? gaic.v[k] : gaic.v; }; gaic();
   <?php endif; ?>
   ga('create','<?php echo GOOGLE_ANALYTICS_ID; ?>','auto');ga('set', 'dimension1', gaic.get('medium') );ga('set', 'dimension2', gaic.get('source') );ga('set', 'dimension3', gafrom() );ga('send','pageview');
 </script>
+
 <!--<script>
 jQuery(function() {
   /*jQuery.scrollDepth({

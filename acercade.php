@@ -41,12 +41,12 @@ Template Name: Acerca de
               
             </section>
             <section id="cifras"></section>-->
+
           </div>
           <div class="col-sm-2">&nbsp;</div>
         </div><!-- .row -->
       </div><!-- .col-sm-12 -->
-      
+      <script type="text/javascript" async="true" src="//fo-api.omnitagjs.com/fo-api/ot.js"></script>
     </div>
-
   </div><!-- .container PRINCIPAL -->
 <?php endwhile; ?>

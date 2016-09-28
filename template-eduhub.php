@@ -1,3 +1,47 @@
+<?php
+/*
+ * Template Name: Eduhub
+ * Description: Plantilla de Eduhub
+ */
+?>
+
+<?php
+    if(isset($_POST['boton'])){
+        if($_POST['nombre'] == ''){
+            $errors[1] = '<span class="error">Ingrese su nombre</span>';
+        }else if($_POST['email'] == '' or !preg_match("/^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/",$_POST['email'])){
+            $errors[2] = '<span class="error">Ingrese su email</span>';
+        }else if($_POST['telefono'] == ''){
+            $errors[3] = '<span class="error">Ingrese su teléfono</span>';
+        }else if($_POST['pais'] == ''){
+            $errors[4] = '<span class="error">Ingrese su país</span>';
+        }else{
+            $dest = "handresvegarodriguez@gmail.com"; //Email de destino
+            $nombre = $_POST['nombre'];
+            $email = $_POST['email'];
+            $telefono = $_POST['telefono']; //Asunto
+            $pais = $_POST['pais']; //Cuerpo del mensaje
+            $cuerpo = "Nombre: $nombre <br/> Email: $email <br/> Teléfono: $telefono <br/> Pais: $pais";
+            //Cabeceras del correo
+            $headers = "From: $nombre <$email>\r\n"; //Quien envia?
+            $headers .= "X-Mailer: PHP5\n";
+            $headers .= 'MIME-Version: 1.0' . "\n";
+            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; //
+ 
+            if(mail($dest,'Nuevo contacto de Eduhub',$cuerpo,$headers)){
+                $result = '<div class="result_ok">Email enviado correctamente </div>';
+                // si el envio fue exitoso reseteamos lo que el usuario escribio:
+                $_POST['nombre'] = '';
+                $_POST['email'] = '';
+                $_POST['telefono'] = '';
+                $_POST['pais'] = '';
+            }else{
+                $result = '<div class="result_fail">Hubo un error al enviar el mensaje </div>';
+            }
+        }
+    }
+?>
+
 <?php while (have_posts()) : the_post(); ?>
   <div class="container cposts">
     <div class="row">
@@ -86,22 +130,258 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
           <div class="post-content clearfix">
             <div class="entry-content gafrom from-post-entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
-              <div class="adsfr">
+              
+              <?php } ?>
+               <style>
+            .container{
+  max-width: 100%;
+  margin: 0 auto;
+}
+.container-pub-eduhub{
+  padding: 10px;
+  
+  border: 1px solid #D4D4D4;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #D4D4D4;
+}
+.box-1{
+  width: 60%;
+  max-width: 100%;
+}
+.box-2{
+  width: 38%;
+  text-align: center;
+  max-width: 100%;
+}
+.box-3, .box-4{
+  width: 49%;
+  display:inline-block;
+}
+.box-1, .box-2{
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+.container-pub-eduhub h2{
+  margin: 0px !important;
+  font-size: 16px !important;
+}
+.container-pub-eduhub li{
+  color: #ff4422 !important;
+  font-size: 14px !important;
+  padding: 0px !important;
+}
+.container-pub-eduhub ul{
+  padding-left: 20px !important;
+  margin: 10px !important;
+}
+.button-pub-eduhub{
+  background-color: #ff4422;
+}
+a.button-pub-eduhub{
+  color: #ffffff !important;
+  text-decoration: none;
+  padding: 12px 10px !important;
+  border-radius: 4px !important;
+  font-size: 14px !important;
+  font-weight: bold;
+}
+a.button-pub-eduhub:hover{
+  background-color: #ff765d;
+}
+
+.contacto input[type="text"]{
+  width: 300px;
+  max-width: 90%;
+  height: 32px;
+  border-radius: 5px;
+  border: 1px solid #D4D4D4;
+  margin-bottom: 10px;
+}
+.contacto input[type="submit"]{
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #ff4422;
+  border: none;
+  font-weight: bold;
+}
+.contacto input[type="submit"]:hover{
+  background-color: #ff765d;
+  
+}
+.popup__form{
+  text-align: center;
+}
+.popup__form h3{
+  margin-bottom: 30px;
+}
+
+::-webkit-input-placeholder{
+  color:#00AEDB;
+  font-size: 14px;
+  color: #D4D4D4;
+  padding-left: 20px;
+}
+
+.result_fail{
+    background: none repeat scroll 0 0 #BC1010;
+    border-radius: 20px 20px 20px 20px;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+}
+.result_ok{
+    background: none repeat scroll 0 0 #1EA700;
+    border-radius: 20px 20px 20px 20px;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+}
+.error{
+  position: absolute;
+  margin-top: 9px;
+  margin-left: 5px;
+  font-weight: bold;
+  color: red;
+}
+/*------------------------------------*\
+    $MEDIA-QUERIES
+\*------------------------------------*/
+
+  /* Smaller than standard 960 (devices and browsers) */
+  @media only screen and (max-width: 959px) {}
+
+  /* Tablet Portrait size to standard 960 (devices and browsers) */
+  @media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+  /* All Mobile Sizes (devices and browser) */
+  @media only screen and (max-width: 767px) {}
+
+  /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    .box-1, .box-2, .box-3, .box-4{
+      display: block;
+      width: 100%;
+    }
+    .box-2{
+      margin-bottom: 20px;
+    }
+    .container-pub-eduhub ul{
+      margin-bottom: 30px;
+    }
+    .popup__form h3, .container-pub-eduhub h2{
+      font-size: 18px;
+    }
+
+  }
+
+  /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+  @media only screen and (max-width: 479px) {
+    .box-1, .box-2, .box-3, .box-4{
+      display: block;
+      width: 100%;
+    }
+    .box-2{
+      margin-bottom: 20px;
+    }
+    .container-pub-eduhub ul{
+      margin-bottom: 30px;
+    }
+    .popup__form h3, .container-pub-eduhub h2{
+      font-size: 16px;
+    }
+
+  }
+          </style>
+
+  <link rel="stylesheet" href="publi-eduhub/jquery.fancybox.css">
 
 
-                <!-- /1007663/Post-Principal-ATF-300x250 -->
-                
-                <div id='div-gpt-ad-1460590183368-12'>
-                  
-                <script type='text/javascript'>
-                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-12'); });
-                </script>
+
+
+
+              <div class="container">
+    <div class="container-pub-eduhub">
+      <div class="box-1">
+        <h2>Transforma tu vida con el MBA Online de ISEAD</h2>
+        <ul>
+          <li>Mejorarás tus competencias</li>
+          <li>Obtendrás una visión de negocio mucho más completa</li>
+          <li>Aumentarás tu capacidad de resolver problemas y tomar decisiones</li>
+          <li>Apliarás tu red profesional de contactos</li>
+        </ul>
+      </div>
+
+      <div class="box-2">
+        <a class="button-pub-eduhub various" href="#inline">SOLICITAR INFORMACIÓN</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="inline" style="display:none;" class="popup__form">
+    
+    <h3>Transforma tu vida con el MBA Online de ISEAD</h3>
+
+      <form class='contacto' method='POST' action=''>
+
+        <div class="box-3">
+          <div>
+            <input type='text' class='email' name='email' placeholder='Correo electrónico' value='<?php if(isset($_POST['email'])){ $_POST['email']; } ?>'><?php if(isset($errors)){ echo $errors[2]; } ?>
                 </div>
+
+
+                <div><input type='text' class='nombre' name='nombre' placeholder='Nombre completo' value='<?php if(isset($_POST['nombre'])){ echo $_POST['nombre']; } ?>'><?php if(isset($errors)){ echo $errors[1]; } ?>
+                </div>
+        </div>
         
 
+              <div class="box-4">
+                <div><input type='text' class='telefono' name='telefono' placeholder='Teléfono móvil' value='<?php if(isset($_POST['telefono'])){ $_POST['telefono']; } ?>'><?php if(isset($errors)){ echo $errors[3]; } ?>
+                </div>
+
+                <div><input type='text' class='pais' name='pais' placeholder='Colombia' value='<?php if(isset($_POST['pais'])){ $_POST['pais']; } ?>'><?php if(isset($errors)){ echo $errors[4]; } ?>
+                </div>
               </div>
-              <?php } ?>
+              
+
+              <div><input type='submit' value='SOLICITAR INFORMACIÓN' class='boton' name='boton'></div>
+              <?php if(isset($result)) { echo $result; } ?>
+          </form>
+  </div>
+    
+<!-- Add jQuery library -->
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory' ); ?>/publi-eduhub/funciones.js"></script>
+
+<script src="<?php bloginfo('stylesheet_directory' ); ?>/publi-eduhub/jquery.fancybox.pack.js"></script>
+
+<script>
+  $(document).ready(function() {
+  $(".various").fancybox({
+    maxWidth  : 500,
+    maxHeight : 700,
+    fitToView : false,
+    width   : '30%',
+    height    : '60%',
+    autoSize  : true,
+    closeClick  : false,
+    openEffect  : 'none',
+    closeEffect : 'none'
+  });
+});
+</script>
+
+              <!-- FIN EDUHUB -->
+
               <?php the_content(); ?>
+
             </div>
             <div id="likepost" class="compartelo  gafrom from-post-likepost">
               <h2 class="text-center">Hazle saber al autor que aprecias su trabajo</h2>

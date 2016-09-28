@@ -223,21 +223,34 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
-                $ad = array( 'ad1' => '<div class="adsce"><!-- /1007663/Post-4Parrafo-BTF-300x250 -->
-<div id=\'div-gpt-ad-1460590183368-6\'>
-<script type=\'text/javascript\'>
-googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1460590183368-6\'); });
-</script>
-</div></div>' );
+                $ad = array( 'ad1' => 
+                
+                /* Surge Pricing Unit - gestiopolis.com_300x250_precio030300x250 */
+                '<div class="adsce">
+                <div id="gestiopolis.com_300x250_precio030300x250" class="surgeprice">
+                  <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x250_precio030300x250");</script>
+                </div>
+                </div>'
+                );
+                /*
+                $ad = array( 'ad1' => 
+                '<div class="adsce"><!-- /1007663/Post-4Parrafo-BTF-300x250 -->
+                <div id=\'div-gpt-ad-1460590183368-6\'>
+                <script type=\'text/javascript\'>
+                googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1460590183368-6\'); });
+                </script>
+                </div></div>' );
+                */
             }else if( $key_total == 1 ){
-                $ad = array( 'ad2' => '<div class="adsce"><!-- /1007663/Post-Mitad-BTF-300x250 -->
-<div id=\'div-gpt-ad-1460590183368-11\'>
-<script type=\'text/javascript\'>
-googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1460590183368-11\'); });
-</script>
-</div></div>' );
-            }
+                $ad = array( 'ad2' => 
+                '<div class="adsce"><!-- /1007663/Post-Mitad-BTF-300x250 -->
+                <div id=\'div-gpt-ad-1460590183368-11\'>
+                <script type=\'text/javascript\'>
+                googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1460590183368-11\'); });
+                </script>
+                </div></div>' );
 
+            }
             /**-----------------------------------------------------------------------------
              *
              *  This code loops through all the paragraphs and checks each key against $mail
@@ -433,9 +446,11 @@ function head_scripts_ads() {
   googletag.pubads().definePassback(\'/1007663/Header-Moviles\', [1, 1]).display();
 </script>';
   if (is_single()) {
+    $scripts .= '<script src=\'http://Q1MediaHydraPlatform.com/ads/video/controller.php?qid=56d841ab6fbe154632ae0e88&qz=1\'></script>';
+    /*
     $scripts .= '<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
   googletag.pubads().definePassback(\'/1007663/Header-Moviles-Articulos\', [1, 1]).display();
-</script>';
+</script>';*/
   }
 
 echo $dfpPrincipal.$scripts;
@@ -470,13 +485,16 @@ googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1436976370032-0\'
 </div>
 <!--<script type="text/javascript" src="http://as.ebz.io/api/choixPubJS.htm?pid=1138158&screenLayer=1&mode=NONE&home=http://www.gestiopolis.com"></script>-->
 ';
-$plads= '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+$plads= 
+'<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
     google_ad_client: "ca-pub-2753881743271989",
     enable_page_level_ads: true
   });
 </script>';
+
 $fbads='<style>
      #ad_root {
         display: none;
@@ -556,4 +574,5 @@ $fbads='<style>
 </script>';
 }
 add_action('wp_footer', 'footer_adsense_script', 1);
+
 ?>
