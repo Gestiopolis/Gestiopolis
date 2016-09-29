@@ -16,7 +16,7 @@
         }else if($_POST['pais'] == ''){
             $errors[4] = '<span class="error">Ingrese su país</span>';
         }else{
-            $dest = "handresvegarodriguez@gmail.com"; //Email de destino
+            $dest = "djdiego88@gmail.com"; //Email de destino
             $nombre = $_POST['nombre'];
             $email = $_POST['email'];
             $telefono = $_POST['telefono']; //Asunto
@@ -133,7 +133,7 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
               
               <?php } ?>
                <style>
-            .container{
+.container-ad{
   max-width: 100%;
   margin: 0 auto;
 }
@@ -156,6 +156,7 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
 .box-3, .box-4{
   width: 49%;
   display:inline-block;
+  margin-top: 13px;
 }
 .box-1, .box-2{
   display: inline-block;
@@ -196,7 +197,7 @@ a.button-pub-eduhub:hover{
   height: 32px;
   border-radius: 5px;
   border: 1px solid #D4D4D4;
-  margin-bottom: 10px;
+  margin-bottom: 24px;
 }
 .contacto input[type="submit"]{
   color: #ffffff;
@@ -249,6 +250,7 @@ a.button-pub-eduhub:hover{
   font-weight: bold;
   color: red;
 }
+
 /*------------------------------------*\
     $MEDIA-QUERIES
 \*------------------------------------*/
@@ -299,31 +301,59 @@ a.button-pub-eduhub:hover{
   }
           </style>
 
-  <link rel="stylesheet" href="publi-eduhub/jquery.fancybox.css">
+  <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory' ); ?>/publi-eduhub/jquery.fancybox.css">
 
 
 
 
 
-              <div class="container">
-    <div class="container-pub-eduhub">
-      <div class="box-1">
-        <h2>Transforma tu vida con el MBA Online de ISEAD</h2>
-        <ul>
-          <li>Mejorarás tus competencias</li>
-          <li>Obtendrás una visión de negocio mucho más completa</li>
-          <li>Aumentarás tu capacidad de resolver problemas y tomar decisiones</li>
-          <li>Apliarás tu red profesional de contactos</li>
-        </ul>
-      </div>
+<div class="container-ad">
+  <div class="container-pub-eduhub">
+  <form class='contacto' method='POST' action=''>
+    <div class="box-1">
+      <h2>Transforma tu vida con el MBA Online de ISEAD</h2>
+      <ul class="toogle">
+        <li>Mejorarás tus competencias</li>
+        <li>Obtendrás una visión de negocio mucho más completa</li>
+        <li>Aumentarás tu capacidad de resolver problemas y tomar decisiones</li>
+        <li>Apliarás tu red profesional de contactos</li>
+      </ul>
 
-      <div class="box-2">
-        <a class="button-pub-eduhub various" href="#inline">SOLICITAR INFORMACIÓN</a>
-      </div>
+
+    <div class="box-3 toogle" style="display: none">
+      <div>
+        <input type='text' class='email' name='email' placeholder='Correo electrónico' value='<?php if(isset($_POST['email'])){ $_POST['email']; } ?>' required><?php if(isset($errors)){ echo $errors[2]; } ?>
+            </div>
+
+
+            <div><input type='text' class='nombre' name='nombre' placeholder='Nombre completo' value='<?php if(isset($_POST['nombre'])){ echo $_POST['nombre']; } ?>' required><?php if(isset($errors)){ echo $errors[1]; } ?>
+            </div>
     </div>
-  </div>
+    
 
-  <div id="inline" style="display:none;" class="popup__form">
+          <div class="box-4 toogle" style="display: none">
+            <div><input type='text' class='telefono' name='telefono' placeholder='Teléfono móvil' value='<?php if(isset($_POST['telefono'])){ $_POST['telefono']; } ?>' required><?php if(isset($errors)){ echo $errors[3]; } ?>
+            </div>
+
+            <div><input type='text' class='pais' name='pais' placeholder='Colombia' value='<?php if(isset($_POST['pais'])){ $_POST['pais']; } ?>' required><?php if(isset($errors)){ echo $errors[4]; } ?>
+            </div>
+          </div>
+          
+
+          
+          <?php if(isset($result)) { echo $result; } ?>
+      
+    </div>
+
+    <div class="box-2"<?php if(isset($result)) {  echo ' style="display: none"'; } ?>>
+      <a class="button-pub-eduhub various toogle" href="#">SOLICITAR INFORMACIÓN</a>
+      <div class="toogle" style="display: none"><input type='submit' value='SOLICITAR INFORMACIÓN' class='boton' name='boton'></div>
+    </div>
+    </form>
+  </div>
+</div>
+
+  <!--<div id="inline" style="display:none;" class="popup__form">
     
     <h3>Transforma tu vida con el MBA Online de ISEAD</h3>
 
@@ -331,20 +361,20 @@ a.button-pub-eduhub:hover{
 
         <div class="box-3">
           <div>
-            <input type='text' class='email' name='email' placeholder='Correo electrónico' value='<?php if(isset($_POST['email'])){ $_POST['email']; } ?>'><?php if(isset($errors)){ echo $errors[2]; } ?>
+            <input type='text' class='email' name='email' placeholder='Correo electrónico' value='<?php if(isset($_POST['email'])){ $_POST['email']; } ?>' required><?php if(isset($errors)){ echo $errors[2]; } ?>
                 </div>
 
 
-                <div><input type='text' class='nombre' name='nombre' placeholder='Nombre completo' value='<?php if(isset($_POST['nombre'])){ echo $_POST['nombre']; } ?>'><?php if(isset($errors)){ echo $errors[1]; } ?>
+                <div><input type='text' class='nombre' name='nombre' placeholder='Nombre completo' value='<?php if(isset($_POST['nombre'])){ echo $_POST['nombre']; } ?>' required><?php if(isset($errors)){ echo $errors[1]; } ?>
                 </div>
         </div>
         
 
               <div class="box-4">
-                <div><input type='text' class='telefono' name='telefono' placeholder='Teléfono móvil' value='<?php if(isset($_POST['telefono'])){ $_POST['telefono']; } ?>'><?php if(isset($errors)){ echo $errors[3]; } ?>
+                <div><input type='text' class='telefono' name='telefono' placeholder='Teléfono móvil' value='<?php if(isset($_POST['telefono'])){ $_POST['telefono']; } ?>' required><?php if(isset($errors)){ echo $errors[3]; } ?>
                 </div>
 
-                <div><input type='text' class='pais' name='pais' placeholder='Colombia' value='<?php if(isset($_POST['pais'])){ $_POST['pais']; } ?>'><?php if(isset($errors)){ echo $errors[4]; } ?>
+                <div><input type='text' class='pais' name='pais' placeholder='Colombia' value='<?php if(isset($_POST['pais'])){ $_POST['pais']; } ?>' required><?php if(isset($errors)){ echo $errors[4]; } ?>
                 </div>
               </div>
               
@@ -352,7 +382,7 @@ a.button-pub-eduhub:hover{
               <div><input type='submit' value='SOLICITAR INFORMACIÓN' class='boton' name='boton'></div>
               <?php if(isset($result)) { echo $result; } ?>
           </form>
-  </div>
+  </div>-->
     
 <!-- Add jQuery library -->
 
@@ -364,7 +394,7 @@ a.button-pub-eduhub:hover{
 
 <script>
   $(document).ready(function() {
-  $(".various").fancybox({
+  /*$(".various").fancybox({
     maxWidth  : 500,
     maxHeight : 700,
     fitToView : false,
@@ -374,6 +404,10 @@ a.button-pub-eduhub:hover{
     closeClick  : false,
     openEffect  : 'none',
     closeEffect : 'none'
+  });*/
+  $('.button-pub-eduhub').click(function(e){
+    e.preventDefault();
+    $(".toogle").toggle();
   });
 });
 </script>
