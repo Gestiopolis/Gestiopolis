@@ -15,9 +15,13 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-14')
 -->
 
 <!-- Surge Pricing Unit - gestiopolis.com_300x600_piso030cts -->
-<div id="gestiopolis.com_300x600_piso030cts" class="surgeprice">
-  <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x600_piso030cts");</script>
+<!-- Ezoic - 300x600LateralIzq - sidebar -->
+<div id="ezoic-pub-ad-placeholder-100">
+  <div id="gestiopolis.com_300x600_piso030cts" class="surgeprice">
+    <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x600_piso030cts");</script>
+  </div>
 </div>
+<!-- End Ezoic - 300x600LateralIzq - sidebar -->
 
 <?php }else { ?>
 
@@ -31,9 +35,14 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
 -->
 
 <!-- Surge Pricing Unit - gestiopolis.com_300x600_piso030cts -->
-<div id="gestiopolis.com_300x600_piso030cts" class="surgeprice">
-  <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x600_piso030cts");</script>
+<!-- Ezoic - 300x600LateralIzq - sidebar -->
+<div id="ezoic-pub-ad-placeholder-100">
+  <div id="gestiopolis.com_300x600_piso030cts" class="surgeprice">
+    <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x600_piso030cts");</script>
+  </div>
 </div>
+<!-- End Ezoic - 300x600LateralIzq - sidebar -->
+
 
  <?php } ?>
 <?php get_template_part('templates/sidebar-post'); ?>
@@ -48,12 +57,18 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
                 <?php get_template_part('templates/entry-meta'); ?>
                 <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm gafrom from-post-tags"> ','','</div>'); ?>
                 <div class="adstags gafrom from-ads-posttags hidden-xs hidden-sm" style="margin-top: 32px;">
-                  <!-- /1007663/Post-AbajoTags -->
-                  <div id='div-gpt-ad-1460590183368-8'>
-                  <script type='text/javascript'>
-                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-8'); });
-                  </script>
+                  
+                  <!-- Ezoic - 300x250Principal - under_page_title -->
+                  <div id="ezoic-pub-ad-placeholder-101">  
+                    <!-- /1007663/Post-AbajoTags -->
+                    <div id='div-gpt-ad-1460590183368-8'>
+                      <script type='text/javascript'>
+                      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-8'); });
+                      </script>
+                    </div>
                   </div>
+                  <!-- End Ezoic - 300x250Principal - under_page_title -->
+                  
                 </div>
               </div>
             </div>
@@ -63,11 +78,15 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
           <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
           <div class="adsce">
             <!-- /1007663/Trans-Principal-ATF-728x90 -->
-            <div id='div-gpt-ad-1460590183368-15'>
-            <script type='text/javascript'>
-            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-15'); });
-            </script>
+            <!-- Ezoic - 728x9ConvertidosPrincipal - under_page_title -->
+            <div id="ezoic-pub-ad-placeholder-105">
+              <div id='div-gpt-ad-1460590183368-15'>
+                <script type='text/javascript'>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-15'); });
+                </script>
+              </div>
             </div>
+            <!-- End Ezoic - 728x9ConvertidosPrincipal - under_page_title -->
           </div>
           <div id="sidebar" style="display: none !important;">
             <div id="outline"></div>
@@ -110,9 +129,13 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
             <div class="adsce">
             
             <!-- Surge Pricing Unit - gestiopolis.com_300x250_btf -->
-            <div id="gestiopolis.com_300x250_btf" class="surgeprice">
-              <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x250_btf");</script>
+            <!-- Ezoic - 300x250Abajo - bottom_of_page -->
+            <div id="ezoic-pub-ad-placeholder-104">
+              <div id="gestiopolis.com_300x250_btf" class="surgeprice">
+                <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x250_btf");</script>
+              </div>
             </div>
+            <!-- End Ezoic - 300x250Abajo - bottom_of_page -->
 
               <!-- /1007663/Post-Abajo-BTF-300x250 -->
               <!-- 

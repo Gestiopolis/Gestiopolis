@@ -58,12 +58,24 @@ function insert_ads_all2html( $content ) {
 	foreach ($pages as $index => $page) {
 
 		if ( 1 == $index ) {
-            $pages[$index] .= '<div class="adsce"><!-- /1007663/Trans-SegPag-BTF-728x90 -->
-<div id=\'div-gpt-ad-1460590183368-16\'>
-<script type=\'text/javascript\'>
-googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1460590183368-16\'); });
-</script>
-</div></div>';
+            $pages[$index] .= 
+
+            /* Ezoic - 728x90SegundaConvertidos - under_first_paragraph */
+            
+
+            '
+            <div id=\'ezoic-pub-ad-placeholder-106\'>
+            <div class="adsce"><!-- /1007663/Trans-SegPag-BTF-728x90 -->
+            <div id=\'div-gpt-ad-1460590183368-16\'>
+            <script type=\'text/javascript\'>
+            googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1460590183368-16\'); });
+            </script>
+            </div></div>
+            </div>
+            '
+
+            /* End Ezoic - 728x90SegundaConvertidos - under_first_paragraph */
+            ;
         }
 
         if ( $pos2 == $index ) {
@@ -223,14 +235,23 @@ function so_25888630_ad_between_paragraphs($content){
              *
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
+                
                 $ad = array( 'ad1' => 
                 
-                /* Surge Pricing Unit - gestiopolis.com_300x250_precio030300x250 */
-                '<div class="adsce">
+                /*Surge Pricing Unit - gestiopolis.com_300x250_precio030300x250 */
+
+                /* Ezoic - 300x250TercerParrafo - under_second_paragraph */
+
+                '
+                <div id="ezoic-pub-ad-placeholder-102">
+                <div class="adsce">
                 <div id="gestiopolis.com_300x250_precio030300x250" class="surgeprice">
                   <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x250_precio030300x250");</script>
                 </div>
-                </div>'
+                </div>
+                </div>
+                ' 
+                /* End Ezoic - 300x250TercerParrafo - under_second_paragraph */
                 );
                 /*
                 $ad = array( 'ad1' => 
@@ -242,14 +263,23 @@ function so_25888630_ad_between_paragraphs($content){
                 </div></div>' );
                 */
             }else if( $key_total == 1 ){
+                
+                
                 $ad = array( 'ad2' => 
-                '<div class="adsce"><!-- /1007663/Post-Mitad-BTF-300x250 -->
+                /* Ezoic - 300x250MitadContenido - mid_content */
+                '
+                <div id="ezoic-pub-ad-placeholder-103">
+                <div class="adsce"><!-- /1007663/Post-Mitad-BTF-300x250 -->
                 <div id=\'div-gpt-ad-1460590183368-11\'>
                 <script type=\'text/javascript\'>
                 googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1460590183368-11\'); });
                 </script>
-                </div></div>' );
-
+                </div></div>
+                </div>
+                ' 
+                /* End Ezoic - 300x250MitadContenido - mid_content */
+                );
+                
             }
             /**-----------------------------------------------------------------------------
              *

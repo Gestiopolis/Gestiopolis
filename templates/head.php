@@ -3,6 +3,10 @@
 <head>
   <script data-cfasync="false" src="//surgeprice.com/display/ads/FXvryitzNQQ7tCus9/ariel.js"></script>
   <script type="text/javascript" async="true" src="//fo-api.omnitagjs.com/fo-api/ot.js"></script>
+
+  <!-- Ezoic Ad Testing Code-->
+  <script src="//g.ezoic.net/ezoic/ezoiclitedata.go?did=30414"></script>
+  <!-- Ezoic Ad Testing Code-->
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
