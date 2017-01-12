@@ -185,6 +185,22 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
                 <li><a href="#" class="btn more"><i class="fa fa-plus"></i></a></li>
               </ul>
             </div><!-- .compartelo -->
+            
+            <!-- Banner publicidad Taboola -->
+            <div class="center">
+              <div id="taboola-below-article-thumbnails"></div>
+              <script type="text/javascript">
+                window._taboola = window._taboola || [];
+                _taboola.push({
+                  mode: 'thumbnails-a',
+                  container: 'taboola-below-article-thumbnails',
+                  placement: 'Below Article Thumbnails',
+                  target_type: 'mix'
+                });
+              </script>
+            </div>
+            <!-- /Banner publicidad Taboola -->
+
             <div id="autores" class="autores">
               <h2>Escrito por:</h2>
               <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="author vcard gafrom from-post-author-info-bottom">

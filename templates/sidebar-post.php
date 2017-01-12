@@ -100,5 +100,20 @@ $maincat = get_the_category($post->ID);
     <br>
     <div class="fb-page" data-href="https://www.facebook.com/gestiopolis" data-width="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/gestiopolis"><a href="https://www.facebook.com/gestiopolis">GestioPolis</a></blockquote></div></div>
   </div>
+
+  <!-- Taboola Banner Right -->
+
+  <div>
+    <div id="taboola-right-rail-article-thumbnails"></div>
+    <script type="text/javascript">
+      window._taboola = window._taboola || [];
+      _taboola.push({
+        mode: 'thumbnails-rr',
+        container: 'taboola-right-rail-article-thumbnails',
+        placement: 'Right Rail Article Thumbnails',
+        target_type: 'mix'
+      });
+    </script>
+  </div>
     
 </div><!-- .right-post -->
