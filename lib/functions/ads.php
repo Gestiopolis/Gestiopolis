@@ -315,17 +315,9 @@ function so_25888630_ad_between_paragraphs($content){
 }
 
 function footer_dataxpand() {
-    echo '
-    <script type="text/javascript">
-      (function () {
-        var tagjs = document.createElement("script");
-        var s = document.getElementsByTagName("script")[0];
-        tagjs.async = true;
-        tagjs.src = "//dataxpand.script.ag/tag.js#site=63UCMvc";
-        s.parentNode.insertBefore(tagjs, s);
-      }());
-    </script>
-    ';
+
+    echo '<script type="text/javascript" src="http://tc.dataxpand.com/tc/4ccf3bf.js" async></script>';
+    
 }
 add_action('wp_footer', 'footer_dataxpand', 100);
 

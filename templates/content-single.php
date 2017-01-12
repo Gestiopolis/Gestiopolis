@@ -56,10 +56,10 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
               <div class="breadcredit gafrom from-post-breadcredit">
                 <?php get_template_part('templates/entry-meta'); ?>
                 <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm gafrom from-post-tags"> ','','</div>'); ?>
-                <div class="adstags gafrom from-ads-posttags hidden-xs hidden-sm" style="margin-top: 32px;">
-                  
-                  <!-- Ezoic - 300x250Principal - under_page_title -->
+                 <!-- Ezoic - 300x250Principal - under_page_title -->
                   <div id="ezoic-pub-ad-placeholder-101">  
+                   <div class="adstags gafrom from-ads-posttags hidden-xs hidden-sm" style="margin-top: 32px;">
+                 
                     <!-- /1007663/Post-AbajoTags -->
                     <div id='div-gpt-ad-1460590183368-8'>
                       <script type='text/javascript'>
@@ -67,9 +67,9 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
                       </script>
                     </div>
                   </div>
-                  <!-- End Ezoic - 300x250Principal - under_page_title -->
-                  
                 </div>
+                <!-- End Ezoic - 300x250Principal - under_page_title -->
+                
               </div>
             </div>
             <div class="col-sm-12 col-md-10 col-md-pull-2 content-col">
