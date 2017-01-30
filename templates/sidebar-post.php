@@ -103,7 +103,7 @@ $maincat = get_the_category($post->ID);
 
   <!-- Taboola Banner Right -->
 
-  <div>
+ <!--  <div>
     <div id="taboola-right-rail-article-thumbnails"></div>
     <script type="text/javascript">
       window._taboola = window._taboola || [];
@@ -114,6 +114,6 @@ $maincat = get_the_category($post->ID);
         target_type: 'mix'
       });
     </script>
-  </div>
+  </div> -->
     
 </div><!-- .right-post -->

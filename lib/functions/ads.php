@@ -281,6 +281,8 @@ function so_25888630_ad_between_paragraphs($content){
                 );
                 
             }
+            
+            
             /**-----------------------------------------------------------------------------
              *
              *  This code loops through all the paragraphs and checks each key against $mail
@@ -326,6 +328,40 @@ function footer_dataxpand() {
     
 }
 add_action('wp_footer', 'footer_dataxpand', 100);
+
+
+
+
+
+
+//Publicidad tras un párrafo concreto
+add_filter( 'the_content', 'publicidad_tras_parrafo' );
+function publicidad_tras_parrafo( $content ) {
+        if( !is_single() )
+            return $content;
+ 
+            $paragraphAfter = 7; //Este es el número del párrafo tras el que irá la publicidad
+            $content = explode ( "</p>", $content );
+            $new_content = '';
+                for ( $i = 0; $i < count ( $content ); $i ++ ) {
+                    if ( $i == $paragraphAfter ) {
+                    $new_content .= '<div>';
+                    $new_content .= '<div id="taboola-mid-article-thumbnails"></div>
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({
+    mode: "thumbnails-b",
+    container: "taboola-mid-article-thumbnails",
+    placement: "Mid Article Thumbnails",
+    target_type: "mix"
+  });
+</script>';
+                    $new_content .= '</div>';
+                    }
+            $new_content .= $content[$i] . "</p>";
+            }
+            return $new_content;
+    }
 
 /*function head_scripts_single_ads() {
     global $post;
