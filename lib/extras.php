@@ -733,29 +733,52 @@ WHERE posts.post_type='post' AND post_date > '" . date('Y-m-d', strtotime('-'.$d
 Mostrar los artículos más populares por comentarios, votos y visitas
 Se necesita tener instalado el plugin I Like This
 ****************/
-function get_trending_posts_deprecated($numberOf, $days, $catid = '') {
-	global $wpdb;
+function get_trending_posts($numberOf, $days, $catid = '') {
+	/*global $wpdb;
     //$request = "SELECT ID, post_title, post_content, post_author, votos.meta_value AS likes,views.meta_value AS vistas, comment_count FROM $wpdb->posts posts INNER JOIN $wpdb->postmeta votos ON (posts.ID = votos.post_id) INNER JOIN $wpdb->postmeta views ON (posts.ID = views.post_id)";
-    $request = "SELECT ID, post_title, post_content, post_author, views.meta_value AS vistas FROM $wpdb->posts posts INNER JOIN $wpdb->postmeta views ON (posts.ID = views.post_id)";
+    $request = "SELECT ID, post_title, post_content, post_author, votos.meta_value AS likes FROM $wpdb->posts posts INNER JOIN $wpdb->postmeta votos ON (posts.ID = votos.post_id)";
 	if($catid != ''){
 		$request .= " INNER JOIN $wpdb->term_relationships term ON (posts.ID = term.object_id)";
 	}
 	//$request .= " WHERE posts.post_type='post' AND post_date > '" . date('Y-m-d', strtotime('-'.$days.' days')) . "' AND posts.post_status='publish' AND votos.meta_key='_liked' AND views.meta_key='views'";
-	$request .= " WHERE posts.post_type='post' AND posts.post_status='publish' AND views.meta_key='views'";
+	$request .= " WHERE posts.post_type='post' AND posts.post_status='publish' AND views.meta_key='_liked'";
 	if($catid != ''){
 	$request .= " AND term.term_taxonomy_id=$catid";
 	}
-	//$request .= " ORDER BY views.meta_value+0 DESC, votos.meta_value+0 DESC, posts.comment_count DESC LIMIT $numberOf";
-	$request .= " ORDER BY views.meta_value+0 DESC LIMIT $numberOf";
-    $posts = $wpdb->get_results($request);
-    return $posts;
+	//$request .= " ORDER BY votos.meta_value+0 DESC, views.meta_value+0 DESC, posts.comment_count DESC LIMIT $numberOf";
+	$request .= " ORDER BY votos.meta_value+0 DESC, posts.comment_count DESC LIMIT $numberOf";
+    //$posts = $wpdb->get_results($request);
+    //return $posts;*/
+    $args = array();
+	if($catid != ''){
+		$args = array(
+			'posts_per_page'   => $numberOf,
+			'category'         => $catid,
+			'orderby'          => 'rand',
+			'order'            => 'DESC',
+			'post_type'        => 'post',
+			'post_status'      => 'publish',
+			'suppress_filters' => true 
+		);
+	} else {
+		$args = array(
+			'posts_per_page'   => $numberOf,
+			'orderby'          => 'rand',
+			'order'            => 'DESC',
+			'post_type'        => 'post',
+			'post_status'      => 'publish',
+			'suppress_filters' => true 
+		);
+	} 
+
+	 return get_posts( $args );
 }
 
 /****************
 Mostrar los artículos más populares por visitas en el día
 Se necesita tener instalado el plugin Top 10 Plugin
 ****************/
-function get_trending_posts($numberOf, $days, $catid = '') {
+function get_trending_posts_deprecated($numberOf, $days, $catid = '') {
 	global $wpdb;
 	$fields = '';
 	$where = '';
@@ -793,7 +816,7 @@ function get_trending_posts($numberOf, $days, $catid = '') {
 	$posts = $wpdb->get_results($sql);
   return $posts;
 }
-add_filter('tptn_add_counter_script_url','addcount_url_top_ten');
+/*add_filter('tptn_add_counter_script_url','addcount_url_top_ten');
 function addcount_url_top_ten($home_url) {
 	return get_template_directory_uri().'/lib/functions/top-10-addcount.js.php';
 }
@@ -809,23 +832,23 @@ function script_top_ten($output) {
 	}
 	return;
 }
-add_filter('tptn_viewed_count','script_top_ten');
+add_filter('tptn_viewed_count','script_top_ten');*/
 
 
 /****************
 Mostrar los autores con más artículos y más visitas a sus artículos
 ****************/
-function get_trending_authors_deprecated($numberOf, $days, $catid = '') {
+function get_trending_authors($numberOf, $days, $catid = '') {
 	global $wpdb;
-    $request = "SELECT DISTINCT post_author, COUNT(ID) AS count, SUM(views.meta_value) AS vcount FROM wp_posts posts INNER JOIN wp_postmeta views ON (posts.ID = views.post_id)";
+    $request = "SELECT DISTINCT post_author, COUNT(ID) AS count FROM wp_posts posts";
 	if($catid != ''){
 		$request .= " INNER JOIN $wpdb->term_relationships term ON (posts.ID = term.object_id)";
 	}
-	$request .= " WHERE posts.post_type = 'post' AND posts.post_date > '" . date('Y-m-d', strtotime('-'.$days.' days')) . "' AND posts.post_status='publish' AND views.meta_key='views'";
+	$request .= " WHERE posts.post_type = 'post' AND posts.post_date > '" . date('Y-m-d', strtotime('-'.$days.' days')) . "' AND posts.post_status='publish'";
 	if($catid != ''){
 		$request .= " AND term.term_taxonomy_id=$catid";
 	}
-	$request .= " GROUP BY posts.post_author ORDER BY count DESC, vcount DESC LIMIT $numberOf";
+	$request .= " GROUP BY posts.post_author ORDER BY count DESC LIMIT $numberOf";
     $posts = $wpdb->get_results($request);
     return $posts;
 }
@@ -833,7 +856,7 @@ function get_trending_authors_deprecated($numberOf, $days, $catid = '') {
 /****************
 Mostrar los autores con más artículos y más visitas a sus artículos
 ****************/
-function get_trending_authors($numberOf, $days, $catid = '') {
+function get_trending_authors_deprecated($numberOf, $days, $catid = '') {
 	global $wpdb;
 	$fields = '';
 	$where = '';
@@ -1073,9 +1096,9 @@ function popular_tags_from_category($catid, $days, $limit=15){
 	$current_time = current_time( 'timestamp', 0 );
 	$from_date = $current_time - ( max( 0, ($days - 1) ) * DAY_IN_SECONDS );
 	$from_date = gmdate( 'Y-m-d 0' , $from_date);
-	$table_name = $wpdb->base_prefix . "top_ten_daily";
+	//$table_name = $wpdb->base_prefix . "top_ten_daily";
 	//$where = " AND dp_date >= '$from_date' ";
-	$popterms = "SELECT DISTINCT terms2.*, t2.count as count FROM $wpdb->posts as p1 LEFT JOIN $wpdb->term_relationships as r1 ON p1.ID = r1.object_ID LEFT JOIN $wpdb->term_taxonomy as t1 ON r1.term_taxonomy_id = t1.term_taxonomy_id LEFT JOIN $wpdb->terms as terms1 ON t1.term_id = terms1.term_id LEFT JOIN {$table_name} as top1 ON top1.postnumber = p1.ID LEFT JOIN {$wpdb->postmeta} as meta1 ON (p1.ID = meta1.post_id), $wpdb->posts as p2 LEFT JOIN $wpdb->term_relationships as r2 ON p2.ID = r2.object_ID LEFT JOIN $wpdb->term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id 	LEFT JOIN $wpdb->terms as terms2 ON t2.term_id = terms2.term_id 	LEFT JOIN {$table_name} as top2 ON top2.postnumber = p2.ID LEFT JOIN {$wpdb->postmeta} as meta2 ON (p2.ID = meta2.post_id) WHERE t1.taxonomy = 'category' AND p1.post_status = 'publish' AND top1.dp_date >= '$from_date' AND meta1.meta_key='_liked' AND terms1.term_id = '$catid' AND t2.taxonomy = 'post_tag' AND p2.post_status = 'publish' AND top2.dp_date >= '$from_date' AND meta2.meta_key='_liked' AND p1.ID = p2.ID ORDER BY count DESC, meta1.meta_value+0 DESC LIMIT $limit";
+	$popterms = "SELECT DISTINCT terms2.*, t2.count as count FROM $wpdb->posts as p1 LEFT JOIN $wpdb->term_relationships as r1 ON p1.ID = r1.object_ID LEFT JOIN $wpdb->term_taxonomy as t1 ON r1.term_taxonomy_id = t1.term_taxonomy_id LEFT JOIN $wpdb->terms as terms1 ON t1.term_id = terms1.term_id LEFT JOIN {$wpdb->postmeta} as meta1 ON (p1.ID = meta1.post_id), $wpdb->posts as p2 LEFT JOIN $wpdb->term_relationships as r2 ON p2.ID = r2.object_ID LEFT JOIN $wpdb->term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id 	LEFT JOIN $wpdb->terms as terms2 ON t2.term_id = terms2.term_id 	LEFT JOIN {$wpdb->postmeta} as meta2 ON (p2.ID = meta2.post_id) WHERE t1.taxonomy = 'category' AND p1.post_status = 'publish' AND p1.post_date >= '$from_date' AND meta1.meta_key='_liked' AND terms1.term_id = '$catid' AND t2.taxonomy = 'post_tag' AND p2.post_status = 'publish' AND p2.post_date >= '$from_date' AND meta2.meta_key='_liked' AND p1.ID = p2.ID ORDER BY count DESC, meta1.meta_value+0 DESC LIMIT $limit";
 	$terms = $wpdb->get_results($popterms);
 	if($terms){
 		$args = array(
@@ -1118,9 +1141,9 @@ function trending_tags($limit=10, $days ){
 	$current_time = current_time( 'timestamp', 0 );
 	$from_date = $current_time - ( max( 0, ($days - 1) ) * DAY_IN_SECONDS );
 	$from_date = gmdate( 'Y-m-d 0' , $from_date);
-	$table_name = $wpdb->base_prefix . "top_ten_daily";
+	//$table_name = $wpdb->base_prefix . "top_ten_daily";
 	$where = " AND dp_date >= '$from_date' ";
-	$popterms = "SELECT DISTINCT terms2.*, t2.count as count FROM $wpdb->posts as p2 LEFT JOIN $wpdb->term_relationships as r2 ON p2.ID = r2.object_ID LEFT JOIN $wpdb->term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id 	LEFT JOIN $wpdb->terms as terms2 ON t2.term_id = terms2.term_id LEFT JOIN {$table_name} as top2 ON top2.postnumber = p2.ID	LEFT JOIN {$wpdb->postmeta} as meta2 ON (p2.ID = meta2.post_id) WHERE t2.taxonomy = 'post_tag' AND p2.post_status = 'publish' AND top2.dp_date >= '$from_date' AND meta2.meta_key='_liked' ORDER BY count DESC, meta2.meta_value+0 DESC LIMIT $limit";
+	$popterms = "SELECT DISTINCT terms2.*, t2.count as count FROM $wpdb->posts as p2 LEFT JOIN $wpdb->term_relationships as r2 ON p2.ID = r2.object_ID LEFT JOIN $wpdb->term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id 	LEFT JOIN $wpdb->terms as terms2 ON t2.term_id = terms2.term_id LEFT JOIN {$wpdb->postmeta} as meta2 ON (p2.ID = meta2.post_id) WHERE t2.taxonomy = 'post_tag' AND p2.post_status = 'publish' AND p2.post_date >= '$from_date' AND meta2.meta_key='_liked' ORDER BY count DESC, meta2.meta_value+0 DESC LIMIT $limit";
 	$terms = $wpdb->get_results($popterms);
 	return $terms;
 }
@@ -1584,3 +1607,5 @@ require_once ('functions/follows.php');
 require_once ('functions/ads.php');
 //require_once ('functions/form_functions.php');
 //require_once ('functions/recommendations.php');
+//Función de Publicidad manejado desde GestioPolis
+//require_once ('functions/publigp.php');
