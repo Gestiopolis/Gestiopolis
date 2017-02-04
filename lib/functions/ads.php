@@ -250,6 +250,7 @@ function so_25888630_ad_between_paragraphs($content){
                 </div>
                 </div>
                 </div>
+
                 ' 
                 /* End Ezoic - 300x250TercerParrafo - under_second_paragraph */
                 );

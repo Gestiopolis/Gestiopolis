@@ -60,12 +60,13 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
                   <div id="ezoic-pub-ad-placeholder-101">  
                    <div class="adstags gafrom from-ads-posttags hidden-xs hidden-sm" style="margin-top: 32px;">
                  
-                    <!-- /1007663/Post-AbajoTags -->
-                    <div id='div-gpt-ad-1460590183368-8'>
-                      <script type='text/javascript'>
-                      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-8'); });
-                      </script>
-                    </div>
+                    
+                      <!-- Sulvo Surge Pricing Unit - gestiopolis.com_300x250_atf30250 -->
+                      <div id="gestiopolis.com_300x250_atf30250" class="surgeprice">
+                        <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x250_atf30250");</script>
+                      </div>
+
+
                   </div>
                 </div>
                 <!-- End Ezoic - 300x250Principal - under_page_title -->
