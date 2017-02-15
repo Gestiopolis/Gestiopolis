@@ -56,20 +56,6 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
               <div class="breadcredit gafrom from-post-breadcredit">
                 <?php get_template_part('templates/entry-meta'); ?>
                 <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm gafrom from-post-tags"> ','','</div>'); ?>
-                 <!-- Ezoic - 300x250Principal - under_page_title -->
-                  <div id="ezoic-pub-ad-placeholder-101">  
-                   <div class="adstags gafrom from-ads-posttags hidden-xs hidden-sm" style="margin-top: 32px;">
-                 
-                    
-                      <!-- Sulvo Surge Pricing Unit - gestiopolis.com_300x250_atf30250 -->
-                      <div id="gestiopolis.com_300x250_atf30250" class="surgeprice">
-                        <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x250_atf30250");</script>
-                      </div>
-
-
-                  </div>
-                </div>
-                <!-- End Ezoic - 300x250Principal - under_page_title -->
                 
               </div>
             </div>
@@ -107,16 +93,20 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
             <div class="entry-content gafrom from-post-entry-content">
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
               <div class="adsfr">
-
+                
+                <!-- Sulvo Surge Pricing Unit - gestiopolis.com_300x250_atf30250 -->
+                <div id="gestiopolis.com_300x250_atf30250" class="surgeprice">
+                  <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x250_atf30250");</script>
+                </div>
 
                 <!-- /1007663/Post-Principal-ATF-300x250 -->
                 
-                <div id='div-gpt-ad-1460590183368-12'>
+                <!-- <div id='div-gpt-ad-1460590183368-12'>
                   
-                <script type='text/javascript'>
-                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-12'); });
-                </script>
-                </div>
+                  <script type='text/javascript'>
+                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-12'); });
+                  </script>
+                </div> -->
         
 
               </div>
