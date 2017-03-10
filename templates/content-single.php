@@ -150,7 +150,7 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
                 <?php //comments_template('/templates/comments.php'); ?>
               </div>
             </div>
-            <div id="suscripcion" class="suscripcion hidden gafrom from-post-suscripcion">
+            <!-- <div id="suscripcion" class="suscripcion hidden gafrom from-post-suscripcion">
               <div>
                 <span class="author-color"><i class="fa fa-envelope"></i></span>
                 <strong>Recibe los mejores contenidos en tu email</strong>
@@ -162,7 +162,7 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
                     <input type="text" class="form-control" placeholder="Que se vea y funcione como http://azumbrunnen.me/frontkit/" aria-describedby="basic-addon1">
                   </div>
               </div>
-            </div>
+            </div> -->
             <div class="compartelo">
               <h2><i class="fa fa-share"></i> Compártelo con tu mundo</h2>
               <ul class="list-unstyled gafrom from-post-compartelo">
@@ -194,7 +194,7 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
 
             <div id="autores" class="autores">
               <h2>Escrito por:</h2>
-              <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="author vcard gafrom from-post-author-info-bottom">
+              <div itemprop="author" itemscope itemtype="https://schema.org/Person" class="author vcard gafrom from-post-author-info-bottom">
                 <?php if(get_post_meta($post->ID, "author-name_value", true) != "") : ?>
                 <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="url">
                   <?php echo get_author_color_id(); ?>
@@ -302,10 +302,6 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
   if ($like == ""){
     update_post_meta($post->ID, '_liked', 1);
   }
-  //if(has_tag(8175)){//Reclutamiento tag
-  //if(has_tag(8277)){//gerencia y habilidades gerenciales
-  if(has_category(20)){//Administración
-    echo do_shortcode("[pro_ad_display_adzone id='334406' flyin='1' flyin_delay='3']"); 
-  }
+
   ?>
 <?php endwhile; ?>

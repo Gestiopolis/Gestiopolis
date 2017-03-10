@@ -319,7 +319,7 @@ function so_25888630_ad_between_paragraphs($content){
 
 function footer_dataxpand() {
 
-    echo '<script type="text/javascript" src="http://tc.dataxpand.com/tc/4ccf3bf.js" async></script>';
+    echo '<script type="text/javascript" src="https://tc.dataxpand.com/tc/4ccf3bf.js" async></script>';
     echo '<script type="text/javascript">
           window._taboola = window._taboola || [];
           _taboola.push({flush: true});
@@ -531,7 +531,7 @@ function head_scripts_ads() {
   googletag.pubads().definePassback(\'/1007663/Header-Moviles\', [1, 1]).display();
 </script>';
   if (is_single()) {
-    $scripts .= '<script src=\'http://Q1MediaHydraPlatform.com/ads/video/controller.php?qid=56d841ab6fbe154632ae0e88&qz=1\'></script>';
+    $scripts .= '<script src=\'https://Q1MediaHydraPlatform.com/ads/video/controller.php?qid=56d841ab6fbe154632ae0e88&qz=1\' async></script>';
     /*
     $scripts .= '<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
   googletag.pubads().definePassback(\'/1007663/Header-Moviles-Articulos\', [1, 1]).display();
