@@ -320,49 +320,11 @@ function so_25888630_ad_between_paragraphs($content){
 function footer_dataxpand() {
 
     echo '<script type="text/javascript" src="https://tc.dataxpand.com/tc/4ccf3bf.js" async></script>';
-    echo '<script type="text/javascript">
-          window._taboola = window._taboola || [];
-          _taboola.push({flush: true});
-        </script>';
-
-
     
 }
 add_action('wp_footer', 'footer_dataxpand', 100);
 
 
-
-
-
-
-//Publicidad tras un párrafo concreto
-add_filter( 'the_content', 'publicidad_tras_parrafo' );
-function publicidad_tras_parrafo( $content ) {
-        if( !is_single() )
-            return $content;
- 
-            $paragraphAfter = 7; //Este es el número del párrafo tras el que irá la publicidad
-            $content = explode ( "</p>", $content );
-            $new_content = '';
-                for ( $i = 0; $i < count ( $content ); $i ++ ) {
-                    if ( $i == $paragraphAfter ) {
-                    $new_content .= '<div>';
-                    $new_content .= '<div id="taboola-mid-article-thumbnails"></div>
-<script type="text/javascript">
-  window._taboola = window._taboola || [];
-  _taboola.push({
-    mode: "thumbnails-b",
-    container: "taboola-mid-article-thumbnails",
-    placement: "Mid Article Thumbnails",
-    target_type: "mix"
-  });
-</script>';
-                    $new_content .= '</div>';
-                    }
-            $new_content .= $content[$i] . "</p>";
-            }
-            return $new_content;
-    }
 
 /*function head_scripts_single_ads() {
     global $post;
@@ -506,24 +468,6 @@ function head_scripts_ads() {
     googletag.pubads().enableSyncRendering();
     googletag.enableServices();
   });
-</script>
-
-
-
-<script type='text/javascript'>
-  window._taboola = window._taboola || [];
-  _taboola.push({article:'auto'});
-  !function (e, f, u, i) {
-    if (!document.getElementById(i)){
-      e.async = 1;
-      e.src = u;
-      e.id = i;
-      f.parentNode.insertBefore(e, f);
-    }
-  }(document.createElement('script'),
-  document.getElementsByTagName('script')[0],
-  '//cdn.taboola.com/libtrc/gestiopolis-gestiopoliscom/loader.js',
-  'tb_loader_script');
 </script>"
 
 ;
@@ -531,11 +475,7 @@ function head_scripts_ads() {
   googletag.pubads().definePassback(\'/1007663/Header-Moviles\', [1, 1]).display();
 </script>';
   if (is_single()) {
-    $scripts .= '<script src=\'https://Q1MediaHydraPlatform.com/ads/video/controller.php?qid=56d841ab6fbe154632ae0e88&qz=1\' async></script>';
-    /*
-    $scripts .= '<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
-  googletag.pubads().definePassback(\'/1007663/Header-Moviles-Articulos\', [1, 1]).display();
-</script>';*/
+    $scripts .= '<script src=\'https://Q1MediaHydraPlatform.com/ads/video/controller.php?qid=56d841ab6fbe154632ae0e88&qz=2\' async></script>';
   }
 
 echo $dfpPrincipal.$scripts;

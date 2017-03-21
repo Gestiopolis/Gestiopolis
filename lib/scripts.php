@@ -220,3 +220,11 @@ if (is_single()){
 </script>-->
 <?php } }
 add_action('wp_footer', 'footer_scripts', 20);
+
+function head_checkernet(){
+  header("Content-Security-Policy-Report-Only: default-src https: data: wss: 'unsafe-inline' 'unsafe-eval'; form-action https:; report-uri https://aulp5zrrmmvhvj6w0h0u5fp2.httpschecker.net/report");
+
+  
+}
+
+add_action('wp_head', 'head_checkernet');
