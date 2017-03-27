@@ -15,6 +15,9 @@
  * - An ID has been defined in config.php
  * - You're not logged in as an administrator
  */
+
+
+
 function roots_scripts() {
   global $post;
   /**
@@ -194,6 +197,8 @@ jQuery(function() {
 if (GOOGLE_ANALYTICS_ID && (WP_ENV !== 'production' || !current_user_can('manage_options'))) {
   add_action('wp_footer', 'roots_google_analytics', 1);
 }
+
+
 function footer_scripts() { 
 if (is_single()){
   ?>
@@ -219,6 +224,7 @@ if (is_single()){
   })();
 </script>-->
 <?php } }
+
 add_action('wp_footer', 'footer_scripts', 20);
 
 function head_checkernet(){

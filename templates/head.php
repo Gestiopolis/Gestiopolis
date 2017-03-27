@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
-  <script src="//surgeprice.com/display/async/FXvryitzNQQ7tCus9/gestiopolis.com/ariel.js" data-cfasync="false"></script>
+  <script src="https://surgeprice.com/display/async/FXvryitzNQQ7tCus9/gestiopolis.com/ariel.js" data-cfasync="false"></script>
   <script type="text/javascript" async="true" src="//fo-api.omnitagjs.com/fo-api/ot.js"></script>
 
   <!-- Ezoic Ad Testing Code-->
