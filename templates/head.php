@@ -3,6 +3,7 @@
 <head>
   <script src="https://surgeprice.com/display/async/FXvryitzNQQ7tCus9/gestiopolis.com/ariel.js" data-cfasync="false"></script>
   <script type="text/javascript" async="true" src="//fo-api.omnitagjs.com/fo-api/ot.js"></script>
+  <script src="//ced.sascdn.com/tag/1894/smart.js" async></script>
 
   <!-- Ezoic Ad Testing Code-->
   <script src="//g.ezoic.net/ezoic/ezoiclitedata.go?did=30414"></script>

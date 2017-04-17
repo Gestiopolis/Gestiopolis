@@ -92,13 +92,31 @@ $maincat = get_the_category($post->ID);
   -->
 
 
-  <div id="social-sidebar" class="sidebar-post">
+  <!-- <div id="social-sidebar" class="sidebar-post">
     <h3>Manténte al tanto</h3>
     <i class="fa fa-caret-down"></i>
     <br>
     <p><a href="https://twitter.com/gestiopoliscom" class="twitter-follow-button" data-show-count="true">Follow @gestiopoliscom</a></p>
     <br>
     <div class="fb-page" data-href="https://www.facebook.com/gestiopolis" data-width="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/gestiopolis"><a href="https://www.facebook.com/gestiopolis">GestioPolis</a></blockquote></div></div>
+  </div> -->
+
+<!-- publicidad -->
+  <div>
+    <div id="sas_46135"></div>
+    <script>
+        var sas = sas || {};
+        sas.cmd = sas.cmd || [];
+        sas.cmd.push(
+            function () {
+                sas.call(
+                    { siteId: 126144, pageId: 726126, formatId: 46135, tagId: "sas_46135" },
+                    { networkId: 1894, domain: "//www5.smartadserver.com" /*, onNoad: function() {} */ }
+                );
+            }
+        );
+    </script>
   </div>
+  
     
 </div><!-- .right-post -->

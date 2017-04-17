@@ -238,21 +238,18 @@ function so_25888630_ad_between_paragraphs($content){
                 
                 $ad = array( 'ad1' => 
                 
-                /*Surge Pricing Unit - gestiopolis.com_300x250_precio030300x250 */
-
-                /* Ezoic - 300x250TercerParrafo - under_second_paragraph */
+                /*<!-- Ezoic - 300x250Principal-2 - under_page_title -->*/
 
                 '
-                <div id="ezoic-pub-ad-placeholder-102">
-                <div class="adsce">
-                <div id="gestiopolis.com_300x250_precio030300x250" class="surgeprice">
-                  <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x250_precio030300x250");</script>
+                <div style="text-align:center !important;">
+                <div id="ezoic-pub-ad-placeholder-101">
+                    <div id="gestiopolis.com_300x250_precio030300x250" class="surgeprice">
+                        <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x250_precio030300x250");</script>
+                    </div>
                 </div>
                 </div>
-                </div>
-
                 ' 
-                /* End Ezoic - 300x250TercerParrafo - under_second_paragraph */
+                /* <!-- End Ezoic - 300x250Principal-2 - under_page_title --> */
                 );
                 /*
                 $ad = array( 'ad1' => 
@@ -322,9 +319,9 @@ function footer_dataxpand() {
     echo '<script type="text/javascript" src="https://tc.dataxpand.com/tc/4ccf3bf.js" async></script>';
 
     echo '<script type="text/javascript">
-          window._taboola = window._taboola || [];
-          _taboola.push({flush: true});
-        </script>';
+      window._taboola = window._taboola || [];
+      _taboola.push({flush: true});
+    </script>';
     
 }
 add_action('wp_footer', 'footer_dataxpand', 100);
@@ -345,15 +342,15 @@ add_action('wp_footer', 'footer_dataxpand', 100);
                      if ( $i == $paragraphAfter ) {
                      $new_content .= '<div>';
                      $new_content .= '<div id="taboola-mid-article-thumbnails"></div>
- <script type="text/javascript">
-   window._taboola = window._taboola || [];
-   _taboola.push({
-     mode: "thumbnails-b",
-     container: "taboola-mid-article-thumbnails",
-     placement: "Mid Article Thumbnails",
-     target_type: "mix"
-   });
- </script>';
+                    <script type="text/javascript">
+                      window._taboola = window._taboola || [];
+                      _taboola.push({
+                        mode: "thumbnails-b",
+                        container: "taboola-mid-article-thumbnails",
+                        placement: "Mid Article Thumbnails",
+                        target_type: "mix"
+                      });
+                    </script>';
                      $new_content .= '</div>';
                      }
              $new_content .= $content[$i] . "</p>";
@@ -503,23 +500,7 @@ function head_scripts_ads() {
     googletag.pubads().enableSyncRendering();
     googletag.enableServices();
   });
-</script>
-
-<script type='text/javascript'>
-   window._taboola = window._taboola || [];
-   _taboola.push({article:'auto'});
-   !function (e, f, u, i) {
-     if (!document.getElementById(i)){
-       e.async = 1;
-       e.src = u;
-       e.id = i;
-       f.parentNode.insertBefore(e, f);
-     }
-   }(document.createElement('script'),
-   document.getElementsByTagName('script')[0],
-   '//cdn.taboola.com/libtrc/gestiopolis-gestiopoliscom/loader.js',
-   'tb_loader_script')";
-
+</script>";
 
   $scripts = '<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
   googletag.pubads().definePassback(\'/1007663/Header-Moviles\', [1, 1]).display();
@@ -650,4 +631,24 @@ $fbads='<style>
 }
 add_action('wp_footer', 'footer_adsense_script', 1);
 
+
+
+function head_taboola(){
+
+    echo '<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({article:"auto"});
+  !function (e, f, u) {
+    e.async = 1;
+    e.src = u;
+    f.parentNode.insertBefore(e, f);
+  }(document.createElement("script"),
+  document.getElementsByTagName("script")[0],
+  "https://cdn.taboola.com/libtrc/gestiopolis-network/loader.js");
+</script>';
+
+echo '<script src="//ced.sascdn.com/tag/1894/smart.js" async></script>';
+
+}
+add_action('wp_head', 'head_taboola');
 ?>
