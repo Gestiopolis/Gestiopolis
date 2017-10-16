@@ -19,6 +19,7 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-14')
 <div id="ezoic-pub-ad-placeholder-100">
   <div id="gestiopolis.com_300x600_piso030cts" class="surgeprice">
     <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x600_piso030cts");</script>
+    <p class="nativeway"></p>
   </div>
 </div>
 <!-- End Ezoic - 300x600LateralIzq - sidebar -->
@@ -39,6 +40,7 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
 <div id="ezoic-pub-ad-placeholder-100">
   <div id="gestiopolis.com_300x600_piso030cts" class="surgeprice">
     <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x600_piso030cts");</script>
+    <p class="nativeway"></p>
   </div>
 </div>
 <!-- End Ezoic - 300x600LateralIzq - sidebar -->
@@ -94,10 +96,14 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
               <div class="adsfr">
                 
-                <!-- Sulvo Surge Pricing Unit - gestiopolis.com_300x250_atf30250 -->
-                <div id="gestiopolis.com_300x250_atf30250" class="surgeprice">
-                  <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x250_atf30250");</script>
+                <!-- Ezoic - under page title articles - under_page_title -->
+                <div id="ezoic-pub-ad-placeholder-163">
+                  <!-- Sulvo Surge Pricing Unit - gestiopolis.com_300x250_atf30250 -->
+                  <div id="gestiopolis.com_300x250_atf30250" class="surgeprice">
+                    <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x250_atf30250");</script>
+                  </div>
                 </div>
+                <!-- End Ezoic - under page title articles - under_page_title -->
 
                 <!-- /1007663/Post-Principal-ATF-300x250 -->
                 

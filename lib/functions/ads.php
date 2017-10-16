@@ -241,13 +241,23 @@ function so_25888630_ad_between_paragraphs($content){
                 /*<!-- Ezoic - 300x250Principal-2 - under_page_title -->*/
 
                 '
+                <!-- Ezoic - in post ad - under_second_paragraph -->
+                <div id="ezoic-pub-ad-placeholder-174">
+                
+                
+
+                <!-- Sulvo Surge Pricing Unit - gestiopolis.com_300x250_precio030300x250 -->
                 <div style="text-align:center !important;">
-                <div id="ezoic-pub-ad-placeholder-101">
                     <div id="gestiopolis.com_300x250_precio030300x250" class="surgeprice">
-                        <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x250_precio030300x250");</script>
+                      <script data-cfasync="false"
+                    type="text/javascript">surgeprice.display("gestiopolis.com_300x250_precio030300x250");</script>
                     </div>
                 </div>
+
+
                 </div>
+                <!-- End Ezoic - in post ad - under_second_paragraph -->
+                
                 ' 
                 /* <!-- End Ezoic - 300x250Principal-2 - under_page_title --> */
                 );
