@@ -515,9 +515,9 @@ function head_scripts_ads() {
   $scripts = '<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
   googletag.pubads().definePassback(\'/1007663/Header-Moviles\', [1, 1]).display();
 </script>';
-  if (is_single()) {
-    $scripts .= '<script src=\'https://Q1MediaHydraPlatform.com/ads/video/controller.php?qid=56d841ab6fbe154632ae0e88&qz=2\' async></script>';
-  }
+  // if (is_single()) {
+  //   $scripts .= '<script src=\'https://Q1MediaHydraPlatform.com/ads/video/controller.php?qid=56d841ab6fbe154632ae0e88&qz=2\' async></script>';
+  // }
 
 echo $dfpPrincipal.$scripts;
 }
