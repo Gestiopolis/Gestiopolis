@@ -1,7 +1,7 @@
 <?php
 $term = get_queried_object();
 global $current_user;
-get_currentuserinfo();
+wp_get_current_user();
 ?>
 <div class="post-image">
   <div class="bg-image" style="background: #c5cae9; height: 248px;"></div>
@@ -18,12 +18,17 @@ get_currentuserinfo();
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
+
+
+
       <!-- /1007663/Tag-Top-728x90 -->
-      <div id='div-gpt-ad-1460590183368-13' class="adsce">
-      <script type='text/javascript'>
-      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-13'); });
+      <div id='div-gpt-ad-1559754535644-0' class="adsce" style='height:90px; width:728px;'>
+      <script>
+      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1559754535644-0'); });
       </script>
       </div>
+
+
     </div>
   </div>
   <!-- Empieza sección de TÍTULO DE CATEGORÍA -->

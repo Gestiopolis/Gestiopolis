@@ -1,7 +1,7 @@
 <?php
 $term = get_queried_object();
 global $current_user;
-get_currentuserinfo();
+wp_get_current_user();
 ?>
 <div class="post-image">
   <div class="bg-image cat-bg-<?php echo $term->term_id; ?>" style="height: 248px;"></div>
@@ -27,12 +27,15 @@ get_currentuserinfo();
   <div class="row">
     <div class="col-sm-12">
       <div>
+
+
         <!-- /1007663/Categoria-Top-728x90 -->
-        <div id='div-gpt-ad-1460590183368-1' class="adsce">
-        <script type='text/javascript'>
-        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-1'); });
+        <div id='div-gpt-ad-1559755405415-0' class="adsce" style='height:90px; width:728px;'>
+        <script>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1559755405415-0'); });
         </script>
         </div>
+
       </div>
     </div>
   </div>
@@ -155,6 +158,19 @@ get_currentuserinfo();
       </div><!-- /.row -->
     </div><!-- /.col-sm-12-->
   </div><!-- /.destacados -->
+
+  <!-- taboola 12/12/2018 -->
+  <div id="taboola-below-article-thumbnails-2"></div>
+  <script type="text/javascript">
+    window._taboola = window._taboola || [];
+    _taboola.push({
+      mode: 'thumbnails-d',
+      container: 'taboola-below-article-thumbnails-2',
+      placement: 'Below Article Thumbnails 2',
+      target_type: 'mix'
+    });
+  </script>
+
   <!-- Empieza sección de AUTORES POPULARES -->
   <div class="row title-section">
     <div class="col-sm-12">

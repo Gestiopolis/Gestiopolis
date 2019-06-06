@@ -14,15 +14,11 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-14')
 </div>
 -->
 
-<!-- Surge Pricing Unit - gestiopolis.com_300x600_piso030cts -->
-<!-- Ezoic - 300x600LateralIzq - sidebar -->
-<div id="ezoic-pub-ad-placeholder-100">
-  <div id="gestiopolis.com_300x600_piso030cts" class="surgeprice">
-    <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x600_piso030cts");</script>
-    <p class="nativeway"></p>
-  </div>
-</div>
-<!-- End Ezoic - 300x600LateralIzq - sidebar -->
+<!-- Surge Pricing Unit - gestiopolis.com_300x600_piso030 -->
+
+  <div data-ad="gestiopolis.com_300x600_piso030" data-devices="m:1,t:1,d:1" class="demand-supply"></div>
+  
+<!-- // Surge Pricing Unit - gestiopolis.com_300x600_piso030 -->
 
 <?php }else { ?>
 
@@ -35,15 +31,11 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
 </div>
 -->
 
-<!-- Surge Pricing Unit - gestiopolis.com_300x600_piso030cts -->
-<!-- Ezoic - 300x600LateralIzq - sidebar -->
-<div id="ezoic-pub-ad-placeholder-100">
-  <div id="gestiopolis.com_300x600_piso030cts" class="surgeprice">
-    <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x600_piso030cts");</script>
-    <p class="nativeway"></p>
-  </div>
-</div>
-<!-- End Ezoic - 300x600LateralIzq - sidebar -->
+<!-- Surge Pricing Unit - gestiopolis.com_300x600_piso030 -->
+
+  <div data-ad="gestiopolis.com_300x600_piso030" data-devices="m:1,t:1,d:1" class="demand-supply"></div>
+  
+<!-- // Surge Pricing Unit - gestiopolis.com_300x600_piso030 -->
 
 
  <?php } ?>
@@ -59,6 +51,24 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
                 <?php get_template_part('templates/entry-meta'); ?>
                 <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm gafrom from-post-tags"> ','','</div>'); ?>
                 
+                  <!-- Taboola Tags -->
+
+                  <div class="ads_right_tags">
+
+                    <div id="taboola-right-rail-thumbnails"></div>
+                      <script type="text/javascript">
+                        window._taboola = window._taboola || [];
+                        _taboola.push({
+                          mode: 'thumbnails-rr',
+                          container: 'taboola-right-rail-thumbnails',
+                          placement: 'Right Rail Thumbnails',
+                          target_type: 'mix'
+                        });
+                      </script>
+
+                    </div>
+                  <!-- Taboola Tags -->
+                  
               </div>
             </div>
             <div class="col-sm-12 col-md-10 col-md-pull-2 content-col">
@@ -66,16 +76,37 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
           <time class="entry-date updated hidden" datetime="<?php echo get_the_modified_time('c'); ?>"><?php echo get_the_modified_date('d.m.Y'); ?></time>
           <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
           <div class="adsce">
-            <!-- /1007663/Trans-Principal-ATF-728x90 -->
-            <!-- Ezoic - 728x9ConvertidosPrincipal - under_page_title -->
-            <div id="ezoic-pub-ad-placeholder-105">
-              <div id='div-gpt-ad-1460590183368-15'>
-                <script type='text/javascript'>
-                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-15'); });
-                </script>
+           
+            <!-- Sulvo - under_page_title 728 x90-->
+  
+              <?php if ( wp_is_mobile() ) { ?>
+
+              <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+              <script>
+               var googletag = googletag || {};
+               googletag.cmd = googletag.cmd || [];
+              </script>
+              <script>
+               googletag.cmd.push(function() {
+                 googletag.defineSlot('/21673142571/6__gestiopolis.com__mobile__320x50_Sulvo', [320, 50], 'div-gpt-ad-1527496535662-0').addService(googletag.pubads());
+                 googletag.enableServices();
+               });
+              </script>
+              <div id='div-gpt-ad-1527496535662-0' style='height:50px; width:320px;text-align: center !important; margin: 0 auto !important'>
+              <script>
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1527496535662-0'); });
+              </script>
               </div>
-            </div>
-            <!-- End Ezoic - 728x9ConvertidosPrincipal - under_page_title -->
+                 
+              <?php } else { ?>
+
+              <div data-ad="gestiopolis.com_728x90_conv728x90atf" data-devices="m:0,t:1,d:1" class="demand-supply"></div>
+
+              <?php } ?>
+
+            <!-- //Sulvo - under_page_title 728 x90-->
+
+
           </div>
           <div id="sidebar" style="display: none !important;">
             <div id="outline"></div>
@@ -96,66 +127,80 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
               <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
               <div class="adsfr">
                 
-                <!-- Ezoic - under page title articles - under_page_title -->
-                <div id="ezoic-pub-ad-placeholder-163">
-                  <!-- Sulvo Surge Pricing Unit - gestiopolis.com_300x250_atf30250 -->
-                  <div id="gestiopolis.com_300x250_atf30250" class="surgeprice">
-                    <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x250_atf30250");</script>
-                  </div>
-                </div>
-                <!-- End Ezoic - under page title articles - under_page_title -->
+                <!-- Sulvo - Debajo del titulo del artículo - under_page_title -->
 
-                <!-- /1007663/Post-Principal-ATF-300x250 -->
-                
-                <!-- <div id='div-gpt-ad-1460590183368-12'>
-                  
-                  <script type='text/javascript'>
-                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-12'); });
-                  </script>
-                </div> -->
+                  <div data-ad="gestiopolis.com_300x250_precio030300x250" data-devices="m:1,t:1,d:1" class="demand-supply"></div>
+
+                <!-- Sulvo - Debajo del titulo del artículo - under_page_title -->
         
 
               </div>
+              
               <?php } ?>
               <?php the_content(); ?>
             </div>
+
+
+             <!-- Banner publicidad Taboola -->
+             <div class="center">
+               <div id="taboola-below-article-thumbnails"></div>
+               <script type="text/javascript">
+                 window._taboola = window._taboola || [];
+                 _taboola.push({
+                   mode: 'thumbnails-a',
+                   container: 'taboola-below-article-thumbnails',
+                   placement: 'Below Article Thumbnails',
+                   target_type: 'mix'
+                 });
+               </script>
+             </div>
+             <!-- /Banner publicidad Taboola -->
+
+             
             <div id="likepost" class="compartelo  gafrom from-post-likepost">
               <h2 class="text-center">Hazle saber al autor que aprecias su trabajo</h2>
-              <?php if(function_exists(getILikeThis)) getILikeThis('get'); ?>
+              <div style="text-align: center !important;margin: 0 auto !important;width: 40px;">
+                <?php if( function_exists('zilla_likes') ) zilla_likes(); ?>
+              </div>
+              <?php //if(function_exists(getILikeThis)) getILikeThis('get'); ?>
             </div>
             <div class="adsce">
             
-            <!-- Surge Pricing Unit - gestiopolis.com_300x250_btf -->
-            <!-- Ezoic - 300x250Abajo - bottom_of_page -->
-            <div id="ezoic-pub-ad-placeholder-104">
-              <div id="gestiopolis.com_300x250_btf" class="surgeprice">
-                <script data-cfasync="false" type="text/javascript">surgeprice.display("gestiopolis.com_300x250_btf");</script>
-              </div>
-            </div>
-            <!-- End Ezoic - 300x250Abajo - bottom_of_page -->
+            <!-- Surge - Abajo post-->
 
-              <!-- /1007663/Post-Abajo-BTF-300x250 -->
-              <!-- 
-              <div id='div-gpt-ad-1460590183368-7'>
-                
-              <script type='text/javascript'>
-              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-7'); });
-              </script>
-                -->
+              <!-- <div data-ad="gestiopolis.com_300x250_abajopost" data-devices="m:1,t:1,d:1" class="demand-supply"></div> -->
+
+            <!-- Surge - Abajo post-->
                 
               </div>
             </div>
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="downbox"><a class="downlink gafrom from-post-downlink" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
             <?php } ?>
+
+            <!-- Comments -->
+
+             <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.javascript#xfbml=1&version=v3.3&appId=1712097452440529&autoLogAppEvents=1"></script>
+
+                  <div class="fb-comments" data-href="<?php the_permalink( $post ); ?>" data-width="900" data-numposts="5"></div>
+                  
+            
             <div id="comments" class="comentarios gafrom from-post-comments">
               <a href="javascript:;" class="btn btn-block btn-primary btn-lg cerrado"><span>Tu opinión vale, comenta aquí</span><span style="display:none;">Oculta los comentarios</span></a>
               <div id="respond" class="comments-wrapper">
                 <h2><i class="fa fa-comments"></i> Comentarios</h2>
-                <?php echo do_shortcode('[fbcomments]'); ?>
+
+                <div id="fb-root"></div>
+
+
+
                 <?php //comments_template('/templates/comments.php'); ?>
               </div>
             </div>
+
+
+            <!-- Comments -->
+
             <!-- <div id="suscripcion" class="suscripcion hidden gafrom from-post-suscripcion">
               <div>
                 <span class="author-color"><i class="fa fa-envelope"></i></span>
@@ -183,21 +228,6 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
               </ul>
             </div><!-- .compartelo -->
 
-
-            <!-- Banner publicidad Taboola -->
-             <div class="center">
-               <div id="taboola-below-article-thumbnails"></div>
-               <script type="text/javascript">
-                 window._taboola = window._taboola || [];
-                 _taboola.push({
-                   mode: 'thumbnails-a',
-                   container: 'taboola-below-article-thumbnails',
-                   placement: 'Below Article Thumbnails',
-                   target_type: 'mix'
-                 });
-               </script>
-             </div>
-             <!-- /Banner publicidad Taboola -->
             
             <div id="autores" class="autores">
               <h2>Escrito por:</h2>

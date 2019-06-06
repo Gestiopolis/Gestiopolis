@@ -3,39 +3,57 @@
   <div class="row">
     <div class="col-sm-12">
       <div>
+
         <!-- /1007663/Home-Top-728x90 -->
-        <div id='div-gpt-ad-1460590183368-4' class="adsce">
-        <script type='text/javascript'>
-        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-4'); });
+        <div id='div-gpt-ad-1559754130804-0' class="adsce" style='height:90px; width:728px;'>
+        <script>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1559754130804-0'); });
         </script>
         </div>
+
       </div>
     </div>
   </div>
+
   <div class="row title-section">
     <div class="col-sm-12">
-      <h2>Se destacan</h2>
-      <div class="subtitle">Estos son los posts preferidos por nuestros lectores hoy</div>
+      <h2>Nuevas Publicaciones</h2>
+      <div class="subtitle">Estos son los últimos posts compartidos por nuestros lectores</div>
     </div>
   </div>
   <div class="row destacados">
     <div class="col-sm-12">
       <div class="row gafrom from-home-dest">
-        <?php $tposts = get_trending_posts(10, TRENDING_DAYS);
-          $i = 1;
-          foreach ($tposts as $tpost) {
-            $post_title = stripslashes($tpost->post_title);
-            $permalink = get_permalink($tpost->ID);
-            $category = get_the_category($tpost->ID);
-            $category_id = $category[0]->term_id;
-            $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $tpost->ID ), 'dest-img' );
-            if($i == 1){
+        
+      <?php
+      
+        $argss = array(
+          'post_type' => 'post',
+          'posts_per_page' => 10,
+        );
 
-        ?>
+        $posts = get_posts( $argss );
+
+        $i = 1;
+        foreach( $posts as $post ) {
+
+        $post_title = get_the_title($post->ID);
+        $permalink = get_permalink($post->ID);
+
+        $category1 = get_the_category($post->ID);
+        $category_id = $category1[0]->term_id;
+
+        $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID ), 'dest-img' );
+
+
+        if($i == 1){
+
+       ?>
+
+
         <div class="col-sm-6 col-md-9 col-lg-6">
-          <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post gafrom from-home-dest-1">
+          <article id="post-<?php echo $post->ID;?>" class="destacado-<?php echo $post->ID;?> post gafrom from-home-dest-1">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
-
               <div class="bg-image" style="background-image: url(<?php echo $large_image_url[0]; ?>); height: 250px;"></div>
               <div class="overlay"></div>
               <div class="vert-center-wrapper">
@@ -50,7 +68,7 @@
         </div><!-- ./col-sm-6 -->
         <?php } else if($i == 2 || $i == 3){ ?>
         <div class="col-sm-6 col-md-3 col-lg-3">
-          <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post gafrom from-home-dest-2-3">
+          <article id="post-<?php echo $post->ID;?>" class="destacado-<?php echo $post->ID;?> post gafrom from-home-dest-2-3">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
               <div class="bg-image" style="background-image: url(<?php echo $large_image_url[0]; ?>); height: 250px;"></div>
               <div class="overlay"></div>
@@ -66,7 +84,7 @@
         </div><!-- ./col-sm-3 -->
         <?php } else if($i == 4){ ?>
         <div class="col-sm-6 col-md-9 col-lg-3">
-          <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post gafrom from-home-dest-4">
+          <article id="post-<?php echo $post->ID;?>" class="destacado-<?php echo $post->ID;?> post gafrom from-home-dest-4">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
               <div class="bg-image" style="background-image: url(<?php echo $large_image_url[0]; ?>); height: 250px;"></div>
               <div class="overlay"></div>
@@ -82,7 +100,7 @@
         </div><!-- ./col-sm-3 -->
         <?php } else if($i == 5){ ?>
         <div class="col-sm-6 col-md-4 col-lg-3">
-          <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post gafrom from-home-dest-5">
+          <article id="post-<?php echo $post->ID;?>" class="destacado-<?php echo $post->ID;?> post gafrom from-home-dest-5">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
               <div class="bg-image" style="background-image: url(<?php echo $large_image_url[0]; ?>); height: 250px;"></div>
               <div class="overlay"></div>
@@ -98,7 +116,7 @@
         </div><!-- ./col-sm-3 -->
         <?php } else if($i == 6){ ?>
         <div class="col-sm-6 col-md-4 col-lg-6">
-          <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post gafrom from-home-dest-6">
+          <article id="post-<?php echo $post->ID;?>" class="destacado-<?php echo $post->ID;?> post gafrom from-home-dest-6">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
               <div class="bg-image" style="background-image: url(<?php echo $large_image_url[0]; ?>); height: 250px;"></div>
               <div class="overlay"></div>
@@ -114,7 +132,7 @@
         </div><!-- ./col-sm-6 -->
         <?php } else if($i == 7 || $i == 8 || $i == 9 || $i == 10){ ?>
         <div class="col-sm-6 col-md-4 col-lg-3">
-          <article id="post-<?php echo $tpost->ID;?>" class="destacado-<?php echo $tpost->ID;?> post gafrom from-home-dest-7-8-9-10">
+          <article id="post-<?php echo $post->ID;?>" class="destacado-<?php echo $post->ID;?> post gafrom from-home-dest-7-8-9-10">
             <a href="<?php echo $permalink; ?>" title="<?php echo $post_title; ?>" rel="bookmark">
               <div class="bg-image" style="background-image: url(<?php echo $large_image_url[0]; ?>); height: 250px;"></div>
               <div class="overlay"></div>
@@ -128,7 +146,11 @@
             </a>
           </article>
         </div><!-- ./col-sm-3 -->
-        <?php } $i++; } // fin foreach $tposts ?>
+        <?php } $i++; }// fin foreach $tposts ?>
+        <?php 
+          wp_reset_postdata();
+          wp_reset_query();
+         ?>
       </div><!-- /.row -->
     </div><!-- /.col-sm-12-->
   </div><!-- /.destacados -->
@@ -147,6 +169,7 @@
   <!-- Empieza sección de EJES TEMÁTICOS -->
   <div class="row title-section">
     <div class="col-sm-12">
+
       <h2>Materias</h2>
       <div class="subtitle">Temáticas en las que clasificamos los posts</div>
     </div>
@@ -214,6 +237,20 @@
       </div>
     </div>
   </div>
+  
+
+  <!-- Taboola Home -->
+  <div id="taboola-below-article-thumbnails"></div>
+    <script type="text/javascript">
+      window._taboola = window._taboola || [];
+      _taboola.push({
+        mode: 'thumbnails-c',
+        container: 'taboola-below-article-thumbnails',
+        placement: 'Below Article Thumbnails',
+        target_type: 'mix'
+      });
+    </script>
+
   <div class="row title-section">
     <div class="col-sm-12">
       <h2>Temas del momento</h2>
@@ -249,7 +286,13 @@
   </div>
   <div class="row posts-home">
     <div id="recientes" class="gafrom from-home-posts">
-      <?php
+      
+      
+      <?php 
+      wp_reset_postdata();
+      //$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+      
+        query_posts( 'post_type=post&offset=10&posts_per_page=28'.'&paged='.get_query_var('paged') );
         if ( have_posts() ) :
           // Start the Loop.
           while ( have_posts() ) : the_post();
@@ -262,19 +305,17 @@
             get_template_part( 'templates/content' );
         
           endwhile;
+          wp_reset_postdata();
+          wp_reset_query();
           ?>
-          <?php if ( function_exists( 'wp_pagenavi' ) ) { ?>
-          <div class="pagination">
-            <?php wp_pagenavi(); ?>
-          </div>
-          <?php } else { ?>
-          <div class="pagination">
-            <div class="nav-previous alignleft"><?php next_posts_link( 'Artículos anteriores' ); ?></div>
-          </div>
-          <?php } ?>
           <?php
         endif;
+        
+          wp_reset_postdata();
+          wp_reset_query();
+         
       ?>
+
     </div><!-- #recientes -->
   </div><!-- .row -->
 </div><!-- .container -->

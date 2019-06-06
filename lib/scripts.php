@@ -139,16 +139,6 @@ function roots_jquery_local_fallback($src, $handle = null) {
 add_action('wp_head', 'roots_jquery_local_fallback');
 
 
-//Surge price
-/*
-function surgeprice(){ ?>
-
-  <script data-cfasync="false" src="//surgeprice.com/display/ads/FXvryitzNQQ7tCus9/ariel.js"></script>
-
-<?php }
-
-add_action('wp_head', 'surgeprice');
-*/
 
 /**
  * Google Analytics snippet from HTML5 Boilerplate
@@ -202,35 +192,18 @@ if (GOOGLE_ANALYTICS_ID && (WP_ENV !== 'production' || !current_user_can('manage
 function footer_scripts() { 
 if (is_single()){
   ?>
-<!-- Facebook Plugin-->
-<!--<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=220995104693477";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>-->
+
 <!-- Twitter Plugin -->
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-<!-- Google + Plugin -->
-<!--<script type="text/javascript">
-  window.___gcfg = {lang: 'es-419'};
 
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>-->
 <?php } }
 
 add_action('wp_footer', 'footer_scripts', 20);
 
-function head_checkernet(){
-  header("Content-Security-Policy-Report-Only: default-src https: data: wss: 'unsafe-inline' 'unsafe-eval'; form-action https:; report-uri https://aulp5zrrmmvhvj6w0h0u5fp2.httpschecker.net/report");
+// function head_checkernet(){
+//   header("Content-Security-Policy-Report-Only: default-src https: data: wss: 'unsafe-inline' 'unsafe-eval'; form-action https:; report-uri https://aulp5zrrmmvhvj6w0h0u5fp2.httpschecker.net/report");
 
   
-}
+// }
 
-add_action('wp_head', 'head_checkernet');
+// add_action('wp_head', 'head_checkernet');

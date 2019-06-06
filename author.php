@@ -1,7 +1,7 @@
 <?php
 $curaut = get_queried_object();
 global $current_user;
-get_currentuserinfo();
+wp_get_current_user();
 ?>
 <!-- Empieza sección de LISTADO DE POSTS -->
 <div class="post-image">

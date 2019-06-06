@@ -1,9 +1,8 @@
-
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-9">
         <h1 class="title">Resultados de la búsqueda: "<?php echo get_search_query(); ?>"</h1>
-        <div id="publicaciones">
+          <div id="publicaciones">
           <?php while (have_posts()) : the_post(); 
             get_template_part( 'templates/content', 'search' );
            endwhile; ?>

@@ -1,13 +1,63 @@
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
-  <script src="https://surgeprice.com/display/async/FXvryitzNQQ7tCus9/gestiopolis.com/ariel.js" data-cfasync="false"></script>
+
+<!-- Ads Plus -->
+	<script async src="https://cdn.ad.plus/player/adplus.js"></script>
+	<script>(function(){var i='5PcWSBhHwrcuejnApTW3yvf36RsI6ylhKCE7XkCqbd_ZhxKc8DmZ';document.write('<div id="'+i+'"></div>');(playerPro=window.playerPro||[]).push(i);})();</script>
+
+  <!-- Llamada a sulvo -->
+  <script async id="sulvo" type="text/javascript" src="//live.demand.supply/up.js"></script>
+  
+  <!-- Llamada a Headway nativos -->
   <script type="text/javascript" async="true" src="//fo-api.omnitagjs.com/fo-api/ot.js"></script>
+
+  <!-- Llamada a Headway Scroll -->
   <script src="//ced.sascdn.com/tag/1894/smart.js" async></script>
 
-  <!-- Ezoic Ad Testing Code-->
-  <script src="//g.ezoic.net/ezoic/ezoiclitedata.go?did=30414"></script>
-  <!-- Ezoic Ad Testing Code-->
+
+  <style>
+
+  	.ads_right_tags{
+        width:148px;
+        max-width: 100%;
+    }
+
+    @media (max-width: 991px){
+        .ads_right_tags{
+            display: none;
+        }
+    }
+
+	@media(max-width: 700px){
+	    .adsfr{
+			width: 100% !important;
+			max-width: 100% !important;
+			text-align: center !important;
+			margin: 0 auto !important;
+	    }
+	}
+
+                    
+
+	.single .downlink {
+		color: #fff !important;
+	}
+  	
+  	#comments a.btn, .from-post-compartelo a{
+   	   color: #fff !important;
+	}
+	.quotes li a {
+	   color: #222 !important;
+	}
+	#copytext {
+	   color: #fff !important;
+	}
+
+	.single article .wrapper-img h2 span{
+		color: #ffffff !important;
+	}
+  </style>
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">

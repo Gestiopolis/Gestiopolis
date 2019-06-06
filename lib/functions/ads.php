@@ -5,27 +5,6 @@
 //http://stackoverflow.com/questions/25888630/place-ads-in-between-text-only-paragraphs
 //http://www.labnol.org/internet/adsense-custom-size-ads/28352/
 //Inserta admanmedia ads después del primer párrafo
-add_filter( 'the_content', 'insert_adman_ads' );
-//http://www.gestiopolis.com/la-etica-empresarial-como-fuente-de-ventajas-competitivas/
-function insert_adman_ads( $content ) {
-    global $post;
-
-$ad_code = "<!-- /1007663/Post-3Parrafo-VideoAds -->
-<div id='div-gpt-ad-1460590183368-5'>
-<script type='text/javascript'>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-5'); });
-</script>
-</div>";
-
-
-	if ( is_single() && ! is_admin() && get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) {
-        //if(!is_single(28207 )){
-    		return prefix_insert_after_paragraph( $ad_code, 4, $content );
-        //}
-	}
-	
-	return $content;
-}
 
 function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 	$closing_p = '</p>';
@@ -58,24 +37,66 @@ function insert_ads_all2html( $content ) {
 	foreach ($pages as $index => $page) {
 
 		if ( 1 == $index ) {
+
+            /* Si es movil */
+            if(wp_is_mobile()){
+                
             $pages[$index] .= 
 
-            /* Ezoic - 728x90SegundaConvertidos - under_first_paragraph */
-            
+            /* ADS Pluss - antes de la segunda página*/
 
-            '
-            <div id=\'ezoic-pub-ad-placeholder-106\'>
-            <div class="adsce"><!-- /1007663/Trans-SegPag-BTF-728x90 -->
-            <div id=\'div-gpt-ad-1460590183368-16\'>
-            <script type=\'text/javascript\'>
-            googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1460590183368-16\'); });
-            </script>
-            </div></div>
-            </div>
-            '
+            "
+                <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+                <script>
+                 var googletag = googletag || {};
+                 googletag.cmd = googletag.cmd || [];
+                </script>
+                <script>
+                 googletag.cmd.push(function() {
+                   googletag.defineSlot('/21673142571/6__gestiopolis.com__mobile__320x50_1', [320, 50], 'div-gpt-ad-1527492820290-0').addService(googletag.pubads());
+                   googletag.enableServices();
+                 });
+                </script>
+                <div id='div-gpt-ad-1527492820290-0' style='height:50px; width:320px;text-align:center !important;margin: 0 auto !important;'>
+                <script>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1527492820290-0'); });
+                </script>
+                </div>
 
-            /* End Ezoic - 728x90SegundaConvertidos - under_first_paragraph */
+            "
+
+
+            /* ADS Pluss - antes de la segunda página*/
             ;
+
+            /* Si no es movil */
+            }else{
+
+            $pages[$index] .= 
+
+                "
+                    <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+                    <script>
+                     var googletag = googletag || {};
+                     googletag.cmd = googletag.cmd || [];
+                    </script>
+                    <script>
+                     googletag.cmd.push(function() {
+                       googletag.defineSlot('/21673142571/6__gestiopolis.com__desktop__728x90_1', [728, 90], 'div-gpt-ad-1525094074934-1').addService(googletag.pubads());
+                       googletag.enableServices();
+                     });
+                    </script>
+                    <div id='div-gpt-ad-1525094074934-1' style='height:90px; width:728px; text-align:center !important;margin: 0 auto !important;'>
+                    <script>
+                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1525094074934-1'); });
+                    </script>
+                    </div>
+
+                "
+            ;
+
+            }
+
         }
 
         if ( $pos2 == $index ) {
@@ -119,6 +140,7 @@ function insert_ads_all2html( $content ) {
 	
 	return implode( '', $pages );
 }
+
 
 add_filter( 'the_content', 'so_25888630_ad_between_paragraphs' );
 
@@ -236,31 +258,10 @@ function so_25888630_ad_between_paragraphs($content){
             *------------------------------------------------------------------------------*/ 
             if( $key_total == 0 ){
                 
-                $ad = array( 'ad1' => 
+                // $ad = array( 'ad1' => 
                 
-                /*<!-- Ezoic - 300x250Principal-2 - under_page_title -->*/
-
-                '
-                <!-- Ezoic - in post ad - under_second_paragraph -->
-                <div id="ezoic-pub-ad-placeholder-174">
-                
-                
-
-                <!-- Sulvo Surge Pricing Unit - gestiopolis.com_300x250_precio030300x250 -->
-                <div style="text-align:center !important;">
-                    <div id="gestiopolis.com_300x250_precio030300x250" class="surgeprice">
-                      <script data-cfasync="false"
-                    type="text/javascript">surgeprice.display("gestiopolis.com_300x250_precio030300x250");</script>
-                    </div>
-                </div>
-
-
-                </div>
-                <!-- End Ezoic - in post ad - under_second_paragraph -->
-                
-                ' 
-                /* <!-- End Ezoic - 300x250Principal-2 - under_page_title --> */
-                );
+                /* Aqui va otro anuncio que se muestra luego del 3 parrafo */
+                // );
                 /*
                 $ad = array( 'ad1' => 
                 '<div class="adsce"><!-- /1007663/Post-4Parrafo-BTF-300x250 -->
@@ -271,21 +272,13 @@ function so_25888630_ad_between_paragraphs($content){
                 </div></div>' );
                 */
             }else if( $key_total == 1 ){
-                
-                
                 $ad = array( 'ad2' => 
-                /* Ezoic - 300x250MitadContenido - mid_content */
+
+                /* Sulvo - Mitad del contenido */
                 '
-                <div id="ezoic-pub-ad-placeholder-103">
-                <div class="adsce"><!-- /1007663/Post-Mitad-BTF-300x250 -->
-                <div id=\'div-gpt-ad-1460590183368-11\'>
-                <script type=\'text/javascript\'>
-                googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1460590183368-11\'); });
-                </script>
-                </div></div>
-                </div>
+                
                 ' 
-                /* End Ezoic - 300x250MitadContenido - mid_content */
+                /* Sulvo - Mitad del contenido */
                 );
                 
             }
@@ -302,7 +295,10 @@ function so_25888630_ad_between_paragraphs($content){
              *  'no_ad', no ad will be inserted
              *
             *------------------------------------------------------------------------------*/ 
+
+            
             foreach ( $total as $key_para=>$para ) {
+                $ad['ad'] = '';
                 if( !in_array( 'no_ad', $m ) && $key_para === $m[0] ){
                     $new_paras[key($ad)] = $ad[key($ad)];
                     $new_paras[$key_para] = $para;
@@ -324,204 +320,18 @@ function so_25888630_ad_between_paragraphs($content){
     return $content;
 }
 
+
+
+// Dataxpand Audiencias
 function footer_dataxpand() {
 
     echo '<script type="text/javascript" src="https://tc.dataxpand.com/tc/4ccf3bf.js" async></script>';
-
-    echo '<script type="text/javascript">
-      window._taboola = window._taboola || [];
-      _taboola.push({flush: true});
-    </script>';
     
 }
 add_action('wp_footer', 'footer_dataxpand', 100);
 
 
 
-
-//Publicidad tras un párrafo concreto
- add_filter( 'the_content', 'publicidad_tras_parrafo' );
- function publicidad_tras_parrafo( $content ) {
-         if( !is_single() )
-             return $content;
-  
-             $paragraphAfter = 7; //Este es el número del párrafo tras el que irá la publicidad
-             $content = explode ( "</p>", $content );
-             $new_content = '';
-                 for ( $i = 0; $i < count ( $content ); $i ++ ) {
-                     if ( $i == $paragraphAfter ) {
-                     $new_content .= '<div>';
-                     $new_content .= '<div id="taboola-mid-article-thumbnails"></div>
-                    <script type="text/javascript">
-                      window._taboola = window._taboola || [];
-                      _taboola.push({
-                        mode: "thumbnails-b",
-                        container: "taboola-mid-article-thumbnails",
-                        placement: "Mid Article Thumbnails",
-                        target_type: "mix"
-                      });
-                    </script>';
-                     $new_content .= '</div>';
-                     }
-             $new_content .= $content[$i] . "</p>";
-             }
-             return $new_content;
-     }
-
-/*function head_scripts_single_ads() {
-    global $post;
-    if (is_single()) {
-    echo '<script type=\'text/javascript\'>
-  var googletag = googletag || {};
-  googletag.cmd = googletag.cmd || [];
-  (function() {
-    var gads = document.createElement(\'script\');
-    gads.async = true;
-    gads.type = \'text/javascript\';
-    var useSSL = \'https:\' == document.location.protocol;
-    gads.src = (useSSL ? \'https:\' : \'http:\') +
-      \'//www.googletagservices.com/tag/js/gpt.js\';
-    var node = document.getElementsByTagName(\'script\')[0];
-    node.parentNode.insertBefore(gads, node);
-  })();
-</script>
-
-<script type=\'text/javascript\'>
-  googletag.cmd.push(function() {
-    googletag.defineSlot(\'/1007663/post-comienzo-contenido\', [300, 250], \'div-gpt-ad-1433261534384-0\').addService(googletag.pubads());
-    googletag.defineSlot(\'/1007663/post-2do-parrafo-contenido\', [300, 250], \'div-gpt-ad-1433261534384-1\').addService(googletag.pubads());
-    googletag.defineSlot(\'/1007663/post-3er-parrafo-contenido\', [600, 338], \'div-gpt-ad-1433303077158-0\').addService(googletag.pubads());
-    googletag.defineSlot(\'/1007663/post-mitad-contenido\', [300, 250], \'div-gpt-ad-1433261534384-3\').addService(googletag.pubads());
-    var mapping = googletag.sizeMapping().
-    addSize([0, 0], [300, 250]).
-        addSize([750, 450], [[300, 250], [728, 90], [580, 400], [336, 280]])
-        .build();
-    googletag.defineSlot(\'/1007663/post-doc-fondo-contenido\', [[300, 250], [728, 90], [580, 400], [336, 280]], \'div-gpt-ad-1433261534384-4\').defineSizeMapping(mapping).addService(googletag.pubads());
-    var mapping1 = googletag.sizeMapping().
-    addSize([0, 0], [300, 250]).
-        addSize([550, 200], [468, 60]).
-        addSize([768, 200], [728, 90]).
-        build();
-    googletag.defineSlot(\'/1007663/docs-comienzo-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-5\').defineSizeMapping(mapping1).addService(googletag.pubads());
-    var mapping2 = googletag.sizeMapping().
-    addSize([0, 0], [300, 250]).
-        addSize([550, 200], [468, 60]).
-        addSize([768, 200], [728, 90]).
-        build();
-    googletag.defineSlot(\'/1007663/docs-2da-pagina-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-6\').defineSizeMapping(mapping2).addService(googletag.pubads());
-    var mapping3 = googletag.sizeMapping().
-    addSize([0, 0], [300, 250]).
-        addSize([550, 200], [468, 60]).
-        addSize([768, 200], [728, 90]).
-        build();
-    googletag.defineSlot(\'/1007663/docs-mitad-contenido\', [[300, 250], [728, 90], [468, 60]], \'div-gpt-ad-1433261534384-7\').defineSizeMapping(mapping3).addService(googletag.pubads());
-    googletag.pubads().enableSingleRequest();
-    googletag.pubads().collapseEmptyDivs();
-    googletag.enableServices();
-  });
-</script>';
-$dfpprincipal = "<script type='text/javascript'>
-  (function() {
-    var useSSL = 'https:' == document.location.protocol;
-    var src = (useSSL ? 'https:' : 'http:') +
-        '//www.googletagservices.com/tag/js/gpt.js';
-    document.write('<scr' + 'ipt src=\"' + src + '\"></scr' + 'ipt>');
-  })();
-</script>
-
-<script type='text/javascript'>
-  googletag.cmd.push(function() {
-    googletag.defineSlot('/1007663/Post-Principal-ATF-300x250', [300, 250], 'div-gpt-ad-1459994552364-0').addService(googletag.pubads());
-    googletag.pubads().enableSingleRequest();
-    googletag.pubads().collapseEmptyDivs();
-    googletag.pubads().enableSyncRendering();
-    googletag.enableServices();
-  });
-</script>";
-$adslive = '<script type=\'text/javascript\'>
-  (function() {
-    var useSSL = \'https:\' == document.location.protocol;
-    var src = (useSSL ? \'https:\' : \'http:\') +
-        \'//www.googletagservices.com/tag/js/gpt.js\';
-    document.write(\'<scr\' + \'ipt src="\' + src + \'"></scr\' + \'ipt>\');
-  })();
-</script>
-
-<script type=\'text/javascript\'>
-  googletag.cmd.push(function() {
-    googletag.defineOutOfPageSlot(\'/11322282/GestioPolis.com_I//1x1\', \'div-gpt-ad-1436976370032-0\').addService(googletag.pubads());
-    googletag.pubads().enableSingleRequest();
-    googletag.pubads().enableSyncRendering();
-    googletag.enableServices();
-  });
-</script>
-
-<!-- /11322282/GestioPolis.com_I//1x1 -->
-<div id=\'div-gpt-ad-1436976370032-0\'>
-<script type=\'text/javascript\'>
-googletag.cmd.push(function() { googletag.display(\'div-gpt-ad-1436976370032-0\'); });
-</script>
-</div>';
-$q1= '<script src="http://Q1MediaHydraPlatform.com/ads/video/controller.php?qid=56d841ab6fbe154632ae0e88&qz=1"></script>';
-$anuncios = array($q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1,$q1);
-//echo $anuncios[rand(0,9)];
-echo '
-<script src=\'http://www5.smartadserver.com/config.js?nwid=1371\' type="text/javascript"></script>
-<script type="text/javascript">
-    sas.setup({ domain: \'http://www5.smartadserver.com\'});
-</script>'.$anuncios[mt_rand(0,9)];
-echo $dfpprincipal.$anuncios[mt_rand(0,9)];
-}
-}
-add_action('wp_head', 'head_scripts_single_ads', 1);*/
-
-function head_scripts_ads() {
-  global $post;
-  $dfpPrincipal = "<script type='text/javascript'>
-  (function() {
-    var useSSL = 'https:' == document.location.protocol;
-    var src = (useSSL ? 'https:' : 'http:') +
-        '//www.googletagservices.com/tag/js/gpt.js';
-    document.write('<scr' + 'ipt src=\"' + src + '\"></scr' + 'ipt>');
-  })();
-</script>
-
-<script type='text/javascript'>
-  googletag.cmd.push(function() {
-    googletag.defineSlot('/1007663/Categoria-Mitad-728x90', [728, 90], 'div-gpt-ad-1460590183368-0').addService(googletag.pubads());
-    googletag.defineSlot('/1007663/Categoria-Top-728x90', [728, 90], 'div-gpt-ad-1460590183368-1').addService(googletag.pubads());
-    googletag.defineSlot('/1007663/Home-Abajo-728x90', [728, 90], 'div-gpt-ad-1460590183368-2').addService(googletag.pubads());
-    googletag.defineSlot('/1007663/Home-Mitad-728x90', [728, 90], 'div-gpt-ad-1460590183368-3').addService(googletag.pubads());
-    googletag.defineSlot('/1007663/Home-Top-728x90', [728, 90], 'div-gpt-ad-1460590183368-4').addService(googletag.pubads());
-    googletag.defineSlot('/1007663/Post-3Parrafo-VideoAds', [1, 1], 'div-gpt-ad-1460590183368-5').addService(googletag.pubads());
-    googletag.defineSlot('/1007663/Post-4Parrafo-BTF-300x250', [300, 250], 'div-gpt-ad-1460590183368-6').addService(googletag.pubads());
-    googletag.defineSlot('/1007663/Post-Abajo-BTF-300x250', [300, 250], 'div-gpt-ad-1460590183368-7').addService(googletag.pubads());
-    googletag.defineSlot('/1007663/Post-AbajoTags', [[120, 60], [120, 90], [125, 125], [120, 240], [120, 600]], 'div-gpt-ad-1460590183368-8').addService(googletag.pubads());
-    googletag.defineSlot('/1007663/Post-Lateral-ATF-300x600', [300, 600], 'div-gpt-ad-1460590183368-9').addService(googletag.pubads());
-    googletag.defineSlot('/1007663/Post-Lateral-Fondo', [[160, 600], [300, 100], [300, 600], [300, 50], [300, 125], [168, 42], [300, 250], [168, 28], [300, 75]], 'div-gpt-ad-1460590183368-10').addService(googletag.pubads());
-    googletag.defineSlot('/1007663/Post-Mitad-BTF-300x250', [300, 250], 'div-gpt-ad-1460590183368-11').addService(googletag.pubads());
-    googletag.defineSlot('/1007663/Post-Principal-ATF-300x250', [300, 250], 'div-gpt-ad-1460590183368-12').addService(googletag.pubads());
-    googletag.defineSlot('/1007663/Tag-Top-728x90', [728, 90], 'div-gpt-ad-1460590183368-13').addService(googletag.pubads());
-    googletag.defineSlot('/1007663/Trans-Lateral-ATF-300x600', [300, 600], 'div-gpt-ad-1460590183368-14').addService(googletag.pubads());
-    googletag.defineSlot('/1007663/Trans-Principal-ATF-728x90', [728, 90], 'div-gpt-ad-1460590183368-15').addService(googletag.pubads());
-    googletag.defineSlot('/1007663/Trans-SegPag-BTF-728x90', [728, 90], 'div-gpt-ad-1460590183368-16').addService(googletag.pubads());
-    googletag.pubads().enableSingleRequest();
-    googletag.pubads().collapseEmptyDivs();
-    googletag.pubads().enableSyncRendering();
-    googletag.enableServices();
-  });
-</script>";
-
-  $scripts = '<script type=\'text/javascript\' src=\'https://www.googletagservices.com/tag/js/gpt.js\'>
-  googletag.pubads().definePassback(\'/1007663/Header-Moviles\', [1, 1]).display();
-</script>';
-  // if (is_single()) {
-  //   $scripts .= '<script src=\'https://Q1MediaHydraPlatform.com/ads/video/controller.php?qid=56d841ab6fbe154632ae0e88&qz=2\' async></script>';
-  // }
-
-echo $dfpPrincipal.$scripts;
-}
-add_action('wp_head', 'head_scripts_ads', 1);
 
 function footer_adsense_script() {
     
@@ -642,23 +452,773 @@ $fbads='<style>
 add_action('wp_footer', 'footer_adsense_script', 1);
 
 
+//Sulvo Surge Pricing Unit - gestiopolis.com_sticky_mobile_bottom_mobile-sulvo
+function sticky_mobile_sulvo(){
 
-function head_taboola(){
+echo '<div data-ad="gestiopolis.com_sticky_mobile_bottom_mobile-sulvo" data-devices="m:1,t:0,d:0" class="demand-supply"></div>';
+}
 
-    echo '<script type="text/javascript">
-  window._taboola = window._taboola || [];
-  _taboola.push({article:"auto"});
-  !function (e, f, u) {
-    e.async = 1;
-    e.src = u;
-    f.parentNode.insertBefore(e, f);
-  }(document.createElement("script"),
-  document.getElementsByTagName("script")[0],
-  "https://cdn.taboola.com/libtrc/gestiopolis-network/loader.js");
-</script>';
+add_action('wp_footer','sticky_mobile_sulvo');
 
-echo '<script src="//ced.sascdn.com/tag/1894/smart.js" async></script>';
+
+
+//Sulvo Dektop 728 x 90 Footer
+function sticky_dektop_sulvo(){
+
+        if(is_single()){
+
+            echo '
+
+                <div data-ad="gestiopolis.com_728x90_sticky_display_bottom_sticky728abajo" data-devices="m:0,t:0,d:1" class="demand-supply" data-position="center" data-offset="80px"></div>
+            '
+            ;
+
+        }else{
+
+            echo '<div data-ad="gestiopolis.com_728x90_sticky_display_bottom_sticky728abajo" data-devices="m:0,t:0,d:1" class="demand-supply"></div>';
+        }
+
+    
+    }
+
+add_action('wp_footer','sticky_dektop_sulvo');
+
+
+
+
+//Insertar ads o contenido propio después 8 parrafo
+    function insert_post_ads_post8( $content ) {
+        $ad_code = '<div style="text-align:center !important;margin:0 auto !important;">
+
+                   
+                <!-- /1007663/Post_Octavo_P -->
+                <div id="div-gpt-ad-1559753635001-0" style="height:1px; width:1px;"">
+                <script>
+                googletag.cmd.push(function() { googletag.display("div-gpt-ad-1559753635001-0"); });
+                </script>
+                </div>
+
+            </div>
+
+        ';
+     
+        if ( is_single() && ! is_admin() ) {
+            return insert_ads_after_paragraph( $ad_code, 8, $content );
+        }
+        return $content;
+    }
+    add_filter( 'the_content', 'insert_post_ads_post8' );
+
+
+
+
+ //Insertar ads o contenido propio después 5 parrafo
+    function insert_post_ads( $content ) {
+        $ad_code = '<div style="width:300px !important;height:250px !important; text-align:center !important;margin:0 auto !important">
+
+                   <!-- /1007663/5to-Parrafo-Ads -->
+                    <div id="div-gpt-ad-1558568181323-0" style="height:250px; width:300px;"">
+                    <script>
+                    googletag.cmd.push(function() { googletag.display("div-gpt-ad-1558568181323-0"); });
+                    </script>
+                    </div>
+
+                    </div>
+
+        ';
+     
+        if ( is_single() && ! is_admin() ) {
+            return insert_ads_after_paragraph( $ad_code, 5, $content );
+        }
+        return $content;
+    }
+    add_filter( 'the_content', 'insert_post_ads' );
+
+
+     
+    // Función para insertar el contenido
+    function insert_ads_after_paragraph( $insertion, $paragraph_id, $content ) {
+        $closing_p = '</p>';
+        $paragraphs = explode( $closing_p, $content );
+     
+        foreach ($paragraphs as $index => $paragraph) {
+            if ( trim( $paragraph ) ) {
+                $paragraphs[$index] .= $closing_p;
+            }
+     
+            if ( $paragraph_id == $index + 1 ) {
+                $paragraphs[$index] .= $insertion;
+            }
+        }
+        return implode( '', $paragraphs );
+    }
+
+
+
+
+    /* Tercer parrafo VIDEO */
+
+    function insert_post_ads_two( $content ) {
+        $ad_code = '
+
+            <!-- /1007663/Post-3Parrafo-VideoAds -->
+            <div id="div-gpt-ad-1526505979755-0" style="height:auto; width:1px;">
+            <script>
+            googletag.cmd.push(function() { googletag.display("div-gpt-ad-1526505979755-0"); });
+            </script>
+            </div>
+        ';
+     
+        if ( is_single() && ! is_admin() ) {
+            return insert_ads_after_paragraph( $ad_code, 3, $content );
+        }
+        return $content;
+    }
+    add_filter( 'the_content', 'insert_post_ads_two' );
+
+
+
+    /* 10 parrafo Wearenative Dektop*/
+
+    function insert_post_wearenative( $content ) {
+        $ad_code = '
+
+        <script src="//web-clients.mynativeplatform.com/web-clients/bootloaders/hkztwFrmebDNzQoza3SKYo/bootloader.js" async="true" data-version="3" data-url="[PAGE_URL]" data-zone="[ZONE]" data-organic-clicks="[ORGANIC_TRACKING_PIXEL]" data-paid-clicks="[PAID_TRACKING_PIXEL]"></script>
+        ';
+     
+        if ( is_single() && ! is_admin() ) {
+            return insert_ads_after_paragraph( $ad_code, 11, $content );
+        }
+        return $content;
+    }
+    add_filter( 'the_content', 'insert_post_wearenative' );
+
+
+    /* 10 parrafo Wearenative Mobile*/
+
+    function insert_post_wearenative_mobile( $content ) {
+
+        if(wp_is_mobile()){
+            $ad_code = '
+
+            <script src="//web-clients.mynativeplatform.com/web-clients/bootloaders/rLkATbwTVMgrGdxeTsz6cq/bootloader.js" async="true" data-version="3" data-url="[PAGE_URL]" data-zone="[ZONE]" data-organic-clicks="[ORGANIC_TRACKING_PIXEL]" data-paid-clicks="[PAID_TRACKING_PIXEL]"></script>
+            ';
+        }
+     
+        if ( is_single() && ! is_admin() ) {
+            $ad_code = '';
+            return insert_ads_after_paragraph( $ad_code, 11, $content );
+        }
+        return $content;
+    }
+    add_filter( 'the_content', 'insert_post_wearenative_mobile' );
+
+
+    /* Tercer parrafo solo en mobile Ads ++ */
+
+
+    function insert_post_ads_3_mobile( $content ) {
+
+        if(wp_is_mobile()){
+
+        $ad_code = "
+
+            <div style='text-align:center !important'>
+
+                <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+                <script>
+                 var googletag = googletag || {};
+                 googletag.cmd = googletag.cmd || [];
+                </script>
+                <script>
+                 googletag.cmd.push(function() {
+                   googletag.defineSlot('/21673142571/6__gestiopolis.com__desktop__300x250_1', [300, 250], 'div-gpt-ad-1525094074934-0').addService(googletag.pubads());
+                   googletag.enableServices();
+                 });
+                </script>
+                <div id='div-gpt-ad-1525094074934-0' style='height:250px; width:300px;'>
+                <script>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1525094074934-0'); });
+                </script>
+                </div>
+
+            </div>
+            ";
+        
+        }
+        
+        if ( is_single() && ! is_admin() ) {
+            $ad_code = '';
+            return insert_ads_after_paragraph( $ad_code, 3, $content );
+        }
+        return $content;
+    }
+    add_filter( 'the_content', 'insert_post_ads_3_mobile' );
+
+
+
+    /* 8 parrafo Ads ++ solo mobil */
+
+
+    function insert_post_ads_8_mobile( $content ) {
+
+        if(wp_is_mobile()){
+
+        $ad_code = "
+
+            <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+                <script>
+                  var googletag = googletag || {};
+                  googletag.cmd = googletag.cmd || [];
+                </script>
+                <script>
+                  googletag.cmd.push(function() {
+                    googletag.defineSlot('/21673142571/6__gestiopolis.com__mobile__300x250_1', [300, 250], 'div-gpt-ad-1535454175930-0').addService(googletag.pubads());
+                    googletag.enableServices();
+                  });
+                </script>
+                <div id='div-gpt-ad-1535454175930-0' style='height:250px; width:300px;'>
+                <script>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1535454175930-0'); });
+                </script>
+                </div>
+
+
+            ";
+        
+        }
+        
+        if ( is_single() && ! is_admin() ) {
+            $ad_code = '';
+            return insert_ads_after_paragraph( $ad_code, 8, $content );
+        }
+        return $content;
+    }
+    add_filter( 'the_content', 'insert_post_ads_8_mobile' );
+  
+
+
+    /* DFP Tercer parrafo Head*/
+    function head_DFP_tercer_parrafo(){
+        echo "
+        <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+        <script>
+         var googletag = googletag || {};
+         googletag.cmd = googletag.cmd || [];
+        </script>
+
+        <script>
+         googletag.cmd.push(function() {
+           googletag.defineSlot('/1007663/Post-3Parrafo-VideoAds', [1, 1], 'div-gpt-ad-1526505979755-0').addService(googletag.pubads());
+           googletag.pubads().enableSingleRequest();
+           googletag.enableServices();
+         });
+        </script>";
+    }
+
+    add_filter('wp_head', 'head_DFP_tercer_parrafo');
+
+    //
+    function head_DFP_quinto_parrafo(){
+
+        echo "
+
+            <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+            <script>
+             var googletag = googletag || {};
+             googletag.cmd = googletag.cmd || [];
+            </script>
+
+            <script>
+             googletag.cmd.push(function() {
+               googletag.defineSlot('/1007663/5to-Parrafo-Ads', [300, 250], 'div-gpt-ad-1558568181323-0').addService(googletag.pubads());
+               googletag.pubads().enableSingleRequest();
+               googletag.enableServices();
+             });
+            </script>
+        
+        ";
+    }
+
+
+    add_filter('wp_head', 'head_DFP_quinto_parrafo');
+
+    //
+    function head_DFP_flotante_lateral_izq(){
+        echo "
+            
+            <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+            <script>
+             var googletag = googletag || {};
+             googletag.cmd = googletag.cmd || [];
+            </script>
+
+            <script>
+             googletag.cmd.push(function() {
+               googletag.defineSlot('/1007663/Lateral-Izq-Abajo-', [300, 250], 'div-gpt-ad-1558568608847-0').addService(googletag.pubads());
+               googletag.pubads().enableSingleRequest();
+               googletag.enableServices();
+             });
+            </script>
+        
+        ";
+    }
+
+    add_filter('wp_head', 'head_DFP_flotante_lateral_izq');
+
+    // function head_rich_media(){
+
+    //     echo "<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+    //         <script>
+    //           var googletag = googletag || {};
+    //           googletag.cmd = googletag.cmd || [];
+    //         </script>
+
+    //         <script>
+    //           googletag.cmd.push(function() {
+    //             googletag.defineSlot('/40135427/gestiopolis_Rich_Media', [1, 1], 'div-gpt-ad-1524772394317-0').addService(googletag.pubads());
+    //             googletag.pubads().enableSingleRequest();
+    //             googletag.enableServices();
+    //           });
+    //         </script>";
+    // }
+
+    // add_filter('wp_head', 'head_rich_media');
+
+
+
+    // function footer_rich_media(){
+
+    //     echo "
+    //         <!-- /40135427/gestiopolis_Rich_Media -->
+    //         <div id='div-gpt-ad-1524772394317-0' style='height:1px; width:1px;'>
+    //         <script>
+    //         googletag.cmd.push(function() { googletag.display('div-gpt-ad-1524772394317-0'); });
+    //         </script>
+    //         </div>
+    //     ";
+    // }
+
+    // add_filter('wp_footer', 'footer_rich_media');
+
+
+    function dfp_header(){
+        echo "
+
+            <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+            <script>
+             var googletag = googletag || {};
+             googletag.cmd = googletag.cmd || [];
+            </script>
+
+            <script>
+             googletag.cmd.push(function() {
+               googletag.defineSlot('/1007663/Header-Video', [1, 1], 'div-gpt-ad-1539814453304-0').addService(googletag.pubads());
+               googletag.pubads().enableSingleRequest();
+               googletag.enableServices();
+             });
+            </script>
+
+            <!-- /1007663/Header-Video -->
+            <div id='div-gpt-ad-1539814453304-0' style='height:1px; width:1px;'>
+            <script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539814453304-0'); });
+            </script>
+            </div>
+        ";
+
+
+    }
+
+    add_filter('wp_head', 'dfp_header');
+
+
+// Head taboola category and tags
+
+function head_taboola_category_tags(){
+
+    if (is_home() || is_front_page()){
+        
+        echo "
+            <script type='text/javascript'>
+              window._taboola = window._taboola || [];
+              _taboola.push({home:'auto'});
+              !function (e, f, u, i) {
+                if (!document.getElementById(i)){
+                  e.async = 1;
+                  e.src = u;
+                  e.id = i;
+                  f.parentNode.insertBefore(e, f);
+                }
+              }(document.createElement('script'),
+              document.getElementsByTagName('script')[0],
+              '//cdn.taboola.com/libtrc/embimedia-gestiopolis/loader.js',
+              'tb_loader_script');
+              if(window.performance && typeof window.performance.mark == 'function')
+                {window.performance.mark('tbl_ic');}
+            </script>
+        
+        ";
+    }elseif(is_category() || is_tag() ){
+        echo "
+            <script type='text/javascript'>
+              window._taboola = window._taboola || [];
+              _taboola.push({category:'auto'});
+              !function (e, f, u, i) {
+                if (!document.getElementById(i)){
+                  e.async = 1;
+                  e.src = u;
+                  e.id = i;
+                  f.parentNode.insertBefore(e, f);
+                }
+              }(document.createElement('script'),
+              document.getElementsByTagName('script')[0],
+              '//cdn.taboola.com/libtrc/embimedia-gestiopolis/loader.js',
+              'tb_loader_script');
+              if(window.performance && typeof window.performance.mark == 'function')
+                {window.performance.mark('tbl_ic');}
+            </script>
+        ";
+
+    }elseif (is_single( )) {
+        echo "
+                
+            <script type='text/javascript'>
+              window._taboola = window._taboola || [];
+              _taboola.push({article:'auto'});
+              !function (e, f, u, i) {
+                if (!document.getElementById(i)){
+                  e.async = 1;
+                  e.src = u;
+                  e.id = i;
+                  f.parentNode.insertBefore(e, f);
+                }
+              }(document.createElement('script'),
+              document.getElementsByTagName('script')[0],
+              '//cdn.taboola.com/libtrc/embimedia-gestiopolis/loader.js',
+              'tb_loader_script');
+              if(window.performance && typeof window.performance.mark == 'function')
+                {window.performance.mark('tbl_ic');}
+            </script>
+
+        ";
+    }
+
 
 }
-add_action('wp_head', 'head_taboola');
-?>
+
+add_filter('wp_head','head_taboola_category_tags');
+
+
+
+// Footer taboola category, tags y home
+
+function footer_taboola_category_tag(){
+
+    if (is_category() || is_tag() || is_home() || is_front_page()) {
+
+        echo "
+            
+            <script type='text/javascript'>
+              window._taboola = window._taboola || [];
+              _taboola.push({flush: true});
+            </script>
+
+        ";
+    }
+
+}
+
+
+add_filter('wp_footer','footer_taboola_category_tag');
+
+
+
+// Head taboola home
+
+function head_taboola_home(){
+
+    if (is_category() || is_tag() || is_home() || is_front_page()) {
+        
+        echo "
+            <script type='text/javascript'>
+              window._taboola = window._taboola || [];
+              _taboola.push({home:'auto'});
+              !function (e, f, u, i) {
+                if (!document.getElementById(i)){
+                  e.async = 1;
+                  e.src = u;
+                  e.id = i;
+                  f.parentNode.insertBefore(e, f);
+                }
+              }(document.createElement('script'),
+              document.getElementsByTagName('script')[0],
+              '//cdn.taboola.com/libtrc/embimedia-gestiopolis/loader.js',
+              'tb_loader_script');
+              if(window.performance && typeof window.performance.mark == 'function')
+                {window.performance.mark('tbl_ic');}
+            </script>
+        
+        ";
+    }
+
+
+}
+
+add_filter('wp_head','head_taboola_home');
+
+
+
+
+/** Vidweb-Intext **/
+
+function VidwebIntext(){
+
+
+    echo "
+
+        <!--    Start LKQD tag - Part 1/2, head section -->
+          <script type='text/javascript'>
+
+        (function()
+        {
+          var lkqdSettings = {
+            pid: 410,
+            sid: 966224,
+            playerContainerId: 'insert_value_here',
+            playerId: '',
+            playerWidth: '640',
+            playerHeight: '360',
+            execution: 'outstream',
+            placement: 'incontent',
+            playInitiation: 'auto',
+            volume: 100,
+            trackImp: '',
+            trackClick: '',
+            custom1: '',
+            custom2: '',
+            custom3: '',
+            pubMacros: '',
+            dfp: false,
+            gdpr: '',
+            gdprcs: '',
+            lkqdId: new Date().getTime().toString() + Math.round(Math.random()*1000000000).toString()
+          };
+
+          var lkqdVPAID;
+          var creativeData = '';
+          var environmentVars = { slot: document.getElementById(lkqdSettings.playerContainerId), videoSlot: document.getElementById(lkqdSettings.playerId), videoSlotCanAutoPlay: true, lkqdSettings: lkqdSettings };
+
+          function onVPAIDLoad()
+          {
+            lkqdVPAID.subscribe(function() { lkqdVPAID.startAd(); }, 'AdLoaded');
+            lkqdVPAID.subscribe(function() { lkqdVPAID.pauseAd(); }, 'AdNotViewable');
+            lkqdVPAID.subscribe(function() { lkqdVPAID.resumeAd(); }, 'AdViewable');
+          }
+
+          var vpaidFrame = document.createElement('iframe');
+          vpaidFrame.id = lkqdSettings.lkqdId;
+          vpaidFrame.name = lkqdSettings.lkqdId;
+          vpaidFrame.style.display = 'none';
+          var vpaidFrameLoaded = function() {
+            vpaidFrame.contentWindow.addEventListener('lkqdFormatsLoad', function() {
+              lkqdVPAID = vpaidFrame.contentWindow.getVPAIDAd();
+              onVPAIDLoad();
+              lkqdVPAID.handshakeVersion('2.0');
+              lkqdVPAID.initAd(lkqdSettings.playerWidth, lkqdSettings.playerHeight, 'normal', 600, creativeData, environmentVars);
+            });
+            vpaidLoader = vpaidFrame.contentWindow.document.createElement('script');
+            vpaidLoader.setAttribute('async','async');
+            vpaidLoader.src = 'https://ad.lkqd.net/vpaid/formats.js';
+            vpaidFrame.contentWindow.document.body.appendChild(vpaidLoader);
+          };
+          vpaidFrame.onload = vpaidFrameLoaded;
+          vpaidFrame.onerror = vpaidFrameLoaded;
+          document.documentElement.appendChild(vpaidFrame);
+        })();
+        </script>
+        <!-- End LKQD Format tag- Part 1/2, head section --> 
+        
+
+        <!-- Mobile -->
+
+        <!--	Start LKQD tag - Part 1/2, head section -->
+  <script type='text/javascript'>
+
+(function()
+{
+  var lkqdSettings = {
+    pid: 410,
+    sid: 966225,
+    playerContainerId: 'vidweb-mobile',
+    playerId: '',
+    playerWidth: '',
+    playerHeight: '',
+    execution: 'outstream',
+    placement: 'incontent',
+    playInitiation: 'auto',
+    volume: 100,
+    trackImp: '',
+    trackClick: '',
+    custom1: '',
+    custom2: '',
+    custom3: '',
+    pubMacros: '',
+    dfp: false,
+    gdpr: '',
+    gdprcs: '',
+    lkqdId: new Date().getTime().toString() + Math.round(Math.random()*1000000000).toString()
+  };
+
+  var lkqdVPAID;
+  var creativeData = '';
+  var environmentVars = { slot: document.getElementById(lkqdSettings.playerContainerId), videoSlot: document.getElementById(lkqdSettings.playerId), videoSlotCanAutoPlay: true, lkqdSettings: lkqdSettings };
+
+  function onVPAIDLoad()
+  {
+    lkqdVPAID.subscribe(function() { lkqdVPAID.startAd(); }, 'AdLoaded');
+    lkqdVPAID.subscribe(function() { lkqdVPAID.pauseAd(); }, 'AdNotViewable');
+    lkqdVPAID.subscribe(function() { lkqdVPAID.resumeAd(); }, 'AdViewable');
+  }
+
+  var vpaidFrame = document.createElement('iframe');
+  vpaidFrame.id = lkqdSettings.lkqdId;
+  vpaidFrame.name = lkqdSettings.lkqdId;
+  vpaidFrame.style.display = 'none';
+  var vpaidFrameLoaded = function() {
+    vpaidFrame.contentWindow.addEventListener('lkqdFormatsLoad', function() {
+      lkqdVPAID = vpaidFrame.contentWindow.getVPAIDAd();
+      onVPAIDLoad();
+      lkqdVPAID.handshakeVersion('2.0');
+      lkqdVPAID.initAd(lkqdSettings.playerWidth, lkqdSettings.playerHeight, 'normal', 600, creativeData, environmentVars);
+    });
+    vpaidLoader = vpaidFrame.contentWindow.document.createElement('script');
+    vpaidLoader.setAttribute('async','async');
+    vpaidLoader.src = 'https://ad.lkqd.net/vpaid/formats.js';
+    vpaidFrame.contentWindow.document.body.appendChild(vpaidLoader);
+  };
+  vpaidFrame.onload = vpaidFrameLoaded;
+  vpaidFrame.onerror = vpaidFrameLoaded;
+  document.documentElement.appendChild(vpaidFrame);
+})();
+</script>
+<!-- End LKQD Format tag- Part 1/2, head section -->
+ 
+
+    ";
+}
+
+add_filter('wp_head','VidwebIntext');
+
+
+
+// Vidoomy head
+
+function head_vidoomy(){
+
+    if(wp_is_mobile()){
+
+    echo "<script type='text/javascript' src='//ads.vidoomy.com/gestiopolisslider_1236.js' ></script>";
+
+    }
+}
+
+add_filter('wp_head', 'head_vidoomy');
+
+
+// function DFP head 8 parrafo
+
+function head_dfp(){
+
+    // Unicamente las categorias
+
+    if (is_category()) {
+        echo "
+                
+            <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+            <script>
+             var googletag = googletag || {};
+             googletag.cmd = googletag.cmd || [];
+            </script>
+
+            <script>
+             googletag.cmd.push(function() {
+               googletag.defineSlot('/1007663/Categoria-Top-728x90', [728, 90], 'div-gpt-ad-1559755405415-0').addService(googletag.pubads());
+               googletag.pubads().enableSingleRequest();
+               googletag.enableServices();
+             });
+            </script>
+
+        ";
+    }
+
+
+    // Unicamente los tags
+    if (is_tag()) {
+        echo "
+            <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+            <script>
+             var googletag = googletag || {};
+             googletag.cmd = googletag.cmd || [];
+            </script>
+
+            <script>
+             googletag.cmd.push(function() {
+               googletag.defineSlot('/1007663/Tag-Top-728x90', [728, 90], 'div-gpt-ad-1559754535644-0').addService(googletag.pubads());
+               googletag.pubads().enableSingleRequest();
+               googletag.enableServices();
+             });
+            </script>
+    
+        ";
+    }
+
+
+    // Unicamente el index
+
+    if (is_home() || is_front_page()) {
+        echo "
+            
+            <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+            <script>
+             var googletag = googletag || {};
+             googletag.cmd = googletag.cmd || [];
+            </script>
+
+            <script>
+             googletag.cmd.push(function() {
+               googletag.defineSlot('/1007663/Home-Top-728x90', [728, 90], 'div-gpt-ad-1559754130804-0').addService(googletag.pubads());
+               googletag.pubads().enableSingleRequest();
+               googletag.enableServices();
+             });
+            </script>
+
+        ";
+    }
+
+
+
+    // head parrafo 8 single
+    if (is_single()) {
+
+
+        echo "
+                
+            <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+            <script>
+             var googletag = googletag || {};
+             googletag.cmd = googletag.cmd || [];
+            </script>
+
+            <script>
+             googletag.cmd.push(function() {
+               googletag.defineSlot('/1007663/Post_Octavo_P', [1, 1], 'div-gpt-ad-1559753635001-0').addService(googletag.pubads());
+               googletag.pubads().enableSingleRequest();
+               googletag.enableServices();
+             });
+            </script>
+        ";
+    }
+}
+
+add_filter('wp_head', 'head_dfp');

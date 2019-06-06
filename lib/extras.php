@@ -41,7 +41,7 @@ return 70; }
 function change_wp_login_url() { return bloginfo('url');}
 add_filter('login_headerurl', 'change_wp_login_url');
 function change_wp_login_title() { return get_option('blogname');}
-add_filter('login_headertitle', 'change_wp_login_title');
+add_filter('login_headertext', 'change_wp_login_title');
 
 //Convertir dirección de carpeta en URL
 function path2url($file, $Protocol='http://') {
@@ -1588,6 +1588,18 @@ remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+
+
+/* Quitar actualizaciones de algunos plugins de la lista "unset"*/
+function disable_plugin_updates( $value ) {
+   unset( $value->response['zilla-likes/zilla-likes.php'] );
+   return $value;
+}
+add_filter( 'site_transient_update_plugins', 'disable_plugin_updates' );
+
+
+
 
 //Función de Wp_Imager https://github.com/Jany-M/WP-Imager
 //require_once ('functions/wp-imager.php');

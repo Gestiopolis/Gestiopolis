@@ -35,13 +35,16 @@
     <nav role="navigation">
       <ul class="nav navbar-nav navbar-right gafrom from-navbar-right">
         <li id="nav_busca">
+
+
           <div id="sb-search" class="sb-search sb-search-open hidden-xs hidden-sm">
-            <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search" class="gafrom from-buscador">
+             <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search" class="gafrom from-buscador">
               <input class="sb-search-input elasticpress-autosuggest" placeholder="Encuentra lo que necesitas Aquí" type="search" value="" name="s" id="search">
               <input class="sb-search-submit" type="submit" value="">
               <span class="sb-icon-search"><i class="fa fa-search"></i><span class="hidden-xs"> Busca</span></span>
-            </form>
+            </form> 
           </div>
+
           <div id="sb-search1" class="sb-search hidden-md hidden-lg">
             <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search" class="gafrom from-buscador-mobile">
               <input class="sb-search-input elasticpress-autosuggest" placeholder="Encuentra lo que necesitas Aquí" type="search" value="" name="s" id="search">

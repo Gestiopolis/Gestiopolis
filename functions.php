@@ -31,3 +31,7 @@ foreach ($roots_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+@ini_set( 'upload_max_size' , '512M' );
+@ini_set( 'post_max_size', '512M');
+@ini_set( 'max_execution_time', '300' );

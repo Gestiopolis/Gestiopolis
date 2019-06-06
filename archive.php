@@ -1,7 +1,7 @@
 <?php
 $date = get_queried_object();
 global $current_user;
-get_currentuserinfo();
+wp_get_current_user();
 ?>
 <div class="post-image">
   <div class="bg-image" style="background: #edede4; height: 120px;"></div>

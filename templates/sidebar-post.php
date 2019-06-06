@@ -3,7 +3,7 @@ $maincat = get_the_category($post->ID);
 ?>
 <div class="right-post gafrom from-sidebar-right-post">
 
-  <div class="sidebar-post">
+  <div class="sidebar-post" style="background-color: #ffffff">
     <h3>Relacionados</h3>
     <i class="fa fa-caret-down"></i>
     <?php 
@@ -28,6 +28,13 @@ $maincat = get_the_category($post->ID);
     <?php }
       //$countp++; 
      endwhile;?>
+    
+      <!-- Banner entre relacionados -->
+     <!-- <script async src="https://cdn.ad.plus/player/adplus.js"></script>
+<script>(function(){var i='cxNRFzTR6dtPLqJI6FLbVsPOuHMTU4Az03W639cwf7GM6to4YDiG';document.write('<div id="'+i+'"></div>');(playerPro=window.playerPro||[]).push(i);})();</script> -->
+
+
+
     <?php } 
     wp_reset_query(); 
     wp_reset_postdata();
@@ -43,6 +50,9 @@ $maincat = get_the_category($post->ID);
       <div class="wrapper-content">
         <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=related_posts&ic_source=sidebar"><?php the_title(); ?></a></h2>
       </div>
+
+      
+
     </article>
     <?php endwhile;?>
     <div class="pagination">
@@ -102,21 +112,21 @@ $maincat = get_the_category($post->ID);
   </div> -->
 
 <!-- publicidad -->
-  <div>
-    <div id="sas_46135"></div>
-    <script>
-        var sas = sas || {};
-        sas.cmd = sas.cmd || [];
-        sas.cmd.push(
-            function () {
-                sas.call(
-                    { siteId: 126144, pageId: 726126, formatId: 46135, tagId: "sas_46135" },
-                    { networkId: 1894, domain: "//www5.smartadserver.com" /*, onNoad: function() {} */ }
-                );
-            }
-        );
-    </script>
-  </div>
+  <!-- /1007663/Lateral-Izq-Abajo- -->
   
+
+  	
+        <!-- <div id='div-gpt-ad-1558568608847-0' style='height:250px; width:300px;'>
+        <script>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1558568608847-0'); });
+        </script>
+        </div> -->
+
+        <div id="scrollerads"></div>
+		<script async id="aniviewJS23da12ceba" src="https://play.aniview.com/59a5603f28a0611e9360c113/5aa67dd928a06107220a4b8a/gestiopolis.com_MW+D_300_250.js"></script>
+
+    
+
+      
     
 </div><!-- .right-post -->
