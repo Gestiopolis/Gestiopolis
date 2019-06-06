@@ -1616,7 +1616,7 @@ require_once ('functions/meta_main_image.php');
 //Funciones para los seguimiento del blog
 require_once ('functions/follows.php');
 //Funciones para los anuncios
-require_once ('functions/ads.php');
+require_once ('functions/ads/ads.php');
 //require_once ('functions/form_functions.php');
 //require_once ('functions/recommendations.php');
 //Función de Publicidad manejado desde GestioPolis
