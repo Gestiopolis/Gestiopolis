@@ -3,42 +3,13 @@
     <div class="row">
       <div class="hidden-xs hidden-sm col-md-3 sidebarcol gafrom from-sidebar-post">
         <div class="fixedside">
-<?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
 
-<!-- /1007663/Trans-Lateral-ATF-300x600 -->
-<!--
-<div id='div-gpt-ad-1460590183368-14'>
-<script type='text/javascript'>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-14'); });
-</script>
-</div>
--->
+        <!-- Surge Pricing Unit - gestiopolis.com_300x600_piso030 -->
 
-<!-- Surge Pricing Unit - gestiopolis.com_300x600_piso030 -->
+        <div data-ad="gestiopolis.com_300x600_piso030" data-devices="m:1,t:1,d:1" class="demand-supply"></div>
+        
+      <!-- // Surge Pricing Unit - gestiopolis.com_300x600_piso030 -->
 
-  <div data-ad="gestiopolis.com_300x600_piso030" data-devices="m:1,t:1,d:1" class="demand-supply"></div>
-  
-<!-- // Surge Pricing Unit - gestiopolis.com_300x600_piso030 -->
-
-<?php }else { ?>
-
-<!-- /1007663/Post-Lateral-ATF-300x600 -->
-<!--
-<div id='div-gpt-ad-1460590183368-9'>
-<script type='text/javascript'>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9'); });
-</script>
-</div>
--->
-
-<!-- Surge Pricing Unit - gestiopolis.com_300x600_piso030 -->
-
-  <div data-ad="gestiopolis.com_300x600_piso030" data-devices="m:1,t:1,d:1" class="demand-supply"></div>
-  
-<!-- // Surge Pricing Unit - gestiopolis.com_300x600_piso030 -->
-
-
- <?php } ?>
 <?php get_template_part('templates/sidebar-post'); ?>
   </div>
 </div><!--.col-sm-3-->
@@ -74,57 +45,11 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
             <div class="col-sm-12 col-md-10 col-md-pull-2 content-col">
           <time class="entry-date published hidden" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('d.m.Y'); ?></time>
           <time class="entry-date updated hidden" datetime="<?php echo get_the_modified_time('c'); ?>"><?php echo get_the_modified_date('d.m.Y'); ?></time>
-          <?php if (get_post_meta($post->ID, "all2html_htmlcontent", true) != "") {?>
-          <div class="adsce">
-           
-            <!-- Sulvo - under_page_title 728 x90-->
-  
-              <?php if ( wp_is_mobile() ) { ?>
-
-              <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
-              <script>
-               var googletag = googletag || {};
-               googletag.cmd = googletag.cmd || [];
-              </script>
-              <script>
-               googletag.cmd.push(function() {
-                 googletag.defineSlot('/21673142571/6__gestiopolis.com__mobile__320x50_Sulvo', [320, 50], 'div-gpt-ad-1527496535662-0').addService(googletag.pubads());
-                 googletag.enableServices();
-               });
-              </script>
-              <div id='div-gpt-ad-1527496535662-0' style='height:50px; width:320px;text-align: center !important; margin: 0 auto !important'>
-              <script>
-              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1527496535662-0'); });
-              </script>
-              </div>
-                 
-              <?php } else { ?>
-
-              <div data-ad="gestiopolis.com_728x90_conv728x90atf" data-devices="m:0,t:1,d:1" class="demand-supply"></div>
-
-              <?php } ?>
-
-            <!-- //Sulvo - under_page_title 728 x90-->
 
 
-          </div>
-          <div id="sidebar" style="display: none !important;">
-            <div id="outline"></div>
-          </div>
-          <?php 
-          $servidor = $_SERVER['HTTP_HOST'] == 'localhost' ? '/Gestiopolis' : '';
-          $content = file_get_contents($_SERVER['DOCUMENT_ROOT'].$servidor.get_post_meta($post->ID, "all2html_htmlcontent", true));
-            echo insert_ads_all2html( $content );
-          
-        ?>
-          <div class="loading-indicator"><img alt="" src="<?php echo home_url( '/pdf2htmlEX/pdf2htmlEX-64x64.png' ); ?>"></div>
-          <?php } else if ((get_post_meta($post->ID, "all2html_php", true) != "") && (get_post_meta($post->ID, "all2html_htmlcontent", true) == "")) {?>
-          <h3>Se debe volver a procesar el archivo para poder ver correctamente este documento. Elimina primero el documento y luego procésalo de nuevo.</h3>
-          <p><b><a href="<?php echo home_url('/'); ?>" id="deletePdf">ELIMINAR DOCUMENTO</a></b></p>
-          <?php } ?>
           <div class="post-content clearfix">
             <div class="entry-content gafrom from-post-entry-content">
-              <?php if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
+              <?php //if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
               <div class="adsfr">
                 
                 <!-- Sulvo - Debajo del titulo del artículo - under_page_title -->
@@ -136,7 +61,7 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
 
               </div>
               
-              <?php } ?>
+              <?php //} ?>
               <?php the_content(); ?>
             </div>
 
@@ -164,15 +89,7 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
               </div>
               <?php //if(function_exists(getILikeThis)) getILikeThis('get'); ?>
             </div>
-            <div class="adsce">
             
-            <!-- Surge - Abajo post-->
-
-              <!-- <div data-ad="gestiopolis.com_300x250_abajopost" data-devices="m:1,t:1,d:1" class="demand-supply"></div> -->
-
-            <!-- Surge - Abajo post-->
-                
-              </div>
             </div>
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="downbox"><a class="downlink gafrom from-post-downlink" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
@@ -251,41 +168,7 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-9');
                 <?php endif; ?>
               </div>
             </div>
-            <div class="post-tags hidden-md hidden-lg">
-              <h2><i class="fa fa-tags"></i> En este post se habla sobre</h2>
-              <?php the_tags('<div class="temas-archive  gafrom from-post-tags-mobile"> ','','</div>'); ?>
-            </div><!-- .post-tags -->
-            <div class="compartelo posts-home hidden-md hidden-lg gafrom from-post-rels-mobile">
-              <div class="title-section"><h2>Relacionados</h2><i class="fa fa-caret-down"></i></div>
-              <?php 
-              $show = 12;
-              $postsnot = array();
-              $postsnot[] = $post->ID;
-              $mainpost = $post->ID;
-              $query1 = ci_get_related_posts_1( $post->ID, $show );
-              //$countp = 1;
-                  if( $query1->have_posts() ) { while ($query1->have_posts()) : $query1->the_post(); 
-                    $postsnot[] = $post->ID;
-                    if($mainpost != $post->ID){
-                      get_template_part( 'templates/content', 'recommend' );
-                    }
-                    //$countp++; 
-                   endwhile;?>
-                  <?php } 
-                  wp_reset_query(); 
-                  wp_reset_postdata(); 
-                  $show = $show - count($query1->posts);
-                 if ($show > 0) {
-                  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-                $query2 = ci_get_related_posts_2( $post->ID, $postsnot, $show, $paged );
-                    if( $query2->have_posts() ) { while ($query2->have_posts()) : $query2->the_post();get_template_part( 'templates/content', 'recommend' );
-                     endwhile;
-                    } 
-                    wp_reset_query(); 
-                    wp_reset_postdata();
-                  }
-                  ?>
-            </div><!-- .recomendados -->
+            
             <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
             <?php get_template_part('templates/post-front-edit'); ?>
             <?php } ?>
