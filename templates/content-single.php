@@ -84,10 +84,9 @@
              
             <div id="likepost" class="compartelo  gafrom from-post-likepost">
               <h2 class="text-center">Hazle saber al autor que aprecias su trabajo</h2>
-              <div style="text-align: center !important;margin: 0 auto !important;width: 40px;">
-                <?php if( function_exists('zilla_likes') ) zilla_likes(); ?>
+              <div style="text-align: center !important;margin: 0 auto !important;">
+                <?php if(function_exists('wp_ulike')) wp_ulike('get'); ?>
               </div>
-              <?php //if(function_exists(getILikeThis)) getILikeThis('get'); ?>
             </div>
             
             </div>
