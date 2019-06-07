@@ -97,40 +97,35 @@
 
             <!-- Comments -->
 
-             <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.javascript#xfbml=1&version=v3.3&appId=1712097452440529&autoLogAppEvents=1"></script>
 
-                  <div class="fb-comments" data-href="<?php the_permalink( $post ); ?>" data-width="900" data-numposts="5"></div>
+            <div  class="comentarios gafrom from-post-comments">
+              <span class="btn btn-block btn-primary btn-lg"><span>Tu opinión vale, comenta aquí</span></span>
+              
+                <h2><i class="fa fa-comments"></i> Comentarios</h2>
+
+
+                <?php comments_template('/templates/comments.php'); ?>
+              
+            </div>
                   
             
-            <div id="comments" class="comentarios gafrom from-post-comments">
+           <!--  <div id="comments" class="comentarios gafrom from-post-comments">
               <a href="javascript:;" class="btn btn-block btn-primary btn-lg cerrado"><span>Tu opinión vale, comenta aquí</span><span style="display:none;">Oculta los comentarios</span></a>
               <div id="respond" class="comments-wrapper">
                 <h2><i class="fa fa-comments"></i> Comentarios</h2>
 
                 <div id="fb-root"></div>
 
-
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, sed praesentium atque quod debitis fugiat, molestias provident quis consectetur, natus optio fuga. Iusto, provident voluptate recusandae doloribus fugiat reiciendis esse.
 
                 <?php //comments_template('/templates/comments.php'); ?>
               </div>
-            </div>
+            </div> -->
 
 
             <!-- Comments -->
 
-            <!-- <div id="suscripcion" class="suscripcion hidden gafrom from-post-suscripcion">
-              <div>
-                <span class="author-color"><i class="fa fa-envelope"></i></span>
-                <strong>Recibe los mejores contenidos en tu email</strong>
-                <p>
-                  <em>Nos aseguraremos de seleccionar especialmente para ti sólo lo mejor de las nuevas publicaciones cada semana</em>
-                </p>
-                  <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">@</span>
-                    <input type="text" class="form-control" placeholder="Que se vea y funcione como http://azumbrunnen.me/frontkit/" aria-describedby="basic-addon1">
-                  </div>
-              </div>
-            </div> -->
+  
             <div class="compartelo">
               <h2><i class="fa fa-share"></i> Compártelo con tu mundo</h2>
               <ul class="list-unstyled gafrom from-post-compartelo">
