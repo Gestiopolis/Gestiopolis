@@ -49,7 +49,7 @@
 
           <div class="post-content clearfix">
             <div class="entry-content gafrom from-post-entry-content">
-              <?php //if ( get_post_meta($post->ID, "all2html_htmlcontent", true) == "" ) { ?>
+              
               <div class="adsfr">
                 
                 <!-- Sulvo - Debajo del titulo del artículo - under_page_title -->
@@ -61,7 +61,7 @@
 
               </div>
               
-              <?php //} ?>
+        
               <?php the_content(); ?>
             </div>
 
@@ -106,24 +106,6 @@
                 <?php comments_template('/templates/comments.php'); ?>
               
             </div>
-                  
-            
-           <!--  <div id="comments" class="comentarios gafrom from-post-comments">
-              <a href="javascript:;" class="btn btn-block btn-primary btn-lg cerrado"><span>Tu opinión vale, comenta aquí</span><span style="display:none;">Oculta los comentarios</span></a>
-              <div id="respond" class="comments-wrapper">
-                <h2><i class="fa fa-comments"></i> Comentarios</h2>
-
-                <div id="fb-root"></div>
-
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, sed praesentium atque quod debitis fugiat, molestias provident quis consectetur, natus optio fuga. Iusto, provident voluptate recusandae doloribus fugiat reiciendis esse.
-
-                <?php //comments_template('/templates/comments.php'); ?>
-              </div>
-            </div> -->
-
-
-            <!-- Comments -->
-
   
             <div class="compartelo">
               <h2><i class="fa fa-share"></i> Compártelo con tu mundo</h2>

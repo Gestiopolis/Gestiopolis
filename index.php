@@ -154,18 +154,7 @@
       </div><!-- /.row -->
     </div><!-- /.col-sm-12-->
   </div><!-- /.destacados -->
-  <div class="row">
-    <div class="col-sm-12">
-      <div>
-        <!-- /1007663/Home-Mitad-728x90 -->
-        <div id='div-gpt-ad-1460590183368-3' class="adsce">
-        <script type='text/javascript'>
-        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-3'); });
-        </script>
-        </div>
-      </div>
-    </div>
-  </div>
+  
   <!-- Empieza sección de EJES TEMÁTICOS -->
   <div class="row title-section">
     <div class="col-sm-12">
@@ -225,18 +214,6 @@
       </div>
     </div><!-- .span12 -->
   </div><!-- .row AUTORES POPULARES -->
-  <div class="row">
-    <div class="col-sm-12">
-      <div>
-        <!-- /1007663/Home-Abajo-728x90 -->
-        <div id='div-gpt-ad-1460590183368-2' class="adsce">
-        <script type='text/javascript'>
-        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1460590183368-2'); });
-        </script>
-        </div>
-      </div>
-    </div>
-  </div>
   
 
   <!-- Taboola Home -->

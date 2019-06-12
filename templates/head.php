@@ -9,12 +9,6 @@
   <!-- Llamada a sulvo -->
   <script async id="sulvo" type="text/javascript" src="//live.demand.supply/up.js"></script>
   
-  <!-- Llamada a Headway nativos -->
-  <script type="text/javascript" async="true" src="//fo-api.omnitagjs.com/fo-api/ot.js"></script>
-
-  <!-- Llamada a Headway Scroll -->
-  <script src="//ced.sascdn.com/tag/1894/smart.js" async></script>
-
 
   <style>
 
