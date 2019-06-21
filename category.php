@@ -159,18 +159,6 @@ wp_get_current_user();
     </div><!-- /.col-sm-12-->
   </div><!-- /.destacados -->
 
-  <!-- taboola 12/12/2018 -->
-  <div id="taboola-below-article-thumbnails-2"></div>
-  <script type="text/javascript">
-    window._taboola = window._taboola || [];
-    _taboola.push({
-      mode: 'thumbnails-d',
-      container: 'taboola-below-article-thumbnails-2',
-      placement: 'Below Article Thumbnails 2',
-      target_type: 'mix'
-    });
-  </script>
-
   <!-- Empieza sección de AUTORES POPULARES -->
   <div class="row title-section">
     <div class="col-sm-12">

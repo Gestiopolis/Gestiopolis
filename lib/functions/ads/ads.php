@@ -149,7 +149,7 @@ add_filter('wp_head', 'head_vidoomy');
 
 function head_taboola_home(){
 
-    if (is_single() ||is_category() || is_tag() || is_home() || is_front_page()) {
+    if (is_single()) {
         
         echo "
             <script type='text/javascript'>
@@ -349,7 +349,7 @@ add_action('wp_footer','sticky_dektop_sulvo');
 
 function footer_taboola_category_tag(){
 
-    if (is_single() || is_category() || is_tag() || is_home() || is_front_page()) {
+    if (is_single()) {
 
         echo "
             

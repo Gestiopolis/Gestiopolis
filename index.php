@@ -216,18 +216,6 @@
   </div><!-- .row AUTORES POPULARES -->
   
 
-  <!-- Taboola Home -->
-  <div id="taboola-below-article-thumbnails"></div>
-    <script type="text/javascript">
-      window._taboola = window._taboola || [];
-      _taboola.push({
-        mode: 'thumbnails-c',
-        container: 'taboola-below-article-thumbnails',
-        placement: 'Below Article Thumbnails',
-        target_type: 'mix'
-      });
-    </script>
-
   <div class="row title-section">
     <div class="col-sm-12">
       <h2>Temas del momento</h2>
