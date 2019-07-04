@@ -2,9 +2,16 @@
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
 
+	<!-- Marfeel -->
+	<script data-mrf-script="garda" data-mrf-dt="1" data-mrf-host="bc.marfeelcache.com" src="https://bc.marfeelcache.com/statics/marfeel/gardac-sync.js" data-cfasync="false"></script>
+
 <!-- Ads Plus -->
 	<script async src="https://cdn.ad.plus/player/adplus.js"></script>
-	<script>(function(){var i='5PcWSBhHwrcuejnApTW3yvf36RsI6ylhKCE7XkCqbd_ZhxKc8DmZ';document.write('<div id="'+i+'"></div>');(playerPro=window.playerPro||[]).push(i);})();</script>
+
+	<div>
+		<script>(function(){var i='5PcWSBhHwrcuejnApTW3yvf36RsI6ylhKCE7XkCqbd_ZhxKc8DmZ';document.write('<div id="'+i+'"></div>');(playerPro=window.playerPro||[]).push(i);})();</script>
+	</div>
+	
 
   <!-- Llamada a sulvo -->
   <script async id="sulvo" type="text/javascript" src="//live.demand.supply/up.js"></script>
