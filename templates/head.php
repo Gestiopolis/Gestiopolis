@@ -2,9 +2,6 @@
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
 
-	<!-- Marfeel -->
-	<script data-mrf-script="garda" data-mrf-dt="1" data-mrf-host="bc.marfeelcache.com" src="https://bc.marfeelcache.com/statics/marfeel/gardac-sync.js" data-cfasync="false"></script>
-
 <!-- Ads Plus -->
 	<script async src="https://cdn.ad.plus/player/adplus.js"></script>
 
