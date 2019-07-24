@@ -130,21 +130,6 @@ add_filter('wp_head', 'head_dfp');
 
 
 
-// Vidoomy head
-
-function head_vidoomy(){
-
-    if(wp_is_mobile()){
-
-    echo "<script type='text/javascript' src='//ads.vidoomy.com/gestiopolisslider_1236.js' ></script>";
-
-    }
-}
-
-add_filter('wp_head', 'head_vidoomy');
-
-
-
 // Head taboola general
 
 function head_taboola_home(){
@@ -310,16 +295,6 @@ function footer_dataxpand() {
     
 }
 add_action('wp_footer', 'footer_dataxpand', 100);
-
-
-
-//Sulvo Surge Pricing Unit - gestiopolis.com_sticky_mobile_bottom_mobile-sulvo
-function sticky_mobile_sulvo(){
-
-echo '<div data-ad="gestiopolis.com_sticky_mobile_bottom_mobile-sulvo" data-devices="m:1,t:0,d:0" class="demand-supply"></div>';
-}
-
-add_action('wp_footer','sticky_mobile_sulvo');
 
 
 

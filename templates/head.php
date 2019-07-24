@@ -16,6 +16,12 @@
 
   <style>
 
+  	.adsfr{
+  		padding-bottom: 20px !important;
+	    padding-top: 10px !important;
+	    margin-top: -20px !important;
+  	}
+
   	.ads_right_tags{
         width:148px;
         max-width: 100%;

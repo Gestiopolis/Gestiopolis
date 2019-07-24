@@ -28,10 +28,6 @@ $maincat = get_the_category($post->ID);
     <?php }
       //$countp++; 
      endwhile;?>
-    
-      <!-- Banner entre relacionados -->
-     <!-- <script async src="https://cdn.ad.plus/player/adplus.js"></script>
-<script>(function(){var i='cxNRFzTR6dtPLqJI6FLbVsPOuHMTU4Az03W639cwf7GM6to4YDiG';document.write('<div id="'+i+'"></div>');(playerPro=window.playerPro||[]).push(i);})();</script> -->
 
 
 
