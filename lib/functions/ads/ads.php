@@ -8,19 +8,18 @@
 /* DFP Tercer parrafo Head*/
     function head_DFP_tercer_parrafo(){
         echo "
-        <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+        <script async src='https://securepubads.g.doubleclick.net/tag/js/gpt.js'></script>
         <script>
-         var googletag = googletag || {};
-         googletag.cmd = googletag.cmd || [];
-        </script>
-
-        <script>
+         window.googletag = window.googletag || {cmd: []};
          googletag.cmd.push(function() {
-           googletag.defineSlot('/1007663/Post-3Parrafo-VideoAds', [1, 1], 'div-gpt-ad-1526505979755-0').addService(googletag.pubads());
+           googletag.defineSlot('/1007663/Post-3Parrafo-VideoAds', [1, 1], 'div-gpt-ad-1564762063649-0').addService(googletag.pubads());
            googletag.pubads().enableSingleRequest();
            googletag.enableServices();
          });
-        </script>";
+        </script>
+      ";
+
+
     }
 
     add_filter('wp_head', 'head_DFP_tercer_parrafo');
@@ -31,15 +30,11 @@
 
         echo "
 
-            <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+            <script async src='https://securepubads.g.doubleclick.net/tag/js/gpt.js'></script>
             <script>
-             var googletag = googletag || {};
-             googletag.cmd = googletag.cmd || [];
-            </script>
-
-            <script>
+             window.googletag = window.googletag || {cmd: []};
              googletag.cmd.push(function() {
-               googletag.defineSlot('/1007663/5to-Parrafo-Ads', [300, 250], 'div-gpt-ad-1558568181323-0').addService(googletag.pubads());
+               googletag.defineSlot('/1007663/5to-Parrafo-Ads', [300, 250], 'div-gpt-ad-1564760269858-0').addService(googletag.pubads());
                googletag.pubads().enableSingleRequest();
                googletag.enableServices();
              });
@@ -164,7 +159,6 @@ function head_taboola_home(){
 add_filter('wp_head','head_taboola_home');
 
 
-
 /****************************************
 *****************************************
   Insertar Posts en medio del single
@@ -195,13 +189,19 @@ add_filter('wp_head','head_taboola_home');
 
     function insert_post_ads_two( $content ) {
         $ad_code = '
+        <div style="text-align:center !important;margin:0 auto !important">
 
-            <!-- /1007663/Post-3Parrafo-VideoAds -->
-            <div id="div-gpt-ad-1526505979755-0" style="height:auto; width:1px;">
-            <script>
-            googletag.cmd.push(function() { googletag.display("div-gpt-ad-1526505979755-0"); });
-            </script>
-            </div>
+            <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+              <script>
+               window.googletag = window.googletag || {cmd: []};
+               googletag.cmd.push(function() {
+                 googletag.defineSlot("/1007663/Post-3Parrafo-VideoAds", [1, 1], "div-gpt-ad-1564762063649-0").addService(googletag.pubads());
+                 googletag.pubads().enableSingleRequest();
+                 googletag.enableServices();
+               });
+              </script>
+
+          </div>
         ';
      
         if ( is_single() && ! is_admin() ) {
@@ -211,61 +211,16 @@ add_filter('wp_head','head_taboola_home');
     }
     add_filter( 'the_content', 'insert_post_ads_two' );
 
-
-
-    /* Tercer parrafo solo en mobile Ads ++ */
-
-
-    function insert_post_ads_3_mobile( $content ) {
-
-        if(wp_is_mobile()){
-
-        $ad_code = "
-
-            <div style='text-align:center !important'>
-
-                <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
-                <script>
-                 var googletag = googletag || {};
-                 googletag.cmd = googletag.cmd || [];
-                </script>
-                <script>
-                 googletag.cmd.push(function() {
-                   googletag.defineSlot('/21673142571/6__gestiopolis.com__desktop__300x250_1', [300, 250], 'div-gpt-ad-1525094074934-0').addService(googletag.pubads());
-                   googletag.enableServices();
-                 });
-                </script>
-                <div id='div-gpt-ad-1525094074934-0' style='height:250px; width:300px;'>
-                <script>
-                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1525094074934-0'); });
-                </script>
-                </div>
-
-            </div>
-            ";
-        
-        }
-        
-        if ( is_single() && ! is_admin() ) {
-            $ad_code = '';
-            return insert_ads_after_paragraph( $ad_code, 3, $content );
-        }
-        return $content;
-    }
-    add_filter( 'the_content', 'insert_post_ads_3_mobile' );
-
-
-
  //Insertar ads o contenido propio después 5 parrafo
     function insert_post_ads( $content ) {
         $ad_code = '<div style="width:300px !important;height:250px !important; text-align:center !important;margin:0 auto !important">
 
                    <!-- /1007663/5to-Parrafo-Ads -->
-                    <div id="div-gpt-ad-1558568181323-0" style="height:250px; width:300px;"">
-                    <script>
-                    googletag.cmd.push(function() { googletag.display("div-gpt-ad-1558568181323-0"); });
-                    </script>
-                    </div>
+                  <div id="div-gpt-ad-1564760269858-0" style="width: 300px; height: 250px;">
+                   <script>
+                     googletag.cmd.push(function() { googletag.display("div-gpt-ad-1564760269858-0"); });
+                   </script>
+                  </div>
 
                     </div>
 
@@ -278,6 +233,57 @@ add_filter('wp_head','head_taboola_home');
     }
     add_filter( 'the_content', 'insert_post_ads' );
 
+
+
+    //Insertar ads o contenido propio después 8 parrafo
+    function insert_post_ads_8_mobile( $content ) {
+        
+        if(wp_is_mobile()){
+
+        $ad_code = '
+
+        <div style="width:320px !important;height:100px !important; text-align:center !important;margin:0 auto !important">
+
+            <div data-ad="gestiopolis.com_320x100_sulvo_mobile_2_320x100" data-devices="m:1,t:1,d:0" class="demand-supply"></div>
+
+        </div>
+
+        ';
+
+        }
+     
+        if ( is_single() && ! is_admin() ) {
+            return insert_ads_after_paragraph( $ad_code, 8, $content );
+        }
+        return $content;
+    }
+    add_filter( 'the_content', 'insert_post_ads_8_mobile' );
+
+
+
+//Insertar ads o contenido propio después 10 parrafo - Sulvo
+    function insert_post_ads_10_mobile( $content ) {
+        
+        if(wp_is_mobile()){
+
+        $ad_code = '
+
+        <div style="width:300px !important;height:250px !important; text-align:center !important;margin:0 auto !important">
+
+               <div data-ad="gestiopolis.com_300x250_sulvo_mobile_3_300x250" data-devices="m:1,t:1,d:0" class="demand-supply"></div>
+
+        </div>
+
+        ';
+
+        }
+     
+        if ( is_single() && ! is_admin() ) {
+            return insert_ads_after_paragraph( $ad_code, 10, $content );
+        }
+        return $content;
+    }
+    add_filter( 'the_content', 'insert_post_ads_10_mobile' );
 
     
 

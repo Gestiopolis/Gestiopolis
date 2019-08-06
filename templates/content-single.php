@@ -6,7 +6,7 @@
 
         <!-- Surge Pricing Unit - gestiopolis.com_300x600_piso030 -->
 
-        <div data-ad="gestiopolis.com_300x600_piso030" data-devices="m:1,t:1,d:1" class="demand-supply"></div>
+        <div data-ad="gestiopolis.com_300x600_piso030" data-devices="m:0,t:0,d:1" class="demand-supply"></div>
         
       <!-- // Surge Pricing Unit - gestiopolis.com_300x600_piso030 -->
 
@@ -50,29 +50,18 @@
           <div class="post-content clearfix">
             <div class="entry-content gafrom from-post-entry-content">
               
+              <!--PRimer parrafo -->
               <div class="adsfr" style="padding-bottom: 20px !important;padding-top: -20px !important">
                 
                 
                 <!-- Sulvo - Debajo del titulo del artículo - under_page_title -->
 
-                  <div data-ad="gestiopolis.com_300x250_principal300x250desktop" data-devices="m:0,t:0,d:1" class="demand-supply"></div>
+                  <div data-ad="gestiopolis.com_300x250_principal300x250desktop" data-devices="m:1,t:1,d:1" class="demand-supply"></div>
 
                 <!-- Sulvo - Debajo del titulo del artículo - under_page_title -->
                 
-                
-                <?php if(wp_is_mobile()){ ?>
-
-                  <div style="width: 300px;height: 250px;margin: 0 auto;text-align:center">
-                    
-                    <script async src="https://cdn.ad.plus/player/adplus.js"></script>
-                    <script>(function(){var i='nXy95_DYBfIiai8zH9lKUSW_02KDQEUe_vFLblUu958Hx2-k0Ul3';document.write('<div id="'+i+'"></div>');(playerPro=window.playerPro||[]).push(i);})();</script>
-                  
-                  </div>
-
-                <?php } ?>
 
               </div>
-              
   
               <?php the_content(); ?>
             </div>
