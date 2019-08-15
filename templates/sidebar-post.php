@@ -20,7 +20,7 @@ $maincat = get_the_category($post->ID);
     <article id="post-<?php the_ID(); ?>" class="post">
       <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
       ?>
-      <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=related_posts&ic_source=sidebar" class="internal-campaign"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" data-original="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" class="lazy pull-left" width="64" height="56"></a>
+      <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=related_posts&ic_source=sidebar" class="internal-campaign"><img src="<?php echo $large_image_url[0]; ?>" data-original="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/grey.gif" alt="<?php the_title_attribute(); ?>" class="lazy pull-left" width="64" height="56"></a>
       <div class="wrapper-content">
         <h2 class="entry-title"><a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" data-ic="ic_medium=related_posts&ic_source=sidebar" class="internal-campaign"><?php the_title(); ?></a></h2>
       </div>

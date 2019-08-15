@@ -2,6 +2,39 @@
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
 
+
+<?php if (is_single()) { ?>
+	
+	<script type='text/javascript'>
+               window._taboola = window._taboola || [];
+               _taboola.push({home:'auto'});
+               !function (e, f, u, i) {
+                 if (!document.getElementById(i)){
+                   e.async = 1;
+                   e.src = u;
+                   e.id = i;
+                   f.parentNode.insertBefore(e, f);
+                 }
+               }(document.createElement('script'),
+               document.getElementsByTagName('script')[0],
+               '//cdn.taboola.com/libtrc/embimedia-gestiopolis/loader.js',
+               'tb_loader_script');
+               if(window.performance && typeof window.performance.mark == 'function')
+                 {window.performance.mark('tbl_ic');}
+             </script>
+
+<?php } ?>
+
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+ window.googletag = window.googletag || {cmd: []};
+ googletag.cmd.push(function() {
+   googletag.defineSlot('/1007663/Post-3Parrafo-VideoAds', [1, 1], 'div-gpt-ad-1565111312207-0').addService(googletag.pubads());
+   googletag.pubads().enableSingleRequest();
+   googletag.enableServices();
+ });
+</script>
+         
 <!-- Ads Plus -->
 	<script async src="https://cdn.ad.plus/player/adplus.js"></script>
 
@@ -15,6 +48,23 @@
   
 
   <style>
+
+  	@media (min-width: 1280px){
+  		.posts-home article{
+		  	height: 526px !important;
+		  }
+  	}
+
+  	@media (max-width: 1281px){
+  		.posts-home article{
+		  	height: none !important;
+		  }
+  	}
+
+
+	  .navigation{
+      text-align: center;
+    }
 
   	.adsfr{
   		padding-bottom: 20px !important;

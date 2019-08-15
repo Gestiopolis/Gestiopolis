@@ -36,6 +36,27 @@
       <ul class="nav navbar-nav navbar-right gafrom from-navbar-right">
         <li id="nav_busca">
 
+        <style> 
+        .searh-jq input[type=search] {
+          width: 90px;
+          box-sizing: border-box;
+          border: 2px solid #F1F1F1;
+          border-radius: 4px;
+          font-size: 16px;
+          background-color: #F1F1F1;
+          background-position: 10px 10px;
+          background-repeat: no-repeat;
+          height: 48px;
+          -webkit-transition: width 0.4s ease-in-out;
+          transition: width 0.4s ease-in-out;
+          border-radius: none !important;
+        }
+
+        .searh-jq input[type=search]:focus {
+          width: 100%;
+        }
+        </style>
+
 
           <div id="sb-search" class="sb-search sb-search-open hidden-xs hidden-sm">
              <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search" class="gafrom from-buscador">
@@ -45,13 +66,29 @@
             </form> 
           </div>
 
-          <div id="sb-search1" class="sb-search hidden-md hidden-lg">
+          <div class="searh-jq hidden-md hidden-lg">
+
+            <form action="<?php echo home_url( '/' ); ?>">
+              <input type="search" name="s" id="search" placeholder="Buscar..">
+            </form>
+          </div>
+
+          <!-- <div class="topnav hidden-md hidden-lg">
+            <div class="search-container">
+              <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search" class="gafrom from-buscador">
+                <input type="text" placeholder="Buscar..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+          </div> -->
+
+          <!-- <div id="sb-search1" class="sb-search hidden-md hidden-lg">
             <form id="searchbox" action="<?php echo home_url( '/' ); ?>" role="search" class="gafrom from-buscador-mobile">
               <input class="sb-search-input elasticpress-autosuggest" placeholder="Encuentra lo que necesitas Aquí" type="search" value="" name="s" id="search">
               <input class="sb-search-submit" type="submit" value="">
               <span class="sb-icon-search"><i class="fa fa-search"></i><span class="hidden-xs"> Busca</span></span>
             </form>
-          </div>
+          </div> -->
         </li>
         <li id="nav_publica"><a title="Publicar en GestioPolis" href="<?php echo get_page_link(325584); ?>"><i class="fa fa-cloud-upload"></i><span class="hidden-xs"> Publica</span></a></li>
         <li>

@@ -49,6 +49,9 @@ wp_get_current_user();
                 get_template_part( 'templates/content' );
             
               endwhile;
+
+              wp_paginate();
+              
               ?>
               <?php if ( function_exists( 'wp_pagenavi' ) ) { ?>
               <div class="pagination">

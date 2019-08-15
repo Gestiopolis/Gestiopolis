@@ -6,23 +6,23 @@
 *****************************************/
 
 /* DFP Tercer parrafo Head*/
-    function head_DFP_tercer_parrafo(){
-        echo "
-        <script async src='https://securepubads.g.doubleclick.net/tag/js/gpt.js'></script>
-        <script>
-         window.googletag = window.googletag || {cmd: []};
-         googletag.cmd.push(function() {
-           googletag.defineSlot('/1007663/Post-3Parrafo-VideoAds', [1, 1], 'div-gpt-ad-1564762063649-0').addService(googletag.pubads());
-           googletag.pubads().enableSingleRequest();
-           googletag.enableServices();
-         });
-        </script>
-      ";
+    // function head_DFP_tercer_parrafo(){
+    //     echo "
+    //     <script async src='https://securepubads.g.doubleclick.net/tag/js/gpt.js'></script>
+    //     <script>
+    //      window.googletag = window.googletag || {cmd: []};
+    //      googletag.cmd.push(function() {
+    //        googletag.defineSlot('/1007663/Post-3Parrafo-VideoAds', [1, 1], 'div-gpt-ad-1564762063649-0').addService(googletag.pubads());
+    //        googletag.pubads().enableSingleRequest();
+    //        googletag.enableServices();
+    //      });
+    //     </script>
+    //   ";
 
 
-    }
+    // }
 
-    add_filter('wp_head', 'head_DFP_tercer_parrafo');
+    // add_filter('wp_head', 'head_DFP_tercer_parrafo');
 
 
 // DFP head quinto parrafo
@@ -127,36 +127,36 @@ add_filter('wp_head', 'head_dfp');
 
 // Head taboola general
 
-function head_taboola_home(){
+// function head_taboola_home(){
 
-    if (is_single()) {
+//     if (is_single()) {
         
-        echo "
-            <script type='text/javascript'>
-              window._taboola = window._taboola || [];
-              _taboola.push({home:'auto'});
-              !function (e, f, u, i) {
-                if (!document.getElementById(i)){
-                  e.async = 1;
-                  e.src = u;
-                  e.id = i;
-                  f.parentNode.insertBefore(e, f);
-                }
-              }(document.createElement('script'),
-              document.getElementsByTagName('script')[0],
-              '//cdn.taboola.com/libtrc/embimedia-gestiopolis/loader.js',
-              'tb_loader_script');
-              if(window.performance && typeof window.performance.mark == 'function')
-                {window.performance.mark('tbl_ic');}
-            </script>
+//         echo "
+//             <script type='text/javascript'>
+//               window._taboola = window._taboola || [];
+//               _taboola.push({home:'auto'});
+//               !function (e, f, u, i) {
+//                 if (!document.getElementById(i)){
+//                   e.async = 1;
+//                   e.src = u;
+//                   e.id = i;
+//                   f.parentNode.insertBefore(e, f);
+//                 }
+//               }(document.createElement('script'),
+//               document.getElementsByTagName('script')[0],
+//               '//cdn.taboola.com/libtrc/embimedia-gestiopolis/loader.js',
+//               'tb_loader_script');
+//               if(window.performance && typeof window.performance.mark == 'function')
+//                 {window.performance.mark('tbl_ic');}
+//             </script>
         
-        ";
-    }
+//         ";
+//     }
 
 
-}
+// }
 
-add_filter('wp_head','head_taboola_home');
+// add_filter('wp_footer','head_taboola_home');
 
 
 /****************************************
@@ -189,23 +189,18 @@ add_filter('wp_head','head_taboola_home');
 
     function insert_post_ads_two( $content ) {
         $ad_code = '
-        <div style="text-align:center !important;margin:0 auto !important">
 
-            <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-              <script>
-               window.googletag = window.googletag || {cmd: []};
-               googletag.cmd.push(function() {
-                 googletag.defineSlot("/1007663/Post-3Parrafo-VideoAds", [1, 1], "div-gpt-ad-1564762063649-0").addService(googletag.pubads());
-                 googletag.pubads().enableSingleRequest();
-                 googletag.enableServices();
-               });
-              </script>
+            <!-- /1007663/Post-3Parrafo-VideoAds -->
+            <div id="div-gpt-ad-1565111312207-0" style="width: 1px; height: 1px;">
+             <script>
+               googletag.cmd.push(function() { googletag.display("div-gpt-ad-1565111312207-0"); });
+             </script>
+            </div>
 
-          </div>
         ';
      
         if ( is_single() && ! is_admin() ) {
-            return insert_ads_after_paragraph( $ad_code, 3, $content );
+            return insert_ads_after_paragraph( $ad_code, 4, $content );
         }
         return $content;
     }
@@ -227,7 +222,7 @@ add_filter('wp_head','head_taboola_home');
         ';
      
         if ( is_single() && ! is_admin() ) {
-            return insert_ads_after_paragraph( $ad_code, 5, $content );
+            return insert_ads_after_paragraph( $ad_code, 6, $content );
         }
         return $content;
     }

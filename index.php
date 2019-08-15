@@ -257,7 +257,7 @@
       wp_reset_postdata();
       //$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
       
-        query_posts( 'post_type=post&offset=10&posts_per_page=28'.'&paged='.get_query_var('paged') );
+        query_posts( 'post_type=post&offset=10&posts_per_page=64'.'&paged='.get_query_var('paged') );
         if ( have_posts() ) :
           // Start the Loop.
           while ( have_posts() ) : the_post();
@@ -270,6 +270,8 @@
             get_template_part( 'templates/content' );
         
           endwhile;
+
+          wp_paginate();
           wp_reset_postdata();
           wp_reset_query();
           ?>
