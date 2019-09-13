@@ -1,3 +1,8 @@
+<script type='text/javascript'>
+  window._taboola = window._taboola || [];
+  _taboola.push({flush: true});
+</script>
+
 <div class="footer">
   <div class="footer-inner">
     <footer class="container gafrom from-footer">

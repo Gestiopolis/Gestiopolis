@@ -57,7 +57,6 @@ wp_get_current_user();
                 get_template_part( 'templates/content' );
             
               endwhile;
-              wp_paginate();
               ?>
               <?php if ( function_exists( 'wp_pagenavi' ) ) { ?>
               <div class="pagination">
@@ -72,6 +71,9 @@ wp_get_current_user();
             endif;
           ?>
         </div><!-- #recientes -->
+
+        <?php  wp_paginate(); ?>
+        
       </div>
       </div><!-- .row -->
     </div><!-- .span12 -->

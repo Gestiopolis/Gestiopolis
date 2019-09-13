@@ -3,73 +3,12 @@
 <head>
 
 
-<?php if (is_single()) { ?>
-	
-	<script type='text/javascript'>
-               window._taboola = window._taboola || [];
-               _taboola.push({home:'auto'});
-               !function (e, f, u, i) {
-                 if (!document.getElementById(i)){
-                   e.async = 1;
-                   e.src = u;
-                   e.id = i;
-                   f.parentNode.insertBefore(e, f);
-                 }
-               }(document.createElement('script'),
-               document.getElementsByTagName('script')[0],
-               '//cdn.taboola.com/libtrc/embimedia-gestiopolis/loader.js',
-               'tb_loader_script');
-               if(window.performance && typeof window.performance.mark == 'function')
-                 {window.performance.mark('tbl_ic');}
-             </script>
-
-<?php } ?>
-
-<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-<script>
- window.googletag = window.googletag || {cmd: []};
- googletag.cmd.push(function() {
-   googletag.defineSlot('/1007663/Post-3Parrafo-VideoAds', [1, 1], 'div-gpt-ad-1565111312207-0').addService(googletag.pubads());
-   googletag.pubads().enableSingleRequest();
-   googletag.enableServices();
- });
-</script>
-         
-<!-- Ads Plus -->
-	<script async src="https://cdn.ad.plus/player/adplus.js"></script>
-
-	<div>
-		<script>(function(){var i='5PcWSBhHwrcuejnApTW3yvf36RsI6ylhKCE7XkCqbd_ZhxKc8DmZ';document.write('<div id="'+i+'"></div>');(playerPro=window.playerPro||[]).push(i);})();</script>
-	</div>
-	
-
-  <!-- Llamada a sulvo -->
-  <script async id="sulvo" type="text/javascript" src="//live.demand.supply/up.js"></script>
-  
+  <!-- Llamada a sulvo -->  
+  <script data-cfasync="false" type="text/javascript" src="https://live.demand.supply/up.js"></script>
 
   <style>
-
-  	@media (min-width: 1280px){
-  		.posts-home article{
-		  	height: 526px !important;
-		  }
-  	}
-
-  	@media (max-width: 1281px){
-  		.posts-home article{
-		  	height: none !important;
-		  }
-  	}
-
-
-	  .navigation{
-      text-align: center;
-    }
-
-  	.adsfr{
-  		padding-bottom: 20px !important;
-	    padding-top: 10px !important;
-	    margin-top: -20px !important;
+  	body{
+  		padding-top: 0px !important;
   	}
 
   	.ads_right_tags{
@@ -92,6 +31,11 @@
 	    }
 	}
 
+	.navigation{
+      text-align: center;
+      margin-top: 30px;
+    }
+
                     
 
 	.single .downlink {
@@ -111,6 +55,45 @@
 	.single article .wrapper-img h2 span{
 		color: #ffffff !important;
 	}
+
+
+	/* Section */
+.section {
+  clear: both;
+  margin: 0px;
+  padding: 0px;
+}
+/* Column */
+.col {
+  display: block;
+  float:left;
+  margin: 1% 0 1% 1%;
+  height: 550px;
+}
+.col:first-child { margin-left: 0 !important; }
+
+.col:nth-child(4n+5){
+	margin:1% 0 1% 0%;
+}
+
+/* Row */
+.row:before,
+.row:after { content:""; display:table; }
+.row:after { clear:both;}
+.row { zoom:1; /* For IE 6/7 */ }
+
+/* Grid */
+.grid_1_of_4{ width: 24.25% }
+.grid_2_of_4{ width: 49.5% }
+.grid_3_of_4{ width: 74.75% }
+.grid_4_of_4{ width: 100% }
+
+/* Full Width below 768 pixels */
+@media only screen and (max-width: 768px) {
+  .col {  margin: 1% 0 1% 0%;height: auto; }
+  [class*='grid_'] { width: 100%; }
+}
+
   </style>
   
   <meta charset="utf-8">

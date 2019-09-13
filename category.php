@@ -224,6 +224,8 @@ wp_get_current_user();
       <script type="text/javascript" src="https://story.ad/advertisement/show_ad/48" async></script> 
       <div id='story-63-48'></div> 
       <?php } ?>
+
+      <div class="section">
       <?php
         if ( have_posts() ) :
           // Start the Loop.
@@ -238,7 +240,7 @@ wp_get_current_user();
         
           endwhile;
 
-         wp_paginate();
+          
 
           ?>
           <?php if ( function_exists( 'wp_pagenavi' ) ) { ?>
@@ -253,6 +255,11 @@ wp_get_current_user();
           <?php
         endif;
       ?>
+
+    </div>
+    
     </div><!-- #recientes -->
+
+    <?php  wp_paginate(); ?>
   </div><!-- .row -->
 </div><!-- .container -->

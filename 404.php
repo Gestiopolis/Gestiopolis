@@ -16,7 +16,7 @@
 		      <div id="recientes">
 	          <?php
 	            $recent_args = array(
-	              'posts_per_page' => 32,
+	              'posts_per_page' => 12,
 	              'post_status'    => 'publish',
 	              'orderby'        => 'date'
 	            );
@@ -26,30 +26,18 @@
 	              while ( $the_query->have_posts() ) : $the_query->the_post();
 
 	                get_template_part( 'templates/content', 'recents' );
-	            	
-	           	
-	              endwhile; ?>
-
-				<?php  wp_paginate(); ?>
-	              
-	             <?php ?>
+	            
+	              endwhile;
+	              ?>
 	            <?php endif;
-
-
-
-
 	            wp_reset_query(); 
 	            wp_reset_postdata(); ?>
-
-
-
-
 	        </div><!-- #recientes -->
-	        <!-- <div class="row">
+	        <div class="row">
 	        	<div class="col-sm-6 col-sm-offset-3">
 	        		<a class="link404 btn btn-green" href="<?php echo esc_url(home_url('/#recientes')); ?>">Ver posts más recientes</a>
 	        	</div>
-	        </div> -->
+	        </div>
 	      </div>
       </div><!-- .col-md-12 -->
     </div>

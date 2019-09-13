@@ -6,7 +6,7 @@
 
         <!-- Surge Pricing Unit - gestiopolis.com_300x600_piso030 -->
 
-        <div data-ad="gestiopolis.com_300x600_piso030" data-devices="m:0,t:0,d:1" class="demand-supply"></div>
+        <div data-ad="gestiopolis.com_300x600_piso030" data-devices="m:1,t:1,d:1" class="demand-supply"></div>
         
       <!-- // Surge Pricing Unit - gestiopolis.com_300x600_piso030 -->
 
@@ -50,19 +50,18 @@
           <div class="post-content clearfix">
             <div class="entry-content gafrom from-post-entry-content">
               
-              <!--PRimer parrafo -->
-              <div class="adsfr" style="padding-bottom: 20px !important;padding-top: -20px !important">
-                
+              <div class="adsfr">
                 
                 <!-- Sulvo - Debajo del titulo del artículo - under_page_title -->
 
-                  <div data-ad="gestiopolis.com_300x250_principal300x250desktop" data-devices="m:1,t:1,d:1" class="demand-supply"></div>
+                  <div data-ad="gestiopolis.com_300x250_precio030300x250" data-devices="m:1,t:1,d:1" class="demand-supply"></div>
 
                 <!-- Sulvo - Debajo del titulo del artículo - under_page_title -->
-                
+        
 
               </div>
-  
+              
+        
               <?php the_content(); ?>
             </div>
 

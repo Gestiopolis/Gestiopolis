@@ -1,4 +1,11 @@
 <?php
+
+//Limitar tags mostradas a 5
+add_filter('term_links-post_tag','limitar_tags');
+function limitar_tags($terms) {
+return array_slice($terms,0,3,true);
+}
+
 /**
  * Clean up the_excerpt()
  */
@@ -6,7 +13,6 @@ function roots_excerpt_more() {
   return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'roots') . '</a>';
 }
 add_filter('excerpt_more', 'roots_excerpt_more');
-
 /**
  * Manage output of wp_title()
  */
@@ -14,45 +20,30 @@ function roots_wp_title($title) {
   if (is_feed()) {
     return $title;
   }
-
   $title .= get_bloginfo('name');
-
   return $title;
 }
 add_filter('wp_title', 'roots_wp_title', 10);
-
-
-
 //Recortar extracto
 add_filter('excerpt_length', 'my_excerpt_length');
 function my_excerpt_length($length) {
 return 70; }
-
 //Cambiar dirección de logo de Login y título
 function change_wp_login_url() { return bloginfo('url');}
 add_filter('login_headerurl', 'change_wp_login_url');
 function change_wp_login_title() { return get_option('blogname');}
 add_filter('login_headertext', 'change_wp_login_title');
-
-
-
 // Añade nuevo caracteres para limpiar nombres de arhcivos
 function my_sanitize_chars($chars){
   $chars[] = '%';
   return $chars;
 }
 add_filter('sanitize_file_name_chars', 'my_sanitize_chars');
-
-
-
-
-
 //Ofuscar Email
 function hideEmail($mail){
 	$mail = strrev($mail);
 	return "<span style=\"direction:rtl; unicode-bidi:bidi-override;\">".$mail."</span>";
 }
-
 //Recortar textos largos
 function title_trim($max_length, $title){
 	//Make sure that we are not making it longer with that ellipse
@@ -74,11 +65,6 @@ function title_trim($max_length, $title){
 		return $title;
 	}
 }
-
-
-
-
-
 /****************
 Mostrar los artículos más populares por comentarios, votos y visitas
 Se necesita tener instalado el plugin I Like This
@@ -98,7 +84,6 @@ WHERE posts.post_type='post' AND post_date > '" . date('Y-m-d', strtotime('-'.$d
 	<?php 	echo $after;
     }
 }
-
 /****************
 Mostrar los artículos más populares por comentarios, votos y visitas
 Se necesita tener instalado el plugin I Like This
@@ -140,12 +125,8 @@ function get_trending_posts($numberOf, $days, $catid = '') {
 			'suppress_filters' => true 
 		);
 	} 
-
 	 return get_posts( $args );
 }
-
-
-
 /****************
 Mostrar los autores con más artículos y más visitas a sus artículos
 ****************/
@@ -163,21 +144,6 @@ function get_trending_authors($numberOf, $days, $catid = '') {
     $posts = $wpdb->get_results($request);
     return $posts;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*Función que trae las etiquetas más vistas de determinada categoría*/
 function popular_tags_from_category($catid, $days, $limit=15){
 	global $wpdb;
@@ -211,20 +177,16 @@ function popular_tags_from_category($catid, $days, $limit=15){
 			$link = get_term_link( intval($tag->term_id), $args['taxonomy'] );
 		if ( is_wp_error( $link ) )
 			return false;
-
 		$tag_link = '#' != $tag->link ? esc_url( $link ) : '#';
 		$tag_id = isset($tag->term_id) ? $tag->term_id : $key;
 		$tag_name = $terms[ $key ]->name;
-
 		echo "<a href='$tag_link' class='tag-link-$tag_id' title='" . esc_attr( $tag->count ) . " posts'>$tag_name</a>";
 	}	
 		//echo wp_generate_tag_cloud( $terms, $args );
 	}
 }
-
 /*Función que trae las etiquetas más vistas de determinada categoría*/
 function trending_tags($limit=10, $days ){
-
 	global $wpdb;
 	$now = gmdate("Y-m-d H:i:s",time());
 	//$datelimit = gmdate("Y-m-d H:i:s",gmmktime(date("H"), date("i"), date("s"), date("m"),date("d")-30,date("Y")));
@@ -251,7 +213,6 @@ function tags_by_letter($letter, $letterM){
 	//$tags = array_merge($tagsm, $tagsM);
 	return $tagsm;
 }
-
 //Obtener fecha actual en español
 function actual_date(){
 	$dias = array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
@@ -259,7 +220,6 @@ function actual_date(){
 	 
 	echo date('j')." de ".$meses[date('n')-1]. " de ".date('Y');
 }
-
 function count_posts($type, $year, $month, $catid=0) {
 	global $wpdb;
 	switch ($type) {
@@ -287,13 +247,11 @@ function count_posts($type, $year, $month, $catid=0) {
 			break;
 	}
 }
-
 //Número de autores por categoría
 function autcat($catid) {
 	global $wpdb;
 	echo $wpdb->get_var("SELECT COUNT(DISTINCT post_author) AS count FROM $wpdb->posts posts INNER JOIN $wpdb->term_relationships term ON (posts.ID = term.object_id) WHERE posts.post_type = 'post' AND term.term_taxonomy_id= '$catid' AND posts.post_status='publish'");
 }
-
 //Obtener tags de una categoría específica
 function get_category_tags($args) {
 	global $wpdb;
@@ -305,7 +263,6 @@ function get_category_tags($args) {
 			LEFT JOIN $wpdb->term_relationships as r1 ON p1.ID = r1.object_ID
 			LEFT JOIN $wpdb->term_taxonomy as t1 ON r1.term_taxonomy_id = t1.term_taxonomy_id
 			LEFT JOIN $wpdb->terms as terms1 ON t1.term_id = terms1.term_id,
-
 			$wpdb->posts as p2
 			LEFT JOIN $wpdb->term_relationships as r2 ON p2.ID = r2.object_ID
 			LEFT JOIN $wpdb->term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id
@@ -323,7 +280,6 @@ function get_category_tags($args) {
 	}
 	return $tags;
 }
-
 //Tiempo estimado de lectura
 function estimate_time() {
 	global $post;
@@ -341,7 +297,6 @@ function estimate_time() {
 	
 	$content_words = str_word_count($content);
 	$estimated_minutes = floor($content_words / $wpm);
-
 	if ($estimated_minutes < 1) {
 		$result = "1 minuto";
 	}
@@ -361,10 +316,8 @@ function estimate_time() {
 	}
 	return $result;
 }
-
 //Arreglar tamaño del elemento figure
 add_filter('img_caption_shortcode','fix_img_caption_shortcode_inline_style',10,3);
-
 function fix_img_caption_shortcode_inline_style($output,$attr,$content) {
 	$atts = shortcode_atts( array(
 		'id'	  => '',
@@ -373,31 +326,22 @@ function fix_img_caption_shortcode_inline_style($output,$attr,$content) {
 		'caption' => '',
 		'class'   => '',
 	), $attr, 'caption' );
-
 	$atts['width'] = (int) $atts['width'];
 	if ( $atts['width'] < 1 || empty( $atts['caption'] ) )
 		return $content;
-
 	if ( ! empty( $atts['id'] ) )
 		$atts['id'] = 'id="' . esc_attr( $atts['id'] ) . '" ';
-
 	$class = trim( 'wp-caption ' . $atts['align'] . ' ' . $atts['class'] );
-
 	if ( current_theme_supports( 'html5', 'caption' ) ) {
 		return '<figure ' . $atts['id'] . ' class="' . esc_attr( $class ) . '">'
 		. do_shortcode( $content ) . '<figcaption class="wp-caption-text">' . $atts['caption'] . '</figcaption></figure>';
 	}
-
 	$caption_width = 10 + $atts['width'];
-
 	$caption_width = apply_filters( 'img_caption_shortcode_width', $caption_width, $atts, $content );
-
 	$style = '';
-
 	return '<div ' . $atts['id'] . $style . 'class="' . esc_attr( $class ) . '">'
 		. do_shortcode( $content ) . '<p class="wp-caption-text">' . $atts['caption'] . '</p></div>';
 }
-
 function get_author_color_id($author_id=0){
 	global $post;
 	$firstletter = '';
@@ -412,7 +356,6 @@ function get_author_color_id($author_id=0){
 		return '<span class="author-color author-color-'.strtolower($firstletter).'">'.strtoupper($firstletter).'</span>';
 	}
 }
-
 //Función de related posts by tags and categories
 //http://www.cssigniter.com/ignite/programmatically-get-related-wordpress-posts-easily/
 function ci_get_related_posts_1( $post_id, $related_count, $args = array() ) {
@@ -420,10 +363,8 @@ function ci_get_related_posts_1( $post_id, $related_count, $args = array() ) {
     'orderby' => 'rand',
     'return'  => 'query', // Valid values are: 'query' (WP_Query object), 'array' (the arguments array)
   ) );
-
   $post       = get_post( $post_id );
   $taxonomies = get_object_taxonomies( $post, 'names' );
-
   $related_args = array(
     'post_type'      => get_post_type( $post_id ),
     'posts_per_page' => $related_count,
@@ -434,7 +375,6 @@ function ci_get_related_posts_1( $post_id, $related_count, $args = array() ) {
     //'cache_results'  => true,
     'tax_query'      => array()
   );
-
   foreach( $taxonomies as $taxonomy ) {
     $terms = get_the_terms( $post_id, $taxonomy );
     if ( empty( $terms ) ) continue;
@@ -445,27 +385,22 @@ function ci_get_related_posts_1( $post_id, $related_count, $args = array() ) {
         'terms'    => $term_list
     );
   }
-
   if( count( $related_args['tax_query'] ) > 1 ) {
     $related_args['tax_query']['relation'] = 'AND';
   }
-
   if( $args['return'] == 'query' ) {
   	return new WP_Query( $related_args );
   } else {
     return $related_args;
   }
 }
-
 function ci_get_related_posts_2( $post_id, $postsnot, $related_count, $paged, $args = array() ) {
   $args = wp_parse_args( (array) $args, array(
     'orderby' => 'rand',
     'return'  => 'query', // Valid values are: 'query' (WP_Query object), 'array' (the arguments array)
   ) );
-
   $post       = get_post( $post_id );
   $taxonomies = get_object_taxonomies( $post, 'names' );
-
   $related_args = array(
     'post_type'      => get_post_type( $post_id ),
     'posts_per_page' => $related_count,
@@ -475,7 +410,6 @@ function ci_get_related_posts_2( $post_id, $postsnot, $related_count, $paged, $a
     'paged'					 => $paged,
     'tax_query'      => array()
   );
-
   foreach( $taxonomies as $taxonomy ) {
     $terms = get_the_terms( $post_id, $taxonomy );
     if ( empty( $terms ) ) continue;
@@ -486,18 +420,15 @@ function ci_get_related_posts_2( $post_id, $postsnot, $related_count, $paged, $a
         'terms'    => $term_list
     );
   }
-
   if( count( $related_args['tax_query'] ) > 1 ) {
     $related_args['tax_query']['relation'] = 'AND';
   }
-
   if( $args['return'] == 'query' ) {
   	return new WP_Query( $related_args );
   } else {
     return $related_args;
   }
 }
-
 function footer_lazyload() {
 	if(is_single()){
     echo '
@@ -513,8 +444,6 @@ function footer_lazyload() {
 	}
 }
 add_action('wp_footer', 'footer_lazyload', 100);
-
-
 function head_meta_schema() {
 	if(is_single()) {
 		global $post;
@@ -526,20 +455,18 @@ function head_meta_schema() {
 }
 add_action('wp_head', 'head_meta_schema', 1);
 
-function filter_lazyload($content) {
-    return preg_replace_callback('/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', 'preg_lazyload', $content);
-}
-add_filter('the_content', 'filter_lazyload');
 
-function preg_lazyload($img_match) {
+// function filter_lazyload($content) {
+//     return preg_replace_callback('/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', 'preg_lazyload', $content);
+// }
+// add_filter('the_content', 'filter_lazyload');
+// function preg_lazyload($img_match) {
  
-  $img_replace = $img_match[1] . 'src="' . get_stylesheet_directory_uri() . '/assets/img/grey.gif" data-original' . substr($img_match[2], 3) . $img_match[3];
-
-  $img_replace = preg_replace('/class\s*=\s*"/i', 'class="lazy ', $img_replace);
-
-  $img_replace .= '<noscript>' . $img_match[0] . '</noscript>';
-  return $img_replace;
-}
+//   $img_replace = $img_match[1] . 'src="' . get_stylesheet_directory_uri() . '/assets/img/grey.gif" data-original' . substr($img_match[2], 3) . $img_match[3];
+//   $img_replace = preg_replace('/class\s*=\s*"/i', 'class="lazy ', $img_replace);
+//   $img_replace .= '<noscript>' . $img_match[0] . '</noscript>';
+//   return $img_replace;
+// }
 
 function month_name($month) {
  
@@ -582,7 +509,6 @@ function month_name($month) {
   		break;										
   }
 }
-
 function custom_error_pages()
 {
     global $wp_query;
@@ -618,7 +544,6 @@ function custom_error_pages()
         get_template_part('401');
         exit;
     }
-
     if(isset($_REQUEST['status']) && $_REQUEST['status'] == 400)
     {
         $wp_query->is_404 = FALSE;
@@ -643,7 +568,6 @@ function custom_error_title($title='',$sep='')
  
     if(isset($_REQUEST['status']) && $_REQUEST['status'] == 401)
         return "No autorizado ".$sep." ".get_bloginfo('name');
-
     if(isset($_REQUEST['status']) && $_REQUEST['status'] == 400)
         return "Solicitud incorrecta ".$sep." ".get_bloginfo('name');
 }
@@ -661,7 +585,6 @@ function custom_error_class($classes)
         $classes[]="error401";
         return $classes;
     }
-
     if(isset($_REQUEST['status']) && $_REQUEST['status'] == 400)
     {
         $classes[]="error400";
@@ -678,8 +601,6 @@ remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
-
-
 //Función de Wp_Imager https://github.com/Jany-M/WP-Imager
 //require_once ('functions/wp-imager.php');
 //Archivos necesarios para la cabecera en la administración
@@ -696,4 +617,3 @@ require_once ('functions/meta_main_image.php');
 require_once ('functions/follows.php');
 //Funciones para los anuncios
 require_once ('functions/ads/ads.php');
-
