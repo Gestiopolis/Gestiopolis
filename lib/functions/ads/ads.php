@@ -30,17 +30,16 @@
             <script>
              window.googletag = window.googletag || {cmd: []};
              googletag.cmd.push(function() {
-               googletag.defineSlot('/1007663/Post_Quinto_Parrafo', [[1, 1], [300, 250]], 'div-gpt-ad-1567180427260-0').addService(googletag.pubads());
+               googletag.defineSlot('/1007663/Post_Quinto_Parrafo', [[1, 1], [300, 250]], 'div-gpt-ad-1568760235572-0').addService(googletag.pubads());
                googletag.pubads().enableSingleRequest();
                googletag.enableServices();
              });
-            </script>
-        
+            </script>  
         ";
     }
 
 
-    add_filter('wp_head', 'head_DFP_quinto_parrafo');
+    //add_filter('wp_head', 'head_DFP_quinto_parrafo');
 
 
 
@@ -63,7 +62,15 @@
     }
 
 
-    add_filter('wp_head', 'head_DFP_parrafo_8');
+    //add_filter('wp_head', 'head_DFP_parrafo_8');
+
+
+    // OPT AD 360 8vo parrafo
+    function opt_ad_parrafo_8(){
+        echo "<script async src='//www.statsforads.com/tag/495277a1-5b85-4d9a-b7e6-d34b536286c2.min.js'></script>";
+    }
+
+    add_filter('wp_head', 'opt_ad_parrafo_8');
 
 
 
@@ -229,17 +236,11 @@ add_filter('wp_head', 'head_dfp');
 
  //Insertar ads o contenido propio después 5 parrafo
     function insert_post_ads( $content ) {
-        
+
             $ad_code = '<div style="text-align:center !important;margin:0 auto !important">
-
-                       <!-- /1007663/Post_Quinto_Parrafo -->
-                      <div id="div-gpt-ad-1567180427260-0">
-                       <script>
-                         googletag.cmd.push(function() { googletag.display("div-gpt-ad-1567180427260-0"); });
-                       </script>
-                      </div>
-
-                </div>
+                        <script async src="https://cdn.ad.plus/player/adplus.js"></script>
+                        <script data-playerPro="current">(function(){var s=document.querySelector(\'script[data-playerPro="current"]\');s.removeAttribute("data-playerPro");(playerPro=window.playerPro||[]).push({id:"1brVB_MeRT-PaZdAIeQt3yWsoSpFKJ-BP-70J82l-6Cqz4ieYH20",after:s});})();</script>
+                        </div>
 
             ';
          
@@ -253,7 +254,7 @@ add_filter('wp_head', 'head_dfp');
 
 
 
- //Insertar ads o contenido propio después 8 parrafo
+   //Insertar ads o contenido propio después 8 parrafo
     function insert_post_ads_8( $content ) {
         $ad_code = '<div style="text-align:center !important;margin:0 auto !important">
 
@@ -273,8 +274,25 @@ add_filter('wp_head', 'head_dfp');
         }
         return $content;
     }
-    add_filter( 'the_content', 'insert_post_ads_8' );
+    //add_filter( 'the_content', 'insert_post_ads_8' );
 
+
+    //Insertar opt_ad 360 o contenido propio después 8 parrafo
+    function insert_opt_ad_360_8( $content ) {
+        $ad_code = '<div style="text-align:center !important; margin:0 auto !important">    
+                      <ins class="staticpubads89354"
+                        data-sizes-desktop="300x250,336x280,360x300"
+                        data-sizes-mobile="300x250,336x280,360x300"
+                        data-slot="1">
+                        </ins>    
+                    </div>';
+
+        if ( is_single() && ! is_admin() ) {
+            return insert_ads_after_paragraph( $ad_code, 8, $content );
+        }
+        return $content;
+    }
+    add_filter( 'the_content', 'insert_opt_ad_360_8' );
 
     
 
