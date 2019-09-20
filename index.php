@@ -226,7 +226,7 @@
       <?php $terms = trending_tags(30, TRENDING_DAYS ); 
         foreach ($terms as $key => $tag) {
           $link = get_term_link( intval($tag->term_id), 'post_tag' );
-          $tag_link = '#' != $tag->link ? esc_url( $link ) : '#';
+          $tag_link = isset($tag->link) && '#' != $tag->link ? esc_url( $link ) : '#';
           $tag_id = isset($tag->term_id) ? $tag->term_id : $key;
           $tag_name = $terms[ $key ]->name;
       ?>
