@@ -4,10 +4,8 @@
 
 
 
-<div class="col grid_1_of_4"> 
+<div class="col-sm-6 col-md-3 col-lg-3">
   <!-- Inicio de la nueva grilla -->
-
-  <div class="">
   <article id="post-<?php the_ID(); ?>" class="">
     <time class="entry-date published hidden" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('d.m.Y'); ?></time>
           <time class="entry-date updated hidden" datetime="<?php echo get_the_modified_time('c'); ?>"><?php echo get_the_modified_date('d.m.Y'); ?></time>
@@ -46,7 +44,7 @@
           <div class="tiempo pull-left"><i class="fa fa-clock-o"></i> <?php echo estimate_time();?> de lectura</div>
           <div class="fecha pull-right"><i class="fa fa-calendar"></i> <?php echo get_the_date('j\.m\.Y'); ?></div>
         </div>
-        <?php the_tags('<div class="tags hidden-xs"><i class="fa fa-tags"></i> ',', ','</div>'); ?>
+        <?php the_tags('<div class="tags"><i class="fa fa-tags"></i> ',', ','</div>'); ?>
         <div class="category pull-left">
           <?php foreach ($category as $cat) {
             if(is_category()){
@@ -64,6 +62,4 @@
 </div><!-- .col-md-3 col-sm-6 -->
 
   <!-- Fin de la nueva grilla -->
-
-</div>
 
