@@ -225,7 +225,7 @@ wp_get_current_user();
       <div id='story-63-48'></div> 
       <?php } ?>
 
-      <div class="section">
+      <div class="section equal-items">
       <?php
         if ( have_posts() ) :
           // Start the Loop.

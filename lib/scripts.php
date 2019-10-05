@@ -50,7 +50,32 @@ function roots_scripts() {
       'iconfont'     => '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
       'pdfcssbase'=> '/pdf2htmlEX/base.min.css',
       'pdfcssfancy'   => '/pdf2htmlEX/fancy.min.css',
-      'js'        => '/assets/js/scripts.min.js?' . $assets['assets/js/scripts.min.js']['hash'],
+      //'js'        => '/assets/js/scripts.min.js?' . $assets['assets/js/scripts.min.js']['hash'],
+        'js' => array(
+            'transition' => '/assets/vendor/bootstrap/js/transition.js',
+            'button' => '/assets/vendor/bootstrap/js/button.js',
+            'carousel' => '/assets/vendor/bootstrap/js/carousel.js',
+            'collapse' => '/assets/vendor/bootstrap/js/collapse.js',
+            'dropdown' => '/assets/vendor/bootstrap/js/dropdown.js',
+            'modal' => '/assets/vendor/bootstrap/js/modal.js',
+            'tooltip' => '/assets/vendor/bootstrap/js/tooltip.js',
+            'scrollspy' => '/assets/vendor/bootstrap/js/scrollspy.js',
+            'tab' => '/assets/vendor/bootstrap/js/tab.js',
+            'affix' => '/assets/vendor/bootstrap/js/affix.js',
+            'classie' => '/assets/js/plugins/classie.js',
+            'fixedbutton' => '/assets/js/plugins/fixedbutton.js',
+            'functions' => '/assets/js/plugins/functions.js',
+            'debouncedresize' => '/assets/js/plugins/jquery.debouncedresize.js',
+            'lazyload' => '/assets/js/plugins/jquery.lazyload.js',
+            'scrolldepth' => '/assets/js/plugins/jquery.scrolldepth.min.js',
+            'sticky-kit' => '/assets/js/plugins/jquery.sticky-kit.min.js',
+            'visible' => '/assets/js/plugins/jquery.visible.min.js',
+            'offcanvas' => '/assets/js/plugins/offcanvas.js',
+            'stickUp' => '/assets/js/plugins/stickUp.js',
+            'tinyscrollbar' => '/assets/js/plugins/tinyscrollbar.js',
+            'uisearch' => '/assets/js/plugins/uisearch.js',
+            '_main' => '/assets/js/_main.js'
+        ),
       'modernizr' => '/assets/js/vendor/modernizr.min.js',
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js',
       'pdfcomp'    => '/pdf2htmlEX/compatibility.min.js',
@@ -107,7 +132,10 @@ function roots_scripts() {
     wp_enqueue_script('imagesloaded', $assets['imglo'], array(), array( 'jquery' ), true);
     wp_enqueue_script('slickjs', '//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js', array(), array( 'jquery' ), true);
   }
-  wp_enqueue_script('roots_js', get_template_directory_uri() . $assets['js'], array(), null, true);
+  //wp_enqueue_script('roots_js', get_template_directory_uri() . $assets['js'], array(), null, true);
+    foreach($assets['js'] as $js_k => $js_v){
+        wp_enqueue_script('roots_js_' . $js_k, get_template_directory_uri() . $js_v, array(), null, true);
+    }
 
   //Enviar variables al script 'script.js' o 'roots_js'
   $values_array = array();
@@ -116,8 +144,8 @@ function roots_scripts() {
   }else {
     $values_array = array( 'template_directory' => get_template_directory_uri(), 'manage_options' => current_user_can( 'manage_options'), 'userlogin' => is_user_logged_in() );
   }
-  wp_localize_script('roots_js', 'serverval', $values_array);
-
+  //wp_localize_script('roots_js', 'serverval', $values_array);
+    wp_localize_script('roots_js__main', 'serverval', $values_array);
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
 

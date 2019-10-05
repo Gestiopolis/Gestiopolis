@@ -124,6 +124,9 @@
 
     <?php wp_head(); ?>
     <style>
+        .content{
+            margin-top: 45px;
+        }
         .posts-home article:hover .wrapper-content{
             border: 0px;
         }
@@ -148,10 +151,10 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
-            .posts-home .tags {
+            /*.posts-home .tags {
                 height: 63px;
                 overflow: hidden;
-            }
+            }*/
             .posts-home .post-content p{
                 max-height: 130px;
                 overflow: hidden;

@@ -101,15 +101,14 @@
       case 'right':  return 'left'
     }
   }
-  
+
   OffCanvas.prototype.getCanvasElements = function() {
     // Return a set containing the canvas plus all fixed elements
     var canvas = this.options.canvas ? $(this.options.canvas) : this.$element
-    
+
     var fixed_elements = canvas.find('*').filter(function() {
-      return $(this).css('position') === 'fixed'
+      return $(this).css('position') === 'fixed' && $(this).attr('class') !== undefined
     }).not(this.options.exclude)
-    
     return canvas.add(fixed_elements)
   }
   
