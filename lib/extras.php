@@ -1,7 +1,7 @@
 <?php
 
 //Limitar tags mostradas a 5
-add_filter('term_links-post_tag','limitar_tags');
+//add_filter('term_links-post_tag','limitar_tags');
 function limitar_tags($terms) {
 return array_slice($terms,0,3,true);
 }

@@ -46,7 +46,7 @@ var Gestiopolis = {
 
       //5. Función de buscador mobile friendly http://tympanus.net/codrops/2013/06/26/expanding-search-bar-deconstructed/
         new UISearch( document.getElementById( 'sb-search' ) );
-        new UISearch( document.getElementById( 'sb-search1' ) );
+        //new UISearch( document.getElementById( 'sb-search1' ) );
         //6. hide bar on scroll down
         // Hide Header on on scroll down
         var didScroll;

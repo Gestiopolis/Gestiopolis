@@ -34,7 +34,7 @@ wp_get_current_user();
   <!-- Empieza sección de TÍTULO DE CATEGORÍA -->
   <div class="row posts-home">
     <div class="col-md-12">
-      <div class="row tab-content">
+      <div class="row tab-content equal-items">
         <div class="tab-pane active gafrom from-tag-posts" id="publicaciones">
           <?php
             if ( have_posts() ) :

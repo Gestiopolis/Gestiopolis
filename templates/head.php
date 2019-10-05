@@ -123,5 +123,61 @@
     <meta name="theme-color" content="#ffffff">
 
     <?php wp_head(); ?>
+    <style>
+        .content{
+            margin-top: 45px;
+        }
+        .posts-home article:hover .wrapper-content{
+            border: 0px;
+        }
+        .posts-home article:hover{
+            border: 1px solid #d5d5d5;
+        }
+        .container {
+            width: 100%;
+        }
+
+        @media (min-width: 576px){
+            .container {
+                max-width: 540px;
+            }
+        }
+        @media (min-width: 768px){
+            .container {
+                max-width: 720px;
+            }
+            .posts-home .autor {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            /*.posts-home .tags {
+                height: 63px;
+                overflow: hidden;
+            }*/
+            .posts-home .post-content p{
+                max-height: 130px;
+                overflow: hidden;
+            }
+        }
+        @media (min-width: 992px){
+            .container {
+                max-width: 960px;
+            }
+        }
+        @media (min-width: 1200px){
+            .container {
+                max-width: 1140px;
+            }
+        }
+        .posts-home .wrapper-content {
+            border: 0px solid #edede4;
+        }
+        .posts-home article{
+            border: 1px solid #edede4;
+            overflow: hidden;
+        }
+
+    </style>
 </head>
 <?php flush(); // http://developer.yahoo.com/performance/rules.html#flush ?>

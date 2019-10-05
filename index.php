@@ -252,14 +252,14 @@
     <div id="recientes" class="gafrom from-home-posts">
 
 
-<div class="section">
+<div class="row equal-items">
       
       
       <?php 
       wp_reset_postdata();
       //$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
       
-        query_posts( 'post_type=post&offset=10&posts_per_page=4'.'&paged='.get_query_var('paged') );
+        query_posts( 'post_type=post&offset=10&posts_per_page=28'.'&paged='.get_query_var('paged') );
         if ( have_posts() ) :
           // Start the Loop.
           while ( have_posts() ) : the_post();
@@ -286,209 +286,7 @@
 
   </div>
 
-  <div class="section">
-      
-      
-      <?php 
-      wp_reset_postdata();
-      //$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-      
-        query_posts( 'post_type=post&offset=14&posts_per_page=4'.'&paged='.get_query_var('paged') );
-        if ( have_posts() ) :
-          // Start the Loop.
-          while ( have_posts() ) : the_post();
 
-            /*
-             * Include the post format-specific template for the content. If you want to
-             * use this in a child theme, then include a file called called content-___.php
-             * (where ___ is the post format) and that will be used instead.
-             */
-            get_template_part( 'templates/content' );
-        
-          endwhile;
-          
-          wp_reset_postdata();
-          wp_reset_query();
-          ?>
-          <?php
-        endif;
-        
-          wp_reset_postdata();
-          wp_reset_query();
-         
-      ?>
-
-  </div>
-
-  <div class="section">
-      
-      
-      <?php 
-      wp_reset_postdata();
-      //$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-      
-        query_posts( 'post_type=post&offset=18&posts_per_page=4'.'&paged='.get_query_var('paged') );
-        if ( have_posts() ) :
-          // Start the Loop.
-          while ( have_posts() ) : the_post();
-
-            /*
-             * Include the post format-specific template for the content. If you want to
-             * use this in a child theme, then include a file called called content-___.php
-             * (where ___ is the post format) and that will be used instead.
-             */
-            get_template_part( 'templates/content' );
-        
-          endwhile;
-          
-          wp_reset_postdata();
-          wp_reset_query();
-          ?>
-          <?php
-        endif;
-        
-          wp_reset_postdata();
-          wp_reset_query();
-         
-      ?>
-
-  </div>
-
-  <div class="section">
-      
-      
-      <?php 
-      wp_reset_postdata();
-      //$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-      
-        query_posts( 'post_type=post&offset=22&posts_per_page=4'.'&paged='.get_query_var('paged') );
-        if ( have_posts() ) :
-          // Start the Loop.
-          while ( have_posts() ) : the_post();
-
-            /*
-             * Include the post format-specific template for the content. If you want to
-             * use this in a child theme, then include a file called called content-___.php
-             * (where ___ is the post format) and that will be used instead.
-             */
-            get_template_part( 'templates/content' );
-        
-          endwhile;
-          
-          wp_reset_postdata();
-          wp_reset_query();
-          ?>
-          <?php
-        endif;
-        
-          wp_reset_postdata();
-          wp_reset_query();
-         
-      ?>
-
-  </div>
-
-  <div class="section">
-      
-      
-      <?php 
-      wp_reset_postdata();
-      //$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-      
-        query_posts( 'post_type=post&offset=26&posts_per_page=4'.'&paged='.get_query_var('paged') );
-        if ( have_posts() ) :
-          // Start the Loop.
-          while ( have_posts() ) : the_post();
-
-            /*
-             * Include the post format-specific template for the content. If you want to
-             * use this in a child theme, then include a file called called content-___.php
-             * (where ___ is the post format) and that will be used instead.
-             */
-            get_template_part( 'templates/content' );
-        
-          endwhile;
-          
-          wp_reset_postdata();
-          wp_reset_query();
-          ?>
-          <?php
-        endif;
-        
-          wp_reset_postdata();
-          wp_reset_query();
-         
-      ?>
-
-  </div>
-
-  <div class="section">
-      
-      
-      <?php 
-      wp_reset_postdata();
-      //$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-      
-        query_posts( 'post_type=post&offset=30&posts_per_page=4'.'&paged='.get_query_var('paged') );
-        if ( have_posts() ) :
-          // Start the Loop.
-          while ( have_posts() ) : the_post();
-
-            /*
-             * Include the post format-specific template for the content. If you want to
-             * use this in a child theme, then include a file called called content-___.php
-             * (where ___ is the post format) and that will be used instead.
-             */
-            get_template_part( 'templates/content' );
-        
-          endwhile;
-          
-          wp_reset_postdata();
-          wp_reset_query();
-          ?>
-          <?php
-        endif;
-        
-          wp_reset_postdata();
-          wp_reset_query();
-         
-      ?>
-
-  </div>
-
-  <div class="section">
-      
-      
-      <?php 
-      wp_reset_postdata();
-      //$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-      
-        query_posts( 'post_type=post&offset=34&posts_per_page=4'.'&paged='.get_query_var('paged') );
-        if ( have_posts() ) :
-          // Start the Loop.
-          while ( have_posts() ) : the_post();
-
-            /*
-             * Include the post format-specific template for the content. If you want to
-             * use this in a child theme, then include a file called called content-___.php
-             * (where ___ is the post format) and that will be used instead.
-             */
-            get_template_part( 'templates/content' );
-        
-          endwhile;
-          
-          wp_reset_postdata();
-          wp_reset_query();
-          ?>
-          <?php
-        endif;
-        
-          wp_reset_postdata();
-          wp_reset_query();
-         
-      ?>
-
-  </div>
 
     </div><!-- #recientes -->
 
