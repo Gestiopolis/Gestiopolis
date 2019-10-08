@@ -127,6 +127,9 @@
         .content{
             margin-top: 45px;
         }
+        .single .content{
+            margin-top: 85px;
+        }
         .posts-home article:hover .wrapper-content{
             border: 0px;
         }

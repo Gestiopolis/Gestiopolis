@@ -249,7 +249,7 @@
     </div>
   </div>
   <div class="row posts-home">
-    <div id="recientes" class="gafrom from-home-posts">
+    <div id="recientes2" class="gafrom from-home-posts">
 
 
 <div class="row equal-items">

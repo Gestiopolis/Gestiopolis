@@ -219,7 +219,7 @@ wp_get_current_user();
     </div>
   </div>
   <div class="row posts-home">
-    <div id="recientes" class="gafrom from-cat-posts">
+    <div id="recientes2" class="gafrom from-cat-posts">
       <?php if(is_category(23)){ ?>
       <script type="text/javascript" src="https://story.ad/advertisement/show_ad/48" async></script> 
       <div id='story-63-48'></div> 

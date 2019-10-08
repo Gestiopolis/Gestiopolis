@@ -34,7 +34,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/'.$servidor.'wp-blog-header.php');
         <div class="descrcon hidden">También puedes consultar el ABC temático con todos los tópicos tratados en los posts</div>
 
         <div class="row posts-home">
-		      <div id="recientes">
+		      <div id="recientes2">
 	          <?php
 	            $recent_args = array(
 	              'posts_per_page' => 12,

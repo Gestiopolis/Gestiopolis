@@ -246,7 +246,7 @@
     </div>
     <div class="row posts-home">
       <!--<div class="col-sm-12">-->
-        <div id="recientes">
+        <div id="recientes2">
           <?php
             //$postp       = get_post( $post->ID );
             //$taxonomies = get_object_taxonomies( $postp, 'names' );
