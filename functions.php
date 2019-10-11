@@ -35,3 +35,32 @@ unset($file, $filepath);
 @ini_set( 'upload_max_size' , '512M' );
 @ini_set( 'post_max_size', '512M');
 @ini_set( 'max_execution_time', '300' );
+
+
+
+
+
+function insert_script_videootv($content){
+    $videoo_script = '<script defer id="videoo-library" data-id="6000da7e107954a396b1824935e141d24b228eef8a34cecfb564d4dd1233ea8d" src="https://static.videoo.tv/6000da7e107954a396b1824935e141d24b228eef8a34cecfb564d4dd1233ea8d.js"></script>';
+    if (is_single()){
+        $content = insert_videootv_after_paragraph($videoo_script, 2, $content);
+    }
+    return $content;
+}
+add_filter('the_content', 'insert_script_videootv');
+
+function insert_videootv_after_paragraph($insertion, $paragraph_id, $content){
+    $closing_p  = '</p>';
+    $paragraphs = explode($closing_p, $content);
+    foreach ($paragraphs as $index => $paragraph) {
+        if (trim($paragraph)) {
+            $paragraphs[$index] .= $closing_p;
+        }
+
+        if ($paragraph_id == $index + 1) {
+            $paragraphs[$index] .= $insertion;
+        }
+    }
+
+    return implode('', $paragraphs);
+}

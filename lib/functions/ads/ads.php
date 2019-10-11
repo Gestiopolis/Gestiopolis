@@ -14,9 +14,21 @@
          googletag.cmd.push(function() {
            googletag.defineSlot('/1007663/Post-3Parrafo-VideoAds', [1, 1], 'div-gpt-ad-1565898763476-0').addService(googletag.pubads());
            googletag.pubads().enableSingleRequest();
+           googletag.pubads().collapseEmptyDivs();
            googletag.enableServices();
          });
-        </script>";
+        </script>
+               
+        <script>
+         window.googletag = window.googletag || {cmd: []};
+         googletag.cmd.push(function() {
+           googletag.defineSlot('/1007663/Tercer-Parrafo-Display', [[336, 280], [1, 1], [300, 250], [728, 90]], 'div-gpt-ad-1570826580296-0').addService(googletag.pubads());
+           googletag.pubads().enableSingleRequest();
+           googletag.pubads().collapseEmptyDivs();
+           googletag.enableServices();
+         });
+        </script>
+        ";
     }
 
     add_filter('wp_head', 'head_DFP_tercer_parrafo');
@@ -219,6 +231,13 @@ add_filter('wp_head', 'head_dfp');
             <div id="div-gpt-ad-1565898763476-0" style="width: 1px; height: 1px;">
              <script>
                googletag.cmd.push(function() { googletag.display("div-gpt-ad-1565898763476-0"); });
+             </script>
+            </div>
+            
+            <!-- /1007663/Tercer-Parrafo-Display -->
+            <div id="div-gpt-ad-1570826580296-0">
+             <script>
+               googletag.cmd.push(function() { googletag.display("div-gpt-ad-1570826580296-0"); });
              </script>
             </div>
         ';

@@ -67,5 +67,6 @@
   <?php get_template_part('templates/footer'); ?>
 
   <?php wp_footer();?>
+  <script async src="//get.optad360.io/sf/a8d7d0ad-d32b-48a1-a064-02a45a8d992d/plugin.min.js"></script>
 </body>
 </html>
