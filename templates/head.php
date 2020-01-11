@@ -6,9 +6,6 @@
     <!-- Llamada a sulvo -->
     <script data-cfasync="false" type="text/javascript" src="https://live.demand.supply/up.js"></script>
 
-    <!-- Llamada a Vidoomy  -->
-    <script type="text/javascript" src="//ads.vidoomy.com/gestiopolisslider_1236.js" ></script>
-
     <style>
         body{
             padding-top: 0px !important;

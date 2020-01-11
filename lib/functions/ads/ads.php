@@ -4,6 +4,20 @@
       Aqui comienzan los head
 *****************************************
 *****************************************/
+  /* VIDEO.TV DISPLAY IN POST */
+  function head_videotv_inpost(){
+    echo '<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+  <script>
+  window.googletag = window.googletag || {cmd: []};
+   googletag.cmd.push(function() {
+     googletag.defineSlot("/21682672808/Publishers/gestipolis_300x250", [300, 250], "div-gpt-ad-1573753388873-0").addService(googletag.pubads());
+     googletag.pubads().enableSingleRequest();
+     googletag.enableServices();
+   });
+  </script>';
+  }
+
+  add_filter('wp_head', 'head_videotv_inpost');
 
 /* DFP Tercer parrafo Head*/
     function head_DFP_tercer_parrafo(){
@@ -87,7 +101,7 @@
 
 
 
-// function DFP 
+// function DFP
 
 function head_dfp(){
 
@@ -173,12 +187,12 @@ add_filter('wp_head', 'head_dfp');
     function insert_ads_after_paragraph( $insertion, $paragraph_id, $content ) {
         $closing_p = '</p>';
         $paragraphs = explode( $closing_p, $content );
-     
+
         foreach ($paragraphs as $index => $paragraph) {
             if ( trim( $paragraph ) ) {
                 $paragraphs[$index] .= $closing_p;
             }
-     
+
             if ( $paragraph_id == $index + 1 ) {
                 $paragraphs[$index] .= $insertion;
             }
@@ -212,7 +226,7 @@ add_filter('wp_head', 'head_dfp');
                 {window.performance.mark("tbl_ic");}
             </script>
         ';
-     
+
         if ( is_single() && ! is_admin() ) {
             return insert_ads_after_paragraph( $ad_code, 1, $content );
         }
@@ -241,7 +255,7 @@ add_filter('wp_head', 'head_dfp');
              </script>
             </div>
         ';
-     
+
         if ( is_single() && ! is_admin() ) {
             return insert_ads_after_paragraph( $ad_code, 3, $content );
         }
@@ -253,16 +267,17 @@ add_filter('wp_head', 'head_dfp');
 
 
 
- //Insertar ads o contenido propio después 5 parrafo
+ //Insertar ads o contenido propio después 5 parrafo - scroller flotante
     function insert_post_ads( $content ) {
 
-            $ad_code = '<div style="text-align:center !important;margin:0 auto !important">
+            /*$ad_code = '<div style="text-align:center !important;margin:0 auto !important">
                         <script async src="https://cdn.ad.plus/player/adplus.js"></script>
                         <script data-playerPro="current">(function(){var s=document.querySelector(\'script[data-playerPro="current"]\');s.removeAttribute("data-playerPro");(playerPro=window.playerPro||[]).push({id:"1brVB_MeRT-PaZdAIeQt3yWsoSpFKJ-BP-70J82l-6Cqz4ieYH20",after:s});})();</script>
                         </div>
 
-            ';
-         
+            ';*/
+            $ad_code = '<script async id="aniviewJS180010148" src="https://play.aniview.com/59a5603f28a0611e9360c113/5da6bdfd28a0610183257f8c/gestiopolis.com_DT_OS.js"></script>';
+
             if ( is_single() && ! is_admin() ) {
                 return insert_ads_after_paragraph( $ad_code, 5, $content );
             }
@@ -287,7 +302,7 @@ add_filter('wp_head', 'head_dfp');
             </div>
 
         ';
-     
+
         if ( is_single() && ! is_admin() ) {
             return insert_ads_after_paragraph( $ad_code, 8, $content );
         }
@@ -313,7 +328,7 @@ add_filter('wp_head', 'head_dfp');
     }
     add_filter( 'the_content', 'insert_opt_ad_360_8' );
 
-    
+
 
 /****************************************
 *****************************************
@@ -326,7 +341,7 @@ add_filter('wp_head', 'head_dfp');
 function footer_dataxpand() {
 
     echo '<script type="text/javascript" src="https://tc.dataxpand.com/tc/4ccf3bf.js" async></script>';
-    
+
 }
 add_action('wp_footer', 'footer_dataxpand', 100);
 
@@ -348,7 +363,7 @@ function sticky_dektop_sulvo(){
             echo '<div data-ad="gestiopolis.com_728x90_sticky_display_bottom_sticky728abajo" data-devices="m:0,t:0,d:1" class="demand-supply"></div>';
         }
 
-    
+
     }
 
 add_action('wp_footer','sticky_dektop_sulvo');

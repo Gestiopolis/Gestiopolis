@@ -7,7 +7,7 @@
         <!-- Surge Pricing Unit - gestiopolis.com_300x600_piso030 -->
 
         <div data-ad="gestiopolis.com_300x600_piso030" data-devices="m:1,t:1,d:1" class="demand-supply"></div>
-        
+
       <!-- // Surge Pricing Unit - gestiopolis.com_300x600_piso030 -->
 
 <?php get_template_part('templates/sidebar-post'); ?>
@@ -21,7 +21,7 @@
               <div class="breadcredit gafrom from-post-breadcredit">
                 <?php get_template_part('templates/entry-meta'); ?>
                 <?php the_tags('<div class="temas-uppost hidden-xs hidden-sm gafrom from-post-tags"> ','','</div>'); ?>
-                
+
                   <!-- Taboola Tags -->
 
                   <div class="ads_right_tags">
@@ -39,7 +39,7 @@
 
                     </div>
                   <!-- Taboola Tags -->
-                  
+
               </div>
             </div>
             <div class="col-sm-12 col-md-10 col-md-pull-2 content-col">
@@ -49,19 +49,25 @@
 
           <div class="post-content clearfix">
             <div class="entry-content gafrom from-post-entry-content">
-              
+
               <div class="adsfr">
-                
-                <!-- Sulvo - Debajo del titulo del artículo - under_page_title -->
 
-                  <div data-ad="gestiopolis.com_300x250_precio030300x250" data-devices="m:1,t:1,d:1" class="demand-supply"></div>
-
+                <?php if(1==0): ?>
                 <!-- Sulvo - Debajo del titulo del artículo - under_page_title -->
-        
+                  <!--<div data-ad="gestiopolis.com_300x250_precio030300x250" data-devices="m:1,t:1,d:1" class="demand-supply"></div>-->
+                <!-- Sulvo - Debajo del titulo del artículo - under_page_title -->
+                <?php endif; ?>
+
+                <!-- /21682672808/Publishers/gestipolis_300x250 -->
+                <div id='div-gpt-ad-1573753388873-0' style='width: 300px; height: 250px;'>
+                  <script>
+                      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1573753388873-0'); });
+                  </script>
+                </div>
 
               </div>
-              
-        
+
+
               <?php the_content(); ?>
             </div>
 
@@ -81,14 +87,14 @@
              </div>
              <!-- /Banner publicidad Taboola -->
 
-             
+
             <div id="likepost" class="compartelo  gafrom from-post-likepost">
               <h2 class="text-center">Hazle saber al autor que aprecias su trabajo</h2>
               <div style="text-align: center !important;margin: 0 auto !important;">
                 <?php if(function_exists('wp_ulike')) wp_ulike('get'); ?>
               </div>
             </div>
-            
+
             </div>
             <?php if (get_post_meta($post->ID, "downloads_value", true) != '') { ?>
             <div class="downbox"><a class="downlink gafrom from-post-downlink" href="<?php echo get_post_meta($post->ID, 'downloads_value', true); ?>"><span class="author-color"><i class="fa fa-cloud-download"></i></span> Descarga el archivo original</a></div>
@@ -99,14 +105,14 @@
 
             <div  class="comentarios gafrom from-post-comments">
               <span class="btn btn-block btn-primary btn-lg"><span>Tu opinión vale, comenta aquí</span></span>
-              
+
                 <h2><i class="fa fa-comments"></i> Comentarios</h2>
 
 
                 <?php comments_template('/templates/comments.php'); ?>
-              
+
             </div>
-  
+
             <div class="compartelo">
               <h2><i class="fa fa-share"></i> Compártelo con tu mundo</h2>
               <ul class="list-unstyled gafrom from-post-compartelo">
@@ -121,7 +127,7 @@
               </ul>
             </div><!-- .compartelo -->
 
-            
+
             <div id="autores" class="autores">
               <h2>Escrito por:</h2>
               <div itemprop="author" itemscope itemtype="https://schema.org/Person" class="author vcard gafrom from-post-author-info-bottom">
@@ -144,7 +150,7 @@
                 <?php endif; ?>
               </div>
             </div>
-            
+
             <?php if(is_user_logged_in() && current_user_can( 'manage_options')){ ?>
             <?php get_template_part('templates/post-front-edit'); ?>
             <?php } ?>
@@ -161,7 +167,7 @@
                 </ul>
               <div class="tab-content">
                 <div class="tab-pane active" id="apa">
-                  <?php echo get_the_author_meta('last_name').' '.get_the_author_meta('first_name'); ?>. (<?php echo get_the_date('Y, F j'); ?>). <em><?php echo get_the_title(); ?></em>. Recuperado de <?php echo get_permalink(); ?> 
+                  <?php echo get_the_author_meta('last_name').' '.get_the_author_meta('first_name'); ?>. (<?php echo get_the_date('Y, F j'); ?>). <em><?php echo get_the_title(); ?></em>. Recuperado de <?php echo get_permalink(); ?>
                 </div>
                 <div class="tab-pane" id="mla">
                   <?php echo get_the_author_meta('last_name').', '.get_the_author_meta('first_name'); ?>. "<?php echo get_the_title(); ?>". <em><?php echo get_bloginfo('name'); ?></em>. <?php echo get_the_date('j F Y'); ?>. Web. &lt;<?php echo get_permalink(); ?>&gt;.
@@ -178,7 +184,7 @@
             </div>
           </div><!-- .quotes -->
 
-            
+
             <?php if (get_post_meta($post->ID, "image_url_value", true) != "") { ?>
             <div class="image-credit gafrom from-post-img-credit"><i class="fa fa-camera"></i> Imagen del encabezado cortesía de <a href="<?php echo get_post_meta($post->ID, "image_url_value", $single = true); ?>" target="_blank"><?php echo get_post_meta($post->ID, "image_author_t_value", true); ?></a> en Flickr</div>
             <?php } ?>
@@ -190,10 +196,10 @@
         </div><!-- fin de row de contenido y meta -->
         </article>
       </div><!--.col-sm-9-->
-      
+
     </div><!-- fin de .row -->
   </div>
-  <?php 
+  <?php
   $like = get_post_meta($post->ID, '_liked', true);
   if ($like == ""){
     update_post_meta($post->ID, '_liked', 1);

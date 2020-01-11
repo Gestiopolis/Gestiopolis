@@ -3,15 +3,12 @@
   <div class="row">
     <div class="col-sm-12">
       <div>
-          <div style="text-align: center;margin-top: 30px;">
-              <iframe width="100%" height="255" src="https://www.youtube.com/embed/zS6z2aY0ueo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
         <!-- /1007663/Home-Top-728x90 -->
-        <!--<div id='div-gpt-ad-1559754130804-0' class="adsce" style='height:90px; width:728px;'>-->
+        <div id='div-gpt-ad-1559754130804-0' class="adsce" style='height:90px; width:728px;'>
         <script>
-        //googletag.cmd.push(function() { googletag.display('div-gpt-ad-1559754130804-0'); });
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1559754130804-0'); });
         </script>
-        <!--</div>-->
+        </div>
 
       </div>
     </div>
