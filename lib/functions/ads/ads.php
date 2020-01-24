@@ -31,9 +31,9 @@
            googletag.pubads().collapseEmptyDivs();
            googletag.enableServices();
          });
-        </script>
-               
-        <script>
+        </script>                       
+        ";
+        /*<script>
          window.googletag = window.googletag || {cmd: []};
          googletag.cmd.push(function() {
            googletag.defineSlot('/1007663/Tercer-Parrafo-Display', [[336, 280], [1, 1], [300, 250], [728, 90]], 'div-gpt-ad-1570826580296-0').addService(googletag.pubads());
@@ -41,8 +41,7 @@
            googletag.pubads().collapseEmptyDivs();
            googletag.enableServices();
          });
-        </script>
-        ";
+        </script>*/
     }
 
     add_filter('wp_head', 'head_DFP_tercer_parrafo');
@@ -246,15 +245,14 @@ add_filter('wp_head', 'head_dfp');
              <script>
                googletag.cmd.push(function() { googletag.display("div-gpt-ad-1565898763476-0"); });
              </script>
-            </div>
-            
-            <!-- /1007663/Tercer-Parrafo-Display -->
+            </div>                        
+        ';
+        /*<!-- /1007663/Tercer-Parrafo-Display -->
             <div id="div-gpt-ad-1570826580296-0">
              <script>
                googletag.cmd.push(function() { googletag.display("div-gpt-ad-1570826580296-0"); });
              </script>
-            </div>
-        ';
+            </div>*/
 
         if ( is_single() && ! is_admin() ) {
             return insert_ads_after_paragraph( $ad_code, 3, $content );
@@ -284,7 +282,7 @@ add_filter('wp_head', 'head_dfp');
             return $content;
 
     }
-    add_filter( 'the_content', 'insert_post_ads' );
+    //add_filter( 'the_content', 'insert_post_ads' );
 
 
 
